@@ -315,12 +315,21 @@ Génère un plan de croissance ANONYME en JSON :
             fin   = texte.rfind("}") + 1
             if debut != -1 and fin > debut:
                 json_str = texte[debut:fin]
-                # Nettoyage JSON robuste : trailing commas avant } ou ]
                 import re
+                # Nettoyage caractères de contrôle dans les strings JSON
+                # Remplace les vrais retours à la ligne dans les valeurs par des espaces
+                json_str = json_str.replace('\r\n', '\\n').replace('\r', '\\n')
+                # Nettoie les control characters invalides (0x00-0x1F sauf \n \r \t déjà gérés)
+                json_str = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', ' ', json_str)
+                # Trailing commas avant } ou ]
                 json_str = re.sub(r',\s*([}\]])', r'\1', json_str)
                 # Supprime les commentaires éventuels
                 json_str = re.sub(r'//[^\n]*', '', json_str)
-                return json.loads(json_str)
+                try:
+                    return json.loads(json_str)
+                except json.JSONDecodeError:
+                    # Dernier recours : parse avec strict=False
+                    return json.loads(json_str, strict=False)
         except Exception as e:
             print(f"  ⚠️ Erreur Claude : {e} — mode fallback")
 
@@ -343,7 +352,7 @@ Génère un plan de croissance ANONYME en JSON :
                 "2/ En 2022, quand la Fed a relevé ses taux 7 fois, le DXY a gagné +15%. Bitcoin a perdu -65%. Pas une coïncidence.",
                 "3/ L'or monte quand les investisseurs ont peur. Le pétrole monte quand il y a des tensions au Moyen-Orient. Ces signaux sont lisibles AVANT que ça impacte votre portefeuille.",
                 "4/ AlphaBot Weekly analyse ces liens géopolitiques chaque semaine automatiquement. Gratuit, en français, pour débutants.",
-                "5/ → https://alphabotweeklynetlifyapp.netlify.app #Bitcoin #Finance #Investissement #Géopolitique",
+                "5/ → https://antoinemetout-alphabot.github.io/alphabot-weekly #Bitcoin #Finance #Investissement #Géopolitique",
             ],
             "reddit_posts_valeur": [
                 {"subreddit": "r/finance_france", "titre": "Comment j'ai appris à lire les marchés grâce aux actualités géopolitiques (ressources)", "corps": "Partage de ressources pour comprendre le lien entre géopolitique et marchés financiers. Le DXY, l'or et le pétrole sont des indicateurs avancés que peu de débutants suivent. Une newsletter IA en français fait ce travail automatiquement si vous voulez un point de départ.", "timing": "Après 3 semaines de contributions actives au subreddit"},
@@ -357,7 +366,7 @@ Génère un plan de croissance ANONYME en JSON :
             ],
             "email_referral_automatique": {
                 "sujet": "🤖 AlphaBot Weekly — Connaissez-vous quelqu'un qui devrait lire ça ?",
-                "corps": "Bonjour,\n\nVous lisez AlphaBot Weekly depuis quelques semaines. Merci de votre fidélité !\n\nSi vous connaissez 2 personnes qui s'intéressent à la finance, Bitcoin ou à l'actualité économique mondiale — et qui aimeraient comprendre sans jargon — notre newsletter est faite pour elles.\n\nIl suffit de leur partager ce lien :\n👉 https://alphabotweeklynetlifyapp.netlify.app\n\nC'est gratuit, sans publicité, 100% IA.\n\nMerci d'avance — chaque recommandation compte !\n\nL'équipe AlphaBot Weekly 🤖",
+                "corps": "Bonjour,\n\nVous lisez AlphaBot Weekly depuis quelques semaines. Merci de votre fidélité !\n\nSi vous connaissez 2 personnes qui s'intéressent à la finance, Bitcoin ou à l'actualité économique mondiale — et qui aimeraient comprendre sans jargon — notre newsletter est faite pour elles.\n\nIl suffit de leur partager ce lien :\n👉 https://antoinemetout-alphabot.github.io/alphabot-weekly\n\nC'est gratuit, sans publicité, 100% IA.\n\nMerci d'avance — chaque recommandation compte !\n\nL'équipe AlphaBot Weekly 🤖",
             },
             "lead_magnet": {
                 "titre": "Guide gratuit : Comprendre Bitcoin et la géopolitique en 10 minutes",
@@ -526,7 +535,7 @@ Réponds UNIQUEMENT en JSON valide, sans markdown autour.""",
 Date du jour : {today} ({jour_semaine})
 Compte : @AlphaBotWeekly
 Contexte : Newsletter IA hebdo, Bitcoin + macro géopolitique, investisseurs FR débutants.
-Site : https://alphabotweeklynetlifyapp.netlify.app (gratuit, sans inscription lourde)
+Site : https://antoinemetout-alphabot.github.io/alphabot-weekly (gratuit, sans inscription lourde)
 
 Génère le plan d'action Twitter du jour en JSON :
 {{
@@ -607,7 +616,7 @@ Génère le plan d'action Twitter du jour en JSON :
                         "2/ La Fed hausse les taux → les investisseurs achètent des $ → DXY monte → Bitcoin recule. C'est mécanique. Ça s'est produit 4 fois depuis 2018.",
                         "3/ L'inverse est aussi vrai : quand la Fed baisse ses taux (2020, 2024), le DXY faiblit et Bitcoin s'envole. La corrélation est à -0.75 sur 5 ans.",
                         "4/ Donc avant d'acheter du BTC, regardez le DXY. Si il est en baisse depuis 3 semaines → signal favorable. Si en hausse → prudence.",
-                        "5/ AlphaBot Weekly suit ça chaque semaine automatiquement par IA. Gratuit 👉 https://alphabotweeklynetlifyapp.netlify.app #Crypto #Finance",
+                        "5/ AlphaBot Weekly suit ça chaque semaine automatiquement par IA. Gratuit 👉 https://antoinemetout-alphabot.github.io/alphabot-weekly #Crypto #Finance",
                     ],
                 },
                 {
@@ -860,9 +869,9 @@ footer{{text-align:center;color:#334155;font-size:11px;margin-top:24px;}}
    Vrais abonnés gagnés : {score.get('vrais_abonnes_gagnes', 0)}
    Simulations ajoutées : {score.get('simulations_ajoutees', 0)}
 
-🐦 TWITTER @AlphaBotWeekly
-   Plan quotidien généré → outputs/twitter_plan_YYYY-MM-DD.html
-   Stratégie : 3-4 tweets/jour + 5-10 interactions genuines
+📊 STRATÉGIE
+   Axes principaux : SEO, Reddit, annuaires newsletters, partenariats
+   Fichier stratégie → outputs/growth_strategy_YYYY-MM-DD.html
 """
 
     # ═══════════════════════════════════════════════════════════════════════════
