@@ -235,101 +235,58 @@ class AgentGrowthBooster:
 
             response = client.messages.create(
                 model=CLAUDE_MODEL,
-                max_tokens=3500,
-                system="""Tu es un growth hacker d'élite spécialisé newsletters financières.
-Tu travailles pour AlphaBot Weekly — newsletter 100% IA et ANONYME, focus Bitcoin + macro géopolitique, pour investisseurs francophones débutants.
-CONTRAINTE ABSOLUE : Le fondateur reste 100% anonyme. Tout le contenu est publié sous la marque "AlphaBot Weekly", jamais sous un nom de personne.
-Les canaux de croissance doivent fonctionner SANS présence personnelle et SANS base d'audience existante.
-Stratégie principale : SEO organique (articles de blog), référencement dans annuaires de newsletters, contenu de marque sur comptes dédiés @AlphaBotWeekly.
-Le contenu Twitter/X et Reddit est publié depuis des comptes de marque @AlphaBotWeekly / u/AlphaBotWeekly (pas de compte perso).
-Sur Reddit : JAMAIS d'autopromo directe. D'abord apporter de la valeur, puis mentionner naturellement.
-Réponds UNIQUEMENT en JSON valide, sans markdown autour.""",
+                max_tokens=2000,
+                system="""Tu es un growth hacker specialise newsletters financieres francophones.
+Tu travailles pour AlphaBot Weekly, newsletter 100% IA, anonyme, focus Bitcoin + macro geopolitique.
+IMPORTANT : Reponds UNIQUEMENT en JSON valide. Pas de markdown. Pas de retours a la ligne dans les valeurs string. Utilise des phrases courtes.""",
                 messages=[{"role": "user", "content": f"""
-Date du jour : {today}
-Contexte AlphaBot Weekly :
-- Newsletter IA hebdomadaire ANONYME, focus Bitcoin + macro géopolitique
-- Comptes de marque : @AlphaBotWeekly (Twitter/X), u/AlphaBotWeekly (Reddit), Page LinkedIn "AlphaBot Weekly"
-- Abonnés humains actuels : {nb_reels} | Total abonnés : {nb_total}
-- Score croissance : {score['total_points']} pts
-- Site : https://antoinemetout-alphabot.github.io/alphabot-weekly
-- Gratuit, pas de compte requis, juste un email
+Date : {today} | Abonnes humains : {nb_reels} | Total : {nb_total} | Score : {score['total_points']} pts
+Site : https://antoinemetout-alphabot.github.io/alphabot-weekly
 
-Génère un plan de croissance ANONYME en JSON :
+Genere un plan de croissance en JSON STRICT (pas de retours a la ligne dans les strings) :
 {{
-  "article_seo_complet": {{
-    "titre": "Titre SEO (60 chars, keyword fort inclus, ex: 'Bitcoin et DXY : pourquoi le dollar influence votre épargne')",
-    "meta_description": "Meta description 155 chars exactement",
-    "slug": "slug-url-de-l-article",
-    "mots_cles_cibles": ["keyword 1", "keyword 2", "keyword 3"],
+  "article_seo": {{
+    "titre": "Titre SEO 60 chars avec keyword fort",
+    "meta_description": "Meta description 155 chars",
+    "slug": "slug-url",
+    "mots_cles": ["kw1", "kw2", "kw3"],
     "plan": ["H2 Section 1", "H2 Section 2", "H2 Section 3", "H2 Section 4"],
-    "intro_complete": "Introduction complète de 200 mots, angle géopolitique, accroche forte, pas de placeholder"
+    "intro": "Introduction 2-3 phrases, angle geopolitique, accroche forte"
   }},
-  "tweets_thread_marque": [
-    "Tweet 1/6 @AlphaBotWeekly : accroche données/stats choc (280 chars max, pas de 'je')",
-    "Tweet 2/6 : développement géopolitique",
-    "Tweet 3/6 : lien Bitcoin/macro expliqué simplement",
-    "Tweet 4/6 : statistique ou fait surprenant",
-    "Tweet 5/6 : ce que ça signifie pour l investisseur débutant",
-    "Tweet 6/6 : CTA newsletter avec lien (pas 'je'/'mon', mais 'notre'/'l IA')"
+  "reddit_posts": [
+    {{"subreddit": "r/finance_france", "titre": "Titre informatif", "resume": "Resume 2 phrases du post", "timing": "Quand poster"}},
+    {{"subreddit": "r/Bitcoin_France", "titre": "Titre informatif", "resume": "Resume 2 phrases", "timing": "Quand poster"}}
   ],
-  "reddit_posts_valeur": [
-    {{
-      "subreddit": "r/finance_france",
-      "titre": "Titre informatif sans autopromo",
-      "corps": "Post complet de 200 mots apportant de la valeur d abord. Mention naturelle de la newsletter SEULEMENT dans les 2 dernières lignes si pertinent.",
-      "timing": "Poster après 3 semaines de participation au subreddit"
-    }},
-    {{
-      "subreddit": "r/Bitcoin_France",
-      "titre": "Titre informatif sans autopromo",
-      "corps": "Post complet de 200 mots. Analyse géopolitique Bitcoin. Valeur d abord.",
-      "timing": "Poster dès que le compte u/AlphaBotWeekly a 30+ jours"
-    }}
+  "annuaires": [
+    {{"nom": "Nom annuaire", "url": "url", "action": "Action concrete"}},
+    {{"nom": "Nom annuaire 2", "url": "url", "action": "Action concrete"}}
   ],
-  "annuaires_newsletters": [
-    {{"nom": "Annuaire 1", "url": "url", "action": "action concrète pour s y inscrire gratuitement"}},
-    {{"nom": "Annuaire 2", "url": "url", "action": "action concrète"}},
-    {{"nom": "Annuaire 3", "url": "url", "action": "action concrète"}},
-    {{"nom": "Annuaire 4", "url": "url", "action": "action concrète"}}
-  ],
-  "email_referral_automatique": {{
+  "email_referral": {{
     "sujet": "Sujet email de recommandation",
-    "corps": "Corps complet de l email que les abonnés reçoivent automatiquement après 2 newsletters (incite à recommander à 2 amis)"
+    "resume": "Resume du contenu en 2 phrases"
   }},
   "lead_magnet": {{
-    "titre": "Titre du lead magnet (ex: 'Guide : Comprendre Bitcoin et la géopolitique en 10 minutes')",
-    "format": "Format optimal",
-    "contenu_sommaire": ["Point 1", "Point 2", "Point 3", "Point 4"],
-    "cta": "Texte du CTA sur le site pour télécharger"
+    "titre": "Titre du lead magnet",
+    "format": "Format",
+    "points": ["Point 1", "Point 2", "Point 3"],
+    "cta": "Texte du CTA"
   }},
-  "partenariats_newsletters": [
-    {{"nom": "Newsletter partenaire potentielle", "raison": "Pourquoi elles accepteraient un échange", "approche": "Email d approche anonyme en 3 phrases"}}
+  "partenariats": [
+    {{"nom": "Newsletter partenaire", "raison": "Pourquoi", "approche": "Email en 1 phrase"}}
   ],
-  "objectif_semaine": "Objectif SMART précis et réaliste pour les 7 prochains jours (anonyme, sans présence perso)",
-  "action_prioritaire": "1 seule action concrète à faire dans les prochaines 2h, anonyme, sans compte perso"
-}}
-"""}],
+  "objectif_semaine": "Objectif SMART pour les 7 prochains jours",
+  "action_prioritaire": "1 action concrete a faire dans les 2 prochaines heures"
+}}"""}],
             )
             texte = response.content[0].text.strip()
             debut = texte.find("{")
             fin   = texte.rfind("}") + 1
             if debut != -1 and fin > debut:
                 json_str = texte[debut:fin]
+                # Parse avec strict=False pour tolérer les control characters
                 import re
-                # Nettoyage caractères de contrôle dans les strings JSON
-                # Remplace les vrais retours à la ligne dans les valeurs par des espaces
-                json_str = json_str.replace('\r\n', '\\n').replace('\r', '\\n')
-                # Nettoie les control characters invalides (0x00-0x1F sauf \n \r \t déjà gérés)
-                json_str = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', ' ', json_str)
-                # Trailing commas avant } ou ]
                 json_str = re.sub(r',\s*([}\]])', r'\1', json_str)
-                # Supprime les commentaires éventuels
-                json_str = re.sub(r'//[^\n]*', '', json_str)
-                try:
-                    return json.loads(json_str)
-                except json.JSONDecodeError:
-                    # Dernier recours : parse avec strict=False
-                    return json.loads(json_str, strict=False)
+                return json.loads(json_str, strict=False)
         except Exception as e:
             print(f"  ⚠️ Erreur Claude : {e} — mode fallback")
 
@@ -391,7 +348,14 @@ Génère un plan de croissance ANONYME en JSON :
                 return ""
             if isinstance(items, str):
                 items = [items]
-            contenu = "".join(f'<div class="item">→ {i}</div>' for i in items)
+            # Convertit les dicts en strings lisibles pour le HTML
+            safe_items = []
+            for i in items:
+                if isinstance(i, dict):
+                    safe_items.append(" | ".join(f"<strong>{k}</strong>: {v}" for k, v in i.items()))
+                else:
+                    safe_items.append(str(i))
+            contenu = "".join(f'<div class="item">→ {i}</div>' for i in safe_items)
             return f"""
             <div class="bloc">
               <div class="bloc-titre" style="color:{couleur};">{titre}</div>
@@ -445,41 +409,12 @@ footer{{text-align:center;color:#334155;font-size:11px;margin-top:24px;}}
     <div class="priorite-texte" style="color:#93c5fd;">{strategie.get('objectif_semaine','—')}</div>
   </div>
 
-  {section("📰 Article SEO Complet", [
-      f"<strong>{strategie.get('article_seo_complet',{{}}).get('titre','')}</strong>"
-      f"<br><em>Slug : /{strategie.get('article_seo_complet',{{}}).get('slug','')}</em>"
-      f"<br><em>Meta : {strategie.get('article_seo_complet',{{}}).get('meta_description','')}</em>"
-      f"<br><br><strong>Plan :</strong><br>" + "<br>".join(strategie.get('article_seo_complet',{{}}).get('plan',[]))
-      + f"<br><br><strong>Intro :</strong><br>{strategie.get('article_seo_complet',{{}}).get('intro_complete','')}"
-  ], "#8b5cf6")}
-  {section("🐦 Thread @AlphaBotWeekly (Twitter/X)", strategie.get("tweets_thread_marque", strategie.get("tweets_thread",[])), "#1d9bf0")}
-  {section("💬 Posts Reddit (valeur d abord)", [
-      f"<strong>{p.get('subreddit','')} — {p.get('titre','')}</strong>"
-      f"<br>{p.get('corps','')}"
-      f"<br><em>⏱ {p.get('timing','')}</em>"
-      if isinstance(p,dict) else p
-      for p in strategie.get("reddit_posts_valeur",[])
-  ], "#ff4500")}
-  {section("📚 Annuaires Newsletters (soumission gratuite)", [
-      f"<strong>{a.get('nom','')}</strong> — <a href='{a.get('url','')}' style='color:var(--cyan)'>{a.get('url','')}</a><br>{a.get('action','')}"
-      if isinstance(a,dict) else a
-      for a in strategie.get("annuaires_newsletters",[])
-  ], "#22c55e")}
-  {section("📧 Email Referral Automatique", [
-      f"<strong>Sujet : {strategie.get('email_referral_automatique',{{}}).get('sujet','')}</strong>"
-      f"<br><br>{strategie.get('email_referral_automatique',{{}}).get('corps','')}"
-  ], "#06b6d4")}
-  {section("🎁 Lead Magnet", [
-      f"<strong>{strategie.get('lead_magnet',{{}}).get('titre','')}</strong>"
-      f" — {strategie.get('lead_magnet',{{}}).get('format','')}"
-      f"<br>CTA : {strategie.get('lead_magnet',{{}}).get('cta','')}"
-      f"<br>" + "<br>".join(strategie.get('lead_magnet',{{}}).get('contenu_sommaire',[]))
-  ], "#f59e0b")}
-  {section("🤝 Partenariats Newsletters", [
-      f"<strong>{p.get('nom','')}</strong> — {p.get('raison','')}<br><em>Approche : {p.get('approche','')}</em>"
-      if isinstance(p,dict) else p
-      for p in strategie.get("partenariats_newsletters",[])
-  ], "#f5c842")}
+  {section("📰 Article SEO", strategie.get("article_seo", strategie.get("article_seo_complet", [])), "#8b5cf6")}
+  {section("💬 Posts Reddit", strategie.get("reddit_posts", strategie.get("reddit_posts_valeur", [])), "#ff4500")}
+  {section("📚 Annuaires Newsletters", strategie.get("annuaires", strategie.get("annuaires_newsletters", [])), "#22c55e")}
+  {section("📧 Email Referral", strategie.get("email_referral", strategie.get("email_referral_automatique", {{}})), "#06b6d4")}
+  {section("🎁 Lead Magnet", strategie.get("lead_magnet", {{}}), "#f59e0b")}
+  {section("🤝 Partenariats", strategie.get("partenariats", strategie.get("partenariats_newsletters", [])), "#f5c842")}
 
   <footer>Généré par l'Agent Growth Booster · AlphaBot Weekly 🤖 — 100% IA</footer>
 </div>
