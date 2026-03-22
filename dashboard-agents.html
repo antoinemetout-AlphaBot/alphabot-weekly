@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AlphaBot — Dashboard Agents IA</title>
+<title>Agents IA — AlphaBot Weekly</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#04091a;--bg2:#060d1f;--card:rgba(255,255,255,.03);--card2:rgba(255,255,255,.05);
-  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.13);
+  --bg:#04091a;--bg2:#060d1f;--card:rgba(255,255,255,.03);--card2:rgba(255,255,255,.06);
+  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.15);
   --gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
   --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--purple:#a855f7;
   --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
@@ -20,139 +20,167 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 /* BG */
 .bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
 .bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.02)1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.02)1px,transparent 1px);background-size:50px 50px;}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);}
-.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.08),transparent 65%);top:-200px;left:-200px;animation:of 10s ease-in-out infinite alternate;}
-.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.06),transparent 65%);bottom:-100px;right:-100px;animation:of 13s ease-in-out infinite alternate-reverse;}
-@keyframes of{from{transform:translate(0,0);}to{transform:translate(20px,15px);}}
-.scan{position:fixed;top:0;left:0;right:0;height:1px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:sc 10s ease-in-out infinite;opacity:.25;}
-@keyframes sc{0%{top:0;opacity:0;}8%{opacity:.35;}92%{opacity:.35;}100%{top:100%;opacity:0;}}
+.orb{position:absolute;border-radius:50%;filter:blur(120px);}
+.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.07),transparent 65%);top:-250px;left:-200px;animation:of 12s ease-in-out infinite alternate;}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.05),transparent 65%);bottom:-100px;right:-150px;animation:of 15s ease-in-out infinite alternate-reverse;}
+.o3{width:400px;height:400px;background:radial-gradient(circle,rgba(34,211,238,.04),transparent 65%);top:40%;left:50%;animation:of 18s ease-in-out infinite alternate;}
+@keyframes of{from{transform:translate(0,0);}to{transform:translate(25px,20px);}}
+.scan{position:fixed;top:0;left:0;right:0;height:1px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:sc 12s ease-in-out infinite;opacity:.2;}
+@keyframes sc{0%{top:0;opacity:0;}5%{opacity:.3;}95%{opacity:.3;}100%{top:100%;opacity:0;}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;transition:all .3s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;}
 .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
 .nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:500;}
 .nav-links a:hover,.nav-links a.active{color:white;}
 .nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white!important;padding:7px 16px;border-radius:8px;font-weight:600!important;font-size:12px!important;}
 
-/* LAYOUT */
-.page{position:relative;z-index:1;padding:100px 5% 60px;max-width:1400px;margin:0 auto;}
+/* PAGE */
+.page{position:relative;z-index:1;padding:100px 5% 80px;max-width:1300px;margin:0 auto;}
 
 /* HEADER */
-.page-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
-.page-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:800;color:white;margin-bottom:6px;}
-.page-sub{font-size:14px;color:var(--muted);max-width:480px;}
-.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:50px;padding:8px 18px;font-size:12px;font-weight:700;color:var(--green);}
+.hero{text-align:center;margin-bottom:48px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:50px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
 .live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.8s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;color:white;margin-bottom:12px;line-height:1.15;}
+.hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero p{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.6;}
+.hero-stats{display:flex;justify-content:center;gap:32px;margin-top:24px;}
+.hero-stat{text-align:center;}
+.hero-stat-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;}
+.hero-stat-val.cyan{color:var(--cyan);}
+.hero-stat-val.green{color:var(--green);}
+.hero-stat-val.gold{color:var(--gold);}
+.hero-stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
 
-/* LAST UPDATED */
-.last-update{font-size:11px;color:var(--muted2);font-family:'JetBrains Mono',monospace;text-align:right;}
+/* ══════════════════════════════════════════════════════════════
+   PYRAMIDE HIÉRARCHIQUE
+   ══════════════════════════════════════════════════════════════ */
+.pyramid{margin-bottom:56px;}
+.pyramid-title{text-align:center;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:28px;}
 
-/* KPI ROW */
-.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:32px;}
-.kpi{background:var(--card);border:1px solid var(--b);border-radius:14px;padding:18px 20px;transition:border-color .2s;}
-.kpi:hover{border-color:var(--b2);}
-.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;margin-bottom:4px;line-height:1;}
-.kpi-label{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;}
-.kpi-val.green{color:var(--green);}
-.kpi-val.red{color:var(--red);}
-.kpi-val.gold{color:var(--gold);}
-.kpi-val.cyan{color:var(--cyan);}
-.kpi-val.purple{color:var(--purple);}
+/* Pyramid rows */
+.pyr-row{display:flex;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
 
-/* TWO-COLUMN */
-.two-col{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:start;}
-@media(max-width:900px){.two-col{grid-template-columns:1fr;}}
+/* Agent node */
+.agent-node{position:relative;background:var(--card);border:1px solid var(--b);border-radius:16px;padding:20px 22px;min-width:200px;max-width:280px;flex:1;cursor:pointer;transition:all .3s ease;overflow:hidden;}
+.agent-node::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;opacity:0;transition:opacity .3s;}
+.agent-node:hover{border-color:var(--b2);background:var(--card2);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.3);}
+.agent-node:hover::before{opacity:1;}
+.agent-node.active-now{animation:glowPulse 2s ease-in-out infinite;}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(34,211,238,0);}50%{box-shadow:0 0 20px rgba(34,211,238,.1);}}
 
-/* SECTION */
-.section-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.section-title::before{content:'';width:3px;height:14px;background:var(--cyan);border-radius:2px;}
+/* Color accents per tier */
+.tier-ceo .agent-node::before{background:linear-gradient(90deg,var(--gold),#fde68a);}
+.tier-ceo .agent-node{border-color:rgba(245,200,66,.15);}
+.tier-ceo .agent-node:hover{border-color:rgba(245,200,66,.35);}
 
-/* AGENT CARDS */
-.agents-grid{display:flex;flex-direction:column;gap:10px;}
-.agent-card{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:border-color .2s,background .2s;cursor:default;}
-.agent-card:hover{background:var(--card2);border-color:var(--b2);}
-.agent-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.agent-icon.success{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);}
-.agent-icon.error{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2);}
-.agent-icon.warning{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2);}
-.agent-icon.info,.agent-icon.progress{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);}
-.agent-icon.milestone{background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.2);}
-.agent-icon.start{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.2);}
-.agent-name{font-size:13px;font-weight:600;color:white;margin-bottom:2px;}
-.agent-msg{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;}
-.agent-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);margin-left:auto;flex-shrink:0;text-align:right;}
-.agent-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;flex-shrink:0;}
-.agent-status.success{background:rgba(34,197,94,.12);color:var(--green);}
-.agent-status.error{background:rgba(239,68,68,.12);color:var(--red);}
-.agent-status.warning{background:rgba(245,158,11,.12);color:var(--yellow);}
-.agent-status.info,.agent-status.progress,.agent-status.start{background:rgba(59,130,246,.12);color:#93c5fd;}
-.agent-status.milestone{background:rgba(168,85,247,.12);color:#d8b4fe;}
+.tier-director .agent-node::before{background:linear-gradient(90deg,var(--cyan),var(--blue));}
+.tier-director .agent-node{border-color:rgba(34,211,238,.12);}
+.tier-director .agent-node:hover{border-color:rgba(34,211,238,.3);}
 
-/* LIVE FEED */
-.feed-wrap{background:var(--card);border:1px solid var(--b);border-radius:14px;overflow:hidden;max-height:680px;display:flex;flex-direction:column;}
-.feed-header{padding:14px 18px;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.feed-scroll{overflow-y:auto;flex:1;padding:8px 0;}
-.feed-scroll::-webkit-scrollbar{width:4px;}
-.feed-scroll::-webkit-scrollbar-track{background:transparent;}
-.feed-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
+.tier-senior .agent-node::before{background:linear-gradient(90deg,var(--blue),var(--purple));}
+.tier-senior .agent-node{border-color:rgba(59,130,246,.1);}
+.tier-senior .agent-node:hover{border-color:rgba(59,130,246,.25);}
 
-.feed-event{display:flex;align-items:flex-start;gap:10px;padding:9px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .15s;}
-.feed-event:hover{background:rgba(255,255,255,.02);}
-.feed-event:last-child{border-bottom:none;}
+.tier-ops .agent-node::before{background:linear-gradient(90deg,var(--green),var(--cyan));}
+.tier-ops .agent-node{border-color:rgba(34,197,94,.08);}
+.tier-ops .agent-node:hover{border-color:rgba(34,197,94,.2);}
 
-.ev-icon{font-size:14px;flex-shrink:0;width:20px;text-align:center;margin-top:1px;}
-.ev-body{flex:1;min-width:0;}
-.ev-agent{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px;}
-.ev-msg{font-size:12px;color:var(--text);line-height:1.5;word-break:break-word;}
-.ev-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);flex-shrink:0;margin-top:2px;}
+/* Node header */
+.node-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.node-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.tier-ceo .node-icon{background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.2);}
+.tier-director .node-icon{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);}
+.tier-senior .node-icon{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);}
+.tier-ops .node-icon{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);}
+.node-name{font-size:14px;font-weight:700;color:white;}
+.node-role{font-size:11px;color:var(--muted);margin-top:1px;}
 
-.ev-success .ev-msg{color:rgba(226,232,240,.95);}
-.ev-error .ev-msg{color:rgba(252,165,165,.9);}
-.ev-warning .ev-msg{color:rgba(253,230,138,.9);}
-.ev-milestone .ev-msg{color:rgba(216,180,254,.9);}
+/* Status indicator */
+.node-status{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;margin-bottom:8px;}
+.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.status-dot.online{background:var(--green);box-shadow:0 0 6px var(--green);}
+.status-dot.error{background:var(--red);box-shadow:0 0 6px var(--red);}
+.status-dot.idle{background:var(--muted);box-shadow:none;}
+.status-text.online{color:var(--green);}
+.status-text.error{color:var(--red);}
+.status-text.idle{color:var(--muted);}
 
-/* FILTER TABS */
-.filter-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;}
-.tab{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--b);background:transparent;color:var(--muted);transition:.2s;font-family:inherit;}
-.tab:hover{color:white;border-color:var(--b2);}
-.tab.active{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.4);color:#93c5fd;}
+/* Live task */
+.node-task{font-size:12px;color:var(--muted);line-height:1.5;padding:8px 10px;background:rgba(0,0,0,.2);border-radius:8px;border-left:2px solid var(--b);font-family:'JetBrains Mono',monospace;font-size:11px;}
+.node-task.active{border-left-color:var(--cyan);color:var(--text);}
 
-/* AGENT TIMELINE */
-.timeline{display:flex;flex-direction:column;gap:4px;margin-top:8px;}
-.tl-item{display:flex;align-items:center;gap:8px;font-size:12px;}
-.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-.tl-dot.success{background:var(--green);}
-.tl-dot.error{background:var(--red);}
-.tl-dot.warning{background:var(--yellow);}
-.tl-dot.info,.tl-dot.progress,.tl-dot.start{background:var(--blue);}
-.tl-dot.milestone{background:var(--purple);}
-.tl-text{color:var(--muted);}
+/* Node stats */
+.node-stats{display:flex;gap:12px;margin-top:10px;font-size:10px;color:var(--muted2);}
+.node-stat{display:flex;align-items:center;gap:3px;}
 
-/* REFRESH BAR */
-.refresh-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(4,9,26,.95);border-top:1px solid var(--b);padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);}
-.refresh-btn{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#93c5fd;padding:6px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;transition:.2s;}
-.refresh-btn:hover{background:rgba(59,130,246,.25);}
+/* Connector lines */
+.connector{display:flex;justify-content:center;margin-bottom:16px;position:relative;}
+.connector svg{display:block;}
+
+/* Tier labels */
+.tier-label{text-align:center;margin-bottom:12px;}
+.tier-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;}
+.tier-ceo .tier-badge{background:rgba(245,200,66,.08);color:var(--gold);border:1px solid rgba(245,200,66,.15);}
+.tier-director .tier-badge{background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid rgba(34,211,238,.15);}
+.tier-senior .tier-badge{background:rgba(59,130,246,.08);color:#93c5fd;border:1px solid rgba(59,130,246,.15);}
+.tier-ops .tier-badge{background:rgba(34,197,94,.06);color:var(--green);border:1px solid rgba(34,197,94,.12);}
+
+/* ══════════════════════════════════════════════════════════════
+   LIVE TERMINAL
+   ══════════════════════════════════════════════════════════════ */
+.terminal-section{margin-top:48px;}
+.terminal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.terminal-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;}
+.terminal-controls{display:flex;gap:8px;}
+.term-btn{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--b);background:transparent;color:var(--muted);transition:.2s;font-family:inherit;}
+.term-btn:hover{color:white;border-color:var(--b2);}
+.term-btn.active{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--cyan);}
+
+.terminal{background:rgba(0,0,0,.4);border:1px solid var(--b);border-radius:16px;overflow:hidden;}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:rgba(0,0,0,.3);border-bottom:1px solid var(--b);}
+.term-dot{width:10px;height:10px;border-radius:50%;}
+.term-dot.r{background:#ff5f57;}.term-dot.y{background:#febc2e;}.term-dot.g{background:#28c840;}
+.term-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-left:8px;}
+.term-live{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);font-weight:600;}
+
+.term-body{max-height:420px;overflow-y:auto;padding:4px 0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8;}
+.term-body::-webkit-scrollbar{width:4px;}
+.term-body::-webkit-scrollbar-track{background:transparent;}
+.term-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
+
+.term-line{display:flex;align-items:flex-start;gap:10px;padding:4px 18px;transition:background .15s;}
+.term-line:hover{background:rgba(255,255,255,.02);}
+.term-time{color:var(--muted2);flex-shrink:0;min-width:62px;}
+.term-icon{flex-shrink:0;min-width:18px;text-align:center;}
+.term-agent{color:var(--cyan);font-weight:600;flex-shrink:0;min-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.term-msg{color:var(--text);word-break:break-word;flex:1;}
+.term-line.error .term-msg{color:rgba(252,165,165,.9);}
+.term-line.warning .term-msg{color:rgba(253,224,138,.9);}
+.term-line.milestone .term-msg{color:rgba(216,180,254,.9);}
+.term-line.milestone .term-agent{color:var(--purple);}
+
+/* REFRESH */
+.refresh-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(4,9,26,.95);backdrop-filter:blur(10px);border-top:1px solid var(--b);padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);}
+.refresh-btn{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);color:var(--cyan);padding:6px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;transition:.2s;}
+.refresh-btn:hover{background:rgba(34,211,238,.2);}
 .countdown{font-family:'JetBrains Mono',monospace;color:var(--cyan);}
 
-/* EMPTY */
-.empty{text-align:center;padding:40px 20px;color:var(--muted);}
-.empty-icon{font-size:32px;margin-bottom:12px;}
-.empty-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px;}
-.empty-sub{font-size:13px;}
-
 /* RESPONSIVE */
-@media(max-width:600px){
-  .page{padding:90px 4% 60px;}
-  .kpi-row{grid-template-columns:1fr 1fr;}
-  .agent-msg{max-width:160px;}
+@media(max-width:768px){
+  .pyr-row{flex-direction:column;align-items:center;}
+  .agent-node{min-width:280px;max-width:100%;}
+  .hero-stats{flex-wrap:wrap;gap:16px;}
+  .connector{display:none;}
 }
 </style>
 </head>
 <body>
 <div class="scan"></div>
-<div class="bg-wrap"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div></div>
+<div class="bg-wrap"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
 
 <!-- NAV -->
 <nav>
@@ -160,8 +188,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.92);
   <div class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Investissement</a>
-    <a href="dashboard-agents.html" class="active">Agents</a>
+    <a href="investissement.html">Robot Trader</a>
+    <a href="dashboard-agents.html" class="active">Agents IA</a>
     <a href="communaute.html">Communauté</a>
     <a href="newsletter.html" id="nav-cta-btn" class="nav-cta">S'abonner</a>
   </div>
@@ -170,304 +198,437 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.92);
 <!-- GATE ABONNÉS -->
 <div id="ab-gate"></div>
 
-<!-- CONTENU PROTÉGÉ (caché par défaut) -->
+<!-- CONTENU PROTÉGÉ -->
 <div id="ab-content" style="display:none;">
-
 <div class="page">
 
-  <!-- HEADER -->
-  <div class="page-header">
-    <div>
-      <div class="page-title">🤖 Dashboard Agents IA</div>
-      <div class="page-sub">Activité en temps réel de tous les agents AlphaBot — mise à jour automatique</div>
-    </div>
-    <div style="text-align:right">
-      <div class="live-badge" style="margin-bottom:8px">
-        <span class="live-dot"></span>
-        LIVE
-      </div>
-      <div class="last-update" id="lastUpdate">Chargement...</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge"><span class="live-dot"></span> Système en activité</div>
+    <h1>Plongez dans le<br><span>cerveau d'AlphaBot</span></h1>
+    <p>13 agents IA travaillent en autonomie pour analyser les marchés, rédiger votre newsletter et gérer le portefeuille. Observez-les en temps réel.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val cyan" id="statAgents">—</div><div class="hero-stat-label">Agents actifs</div></div>
+      <div class="hero-stat"><div class="hero-stat-val green" id="statSuccess">—</div><div class="hero-stat-label">Tâches réussies</div></div>
+      <div class="hero-stat"><div class="hero-stat-val gold" id="statEvents">—</div><div class="hero-stat-label">Événements / jour</div></div>
     </div>
   </div>
 
-  <!-- KPI ROW -->
-  <div class="kpi-row" id="kpiRow">
-    <div class="kpi"><div class="kpi-val cyan" id="kpiTotal">—</div><div class="kpi-label">Événements aujourd'hui</div></div>
-    <div class="kpi"><div class="kpi-val green" id="kpiSuccess">—</div><div class="kpi-label">Succès</div></div>
-    <div class="kpi"><div class="kpi-val red" id="kpiErrors">—</div><div class="kpi-label">Erreurs</div></div>
-    <div class="kpi"><div class="kpi-val purple" id="kpiMilestones">—</div><div class="kpi-label">Jalons atteints</div></div>
-    <div class="kpi"><div class="kpi-val gold" id="kpiAgents">—</div><div class="kpi-label">Agents actifs</div></div>
-  </div>
+  <!-- ═══════════════════════════════════════════
+       PYRAMIDE HIÉRARCHIQUE
+       ═══════════════════════════════════════════ -->
+  <div class="pyramid">
+    <div class="pyramid-title">Hiérarchie du système</div>
 
-  <!-- FILTER TABS -->
-  <div class="filter-tabs">
-    <button class="tab active" onclick="setFilter('all')">Tout</button>
-    <button class="tab" onclick="setFilter('success')">✅ Succès</button>
-    <button class="tab" onclick="setFilter('error')">❌ Erreurs</button>
-    <button class="tab" onclick="setFilter('milestone')">🏆 Jalons</button>
-    <button class="tab" onclick="setFilter('warning')">⚠️ Alertes</button>
-    <button class="tab" onclick="setFilter('start')">🚀 Démarrages</button>
-  </div>
-
-  <!-- MAIN GRID -->
-  <div class="two-col">
-
-    <!-- LEFT: Status agents -->
-    <div>
-      <div class="section-title">État des agents</div>
-      <div class="agents-grid" id="agentsGrid">
-        <div class="empty"><div class="empty-icon">🤖</div><div class="empty-title">Chargement...</div></div>
-      </div>
-    </div>
-
-    <!-- RIGHT: Live feed -->
-    <div>
-      <div class="section-title">Journal d'activité</div>
-      <div class="feed-wrap">
-        <div class="feed-header">
-          <div style="font-size:13px;font-weight:600;color:white">Derniers événements</div>
-          <div style="font-size:11px;color:var(--muted)" id="feedCount">0 événements</div>
-        </div>
-        <div class="feed-scroll" id="feedScroll">
-          <div class="empty"><div class="empty-icon">📡</div><div class="empty-title">En attente de données...</div><div class="empty-sub">Lance l'orchestrateur ou rattrapage.py pour voir l'activité</div></div>
+    <!-- TIER 1 : CEO -->
+    <div class="tier-ceo">
+      <div class="tier-label"><span class="tier-badge">Direction</span></div>
+      <div class="pyr-row" style="max-width:300px;margin:0 auto;">
+        <div class="agent-node" id="node-orchestrateur" onclick="focusAgent('Orchestrateur')">
+          <div class="node-head">
+            <div class="node-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <div>
+              <div class="node-name">Orchestrateur</div>
+              <div class="node-role">Cerveau central</div>
+            </div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-orchestrateur"></span><span class="status-text idle" id="status-orchestrateur">Chargement...</span></div>
+          <div class="node-task" id="task-orchestrateur">En attente de données...</div>
+          <div class="node-stats" id="stats-orchestrateur"></div>
         </div>
       </div>
     </div>
 
+    <!-- Connector -->
+    <div class="connector">
+      <svg width="200" height="32" viewBox="0 0 200 32"><line x1="100" y1="0" x2="40" y2="32" stroke="rgba(255,255,255,.08)" stroke-width="1"/><line x1="100" y1="0" x2="160" y2="32" stroke="rgba(255,255,255,.08)" stroke-width="1"/></svg>
+    </div>
+
+    <!-- TIER 2 : Directeurs -->
+    <div class="tier-director">
+      <div class="tier-label"><span class="tier-badge">Directeurs</span></div>
+      <div class="pyr-row" style="max-width:620px;margin:0 auto;">
+        <div class="agent-node" id="node-adjoint" onclick="focusAgent('Directeur Adjoint')">
+          <div class="node-head">
+            <div class="node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="node-name">Directeur Adjoint</div>
+              <div class="node-role">Supervision & rapports CEO</div>
+            </div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-adjoint"></span><span class="status-text idle" id="status-adjoint">—</span></div>
+          <div class="node-task" id="task-adjoint">—</div>
+          <div class="node-stats" id="stats-adjoint"></div>
+        </div>
+        <div class="agent-node" id="node-cfo" onclick="focusAgent('Agent CFO')">
+          <div class="node-head">
+            <div class="node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <div class="node-name">Agent CFO</div>
+              <div class="node-role">Finances & projections</div>
+            </div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-cfo"></span><span class="status-text idle" id="status-cfo">—</span></div>
+          <div class="node-task" id="task-cfo">—</div>
+          <div class="node-stats" id="stats-cfo"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="connector">
+      <svg width="600" height="32" viewBox="0 0 600 32"><line x1="150" y1="0" x2="75" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="150" y1="0" x2="200" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="450" y1="0" x2="350" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="450" y1="0" x2="525" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/></svg>
+    </div>
+
+    <!-- TIER 3 : Agents Seniors -->
+    <div class="tier-senior">
+      <div class="tier-label"><span class="tier-badge">Agents Stratégiques</span></div>
+      <div class="pyr-row" style="max-width:900px;margin:0 auto;">
+        <div class="agent-node" id="node-veille" onclick="focusAgent('Agent Veille')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <div><div class="node-name">Agent Veille</div><div class="node-role">Données marchés</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-veille"></span><span class="status-text idle" id="status-veille">—</span></div>
+          <div class="node-task" id="task-veille">—</div>
+          <div class="node-stats" id="stats-veille"></div>
+        </div>
+        <div class="agent-node" id="node-analyste" onclick="focusAgent('Agent Analyste')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M20.5 7.3 12 12V2c3.2 0 6 1.2 8.5 3.3z" fill="rgba(147,197,253,.15)"/></svg></div>
+            <div><div class="node-name">Agent Analyste</div><div class="node-role">Analyse IA macro/crypto</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-analyste"></span><span class="status-text idle" id="status-analyste">—</span></div>
+          <div class="node-task" id="task-analyste">—</div>
+          <div class="node-stats" id="stats-analyste"></div>
+        </div>
+        <div class="agent-node" id="node-investissement" onclick="focusAgent('Agent Investissement')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+            <div><div class="node-name">Agent Investissement</div><div class="node-role">Robot Trader IA</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-investissement"></span><span class="status-text idle" id="status-investissement">—</span></div>
+          <div class="node-task" id="task-investissement">—</div>
+          <div class="node-stats" id="stats-investissement"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connector -->
+    <div class="connector">
+      <svg width="800" height="28" viewBox="0 0 800 28"><line x1="200" y1="0" x2="100" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="400" y1="0" x2="280" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="400" y1="0" x2="520" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="600" y1="0" x2="700" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/></svg>
+    </div>
+
+    <!-- TIER 4 : Opérations -->
+    <div class="tier-ops">
+      <div class="tier-label"><span class="tier-badge">Opérations</span></div>
+      <div class="pyr-row" style="max-width:1200px;margin:0 auto;">
+        <div class="agent-node" id="node-redacteur" onclick="focusAgent('Agent Rédacteur')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+            <div><div class="node-name">Rédacteur</div><div class="node-role">Newsletter</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-redacteur"></span><span class="status-text idle" id="status-redacteur">—</span></div>
+          <div class="node-task" id="task-redacteur">—</div>
+          <div class="node-stats" id="stats-redacteur"></div>
+        </div>
+        <div class="agent-node" id="node-growth" onclick="focusAgent('Agent Growth')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+            <div><div class="node-name">Growth</div><div class="node-role">Abonnés</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-growth"></span><span class="status-text idle" id="status-growth">—</span></div>
+          <div class="node-task" id="task-growth">—</div>
+          <div class="node-stats" id="stats-growth"></div>
+        </div>
+        <div class="agent-node" id="node-da" onclick="focusAgent('Agent DA Site')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
+            <div><div class="node-name">DA Site</div><div class="node-role">Design</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-da"></span><span class="status-text idle" id="status-da">—</span></div>
+          <div class="node-task" id="task-da">—</div>
+          <div class="node-stats" id="stats-da"></div>
+        </div>
+        <div class="agent-node" id="node-commercial" onclick="focusAgent('Agent Commercial')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div><div class="node-name">Commercial</div><div class="node-role">Sponsors</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-commercial"></span><span class="status-text idle" id="status-commercial">—</span></div>
+          <div class="node-task" id="task-commercial">—</div>
+          <div class="node-stats" id="stats-commercial"></div>
+        </div>
+        <div class="agent-node" id="node-booster" onclick="focusAgent('Agent Growth Booster')">
+          <div class="node-head">
+            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div><div class="node-name">Booster</div><div class="node-role">Croissance</div></div>
+          </div>
+          <div class="node-status"><span class="status-dot idle" id="dot-booster"></span><span class="status-text idle" id="status-booster">—</span></div>
+          <div class="node-task" id="task-booster">—</div>
+          <div class="node-stats" id="stats-booster"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pyramid -->
+
+  <!-- ═══════════════════════════════════════════
+       TERMINAL LIVE
+       ═══════════════════════════════════════════ -->
+  <div class="terminal-section">
+    <div class="terminal-header">
+      <div class="terminal-title">Terminal en direct</div>
+      <div class="terminal-controls">
+        <button class="term-btn active" onclick="setFilter('all',this)">Tout</button>
+        <button class="term-btn" onclick="setFilter('success',this)">Succès</button>
+        <button class="term-btn" onclick="setFilter('error',this)">Erreurs</button>
+        <button class="term-btn" onclick="setFilter('milestone',this)">Jalons</button>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
+        <span class="term-title">alphabot-agents.log</span>
+        <div class="term-live"><span class="live-dot" style="width:6px;height:6px;"></span>LIVE</div>
+      </div>
+      <div class="term-body" id="termBody">
+        <div style="padding:40px;text-align:center;color:var(--muted)">Connexion au flux en cours...</div>
+      </div>
+    </div>
   </div>
 
-</div>
+</div><!-- /page -->
 
 <!-- REFRESH BAR -->
 <div class="refresh-bar">
-  <span>Actualisation auto dans <span class="countdown" id="countdown">30s</span></span>
-  <button class="refresh-btn" onclick="loadFeed()">↻ Actualiser maintenant</button>
+  <span>Prochaine mise à jour dans <span class="countdown" id="countdown">30s</span></span>
+  <button class="refresh-btn" onclick="loadFeed()">↻ Actualiser</button>
 </div>
 
-<script>
-// ─── CONFIG ───────────────────────────────────────────────────────────────────
-const FEED_URL   = 'data/activity_feed.json';
-const REFRESH_MS = 30000;  // 30s
+</div><!-- /ab-content -->
 
-// ─── STATE ────────────────────────────────────────────────────────────────────
+<script>
+// ═══════════════════════════════════════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════════════════════════════════════
+const FEED_URL   = 'data/activity_feed.json';
+const REFRESH_MS = 30000;
+
 let currentFilter = 'all';
-let allEvents     = [];
-let allAgents     = [];
-let countdownVal  = 30;
+let allEvents = [];
+let allAgents = [];
+let countdownVal = 30;
 let countdownTimer;
 
-// ─── ICONS & LABELS ───────────────────────────────────────────────────────────
-const TYPE_ICON = {
-  success:  '✅', error: '❌', warning: '⚠️', info: 'ℹ️',
-  progress: '⏳', start: '🚀', milestone: '🏆'
-};
-const AGENT_EMOJI = {
-  'Orchestrateur':       '⚡',
-  'Agent Veille':        '🔍',
-  'Agent Analyste':      '🧠',
-  'Agent Rédacteur':     '✍️',
-  'Agent Growth':        '📈',
-  'Agent DA Site':       '🎨',
-  'Agent Investissement':'💰',
-  'Agent Twitter':       '🐦',
-  'Directeur Adjoint':   '🤝',
-  'Agent Analytics':     '📊',
-  'Agent CFO':           '💼',
-  'Agent Commercial':    '📣',
-  'Agent Growth Booster':'🚀',
+// Agent ID → node mapping
+const AGENT_MAP = {
+  'Orchestrateur':        {id:'orchestrateur', tier:'ceo'},
+  'Directeur Adjoint':    {id:'adjoint',       tier:'director'},
+  'Agent CFO':            {id:'cfo',           tier:'director'},
+  'Agent Veille':         {id:'veille',        tier:'senior'},
+  'Agent Analyste':       {id:'analyste',      tier:'senior'},
+  'Agent Investissement': {id:'investissement',tier:'senior'},
+  'Agent Rédacteur':      {id:'redacteur',     tier:'ops'},
+  'Agent Growth':         {id:'growth',        tier:'ops'},
+  'Agent DA Site':        {id:'da',            tier:'ops'},
+  'Agent Commercial':     {id:'commercial',    tier:'ops'},
+  'Agent Growth Booster': {id:'booster',       tier:'ops'},
+  'Agent Analytics':      {id:'analytics',     tier:'ops'},
+  'Agent Twitter':        {id:'twitter',       tier:'ops'},
 };
 
-// ─── HELPERS ──────────────────────────────────────────────────────────────────
+const TYPE_ICON = {
+  success:'✅', error:'❌', warning:'⚠️', info:'ℹ️',
+  progress:'⏳', start:'🚀', milestone:'🏆'
+};
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+function timeOnly(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+
 function formatTs(ts) {
   if (!ts) return '—';
   const d = new Date(ts);
   const now = new Date();
-  const diffMs = now - d;
-  const diffMin = Math.floor(diffMs / 60000);
-  const diffH = Math.floor(diffMin / 60);
-
+  const diffMin = Math.floor((now - d) / 60000);
   if (diffMin < 1)  return 'À l\'instant';
-  if (diffMin < 60) return `Il y a ${diffMin} min`;
-  if (diffH < 24)   return `Il y a ${diffH}h${String(diffMin % 60).padStart(2,'0')}`;
-
-  return d.toLocaleDateString('fr-FR', { day:'2-digit', month:'short' }) + ' ' +
-         d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+  if (diffMin < 60) return `il y a ${diffMin}min`;
+  const diffH = Math.floor(diffMin / 60);
+  if (diffH < 24)   return `il y a ${diffH}h`;
+  return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'});
 }
 
-function timeOnly(ts) {
-  if (!ts) return '';
-  const d = new Date(ts);
-  return d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
-}
-
-function agentEmoji(name) {
-  for (const [k, v] of Object.entries(AGENT_EMOJI)) {
-    if (name && name.includes(k.replace('Agent ', '').replace('Orchestrateur', 'Orchestrateur'))) return v;
-  }
-  return AGENT_EMOJI[name] || '🤖';
-}
-
-function escapeTxt(str) {
+function esc(s) {
   const d = document.createElement('div');
-  d.textContent = str || '';
+  d.textContent = s || '';
   return d.innerHTML;
 }
 
-// ─── FILTER ───────────────────────────────────────────────────────────────────
-function setFilter(f) {
-  currentFilter = f;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
-  renderFeed();
-}
-
-// ─── RENDER KPIS ──────────────────────────────────────────────────────────────
-function renderKpis(events, agents) {
-  const today = new Date().toISOString().slice(0, 10);
-  const todayEvs = events.filter(e => (e.ts || '').startsWith(today));
-
-  document.getElementById('kpiTotal').textContent     = todayEvs.length;
-  document.getElementById('kpiSuccess').textContent   = todayEvs.filter(e => e.type === 'success').length;
-  document.getElementById('kpiErrors').textContent    = todayEvs.filter(e => e.type === 'error').length;
-  document.getElementById('kpiMilestones').textContent= todayEvs.filter(e => e.type === 'milestone').length;
-  document.getElementById('kpiAgents').textContent    = new Set(todayEvs.map(e => e.agent)).size;
-}
-
-// ─── RENDER AGENTS ────────────────────────────────────────────────────────────
-function renderAgents(agents) {
-  const grid = document.getElementById('agentsGrid');
-  if (!agents || !agents.length) {
-    grid.innerHTML = '<div class="empty"><div class="empty-icon">🤖</div><div class="empty-title">Aucun agent actif</div><div class="empty-sub">Démarre l\'orchestrateur pour voir l\'activité</div></div>';
-    return;
+function resolveAgent(name) {
+  if (!name) return null;
+  for (const [key, val] of Object.entries(AGENT_MAP)) {
+    if (name.includes(key.replace('Agent ',''))) return val;
   }
-
-  // Sort: errors first, then by last_ts desc
-  const sorted = [...agents].sort((a, b) => {
-    const aErr = a.last_type === 'error' ? 1 : 0;
-    const bErr = b.last_type === 'error' ? 1 : 0;
-    if (aErr !== bErr) return bErr - aErr;
-    return (b.last_ts || '').localeCompare(a.last_ts || '');
-  });
-
-  grid.innerHTML = sorted.map(ag => {
-    const emoji = agentEmoji(ag.agent);
-    const t = ag.last_type || 'info';
-    const ts = formatTs(ag.last_ts);
-    const msg = (ag.last_message || '').slice(0, 55) + ((ag.last_message || '').length > 55 ? '…' : '');
-
-    // Mini stats bar
-    const ok  = ag.successes_today || 0;
-    const err = ag.errors_today    || 0;
-    const tot = ag.total_today     || 0;
-
-    return `
-    <div class="agent-card">
-      <div class="agent-icon ${t}">${emoji}</div>
-      <div style="flex:1;min-width:0">
-        <div class="agent-name">${escapeTxt(ag.agent)}</div>
-        <div class="agent-msg">${escapeTxt(msg)}</div>
-        ${tot > 0 ? `<div style="font-size:10px;color:var(--muted2);margin-top:3px">${ok}✅ ${err > 0 ? err+'❌' : ''} · ${tot} evt/jour</div>` : ''}
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
-        <span class="agent-status ${t}">${t.toUpperCase()}</span>
-        <span class="agent-time">${ts}</span>
-      </div>
-    </div>`;
-  }).join('');
+  return AGENT_MAP[name] || null;
 }
 
-// ─── RENDER FEED ──────────────────────────────────────────────────────────────
-function renderFeed() {
-  const scroll = document.getElementById('feedScroll');
-  const count  = document.getElementById('feedCount');
+// ═══════════════════════════════════════════════════════════════════════════════
+// RENDER PYRAMID NODES
+// ═══════════════════════════════════════════════════════════════════════════════
+function updatePyramid(agents, events) {
+  const today = new Date().toISOString().slice(0,10);
+  const todayEvs = events.filter(e => (e.ts||'').startsWith(today));
 
+  // Stats header
+  document.getElementById('statAgents').textContent = new Set(todayEvs.map(e=>e.agent)).size;
+  document.getElementById('statSuccess').textContent = todayEvs.filter(e=>e.type==='success').length;
+  document.getElementById('statEvents').textContent = todayEvs.length;
+
+  // Update each known agent node
+  agents.forEach(ag => {
+    const mapped = resolveAgent(ag.agent);
+    if (!mapped) return;
+    const id = mapped.id;
+
+    const dot    = document.getElementById('dot-'+id);
+    const status = document.getElementById('status-'+id);
+    const task   = document.getElementById('task-'+id);
+    const stats  = document.getElementById('stats-'+id);
+    const node   = document.getElementById('node-'+id);
+
+    if (!dot) return;
+
+    // Determine status
+    const isError = ag.last_type === 'error';
+    const isActive = ag.last_type === 'progress' || ag.last_type === 'start';
+    const cls = isError ? 'error' : (ag.total_today > 0 ? 'online' : 'idle');
+
+    dot.className = 'status-dot ' + cls;
+    status.className = 'status-text ' + cls;
+    status.textContent = isError ? 'Erreur' : (isActive ? 'En cours...' : (ag.total_today > 0 ? 'Actif' : 'En veille'));
+
+    // Last task
+    const msg = ag.last_message || '—';
+    task.textContent = msg.length > 80 ? msg.slice(0,77)+'...' : msg;
+    task.className = 'node-task' + (ag.total_today > 0 ? ' active' : '');
+
+    // Stats
+    const ok = ag.successes_today || 0;
+    const err = ag.errors_today || 0;
+    stats.innerHTML = `
+      <span class="node-stat" style="color:var(--green)">${ok} ✓</span>
+      ${err > 0 ? `<span class="node-stat" style="color:var(--red)">${err} ✗</span>` : ''}
+      <span class="node-stat">${formatTs(ag.last_ts)}</span>
+    `;
+
+    // Active glow
+    if (node) {
+      node.classList.toggle('active-now', isActive);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RENDER TERMINAL
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderTerminal() {
+  const body = document.getElementById('termBody');
   let filtered = currentFilter === 'all'
     ? allEvents
     : allEvents.filter(e => e.type === currentFilter);
 
-  count.textContent = `${filtered.length} événement${filtered.length > 1 ? 's' : ''}`;
-
   if (!filtered.length) {
-    scroll.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><div class="empty-title">Aucun événement</div><div class="empty-sub">Essaie un autre filtre</div></div>';
+    body.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">Aucun événement à afficher</div>';
     return;
   }
 
-  scroll.innerHTML = filtered.map(e => {
+  body.innerHTML = filtered.slice(0, 60).map(e => {
     const icon = TYPE_ICON[e.type] || 'ℹ️';
-    const t    = e.type || 'info';
-    const time = timeOnly(e.ts);
-    return `
-    <div class="feed-event ev-${t}">
-      <div class="ev-icon">${icon}</div>
-      <div class="ev-body">
-        <div class="ev-agent">${escapeTxt(e.agent || '')}</div>
-        <div class="ev-msg">${escapeTxt(e.message || '')}</div>
-      </div>
-      <div class="ev-time">${time}</div>
+    const t = e.type || 'info';
+    return `<div class="term-line ${t}">
+      <span class="term-time">${timeOnly(e.ts)}</span>
+      <span class="term-icon">${icon}</span>
+      <span class="term-agent">${esc(e.agent||'')}</span>
+      <span class="term-msg">${esc(e.message||'')}</span>
     </div>`;
   }).join('');
 }
 
-// ─── LOAD FEED ────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+// FILTER & FOCUS
+// ═══════════════════════════════════════════════════════════════════════════════
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.term-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderTerminal();
+}
+
+function focusAgent(agentName) {
+  // Scroll to terminal and filter by this agent
+  const body = document.getElementById('termBody');
+  const filtered = allEvents.filter(e => e.agent && e.agent.includes(agentName.replace('Agent ','')));
+
+  if (filtered.length) {
+    body.innerHTML = filtered.slice(0,30).map(e => {
+      const icon = TYPE_ICON[e.type]||'ℹ️';
+      return `<div class="term-line ${e.type||'info'}">
+        <span class="term-time">${timeOnly(e.ts)}</span>
+        <span class="term-icon">${icon}</span>
+        <span class="term-agent">${esc(e.agent||'')}</span>
+        <span class="term-msg">${esc(e.message||'')}</span>
+      </div>`;
+    }).join('');
+  }
+
+  document.querySelector('.terminal-section').scrollIntoView({behavior:'smooth'});
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// LOAD
+// ═══════════════════════════════════════════════════════════════════════════════
 async function loadFeed() {
   try {
     const r = await fetch(FEED_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
 
-    allEvents = data.events  || [];
-    allAgents = data.agents  || [];
+    allEvents = data.events || [];
+    allAgents = data.agents || [];
 
-    renderKpis(allEvents, allAgents);
-    renderAgents(allAgents);
-    renderFeed();
-
-    const genAt = data.generated_at ? new Date(data.generated_at) : null;
-    const timeStr = genAt ? genAt.toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit',second:'2-digit'}) : '—';
-    document.getElementById('lastUpdate').textContent = 'Mis à jour à ' + timeStr;
-
+    updatePyramid(allAgents, allEvents);
+    renderTerminal();
     resetCountdown();
   } catch(err) {
-    console.warn('Feed non disponible:', err.message);
-    document.getElementById('lastUpdate').textContent = 'Feed non disponible — lance rattrapage.py';
-
-    // Afficher un message utile dans le feed
-    document.getElementById('feedScroll').innerHTML = `
-      <div class="empty">
-        <div class="empty-icon">📡</div>
-        <div class="empty-title">Données non disponibles</div>
-        <div class="empty-sub">Lance <code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px">rattrapage.py</code> ou l'orchestrateur pour générer le feed</div>
-      </div>`;
-    document.getElementById('agentsGrid').innerHTML = `
-      <div class="empty">
-        <div class="empty-icon">🤖</div>
-        <div class="empty-title">En attente</div>
-        <div class="empty-sub">Aucun agent actif détecté</div>
-      </div>`;
+    console.warn('Feed:', err.message);
   }
 }
 
-// ─── COUNTDOWN ────────────────────────────────────────────────────────────────
 function resetCountdown() {
   clearInterval(countdownTimer);
-  countdownVal = Math.round(REFRESH_MS / 1000);
-  document.getElementById('countdown').textContent = countdownVal + 's';
-
-  countdownTimer = setInterval(() => {
+  countdownVal = 30;
+  document.getElementById('countdown').textContent = '30s';
+  countdownTimer = setInterval(()=>{
     countdownVal--;
     document.getElementById('countdown').textContent = countdownVal + 's';
-    if (countdownVal <= 0) {
-      clearInterval(countdownTimer);
-      loadFeed();
-    }
-  }, 1000);
+    if(countdownVal<=0){clearInterval(countdownTimer);loadFeed();}
+  },1000);
 }
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
 loadFeed();
 </script>
-
-</div><!-- /ab-content -->
 
 <script src="gate_subscriber.js"></script>
 </body>
