@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AlphaBot — Dashboard Agents IA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#04091a;--bg2:#060d1f;--card:rgba(255,255,255,.03);--card2:rgba(255,255,255,.05);
+  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.13);
+  --gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
+  --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--purple:#a855f7;
+  --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh;}
+
+/* BG */
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.02)1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.02)1px,transparent 1px);background-size:50px 50px;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);}
+.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.08),transparent 65%);top:-200px;left:-200px;animation:of 10s ease-in-out infinite alternate;}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.06),transparent 65%);bottom:-100px;right:-100px;animation:of 13s ease-in-out infinite alternate-reverse;}
+@keyframes of{from{transform:translate(0,0);}to{transform:translate(20px,15px);}}
+.scan{position:fixed;top:0;left:0;right:0;height:1px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:sc 10s ease-in-out infinite;opacity:.25;}
+@keyframes sc{0%{top:0;opacity:0;}8%{opacity:.35;}92%{opacity:.35;}100%{top:100%;opacity:0;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;transition:all .3s;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:500;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white!important;padding:7px 16px;border-radius:8px;font-weight:600!important;font-size:12px!important;}
+
+/* LAYOUT */
+.page{position:relative;z-index:1;padding:100px 5% 60px;max-width:1400px;margin:0 auto;}
+
+/* HEADER */
+.page-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
+.page-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:800;color:white;margin-bottom:6px;}
+.page-sub{font-size:14px;color:var(--muted);max-width:480px;}
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:50px;padding:8px 18px;font-size:12px;font-weight:700;color:var(--green);}
+.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.4);}}
+
+/* LAST UPDATED */
+.last-update{font-size:11px;color:var(--muted2);font-family:'JetBrains Mono',monospace;text-align:right;}
+
+/* KPI ROW */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:32px;}
+.kpi{background:var(--card);border:1px solid var(--b);border-radius:14px;padding:18px 20px;transition:border-color .2s;}
+.kpi:hover{border-color:var(--b2);}
+.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;margin-bottom:4px;line-height:1;}
+.kpi-label{font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;}
+.kpi-val.green{color:var(--green);}
+.kpi-val.red{color:var(--red);}
+.kpi-val.gold{color:var(--gold);}
+.kpi-val.cyan{color:var(--cyan);}
+.kpi-val.purple{color:var(--purple);}
+
+/* TWO-COLUMN */
+.two-col{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:start;}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;}}
+
+/* SECTION */
+.section-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:'';width:3px;height:14px;background:var(--cyan);border-radius:2px;}
+
+/* AGENT CARDS */
+.agents-grid{display:flex;flex-direction:column;gap:10px;}
+.agent-card{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:border-color .2s,background .2s;cursor:default;}
+.agent-card:hover{background:var(--card2);border-color:var(--b2);}
+.agent-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.agent-icon.success{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);}
+.agent-icon.error{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2);}
+.agent-icon.warning{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.2);}
+.agent-icon.info,.agent-icon.progress{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);}
+.agent-icon.milestone{background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.2);}
+.agent-icon.start{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.2);}
+.agent-name{font-size:13px;font-weight:600;color:white;margin-bottom:2px;}
+.agent-msg{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;}
+.agent-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);margin-left:auto;flex-shrink:0;text-align:right;}
+.agent-status{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;flex-shrink:0;}
+.agent-status.success{background:rgba(34,197,94,.12);color:var(--green);}
+.agent-status.error{background:rgba(239,68,68,.12);color:var(--red);}
+.agent-status.warning{background:rgba(245,158,11,.12);color:var(--yellow);}
+.agent-status.info,.agent-status.progress,.agent-status.start{background:rgba(59,130,246,.12);color:#93c5fd;}
+.agent-status.milestone{background:rgba(168,85,247,.12);color:#d8b4fe;}
+
+/* LIVE FEED */
+.feed-wrap{background:var(--card);border:1px solid var(--b);border-radius:14px;overflow:hidden;max-height:680px;display:flex;flex-direction:column;}
+.feed-header{padding:14px 18px;border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.feed-scroll{overflow-y:auto;flex:1;padding:8px 0;}
+.feed-scroll::-webkit-scrollbar{width:4px;}
+.feed-scroll::-webkit-scrollbar-track{background:transparent;}
+.feed-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
+
+.feed-event{display:flex;align-items:flex-start;gap:10px;padding:9px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .15s;}
+.feed-event:hover{background:rgba(255,255,255,.02);}
+.feed-event:last-child{border-bottom:none;}
+
+.ev-icon{font-size:14px;flex-shrink:0;width:20px;text-align:center;margin-top:1px;}
+.ev-body{flex:1;min-width:0;}
+.ev-agent{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1px;}
+.ev-msg{font-size:12px;color:var(--text);line-height:1.5;word-break:break-word;}
+.ev-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);flex-shrink:0;margin-top:2px;}
+
+.ev-success .ev-msg{color:rgba(226,232,240,.95);}
+.ev-error .ev-msg{color:rgba(252,165,165,.9);}
+.ev-warning .ev-msg{color:rgba(253,230,138,.9);}
+.ev-milestone .ev-msg{color:rgba(216,180,254,.9);}
+
+/* FILTER TABS */
+.filter-tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;}
+.tab{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--b);background:transparent;color:var(--muted);transition:.2s;font-family:inherit;}
+.tab:hover{color:white;border-color:var(--b2);}
+.tab.active{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.4);color:#93c5fd;}
+
+/* AGENT TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:4px;margin-top:8px;}
+.tl-item{display:flex;align-items:center;gap:8px;font-size:12px;}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.tl-dot.success{background:var(--green);}
+.tl-dot.error{background:var(--red);}
+.tl-dot.warning{background:var(--yellow);}
+.tl-dot.info,.tl-dot.progress,.tl-dot.start{background:var(--blue);}
+.tl-dot.milestone{background:var(--purple);}
+.tl-text{color:var(--muted);}
+
+/* REFRESH BAR */
+.refresh-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(4,9,26,.95);border-top:1px solid var(--b);padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);}
+.refresh-btn{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#93c5fd;padding:6px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;transition:.2s;}
+.refresh-btn:hover{background:rgba(59,130,246,.25);}
+.countdown{font-family:'JetBrains Mono',monospace;color:var(--cyan);}
+
+/* EMPTY */
+.empty{text-align:center;padding:40px 20px;color:var(--muted);}
+.empty-icon{font-size:32px;margin-bottom:12px;}
+.empty-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.empty-sub{font-size:13px;}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .page{padding:90px 4% 60px;}
+  .kpi-row{grid-template-columns:1fr 1fr;}
+  .agent-msg{max-width:160px;}
+}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="bg-wrap"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div></div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">⚡ AlphaBot Weekly</a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="investissement.html">Investissement</a>
+    <a href="dashboard-agents.html" class="active">Agents</a>
+    <a href="communaute.html">Communauté</a>
+    <a href="newsletter.html" id="nav-cta-btn" class="nav-cta">S'abonner</a>
+  </div>
+</nav>
+
+<!-- GATE ABONNÉS -->
+<div id="ab-gate"></div>
+
+<!-- CONTENU PROTÉGÉ (caché par défaut) -->
+<div id="ab-content" style="display:none;">
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <div>
+      <div class="page-title">🤖 Dashboard Agents IA</div>
+      <div class="page-sub">Activité en temps réel de tous les agents AlphaBot — mise à jour automatique</div>
+    </div>
+    <div style="text-align:right">
+      <div class="live-badge" style="margin-bottom:8px">
+        <span class="live-dot"></span>
+        LIVE
+      </div>
+      <div class="last-update" id="lastUpdate">Chargement...</div>
+    </div>
+  </div>
+
+  <!-- KPI ROW -->
+  <div class="kpi-row" id="kpiRow">
+    <div class="kpi"><div class="kpi-val cyan" id="kpiTotal">—</div><div class="kpi-label">Événements aujourd'hui</div></div>
+    <div class="kpi"><div class="kpi-val green" id="kpiSuccess">—</div><div class="kpi-label">Succès</div></div>
+    <div class="kpi"><div class="kpi-val red" id="kpiErrors">—</div><div class="kpi-label">Erreurs</div></div>
+    <div class="kpi"><div class="kpi-val purple" id="kpiMilestones">—</div><div class="kpi-label">Jalons atteints</div></div>
+    <div class="kpi"><div class="kpi-val gold" id="kpiAgents">—</div><div class="kpi-label">Agents actifs</div></div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-tabs">
+    <button class="tab active" onclick="setFilter('all')">Tout</button>
+    <button class="tab" onclick="setFilter('success')">✅ Succès</button>
+    <button class="tab" onclick="setFilter('error')">❌ Erreurs</button>
+    <button class="tab" onclick="setFilter('milestone')">🏆 Jalons</button>
+    <button class="tab" onclick="setFilter('warning')">⚠️ Alertes</button>
+    <button class="tab" onclick="setFilter('start')">🚀 Démarrages</button>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="two-col">
+
+    <!-- LEFT: Status agents -->
+    <div>
+      <div class="section-title">État des agents</div>
+      <div class="agents-grid" id="agentsGrid">
+        <div class="empty"><div class="empty-icon">🤖</div><div class="empty-title">Chargement...</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Live feed -->
+    <div>
+      <div class="section-title">Journal d'activité</div>
+      <div class="feed-wrap">
+        <div class="feed-header">
+          <div style="font-size:13px;font-weight:600;color:white">Derniers événements</div>
+          <div style="font-size:11px;color:var(--muted)" id="feedCount">0 événements</div>
+        </div>
+        <div class="feed-scroll" id="feedScroll">
+          <div class="empty"><div class="empty-icon">📡</div><div class="empty-title">En attente de données...</div><div class="empty-sub">Lance l'orchestrateur ou rattrapage.py pour voir l'activité</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- REFRESH BAR -->
+<div class="refresh-bar">
+  <span>Actualisation auto dans <span class="countdown" id="countdown">30s</span></span>
+  <button class="refresh-btn" onclick="loadFeed()">↻ Actualiser maintenant</button>
+</div>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+const FEED_URL   = 'data/activity_feed.json';
+const REFRESH_MS = 30000;  // 30s
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
+let currentFilter = 'all';
+let allEvents     = [];
+let allAgents     = [];
+let countdownVal  = 30;
+let countdownTimer;
+
+// ─── ICONS & LABELS ───────────────────────────────────────────────────────────
+const TYPE_ICON = {
+  success:  '✅', error: '❌', warning: '⚠️', info: 'ℹ️',
+  progress: '⏳', start: '🚀', milestone: '🏆'
+};
+const AGENT_EMOJI = {
+  'Orchestrateur':       '⚡',
+  'Agent Veille':        '🔍',
+  'Agent Analyste':      '🧠',
+  'Agent Rédacteur':     '✍️',
+  'Agent Growth':        '📈',
+  'Agent DA Site':       '🎨',
+  'Agent Investissement':'💰',
+  'Agent Twitter':       '🐦',
+  'Directeur Adjoint':   '🤝',
+  'Agent Analytics':     '📊',
+  'Agent CFO':           '💼',
+  'Agent Commercial':    '📣',
+  'Agent Growth Booster':'🚀',
+};
+
+// ─── HELPERS ──────────────────────────────────────────────────────────────────
+function formatTs(ts) {
+  if (!ts) return '—';
+  const d = new Date(ts);
+  const now = new Date();
+  const diffMs = now - d;
+  const diffMin = Math.floor(diffMs / 60000);
+  const diffH = Math.floor(diffMin / 60);
+
+  if (diffMin < 1)  return 'À l\'instant';
+  if (diffMin < 60) return `Il y a ${diffMin} min`;
+  if (diffH < 24)   return `Il y a ${diffH}h${String(diffMin % 60).padStart(2,'0')}`;
+
+  return d.toLocaleDateString('fr-FR', { day:'2-digit', month:'short' }) + ' ' +
+         d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit' });
+}
+
+function timeOnly(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  return d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+}
+
+function agentEmoji(name) {
+  for (const [k, v] of Object.entries(AGENT_EMOJI)) {
+    if (name && name.includes(k.replace('Agent ', '').replace('Orchestrateur', 'Orchestrateur'))) return v;
+  }
+  return AGENT_EMOJI[name] || '🤖';
+}
+
+function escapeTxt(str) {
+  const d = document.createElement('div');
+  d.textContent = str || '';
+  return d.innerHTML;
+}
+
+// ─── FILTER ───────────────────────────────────────────────────────────────────
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderFeed();
+}
+
+// ─── RENDER KPIS ──────────────────────────────────────────────────────────────
+function renderKpis(events, agents) {
+  const today = new Date().toISOString().slice(0, 10);
+  const todayEvs = events.filter(e => (e.ts || '').startsWith(today));
+
+  document.getElementById('kpiTotal').textContent     = todayEvs.length;
+  document.getElementById('kpiSuccess').textContent   = todayEvs.filter(e => e.type === 'success').length;
+  document.getElementById('kpiErrors').textContent    = todayEvs.filter(e => e.type === 'error').length;
+  document.getElementById('kpiMilestones').textContent= todayEvs.filter(e => e.type === 'milestone').length;
+  document.getElementById('kpiAgents').textContent    = new Set(todayEvs.map(e => e.agent)).size;
+}
+
+// ─── RENDER AGENTS ────────────────────────────────────────────────────────────
+function renderAgents(agents) {
+  const grid = document.getElementById('agentsGrid');
+  if (!agents || !agents.length) {
+    grid.innerHTML = '<div class="empty"><div class="empty-icon">🤖</div><div class="empty-title">Aucun agent actif</div><div class="empty-sub">Démarre l\'orchestrateur pour voir l\'activité</div></div>';
+    return;
+  }
+
+  // Sort: errors first, then by last_ts desc
+  const sorted = [...agents].sort((a, b) => {
+    const aErr = a.last_type === 'error' ? 1 : 0;
+    const bErr = b.last_type === 'error' ? 1 : 0;
+    if (aErr !== bErr) return bErr - aErr;
+    return (b.last_ts || '').localeCompare(a.last_ts || '');
+  });
+
+  grid.innerHTML = sorted.map(ag => {
+    const emoji = agentEmoji(ag.agent);
+    const t = ag.last_type || 'info';
+    const ts = formatTs(ag.last_ts);
+    const msg = (ag.last_message || '').slice(0, 55) + ((ag.last_message || '').length > 55 ? '…' : '');
+
+    // Mini stats bar
+    const ok  = ag.successes_today || 0;
+    const err = ag.errors_today    || 0;
+    const tot = ag.total_today     || 0;
+
+    return `
+    <div class="agent-card">
+      <div class="agent-icon ${t}">${emoji}</div>
+      <div style="flex:1;min-width:0">
+        <div class="agent-name">${escapeTxt(ag.agent)}</div>
+        <div class="agent-msg">${escapeTxt(msg)}</div>
+        ${tot > 0 ? `<div style="font-size:10px;color:var(--muted2);margin-top:3px">${ok}✅ ${err > 0 ? err+'❌' : ''} · ${tot} evt/jour</div>` : ''}
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
+        <span class="agent-status ${t}">${t.toUpperCase()}</span>
+        <span class="agent-time">${ts}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ─── RENDER FEED ──────────────────────────────────────────────────────────────
+function renderFeed() {
+  const scroll = document.getElementById('feedScroll');
+  const count  = document.getElementById('feedCount');
+
+  let filtered = currentFilter === 'all'
+    ? allEvents
+    : allEvents.filter(e => e.type === currentFilter);
+
+  count.textContent = `${filtered.length} événement${filtered.length > 1 ? 's' : ''}`;
+
+  if (!filtered.length) {
+    scroll.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><div class="empty-title">Aucun événement</div><div class="empty-sub">Essaie un autre filtre</div></div>';
+    return;
+  }
+
+  scroll.innerHTML = filtered.map(e => {
+    const icon = TYPE_ICON[e.type] || 'ℹ️';
+    const t    = e.type || 'info';
+    const time = timeOnly(e.ts);
+    return `
+    <div class="feed-event ev-${t}">
+      <div class="ev-icon">${icon}</div>
+      <div class="ev-body">
+        <div class="ev-agent">${escapeTxt(e.agent || '')}</div>
+        <div class="ev-msg">${escapeTxt(e.message || '')}</div>
+      </div>
+      <div class="ev-time">${time}</div>
+    </div>`;
+  }).join('');
+}
+
+// ─── LOAD FEED ────────────────────────────────────────────────────────────────
+async function loadFeed() {
+  try {
+    const r = await fetch(FEED_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const data = await r.json();
+
+    allEvents = data.events  || [];
+    allAgents = data.agents  || [];
+
+    renderKpis(allEvents, allAgents);
+    renderAgents(allAgents);
+    renderFeed();
+
+    const genAt = data.generated_at ? new Date(data.generated_at) : null;
+    const timeStr = genAt ? genAt.toLocaleTimeString('fr-FR', {hour:'2-digit',minute:'2-digit',second:'2-digit'}) : '—';
+    document.getElementById('lastUpdate').textContent = 'Mis à jour à ' + timeStr;
+
+    resetCountdown();
+  } catch(err) {
+    console.warn('Feed non disponible:', err.message);
+    document.getElementById('lastUpdate').textContent = 'Feed non disponible — lance rattrapage.py';
+
+    // Afficher un message utile dans le feed
+    document.getElementById('feedScroll').innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">📡</div>
+        <div class="empty-title">Données non disponibles</div>
+        <div class="empty-sub">Lance <code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px">rattrapage.py</code> ou l'orchestrateur pour générer le feed</div>
+      </div>`;
+    document.getElementById('agentsGrid').innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">🤖</div>
+        <div class="empty-title">En attente</div>
+        <div class="empty-sub">Aucun agent actif détecté</div>
+      </div>`;
+  }
+}
+
+// ─── COUNTDOWN ────────────────────────────────────────────────────────────────
+function resetCountdown() {
+  clearInterval(countdownTimer);
+  countdownVal = Math.round(REFRESH_MS / 1000);
+  document.getElementById('countdown').textContent = countdownVal + 's';
+
+  countdownTimer = setInterval(() => {
+    countdownVal--;
+    document.getElementById('countdown').textContent = countdownVal + 's';
+    if (countdownVal <= 0) {
+      clearInterval(countdownTimer);
+      loadFeed();
+    }
+  }, 1000);
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+loadFeed();
+</script>
+
+</div><!-- /ab-content -->
+
+<script src="gate_subscriber.js"></script>
+</body>
+</html>

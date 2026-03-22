@@ -1,0 +1,256 @@
+{
+  "sessions": [
+    {
+      "date": "21/03/2026 à 11:44",
+      "duree_sec": 40,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html (archive) et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour l'email de bienvenue avec les bonnes variables",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle : posts LinkedIn, plan SEO, stratégie referral",
+          "status": "error"
+        },
+        {
+          "action": "Corriger la preview de la newsletter dans index.html pour pointer vers la date dynamique du jour (aujourd'hui) plutôt qu'une date fixe hardcodée",
+          "status": "error"
+        },
+        {
+          "action": "Mettre en place la synchronisation Formspree → subscribers.csv via vérification manuelle hebdomadaire (en attendant le webhook automatique)",
+          "status": "noted"
+        }
+      ],
+      "resume": "Le projet est opérationnel avec 1 édition envoyée et 6 abonnés. Les agents Python sont tous en place et fonctionnels. Les blocages actuels sont principalement de l'ordre de la configuration externe (N"
+    },
+    {
+      "date": "21/03/2026 à 17:25",
+      "duree_sec": 52,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour utiliser {{newsletter_url}} et {{archive_url}} dans l'email de bienvenue",
+          "status": "noted"
+        },
+        {
+          "action": "Corriger la newsletter preview dans index.html qui pointe vers une date fixe — remplacer par une URL dynamique calculée côté JS",
+          "status": "error"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle (posts LinkedIn, Twitter, referral, SEO) et initialiser le score de croissance",
+          "status": "error"
+        },
+        {
+          "action": "Mettre en place la solution Formspree → subscribers.csv pour que chaque inscription web alimente automatiquement le pipeline Python",
+          "status": "noted"
+        }
+      ],
+      "resume": "Le projet AlphaBot Weekly est opérationnel avec 14 agents Python fonctionnels, 1 édition envoyée et 12 abonnés actifs. Les directives CEO du 20/03 sont toutes marquées [FAIT] côté code, mais 3 points "
+    },
+    {
+      "date": "21/03/2026 à 17:25",
+      "duree_sec": 56,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS avec les variables dynamiques pour l'email de bienvenue",
+          "status": "noted"
+        },
+        {
+          "action": "Ajouter une solution de synchronisation Formspree → subscribers.csv via vérification hebdomadaire automatisée avec instructions claires dans le code",
+          "status": "error"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer les actions de croissance réelle de la semaine (posts LinkedIn, SEO, referral)",
+          "status": "error"
+        },
+        {
+          "action": "Générer le rapport DA + CEO Brief du jour pour valider l'état complet du système avant le test pipeline de lundi",
+          "status": "error"
+        }
+      ],
+      "resume": "Le projet AlphaBot Weekly est opérationnel : 1 édition envoyée, 12 abonnés actifs, tous les agents Python en place. Les priorités immédiates sont l'intégration Formspree→CSV pour capturer les abonnés "
+    },
+    {
+      "date": "22/03/2026 à 11:11",
+      "duree_sec": 37,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS avec sujet et corps personnalisés incluant {{newsletter_url}}",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour (posts LinkedIn, actions SEO, referral)",
+          "status": "error"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour afficher la date dynamique du jour au lieu d'une date fixe hardcodée",
+          "status": "error"
+        },
+        {
+          "action": "Exécuter le pipeline quotidien complet pour produire la newsletter du 22/03 et le CEO Brief, et vérifier que les 12 abonnés la reçoivent bien",
+          "status": "error"
+        }
+      ],
+      "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels, 2 éditions envoyées et 12 abonnés actifs. Les priorités immédiates sont le déploiement Netlify (newsletter.html non publiée), la mise à jo"
+    },
+    {
+      "date": "22/03/2026 à 11:23",
+      "duree_sec": 39,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour utiliser {{newsletter_url}} comme CTA principal",
+          "status": "noted"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour utiliser une date dynamique au lieu d'une date fixe",
+          "status": "error"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle (posts LinkedIn, SEO, referral)",
+          "status": "error"
+        },
+        {
+          "action": "Mettre en place la synchronisation Formspree → subscribers.csv via vérification manuelle hebdomadaire (en attendant le webhook)",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels, 3 éditions produites et 12 abonnés actifs. Les priorités immédiates sont le redéploiement Netlify (bloquant pour l'archive), la mise à jou"
+    },
+    {
+      "date": "22/03/2026 à 17:25",
+      "duree_sec": 50,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS avec sujet et variable newsletter_url",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour",
+          "status": "error"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour pointer vers la date du jour dynamiquement (évite la date fixe codée en dur)",
+          "status": "error"
+        },
+        {
+          "action": "Connecter Formspree à subscribers.csv via vérification manuelle hebdomadaire en attendant le webhook",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels, 3 éditions produites et 17 abonnés actifs. Les priorités immédiates sont le redéploiement Netlify (newsletters.html + index.html), la mise"
+    },
+    {
+      "date": "22/03/2026 à 17:25",
+      "duree_sec": 53,
+      "nb_actions": 7,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Aucun output trouvé (ceo_brief_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour utiliser {{newsletter_url}} dans l'email de bienvenue",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle (posts LinkedIn, SEO, referral) et scorer les actions prioritaires",
+          "status": "error"
+        },
+        {
+          "action": "Corriger agent_redacteur.py pour que la preview dans index.html utilise une date dynamique (aujourd'hui) plutôt qu'une date fixe",
+          "status": "error"
+        },
+        {
+          "action": "Mettre en place la connexion Formspree → subscribers.csv via webhook ou vérification hebdomadaire",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels, 3 éditions produites et 17 abonnés actifs. Les priorités immédiates sont le redéploiement Netlify (newsletters.html + index.html), la mise"
+    }
+  ]
+}

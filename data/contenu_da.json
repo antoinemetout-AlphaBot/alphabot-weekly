@@ -1,0 +1,95 @@
+{
+  "date": "2026-03-22",
+  "insights": [
+    {
+      "id": "insight_001_rearmement_eu_2026",
+      "date": "2026-03-22",
+      "categorie": "Défense",
+      "titre": "L'Europe sort le chéquier pour sa défense enfin",
+      "contexte": "Face aux tensions avec la Russie et l'incertitude américaine, les gouvernements européens ont validé des budgets militaires records. La France, l'Allemagne et la Pologne injectent des milliards dans leurs armées nationales.",
+      "impact_marche": "Le secteur défense européen (indice STOXX Europe Aerospace & Defense) s'envole : +18% depuis janvier 2026. Le CAC 40 profite indirectement via ses champions industriels.",
+      "action_cible": {
+        "ticker": "AIR.PA",
+        "nom": "Airbus SE",
+        "variation_pct": 4.7,
+        "prix_actuel": 198.34,
+        "pourquoi": "Le réarmement européen massif remplit directement le carnet de commandes d'Airbus sur ses divisions militaires et hélicoptères, faisant d'Airbus le bénéficiaire numéro 1 coté à Paris."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "🛡️",
+      "angle_alphabot": "AlphaBot Weekly décortique cette semaine les 5 entreprises européennes de défense qui captent le plus de contrats gouvernementaux en 2026, avec une carte interactive des budgets par pays."
+    },
+    {
+      "id": "insight_002_fed_taux_dollar_2026",
+      "date": "2026-03-22",
+      "categorie": "Macro",
+      "titre": "La Fed hésite, le monde entier retient son souffle",
+      "contexte": "La Réserve fédérale américaine (la 'banque centrale' des USA) refuse de baisser ses taux d'intérêt malgré le ralentissement économique. Résultat : le dollar reste fort et coûte cher à tout le monde qui emprunte en dollars.",
+      "impact_marche": "Un dollar fort pèse sur le S&P 500 (les multinationales américaines gagnent moins à l'export) et écrase les marchés émergents (Brésil, Inde, Turquie) qui remboursent leurs dettes en dollars plus chers.",
+      "action_cible": {
+        "ticker": "EEM",
+        "nom": "iShares MSCI Emerging Markets ETF",
+        "variation_pct": -2.1,
+        "prix_actuel": 41.23,
+        "pourquoi": "Cet ETF regroupe les plus grandes entreprises des pays émergents : quand le dollar monte à cause de la Fed, ces pays souffrent et cet ETF baisse mécaniquement."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "💰",
+      "angle_alphabot": "AlphaBot Weekly explique cette semaine en langage clair comment les décisions de la Fed à Washington impactent le prix de votre baguette à Paris — et quel indicateur surveiller avant la prochaine réunion du 7 mai."
+    },
+    {
+      "id": "insight_003_bitcoin_tensions_geo_2026",
+      "date": "2026-03-22",
+      "categorie": "Crypto",
+      "titre": "Bitcoin redevient l'or numérique en temps de crise",
+      "contexte": "À chaque regain de tensions géopolitiques mondiales, une partie des investisseurs fuit vers Bitcoin comme valeur refuge, exactement comme ils achetaient de l'or dans les années 80. Ce phénomène s'accélère en 2026.",
+      "impact_marche": "Bitcoin dépasse les 95 000 $ lors des pics de tension internationale. Le marché crypto global gagne en légitimité comme classe d'actif 'anti-crise', attirant des fonds institutionnels prudents.",
+      "action_cible": {
+        "ticker": "IBIT",
+        "nom": "iShares Bitcoin Trust ETF",
+        "variation_pct": 5.9,
+        "prix_actuel": 52.17,
+        "pourquoi": "Cet ETF américain permet d'acheter du Bitcoin en Bourse sans portefeuille crypto : quand les tensions géopolitiques montent, les investisseurs institutionnels y entrent massivement et font monter le cours."
+      },
+      "severite": "MEDIUM",
+      "emoji_categorie": "₿",
+      "angle_alphabot": "AlphaBot Weekly analyse cette semaine la corrélation exacte entre les 8 dernières crises géopolitiques et le cours de Bitcoin — avec un graphique surprenant qui montre que le timing est crucial."
+    },
+    {
+      "id": "insight_004_energie_geopolitique_2026",
+      "date": "2026-03-22",
+      "categorie": "Énergie",
+      "titre": "Tensions mondiales relancent la course au pétrole européen",
+      "contexte": "Les tensions géopolitiques en plusieurs points du globe (Moyen-Orient, mer Rouge, Europe de l'Est) perturbent les routes d'approvisionnement en énergie. L'Europe, traumatisée par 2022, stocke et sécurise ses sources en urgence.",
+      "impact_marche": "Le prix du baril Brent remonte vers les 88$, boostant tout le secteur énergétique européen. TotalEnergies et les majors pétrolières voient leur valorisation grimper sur le CAC 40 et les indices européens.",
+      "action_cible": {
+        "ticker": "TTE.PA",
+        "nom": "TotalEnergies SE",
+        "variation_pct": 3.2,
+        "prix_actuel": 64.89,
+        "pourquoi": "TotalEnergies est directement payé en dollars sur chaque baril vendu : quand les tensions géopolitiques font monter le pétrole, le bénéfice de TotalEnergies explose et son action suit."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "⚡",
+      "angle_alphabot": "AlphaBot Weekly publie cette semaine une carte exclusive des flux énergétiques européens et identifie les 3 routes maritimes dont la fermeture ferait exploser votre facture d'énergie — et les actions qui en profiteraient."
+    },
+    {
+      "id": "insight_005_dollar_emergents_cac_2026",
+      "date": "2026-03-22",
+      "categorie": "Géopolitique",
+      "titre": "Dollar roi : le CAC 40 paye la facture américaine",
+      "contexte": "Quand le dollar américain est fort (ce qui est le cas en ce moment à cause de la Fed), les entreprises françaises qui vendent à l'international encaissent moins d'argent. Un euro faible face au dollar réduit leurs profits convertis en euros.",
+      "impact_marche": "Le CAC 40 subit une pression baissière sur ses composantes exportatrices (luxe, industrie, pharma). À l'inverse, les entreprises qui importent des matières premières en dollars voient leurs coûts exploser.",
+      "action_cible": {
+        "ticker": "MC.PA",
+        "nom": "LVMH Moët Hennessy Louis Vuitton",
+        "variation_pct": -1.8,
+        "prix_actuel": 587.4,
+        "pourquoi": "LVMH vend massivement en Asie et aux USA mais compte ses profits en euros : quand le dollar est fort et l'économie mondiale ralentit à cause des tensions géopolitiques, les ventes de sacs à 3 000€ sont les premières sacrifiées."
+      },
+      "severite": "MEDIUM",
+      "emoji_categorie": "🌍",
+      "angle_alphabot": "AlphaBot Weekly décode cette semaine comment le simple taux de change euro/dollar — une ligne que peu de débutants regardent — peut faire perdre ou gagner 15% sur vos actions françaises sans que rien ne change en France."
+    }
+  ]
+}

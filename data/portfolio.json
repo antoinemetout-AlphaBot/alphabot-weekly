@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "capital_initial": 10000,
+    "capital_actuel": 10000,
+    "objectif": 100000,
+    "date_creation": "2026-03-22",
+    "derniere_maj": "2026-03-22",
+    "devise": "EUR",
+    "performance_totale_pct": 0.0,
+    "nb_trades": 0
+  },
+  "cash_disponible": 10000,
+  "positions": [],
+  "trades_historique": [],
+  "theses_investissement": {
+    "strategie_globale": "Portefeuille IA orienté macro-géopolitique. Chaque position est justifiée par un événement géopolitique ou macro-économique identifié par l'IA. Objectif : multiplier par 10 via une exposition aux grandes thèses géopolitiques mondiales.",
+    "theses_actives": [
+      {
+        "id": "these_btc_dxy",
+        "titre": "Bitcoin vs Dollar : La corrélation inverse",
+        "description": "Quand le DXY faiblit (Fed dovish), Bitcoin surperforme historiquement. Thesis active depuis Q1 2026.",
+        "statut": "surveillance",
+        "action_ciblee": "BTC-USD"
+      },
+      {
+        "id": "these_defense",
+        "titre": "Réarmement européen post-conflit Ukraine",
+        "description": "Les budgets défense européens augmentent massivement. Les fabricants d'armes (LMT, RTX, Rheinmetall) en bénéficient directement.",
+        "statut": "active",
+        "action_ciblee": "LMT"
+      },
+      {
+        "id": "these_or_geopolitique",
+        "titre": "Or comme valeur refuge géopolitique",
+        "description": "Les tensions Moyen-Orient + rivalité USA-Chine + dédollarisation font de l'or un actif stratégique.",
+        "statut": "surveillance",
+        "action_ciblee": "GLD"
+      }
+    ]
+  }
+}

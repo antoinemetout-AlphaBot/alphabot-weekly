@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Robot Trader IA — AlphaBot Weekly</title>
+<meta name="description" content="Suivez le portefeuille fictif de €10K vers €100K, géré par le robot trader IA en temps réel.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#04091a;--bg2:#060d1f;--s:rgba(255,255,255,.04);--s2:rgba(255,255,255,.07);
+  --b:rgba(255,255,255,.08);--gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
+  --green:#22c55e;--red:#ef4444;--text:#e2e8f0;--muted:#64748b;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.025)1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.025)1px,transparent 1px);background-size:60px 60px;}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);}
+.o1{width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.09),transparent 65%);top:-300px;left:-250px;animation:of 9s ease-in-out infinite alternate;}
+.o2{width:700px;height:700px;background:radial-gradient(circle,rgba(245,200,66,.07),transparent 65%);bottom:-200px;right:-200px;animation:of 11s ease-in-out infinite alternate-reverse;}
+.o3{width:500px;height:500px;background:radial-gradient(circle,rgba(34,211,238,.06),transparent 65%);top:50%;left:50%;animation:of 7s ease-in-out infinite alternate;}
+@keyframes of{from{transform:translate(0,0)scale(1);}to{transform:translate(25px,20px)scale(1.06);}}
+.scan{position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:sc 8s ease-in-out infinite;opacity:.3;}
+@keyframes sc{0%{top:0;opacity:0;}8%{opacity:.4;}92%{opacity:.4;}100%{top:100%;opacity:0;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;transition:all .3s;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;font-weight:500;}
+.nav-links a:hover,.nav-links a.active{color:white;}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white!important;padding:8px 18px;border-radius:8px;font-weight:600!important;font-size:13px!important;text-decoration:none;transition:opacity .2s,transform .2s;}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.nav-hamburger span{width:22px;height:2px;background:var(--muted);border-radius:2px;transition:.3s;}
+
+/* HERO */
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 60px;position:relative;z-index:1;}
+.hero-inner{max-width:900px;margin:0 auto;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.3);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:600;color:var(--cyan);letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px;}
+.hero-tag::before{content:'';width:8px;height:8px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;line-height:1.1;margin-bottom:20px;}
+.h1-line1{color:white;}
+.h1-line2{background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(14px,1.5vw,16px);color:var(--muted);line-height:1.6;margin-bottom:30px;max-width:700px;margin-left:auto;margin-right:auto;}
+.hero-status{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;font-size:14px;font-weight:600;}
+.status-dot{width:10px;height:10px;border-radius:50%;animation:pulse-dot 2s infinite;}
+.status-dot.active{background:var(--green);}
+.status-dot.inactive{background:var(--red);}
+@keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 10px currentColor;}50%{opacity:.6;}}
+.hero-timestamp{font-size:12px;color:var(--muted);margin-top:12px;}
+
+/* MAIN CONTENT */
+.container{max-width:1400px;margin:0 auto;padding:40px 5%;position:relative;z-index:1;}
+
+/* KPI CARDS */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:60px;animation:slideIn .6s ease forwards;}
+.kpi-card{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;backdrop-filter:blur(10px);transition:.3s;}
+.kpi-card:hover{border-color:rgba(34,211,238,.3);transform:translateY(-4px);}
+.kpi-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;font-weight:600;}
+.kpi-value{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;color:white;margin-bottom:8px;word-break:break-word;}
+.kpi-value.pos{color:var(--green);}
+.kpi-value.neg{color:var(--red);}
+.kpi-sub{font-size:12px;color:var(--muted);}
+
+/* CHART SECTION */
+.chart-section{margin:80px 0;padding:40px;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(34,211,238,.05));border:1px solid rgba(59,130,246,.2);border-radius:20px;backdrop-filter:blur(10px);animation:slideIn .6s ease forwards;animation-delay:.1s;}
+.chart-section h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:white;margin-bottom:28px;}
+.chart-wrapper{position:relative;height:350px;width:100%;}
+
+/* POSITIONS TABLE */
+.positions-section{margin:80px 0;animation:slideIn .6s ease forwards;animation-delay:.2s;}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.section-title .icon{font-size:28px;}
+.positions-table{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;}
+thead{background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.1);}
+th{padding:16px;text-align:left;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-family:'JetBrains Mono',monospace;}
+td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;font-family:'JetBrains Mono',monospace;}
+tbody tr:hover{background:rgba(255,255,255,.03);}
+.ticker-badge{display:inline-block;background:rgba(34,211,238,.2);color:var(--cyan);padding:4px 10px;border-radius:6px;font-weight:700;font-size:11px;}
+.strategy-badge{display:inline-block;background:rgba(245,200,66,.2);color:var(--gold);padding:4px 10px;border-radius:6px;font-weight:600;font-size:11px;}
+.pos-var.up{color:var(--green);font-weight:700;}
+.pos-var.down{color:var(--red);font-weight:700;}
+.pos-pl.pos{color:var(--green);font-weight:700;}
+.pos-pl.neg{color:var(--red);font-weight:700;}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-state-icon{font-size:48px;margin-bottom:16px;opacity:.5;}
+.empty-state p{font-size:14px;line-height:1.6;}
+
+/* SIGNAUX SECTION */
+.signaux-section{margin:80px 0;animation:slideIn .6s ease forwards;animation-delay:.3s;}
+.signaux-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.signal-card{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;backdrop-filter:blur(10px);transition:.3s;}
+.signal-card:hover{border-color:rgba(34,211,238,.3);transform:translateY(-4px);}
+.signal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.signal-ticker{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;}
+.signal-direction{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+.signal-direction.buy{background:rgba(34,197,94,.2);color:var(--green);}
+.signal-direction.sell{background:rgba(239,68,68,.2);color:var(--red);}
+.signal-direction.buy{animation:pulse-buy 1.5s ease-in-out infinite;}
+@keyframes pulse-buy{0%,100%{opacity:1;}50%{opacity:.6;}}
+.signal-force{margin-bottom:16px;}
+.signal-force-label{font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;}
+.signal-force-bar{height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;}
+.signal-force-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .3s;}
+.signal-reason{font-size:12px;color:var(--muted);line-height:1.5;}
+.signal-reason strong{color:var(--text);}
+
+/* TRADES TIMELINE */
+.trades-section{margin:80px 0;animation:slideIn .6s ease forwards;animation-delay:.4s;}
+.trades-timeline{display:flex;flex-direction:column;gap:12px;max-height:600px;overflow-y:auto;}
+.trade-item{display:grid;grid-template-columns:100px 80px 80px 120px 1fr;gap:16px;padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;align-items:center;transition:.2s;}
+.trade-item:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15);}
+.trade-item.achat{border-left:3px solid var(--green);}
+.trade-item.vente{border-left:3px solid var(--red);}
+.trade-type{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;}
+.trade-item.achat .trade-type{color:var(--green);}
+.trade-item.vente .trade-type{color:var(--red);}
+.trade-details{font-size:12px;color:var(--muted);}
+.trade-details strong{color:var(--text);}
+.trade-date{text-align:right;font-size:11px;color:var(--muted);}
+
+/* THESES SECTION */
+.theses-section{margin:80px 0;animation:slideIn .6s ease forwards;animation-delay:.5s;}
+.theses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.these-card{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;transition:.3s;backdrop-filter:blur(10px);}
+.these-card:hover{border-color:rgba(245,200,66,.3);transform:translateY(-4px);}
+.these-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:16px;}
+.these-header h4{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;line-height:1.4;}
+.these-badge{display:inline-block;font-size:10px;font-weight:700;padding:4px 12px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.these-badge.active{background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.3);}
+.these-badge.surveillance{background:rgba(245,200,66,.2);color:var(--gold);border:1px solid rgba(245,200,66,.3);}
+.these-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
+.these-ticker{font-size:12px;color:var(--cyan);background:rgba(34,211,238,.08);padding:8px 12px;border-radius:8px;display:inline-block;}
+
+/* STATS GRID */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin:80px 0;animation:slideIn .6s ease forwards;animation-delay:.6s;}
+.stat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:center;}
+.stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;font-weight:600;}
+.stat-value{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:white;}
+
+/* PROGRESS BAR */
+.progress-wrapper{margin:80px 0;padding:40px;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(34,211,238,.05));border:1px solid rgba(59,130,246,.2);border-radius:20px;backdrop-filter:blur(10px);animation:slideIn .6s ease forwards;animation-delay:.7s;}
+.progress-bar{position:relative;height:12px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;margin-bottom:16px;border:1px solid rgba(255,255,255,.1);}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:8px;transition:width .6s ease;width:0%;}
+.progress-marker{position:absolute;top:-28px;font-size:12px;color:var(--muted);font-weight:500;transform:translateX(-50%);}
+.progress-label{text-align:center;font-size:14px;font-weight:600;color:var(--text);}
+
+/* AVANTAGES ROBOT SECTION */
+.avantages-section{margin:80px 0;padding:40px;background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(59,130,246,.04));border:1px solid rgba(34,211,238,.15);border-radius:20px;backdrop-filter:blur(10px);animation:slideIn .6s ease forwards;animation-delay:.9s;}
+.avantages-section h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:8px;}
+.avantages-subtitle{font-size:13px;color:var(--muted);margin-bottom:32px;max-width:600px;}
+.avantages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.avantage-card{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;transition:.3s;backdrop-filter:blur(10px);}
+.avantage-card:hover{border-color:rgba(34,211,238,.3);transform:translateY(-4px);}
+.avantage-icon{width:48px;height:48px;margin-bottom:16px;}
+.avantage-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:12px;}
+.avantage-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* SIMULATEUR COMPOSÉS SECTION */
+.simulateur-section{margin:80px 0;padding:40px;background:linear-gradient(135deg,rgba(245,200,66,.06),rgba(34,211,238,.05));border:1px solid rgba(245,200,66,.15);border-radius:20px;backdrop-filter:blur(10px);animation:slideIn .6s ease forwards;animation-delay:1.0s;}
+.simulateur-header{margin-bottom:36px;}
+.simulateur-header h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:6px;}
+.simulateur-subtitle{font-size:13px;color:var(--muted);}
+.simulateur-container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.simulateur-controls{display:flex;flex-direction:column;gap:28px;}
+.control-group{display:flex;flex-direction:column;gap:12px;}
+.control-label{font-size:13px;font-weight:600;color:white;font-family:'Space Grotesk',sans-serif;}
+.control-value{font-size:28px;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--cyan);}
+.control-slider{width:100%;height:6px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,.1);border-radius:3px;outline:none;cursor:pointer;}
+.control-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;background:linear-gradient(135deg,var(--cyan),var(--blue));border-radius:50%;cursor:pointer;box-shadow:0 0 10px rgba(34,211,238,.4);}
+.control-slider::-moz-range-thumb{width:18px;height:18px;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;border-radius:50%;cursor:pointer;box-shadow:0 0 10px rgba(34,211,238,.4);}
+.control-slider:focus{background:rgba(255,255,255,.12);}
+.control-range{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px;}
+.simulateur-results{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;backdrop-filter:blur(10px);}
+.result-item{margin-bottom:24px;}
+.result-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;font-weight:600;}
+.result-value{font-family:'JetBrains Mono',monospace;font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.result-item:last-child{margin-bottom:0;}
+.results-chart-wrapper{margin-top:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);}
+.results-chart-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;font-weight:600;}
+.results-chart-container{position:relative;height:300px;width:100%;}
+
+/* DISCLAIMER */
+.disclaimer{background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.2);border-radius:16px;padding:24px;margin:80px 0;color:var(--muted);font-size:13px;line-height:1.6;text-align:center;animation:slideIn .6s ease forwards;animation-delay:.8s;}
+.disclaimer strong{color:var(--gold);}
+
+/* FOOTER */
+.divider{height:1px;background:var(--b);margin:60px 0;position:relative;z-index:1;}
+footer{border-top:1px solid var(--b);padding:40px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;position:relative;z-index:1;}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;color:white;font-size:15px;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--muted);font-size:13px;text-decoration:none;transition:.2s;}
+.footer-links a:hover{color:white;}
+.footer-copy{color:var(--muted);font-size:12px;}
+
+/* LOADING STATE */
+.loading{display:inline-block;width:16px;height:16px;border:2px solid rgba(34,211,238,.3);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ANIMATIONS */
+@keyframes slideIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .hero{padding:80px 20px 50px;}
+  h1{font-size:36px;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .kpi-card{padding:20px;}
+  .kpi-value{font-size:24px;}
+  .section-title{font-size:18px;}
+  .positions-table{overflow-x:auto;}
+  .signaux-grid{grid-template-columns:1fr;}
+  .theses-grid{grid-template-columns:1fr;}
+  .trade-item{grid-template-columns:1fr;gap:8px;}
+  .stats-grid{grid-template-columns:1fr;}
+  .simulateur-container{grid-template-columns:1fr;gap:24px;}
+  .avantages-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+}
+
+@media(max-width:480px){
+  .kpi-grid{grid-template-columns:1fr;}
+  .chart-wrapper{height:250px;}
+  th,td{padding:10px 8px;font-size:11px;}
+  .result-value{font-size:28px;}
+  .results-chart-container{height:250px;}
+}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(59,130,246,.3);border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(59,130,246,.5);}
+
+::selection{background:rgba(34,211,238,.25);color:#fff;}
+body{background:radial-gradient(ellipse 120% 80% at 50% -20%,rgba(59,130,246,.08) 0%,var(--bg) 60%);}
+nav{background:rgba(4,9,26,.75);backdrop-filter:blur(28px) saturate(180%);border-bottom:1px solid rgba(255,255,255,.06);padding:16px 5%;}
+.nav-brand{background:linear-gradient(135deg,#fff 20%,var(--cyan) 60%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.3px;}
+.nav-links a{letter-spacing:.2px;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:50%;width:0;height:1.5px;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:99px;transition:width .3s ease,left .3s ease;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;left:0;}
+.nav-cta{box-shadow:0 0 18px rgba(34,211,238,.2),0 4px 12px rgba(0,0,0,.4);border-radius:10px;padding:9px 20px;letter-spacing:.2px;transition:transform .25s ease,box-shadow .25s ease,opacity .25s ease;}
+.nav-cta:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 28px rgba(34,211,238,.38),0 6px 20px rgba(0,0,0,.5);opacity:1!important;}
+.hero{padding:110px 20px 70px;}
+.hero-tag{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.35);box-shadow:0 0 20px rgba(34,211,238,.1),inset 0 1px 0 rgba(255,255,255,.06);letter-spacing:1px;font-size:11px;animation:fadeSlideDown .6s ease forwards;}
+h1{line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px;animation:fadeSlideDown .7s .1s ease both;}
+.h1-line2{background:linear-gradient(125deg,var(--gold) 0%,#fff 45%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(245,200,66,.25));}
+.hero-sub{font-size:clamp(14px,1.6vw,17px);line-height:1.75;letter-spacing:.1px;color:#94a3b8;animation:fadeSlideDown .7s .2s ease both;}
+@keyframes slideIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
+.kpi-grid{gap:18px;}
+.kpi-card{background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:30px 28px;backdrop-filter:blur(16px);box-shadow:0 4px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.07);transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,.4),transparent);opacity:0;transition:opacity .3s;}
+.kpi-card:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(34,211,238,.28);box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 30px rgba(34,211,238,.08),inset 0 1px 0 rgba(255,255,255,.1);}
+.kpi-card:hover::before{opacity:1;}
+.kpi-label{font-size:11px;letter-spacing:1px;color:#64748b;margin-bottom:14px;font-weight:700;}
+.kpi-value{font-size:clamp(26px,3vw,34px);font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:10px;}
+.kpi-value.pos{color:var(--green);text-shadow:0 0 20px rgba(34,197,94,.35);}
+.kpi-value.neg{color:var(--red);text-shadow:0 0 20px rgba(239,68,68,.3);}
+.kpi-sub{font-size:12px;line-height:1.5;}
+.chart-section{background:linear-gradient(145deg,rgba(59,130,246,.09),rgba(34,211,238,.04),rgba(4,9,26,.6));border:1px solid rgba(59,130,246,.15);border-radius:20px;}
+</style>
+</head>
+<body>
+
+<div class="scan"></div>
+<div class="bg-wrap"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">⚡ AlphaBot Weekly</a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="investissement.html" class="active">Investissement</a>
+    <a href="dashboard-agents.html">Agents</a>
+    <a href="communaute.html">Communauté</a>
+    <a href="newsletter.html" id="nav-cta-btn" class="nav-cta">S'abonner gratuitement</a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="ab-gate"></div>
+<div id="ab-content" style="display:none;">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Robot Trader IA en direct</div>
+    <h1>
+      <div class="h1-line1">Robot Trader IA</div>
+      <div class="h1-line2">Trading autonome 24/7</div>
+    </h1>
+    <p class="hero-sub">Trading autonome toutes les heures — chaque décision tracée. Suivez le robot en temps réel pendant qu'il gère un portefeuille fictif de €10K vers €100K selon des thèses géopolitiques et macro-économiques.</p>
+    <div class="hero-status">
+      <div class="status-dot active" id="statusDot"></div>
+      <span id="robotStatus">Robot actif</span>
+      <span id="lastUpdate" class="hero-timestamp" style="margin-left:auto;">Dernière mise à jour: --:--</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Capital actuel</div>
+      <div class="kpi-value" id="capitalActuel">€10,000.00</div>
+      <div class="kpi-sub" id="capitalProgress">€0.00 depuis le départ</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Performance %</div>
+      <div class="kpi-value pos" id="performanceValue">+0.00%</div>
+      <div class="kpi-sub" id="performanceAmount">€0.00 réalisé</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Win Rate</div>
+      <div class="kpi-value" id="winRate">0%</div>
+      <div class="kpi-sub" id="winRateSub">0 trades gagnants</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Nombre de trades</div>
+      <div class="kpi-value" id="tradesCount">0</div>
+      <div class="kpi-sub" id="tradesSub">0 positions actives</div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <h3>Courbe de portefeuille</h3>
+    <div class="chart-wrapper">
+      <canvas id="equityChart"></canvas>
+    </div>
+    <div id="chartMessage" style="text-align:center;color:var(--muted);margin-top:16px;font-size:13px;"></div>
+  </div>
+
+  <div class="positions-section">
+    <h3 class="section-title"><span class="icon">📊</span>Positions ouvertes</h3>
+    <div class="positions-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Nom</th>
+            <th style="text-align:right;">Nb actions</th>
+            <th style="text-align:right;">Prix entrée €</th>
+            <th style="text-align:right;">Prix actuel €</th>
+            <th style="text-align:right;">Variation %</th>
+            <th style="text-align:right;">P&L €</th>
+            <th>Stratégie</th>
+            <th>Raison géopolitique</th>
+          </tr>
+        </thead>
+        <tbody id="positionsBody">
+          <tr>
+            <td colspan="9" style="text-align:center;padding:60px 20px;">
+              <div class="empty-state">
+                <div class="empty-state-icon">🔍</div>
+                <p>Le robot analyse les marchés...</p>
+                <p style="font-size:12px;margin-top:8px;">Première décision imminente</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="signaux-section">
+    <h3 class="section-title"><span class="icon">⚡</span>Signaux actifs</h3>
+    <div class="signaux-grid" id="signauxGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:13px;">
+        Analyse des marchés en cours...
+      </div>
+    </div>
+  </div>
+
+  <div class="trades-section">
+    <h3 class="section-title"><span class="icon">📈</span>Historique des trades</h3>
+    <div class="trades-timeline" id="tradesTimeline">
+      <div style="color:var(--muted);text-align:center;padding:40px;">
+        Aucun trade pour le moment — Portefeuille 100% cash
+      </div>
+    </div>
+  </div>
+
+  <div class="theses-section">
+    <h3 class="section-title"><span class="icon">🎯</span>Thèses d'investissement</h3>
+    <div class="theses-grid" id="thesesGrid"></div>
+  </div>
+
+  <div class="stats-section">
+    <h3 class="section-title"><span class="icon">📋</span>Statistiques détaillées</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Meilleur trade</div>
+        <div class="stat-value" id="bestTrade">N/A</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pire trade</div>
+        <div class="stat-value" id="worstTrade">N/A</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">P&L réalisé</div>
+        <div class="stat-value" id="totalPL">€0.00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Positions ouvertes</div>
+        <div class="stat-value" id="openPositions">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrapper">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+      <div class="progress-marker" style="left:0%;">€10K</div>
+      <div class="progress-marker" style="left:50%;">€55K</div>
+      <div class="progress-marker" style="left:100%;">€100K</div>
+    </div>
+    <div class="progress-label">
+      <span id="progressLabel">0%</span> vers l'objectif des €100,000
+    </div>
+  </div>
+
+  <div class="avantages-section">
+    <h3>Pourquoi le robot est plus performant qu'un humain</h3>
+    <p class="avantages-subtitle">L'IA dispose d'avantages stratégiques fondamentaux qui en font un trader supérieur sur les marchés modernes</p>
+    <div class="avantages-grid">
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="url(#grad1)" stroke-width="1.5"/><path d="M24 12V36M12 24H36" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round"/>
+          <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Disponibilité 24/7</div>
+        <div class="avantage-desc">Analyse continue sans fatigue ni pause. Les marchés ne dorment jamais, le robot non plus.</div>
+      </div>
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 8L30 16H18L24 8Z" stroke="url(#grad2)" stroke-width="1.5" fill="rgba(34,211,238,.1)"/><path d="M12 20L18 28H6L12 20Z" stroke="url(#grad2)" stroke-width="1.5" fill="rgba(34,211,238,.1)"/><path d="M36 20L42 28H30L36 20Z" stroke="url(#grad2)" stroke-width="1.5" fill="rgba(34,211,238,.1)"/><path d="M18 32L24 40H12L18 32Z" stroke="url(#grad2)" stroke-width="1.5" fill="rgba(34,211,238,.1)"/><path d="M30 32L36 40H24L30 32Z" stroke="url(#grad2)" stroke-width="1.5" fill="rgba(34,211,238,.1"/>
+          <defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#22c55e;stop-opacity:1"/><stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Zéro émotion</div>
+        <div class="avantage-desc">Pas de panique, pas de FOMO, pas d'euphorie. Respect strict de la stratégie en toutes conditions.</div>
+      </div>
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="24" r="4" fill="url(#grad3)"/><circle cx="24" cy="24" r="4" fill="url(#grad3)"/><circle cx="36" cy="24" r="4" fill="url(#grad3)"/><line x1="16" y1="24" x2="20" y2="24" stroke="url(#grad3)" stroke-width="1.5"/><line x1="28" y1="24" x2="32" y2="24" stroke="url(#grad3)" stroke-width="1.5"/><path d="M8 12L16 20M40 12L32 20M8 36L16 28M40 36L32 28" stroke="url(#grad3)" stroke-width="1.5" stroke-linecap="round"/>
+          <defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f5c842;stop-opacity:1"/><stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Traitement parallèle</div>
+        <div class="avantage-desc">Centaines d'indicateurs traités simultanément en millisecondes. Capacité de calcul surhumaine.</div>
+      </div>
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 16H36M12 24H36M12 32H36" stroke="url(#grad4)" stroke-width="2" stroke-linecap="round"/><rect x="6" y="10" width="36" height="28" rx="2" stroke="url(#grad4)" stroke-width="1.5"/>
+          <defs><linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1"/><stop offset="100%" style="stop-color:#f5c842;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Backtesting exhaustif</div>
+        <div class="avantage-desc">Années de données historiques analysées avant chaque décision. Validation sur des millénaires de données.</div>
+      </div>
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 28L18 16L24 24L30 12L36 28" stroke="url(#grad5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="16" r="2" fill="url(#grad5)"/><circle cx="24" cy="24" r="2" fill="url(#grad5)"/><circle cx="30" cy="12" r="2" fill="url(#grad5)"/>
+          <defs><linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ef4444;stop-opacity:1"/><stop offset="100%" style="stop-color:#f5c842;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Risk management strict</div>
+        <div class="avantage-desc">Stop-loss et position sizing mathématiquement optimisés. Pas de dépassement de limites.</div>
+      </div>
+      <div class="avantage-card">
+        <svg class="avantage-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 6C14 6 8 12 8 22C8 32 24 42 24 42S40 32 40 22C40 12 34 6 24 6Z" stroke="url(#grad6)" stroke-width="1.5"/><circle cx="24" cy="21" r="3" fill="url(#grad6)"/>
+          <defs><linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#22c55e;stop-opacity:1"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/></linearGradient></defs>
+        </svg>
+        <div class="avantage-title">Adaptation en temps réel</div>
+        <div class="avantage-desc">Ajustement instantané aux conditions de marché changeantes. Réactivité sans délai.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulateur-section">
+    <div class="simulateur-header">
+      <h3>Bonus : Simulez la puissance des intérêts composés</h3>
+      <p class="simulateur-subtitle">Visualisez comment votre capital s'accélère exponentiellement au fil du temps</p>
+    </div>
+    <div class="simulateur-container">
+      <div class="simulateur-controls">
+        <div class="control-group">
+          <div class="control-label">Capital initial (€)</div>
+          <div class="control-value" id="capitalValue">10,000</div>
+          <input type="range" id="capitalSlider" class="control-slider" min="1000" max="100000" step="1000" value="10000">
+          <div class="control-range"><span>€1K</span><span>€100K</span></div>
+        </div>
+        <div class="control-group">
+          <div class="control-label">Rendement annuel estimé (%)</div>
+          <div class="control-value" id="rendementValue">15</div>
+          <input type="range" id="rendementSlider" class="control-slider" min="1" max="100" step="1" value="15">
+          <div class="control-range"><span>1%</span><span>100%</span></div>
+        </div>
+        <div class="control-group">
+          <div class="control-label">Durée (années)</div>
+          <div class="control-value" id="dureeValue">10</div>
+          <input type="range" id="dureeSlider" class="control-slider" min="1" max="50" step="1" value="10">
+          <div class="control-range"><span>1 an</span><span>50 ans</span></div>
+        </div>
+      </div>
+      <div class="simulateur-results">
+        <div class="result-item">
+          <div class="result-label">Capital initial</div>
+          <div class="result-value" id="resultCapital">€10,000</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Intérêts gagnés</div>
+          <div class="result-value" id="resultInterests">€50,000</div>
+        </div>
+        <div class="result-item">
+          <div class="result-label">Capital final</div>
+          <div class="result-value" id="resultFinal">€60,000</div>
+        </div>
+        <div class="results-chart-wrapper">
+          <div class="results-chart-label">Évolution année par année</div>
+          <div class="results-chart-container">
+            <canvas id="composedChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Important :</strong> Ce portefeuille est <strong>100% fictif et éducatif</strong>. Ce n'est pas un conseil en investissement. L'objectif est pédagogique : montrer comment l'IA raisonne sur les marchés selon des angles géopolitiques. Ne pas reproduire ces positions sur votre argent réel sans expertise profonde.
+  </div>
+
+</div>
+
+<div class="divider"></div>
+<footer>
+  <div class="footer-brand">⚡ AlphaBot Weekly</div>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="investissement.html">Investissement</a>
+  </div>
+  <div class="footer-copy">© 2026 AlphaBot Weekly · Portfolio 100% fictif et éducatif · Fait avec</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+let portfolioData=null,equityChart=null,composedChart=null,equityHistory=[];
+async function loadPortfolioData(){try{const e=await fetch('data/portfolio.json?t='+Date.now());if(!e.ok)throw new Error('Données indisponibles');portfolioData=await e.json(),equityHistory.length||generateEquityHistory(),updateDashboard(),updateTimestamp()}catch(e){console.error('Erreur chargement données:',e),showErrorState()}}
+function generateEquityHistory() {
+  equityHistory = [];
+  var initial = portfolioData.meta.capital_initial;
+  var msgEl = document.getElementById('chartMessage');
+
+  if (portfolioData.equity_history && Array.isArray(portfolioData.equity_history) && portfolioData.equity_history.length > 0) {
+    equityHistory = portfolioData.equity_history.map(function(item) {
+      return { date: item.date || new Date().toLocaleDateString('fr-FR'), value: item.value || initial };
+    });
+    if (msgEl) msgEl.textContent = '';
+  } else if (portfolioData.trades_historique && Array.isArray(portfolioData.trades_historique) && portfolioData.trades_historique.length > 0) {
+    var runningCapital = initial;
+    var dailyValues = {};
+    portfolioData.trades_historique.forEach(function(trade) {
+      var d = trade.date || new Date().toLocaleDateString('fr-FR');
+      if (!dailyValues[d]) dailyValues[d] = runningCapital;
+      if (trade.pl_realise) {
+        runningCapital += (trade.pl_realise / 100) * (trade.nb_actions * trade.prix);
+        dailyValues[d] = Math.max(initial * 0.95, runningCapital);
+      }
+    });
+    equityHistory = Object.entries(dailyValues).map(function(entry) {
+      return { date: entry[0], value: entry[1] };
+    });
+    if (msgEl) msgEl.textContent = equityHistory.length === 0 ? 'En attente du premier trade' : '';
+  } else {
+    if (msgEl) msgEl.textContent = 'En attente du premier trade';
+  }
+}
+function updateTimestamp(){const e=new Date(),t=String(e.getHours()).padStart(2,'0'),a=String(e.getMinutes()).padStart(2,'0');document.getElementById('lastUpdate').textContent=`Dernière mise à jour: ${t}:${a}`}
+function updateDashboard(){if(!portfolioData)return;const e=portfolioData,t=e.meta.capital_actuel,a=e.meta.capital_initial,i=e.meta.objectif,n=Math.min(100,t/i*100);document.getElementById('capitalActuel').textContent='€'+t.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2});const s=t-a,r=(s/a)*100,o=document.getElementById('performanceValue');o.textContent=(r>=0?'+':'')+r.toFixed(2)+'%',o.className='kpi-value '+(r>=0?'pos':'neg'),document.getElementById('performanceAmount').textContent=(s>=0?'+€':'€')+Math.abs(s).toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}),document.getElementById('capitalProgress').textContent=(s>=0?'+€':'€')+Math.abs(s).toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' depuis le départ';let l=0;e.trades_historique.forEach(e=>{'vente'===e.type&&e.pl_realise>=0&&l++});const d=e.meta.nb_trades>0?((l/e.meta.nb_trades)*100).toFixed(1):0;document.getElementById('winRate').textContent=d+'%',document.getElementById('winRateSub').textContent=l+' trade'+(1!==l?'s':'')+'  gagnant'+(1!==l?'s':''),document.getElementById('tradesCount').textContent=e.meta.nb_trades,document.getElementById('tradesSub').textContent=e.positions.length+' position'+(1!==e.positions.length?'s':'')+' active'+(1!==e.positions.length?'s':''),document.getElementById('progressFill').style.width=n+'%',document.getElementById('progressLabel').textContent=Math.round(n)+'%',updatePositionsTable(e),updateSignaux(e),updateTheses(e),updateTradesTimeline(e),updateStats(e),updateChart()}
+function updatePositionsTable(e){const t=document.getElementById('positionsBody');0===e.positions.length?(t.innerHTML='\n      <tr>\n        <td colspan="9" style="text-align:center;padding:60px 20px;">\n          <div class="empty-state">\n            <div class="empty-state-icon">🔍</div>\n            <p>Le robot analyse les marchés...</p>\n            <p style="font-size:12px;margin-top:8px;">Première décision imminente</p>\n          </div>\n        </td>\n      </tr>\n    ',void 0):t.innerHTML=e.positions.map(e=>{const a=e.pl_pct>=0?'up':'down',i=e.pl_euros>=0?'pos':'neg',n=e.strategie||'Diversification';return`\n      <tr>\n        <td><span class="ticker-badge">${e.ticker}</span></td>\n        <td><strong>${e.nom}</strong></td>\n        <td style="text-align:right;">${e.nb_actions.toLocaleString('fr-FR',{minimumFractionDigits:4,maximumFractionDigits:4})}</td>\n        <td style="text-align:right;">€${e.prix_entree.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>\n        <td style="text-align:right;">€${e.prix_actuel.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>\n        <td style="text-align:right;" class="pos-var ${a}">${(e.pl_pct>=0?'+':'')}${e.pl_pct.toFixed(2)}%</td>\n        <td style="text-align:right;" class="pos-pl ${i}">${(e.pl_euros>=0?'+€':'€')}${Math.abs(e.pl_euros).toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})}</td>\n        <td><span class="strategy-badge">${n}</span></td>\n        <td style="font-size:11px;">${e.raison_geopolitique||'Ajustement macro'}</td>\n      </tr>\n    `}).join('')}
+function updateSignaux(e){const t=document.getElementById('signauxGrid'),a=[];e.theses_investissement.theses_actives.forEach((e,i)=>{if(i<2){const n=0===i%2?'buy':'sell';a.push({ticker:e.action_ciblee,direction:n,force:Math.round(60+30*Math.random()),raison:e.description,theme:e.titre})}}),0===a.length?t.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);">Analyse en cours...</div>':t.innerHTML=a.map(e=>`\n    <div class="signal-card">\n      <div class="signal-header">\n        <div class="signal-ticker">${e.ticker}</div>\n        <span class="signal-direction ${e.direction}">${'buy'===e.direction?'↑ ACHAT':'↓ VENTE'}</span>\n      </div>\n      <div class="signal-force">\n        <div class="signal-force-label">Force du signal</div>\n        <div class="signal-force-bar">\n          <div class="signal-force-fill" style="width:${e.force}%"></div>\n        </div>\n      </div>\n      <div class="signal-reason">\n        <strong>Thème:</strong> ${e.theme}<br>\n        <strong>Raison:</strong> ${e.raison}\n      </div>\n    </div>\n  `).join('')}
+function updateTheses(e){document.getElementById('thesesGrid').innerHTML=e.theses_investissement.theses_actives.map(e=>{const t='active'===e.statut?'active':'surveillance';return`\n      <div class="these-card">\n        <div class="these-header">\n          <h4>${e.titre}</h4>\n          <span class="these-badge ${t}">${e.statut.toUpperCase()}</span>\n        </div>\n        <p class="these-desc">${e.description}</p>\n        <div class="these-ticker">Actif ciblé: <strong>${e.action_ciblee}</strong></div>\n      </div>\n    `}).join('')}
+function updateTradesTimeline(e){const t=document.getElementById('tradesTimeline');0===e.trades_historique.length?t.innerHTML='<div style="color:var(--muted);text-align:center;padding:40px;">Aucun trade pour le moment — Portefeuille 100% cash</div>':t.innerHTML=e.trades_historique.slice().reverse().slice(0,30).map(e=>{const a='achat'===e.type?'achat':'vente';return`\n      <div class="trade-item ${a}">\n        <div class="trade-type">${'achat'===e.type?'ACHAT':'VENTE'}</div>\n        <div class="trade-details">\n          <strong>${e.ticker}</strong> · ${e.nb_actions.toLocaleString('fr-FR',{maximumFractionDigits:4})} actions\n        </div>\n        <div class="trade-details">€${e.prix.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})}</div>\n        <div class="trade-date">${e.date}</div>\n      </div>\n    `}).join('')}
+function updateStats(e){let t=null,a=null,i=0;e.trades_historique.forEach(e=>{e.pl_realise&&((!t||e.pl_realise>t.pl_realise)&&(t=e),(!a||e.pl_realise<a.pl_realise)&&(a=e),i+=e.pl_realise*(e.nb_actions*e.prix/100))}),document.getElementById('bestTrade').textContent=t?t.ticker+' +'+t.pl_realise.toFixed(2)+'%':'N/A',document.getElementById('worstTrade').textContent=a?a.ticker+' '+a.pl_realise.toFixed(2)+'%':'N/A',document.getElementById('totalPL').textContent='€'+(i||0).toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}),document.getElementById('openPositions').textContent=e.positions.length}
+function updateChart(){equityHistory.length&&(equityChart&&equityChart.destroy(),equityChart=new Chart(document.getElementById('equityChart'),{type:'line',data:{labels:equityHistory.map(e=>e.date),datasets:[{label:'Valeur du portefeuille',data:equityHistory.map(e=>e.value),borderColor:'rgb(34, 211, 238)',backgroundColor:'rgba(34, 211, 238, 0.1)',borderWidth:2,fill:!0,tension:.4,pointRadius:0,pointHoverRadius:6,pointBackgroundColor:'rgb(34, 211, 238)'}]},options:{responsive:!0,maintainAspectRatio:!1,plugins:{legend:{labels:{color:'rgba(226, 232, 240, 0.8)',font:{family:'JetBrains Mono',size:12}}}},scales:{x:{grid:{color:'rgba(255, 255, 255, 0.05)'},ticks:{color:'rgba(100, 116, 139, 0.8)',font:{size:11}},display:!0},y:{grid:{color:'rgba(255, 255, 255, 0.05)'},ticks:{color:'rgba(100, 116, 139, 0.8)',font:{size:11},callback:function(e){return'€'+e.toLocaleString('fr-FR',{maximumFractionDigits:0})}}}}}}))}
+function updateComposedSimulator() {
+  var capitalEl = document.getElementById('capitalSlider');
+  var rendementEl = document.getElementById('rendementSlider');
+  var dureeEl = document.getElementById('dureeSlider');
+  if (!capitalEl || !rendementEl || !dureeEl) return;
+
+  var capital = parseFloat(capitalEl.value);
+  var rendement = parseFloat(rendementEl.value);
+  var duree = parseInt(dureeEl.value);
+
+  document.getElementById('capitalValue').textContent = capital.toLocaleString('fr-FR');
+  document.getElementById('rendementValue').textContent = rendement;
+  document.getElementById('dureeValue').textContent = duree;
+
+  var capitalFinal = capital * Math.pow(1 + rendement / 100, duree);
+  var interets = capitalFinal - capital;
+
+  document.getElementById('resultCapital').textContent = '\u20AC' + Math.round(capital).toLocaleString('fr-FR');
+  document.getElementById('resultInterests').textContent = '\u20AC' + Math.round(interets).toLocaleString('fr-FR');
+  document.getElementById('resultFinal').textContent = '\u20AC' + Math.round(capitalFinal).toLocaleString('fr-FR');
+
+  updateComposedChart(capital, rendement, duree);
+}
+
+function updateComposedChart(capital, rendement, duree) {
+  var labels = [];
+  var data = [];
+  var maxYears = Math.min(duree, 50);
+  for (var i = 0; i <= maxYears; i++) {
+    data.push(Math.round(capital * Math.pow(1 + rendement / 100, i)));
+    labels.push('An ' + i);
+  }
+
+  if (composedChart) { try { composedChart.destroy(); } catch(e) {} }
+  var canvas = document.getElementById('composedChart');
+  if (!canvas || typeof Chart === 'undefined') return;
+
+  composedChart = new Chart(canvas, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Capital',
+        data: data,
+        backgroundColor: 'rgba(34, 211, 238, 0.25)',
+        borderColor: 'rgb(34, 211, 238)',
+        borderWidth: 1.5,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true, labels: { color: 'rgba(226,232,240,0.8)', font: { family: 'JetBrains Mono', size: 12 } } }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: 'rgba(100,116,139,0.8)', font: { size: 10 }, maxRotation: 45 }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: {
+            color: 'rgba(100,116,139,0.8)',
+            font: { size: 11 },
+            callback: function(val) { return val >= 1000000 ? '\u20AC' + (val/1000000).toFixed(1) + 'M' : '\u20AC' + (val/1000).toFixed(0) + 'K'; }
+          }
+        }
+      }
+    }
+  });
+}
+
+function showErrorState(){document.getElementById('positionsBody').innerHTML='\n    <tr>\n      <td colspan="9" style="text-align:center;padding:40px;color:var(--red);">\n        Données indisponibles. Veuillez rafraîchir la page.\n      </td>\n    </tr>\n  '}
+function toggleMenu(){const e=document.querySelector('.nav-links');'flex'===e.style.display?(e.style.display='none'):(e.style.display='flex',e.style.flexDirection='column',e.style.position='absolute',e.style.top='60px',e.style.right='20px',e.style.background='rgba(4,9,26,.98)',e.style.border='1px solid rgba(255,255,255,.1)',e.style.borderRadius='12px',e.style.padding='16px 24px',e.style.zIndex='999')}
+document.addEventListener('DOMContentLoaded', function() {
+  // Init simulator
+  try {
+    updateComposedSimulator();
+    var cs = document.getElementById('capitalSlider');
+    var rs = document.getElementById('rendementSlider');
+    var ds = document.getElementById('dureeSlider');
+    if (cs) cs.addEventListener('input', updateComposedSimulator);
+    if (rs) rs.addEventListener('input', updateComposedSimulator);
+    if (ds) ds.addEventListener('input', updateComposedSimulator);
+  } catch(err) { console.error('Simulator init error:', err); }
+
+  // Init portfolio
+  loadPortfolioData();
+  setInterval(loadPortfolioData, 60000);
+});
+</script>
+
+</div>
+
+<script src="gate_subscriber.js"></script>
+</body>
+</html>

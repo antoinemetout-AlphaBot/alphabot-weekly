@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "timestamp": "2026-03-22 14:25",
+    "date": "22/03/2026",
+    "semaine": "Semaine 11 de 2026"
+  },
+  "crypto": {
+    "BTC": {
+      "nom": "Bitcoin",
+      "prix_usd": 68776,
+      "variation_24h": -2.78,
+      "variation_7j": -3.97,
+      "market_cap_mrd": 1376.9,
+      "volume_24h_mrd": 29.41,
+      "ath_usd": 126080,
+      "ath_pct": -45.5
+    }
+  },
+  "news_crypto": [],
+  "bourse": {
+    "indices": {
+      "CAC 40": {
+        "valeur": 7665.62,
+        "variation_24h": -1.82,
+        "variation_7j": -3.41,
+        "ticker": "^FCHI"
+      },
+      "S&P 500": {
+        "valeur": 6506.48,
+        "variation_24h": -1.51,
+        "variation_7j": -2.88,
+        "ticker": "^GSPC"
+      },
+      "Nasdaq 100": {
+        "valeur": 23898.15,
+        "variation_24h": -1.88,
+        "variation_7j": -3.07,
+        "ticker": "^NDX"
+      },
+      "DAX": {
+        "valeur": 22380.19,
+        "variation_24h": -2.01,
+        "variation_7j": -5.02,
+        "ticker": "^GDAXI"
+      },
+      "Dow Jones": {
+        "valeur": 45577.47,
+        "variation_24h": -0.96,
+        "variation_7j": -2.92,
+        "ticker": "^DJI"
+      }
+    },
+    "actions": {
+      "Apple": {
+        "prix": 247.99,
+        "variation_24h": -0.39,
+        "ticker": "AAPL",
+        "devise": "USD",
+        "market_cap_mrd": 3644.9
+      },
+      "NVIDIA": {
+        "prix": 172.7,
+        "variation_24h": -3.28,
+        "ticker": "NVDA",
+        "devise": "USD",
+        "market_cap_mrd": 4197.5
+      },
+      "Tesla": {
+        "prix": 367.96,
+        "variation_24h": -3.24,
+        "ticker": "TSLA",
+        "devise": "USD",
+        "market_cap_mrd": 1380.7
+      },
+      "LVMH": {
+        "prix": 457.95,
+        "variation_24h": -0.5,
+        "ticker": "MC.PA",
+        "devise": "EUR",
+        "market_cap_mrd": 227.1
+      },
+      "TotalEnergies": {
+        "prix": 76.96,
+        "variation_24h": -2.07,
+        "ticker": "TTE.PA",
+        "devise": "EUR",
+        "market_cap_mrd": 164.5
+      },
+      "ExxonMobil": {
+        "prix": 159.67,
+        "variation_24h": 0.95,
+        "ticker": "XOM",
+        "devise": "USD",
+        "market_cap_mrd": 665.3
+      },
+      "Lockheed Martin": {
+        "prix": 627.43,
+        "variation_24h": -1.58,
+        "ticker": "LMT",
+        "devise": "USD",
+        "market_cap_mrd": 145.2
+      }
+    }
+  },
+  "commodities": {
+    "Dollar Index (DXY)": {
+      "valeur": 99.65,
+      "variation_24h": 0.42,
+      "variation_7j": 0.07,
+      "ticker": "DX-Y.NYB"
+    },
+    "Pétrole WTI": {
+      "valeur": 98.23,
+      "variation_24h": 2.17,
+      "variation_7j": 2.1,
+      "ticker": "CL=F"
+    },
+    "Or (XAU/USD)": {
+      "valeur": 4574.8999,
+      "variation_24h": -0.56,
+      "variation_7j": -8.52,
+      "ticker": "GC=F"
+    },
+    "EUR/USD": {
+      "valeur": 1.1575,
+      "variation_24h": 0.97,
+      "variation_7j": 1.23,
+      "ticker": "EURUSD=X"
+    }
+  },
+  "mood": {
+    "valeur": 10,
+    "sentiment": "Extreme Fear",
+    "hier_valeur": 12,
+    "hier_sentiment": "Extreme Fear"
+  }
+}

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlphaBot Weekly — Récapitulatif Organisationnel</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #04091a; --bg2: #060d1f; --bg3: #0a1128;
+    --cyan: #22d3ee; --blue: #3b82f6; --gold: #f5c842;
+    --green: #22c55e; --red: #ef4444; --orange: #f59e0b; --purple: #a855f7;
+    --text: #e2e8f0; --muted: #64748b; --dim: #334155;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.7; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  .doc-header {
+    text-align: center; padding: 60px 0 40px;
+    background: linear-gradient(180deg, rgba(34,211,238,0.06) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(34,211,238,0.15);
+  }
+  .doc-header h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; color: var(--cyan); margin-bottom: 8px; }
+  .doc-header .subtitle { font-size: 1.1rem; color: var(--muted); font-weight: 300; }
+  .doc-header .date { font-size: 0.85rem; color: var(--dim); margin-top: 12px; }
+
+  /* ── Sections ── */
+  section { padding: 50px 0; }
+  section + section { border-top: 1px solid rgba(100,116,139,0.15); }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; color: var(--cyan);
+    margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .num {
+    background: rgba(34,211,238,0.12); color: var(--cyan); font-size: 0.85rem;
+    padding: 4px 12px; border-radius: 20px; font-weight: 600;
+  }
+  .section-desc { color: var(--muted); margin-bottom: 30px; font-size: 0.95rem; }
+
+  /* ── Pyramid ── */
+  .pyramid { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 10px 0 30px; }
+  .pyramid-level {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 18px 30px; border-radius: 12px; position: relative;
+    transition: transform 0.2s;
+  }
+  .pyramid-level:hover { transform: scale(1.02); }
+
+  .pyramid-connector {
+    width: 2px; height: 24px; background: linear-gradient(180deg, var(--cyan), var(--blue));
+    margin: 0 auto; opacity: 0.4;
+  }
+  .pyramid-branch {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin: 0 auto; opacity: 0.4; color: var(--muted); font-size: 0.7rem;
+  }
+  .pyramid-branch::before, .pyramid-branch::after {
+    content: ''; display: block; width: 50px; height: 1px; background: var(--blue);
+  }
+
+  .lvl-ceo {
+    background: linear-gradient(135deg, rgba(245,200,66,0.15), rgba(245,200,66,0.05));
+    border: 1px solid rgba(245,200,66,0.3); min-width: 280px;
+  }
+  .lvl-da {
+    background: linear-gradient(135deg, rgba(34,211,238,0.12), rgba(59,130,246,0.08));
+    border: 1px solid rgba(34,211,238,0.25); min-width: 360px;
+  }
+  .lvl-team {
+    background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15);
+    min-width: 460px; flex-wrap: wrap;
+  }
+  .lvl-support {
+    background: rgba(100,116,139,0.06); border: 1px solid rgba(100,116,139,0.15);
+    min-width: 520px; flex-wrap: wrap;
+  }
+
+  .role-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 500;
+  }
+  .badge-ceo { background: rgba(245,200,66,0.15); color: var(--gold); }
+  .badge-da { background: rgba(34,211,238,0.12); color: var(--cyan); }
+  .badge-core { background: rgba(59,130,246,0.1); color: var(--blue); }
+  .badge-support { background: rgba(100,116,139,0.1); color: var(--muted); }
+
+  .pyramid-label { font-weight: 600; font-size: 0.95rem; }
+  .pyramid-sub { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── Agent Cards Grid ── */
+  .agents-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+  .agent-card {
+    background: var(--bg3); border: 1px solid rgba(100,116,139,0.15);
+    border-radius: 12px; padding: 20px; transition: border-color 0.2s;
+  }
+  .agent-card:hover { border-color: rgba(34,211,238,0.3); }
+  .agent-card .card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .agent-card .card-icon { font-size: 1.5rem; }
+  .agent-card .card-name { font-weight: 600; font-size: 0.95rem; }
+  .agent-card .card-role { font-size: 0.8rem; color: var(--cyan); font-weight: 500; }
+  .agent-card .card-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+  .agent-card .card-freq {
+    display: inline-block; font-size: 0.75rem; padding: 3px 10px;
+    border-radius: 12px; font-weight: 500;
+  }
+  .freq-daily { background: rgba(34,197,94,0.12); color: var(--green); }
+  .freq-3x { background: rgba(59,130,246,0.12); color: var(--blue); }
+  .freq-weekly { background: rgba(168,85,247,0.12); color: var(--purple); }
+  .freq-monthly { background: rgba(245,158,11,0.12); color: var(--orange); }
+
+  .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  .dot-ok { background: var(--green); box-shadow: 0 0 6px rgba(34,197,94,0.5); }
+  .dot-warn { background: var(--orange); box-shadow: 0 0 6px rgba(245,158,11,0.5); }
+  .dot-error { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,0.5); }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 16px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(180deg, var(--cyan), var(--blue), var(--purple), var(--muted));
+    border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-dot {
+    position: absolute; left: -32px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--bg); z-index: 1;
+  }
+  .tl-dot.morning { background: var(--gold); }
+  .tl-dot.midday { background: var(--cyan); }
+  .tl-dot.afternoon { background: var(--blue); }
+  .tl-dot.evening { background: var(--purple); }
+
+  .tl-time { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; color: var(--cyan); font-weight: 600; margin-bottom: 2px; }
+  .tl-task { font-size: 0.9rem; font-weight: 500; }
+  .tl-desc { font-size: 0.8rem; color: var(--muted); }
+  .tl-tag {
+    display: inline-block; font-size: 0.7rem; padding: 2px 8px;
+    border-radius: 10px; margin-left: 6px; font-weight: 500; vertical-align: middle;
+  }
+  .tag-newsletter { background: rgba(245,200,66,0.15); color: var(--gold); }
+  .tag-veille { background: rgba(34,211,238,0.12); color: var(--cyan); }
+  .tag-growth { background: rgba(34,197,94,0.12); color: var(--green); }
+  .tag-commercial { background: rgba(168,85,247,0.12); color: var(--purple); }
+  .tag-admin { background: rgba(100,116,139,0.12); color: var(--muted); }
+
+  /* ── KPI boxes ── */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 20px 0; }
+  .kpi-box {
+    background: var(--bg3); border: 1px solid rgba(100,116,139,0.12);
+    border-radius: 10px; padding: 18px; text-align: center;
+  }
+  .kpi-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; }
+  .kpi-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .kpi-cyan { color: var(--cyan); }
+  .kpi-gold { color: var(--gold); }
+  .kpi-green { color: var(--green); }
+  .kpi-red { color: var(--red); }
+
+  /* ── Flux diagram ── */
+  .flux { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 30px 0; }
+  .flux-step {
+    background: var(--bg3); border: 1px solid rgba(34,211,238,0.2);
+    border-radius: 10px; padding: 12px 18px; text-align: center; min-width: 120px;
+  }
+  .flux-step .step-icon { font-size: 1.3rem; margin-bottom: 4px; }
+  .flux-step .step-name { font-size: 0.8rem; font-weight: 600; }
+  .flux-step .step-agent { font-size: 0.7rem; color: var(--muted); }
+  .flux-arrow { color: var(--cyan); font-size: 1.2rem; opacity: 0.5; }
+
+  /* ── Objectifs ── */
+  .obj-row { display: flex; align-items: center; gap: 16px; padding: 14px 0; }
+  .obj-row + .obj-row { border-top: 1px solid rgba(100,116,139,0.1); }
+  .obj-horizon {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem; font-weight: 600;
+    padding: 4px 14px; border-radius: 8px; min-width: 100px; text-align: center;
+  }
+  .horizon-now { background: rgba(34,197,94,0.12); color: var(--green); }
+  .horizon-mid { background: rgba(59,130,246,0.12); color: var(--blue); }
+  .horizon-long { background: rgba(168,85,247,0.12); color: var(--purple); }
+  .obj-text { font-size: 0.9rem; }
+  .obj-metric { font-size: 0.85rem; color: var(--cyan); font-weight: 500; margin-left: auto; white-space: nowrap; }
+
+  /* ── Costs ── */
+  .cost-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  .cost-table th {
+    text-align: left; padding: 10px 14px; font-size: 0.78rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(100,116,139,0.2);
+  }
+  .cost-table td { padding: 10px 14px; font-size: 0.88rem; border-bottom: 1px solid rgba(100,116,139,0.08); }
+  .cost-table .amount { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--gold); }
+
+  /* ── Footer ── */
+  .doc-footer { text-align: center; padding: 40px 0; color: var(--dim); font-size: 0.8rem; }
+
+  /* ── Responsive ── */
+  @media (max-width: 700px) {
+    .pyramid-level { min-width: unset !important; padding: 12px 16px; }
+    .agents-grid { grid-template-columns: 1fr; }
+    .flux { flex-direction: column; }
+    .flux-arrow { transform: rotate(90deg); }
+    .obj-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .obj-metric { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<div class="doc-header">
+  <h1>AlphaBot Weekly</h1>
+  <div class="subtitle">Récapitulatif Organisationnel de l'Entreprise</div>
+  <div class="date">Document mis à jour le 21 mars 2026 — Préparé pour Antoine Metout, CEO</div>
+</div>
+
+<div class="wrap">
+
+<!-- ════════ 1. L'ENTREPRISE EN UN COUP D'ŒIL ════════ -->
+<section>
+  <div class="section-title"><span class="num">01</span> L'entreprise en un coup d'œil</div>
+  <div class="section-desc">AlphaBot Weekly, c'est quoi ? Une newsletter financière 100% pilotée par l'IA qui décrypte la bourse et la géopolitique pour des investisseurs débutants francophones.</div>
+
+  <div class="kpi-grid">
+    <div class="kpi-box">
+      <div class="kpi-value kpi-gold">13</div>
+      <div class="kpi-label">Agents IA employés</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value kpi-cyan">6</div>
+      <div class="kpi-label">Abonnés (1 réel + 5 tests)</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value kpi-green">2</div>
+      <div class="kpi-label">Newsletters publiées</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value kpi-red">124,53€</div>
+      <div class="kpi-label">Coûts cumulés</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value kpi-gold">10 000€</div>
+      <div class="kpi-label">Capital portefeuille IA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 2. PYRAMIDE HIÉRARCHIQUE ════════ -->
+<section>
+  <div class="section-title"><span class="num">02</span> Pyramide hiérarchique</div>
+  <div class="section-desc">Qui commande qui ? Voici comment l'entreprise est organisée, du CEO aux agents terrain.</div>
+
+  <div class="pyramid">
+
+    <!-- CEO -->
+    <div class="pyramid-level lvl-ceo">
+      <span class="role-badge badge-ceo">CEO</span>
+      <div>
+        <div class="pyramid-label">Antoine Metout</div>
+        <div class="pyramid-sub">Donne la direction stratégique via <strong>directives.txt</strong></div>
+      </div>
+    </div>
+
+    <div class="pyramid-connector"></div>
+    <div class="pyramid-branch">communique par directives écrites</div>
+    <div class="pyramid-connector"></div>
+
+    <!-- DIRECTEUR ADJOINT -->
+    <div class="pyramid-level lvl-da">
+      <span class="role-badge badge-da">N°2</span>
+      <div>
+        <div class="pyramid-label">Directeur Adjoint IA</div>
+        <div class="pyramid-sub">Supervise l'équipe, détecte les problèmes, envoie le rapport CEO chaque soir</div>
+      </div>
+    </div>
+
+    <div class="pyramid-connector"></div>
+    <div class="pyramid-branch">coordonne et supervise</div>
+    <div class="pyramid-connector"></div>
+
+    <!-- ÉQUIPE CŒUR DE MÉTIER -->
+    <div class="pyramid-level lvl-team">
+      <span class="role-badge badge-core">Équipe Production</span>
+      <div class="role-badge badge-core">Veille</div>
+      <div class="role-badge badge-core">Analyste</div>
+      <div class="role-badge badge-core">Rédacteur</div>
+      <div class="role-badge badge-core">DA Site</div>
+    </div>
+
+    <div class="pyramid-connector"></div>
+
+    <!-- SUPPORT -->
+    <div class="pyramid-level lvl-support">
+      <span class="role-badge badge-support">Équipe Support</span>
+      <div class="role-badge badge-support">Growth</div>
+      <div class="role-badge badge-support">Commercial</div>
+      <div class="role-badge badge-support">Twitter</div>
+      <div class="role-badge badge-support">Analytics</div>
+      <div class="role-badge badge-support">CFO</div>
+      <div class="role-badge badge-support">Investissement</div>
+      <div class="role-badge badge-support">CEO Brief</div>
+      <div class="role-badge badge-support">Growth Booster</div>
+    </div>
+  </div>
+
+  <p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-top:10px;">
+    <strong style="color:var(--gold);">Comment ça communique ?</strong> Antoine écrit ses instructions dans <code style="background:var(--bg3); padding:2px 8px; border-radius:4px;">directives.txt</code>. Le Directeur Adjoint lit ce fichier chaque matin, supervise toute l'équipe, et envoie un rapport complet à Antoine chaque soir par email.
+  </p>
+</section>
+
+<!-- ════════ 3. LES 13 AGENTS EN DÉTAIL ════════ -->
+<section>
+  <div class="section-title"><span class="num">03</span> Les 13 agents IA — Qui fait quoi ?</div>
+  <div class="section-desc">Chaque agent a un rôle précis. Voici leur fiche d'identité.</div>
+
+  <div class="agents-grid">
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🔍</span>
+        <div><div class="card-name">Agent Veille</div><div class="card-role">Collecteur de données</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Va chercher les prix en temps réel : Bitcoin (CoinGecko), indices boursiers, pétrole, or, dollar (Yahoo Finance). C'est lui qui nourrit tout le reste.</div>
+      <span class="card-freq freq-3x">3 fois par jour</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🧠</span>
+        <div><div class="card-name">Agent Analyste</div><div class="card-role">Cerveau analytique</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Prend les données brutes de la Veille et les transforme en analyses écrites : macro-économie, géopolitique, crypto, bourse. Style journalistique, toujours avec un fait concret et un chiffre.</div>
+      <span class="card-freq freq-weekly">1 fois par semaine</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">✍️</span>
+        <div><div class="card-name">Agent Rédacteur</div><div class="card-role">Rédacteur en chef</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Assemble les analyses en une belle newsletter HTML avec logos, graphiques, KPI bar, Fear & Greed Index. C'est le produit final envoyé aux abonnés.</div>
+      <span class="card-freq freq-weekly">Chaque lundi</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🎨</span>
+        <div><div class="card-name">Agent DA Site</div><div class="card-role">Directeur Artistique</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Améliore le design du site en continu : injecte du CSS, harmonise la navigation, génère les cartes d'insights géopolitiques pour la page d'accueil.</div>
+      <span class="card-freq freq-daily">Tous les jours</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🤝</span>
+        <div><div class="card-name">Directeur Adjoint</div><div class="card-role">Numéro 2 de l'entreprise</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Supervise toute l'équipe. Vérifie que chaque agent fait son travail, détecte les retards, lit les directives du CEO, et envoie un rapport complet chaque soir.</div>
+      <span class="card-freq freq-daily">2 fois par jour (matin + soir)</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">📧</span>
+        <div><div class="card-name">Agent Growth</div><div class="card-role">Responsable abonnés</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Gère la liste des abonnés, envoie les newsletters par email (SMTP Gmail), envoie les emails de bienvenue et les notifications quotidiennes au CEO.</div>
+      <span class="card-freq freq-weekly">Chaque lundi + quotidien</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🐦</span>
+        <div><div class="card-name">Agent Twitter</div><div class="card-role">Community manager</div></div>
+        <span class="status-dot dot-error" title="En erreur"></span>
+      </div>
+      <div class="card-desc">Poste 3 tweets par jour sur @AlphaBot_Weekly : tendances du matin, analyse de midi, synthèse du soir. <strong style="color:var(--red);">Actuellement bloqué</strong> (tokens Twitter à régénérer).</div>
+      <span class="card-freq freq-3x">3 fois par jour</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">📈</span>
+        <div><div class="card-name">Agent Investissement</div><div class="card-role">Gérant de portefeuille</div></div>
+        <span class="status-dot dot-warn" title="En attente"></span>
+      </div>
+      <div class="card-desc">Gère un portefeuille fictif de 10 000€ avec objectif x10. Analyse les opportunités selon 3 thèses géopolitiques : Bitcoin/Dollar, Réarmement européen, Or refuge.</div>
+      <span class="card-freq freq-daily">Tous les jours</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">🚀</span>
+        <div><div class="card-name">Agent Growth Booster</div><div class="card-role">Accélérateur de croissance</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Génère du contenu viral pour LinkedIn et Twitter, crée des profils de simulation pour tester le système, et propose des stratégies de croissance concrètes.</div>
+      <span class="card-freq freq-3x">3 sessions par jour</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">💼</span>
+        <div><div class="card-name">Agent Commercial</div><div class="card-role">Chasseur de sponsors</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Prospecte des sponsors potentiels (courtiers, fintechs, formations). Génère des emails personnalisés le matin et relance les non-répondants à J+7.</div>
+      <span class="card-freq freq-daily">2 fois par jour</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">📊</span>
+        <div><div class="card-name">Agent Analytics</div><div class="card-role">Analyste de performance</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Génère un tableau de bord des métriques clés : nombre d'abonnés, taux d'ouverture, taux de clics, croissance, coûts. C'est le thermomètre de la santé du projet.</div>
+      <span class="card-freq freq-daily">Tous les jours à 16h30</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">💰</span>
+        <div><div class="card-name">Agent CFO</div><div class="card-role">Directeur financier</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Tient les comptes : coûts API (Claude, CoinGecko), abonnements, et projections de revenus futurs (sponsoring). Calcule le seuil de rentabilité.</div>
+      <span class="card-freq freq-daily">Tous les jours à 16h45</span>
+    </div>
+
+    <div class="agent-card">
+      <div class="card-head">
+        <span class="card-icon">📋</span>
+        <div><div class="card-name">Agent CEO Brief</div><div class="card-role">Briefing stratégique</div></div>
+        <span class="status-dot dot-ok" title="Opérationnel"></span>
+      </div>
+      <div class="card-desc">Prépare un résumé stratégique pour Antoine : état du projet, métriques clés, décisions à prendre, et recommandations. Court, actionnable, sans jargon.</div>
+      <span class="card-freq freq-daily">Intégré au rapport du soir</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ 4. LA CHAÎNE DE PRODUCTION DE LA NEWSLETTER ════════ -->
+<section>
+  <div class="section-title"><span class="num">04</span> Comment la newsletter est fabriquée</div>
+  <div class="section-desc">Chaque lundi à 7h30, voici ce qui se passe automatiquement, étape par étape :</div>
+
+  <div class="flux">
+    <div class="flux-step">
+      <div class="step-icon">🔍</div>
+      <div class="step-name">Veille</div>
+      <div class="step-agent">agent_veille.py</div>
+    </div>
+    <div class="flux-arrow">→</div>
+    <div class="flux-step">
+      <div class="step-icon">✅</div>
+      <div class="step-name">Validation</div>
+      <div class="step-agent">data_validator.py</div>
+    </div>
+    <div class="flux-arrow">→</div>
+    <div class="flux-step">
+      <div class="step-icon">🧠</div>
+      <div class="step-name">Analyse</div>
+      <div class="step-agent">agent_analyste.py</div>
+    </div>
+    <div class="flux-arrow">→</div>
+    <div class="flux-step">
+      <div class="step-icon">✅</div>
+      <div class="step-name">Validation</div>
+      <div class="step-agent">data_validator.py</div>
+    </div>
+    <div class="flux-arrow">→</div>
+    <div class="flux-step">
+      <div class="step-icon">✍️</div>
+      <div class="step-name">Rédaction</div>
+      <div class="step-agent">agent_redacteur.py</div>
+    </div>
+    <div class="flux-arrow">→</div>
+    <div class="flux-step">
+      <div class="step-icon">📧</div>
+      <div class="step-name">Envoi</div>
+      <div class="step-agent">agent_growth.py</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.88rem; color:var(--muted); text-align:center; margin-top:10px;">
+    Si la Veille échoue (API en panne), la chaîne s'arrête automatiquement pour éviter d'envoyer une newsletter vide.
+  </p>
+</section>
+
+<!-- ════════ 5. PLANNING JOURNALIER COMPLET ════════ -->
+<section>
+  <div class="section-title"><span class="num">05</span> Planning automatique — Journée type</div>
+  <div class="section-desc">Voici tout ce que les agents font automatiquement chaque jour, de 7h30 à 18h00. Le PC doit être allumé.</div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">07:30</div>
+      <div class="tl-task">Newsletter complète <span class="tl-tag tag-newsletter">LUNDI SEULEMENT</span></div>
+      <div class="tl-desc">Pipeline Veille → Analyse → Rédaction → Envoi à tous les abonnés</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">07:45</div>
+      <div class="tl-task">Synchronisation abonnés <span class="tl-tag tag-admin">Admin</span></div>
+      <div class="tl-desc">Récupère les nouvelles inscriptions depuis le formulaire du site (Netlify Forms)</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">08:00</div>
+      <div class="tl-task">Directeur Adjoint — Briefing matin <span class="tl-tag tag-admin">Supervision</span></div>
+      <div class="tl-desc">Bilan de la nuit, scan du projet, vérification de l'équipe, lecture des directives CEO</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">08:30</div>
+      <div class="tl-task">Veille marchés — Ouverture <span class="tl-tag tag-veille">Veille</span></div>
+      <div class="tl-desc">Collecte Bitcoin, indices, matières premières, devises à l'ouverture des marchés</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">08:35</div>
+      <div class="tl-task">Tweet du matin <span class="tl-tag tag-growth">Twitter</span></div>
+      <div class="tl-desc">@AlphaBot_Weekly poste les tendances d'ouverture</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">08:50</div>
+      <div class="tl-task">Email quotidien CEO <span class="tl-tag tag-admin">CEO</span></div>
+      <div class="tl-desc">Antoine reçoit les titres du jour + lien vers la dernière newsletter</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">09:30</div>
+      <div class="tl-task">DA Site — Design & Géopolitique <span class="tl-tag tag-veille">Contenu</span></div>
+      <div class="tl-desc">Mise à jour du site : cartes d'insights géopolitiques, améliorations CSS, navigation</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot morning"></div>
+      <div class="tl-time">09:45</div>
+      <div class="tl-task">Investissement IA <span class="tl-tag tag-newsletter">Finance</span></div>
+      <div class="tl-desc">Mise à jour du portefeuille, évaluation des opportunités selon les 3 thèses</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot midday"></div>
+      <div class="tl-time">10:00</div>
+      <div class="tl-task">Growth Booster — Session 1 <span class="tl-tag tag-growth">Croissance</span></div>
+      <div class="tl-desc">Génération de contenu viral, stratégies LinkedIn/Twitter</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot midday"></div>
+      <div class="tl-time">11:00</div>
+      <div class="tl-task">Commercial — Prospection <span class="tl-tag tag-commercial">Sponsors</span></div>
+      <div class="tl-desc">Génération d'emails de prospection pour sponsors potentiels</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot midday"></div>
+      <div class="tl-time">12:00</div>
+      <div class="tl-task">Veille marchés — Midi <span class="tl-tag tag-veille">Veille</span></div>
+      <div class="tl-desc">Mise à jour des prix mi-journée, détection d'événements</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot midday"></div>
+      <div class="tl-time">12:30</div>
+      <div class="tl-task">Tweet de midi <span class="tl-tag tag-growth">Twitter</span></div>
+      <div class="tl-desc">@AlphaBot_Weekly poste l'analyse de mi-journée</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot afternoon"></div>
+      <div class="tl-time">13:30</div>
+      <div class="tl-task">Growth Booster — Session 2 <span class="tl-tag tag-growth">Croissance</span></div>
+      <div class="tl-desc">Nouveaux contenus SEO, stratégies de referral</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot afternoon"></div>
+      <div class="tl-time">14:30</div>
+      <div class="tl-task">Veille marchés — Après-midi <span class="tl-tag tag-veille">Veille</span></div>
+      <div class="tl-desc">Dernière collecte de prix, résumé de la séance</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot afternoon"></div>
+      <div class="tl-time">15:30</div>
+      <div class="tl-task">Growth Booster — Session 3 <span class="tl-tag tag-growth">Croissance</span></div>
+      <div class="tl-desc">Contenu viral, partenariats, campagnes abonnés</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot afternoon"></div>
+      <div class="tl-time">16:00</div>
+      <div class="tl-task">Commercial — Relances <span class="tl-tag tag-commercial">Sponsors</span></div>
+      <div class="tl-desc">Relance des prospects qui n'ont pas répondu depuis 7 jours</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot evening"></div>
+      <div class="tl-time">16:30</div>
+      <div class="tl-task">Analytics <span class="tl-tag tag-admin">Métriques</span></div>
+      <div class="tl-desc">Génération du dashboard KPIs : abonnés, ouvertures, clics, croissance</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot evening"></div>
+      <div class="tl-time">16:45</div>
+      <div class="tl-task">CFO — Rapport financier <span class="tl-tag tag-newsletter">Finance</span></div>
+      <div class="tl-desc">Bilan coûts/revenus, projections, seuil de rentabilité</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot evening"></div>
+      <div class="tl-time">17:30</div>
+      <div class="tl-task">Directeur Adjoint — Rapport CEO <span class="tl-tag tag-admin">Rapport</span></div>
+      <div class="tl-desc">Bilan complet de la journée envoyé par email à Antoine</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot evening"></div>
+      <div class="tl-time">17:45</div>
+      <div class="tl-task">Tweet du soir <span class="tl-tag tag-growth">Twitter</span></div>
+      <div class="tl-desc">@AlphaBot_Weekly poste la synthèse de la journée</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot evening" style="background:var(--muted);"></div>
+      <div class="tl-time">18:00</div>
+      <div class="tl-task" style="color:var(--muted);">Pause — Agents en veille</div>
+      <div class="tl-desc">Les agents s'arrêtent jusqu'au lendemain 7h30</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ 6. BUDGET & COÛTS ════════ -->
+<section>
+  <div class="section-title"><span class="num">06</span> Budget & Coûts actuels</div>
+  <div class="section-desc">Combien ça coûte de faire tourner AlphaBot Weekly ?</div>
+
+  <table class="cost-table">
+    <thead>
+      <tr><th>Date</th><th>Poste</th><th>Montant</th><th>Récurrent ?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>11/03/2026</td><td>Claude Pro — Abonnement mars</td><td class="amount">21,60€</td><td>Non (avant upgrade)</td></tr>
+      <tr><td>20/03/2026</td><td>Crédits API Anthropic</td><td class="amount">10,00€</td><td>À la demande</td></tr>
+      <tr><td>21/03/2026</td><td>Claude Max — Abonnement mensuel</td><td class="amount">92,93€</td><td>Oui (~93€/mois)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="kpi-grid" style="margin-top:20px;">
+    <div class="kpi-box">
+      <div class="kpi-value kpi-red">~98€/mois</div>
+      <div class="kpi-label">Coût mensuel estimé</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value" style="color:var(--muted);">0€</div>
+      <div class="kpi-label">Revenus actuels</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value kpi-cyan">~1 sponsor</div>
+      <div class="kpi-label">Pour atteindre le break-even</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.88rem; color:var(--muted); margin-top:16px;">
+    Les APIs externes sont gratuites pour l'instant : Yahoo Finance (gratuit), CoinGecko (30 appels/min gratuits), Gmail (gratuit). Le principal coût est l'abonnement Claude Max qui fait tourner les 13 agents.
+  </p>
+</section>
+
+<!-- ════════ 7. ACTIFS SURVEILLÉS ════════ -->
+<section>
+  <div class="section-title"><span class="num">07</span> Ce que les agents surveillent</div>
+  <div class="section-desc">Tous les actifs financiers suivis par la Veille, analysés dans la newsletter, et surveillés par le portefeuille IA.</div>
+
+  <div class="agents-grid">
+    <div class="agent-card">
+      <div class="card-head"><span class="card-icon">💎</span><div><div class="card-name">Crypto</div></div></div>
+      <div class="card-desc" style="font-size:0.9rem;">Bitcoin (BTC)</div>
+    </div>
+    <div class="agent-card">
+      <div class="card-head"><span class="card-icon">📊</span><div><div class="card-name">Indices boursiers</div></div></div>
+      <div class="card-desc" style="font-size:0.9rem;">CAC 40, S&P 500, Nasdaq 100, DAX, Dow Jones</div>
+    </div>
+    <div class="agent-card">
+      <div class="card-head"><span class="card-icon">🛢️</span><div><div class="card-name">Matières premières</div></div></div>
+      <div class="card-desc" style="font-size:0.9rem;">Dollar Index (DXY), Pétrole WTI, Or (XAU/USD), EUR/USD</div>
+    </div>
+    <div class="agent-card">
+      <div class="card-head"><span class="card-icon">🏢</span><div><div class="card-name">Actions individuelles</div></div></div>
+      <div class="card-desc" style="font-size:0.9rem;">Apple, NVIDIA, Tesla, LVMH, TotalEnergies, ExxonMobil, Lockheed Martin</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 8. OBJECTIFS STRATÉGIQUES ════════ -->
+<section>
+  <div class="section-title"><span class="num">08</span> Objectifs stratégiques</div>
+  <div class="section-desc">Où va AlphaBot Weekly ? Voici la feuille de route.</div>
+
+  <div class="obj-row">
+    <div class="obj-horizon horizon-now">Court terme</div>
+    <div class="obj-text">Atteindre 50 vrais abonnés, newsletter fiable chaque lundi</div>
+    <div class="obj-metric">6 → 50</div>
+  </div>
+  <div class="obj-row">
+    <div class="obj-horizon horizon-mid">Moyen terme</div>
+    <div class="obj-text">500 abonnés, décrocher le premier sponsor payant</div>
+    <div class="obj-metric">1er sponsor</div>
+  </div>
+  <div class="obj-row">
+    <div class="obj-horizon horizon-long">Long terme</div>
+    <div class="obj-text">5 000 abonnés, monétisation pub + sponsors récurrents</div>
+    <div class="obj-metric">1 000€/mois</div>
+  </div>
+  <div class="obj-row">
+    <div class="obj-horizon horizon-long">Portefeuille</div>
+    <div class="obj-text">Transformer 10 000€ en 100 000€ via thèses géopolitiques IA</div>
+    <div class="obj-metric">10k → 100k€</div>
+  </div>
+
+  <div style="margin-top: 30px; padding: 20px; background: var(--bg3); border-radius: 12px; border-left: 3px solid var(--gold);">
+    <p style="font-size: 0.92rem; color: var(--text); margin-bottom: 8px;"><strong style="color:var(--gold);">Les 3 thèses d'investissement actives :</strong></p>
+    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 6px;"><strong>1. Bitcoin vs Dollar</strong> — Quand le DXY faiblit (Fed dovish), Bitcoin surperforme historiquement. Statut : surveillance.</p>
+    <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 6px;"><strong>2. Réarmement européen</strong> — Les budgets défense explosent post-Ukraine. Cible : Lockheed Martin (LMT). Statut : active.</p>
+    <p style="font-size: 0.88rem; color: var(--muted);"><strong>3. Or refuge géopolitique</strong> — Tensions Moyen-Orient + dédollarisation = or stratégique. Statut : surveillance.</p>
+  </div>
+</section>
+
+<!-- ════════ 9. COMMENT PILOTER L'ENTREPRISE ════════ -->
+<section>
+  <div class="section-title"><span class="num">09</span> Comment piloter l'entreprise au quotidien</div>
+  <div class="section-desc">En tant que CEO, voici tes 4 points de contact avec l'entreprise :</div>
+
+  <div class="agents-grid">
+    <div class="agent-card" style="border-color: rgba(245,200,66,0.3);">
+      <div class="card-head"><span class="card-icon">📝</span><div><div class="card-name">directives.txt</div><div class="card-role">Tu écris → les agents exécutent</div></div></div>
+      <div class="card-desc">Ouvre ce fichier, écris tes instructions avec [HAUTE], [MOYENNE] ou [BASSE]. Le Directeur Adjoint les lit chaque matin et passe à l'action.</div>
+    </div>
+    <div class="agent-card" style="border-color: rgba(245,200,66,0.3);">
+      <div class="card-head"><span class="card-icon">📧</span><div><div class="card-name">Email du soir</div><div class="card-role">Le DA t'envoie un rapport complet</div></div></div>
+      <div class="card-desc">Chaque jour à 17h30, tu reçois un email avec : état des agents, KPIs du jour, problèmes détectés, et plan d'action pour demain.</div>
+    </div>
+    <div class="agent-card" style="border-color: rgba(245,200,66,0.3);">
+      <div class="card-head"><span class="card-icon">🖥️</span><div><div class="card-name">Dashboard Agents</div><div class="card-role">dashboard-agents.html</div></div></div>
+      <div class="card-desc">Page web qui montre en temps réel ce que font les agents : dernières actions, erreurs, succès. Se rafraîchit toutes les 30 secondes.</div>
+    </div>
+    <div class="agent-card" style="border-color: rgba(245,200,66,0.3);">
+      <div class="card-head"><span class="card-icon">🔐</span><div><div class="card-name">Dashboard CEO</div><div class="card-role">dashboard-ceo.html</div></div></div>
+      <div class="card-desc">Dashboard privé protégé par mot de passe avec les métriques financières, la croissance abonnés, et les projections.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="doc-footer">
+  <p>AlphaBot Weekly — Récapitulatif Organisationnel — 21 mars 2026</p>
+  <p>Document généré automatiquement par Claude Projects</p>
+</div>
+
+</body>
+</html>

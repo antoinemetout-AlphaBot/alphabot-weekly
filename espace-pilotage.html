@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Redirection - AlphaBot Weekly</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#04091a;--cyan:#22d3ee;--text:#e2e8f0;--muted:#64748b;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
+.redirect-card{text-align:center;max-width:500px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:48px 40px;backdrop-filter:blur(20px);}
+.redirect-card h1{font-size:32px;font-weight:800;margin-bottom:16px;color:white;}
+.redirect-card p{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:24px;}
+.redirect-link{display:inline-block;background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white;text-decoration:none;padding:14px 32px;border-radius:10px;font-weight:600;transition:.2s;margin-bottom:16px;}
+.redirect-link:hover{opacity:.9;transform:translateY(-2px);}
+.countdown{color:var(--muted);font-size:13px;margin-top:20px;}
+.countdown strong{color:var(--cyan);}
+</style>
+</head>
+<body>
+<div class="redirect-card">
+  <h1>🔄 Page Fusionnée</h1>
+  <p>Cette page a été fusionnée avec le Dashboard CEO pour simplifier l'interface d'administration.</p>
+  <p>Vous serez redirigé automatiquement vers le Dashboard CEO dans <strong><span id="countdown">3</span> secondes</strong>...</p>
+  <a href="dashboard-ceo.html" class="redirect-link">Accéder au Dashboard CEO →</a>
+  <div class="countdown">Si la redirection ne fonctionne pas, cliquez sur le lien ci-dessus.</div>
+</div>
+
+<script>
+let count = 3;
+const countdownEl = document.getElementById('countdown');
+
+const interval = setInterval(() => {
+  count--;
+  countdownEl.textContent = count;
+  if (count <= 0) {
+    clearInterval(interval);
+    window.location.href = 'dashboard-ceo.html';
+  }
+}, 1000);
+</script>
+</body>
+</html>
