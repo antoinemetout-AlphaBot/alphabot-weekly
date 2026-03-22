@@ -310,8 +310,13 @@ class AgentGrowth:
             log.error(f"❌ Erreur envoi bienvenue à {email} : {e}")
             return False
 
-    def lire_abonnes(self, actifs_seulement: bool = True) -> list:
-        """Lit et retourne la liste des abonnés."""
+    def lire_abonnes(self, actifs_seulement: bool = True, exclure_simulations: bool = True) -> list:
+        """Lit et retourne la liste des abonnés.
+
+        Args:
+            actifs_seulement: Si True, exclut les abonnés inactifs
+            exclure_simulations: Si True, exclut les abonnés dont la source contient "simulation"
+        """
         abonnes = []
         try:
             with file_lock(SUBSCRIBERS_CSV):
@@ -319,6 +324,8 @@ class AgentGrowth:
                     reader = csv.DictReader(f)
                     for row in reader:
                         if actifs_seulement and row.get("actif", "oui") != "oui":
+                            continue
+                        if exclure_simulations and "simulation" in row.get("source", "").lower():
                             continue
                         abonnes.append(row)
         except FileNotFoundError:
@@ -341,8 +348,8 @@ class AgentGrowth:
         return modifie
 
     def stats_abonnes(self) -> dict:
-        """Retourne les statistiques de la liste."""
-        tous      = self.lire_abonnes(actifs_seulement=False)
+        """Retourne les statistiques de la liste (exclut les simulations)."""
+        tous      = self.lire_abonnes(actifs_seulement=False, exclure_simulations=True)
         actifs    = [a for a in tous if a.get("actif") == "oui"]
         inactifs  = [a for a in tous if a.get("actif") != "oui"]
 

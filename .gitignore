@@ -1,4 +1,11 @@
 .env
 __pycache__/
 *.pyc
-.env
+*.bat
+agents/
+utils/
+*.py
+requirements.txt
+directives.txt
+data/activity_log.jsonl
+.git/

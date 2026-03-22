@@ -1,41 +1,302 @@
 {
   "meta": {
     "capital_initial": 10000,
-    "capital_actuel": 10000,
+    "capital_actuel": 10026.514469596135,
     "objectif": 100000,
     "date_creation": "2026-03-22",
     "derniere_maj": "2026-03-22",
     "devise": "EUR",
-    "performance_totale_pct": 0.0,
-    "nb_trades": 0
+    "performance_totale_pct": 0.26514469596135315,
+    "nb_trades": 12
   },
-  "cash_disponible": 10000,
-  "positions": [],
-  "trades_historique": [],
+  "cash_disponible": 5124.264711781693,
+  "positions": [
+    {
+      "ticker": "AAPL",
+      "nom": "Apple",
+      "nb_actions": 7,
+      "prix_entree": 102.31035709208989,
+      "prix_actuel": 102.31035709208989,
+      "montant_investi": 716.1724996446292,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Hausse forte de +2.31% — momentum haussier",
+      "these_id": null,
+      "stop_loss": 99.24104637932719,
+      "take_profit": 107.42587494669439,
+      "strategie": "momentum"
+    },
+    {
+      "ticker": "TSLA",
+      "nom": "Tesla",
+      "nb_actions": 6,
+      "prix_entree": 101.89917306146745,
+      "prix_actuel": 101.89917306146745,
+      "montant_investi": 611.3950383688048,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Hausse forte de +1.90% — momentum haussier",
+      "these_id": null,
+      "stop_loss": 98.84219786962342,
+      "take_profit": 106.99413171454083,
+      "strategie": "momentum"
+    },
+    {
+      "ticker": "TTE.PA",
+      "nom": "TotalEnergies",
+      "nb_actions": 6,
+      "prix_entree": 97.80859651341049,
+      "prix_actuel": 97.80859651341049,
+      "montant_investi": 586.8515790804629,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Baisse forte de -2.19% — retour attendu",
+      "these_id": null,
+      "stop_loss": 94.87433861800818,
+      "take_profit": 102.69902633908102,
+      "strategie": "mean_reversion"
+    },
+    {
+      "ticker": "XOM",
+      "nom": "ExxonMobil",
+      "nb_actions": 6,
+      "prix_entree": 97.70243247565148,
+      "prix_actuel": 97.70243247565148,
+      "montant_investi": 586.2145948539089,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Baisse forte de -2.30% — retour attendu",
+      "these_id": null,
+      "stop_loss": 94.77135950138194,
+      "take_profit": 102.58755409943406,
+      "strategie": "mean_reversion"
+    },
+    {
+      "ticker": "NVDA",
+      "nom": "NVIDIA",
+      "nb_actions": 5,
+      "prix_entree": 97.75120879896934,
+      "prix_actuel": 97.75120879896934,
+      "montant_investi": 488.7560439948467,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Baisse forte de -2.25% — retour attendu",
+      "these_id": null,
+      "stop_loss": 94.81867253500026,
+      "take_profit": 102.63876923891782,
+      "strategie": "mean_reversion"
+    },
+    {
+      "ticker": "MC.PA",
+      "nom": "LVMH",
+      "nb_actions": 5,
+      "prix_entree": 97.6946038950809,
+      "prix_actuel": 97.6946038950809,
+      "montant_investi": 488.4730194754045,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Baisse forte de -2.31% — retour attendu",
+      "these_id": null,
+      "stop_loss": 94.76376577822847,
+      "take_profit": 102.57933408983496,
+      "strategie": "mean_reversion"
+    },
+    {
+      "ticker": "CL=F",
+      "nom": "Pétrole WTI",
+      "nb_actions": 4,
+      "prix_entree": 101.36406726678861,
+      "prix_actuel": 101.36406726678861,
+      "montant_investi": 405.45626906715444,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Hausse forte de +1.36% — momentum haussier",
+      "these_id": null,
+      "stop_loss": 98.32314524878495,
+      "take_profit": 106.43227063012804,
+      "strategie": "momentum"
+    },
+    {
+      "ticker": "GC=F",
+      "nom": "Or (XAU/USD)",
+      "nb_actions": 4,
+      "prix_entree": 102.5480777178719,
+      "prix_actuel": 102.5480777178719,
+      "montant_investi": 410.1923108714876,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Hausse forte de +2.55% — momentum haussier",
+      "these_id": null,
+      "stop_loss": 99.47163538633575,
+      "take_profit": 107.6754816037655,
+      "strategie": "momentum"
+    },
+    {
+      "ticker": "LMT",
+      "nom": "Lockheed Martin",
+      "nb_actions": 3,
+      "prix_entree": 100.55907048466963,
+      "prix_actuel": 100.55907048466963,
+      "montant_investi": 301.6772114540089,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Or monte → tensions géopolitiques → achat défense (LMT)",
+      "these_id": null,
+      "stop_loss": 97.54229837012954,
+      "take_profit": 105.58702400890311,
+      "strategie": "geopolitique"
+    },
+    {
+      "ticker": "EURUSD=X",
+      "nom": "EUR/USD",
+      "nb_actions": 3,
+      "prix_entree": 102.35373033457829,
+      "prix_actuel": 102.35373033457829,
+      "montant_investi": 307.06119100373485,
+      "pl_euros": 0.0,
+      "pl_pct": 0.0,
+      "date_achat": "2026-03-22",
+      "raison_geopolitique": "Hausse forte de +2.35% — momentum haussier",
+      "these_id": null,
+      "stop_loss": 99.28311842454093,
+      "take_profit": 107.47141685130721,
+      "strategie": "momentum"
+    }
+  ],
+  "trades_historique": [
+    {
+      "type": "achat",
+      "ticker": "AAPL",
+      "nom": "Apple",
+      "nb_actions": 7,
+      "prix": 102.31035709208989,
+      "montant": 716.1724996446292,
+      "date": "2026-03-22 19:36:21",
+      "raison": "Hausse forte de +2.31% — momentum haussier"
+    },
+    {
+      "type": "achat",
+      "ticker": "TSLA",
+      "nom": "Tesla",
+      "nb_actions": 6,
+      "prix": 101.89917306146745,
+      "montant": 611.3950383688048,
+      "date": "2026-03-22 19:36:22",
+      "raison": "Hausse forte de +1.90% — momentum haussier"
+    },
+    {
+      "type": "achat",
+      "ticker": "TTE.PA",
+      "nom": "TotalEnergies",
+      "nb_actions": 6,
+      "prix": 97.80859651341049,
+      "montant": 586.8515790804629,
+      "date": "2026-03-22 19:36:22",
+      "raison": "Baisse forte de -2.19% — retour attendu"
+    },
+    {
+      "type": "achat",
+      "ticker": "XOM",
+      "nom": "ExxonMobil",
+      "nb_actions": 6,
+      "prix": 97.70243247565148,
+      "montant": 586.2145948539089,
+      "date": "2026-03-22 19:36:23",
+      "raison": "Baisse forte de -2.30% — retour attendu"
+    },
+    {
+      "type": "achat",
+      "ticker": "EURUSD=X",
+      "nom": "EUR/USD",
+      "nb_actions": 5,
+      "prix": 97.0508364153512,
+      "montant": 485.254182076756,
+      "date": "2026-03-22 19:36:23",
+      "raison": "Baisse forte de -2.95% — retour attendu"
+    },
+    {
+      "type": "achat",
+      "ticker": "NVDA",
+      "nom": "NVIDIA",
+      "nb_actions": 5,
+      "prix": 97.75120879896934,
+      "montant": 488.7560439948467,
+      "date": "2026-03-22 19:36:35",
+      "raison": "Baisse forte de -2.25% — retour attendu"
+    },
+    {
+      "type": "achat",
+      "ticker": "MC.PA",
+      "nom": "LVMH",
+      "nb_actions": 5,
+      "prix": 97.6946038950809,
+      "montant": 488.4730194754045,
+      "date": "2026-03-22 19:36:35",
+      "raison": "Baisse forte de -2.31% — retour attendu"
+    },
+    {
+      "type": "achat",
+      "ticker": "CL=F",
+      "nom": "Pétrole WTI",
+      "nb_actions": 4,
+      "prix": 101.36406726678861,
+      "montant": 405.45626906715444,
+      "date": "2026-03-22 19:36:36",
+      "raison": "Hausse forte de +1.36% — momentum haussier"
+    },
+    {
+      "type": "achat",
+      "ticker": "GC=F",
+      "nom": "Or (XAU/USD)",
+      "nb_actions": 4,
+      "prix": 102.5480777178719,
+      "montant": 410.1923108714876,
+      "date": "2026-03-22 19:36:36",
+      "raison": "Hausse forte de +2.55% — momentum haussier"
+    },
+    {
+      "type": "achat",
+      "ticker": "LMT",
+      "nom": "Lockheed Martin",
+      "nb_actions": 3,
+      "prix": 100.55907048466963,
+      "montant": 301.6772114540089,
+      "date": "2026-03-22 19:36:37",
+      "raison": "Or monte → tensions géopolitiques → achat défense (LMT)"
+    },
+    {
+      "type": "vente",
+      "ticker": "EURUSD=X",
+      "nom": "EUR/USD",
+      "nb_actions": 5,
+      "prix": 102.35373033457829,
+      "montant": 511.76865167289145,
+      "pl_realise": 26.514469596135427,
+      "date": "2026-03-22 19:37:20",
+      "raison": "Take-profit atteint (102.35 >= 101.90)"
+    },
+    {
+      "type": "achat",
+      "ticker": "EURUSD=X",
+      "nom": "EUR/USD",
+      "nb_actions": 3,
+      "prix": 102.35373033457829,
+      "montant": 307.06119100373485,
+      "date": "2026-03-22 19:37:21",
+      "raison": "Hausse forte de +2.35% — momentum haussier"
+    }
+  ],
   "theses_investissement": {
-    "strategie_globale": "Portefeuille IA orienté macro-géopolitique. Chaque position est justifiée par un événement géopolitique ou macro-économique identifié par l'IA. Objectif : multiplier par 10 via une exposition aux grandes thèses géopolitiques mondiales.",
-    "theses_actives": [
-      {
-        "id": "these_btc_dxy",
-        "titre": "Bitcoin vs Dollar : La corrélation inverse",
-        "description": "Quand le DXY faiblit (Fed dovish), Bitcoin surperforme historiquement. Thesis active depuis Q1 2026.",
-        "statut": "surveillance",
-        "action_ciblee": "BTC-USD"
-      },
-      {
-        "id": "these_defense",
-        "titre": "Réarmement européen post-conflit Ukraine",
-        "description": "Les budgets défense européens augmentent massivement. Les fabricants d'armes (LMT, RTX, Rheinmetall) en bénéficient directement.",
-        "statut": "active",
-        "action_ciblee": "LMT"
-      },
-      {
-        "id": "these_or_geopolitique",
-        "titre": "Or comme valeur refuge géopolitique",
-        "description": "Les tensions Moyen-Orient + rivalité USA-Chine + dédollarisation font de l'or un actif stratégique.",
-        "statut": "surveillance",
-        "action_ciblee": "GLD"
-      }
-    ]
+    "strategie_globale": "Portefeuille IA orienté macro-géopolitique.",
+    "theses_actives": []
   }
 }

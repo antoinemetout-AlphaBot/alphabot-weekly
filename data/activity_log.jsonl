@@ -1,72 +1,3 @@
-{"ts": "2026-03-22T16:48:35.554512", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:48:35.584071", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:48:35.602932", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:48:35.622605", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:48:35.639737", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:48:35.656832", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:48:35.674030", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:48:35.688075", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:48:35.707047", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:48:38.949866", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:48:38.968955", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:48:38.989683", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:48:39.013895", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:48:39.038504", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:48:39.058498", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:48:39.080923", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:48:39.103680", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:48:39.126836", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:49:05.723890", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:49:05.744007", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:05.761881", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:49:05.777411", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:05.796775", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:49:05.815268", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:49:05.833713", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:49:05.851256", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:49:05.867859", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:49:09.144667", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:49:09.162160", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:09.179696", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:49:09.200185", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:09.219564", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:49:09.237302", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:49:09.255272", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:49:09.279835", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:49:09.302655", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:49:35.885185", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:49:35.907129", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:35.923408", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:49:35.941884", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:35.959959", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:49:35.977038", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:49:35.996455", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:49:36.015485", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:49:36.032627", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:49:39.324653", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:49:39.353394", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:39.375368", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:49:39.394695", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:49:39.410449", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:49:39.429320", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:49:39.446961", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:49:39.465086", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:49:39.482389", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:50:06.053152", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:50:06.076435", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:50:06.094999", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:50:06.116999", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:50:06.135942", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:50:06.151188", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:50:06.168239", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:50:06.188317", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:50:06.203841", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
-{"ts": "2026-03-22T16:50:09.501590", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
-{"ts": "2026-03-22T16:50:09.528482", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:50:09.545831", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
-{"ts": "2026-03-22T16:50:09.564399", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍", "data": {}}
-{"ts": "2026-03-22T16:50:09.584751", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:50:09.601970", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
 {"ts": "2026-03-22T16:50:09.618541", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
 {"ts": "2026-03-22T16:50:09.635629", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
 {"ts": "2026-03-22T16:50:09.655731", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
@@ -1998,3 +1929,72 @@
 {"ts": "2026-03-22T17:55:32.346465", "agent": "Agent Growth Booster", "type": "warning", "message": "Stratégie croissance erreur: unhashable type: 'dict'", "data": {}}
 {"ts": "2026-03-22T17:55:32.353897", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération plan Twitter : tweets, engagements, routines...", "data": {}}
 {"ts": "2026-03-22T17:56:27.487607", "agent": "Agent Growth Booster", "type": "success", "message": "Plan Twitter : 3 tweets prêts + 4 comptes à engager", "data": {"fichier": "outputs\\twitter_plan_2026-03-22.html"}}
+{"ts": "2026-03-22T17:59:31.650223", "agent": "Agent Growth Booster", "type": "start", "message": "Cycle Growth Booster démarré (simulation=non)", "data": {}}
+{"ts": "2026-03-22T17:59:31.655464", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération des stratégies de croissance avec Claude IA...", "data": {}}
+{"ts": "2026-03-22T18:00:44.220439", "agent": "Agent Growth Booster", "type": "warning", "message": "Stratégie croissance erreur: unhashable type: 'dict'", "data": {}}
+{"ts": "2026-03-22T18:05:15.659879", "agent": "Agent Growth Booster", "type": "start", "message": "Cycle Growth Booster démarré (simulation=non)", "data": {}}
+{"ts": "2026-03-22T18:05:15.667769", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération des stratégies de croissance avec Claude IA...", "data": {}}
+{"ts": "2026-03-22T18:06:26.869991", "agent": "Agent Growth Booster", "type": "warning", "message": "Stratégie croissance erreur: unhashable type: 'dict'", "data": {}}
+{"ts": "2026-03-22T18:09:36.875074", "agent": "Agent Growth Booster", "type": "start", "message": "Cycle Growth Booster démarré (simulation=non)", "data": {}}
+{"ts": "2026-03-22T18:09:36.882592", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération des stratégies de croissance avec Claude IA...", "data": {}}
+{"ts": "2026-03-22T18:10:00.183697", "agent": "Agent Growth Booster", "type": "warning", "message": "Stratégie croissance erreur: unhashable type: 'dict'", "data": {}}
+{"ts": "2026-03-22T18:13:21.361166", "agent": "Agent Growth Booster", "type": "start", "message": "Cycle Growth Booster démarré (simulation=non)", "data": {}}
+{"ts": "2026-03-22T18:13:21.369876", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération des stratégies de croissance avec Claude IA...", "data": {}}
+{"ts": "2026-03-22T18:13:42.926942", "agent": "Agent Growth Booster", "type": "success", "message": "Stratégie générée : Rédiger et publier le post Reddit r/finance_france maintenant avec un insight ma", "data": {"objectif": "Passer de 1 à 5 abonnés humains avant le dimanche 29 mars via Reddit + lead magnet + 1 partenariat contacté"}}
+{"ts": "2026-03-22T19:35:09.785763", "agent": "Agent Investissement", "type": "achat", "message": "Achat 7x NVDA @ 102.86€", "data": {"ticker": "NVDA", "nb": 7, "prix": 102.86048451438738}}
+{"ts": "2026-03-22T19:35:10.033306", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:10.030930", "capital": 10000}}
+{"ts": "2026-03-22T19:35:10.228069", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:10.226339", "capital": 10000}}
+{"ts": "2026-03-22T19:35:10.393393", "agent": "Agent Investissement", "type": "achat", "message": "Achat 6x TSLA @ 102.75€", "data": {"ticker": "TSLA", "nb": 6, "prix": 102.75034489441019}}
+{"ts": "2026-03-22T19:35:10.572663", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:10.570043", "capital": 10000}}
+{"ts": "2026-03-22T19:35:10.732938", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:10.730795", "capital": 10000}}
+{"ts": "2026-03-22T19:35:10.889805", "agent": "Agent Investissement", "type": "achat", "message": "Achat 6x MC.PA @ 101.93€", "data": {"ticker": "MC.PA", "nb": 6, "prix": 101.93168188580411}}
+{"ts": "2026-03-22T19:35:11.068997", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:11.067066", "capital": 10000}}
+{"ts": "2026-03-22T19:35:11.217389", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:11.214235", "capital": 10000}}
+{"ts": "2026-03-22T19:35:11.416506", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x DX-Y.NYB @ 102.28€", "data": {"ticker": "DX-Y.NYB", "nb": 5, "prix": 102.28480721240794}}
+{"ts": "2026-03-22T19:35:11.610103", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:11.607541", "capital": 10000}}
+{"ts": "2026-03-22T19:35:11.794197", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:11.791956", "capital": 10000}}
+{"ts": "2026-03-22T19:35:11.938260", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x CL=F @ 102.16€", "data": {"ticker": "CL=F", "nb": 5, "prix": 102.16278101466554}}
+{"ts": "2026-03-22T19:35:12.148652", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:12.146859", "capital": 10000}}
+{"ts": "2026-03-22T19:35:12.320597", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:12.318263", "capital": 10000}}
+{"ts": "2026-03-22T19:35:12.482724", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x EURUSD=X @ 101.67€", "data": {"ticker": "EURUSD=X", "nb": 5, "prix": 101.67211598314614}}
+{"ts": "2026-03-22T19:35:12.652541", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:12.650276", "capital": 10000}}
+{"ts": "2026-03-22T19:35:12.839546", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:12.836894", "capital": 10000}}
+{"ts": "2026-03-22T19:35:13.103160", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:35:13.101234", "capital": 6521.285926666906}}
+{"ts": "2026-03-22T19:36:21.777343", "agent": "Agent Investissement", "type": "achat", "message": "Achat 7x AAPL @ 102.31€", "data": {"ticker": "AAPL", "nb": 7, "prix": 102.31035709208989}}
+{"ts": "2026-03-22T19:36:21.967191", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:21.964805", "capital": 10000}}
+{"ts": "2026-03-22T19:36:22.149918", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:22.145119", "capital": 10000}}
+{"ts": "2026-03-22T19:36:22.330193", "agent": "Agent Investissement", "type": "achat", "message": "Achat 6x TSLA @ 101.90€", "data": {"ticker": "TSLA", "nb": 6, "prix": 101.89917306146745}}
+{"ts": "2026-03-22T19:36:22.519168", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:22.512809", "capital": 10000}}
+{"ts": "2026-03-22T19:36:22.697639", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:22.694841", "capital": 10000}}
+{"ts": "2026-03-22T19:36:22.861347", "agent": "Agent Investissement", "type": "achat", "message": "Achat 6x TTE.PA @ 97.81€", "data": {"ticker": "TTE.PA", "nb": 6, "prix": 97.80859651341049}}
+{"ts": "2026-03-22T19:36:23.049109", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:23.045916", "capital": 10000}}
+{"ts": "2026-03-22T19:36:23.215360", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:23.213134", "capital": 10000}}
+{"ts": "2026-03-22T19:36:23.360257", "agent": "Agent Investissement", "type": "achat", "message": "Achat 6x XOM @ 97.70€", "data": {"ticker": "XOM", "nb": 6, "prix": 97.70243247565148}}
+{"ts": "2026-03-22T19:36:23.546202", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:23.544298", "capital": 10000}}
+{"ts": "2026-03-22T19:36:23.697806", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:23.695745", "capital": 10000}}
+{"ts": "2026-03-22T19:36:23.839649", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x EURUSD=X @ 97.05€", "data": {"ticker": "EURUSD=X", "nb": 5, "prix": 97.0508364153512}}
+{"ts": "2026-03-22T19:36:23.995064", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:23.992600", "capital": 10000}}
+{"ts": "2026-03-22T19:36:24.176056", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:24.173795", "capital": 10000}}
+{"ts": "2026-03-22T19:36:24.406060", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:24.403497", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:35.335082", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x NVDA @ 97.75€", "data": {"ticker": "NVDA", "nb": 5, "prix": 97.75120879896934}}
+{"ts": "2026-03-22T19:36:35.536951", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:35.533771", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:35.718474", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:35.715977", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:35.900053", "agent": "Agent Investissement", "type": "achat", "message": "Achat 5x MC.PA @ 97.69€", "data": {"ticker": "MC.PA", "nb": 5, "prix": 97.6946038950809}}
+{"ts": "2026-03-22T19:36:36.071999", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:36.069173", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:36.279582", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:36.276228", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:36.462823", "agent": "Agent Investissement", "type": "achat", "message": "Achat 4x CL=F @ 101.36€", "data": {"ticker": "CL=F", "nb": 4, "prix": 101.36406726678861}}
+{"ts": "2026-03-22T19:36:36.623560", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:36.620911", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:36.814650", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:36.812807", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:36.960471", "agent": "Agent Investissement", "type": "achat", "message": "Achat 4x GC=F @ 102.55€", "data": {"ticker": "GC=F", "nb": 4, "prix": 102.5480777178719}}
+{"ts": "2026-03-22T19:36:37.130855", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:37.128430", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:37.308952", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:37.307435", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:37.480877", "agent": "Agent Investissement", "type": "achat", "message": "Achat 3x LMT @ 100.56€", "data": {"ticker": "LMT", "nb": 3, "prix": 100.55907048466963}}
+{"ts": "2026-03-22T19:36:37.688498", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:37.686158", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:37.867513", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:37.865235", "capital": 10000.000000000002}}
+{"ts": "2026-03-22T19:36:38.167733", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:36:38.165164", "capital": 10000.0}}
+{"ts": "2026-03-22T19:37:20.969982", "agent": "Agent Investissement", "type": "vente", "message": "Vente 5x EURUSD=X @ 102.35€ | P&L: +26.51€", "data": {"ticker": "EURUSD=X", "pl": 26.514469596135427}}
+{"ts": "2026-03-22T19:37:21.149355", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:37:21.146791", "capital": 10000.0}}
+{"ts": "2026-03-22T19:37:21.340401", "agent": "Agent Investissement", "type": "achat", "message": "Achat 3x EURUSD=X @ 102.35€", "data": {"ticker": "EURUSD=X", "nb": 3, "prix": 102.35373033457829}}
+{"ts": "2026-03-22T19:37:21.535883", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:37:21.532879", "capital": 10000.0}}
+{"ts": "2026-03-22T19:37:21.724044", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:37:21.721756", "capital": 10000.0}}
+{"ts": "2026-03-22T19:37:21.982585", "agent": "Agent Investissement", "type": "portfolio_saved", "message": "Portfolio sauvegardé", "data": {"timestamp": "2026-03-22T19:37:21.980315", "capital": 10026.514469596135}}

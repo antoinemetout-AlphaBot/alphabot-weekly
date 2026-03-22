@@ -130,15 +130,15 @@ PLANNING_FIXE = [
         "description": "Collecte Bitcoin, DXY, Pétrole, Or, indices à l'ouverture",
         "id": "veille_matin",
     },
-    # 10:00 — Growth Booster #1
-    {
-        "heure": 10, "minute": 0,
-        "jours": None,
-        "fonction": "run_growth_booster",
-        "nom": "Growth Booster 🚀 — Session 1",
-        "description": "Génère contenu LinkedIn, stratégies croissance, profils simulation",
-        "id": "booster_1",
-    },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Growth Booster crashe et ne fait rien d'utile (pas d'intégration réelle). Réactiver quand API LinkedIn/Twitter intégrées et fonctionnelles.
+    # {
+    #     "heure": 10, "minute": 0,
+    #     "jours": None,
+    #     "fonction": "run_growth_booster",
+    #     "nom": "Growth Booster 🚀 — Session 1",
+    #     "description": "Génère contenu LinkedIn, stratégies croissance, profils simulation",
+    #     "id": "booster_1",
+    # },
     # 09:30 — DA Site (insights géopolitiques + contenu)
     {
         "heure": 9, "minute": 30,
@@ -157,15 +157,15 @@ PLANNING_FIXE = [
         "description": "Met à jour les prix, calcule P&L, évalue nouvelles opportunités",
         "id": "investissement",
     },
-    # 11:00 — Commercial (prospection matin)
-    {
-        "heure": 11, "minute": 0,
-        "jours": None,
-        "fonction": "run_commercial",
-        "nom": "Commercial — Prospection 💼",
-        "description": "Génère emails prospection nouveaux sponsors",
-        "id": "commercial_matin",
-    },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Pas de prospection sponsors utile avec seulement 1 abonné. Réactiver quand 100+ abonnés.
+    # {
+    #     "heure": 11, "minute": 0,
+    #     "jours": None,
+    #     "fonction": "run_commercial",
+    #     "nom": "Commercial — Prospection 💼",
+    #     "description": "Génère emails prospection nouveaux sponsors",
+    #     "id": "commercial_matin",
+    # },
     # 12:00 — Veille marchés (midi)
     {
         "heure": 12, "minute": 0,
@@ -175,15 +175,15 @@ PLANNING_FIXE = [
         "description": "Collecte marchés mi-journée, actualités géopolitiques",
         "id": "veille_midi",
     },
-    # 13:30 — Growth Booster #2
-    {
-        "heure": 13, "minute": 30,
-        "jours": None,
-        "fonction": "run_growth_booster",
-        "nom": "Growth Booster 🚀 — Session 2",
-        "description": "Nouveaux contenus Twitter/Reddit, stratégies SEO",
-        "id": "booster_2",
-    },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Growth Booster crashe et ne fait rien d'utile (pas d'intégration réelle). Réactiver quand API LinkedIn/Twitter intégrées et fonctionnelles.
+    # {
+    #     "heure": 13, "minute": 30,
+    #     "jours": None,
+    #     "fonction": "run_growth_booster",
+    #     "nom": "Growth Booster 🚀 — Session 2",
+    #     "description": "Nouveaux contenus Twitter/Reddit, stratégies SEO",
+    #     "id": "booster_2",
+    # },
     # 14:30 — Veille marchés (après-midi)
     {
         "heure": 14, "minute": 30,
@@ -193,24 +193,24 @@ PLANNING_FIXE = [
         "description": "Suivi marchés après-midi, événements géopolitiques",
         "id": "veille_apm",
     },
-    # 15:30 — Growth Booster #3
-    {
-        "heure": 15, "minute": 30,
-        "jours": None,
-        "fonction": "run_growth_booster",
-        "nom": "Growth Booster 🚀 — Session 3",
-        "description": "Contenu viral, partenariats, campagne abonnés",
-        "id": "booster_3",
-    },
-    # 16:00 — Commercial (relances)
-    {
-        "heure": 16, "minute": 0,
-        "jours": None,
-        "fonction": "run_commercial_relances",
-        "nom": "Commercial — Relances 📨",
-        "description": "Relance prospects sans réponse depuis 7 jours",
-        "id": "commercial_relances",
-    },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Growth Booster crashe et ne fait rien d'utile (pas d'intégration réelle). Réactiver quand API LinkedIn/Twitter intégrées et fonctionnelles.
+    # {
+    #     "heure": 15, "minute": 30,
+    #     "jours": None,
+    #     "fonction": "run_growth_booster",
+    #     "nom": "Growth Booster 🚀 — Session 3",
+    #     "description": "Contenu viral, partenariats, campagne abonnés",
+    #     "id": "booster_3",
+    # },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Pas de prospection sponsors utile avec seulement 1 abonné. Réactiver quand 100+ abonnés.
+    # {
+    #     "heure": 16, "minute": 0,
+    #     "jours": None,
+    #     "fonction": "run_commercial_relances",
+    #     "nom": "Commercial — Relances 📨",
+    #     "description": "Relance prospects sans réponse depuis 7 jours",
+    #     "id": "commercial_relances",
+    # },
     # 16:30 — Analytics
     {
         "heure": 16, "minute": 30,
@@ -220,15 +220,15 @@ PLANNING_FIXE = [
         "description": "Génère dashboard métriques du jour",
         "id": "analytics",
     },
-    # 16:45 — CFO
-    {
-        "heure": 16, "minute": 45,
-        "jours": None,
-        "fonction": "run_cfo",
-        "nom": "CFO 💰",
-        "description": "Rapport financier et projections",
-        "id": "cfo",
-    },
+    # DÉSACTIVÉ (audit J3 - 22/03/2026) : Rapport financier inutile avec 0€ de revenu. Réactiver quand revenu ≥ 100€/mois.
+    # {
+    #     "heure": 16, "minute": 45,
+    #     "jours": None,
+    #     "fonction": "run_cfo",
+    #     "nom": "CFO 💰",
+    #     "description": "Rapport financier et projections",
+    #     "id": "cfo",
+    # },
     # 08:50 — Email quotidien CEO (titres newsletter + lien vers le site)
     {
         "heure": 8, "minute": 50,
