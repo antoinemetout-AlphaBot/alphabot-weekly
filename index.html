@@ -170,6 +170,32 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,44px);font-we
 .preview-cta{color:var(--cyan);font-size:13px;font-weight:600;text-decoration:none;transition:.2s;}
 .preview-cta:hover{color:var(--gold);}
 
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1000px;margin:0 auto;}
+.step{text-align:center;padding:36px 24px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;transition:all .3s var(--transition);position:relative;}
+.step:hover{border-color:var(--cyan);transform:translateY(-4px);background:rgba(34,211,238,.04);}
+.step-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:800;color:rgba(34,211,238,.15);position:absolute;top:12px;right:16px;line-height:1;}
+.step-icon{font-size:36px;margin-bottom:16px;display:block;}
+.step h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:10px;letter-spacing:-.2px;}
+.step p{font-size:14px;color:var(--muted);line-height:1.6;}
+.step-arrow{display:none;}
+
+/* CREDIBILITY */
+.credibility{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+.cred-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;transition:all .3s var(--transition);}
+.cred-card:hover{border-color:var(--cyan);transform:translateY(-2px);}
+.cred-icon{font-size:28px;margin-bottom:12px;}
+.cred-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;margin-bottom:6px;}
+.cred-label{font-size:13px;color:var(--muted);line-height:1.5;}
+
+/* FOUNDER */
+.founder{display:flex;align-items:center;gap:24px;max-width:700px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s var(--transition);}
+.founder:hover{border-color:rgba(245,200,66,.2);}
+.founder-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--bg);font-family:'Space Grotesk',sans-serif;flex-shrink:0;}
+.founder-info h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
+.founder-info .founder-role{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:8px;}
+.founder-info p{font-size:14px;color:var(--muted);line-height:1.6;}
+
 /* CTA BOX */
 .cta-section{padding:80px 5%;position:relative;z-index:1;}
 .cta-box{background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(245,200,66,.06));border:1px solid rgba(34,211,238,.15);border-radius:20px;padding:60px 40px;text-align:center;max-width:700px;margin:0 auto;}
@@ -177,13 +203,15 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,44px);font-we
 .cta-box p{color:var(--muted);margin-bottom:32px;font-size:16px;line-height:1.7;}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;z-index:1;}
-
+footer{border-top:1px solid var(--border);padding:48px 5% 32px;position:relative;z-index:1;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto 32px;}
+.footer-col h4{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;}
+.footer-col a{display:block;color:var(--muted);font-size:13px;text-decoration:none;line-height:2;transition:color .2s;}
+.footer-col a:hover{color:white;}
+.footer-brand-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto;}
 .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-.footer-links{display:flex;gap:24px;}
-.footer-links a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:white;}
-.footer-copy{color:var(--muted);font-size:12px;margin-left:auto;}
+.footer-copy{color:var(--muted);font-size:12px;}
 
 /* ANIMATIONS */
 @keyframes fadeInDown{
@@ -217,14 +245,17 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
   .pillars{grid-template-columns:1fr;}
   .pillar{padding:24px;}
 
+  .steps{grid-template-columns:1fr;}
+  .credibility{grid-template-columns:1fr;}
+  .founder{flex-direction:column;text-align:center;}
+
   .kpis-grid{grid-template-columns:1fr 1fr;gap:12px;}
 
   .section{padding:60px 5%;}
   .divider{margin:60px 0;}
 
-  footer{flex-direction:column;text-align:center;gap:12px;}
-  .footer-copy{margin-left:0;margin-top:8px;}
-  .footer-links{flex-wrap:wrap;justify-content:center;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
 }
 
 @media(max-width:480px){
@@ -234,6 +265,8 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
   .tick{padding:10px 12px;font-size:12px;}
 
   .kpis-grid{grid-template-columns:1fr;}
+  .steps{gap:16px;}
+  .footer-grid{grid-template-columns:1fr;}
 
   .cta-box{padding:40px 20px;}
   .section-tag{font-size:10px;padding:5px 12px;}
@@ -263,13 +296,13 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Newsletter quotidienne + Robot Trader IA</div>
+    <div class="hero-tag">Newsletter IA gratuite — Bourse, Crypto, Géopolitique</div>
     <h1>
-      <div class="h1-line1">Les marchés en temps réel,</div>
-      <div class="h1-line2">analysés par l'IA chaque jour</div>
+      <div class="h1-line1">Comprenez les marchés en 5 minutes,</div>
+      <div class="h1-line2">grâce à 13 agents IA qui travaillent pour vous</div>
     </h1>
     <p class="hero-sub">
-      Recevez <strong>chaque matin</strong> l'essentiel de la bourse, crypto et géopolitique. Accédez au <strong>robot trader IA</strong> qui investit en autonomie.
+      Chaque matin, recevez un <strong>brief complet des marchés</strong> (indices, crypto, or, pétrole, devises) analysé par notre intelligence artificielle. Suivez aussi notre <strong>robot trader IA</strong> qui investit un portefeuille fictif de 10 000€ en temps réel. <strong>100% gratuit, pour investisseurs débutants et confirmés.</strong>
     </p>
 
     <!-- TICKER -->
@@ -352,36 +385,6 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
 
 <div class="divider"></div>
 
-<!-- KPIs SECTION -->
-<section class="section">
-  <div class="section-center">
-    <div class="section-tag">En chiffres</div>
-    <h2>AlphaBot en direct</h2>
-    <p class="section-sub">Nos agents IA travaillent 7j/7 pour collecter, analyser et publier.</p>
-  </div>
-
-  <div class="kpis-grid">
-    <div class="kpi">
-      <div class="kpi-val cyan">13</div>
-      <div class="kpi-label">Agents IA actifs</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val gold">365</div>
-      <div class="kpi-label">Newsletters / an</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val green">9</div>
-      <div class="kpi-label">Trades / jour</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val">5 min</div>
-      <div class="kpi-label">Temps de lecture</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- PREVIEW SECTION -->
 <section class="section">
   <div class="section-center">
@@ -420,6 +423,86 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
 
 <div class="divider"></div>
 
+<!-- COMMENT ÇA MARCHE -->
+<section class="section">
+  <div class="section-center">
+    <div class="section-tag">Simple et rapide</div>
+    <h2>Comment ça marche ?</h2>
+    <p class="section-sub">3 étapes pour accéder gratuitement à tout l'écosystème AlphaBot.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">1</span>
+      <span class="step-icon">📧</span>
+      <h3>Entrez votre email</h3>
+      <p>Inscription gratuite en 10 secondes. Pas de carte bancaire, pas d'engagement, pas de spam.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <span class="step-icon">📊</span>
+      <h3>Recevez chaque matin</h3>
+      <p>Un email avec l'analyse complète des marchés (bourse, crypto, or, pétrole) + les décisions du robot trader IA.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <span class="step-icon">🚀</span>
+      <h3>Explorez le dashboard</h3>
+      <p>Accédez au portefeuille du robot, aux performances en direct, et au dashboard des 13 agents IA qui travaillent 7j/7.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CRÉDIBILITÉ -->
+<section class="section">
+  <div class="section-center">
+    <div class="section-tag">Transparent et vérifié</div>
+    <h2>Tout est public, tout est traçable</h2>
+    <p class="section-sub">AlphaBot est le projet le plus transparent de la fintech IA francophone. Chaque donnée, chaque trade, chaque analyse est visible par tous.</p>
+  </div>
+
+  <div class="credibility">
+    <div class="cred-card">
+      <div class="cred-icon">🤖</div>
+      <div class="cred-val" style="color:var(--cyan);">13</div>
+      <div class="cred-label">Agents IA autonomes qui collectent, analysent et publient sans intervention humaine</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">📈</div>
+      <div class="cred-val" style="color:var(--gold);">100%</div>
+      <div class="cred-label">Transparent : chaque trade du robot, chaque signal, chaque décision est publié en temps réel</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-icon">🔒</div>
+      <div class="cred-val" style="color:#22c55e;">0€</div>
+      <div class="cred-label">Gratuit à vie, sans pub, sans collecte de données. Votre email sert uniquement à recevoir la newsletter</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FONDATEUR -->
+<section class="section">
+  <div class="section-center">
+    <div class="section-tag">Qui est derrière AlphaBot ?</div>
+    <h2>Un projet indépendant, pas une startup anonyme</h2>
+  </div>
+
+  <div class="founder">
+    <div class="founder-avatar">AM</div>
+    <div class="founder-info">
+      <h3>Antoine Metout</h3>
+      <div class="founder-role">Fondateur & CEO — AlphaBot Weekly</div>
+      <p>Passionné par l'intelligence artificielle et les marchés financiers, Antoine a construit AlphaBot pour démocratiser l'accès à l'information boursière. Le projet est 100% indépendant : pas de publicité, pas de sponsor, pas de données revendues. Juste une IA qui travaille pour vous.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- CTA FINAL -->
 <section class="cta-section">
   <div class="cta-box">
@@ -436,15 +519,39 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">AlphaBot Weekly</div>
-  <div class="footer-links">
-    <a href="index.html">Accueil</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    <a href="newsletter.html">Archive</a>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand" style="margin-bottom:12px;font-size:16px;">AlphaBot Weekly</div>
+      <p class="footer-brand-desc">Newsletter financière IA gratuite. 13 agents autonomes analysent les marchés chaque jour pour vous aider à comprendre la bourse, la crypto et la géopolitique.</p>
+      <p style="font-size:12px;color:var(--muted);">Fondé par Antoine Metout</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="index.html">Accueil</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="investissement.html">Robot Trader</a>
+      <a href="dashboard-agents.html">Agents IA</a>
+    </div>
+    <div class="footer-col">
+      <h4>Ressources</h4>
+      <a href="newsletter.html">Archives newsletters</a>
+      <a href="investissement.html">Portefeuille en direct</a>
+      <a href="dashboard-agents.html">Dashboard agents</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:antoine.metout@gmail.com">antoine.metout@gmail.com</a>
+      <a href="#subscribe">S'abonner gratuitement</a>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;">Paris, France</p>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 AlphaBot Weekly · 100% IA · Propulsé par Claude</div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 AlphaBot Weekly — Projet indépendant propulsé par Claude AI</div>
+    <div style="display:flex;gap:16px;">
+      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;">Mentions légales</a>
+      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;">Politique de confidentialité</a>
+    </div>
+  </div>
 </footer>
 
 <script>
