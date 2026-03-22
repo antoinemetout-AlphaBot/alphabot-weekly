@@ -238,33 +238,8 @@ PLANNING_FIXE = [
         "description": "Envoie à Antoine les titres du jour + lien newsletter",
         "id": "email_ceo_matin",
     },
-    # 08:35 — Tweet matin @AlphaBot_Weekly
-    {
-        "heure": 8, "minute": 35,
-        "jours": None,
-        "fonction": "run_twitter",
-        "nom": "Twitter — Tweet Matin 🐦",
-        "description": "Poste le tweet du matin sur @AlphaBot_Weekly (thread / donnée choc)",
-        "id": "twitter_matin",
-    },
-    # 12:30 — Tweet midi @AlphaBot_Weekly
-    {
-        "heure": 12, "minute": 30,
-        "jours": None,
-        "fonction": "run_twitter",
-        "nom": "Twitter — Tweet Midi 🐦",
-        "description": "Poste le tweet de midi sur @AlphaBot_Weekly (question / réaction actu)",
-        "id": "twitter_midi",
-    },
-    # 17:45 — Tweet soir @AlphaBot_Weekly
-    {
-        "heure": 17, "minute": 45,
-        "jours": None,
-        "fonction": "run_twitter",
-        "nom": "Twitter — Tweet Soir 🐦",
-        "description": "Poste le tweet du soir sur @AlphaBot_Weekly (CTA doux / stat)",
-        "id": "twitter_soir",
-    },
+    # Twitter désactivé (22/03/2026) — Antoine n'utilise plus Twitter pour l'instant
+    # Les 3 tâches Twitter (matin/midi/soir) ont été retirées du planning
     # 17:30 — Directeur Adjoint (bilan soir + rapport CEO)
     {
         "heure": 17, "minute": 30,

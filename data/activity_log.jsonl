@@ -1,8 +1,3 @@
-{"ts": "2026-03-22T16:48:08.851543", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3", "data": {}}
-{"ts": "2026-03-22T16:48:08.870399", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨", "data": {}}
-{"ts": "2026-03-22T16:48:08.891475", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊", "data": {}}
-{"ts": "2026-03-22T16:48:08.911236", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰", "data": {}}
-{"ts": "2026-03-22T16:48:08.931371", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
 {"ts": "2026-03-22T16:48:35.554512", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼", "data": {}}
 {"ts": "2026-03-22T16:48:35.584071", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍", "data": {}}
 {"ts": "2026-03-22T16:48:35.602932", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2", "data": {}}
@@ -1998,3 +1993,8 @@
 {"ts": "2026-03-22T17:41:11.822984", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦", "data": {}}
 {"ts": "2026-03-22T17:41:11.828502", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Soir 🐦", "data": {}}
 {"ts": "2026-03-22T17:41:11.834518", "agent": "Orchestrateur", "type": "info", "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝", "data": {}}
+{"ts": "2026-03-22T17:54:21.555664", "agent": "Agent Growth Booster", "type": "start", "message": "Cycle Growth Booster démarré (simulation=non)", "data": {}}
+{"ts": "2026-03-22T17:54:21.560794", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération des stratégies de croissance avec Claude IA...", "data": {}}
+{"ts": "2026-03-22T17:55:32.346465", "agent": "Agent Growth Booster", "type": "warning", "message": "Stratégie croissance erreur: unhashable type: 'dict'", "data": {}}
+{"ts": "2026-03-22T17:55:32.353897", "agent": "Agent Growth Booster", "type": "progress", "message": "Génération plan Twitter : tweets, engagements, routines...", "data": {}}
+{"ts": "2026-03-22T17:56:27.487607", "agent": "Agent Growth Booster", "type": "success", "message": "Plan Twitter : 3 tweets prêts + 4 comptes à engager", "data": {"fichier": "outputs\\twitter_plan_2026-03-22.html"}}

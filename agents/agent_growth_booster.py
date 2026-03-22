@@ -251,7 +251,7 @@ Contexte AlphaBot Weekly :
 - Comptes de marque : @AlphaBotWeekly (Twitter/X), u/AlphaBotWeekly (Reddit), Page LinkedIn "AlphaBot Weekly"
 - Abonnés humains actuels : {nb_reels} | Total abonnés : {nb_total}
 - Score croissance : {score['total_points']} pts
-- Site : https://alphabotweeklynetlifyapp.netlify.app (domaine propre à venir)
+- Site : https://antoinemetout-alphabot.github.io/alphabot-weekly
 - Gratuit, pas de compte requis, juste un email
 
 Génère un plan de croissance ANONYME en JSON :
@@ -314,7 +314,13 @@ Génère un plan de croissance ANONYME en JSON :
             debut = texte.find("{")
             fin   = texte.rfind("}") + 1
             if debut != -1 and fin > debut:
-                return json.loads(texte[debut:fin])
+                json_str = texte[debut:fin]
+                # Nettoyage JSON robuste : trailing commas avant } ou ]
+                import re
+                json_str = re.sub(r',\s*([}\]])', r'\1', json_str)
+                # Supprime les commentaires éventuels
+                json_str = re.sub(r'//[^\n]*', '', json_str)
+                return json.loads(json_str)
         except Exception as e:
             print(f"  ⚠️ Erreur Claude : {e} — mode fallback")
 
@@ -885,7 +891,7 @@ footer{{text-align:center;color:#334155;font-size:11px;margin-top:24px;}}
             print("\n[1/2] ⏭️  Mode simulation désactivé (production)")
             resultats["simulation"] = None
 
-        print("\n[2/3] 🧠 Génération stratégies de croissance réelle...")
+        print("\n[2/2] 🧠 Génération stratégies de croissance réelle...")
         _log(_AGENT, "progress", "Génération des stratégies de croissance avec Claude IA...")
         try:
             strategie = self.generer_strategie_croissance()
@@ -900,22 +906,8 @@ footer{{text-align:center;color:#334155;font-size:11px;margin-top:24px;}}
             _log(_AGENT, "warning", f"Stratégie croissance erreur: {str(e)[:80]}")
             resultats["strategie"] = self._strategie_fallback()
 
-        print("\n[3/3] 🐦 Génération du plan Twitter quotidien @AlphaBotWeekly...")
-        _log(_AGENT, "progress", "Génération plan Twitter : tweets, engagements, routines...")
-        try:
-            plan_twitter = self.generer_plan_twitter()
-            chemin_twitter = self.sauvegarder_plan_twitter(plan_twitter)
-            resultats["plan_twitter"] = plan_twitter
-            resultats["fichier_twitter"] = chemin_twitter
-            nb_tweets = len(plan_twitter.get("tweets_du_jour", []))
-            nb_comptes = len(plan_twitter.get("comptes_a_engager_aujourd_hui", []))
-            _log(_AGENT, "success",
-                 f"Plan Twitter : {nb_tweets} tweets prêts + {nb_comptes} comptes à engager",
-                 {"fichier": chemin_twitter})
-        except Exception as e:
-            print(f"  ⚠️ Erreur plan Twitter : {e} — on continue")
-            _log(_AGENT, "warning", f"Plan Twitter erreur: {str(e)[:80]}")
-            resultats["plan_twitter"] = self._plan_twitter_fallback()
+        # Twitter désactivé (22/03/2026) — Antoine n'utilise plus Twitter pour l'instant
+        resultats["plan_twitter"] = None
 
         apres = self.nb_abonnes_total()
         nouveaux = apres - avant
@@ -947,15 +939,7 @@ if __name__ == "__main__":
                         help="Ajouter des abonnés de simulation (tests dev uniquement)")
     parser.add_argument("--nb", type=int, default=5,
                         help="Nombre d'abonnés simulation à ajouter (défaut: 5)")
-    parser.add_argument("--twitter-only", action="store_true",
-                        help="Générer uniquement le plan Twitter du jour (sans stratégie growth)")
     args = parser.parse_args()
 
     agent = AgentGrowthBooster()
-    if args.twitter_only:
-        print("\n━━━ Plan Twitter @AlphaBotWeekly ━━━")
-        plan = agent.generer_plan_twitter()
-        chemin = agent.sauvegarder_plan_twitter(plan)
-        print(f"✅ Plan Twitter du jour : {chemin}")
-    else:
-        agent.run(mode_simulation=args.simulation, nb_simulations=args.nb)
+    agent.run(mode_simulation=args.simulation, nb_simulations=args.nb)

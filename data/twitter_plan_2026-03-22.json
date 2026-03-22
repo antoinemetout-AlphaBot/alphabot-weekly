@@ -1,87 +1,95 @@
 {
-  "resume_strategie_jour": "Dimanche macro calme : profiter de l'audience des investisseurs FR en weekend pour installer la crédibilité avec un thread pédagogique Bitcoin/géopolitique et générer des réponses organiques.",
+  "resume_strategie_jour": "Dimanche macro contemplatif : profiter du calme dominical FR pour construire de l'autorité avec un thread de fond Bitcoin/géopolitique et engager les communautés finance avant la semaine.",
   "tweets_du_jour": [
     {
-      "heure_publication": "08:30",
+      "heure_publication": "09:00",
       "type": "thread",
-      "contenu": "Pourquoi le Bitcoin monte à chaque crise géopolitique majeure ? Ce n'est pas du hasard. 🧵 (1/6)",
-      "objectif": "Thread dominical = format idéal pour l'audience weekend, établit l'expertise, génère saves et retweets, accroche avec question rhétorique universelle",
+      "contenu": "Pourquoi le Bitcoin monte à chaque fois que la géopolitique s'emballe ? Ce n'est pas un hasard. Thread 🧵👇",
+      "objectif": "Thread de fond dominical = fort engagement organique, positionne le compte comme source d'analyse sérieuse, incite à s'abonner à la newsletter",
       "si_thread": [
-        "2/6 — Depuis 2020, BTC a rebondi +15% en moyenne dans les 30 jours suivant une escalade géopolitique majeure (Ukraine, Moyen-Orient, tensions US-Chine). Coïncidence ? Non. Mécanique.",
-        "3/6 — Mécanisme 1 : la fuite des capitaux. Quand un État menace de geler des avoirs ou d'imposer des contrôles de capitaux, les gens cherchent un actif que personne ne peut saisir. BTC = seul actif vraiment non-confiscable à l'échelle mondiale.",
-        "4/6 — Mécanisme 2 : la défiance envers les banques centrales. Chaque crise = injection monétaire = dévaluation des monnaies locales. Le BTC a une offre fixe à 21M. C'est arithmétique, pas idéologie.",
-        "5/6 — Mécanisme 3 : les pays sous sanctions. Russie, Iran, Venezuela ont tous développé des infrastructures BTC pour contourner SWIFT. La demande géopolitique est réelle et croissante — elle ne disparaît pas quand la crise se calme.",
-        "6/6 — Résumé : BTC n'est pas une action tech. C'est un actif géopolitique. Et en 2026, avec les tensions actuelles, cette logique n'a jamais été aussi importante à comprendre. 📊 On décrypte ça chaque semaine dans notre newsletter gratuite : https://alphabotweeklynetlifyapp.netlify.app #Bitcoin"
+        "2/ Depuis 2020, chaque grande crise géopolitique majeure (Ukraine, Moyen-Orient, tensions Taiwan) a précédé une hausse BTC dans les 30 jours. Coïncidence ou signal ? Les données disent : signal.",
+        "3/ Mécanisme simple : crise géopolitique → défiance envers les banques centrales → capitaux cherchent un refuge hors système → or d'abord, Bitcoin ensuite. L'ordre a changé depuis 2022.",
+        "4/ Avant 2022, BTC suivait le Nasdaq (actif risqué). Depuis, la corrélation s'est inversée sur les chocs géopolitiques. BTC se comporte de + en + comme l'or numérique que ses créateurs imaginaient.",
+        "5/ Ce qui est nouveau en 2025-2026 : les ETF Bitcoin permettent aux institutionnels d'y accéder en quelques clics. Le flux de capitaux en cas de stress est désormais bien plus rapide qu'avant.",
+        "6/ Résultat : le BTC n'est plus réservé aux cypherpunks. C'est devenu un instrument de couverture géopolitique accessible à M. Tout-le-Monde. Et la plupart des investisseurs FR ne l'ont pas encore intégré.",
+        "7/ On décrypte ce genre de dynamique chaque semaine dans la newsletter @AlphaBotWeekly — gratuit, sans inscription lourde : https://alphabotweeklynetlifyapp.netlify.app #Bitcoin"
       ]
     },
     {
       "heure_publication": "12:15",
       "type": "question",
-      "contenu": "Question sérieuse pour les investisseurs FR 👇 Si vous deviez choisir UN seul actif pour protéger votre épargne en cas de crise géopolitique majeure en 2026, ce serait quoi ? (or, BTC, immobilier, cash étranger, autre ?)",
-      "objectif": "Question ouverte simple = maximum de réponses, engage toutes les catégories d'investisseurs, crée un débat visible, signale au dimanche que le compte est actif et écoute sa communauté",
+      "contenu": "Question du dimanche 👇\n\nSi une crise géopolitique majeure éclate demain, vous mettez votre argent où en priorité ?\n\n🟡 Or\n🟠 Bitcoin\n💵 Cash USD\n🇫🇷 Immobilier FR\n\nCurieux de voir ce que pense la communauté FR.",
+      "objectif": "Sondage textuel simple = maximum de replies et retweets, touche l'audience débutante FR, pas de hashtag pollutant",
       "si_thread": []
     },
     {
       "heure_publication": "19:45",
       "type": "donnee_choc",
-      "contenu": "🔴 Stat du dimanche : En 2025, les banques centrales mondiales ont acheté plus d'or que n'importe quelle année depuis 1967. Pendant ce temps, 15 États ont intégré BTC dans leurs réserves officielles. Le système monétaire change. En silence. #Macro",
-      "objectif": "Stat choc + timing géopolitique = fort potentiel de retweet le dimanche soir, touche l'audience or ET crypto, formulation finale 'en silence' génère curiosité et envie d'en savoir plus",
+      "contenu": "Stat qui fait réfléchir 📊\n\nEn 2025, les ETF Bitcoin spot aux USA ont absorbé en moyenne 500M$ par semaine de flux nets.\n\nLa Fed imprime, les institutionnels accumulent.\nLes particuliers FR regardent depuis les gradins. #Bitcoin",
+      "objectif": "Viral potentiel dimanche soir avant la semaine, facile à retweeter, crée un sentiment d'urgence sans être agressif, invite implicitement à rejoindre la newsletter pour rester informé",
       "si_thread": []
     }
   ],
   "comptes_a_engager_aujourd_hui": [
     {
-      "compte": "@cryptoast",
+      "compte": "@CryptoMatthieu",
       "type_compte": "Crypto FR",
       "action": "Liker les 2-3 derniers posts + répondre au plus récent avec cette réponse :",
-      "template_reponse": "Bon point. Ce qui est sous-estimé c'est que la demande géopolitique (pays sous sanctions, capitaux en fuite) crée un plancher structurel sur BTC indépendamment du sentiment retail. On le voit dans les données on-chain depuis 18 mois."
+      "template_reponse": "Entièrement d'accord sur ce point. Ce qu'on observe en plus : la corrélation BTC/Nasdaq s'est structurellement cassée depuis fin 2022 sur les chocs géopolitiques. Le narratif 'actif risqué' est de plus en plus obsolète."
     },
     {
-      "compte": "@haxiom_fr",
-      "type_compte": "Macro|Économie",
-      "action": "Liker les 2-3 derniers posts + répondre au plus récent avec cette réponse :",
-      "template_reponse": "Exactement ce qu'on observe aussi côté macro : la dé-dollarisation n'est pas un mythe idéologique, c'est une réalité dans les flux. La question c'est juste vers quoi ça se dirige — et BTC commence à apparaître dans les statistiques officielles des réserves."
-    },
-    {
-      "compte": "@Zone_bourse",
+      "compte": "@Heu_Reka",
       "type_compte": "Finance FR",
       "action": "Liker les 2-3 derniers posts + répondre au plus récent avec cette réponse :",
-      "template_reponse": "Intéressant de voir que les investisseurs particuliers FR restent très sous-exposés aux actifs non-corrélés. Dans un contexte de volatilité géopolitique 2026, c'est un angle que beaucoup négligent encore dans leur allocation."
+      "template_reponse": "Super pédagogie comme d'habitude. Une nuance à ajouter côté Bitcoin : depuis l'arrivée des ETF institutionnels, les dynamiques de flux ont radicalement changé. Le particulier n'est plus seul à bord."
+    },
+    {
+      "compte": "@Nicolas_Doze",
+      "type_compte": "Économie",
+      "action": "Liker les 2-3 derniers posts + répondre au plus récent avec cette réponse :",
+      "template_reponse": "Intéressant angle macro. Ce qu'on suit de près : comment les banques centrales gèrent la pression géopolitique sur leurs réserves. Le rééquilibrage vers des actifs non-souverains est lent mais réel."
+    },
+    {
+      "compte": "@XavierTimothy",
+      "type_compte": "Géopolitique",
+      "action": "Liker les 2-3 derniers posts + répondre au plus récent avec cette réponse :",
+      "template_reponse": "Dimension financière souvent sous-estimée dans l'analyse géopolitique : chaque escalade de tension reprice silencieusement les actifs refuges. Bitcoin compris, et de plus en plus vite depuis 2024."
     }
   ],
   "sujets_tendance_a_surveiller": [
     {
       "hashtag": "#Bitcoin",
-      "pourquoi": "Coeur de cible, actif dimanche avec du contenu weekend des communautés US et EU, bon moment pour répondre à des analyses et se faire remarquer",
-      "angle_possible": "Répondre à un tweet analysant le prix BTC en ajoutant la dimension géopolitique souvent absente des analyses techniques pures"
+      "pourquoi": "Toujours actif le dimanche, communauté FR très engagée en fin de semaine, nombreux threads d'analyse à commenter",
+      "angle_possible": "Réagir à une analyse technique en apportant la dimension macro/géopolitique que la plupart des comptes crypto FR ignorent"
     },
     {
       "hashtag": "#Géopolitique",
-      "pourquoi": "Dimanche = jour de bilan hebdo pour beaucoup d'analystes FR, threads récapitulatifs partagés massivement, fort potentiel de visibilité organique",
-      "angle_possible": "Relier un événement géopolitique de la semaine écoulée à son impact potentiel sur les marchés et BTC spécifiquement"
+      "pourquoi": "Tensions récurrentes en 2026 (zones à surveiller : Mer de Chine, Moyen-Orient, dollar vs yuan) créent du contenu réactif naturel",
+      "angle_possible": "Connecter un événement géopolitique du week-end à l'impact potentiel sur Bitcoin et les marchés FR la semaine suivante"
     },
     {
       "hashtag": "#Inflation",
-      "pourquoi": "Sujet récurrent dans la communauté finance FR, lié directement à la thèse macro de la newsletter, audience large incluant les débutants visés",
-      "angle_possible": "Apporter une perspective chiffrée sur l'inflation réelle vs officielle et le positionnement BTC comme couverture, angle pédagogique adapté aux débutants"
+      "pourquoi": "La BCE et la Fed restent en zone incertaine, le sujet passionne les investisseurs débutants FR qui cherchent à protéger leur épargne",
+      "angle_possible": "Poster une observation sur le pouvoir d'achat de l'euro vs Bitcoin sur 5 ans, angle accessible pour les débutants"
     },
     {
-      "hashtag": "#Or",
-      "pourquoi": "La stat du tweet 19h45 sur les achats d'or des banques centrales crée un pont naturel avec la communauté gold bug FR souvent perméable aux arguments BTC store-of-value",
-      "angle_possible": "Engager la communauté or sans la confronter — angle 'or ET BTC sont deux signaux du même problème monétaire' plutôt que opposition"
+      "hashtag": "#ÉpargneFR",
+      "pourquoi": "Angle très fort pour toucher les investisseurs FR débutants, fort volume le dimanche (planification de la semaine)",
+      "angle_possible": "Question provocatrice : combien de votre épargne est réellement protégée contre l'inflation ? Transition naturelle vers BTC comme solution partielle"
     }
   ],
-  "action_engagement_matin": "Routine 15 min avant 08h30 : (1) Liker 8-10 posts récents dans #Bitcoin et #Macro publiés ce matin, (2) Répondre à 2 tweets de comptes avec >5k abonnés sur un sujet géopolitique/BTC en ajoutant une stat ou un angle original sans mentionner la newsletter, (3) Relire le thread préparé pour vérifier les chiffres avant publication, (4) Vérifier si un événement géopolitique majeur s'est produit cette nuit qui justifierait d'adapter l'angle du thread.",
-  "action_engagement_soir": "Routine 10 min après 19h45 : (1) Répondre à CHAQUE commentaire reçu sur le thread du matin dans l'heure — l'algorithme X booste les threads avec réponses rapides, (2) Liker 5 posts dans #Or et #Macro pour capter l'audience du tweet 19h45, (3) Identifier le tweet de la journée qui performe le mieux et le noter pour répliquer l'angle cette semaine, (4) Répondre à 1-2 personnes ayant répondu au tweet question de 12h15 avec une réponse substantielle.",
+  "action_engagement_matin": "Routine 15 min entre 8h15 et 8h45 AVANT de poster le thread : 1) Chercher '#Bitcoin' et liker 8-10 tweets FR récents des dernières 12h. 2) Répondre à 2 tweets de comptes finance/crypto FR avec +500 abonnés (ajouter de la valeur, jamais de promo). 3) Vérifier les trending topics FR pour intégrer un angle d'actualité dans les tweets du jour si pertinent. 4) Liker 3 posts de chacun des 4 comptes identifiés ci-dessus avant d'aller commenter.",
+  "action_engagement_soir": "Routine 10 min entre 20h15 et 20h30 APRÈS le tweet de 19h45 : 1) Répondre à TOUS les commentaires reçus sur le thread du matin (même courts — l'algo récompense les conversations). 2) Liker et retweeter sans commentaire 2-3 posts pertinents dans #Bitcoin ou #Macro pour rester visible dans les feeds. 3) Vérifier les impressions du thread : si déjà +150 impressions, préparer un tweet de relance pour lundi matin qui cite une stat du thread.",
   "erreurs_a_eviter_aujourd_hui": [
-    "Ne pas transformer la réponse au tweet question (12h15) en publicité déguisée pour la newsletter — le dimanche les gens détectent facilement le marketing et unfollow ; laisser la réponse organique, le lien CTA est dans le thread du matin",
-    "Ne pas poster le thread d'un coup en moins de 5 minutes — espacer chaque tweet du thread de 2-3 minutes pour que l'algorithme les indexe correctement et que les lecteurs puissent liker au fur et à mesure",
-    "Ne pas répondre aux trolls ou aux commentaires négatifs sur BTC de façon défensive — ignorer ou répondre avec une donnée froide sans émotion, le ton émotionnel nuit à la crédibilité d'un compte finance sérieux"
+    "Ne pas poster le thread ET un tweet isolé dans la même tranche horaire du matin — choisir l'un ou l'autre pour ne pas surcharger les abonnés un dimanche",
+    "Éviter de mentionner le lien de la newsletter dans CHAQUE tweet — le placer uniquement dans le dernier tweet du thread (tweet 7/7), pas dans les tweets isolés de midi et du soir",
+    "Ne pas utiliser plus d'1 hashtag par tweet aujourd'hui — dimanche = algorithme plus sensible au spam, rester minimaliste",
+    "Ne pas répondre aux comptes identifiés avec un message générique type 'super contenu !' — chaque réponse doit apporter une donnée ou une nuance concrète pour bâtir la réputation d'expert"
   ],
   "kpi_a_tracker": {
-    "objectif_impressions": "800 à 1500 impressions cette semaine (réaliste semaine 1-2 pour un compte nouveau, le thread dominical représente 40% de cet objectif)",
-    "objectif_followers": "+8 à 15 followers cette semaine (croissance organique lente mais qualifiée, priorité à la qualité d'audience sur la quantité)",
-    "objectif_engagement_rate": "4 à 7% taux engagement cible (benchmark élevé car audience petite et ciblée — au-dessus de la moyenne X qui est 0.5-1%)",
-    "action_si_tweet_performe": "Si un tweet dépasse 100 impressions : (1) répondre immédiatement à tous les commentaires pour booster l'algorithme, (2) identifier l'angle qui a fonctionné (stat, ton, sujet) et créer un tweet similaire dans 48h, (3) si c'est le thread, préparer un thread de suivi sur un angle complémentaire pour mercredi, (4) ajouter un commentaire au thread avec le lien newsletter en précisant 'on approfondit ça dans la newsletter' pour capter les curieux au moment où ils sont engagés"
+    "objectif_impressions": "800 à 1 200 impressions sur la semaine (réaliste pour compte < 3 mois, le thread dimanche peut générer 40-60% du total)",
+    "objectif_followers": "+8 à 15 followers cette semaine (organique, sans achat)",
+    "objectif_engagement_rate": "4 à 7% taux d'engagement cible (likes + replies + retweets / impressions)",
+    "action_si_tweet_performe": "Si un tweet dépasse 100 impressions avant 18h, répondre à son propre tweet avec une donnée complémentaire pour relancer la conversation (technique du 'quote yourself') et liker tous les commentaires dans l'heure qui suit pour maintenir l'élan algorithmique"
   }
 }
