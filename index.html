@@ -329,13 +329,8 @@ h1 {
 </head>
 <body>
 
-<!-- Formulaire caché pour Netlify Forms (détecté automatiquement au déploiement) -->
-<form name="alphabot-signup" netlify netlify-honeypot="bot-field" hidden>
-  <input type="email" name="email">
-  <input type="text" name="source">
-  <input type="text" name="date">
-  <input type="text" name="bot-field">
-</form>
+<!-- Formulaire caché (legacy Netlify, migration GitHub Pages 22/03/2026) -->
+<!-- Les inscriptions passent désormais par EmailJS + Formspree -->
 
 <div class="scan"></div>
 <div class="bg-wrap"><div class="bg-grid"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
@@ -1028,14 +1023,13 @@ h1 {
 function handleSubscribe(){doSubscribe('email-input','sub-status');}
 function handleSubscribe2(){doSubscribe('email-input2','sub-status2');}
 
-// ── Envoi silencieux vers Netlify Forms ──
-function submitToNetlify(email){
+// ── Envoi vers Formspree (remplace Netlify Forms depuis migration GitHub Pages) ──
+function submitToFormspree(email){
   const formData = new FormData();
-  formData.append('form-name', 'alphabot-signup');
   formData.append('email', email);
   formData.append('source', 'site_web');
   formData.append('date', new Date().toISOString().split('T')[0]);
-  fetch('/', {method:'POST', body:formData}).catch(()=>{});
+  fetch('https://formspree.io/f/xovdbjzk', {method:'POST', body:formData, headers:{'Accept':'application/json'}}).catch(()=>{});
 }
 
 function doSubscribe(inputId, statusId){
@@ -1048,8 +1042,8 @@ function doSubscribe(inputId, statusId){
   status.style.color='var(--cyan)';status.textContent='Inscription en cours...';
   const today = new Date();
   const dateStr = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
-  const newsletterUrl = `https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_${dateStr}.html`;
-  const archiveUrl = `https://alphabotweeklynetlifyapp.netlify.app/newsletters.html`;
+  const newsletterUrl = `https://antoinemetout-alphabot.github.io/alphabot-weekly/outputs/alphabot_newsletter_${dateStr}.html`;
+  const archiveUrl = `https://antoinemetout-alphabot.github.io/alphabot-weekly/newsletters.html`;
 
   emailjs.send("service_k6oih79","template_hbzn9ek",{
     email:email, name:email.split('@')[0],
@@ -1058,9 +1052,9 @@ function doSubscribe(inputId, statusId){
     status.style.color='var(--green)';
     status.textContent='Bienvenue ! Vérifiez votre boîte mail.';
     document.getElementById(inputId).value='';
-    submitToNetlify(email);
+    submitToFormspree(email);
   }).catch(()=>{
-    submitToNetlify(email);
+    submitToFormspree(email);
     status.style.color='var(--green)';
     status.textContent='Inscription enregistrée ! Bienvenue.';
     document.getElementById(inputId).value='';

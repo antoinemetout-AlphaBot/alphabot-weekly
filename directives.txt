@@ -1,0 +1,93 @@
+═══════════════════════════════════════════════════════════════
+  CANAL CEO → DIRECTEUR ADJOINT IA — AlphaBot Weekly
+  Antoine Metout (CEO) → Agent DA
+═══════════════════════════════════════════════════════════════
+
+COMMENT ÇA MARCHE :
+  • Écris tes instructions dans la section "DIRECTIVES ACTIVES"
+  • L'Agent Directeur Adjoint lit ce fichier à chaque session quotidienne
+  • Il agit en conséquence et loggue ses actions
+  • [FAIT] = accompli | [HAUTE] urgent | [MOYENNE] cette semaine | [BASSE] quand possible
+
+═══════════════════════════════════════════════════════════════
+  INSTRUCTIONS CEO DU 20/03/2026 — APPLIQUÉES
+═══════════════════════════════════════════════════════════════
+
+[FAIT] INSTRUCTION 1 — Email de bienvenue avec lien newsletter du jour
+  ✅ index.html mis à jour : l'email EmailJS reçoit maintenant newsletter_url
+     (URL dynamique calculée côté browser : .../outputs/alphabot_newsletter_YYYY-MM-DD.html)
+  ✅ agent_growth.py déjà correct : email SMTP bienvenu avec URL dynamique
+  ✅ Variable archive_url ajoutée pour pointer vers /newsletters.html
+
+[FAIT] INSTRUCTION 2 — Historique newsletters disponible sur le site
+  ✅ agent_redacteur.py : méthode maj_archive() ajoutée
+     → Génère newsletters.html à chaque newsletter produite
+     → Page publique listant toutes les éditions avec liens
+  ✅ index.html : lien "Voir tout l'historique →" ajouté dans la preview
+  ⚠️  ACTION MANUELLE : redéployer sur Netlify pour publier newsletters.html
+
+[FAIT] INSTRUCTION 3 — Agent Growth Booster créé
+  ✅ agents/agent_growth_booster.py créé (axe simulation + axe croissance réelle)
+  ✅ Système de récompense : +10 pts/vrai abonné, +1 pt/simulation
+  ✅ Génération de contenu actionnable : posts LinkedIn/Twitter, referral, SEO
+  ✅ main.py mis à jour : --booster (+ --simulation --nb)
+  ✅ Score tracké dans data/booster_score.json
+
+[FAIT] INSTRUCTION 4 — Hiérarchie CEO → DA → Agents
+  ✅ agent_adjoint.py renforcé avec superviser_equipe()
+     → Vérifie chaque agent vs ses KPIs (fréquence outputs, données CSV)
+     → Génère des actions correctives si un agent est en retard
+     → Intègre les corrections dans son cycle quotidien automatiquement
+  ✅ Rapport CEO inclut désormais une section "Supervision Équipe"
+
+═══════════════════════════════════════════════════════════════
+  DIRECTIVES ACTIVES
+═══════════════════════════════════════════════════════════════
+
+[HAUTE]  Redéployer le site sur Netlify pour publier :
+         - newsletters.html (archive)
+         - index.html mis à jour (lien newsletter + archive)
+         → Procédure : glisser-déposer le dossier Alphabot/ sur https://app.netlify.com
+
+[HAUTE]  Mettre à jour le template EmailJS dashboard :
+         - Sujet : "🤖 Bienvenue dans AlphaBot Weekly"
+         - Corps : utiliser la variable {{newsletter_url}} pour le CTA principal
+         - Variables disponibles : email, name, newsletter_url, archive_url
+
+[MOYENNE] Lancer le Growth Booster pour la stratégie de croissance réelle :
+          → python main.py --booster
+          → Implémenter les actions prioritaires générées (posts LinkedIn, etc.)
+
+[MOYENNE] Connecter Formspree → subscribers.csv :
+          → Chaque inscription via le site doit alimenter le CSV Python
+          → Solution : webhook Formspree ou vérification manuelle hebdomadaire
+
+[BASSE]  Tester le pipeline complet le lundi 23/03 à 7h30 :
+         → Vérifier que la newsletter arrive bien dans la boîte mail
+         → Vérifier que le CEO Brief arrive à 8h00
+
+═══════════════════════════════════════════════════════════════
+  PRIORITÉS PERMANENTES
+═══════════════════════════════════════════════════════════════
+
+  1. Qualité et régularité de la newsletter (lun-ven 7h30)
+  2. Croissance abonnés humains (objectif : 1 000)
+  3. Monétisation via partenariats (objectif : 1 000€/mois)
+  4. Code propre, agents fonctionnels, zéro bug bloquant
+  5. Superviser que chaque agent remplit bien son rôle
+
+═══════════════════════════════════════════════════════════════
+  HIÉRARCHIE OFFICIELLE
+═══════════════════════════════════════════════════════════════
+
+  CEO       : Antoine Metout (donne la ligne directrice via ce fichier)
+  DA        : Agent Directeur Adjoint (supervise, planifie, exécute, rapporte)
+  ÉQUIPE    : agent_veille | agent_analyste | agent_redacteur | agent_growth
+              agent_growth_booster | agent_commercial | agent_analytics
+              agent_cfo | agent_ceo_brief
+
+═══════════════════════════════════════════════════════════════
+  LOG DES SESSIONS DA (rempli automatiquement)
+═══════════════════════════════════════════════════════════════
+
+[20/03/2026] Session de configuration initiale — 4 instructions CEO appliquées

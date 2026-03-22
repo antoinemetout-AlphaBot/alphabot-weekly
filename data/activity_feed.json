@@ -1,725 +1,705 @@
 {
-  "generated_at": "2026-03-22T17:26:08.274304",
+  "generated_at": "2026-03-22T17:40:11.526369",
   "total_events": 100,
   "events": [
     {
-      "ts": "2026-03-22T17:26:08.252829",
+      "ts": "2026-03-22T17:40:11.500723",
       "agent": "Orchestrateur",
-      "type": "success",
-      "message": "DA soir — rapport CEO envoyé",
+      "type": "info",
+      "message": "Twitter : désactivé aujourd'hui (credentials expirés)",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.238023",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "ts": "2026-03-22T17:40:11.486726",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Twitter — Tweet Soir 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.147290",
+      "ts": "2026-03-22T17:40:11.470092",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.457298",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.449227",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.432916",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.416532",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.402653",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.391381",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.379945",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:11.366611",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:10.937449",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.134916",
+      "ts": "2026-03-22T17:40:10.926649",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Soir 🐦",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:40:10.915550",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.124443",
+      "ts": "2026-03-22T17:40:10.905985",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.118440",
+      "ts": "2026-03-22T17:40:10.895460",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.110934",
+      "ts": "2026-03-22T17:40:10.886406",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.100899",
+      "ts": "2026-03-22T17:40:10.875618",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.093385",
+      "ts": "2026-03-22T17:40:10.865098",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.084315",
+      "ts": "2026-03-22T17:40:10.854515",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.074790",
+      "ts": "2026-03-22T17:40:10.843174",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.063566",
+      "ts": "2026-03-22T17:40:10.831169",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:26:08.046865",
+      "ts": "2026-03-22T17:40:10.810415",
       "agent": "Orchestrateur",
-      "type": "success",
-      "message": "DA soir — rapport CEO envoyé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:26:08.035642",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:26:06.619511",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:26:06.609489",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 0 succès, 4 erreur(s)",
-      "data": {
-        "ok": 0,
-        "errors": 4
-      }
-    },
-    {
-      "ts": "2026-03-22T17:26:06.477661",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:26:06.465652",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 0 succès, 4 erreur(s)",
-      "data": {
-        "ok": 0,
-        "errors": 4
-      }
-    },
-    {
-      "ts": "2026-03-22T17:25:50.125052",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 7 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:50.113545",
-      "agent": "Directeur Adjoint",
       "type": "info",
-      "message": "Plan d'action généré — 7 action(s)",
-      "data": {
-        "nb_actions": 7
-      }
-    },
-    {
-      "ts": "2026-03-22T17:25:47.538321",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 7 action(s) en cours...",
+      "message": "Twitter : désactivé aujourd'hui (credentials expirés)",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:47.522439",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 7 action(s)",
-      "data": {
-        "nb_actions": 7
-      }
-    },
-    {
-      "ts": "2026-03-22T17:25:17.924467",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:17.915434",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "2 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰",
-          "Agent CEO Brief 👔"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-22T17:25:17.900662",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:17.894122",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 17 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:17.399438",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:17.388323",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 22/03/2026 à 17:25",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:16.890086",
+      "ts": "2026-03-22T17:40:10.798611",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "message": "Lancement : Twitter — Tweet Soir 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.863470",
+      "ts": "2026-03-22T17:40:10.785116",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.850943",
+      "ts": "2026-03-22T17:40:10.774596",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.842414",
+      "ts": "2026-03-22T17:40:10.763361",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.827359",
+      "ts": "2026-03-22T17:40:10.751980",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.816159",
+      "ts": "2026-03-22T17:40:10.741354",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.808103",
+      "ts": "2026-03-22T17:40:10.732822",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.799099",
+      "ts": "2026-03-22T17:40:10.720451",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.787051",
+      "ts": "2026-03-22T17:40:10.706890",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:16.774541",
+      "ts": "2026-03-22T17:40:10.691637",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:15.270409",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:15.257908",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "2 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰",
-          "Agent CEO Brief 👔"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-22T17:25:15.233009",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:15.220555",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 17 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:14.476806",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:14.464065",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 22/03/2026 à 17:25",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-22T17:25:13.896047",
+      "ts": "2026-03-22T17:39:41.360215",
       "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.879211",
+      "ts": "2026-03-22T17:39:41.353697",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.870676",
+      "ts": "2026-03-22T17:39:41.348181",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.859148",
+      "ts": "2026-03-22T17:39:41.340181",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.852485",
+      "ts": "2026-03-22T17:39:41.334655",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.842410",
+      "ts": "2026-03-22T17:39:41.325294",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.832725",
+      "ts": "2026-03-22T17:39:41.319295",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.820161",
+      "ts": "2026-03-22T17:39:41.308138",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.808284",
+      "ts": "2026-03-22T17:39:41.294618",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:25:13.795461",
+      "ts": "2026-03-22T17:39:41.269578",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.761823",
+      "ts": "2026-03-22T17:39:40.680348",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:39:40.669754",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.752290",
+      "ts": "2026-03-22T17:39:40.658150",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.738161",
+      "ts": "2026-03-22T17:39:40.648260",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.726493",
+      "ts": "2026-03-22T17:39:40.640032",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.713868",
+      "ts": "2026-03-22T17:39:40.625522",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.703351",
+      "ts": "2026-03-22T17:39:40.613029",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.691687",
+      "ts": "2026-03-22T17:39:40.604500",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.679163",
+      "ts": "2026-03-22T17:39:40.594159",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:46.663457",
+      "ts": "2026-03-22T17:39:40.583031",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.784644",
+      "ts": "2026-03-22T17:39:11.254710",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:39:11.242370",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.774593",
+      "ts": "2026-03-22T17:39:11.229508",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.764127",
+      "ts": "2026-03-22T17:39:11.216330",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.754612",
+      "ts": "2026-03-22T17:39:11.203595",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.745650",
+      "ts": "2026-03-22T17:39:11.190419",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.736142",
+      "ts": "2026-03-22T17:39:11.179392",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.724469",
+      "ts": "2026-03-22T17:39:11.166349",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.711943",
+      "ts": "2026-03-22T17:39:11.152823",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:43.692534",
+      "ts": "2026-03-22T17:39:11.143296",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.655185",
+      "ts": "2026-03-22T17:39:10.570901",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:39:10.560146",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.645672",
+      "ts": "2026-03-22T17:39:10.546856",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.635841",
+      "ts": "2026-03-22T17:39:10.533339",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.625332",
+      "ts": "2026-03-22T17:39:10.515743",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.613955",
+      "ts": "2026-03-22T17:39:10.502222",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.602432",
+      "ts": "2026-03-22T17:39:10.488183",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.596193",
+      "ts": "2026-03-22T17:39:10.474421",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.584132",
+      "ts": "2026-03-22T17:39:10.460672",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:16.574309",
+      "ts": "2026-03-22T17:39:10.445613",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.681061",
+      "ts": "2026-03-22T17:38:41.132626",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:41.121904",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.670537",
+      "ts": "2026-03-22T17:38:41.113388",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.660324",
+      "ts": "2026-03-22T17:38:41.103724",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.652286",
+      "ts": "2026-03-22T17:38:41.095182",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.642219",
+      "ts": "2026-03-22T17:38:41.085663",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.631003",
+      "ts": "2026-03-22T17:38:41.077137",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.619695",
+      "ts": "2026-03-22T17:38:41.068128",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.607243",
+      "ts": "2026-03-22T17:38:41.058093",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:24:13.592717",
+      "ts": "2026-03-22T17:38:41.047565",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.565778",
+      "ts": "2026-03-22T17:38:40.434526",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:40.423935",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.558768",
+      "ts": "2026-03-22T17:38:40.415371",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.550242",
+      "ts": "2026-03-22T17:38:40.404820",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.541132",
+      "ts": "2026-03-22T17:38:40.397291",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.533599",
+      "ts": "2026-03-22T17:38:40.386671",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.521024",
+      "ts": "2026-03-22T17:38:40.376085",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.510485",
+      "ts": "2026-03-22T17:38:40.365806",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 2",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.499613",
+      "ts": "2026-03-22T17:38:40.355290",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Midi 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:46.482614",
+      "ts": "2026-03-22T17:38:40.342871",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Prospection 💼",
       "data": {}
     },
     {
-      "ts": "2026-03-22T17:23:43.581236",
+      "ts": "2026-03-22T17:38:11.038479",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:11.027416",
       "agent": "Orchestrateur",
       "type": "info",
       "message": "Tâche déjà exécutée aujourd'hui, skip: Twitter — Tweet Midi 🐦",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:11.016100",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: CFO 💰",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:11.003560",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Analytics 📊",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:10.990580",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Commercial — Relances 📨",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:10.984235",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Growth Booster 🚀 — Session 3",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T17:38:10.977274",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Tâche déjà exécutée aujourd'hui, skip: Veille Marchés — Après-midi 🔍",
       "data": {}
     }
   ],
@@ -727,34 +707,18 @@
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-22T17:26:08.252829",
+        "ts": "2026-03-22T17:40:11.500723",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "DA soir — rapport CEO envoyé",
+        "type": "info",
+        "message": "Twitter : désactivé aujourd'hui (credentials expirés)",
         "data": {}
       },
-      "last_ts": "2026-03-22T17:26:08.252829",
-      "last_type": "success",
-      "last_message": "DA soir — rapport CEO envoyé",
-      "total_today": 78,
+      "last_ts": "2026-03-22T17:40:11.500723",
+      "last_type": "info",
+      "last_message": "Twitter : désactivé aujourd'hui (credentials expirés)",
+      "total_today": 100,
       "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Directeur Adjoint",
-      "last_event": {
-        "ts": "2026-03-22T17:26:08.238023",
-        "agent": "Directeur Adjoint",
-        "type": "success",
-        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-        "data": {}
-      },
-      "last_ts": "2026-03-22T17:26:08.238023",
-      "last_type": "success",
-      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 22,
-      "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 0
     }
   ]
 }
