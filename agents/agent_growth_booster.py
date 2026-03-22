@@ -412,8 +412,8 @@ footer{{text-align:center;color:#334155;font-size:11px;margin-top:24px;}}
   {section("📰 Article SEO", strategie.get("article_seo", strategie.get("article_seo_complet", [])), "#8b5cf6")}
   {section("💬 Posts Reddit", strategie.get("reddit_posts", strategie.get("reddit_posts_valeur", [])), "#ff4500")}
   {section("📚 Annuaires Newsletters", strategie.get("annuaires", strategie.get("annuaires_newsletters", [])), "#22c55e")}
-  {section("📧 Email Referral", strategie.get("email_referral", strategie.get("email_referral_automatique", {{}})), "#06b6d4")}
-  {section("🎁 Lead Magnet", strategie.get("lead_magnet", {{}}), "#f59e0b")}
+  {section("📧 Email Referral", strategie.get("email_referral", strategie.get("email_referral_automatique", dict())), "#06b6d4")}
+  {section("🎁 Lead Magnet", strategie.get("lead_magnet", dict()), "#f59e0b")}
   {section("🤝 Partenariats", strategie.get("partenariats", strategie.get("partenariats_newsletters", [])), "#f5c842")}
 
   <footer>Généré par l'Agent Growth Booster · AlphaBot Weekly 🤖 — 100% IA</footer>
