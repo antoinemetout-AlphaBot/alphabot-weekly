@@ -267,7 +267,7 @@ nav {
   border-radius: 20px;
   padding: 52px 48px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.08) inset, 0 -1px 0 rgba(34,211,238,.05) inset;
 }
 .gate-card::before {
@@ -282,10 +282,10 @@ nav {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity .4s ease;
+  pointer-events: none;
 }
 .gate-card:hover::before { opacity: 1; }
 .gate-card:hover {
-  transform: translateY(-6px) scale(1.005);
   box-shadow: 0 32px 80px rgba(0,0,0,.5), var(--glow-cyan);
   background: rgba(13,20,37,.85);
 }
