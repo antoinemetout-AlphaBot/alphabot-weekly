@@ -1034,6 +1034,67 @@
     font-size: 0.75rem;
     padding: 0.5rem 1.25rem;
     border: 1px solid rgba(239, 68, 68, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .live-badge.market-closed {
+    background: linear-gradient(135deg, #64748b, #475569);
+    box-shadow: 0 4px 16px rgba(100, 116, 139, 0.3);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+  }
+
+  .live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    animation: livePulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+    50% { opacity: 0.4; box-shadow: 0 0 8px 4px rgba(255,255,255,0.3); }
+  }
+
+  .live-badge.refreshing .live-dot {
+    animation: liveRefreshSpin 0.6s linear infinite;
+    background: var(--cyan);
+  }
+
+  @keyframes liveRefreshSpin {
+    0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.8); }
+    50% { box-shadow: 0 0 12px 6px rgba(34,211,238,0.4); }
+    100% { box-shadow: 0 0 0 0 rgba(34,211,238,0.8); }
+  }
+
+  .price-flash {
+    animation: priceFlash 1.2s ease-out;
+  }
+
+  @keyframes priceFlash {
+    0% { background: rgba(34,211,238,0.3); }
+    100% { background: transparent; }
+  }
+
+  .price-flash-up {
+    animation: priceFlashUp 1.2s ease-out;
+  }
+
+  @keyframes priceFlashUp {
+    0% { color: #22c55e; text-shadow: 0 0 8px rgba(34,197,94,0.5); }
+    100% { color: inherit; text-shadow: none; }
+  }
+
+  .price-flash-down {
+    animation: priceFlashDown 1.2s ease-out;
+  }
+
+  @keyframes priceFlashDown {
+    0% { color: #ef4444; text-shadow: 0 0 8px rgba(239,68,68,0.5); }
+    100% { color: inherit; text-shadow: none; }
   }
 
   /* ===== ENHANCED ROBOT CARDS ===== */
@@ -1128,7 +1189,11 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <div class="live-badge">● LIVE — Prix en temps réel <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span></div>
+      <div class="live-badge" id="live-badge">
+        <span class="live-dot" id="live-dot"></span> LIVE — Prix en temps réel
+        <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span>
+        <span id="live-source" style="font-size:9px;opacity:.5;margin-left:4px;"></span>
+      </div>
       <h1>3 Robots Traders IA</h1>
       <p class="hero-subtitle">
         Trois stratégies d'investissement, trois profils de risque, 30 000€ au service de votre portefeuille.
@@ -1582,36 +1647,71 @@
     setInterval(fetchPortfolioData, 60000);
 
     // ══════════════════════════════════════════════════════════════
-    // PRIX EN TEMPS RÉEL — Mise à jour automatique toutes les 30s
+    // PRIX EN TEMPS RÉEL — Mise à jour automatique toutes les 15s
+    // Sources multiples : Yahoo, CoinGecko, Google Finance
     // ══════════════════════════════════════════════════════════════
 
     const CRYPTO_MAP = {
-      'BTC-USD': 'bitcoin',
-      'ETH-USD': 'ethereum',
-      'SOL-USD': 'solana',
-      'BNB-USD': 'binancecoin',
-      'XRP-USD': 'ripple',
-      'ADA-USD': 'cardano',
-      'DOGE-USD': 'dogecoin',
-      'AVAX-USD': 'avalanche-2',
-      'DOT-USD': 'polkadot',
+      'BTC-USD': 'bitcoin', 'ETH-USD': 'ethereum', 'SOL-USD': 'solana',
+      'BNB-USD': 'binancecoin', 'XRP-USD': 'ripple', 'ADA-USD': 'cardano',
+      'DOGE-USD': 'dogecoin', 'AVAX-USD': 'avalanche-2', 'DOT-USD': 'polkadot',
       'LINK-USD': 'chainlink'
     };
 
-    async function fetchCryptoPrice(ticker) {
-      const coinId = CRYPTO_MAP[ticker];
-      if (!coinId) return null;
-      try {
-        const r = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);
-        const d = await r.json();
-        return d[coinId]?.usd || null;
-      } catch(e) { return null; }
+    let _lastPrices = {};     // Mémorise le dernier prix connu par ticker
+    let _refreshCount = 0;    // Compteur de refresh cycles
+    let _lastSourceUsed = {}; // Quelle source a fourni le dernier prix
+
+    // ── Indicateur visuel du badge LIVE ──
+    function setLiveStatus(status, detail) {
+      const badge = document.getElementById('live-badge');
+      const dot = document.getElementById('live-dot');
+      const tsEl = document.getElementById('live-timestamp');
+      const srcEl = document.getElementById('live-source');
+      if (!badge) return;
+
+      badge.classList.remove('refreshing', 'market-closed');
+
+      if (status === 'refreshing') {
+        badge.classList.add('refreshing');
+        badge.querySelector('.live-dot + span')?.remove(); // cleanup old text nodes
+      } else if (status === 'market-closed') {
+        badge.classList.add('market-closed');
+      }
+
+      if (tsEl && detail?.time) tsEl.textContent = detail.time;
+      if (srcEl && detail?.source) srcEl.textContent = `(${detail.source})`;
     }
 
-    // ── SYSTÈME MULTI-SOURCES (jamais dépendant d'un seul fournisseur) ──
-    // Chaque source est indépendante. On prend la 1ère qui répond.
+    // ── Détection horaires marchés ──
+    function getMarketStatus() {
+      const now = new Date();
+      const utcHour = now.getUTCHours();
+      const utcMin = now.getUTCMinutes();
+      const day = now.getUTCDay(); // 0=dim, 6=sam
 
-    async function _fetchWithTimeout(url, ms = 5000) {
+      // Weekend = marchés fermés (sauf crypto)
+      if (day === 0 || day === 6) return { usOpen: false, euOpen: false, weekend: true };
+
+      // Marchés EU : 8:00-16:30 UTC (Xetra) / 8:00-16:30 UTC (Euronext)
+      const euOpen = (utcHour >= 8 && (utcHour < 16 || (utcHour === 16 && utcMin <= 30)));
+      // Marchés US : 14:30-21:00 UTC (NYSE/NASDAQ)
+      const usOpen = (utcHour >= 14 && (utcHour < 21 || (utcHour === 14 && utcMin >= 30)));
+
+      return { usOpen, euOpen, weekend: false };
+    }
+
+    function isTickerUS(ticker) {
+      // ETFs US classiques (pas de .DE, .PA, etc.)
+      return !ticker.includes('.') || ticker.endsWith('-USD');
+    }
+
+    function isTickerCrypto(ticker) {
+      return !!CRYPTO_MAP[ticker];
+    }
+
+    // ── Fetch avec timeout ──
+    async function _fetchWithTimeout(url, ms = 6000) {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), ms);
       try {
@@ -1621,51 +1721,91 @@
       } catch(e) { clearTimeout(timer); throw e; }
     }
 
-    // Source 1 : Yahoo Finance (via proxy CORS — le + fiable pour ETFs européens)
-    async function _yahooPrice(ticker) {
-      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
-      const proxies = [
-        `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
-      ];
-      for (const proxyUrl of proxies) {
-        try {
-          const r = await _fetchWithTimeout(proxyUrl, 6000);
-          if (r.ok) {
-            const d = await r.json();
-            const price = d?.chart?.result?.[0]?.meta?.regularMarketPrice;
-            if (price && price > 0) { console.log(`[Prix] ${ticker} via Yahoo: ${price}`); return price; }
-          }
-        } catch(e) {}
-      }
+    // ── Source 1 : CoinGecko (crypto uniquement, pas de proxy nécessaire) ──
+    async function fetchCryptoPrice(ticker) {
+      const coinId = CRYPTO_MAP[ticker];
+      if (!coinId) return null;
+      try {
+        const r = await _fetchWithTimeout(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`, 8000);
+        if (!r.ok) return null;
+        const d = await r.json();
+        const price = d[coinId]?.usd;
+        if (price && price > 0) {
+          console.log(`[Prix] ${ticker} via CoinGecko: $${price}`);
+          _lastSourceUsed[ticker] = 'CoinGecko';
+          return price;
+        }
+      } catch(e) { console.warn(`[Prix] CoinGecko fail pour ${ticker}:`, e.message); }
       return null;
     }
 
-    // Source 2 : Yahoo Finance v6 (endpoint alternatif, même proxy)
+    // ── Source 2 : Yahoo Finance v8 (via corsproxy.io) ──
+    async function _yahooPrice(ticker) {
+      try {
+        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
+        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 8000);
+        if (!r.ok) return null;
+        const d = await r.json();
+        const price = d?.chart?.result?.[0]?.meta?.regularMarketPrice;
+        if (price && price > 0) {
+          console.log(`[Prix] ${ticker} via Yahoo v8: ${price}`);
+          _lastSourceUsed[ticker] = 'Yahoo';
+          return price;
+        }
+      } catch(e) { console.warn(`[Prix] Yahoo v8 fail pour ${ticker}:`, e.message); }
+      return null;
+    }
+
+    // ── Source 3 : Yahoo Finance v6 (endpoint alternatif) ──
     async function _yahooV6Price(ticker) {
       try {
         const url = `https://query2.finance.yahoo.com/v6/finance/quote?symbols=${encodeURIComponent(ticker)}`;
-        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
-        if (r.ok) {
-          const d = await r.json();
-          const price = d?.quoteResponse?.result?.[0]?.regularMarketPrice;
-          if (price && price > 0) { console.log(`[Prix] ${ticker} via Yahoo v6: ${price}`); return price; }
+        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 8000);
+        if (!r.ok) return null;
+        const d = await r.json();
+        const price = d?.quoteResponse?.result?.[0]?.regularMarketPrice;
+        if (price && price > 0) {
+          console.log(`[Prix] ${ticker} via Yahoo v6: ${price}`);
+          _lastSourceUsed[ticker] = 'Yahoo v6';
+          return price;
         }
-      } catch(e) {}
+      } catch(e) { console.warn(`[Prix] Yahoo v6 fail pour ${ticker}:`, e.message); }
       return null;
     }
 
-    // Source 3 : Google Finance (scrape prix via proxy)
+    // ── Source 4 : Google Finance (scrape via proxy) ──
     async function _googleFinancePrice(ticker) {
       try {
-        // Convertir ticker format Yahoo → Google (EXH7.DE → EXH7:ETR, MC.PA → MC:EPA)
         const EXCHANGE_MAP = {'.DE':':ETR', '.PA':':EPA', '.L':':LON', '.AS':':AMS'};
         let gTicker = ticker;
         for (const [yExt, gExt] of Object.entries(EXCHANGE_MAP)) {
           if (ticker.endsWith(yExt)) { gTicker = ticker.replace(yExt, gExt); break; }
         }
-        // US stocks → direct
-        if (!gTicker.includes(':') && !gTicker.includes('-')) gTicker = gTicker + ':NYSEARCA';
+        // Crypto → skip Google
+        if (ticker.includes('-USD')) return null;
+        // US stocks/ETFs sans extension → essayer NYSE puis NYSEARCA
+        if (!gTicker.includes(':')) {
+          // Essayer d'abord NYSEARCA (ETFs), puis NYSE
+          for (const exchange of [':NYSEARCA', ':NYSE', ':NASDAQ']) {
+            try {
+              const url = `https://www.google.com/finance/quote/${gTicker}${exchange}`;
+              const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
+              if (r.ok) {
+                const html = await r.text();
+                const m = html.match(/data-last-price="([0-9.,]+)"/);
+                if (m) {
+                  const price = parseFloat(m[1].replace(',', ''));
+                  if (price > 0) {
+                    console.log(`[Prix] ${ticker} via Google Finance (${exchange}): ${price}`);
+                    _lastSourceUsed[ticker] = `Google${exchange}`;
+                    return price;
+                  }
+                }
+              }
+            } catch(e) {}
+          }
+          return null;
+        }
 
         const url = `https://www.google.com/finance/quote/${gTicker}`;
         const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
@@ -1674,30 +1814,22 @@
           const m = html.match(/data-last-price="([0-9.,]+)"/);
           if (m) {
             const price = parseFloat(m[1].replace(',', ''));
-            if (price > 0) { console.log(`[Prix] ${ticker} via Google Finance: ${price}`); return price; }
+            if (price > 0) {
+              console.log(`[Prix] ${ticker} via Google Finance: ${price}`);
+              _lastSourceUsed[ticker] = 'Google';
+              return price;
+            }
           }
         }
-      } catch(e) {}
+      } catch(e) { console.warn(`[Prix] Google Finance fail pour ${ticker}:`, e.message); }
       return null;
     }
 
-    // Source 4 : Finnhub (gratuit, bon pour US stocks)
-    async function _finnhubPrice(ticker) {
-      try {
-        const clean = ticker.replace('.DE','').replace('.PA','');
-        const r = await _fetchWithTimeout(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(clean)}&token=demo`, 5000);
-        if (r.ok) {
-          const d = await r.json();
-          if (d?.c && d.c > 0) { console.log(`[Prix] ${ticker} via Finnhub: ${d.c}`); return d.c; }
-        }
-      } catch(e) {}
-      return null;
-    }
-
+    // ── Fetch prix multi-sources (course en parallèle) ──
     async function fetchStockPrice(ticker) {
-      // Essayer toutes les sources en parallèle, prendre la 1ère qui répond
-      const sources = [_yahooPrice(ticker), _yahooV6Price(ticker), _googleFinancePrice(ticker), _finnhubPrice(ticker)];
+      const sources = [_yahooPrice(ticker), _yahooV6Price(ticker), _googleFinancePrice(ticker)];
       const results = await Promise.allSettled(sources);
+
       for (const r of results) {
         if (r.status === 'fulfilled' && r.value && r.value > 0) return r.value;
       }
@@ -1705,47 +1837,101 @@
       return null;
     }
 
+    // ── Refresh principal : met à jour tous les prix live ──
     async function refreshLivePrices() {
       if (!portfolioData?.robots) return;
 
+      _refreshCount++;
+      setLiveStatus('refreshing');
+      console.log(`[AlphaBot LIVE] ─── Refresh #${_refreshCount} @ ${new Date().toLocaleTimeString('fr-FR')} ───`);
+
+      const marketStatus = getMarketStatus();
       let updated = false;
+      let sourcesUsed = new Set();
+      let tickersUpdated = 0;
+      let tickersTotal = 0;
+
       for (const [robotType, robot] of Object.entries(portfolioData.robots)) {
         if (!robot.positions) continue;
+
         for (const pos of robot.positions) {
+          tickersTotal++;
+          const oldPrice = pos.prix_actuel || pos.current_price || 0;
           let livePrice = null;
 
-          if (CRYPTO_MAP[pos.ticker]) {
+          // Crypto → toujours actif 24/7
+          if (isTickerCrypto(pos.ticker)) {
             livePrice = await fetchCryptoPrice(pos.ticker);
-          } else {
+          }
+          // Stock/ETF → fetch même hors marché (retourne le dernier close)
+          else {
             livePrice = await fetchStockPrice(pos.ticker);
           }
 
           if (livePrice && livePrice > 0) {
+            tickersUpdated++;
+            sourcesUsed.add(_lastSourceUsed[pos.ticker] || '?');
+
             pos.prix_actuel = livePrice;
             pos.current_price = livePrice;
+
             const entryPrice = pos.prix_entree || pos.entry_price || 0;
             const qty = pos.nb_actions || pos.quantity || 0;
             if (entryPrice > 0) {
               pos.pl_pct = ((livePrice - entryPrice) / entryPrice * 100);
               pos.pl_euros = qty * (livePrice - entryPrice);
             }
-            // Recalcul capital robot
+
+            // Recalcul capital du robot
             const totalPL = robot.positions.reduce((sum, p) => sum + (p.pl_euros || 0), 0);
             robot.capital_actuel = robot.capital_initial + totalPL;
             robot.performance_pct = (totalPL / robot.capital_initial) * 100;
             robot.performance_eur = totalPL;
             updated = true;
-            console.log(`[AlphaBot LIVE] ${pos.ticker}: ${livePrice.toFixed(2)} (${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%)`);
+
+            // Log le changement
+            const priceDiff = livePrice - oldPrice;
+            const arrow = priceDiff > 0 ? '↑' : priceDiff < 0 ? '↓' : '=';
+            console.log(`[AlphaBot LIVE] ${pos.ticker}: ${livePrice.toFixed(2)} ${arrow} (P&L: ${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%) via ${_lastSourceUsed[pos.ticker]}`);
+
+            // Mémorise pour détecter les changements
+            _lastPrices[pos.ticker] = livePrice;
           }
         }
       }
 
+      // Mettre à jour l'affichage
+      const now = new Date().toLocaleTimeString('fr-FR');
+      const sourceStr = [...sourcesUsed].join(', ') || 'aucune';
+
       if (updated) {
         renderDashboard();
-        // Marqueur "live"
-        const liveEl = document.getElementById('live-timestamp');
-        if (liveEl) liveEl.textContent = `Dernière MAJ: ${new Date().toLocaleTimeString('fr-FR')}`;
+        setLiveStatus('live', {
+          time: `MAJ: ${now} — ${tickersUpdated}/${tickersTotal} tickers`,
+          source: sourceStr
+        });
+      } else {
+        // Même si aucune donnée n'a changé, on montre que le refresh a tourné
+        const noMarket = !marketStatus.usOpen && !marketStatus.euOpen && !marketStatus.weekend;
+        if (marketStatus.weekend) {
+          setLiveStatus('market-closed', {
+            time: `Weekend — marchés fermés. Crypto 24/7. MAJ: ${now}`,
+            source: tickersUpdated > 0 ? sourceStr : 'en attente'
+          });
+        } else if (noMarket) {
+          setLiveStatus('market-closed', {
+            time: `Hors séance — derniers cours de clôture. MAJ: ${now}`,
+            source: tickersUpdated > 0 ? sourceStr : 'en attente'
+          });
+        } else {
+          setLiveStatus('live', {
+            time: `MAJ: ${now} — ${tickersUpdated > 0 ? tickersUpdated + ' sources OK' : 'en attente de données'}`,
+            source: tickersUpdated > 0 ? sourceStr : 'retry dans 15s'
+          });
+        }
       }
+
+      console.log(`[AlphaBot LIVE] ─── Fin refresh #${_refreshCount}: ${tickersUpdated}/${tickersTotal} OK via ${sourceStr} ───`);
     }
 
     // ══════════════════════════════════════════════════════════════
@@ -1907,13 +2093,24 @@
       if (portfolioData?.robots) {
         console.log('[AlphaBot] Données chargées → lancement refresh live + graphique');
         renderChart();
+        // Premier refresh immédiat
         refreshLivePrices();
-        if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 30000);
+        // Puis toutes les 15 secondes
+        if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 15000);
+        // Re-fetch le JSON serveur toutes les 2 minutes (au cas où update_prices.py tourne)
       } else {
         setTimeout(startLiveRefresh, 500);
       }
     }
     startLiveRefresh();
+
+    // Afficher le statut initial dès le chargement
+    const _initMarket = getMarketStatus();
+    if (_initMarket.weekend) {
+      setLiveStatus('market-closed', { time: 'Weekend — chargement...', source: '' });
+    } else {
+      setLiveStatus('refreshing', { time: 'Chargement des prix...', source: '' });
+    }
   </script>
   <script src="gate_subscriber.js"></script>
 </body>
