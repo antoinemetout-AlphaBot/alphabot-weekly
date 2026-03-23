@@ -9,3 +9,8 @@ requirements.txt
 directives.txt
 data/activity_log.jsonl
 .git/
+docs/
+templates/
+scripts/
+assets/*.png
+assets/*.svg
