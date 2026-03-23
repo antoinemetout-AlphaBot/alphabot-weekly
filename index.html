@@ -98,6 +98,11 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5.5vw,64px);font-
 #sub-status.error{color:#ef4444;}
 #sub-status.success{color:#22c55e;}
 
+/* TRUST BADGES */
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px 0 32px;animation:fadeInUp .8s .5s var(--transition) both;}
+.trust-item{font-size:13px;font-weight:600;color:#22c55e;letter-spacing:.2px;}
+.trust-sep{color:var(--muted);font-size:10px;}
+
 /* DIVIDER */
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:80px 0;position:relative;z-index:1;}
 
@@ -289,6 +294,167 @@ gtag('config', 'G-XXXXXXXXXX');
 <!-- Analytics simple (fonctionne immédiatement) -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+<!-- DA-AMELIORATIONS-2026-03-23 -->
+<style>
+/* ── GLOBAL ENHANCEMENTS ── */
+:root {
+  --glow-cyan: 0 0 40px rgba(34,211,238,.18), 0 0 80px rgba(34,211,238,.08);
+  --glow-gold: 0 0 40px rgba(245,200,66,.18), 0 0 80px rgba(245,200,66,.08);
+  --card-bg: rgba(255,255,255,.025);
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+/* BODY — richer background depth */
+body {
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34,211,238,.07) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 40% at 90% 90%, rgba(245,200,66,.05) 0%, transparent 55%),
+              var(--bg);
+  line-height: 1.65;
+}
+
+/* SCROLLBAR — thicker, more visible */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--gold));
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(34,211,238,.4);
+}
+
+/* NAV — glass elevated */
+nav {
+  background: rgba(4,9,26,.75);
+  backdrop-filter: blur(48px) saturate(180%);
+  -webkit-backdrop-filter: blur(48px) saturate(180%);
+  border-bottom: 1px solid rgba(34,211,238,.1);
+  box-shadow: 0 1px 0 rgba(34,211,238,.06), 0 4px 32px rgba(0,0,0,.4);
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+}
+
+.nav-brand {
+  font-size: 19px;
+  letter-spacing: -.8px;
+  background: linear-gradient(135deg, #fff 40%, var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all .3s;
+}
+.nav-brand:hover { filter: brightness(1.2); }
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, var(--cyan));
+  box-shadow: 0 4px 20px rgba(34,211,238,.2);
+  padding: 9px 22px;
+  border-radius: 12px;
+  letter-spacing: .3px;
+  position: relative;
+  overflow: hidden;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.nav-cta:hover::before { opacity: 1; }
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(34,211,238,.4), 0 0 0 1px rgba(34,211,238,.3);
+}
+
+/* HERO — enhanced typography */
+h1 {
+  line-height: 1.06;
+  letter-spacing: -1.5px;
+}
+.h1-line2 {
+  background: linear-gradient(135deg, var(--gold) 0%, #fbbf24 40%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(245,200,66,.3));
+}
+
+.hero-sub {
+  font-size: clamp(15px,1.8vw,18px);
+  line-height: 1.75;
+  color: #94a3b8;
+  letter-spacing: .1px;
+}
+
+/* HERO TAG — punchier */
+.hero-tag {
+  background: rgba(34,197,94,.06);
+  border-color: rgba(34,197,94,.25);
+  box-shadow: 0 0 24px rgba(34,197,94,.08);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding: 8px 20px;
+}
+
+/* TICKER — elevated cards */
+.tick {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.2);
+  transition: all .35s cubic-bezier(.4,0,.2,1);
+}
+.tick:hover {
+  background: rgba(34,211,238,.07);
+  border-color: rgba(34,211,238,.25);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(34,211,238,.15), 0 0 0 1px rgba(34,211,238,.15);
+}
+.tick-val { font-size: 15px; letter-spacing: -.3px; }
+
+/* FORM — premium feel */
+.form-group input {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 14px;
+  padding: 15px 18px;
+  font-size: 14px;
+  letter-spacing: .1px;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.form-group input:focus {
+  border-color: rgba(34,211,238,.5);
+  background: rgba(34,211,238,.05);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.12), 0 0 24px rgba(34,211,238,.1);
+}
+
+.btn-sub {
+  border-radius: 14px;
+  padding: 15px 30px;
+  font-size: 14px;
+  letter-spacing: .4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+  box-shadow: 0 4px 24px rgba(34,211,238,.25);
+  position: relative;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+.btn-sub::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.2), transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.btn-sub:hover::after { opacity: 1; }
+.btn-sub:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(34,211,238,.4), 0 0 0 1px rgba(34,211,238,.3);
+}
+.btn-sub:active { transform: translateY(-1px) scale(.99); }
+</style>
 </head>
 <body>
 
@@ -312,14 +478,32 @@ gtag('config', 'G-XXXXXXXXXX');
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Gratuit — Aucune connaissance requise</div>
+    <div class="hero-tag">Gratuit — Newsletter IA</div>
     <h1>
-      <div class="h1-line1">Vous ouvrez votre boîte mail,</div>
-      <div class="h1-line2">vous comprenez la bourse en 5 minutes</div>
+      <div class="h1-line1">La bourse, expliquée</div>
+      <div class="h1-line2">simplement. Chaque matin.</div>
     </h1>
     <p class="hero-sub">
-      Chaque matin, vous recevez un email qui vous dit <strong>exactement ce qui se passe</strong> sur les marchés : quelles actions montent, pourquoi le Bitcoin bouge, ce que fait la Fed — et ce que ça change pour votre argent. En parallèle, un robot investit 10 000€ fictifs en temps réel et vous montre chaque décision. <strong>Zéro jargon, zéro pub, zéro arnaque.</strong>
+      Recevez un email de 5 minutes qui vous dit <strong>ce qui monte, ce qui descend, et pourquoi.</strong><br>Pas besoin d'y connaître quoi que ce soit.
     </p>
+
+    <!-- SUBSCRIBE FORM -->
+    <div id="subscribe">
+      <div class="form-group">
+        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email">
+        <button class="btn-sub" onclick="handleSubscribe()">S'abonner</button>
+      </div>
+      <div id="sub-status"></div>
+    </div>
+
+    <!-- TRUST BADGES -->
+    <div class="hero-trust">
+      <span class="trust-item">Gratuit</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">5 min/jour</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">Zéro jargon</span>
+    </div>
 
     <!-- TICKER -->
     <div class="ticker-bar">
@@ -343,15 +527,6 @@ gtag('config', 'G-XXXXXXXXXX');
         <span class="tick-val" id="eur-price">---</span>
         <span class="tick-ch up" id="eur-change">--</span>
       </div>
-    </div>
-
-    <!-- SUBSCRIBE FORM -->
-    <div id="subscribe">
-      <div class="form-group">
-        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email">
-        <button class="btn-sub" onclick="handleSubscribe()">S'abonner</button>
-      </div>
-      <div id="sub-status"></div>
     </div>
   </div>
 </section>
@@ -385,16 +560,16 @@ gtag('config', 'G-XXXXXXXXXX');
     <!-- ROBOT TRADER -->
     <div class="pillar tr">
       <div class="pillar-icon">🤖</div>
-      <div class="pillar-badge">En direct — mis à jour chaque heure</div>
-      <h3>Vous regardez un robot investir 10 000€ et vous apprenez en le regardant</h3>
-      <p>Notre IA investit un portefeuille fictif avec un objectif : transformer 10 000€ en 100 000€. Chaque achat, chaque vente, chaque raisonnement est public. C'est comme regarder un trader professionnel en temps réel — sauf que c'est une IA et c'est gratuit.</p>
+      <div class="pillar-badge">3 robots — En direct — vrais prix de marché</div>
+      <h3>3 robots investissent 30 000€ sous vos yeux — et justifient chaque décision</h3>
+      <p>Trois robots IA avec des profils différents investissent en temps réel sur les vrais marchés mondiaux. 🛡️ Le Prudent vise la sécurité, ⚖️ le Modéré cherche l'équilibre, 🔥 l'Agressif prend des risques. Choisissez celui qui vous ressemble et apprenez en suivant ses trades.</p>
       <ul class="pillar-features">
-        <li><strong>Vous voyez chaque décision :</strong> "Achat NVIDIA à 142€ parce que le momentum est haussier" — pas de boîte noire</li>
-        <li><strong>Vous comprenez le raisonnement :</strong> pourquoi il achète, pourquoi il vend, quand il se protège</li>
-        <li><strong>Vous suivez la performance :</strong> courbe en temps réel, historique des trades, taux de réussite</li>
-        <li><strong>Vous apprenez des stratégies :</strong> momentum, mean reversion, analyse géopolitique — en voyant les résultats</li>
+        <li><strong>Chaque trade est justifié :</strong> "Achat NVIDIA à $142 — résultats Q4 au-dessus des attentes, IA générative en accélération" — des vraies raisons, pas du blabla</li>
+        <li><strong>3 profils pour tous les investisseurs :</strong> du débutant prudent au trader agressif, trouvez le robot qui correspond à votre tolérance au risque</li>
+        <li><strong>N'importe quelle action dans le monde :</strong> les robots peuvent trader actions US, européennes, crypto, ETF, matières premières — pas de limite</li>
+        <li><strong>Transparence totale :</strong> date exacte, prix d'entrée, stop-loss, take-profit, conviction — tout est public</li>
       </ul>
-      <a href="investissement.html" class="pillar-cta">Voir le portefeuille en direct →</a>
+      <a href="investissement.html" class="pillar-cta">Voir les 3 robots en direct →</a>
     </div>
   </div>
 </section>
@@ -418,16 +593,16 @@ gtag('config', 'G-XXXXXXXXXX');
     </div>
     <div class="preview-content">
       <div class="preview-date">Temps de lecture : 5 minutes</div>
-      <div class="preview-title">Ce matin : la Fed a parlé, les marchés ont réagi — voici ce que ça change pour vous</div>
+      <div class="preview-title">L'or franchit $3 050 : les banques centrales accumulent, Pékin accélère — ce que ça change pour votre portefeuille</div>
       <div class="preview-blur">
         <div class="preview-text">
-          <strong>En un coup d'oeil :</strong> Bitcoin $87,420 (+2.1%) · Or $3,045 (+0.8%) · S&P 500 5,780 (+0.3%) · Le dollar recule, l'or en profite.
+          <strong>Le chiffre du jour :</strong> +12,4% — c'est la hausse de l'or depuis janvier. La Banque Populaire de Chine a acheté 10 tonnes en février, son 4ème mois consécutif d'achats. Le signal est clair : la dédollarisation s'accélère.
         </div>
         <div class="preview-text">
-          <strong>Ce qui s'est passé :</strong> La Fed a maintenu ses taux. Résultat : le dollar baisse, ce qui fait monter l'or (+0.8%) et soulage les marchés actions européens. En revanche, les valeurs tech US hésitent car les taux élevés rendent les emprunts plus chers pour ces entreprises.
+          <strong>Pourquoi ça compte :</strong> Quand les banques centrales achètent de l'or massivement, c'est qu'elles ne font plus confiance au dollar pour stocker leur richesse. Résultat : l'or monte, le dollar baisse, et les marchés actions en profitent à court terme.
         </div>
         <div class="preview-text">
-          <strong>Ce que le robot a fait :</strong> Il a acheté NVIDIA à $142.30 (momentum haussier confirmé) et ouvert une position sur l'or (signal géopolitique). Performance cumulée : +8.7% depuis le lancement.
+          <strong>Ce que les 3 robots ont fait :</strong> 🛡️ Le Prudent a renforcé sa position or (GLD). ⚖️ Le Modéré a acheté TotalEnergies qui profite du pétrole en hausse. 🔥 L'Agressif a misé sur Barrick Gold (GOLD), le mineur le plus exposé à la hausse de l'once.
         </div>
       </div>
     </div>
@@ -464,6 +639,44 @@ gtag('config', 'G-XXXXXXXXXX');
       <span class="step-icon">💡</span>
       <h3>Vous comprenez la bourse sans effort</h3>
       <p>En 5 minutes par jour, vous savez de quoi on parle quand quelqu'un mentionne le CAC 40, Bitcoin ou la Fed. Fini le flou.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BIENTÔT DISPONIBLE -->
+<section class="section">
+  <div class="section-center">
+    <div class="section-tag">On ne s'arrête pas là</div>
+    <h2>Bientôt sur AlphaBot</h2>
+    <p class="section-sub">On construit la plateforme financière IA la plus complète pour les investisseurs débutants. Voici ce qui arrive.</p>
+  </div>
+
+  <div class="steps" style="grid-template-columns:repeat(4,1fr);">
+    <div class="step" style="border-color:rgba(34,211,238,.15);">
+      <span class="step-icon">🚨</span>
+      <h3>Alertes Marché IA</h3>
+      <p>Recevez une alerte instantanée quand un mouvement important se produit : krach, rally, décision de banque centrale. L'IA filtre le bruit pour vous.</p>
+      <div style="margin-top:16px;display:inline-block;background:rgba(34,211,238,.08);color:var(--cyan);padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Avril 2026</div>
+    </div>
+    <div class="step" style="border-color:rgba(245,200,66,.15);">
+      <span class="step-icon">🔍</span>
+      <h3>Screener IA</h3>
+      <p>Demandez "montre-moi les actions tech qui ont chuté de plus de 5% cette semaine" et l'IA vous les trouve. Un moteur de recherche intelligent pour les marchés.</p>
+      <div style="margin-top:16px;display:inline-block;background:rgba(245,200,66,.08);color:var(--gold);padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Mai 2026</div>
+    </div>
+    <div class="step" style="border-color:rgba(34,197,94,.15);">
+      <span class="step-icon">🎓</span>
+      <h3>Academy</h3>
+      <p>Des micro-cours de 3 minutes pour maîtriser les concepts financiers : ETF, options, analyse technique, géopolitique... Apprenez à votre rythme.</p>
+      <div style="margin-top:16px;display:inline-block;background:rgba(34,197,94,.08);color:#22c55e;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Juin 2026</div>
+    </div>
+    <div class="step" style="border-color:rgba(139,92,246,.15);">
+      <span class="step-icon">📊</span>
+      <h3>Ma Watchlist</h3>
+      <p>Créez votre propre liste d'actions à suivre. L'IA surveille pour vous et vous alerte si quelque chose d'important se passe sur vos valeurs préférées.</p>
+      <div style="margin-top:16px;display:inline-block;background:rgba(139,92,246,.08);color:#8b5cf6;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Été 2026</div>
     </div>
   </div>
 </section>
@@ -533,6 +746,454 @@ gtag('config', 'G-XXXXXXXXXX');
 </section>
 
 <!-- FOOTER -->
+<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
+<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
+<section class="insights-section">
+  <div class="insights-header">
+    <h2>🌍 Insights Géopolitiques</h2>
+    <p>Comment les grands événements mondiaux façonnent les marchés — et tes opportunités d'investissement.</p>
+  </div>
+
+  <div class="insights-grid">
+    
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">⚡</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Énergie</span>
+                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Pétrole à 100$ : la guerre des prix revient</h3>
+
+              <p class="insight-contexte">Le baril de pétrole WTI franchit le seuil symbolique des 100 dollars, en hausse de +4% sur la semaine. Ce niveau n'avait plus été atteint depuis la crise énergétique de 2022-2023.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Secteur énergétique en forte hausse alors que tous les autres indices plongent : le CAC 40 perd -5.34% et le DAX -7.48% sur 7 jours. L'énergie devient le seul refuge de la semaine.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">XOM</div>
+                  <div class="ticker-name">ExxonMobil</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$159.67</div>
+                  <div class="price-var" style="color:#22c55e;">+0.9%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> ExxonMobil est la seule grande valeur du radar à progresser (+0.95%) : quand le baril monte, ses marges explosent mécaniquement et les investisseurs fuient vers elle comme valeur refuge.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly décrypte pourquoi le pétrole à 100$ crée une fracture dans les marchés : d'un côté les énergéticiens qui profitent, de l'autre toute l'économie réelle qui souffre — et comment positionner son portefeuille entre ces deux forces opposées.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">🌍</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Géopolitique</span>
+                    <span class="badge badge-sev" style="background:rgba(239,68,68,.2);color:#ef4444;">CRITICAL</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">L'or s'effondre de 13% en une semaine</h3>
+
+              <p class="insight-contexte">L'or, considéré comme la valeur refuge ultime en temps de crise, perd -13% en 7 jours pour tomber à 4253$. C'est paradoxal : quand la peur monte, l'or devrait monter avec elle.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> La chute simultanée des actions (-5% CAC, -7% DAX) ET de l'or signale une liquidation massive : les investisseurs vendent TOUT pour récupérer du cash. C'est le signal de panique le plus fort possible.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">GC=F</div>
+                  <div class="ticker-name">Or (contrat futures XAU/USD)</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$4,253.00</div>
+                  <div class="price-var" style="color:#ef4444;">-6.9%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> Quand l'or et les actions baissent ensemble, cela signifie que des fonds géants sont forcés de vendre leurs actifs les plus précieux pour couvrir leurs pertes ailleurs — un mécanisme de crise systémique.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly analyse le paradoxe de la semaine : pourquoi l'or — censé protéger en cas de crise — s'est effondré en même temps que tout le reste, et ce que ce signal extrêmement rare nous dit sur l'état réel des marchés mondiaux.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">💰</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Macro</span>
+                    <span class="badge badge-sev" style="background:rgba(239,68,68,.2);color:#ef4444;">CRITICAL</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Panique totale : l'indice de peur atteint le plancher</h3>
+
+              <p class="insight-contexte">Le 'Fear & Greed Index' affiche 8 sur 100 — niveau 'Extreme Fear' — et était déjà à 10 la veille. Ce thermomètre mesure l'état émotionnel des investisseurs : en dessous de 10, c'est la capitulation.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Tous les grands indices mondiaux dans le rouge sur 7 jours : DAX -7.48%, CAC 40 -5.34%, Nasdaq -3.07%, S&P 500 -2.88%. La vente est globale, coordonnée, et touche toutes les géographies.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">NVDA</div>
+                  <div class="ticker-name">NVIDIA</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$172.93</div>
+                  <div class="price-var" style="color:#ef4444;">-3.1%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> NVIDIA concentre la peur sur la tech : c'est l'action la plus surpondérée des portefeuilles mondiaux, donc la première vendue massivement quand la panique s'installe — un baromètre parfait du sentiment de marché.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly explore l'histoire des 5 derniers moments où le Fear Index est passé sous 10 — et ce qui s'est passé dans les 30 jours suivants pour les investisseurs qui ont gardé la tête froide.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">₿</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Crypto</span>
+                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Bitcoin à -45% de son sommet : la grande purge</h3>
+
+              <p class="insight-contexte">Le Bitcoin s'échange à 68 489$, soit -45.7% sous son record historique de 126 080$. Sur 7 jours, il perd encore -7.15% dans un marché déjà en détresse généralisée.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Le Bitcoin suit et amplifie la panique des marchés traditionnels : là où le S&P 500 perd -2.88% en 7 jours, le BTC en perd -7.15%. La corrélation avec les actions risquées est totale en période de crise.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">BTC-USD</div>
+                  <div class="ticker-name">Bitcoin</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$68,489.00</div>
+                  <div class="price-var" style="color:#ef4444;">-7.2%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> Le Bitcoin est devenu le 'canari dans la mine' des marchés risqués : il chute 2,5x plus vite que le S&P 500, car c'est le premier actif vendu par les investisseurs stressés qui ont besoin de liquidités rapidement.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly compare les 3 grandes corrections du Bitcoin depuis son ATH de 126 000$ et identifie les niveaux techniques clés qui ont historiquement marqué les points de rebond — pour comprendre où on en est dans ce cycle.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">🛡️</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Défense</span>
+                    <span class="badge badge-sev" style="background:rgba(234,179,8,.2);color:#eab308;">MEDIUM</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Lockheed Martin recule malgré tensions géopolitiques record</h3>
+
+              <p class="insight-contexte">En temps normal, quand les tensions mondiales s'intensifient, les actions de défense montent. Or Lockheed Martin perd -1.58% dans une semaine de panique généralisée : même les 'valeurs refuges défense' ne résistent plus.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Le secteur défense européen avait porté le DAX pendant des mois grâce au réarmement massif de l'UE. La chute du DAX à -7.48% sur 7 jours montre que même cette thématique forte cède sous la pression de liquidation globale.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">LMT</div>
+                  <div class="ticker-name">Lockheed Martin</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$627.43</div>
+                  <div class="price-var" style="color:#ef4444;">-1.6%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> Lockheed Martin résiste mieux que le marché (-1.58% vs -5% à -7% pour les indices) grâce aux commandes gouvernementales garanties liées au réarmement OTAN, mais même elle cède face à la vague de ventes paniques.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly analyse pourquoi les budgets de défense européens au plus haut depuis la Guerre Froide ne suffisent plus à protéger les actions du secteur en période de panique boursière — et ce que ça signifie pour la stratégie de réarmement de l'UE.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+  </div>
+</section>
+
+<!-- ─── STYLES INSIGHTS ─── -->
+<style>
+/* INSIGHTS SECTION */
+.insights-section {
+  padding: 80px 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.insights-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.insights-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.insights-header p {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* INSIGHT CARDS */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  padding: 28px;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insight-card:hover {
+  border-color: rgba(34, 211, 238, .3);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+}
+
+/* HEADER */
+.insight-header {
+  margin-bottom: 8px;
+}
+
+.insight-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.insight-emoji {
+  font-size: 28px;
+}
+
+.insight-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.badge-cat {
+  background: rgba(59, 130, 246, .2);
+  color: #3b82f6;
+}
+
+.badge-sev {
+  /* dynamique color */
+}
+
+/* TITRE */
+.insight-titre {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* CONTEXTE */
+.insight-contexte {
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* IMPACT */
+.insight-impact {
+  font-size: 13px;
+  color: #e2e8f0;
+  padding: 12px;
+  background: rgba(59, 130, 246, .08);
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+}
+
+/* STOCK WIDGET */
+.insight-stock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, .04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.stock-ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticker-symbol {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.ticker-name {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ticker-price {
+  text-align: right;
+}
+
+.price-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.price-var {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* POURQUOI */
+.insight-pourquoi {
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ANGLE ALPHABOT */
+.insight-angle {
+  font-size: 12px;
+  color: #64748b;
+  font-style: italic;
+  margin: 0;
+  padding: 12px;
+  background: rgba(245, 200, 66, .05);
+  border-radius: 4px;
+}
+
+/* CTA */
+.cta-lire {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  color: #22d3ee;
+  text-decoration: none;
+  transition: .2s;
+  margin-top: auto;
+}
+
+.cta-lire:hover {
+  color: #f5c842;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .insights-section {
+    padding: 60px 5%;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-card {
+    padding: 20px;
+  }
+
+  .insight-titre {
+    font-size: 15px;
+  }
+
+  .insight-contexte {
+    font-size: 12px;
+  }
+}
+</style>
+
+<!-- ─── FIN INSIGHTS GÉOPOLITIQUES ─── -->
+
 <footer>
   <div class="footer-grid">
     <div class="footer-col">

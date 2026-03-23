@@ -251,6 +251,38 @@
         }
       ],
       "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels, 3 éditions produites et 17 abonnés actifs. Les priorités immédiates sont le redéploiement Netlify (newsletters.html + index.html), la mise"
+    },
+    {
+      "date": "23/03/2026 à 08:00",
+      "duree_sec": 41,
+      "nb_actions": 6,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour l'email de bienvenue avec la variable {{newsletter_url}}",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour : posts LinkedIn, referral, SEO",
+          "status": "error"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour pointer vers la date dynamique du jour au lieu d'une date fixe",
+          "status": "error"
+        },
+        {
+          "action": "Implémenter la connexion Formspree → subscribers.csv via webhook ou vérification manuelle hebdomadaire",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly est opérationnel avec 14 agents fonctionnels et 3 éditions produites, mais reste à 1 abonné actif réel et 0€ de revenus. Les priorités immédiates sont la mise en ligne du site (Netlify"
     }
   ]
 }

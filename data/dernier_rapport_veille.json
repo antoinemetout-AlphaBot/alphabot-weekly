@@ -1,19 +1,19 @@
 {
   "meta": {
-    "timestamp": "2026-03-22 14:25",
-    "date": "22/03/2026",
-    "semaine": "Semaine 11 de 2026"
+    "timestamp": "2026-03-23 08:25",
+    "date": "23/03/2026",
+    "semaine": "Semaine 12 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 68776,
-      "variation_24h": -2.78,
-      "variation_7j": -3.97,
-      "market_cap_mrd": 1376.9,
-      "volume_24h_mrd": 29.41,
+      "prix_usd": 67774,
+      "variation_24h": -2.03,
+      "variation_7j": -8.61,
+      "market_cap_mrd": 1355.7,
+      "volume_24h_mrd": 31.59,
       "ath_usd": 126080,
-      "ath_pct": -45.5
+      "ath_pct": -46.2
     }
   },
   "news_crypto": [],
@@ -59,11 +59,11 @@
         "market_cap_mrd": 3644.9
       },
       "NVIDIA": {
-        "prix": 172.7,
-        "variation_24h": -3.28,
+        "prix": 172.93,
+        "variation_24h": -3.15,
         "ticker": "NVDA",
         "devise": "USD",
-        "market_cap_mrd": 4197.5
+        "market_cap_mrd": 4203.1
       },
       "Tesla": {
         "prix": 367.96,
@@ -104,34 +104,34 @@
   },
   "commodities": {
     "Dollar Index (DXY)": {
-      "valeur": 99.65,
-      "variation_24h": 0.42,
-      "variation_7j": 0.07,
+      "valeur": 99.801,
+      "variation_24h": 0.15,
+      "variation_7j": -0.29,
       "ticker": "DX-Y.NYB"
     },
     "Pétrole WTI": {
-      "valeur": 98.23,
-      "variation_24h": 2.17,
-      "variation_7j": 2.1,
+      "valeur": 100.82,
+      "variation_24h": 2.54,
+      "variation_7j": 4.67,
       "ticker": "CL=F"
     },
     "Or (XAU/USD)": {
-      "valeur": 4574.8999,
-      "variation_24h": -0.56,
-      "variation_7j": -8.52,
+      "valeur": 4133.7998,
+      "variation_24h": -9.55,
+      "variation_7j": -15.46,
       "ticker": "GC=F"
     },
     "EUR/USD": {
-      "valeur": 1.1575,
-      "variation_24h": 0.97,
-      "variation_7j": 1.23,
+      "valeur": 1.1533,
+      "variation_24h": -0.39,
+      "variation_7j": 0.29,
       "ticker": "EURUSD=X"
     }
   },
   "mood": {
-    "valeur": 10,
+    "valeur": 8,
     "sentiment": "Extreme Fear",
-    "hier_valeur": 12,
+    "hier_valeur": 10,
     "hier_sentiment": "Extreme Fear"
   }
 }
