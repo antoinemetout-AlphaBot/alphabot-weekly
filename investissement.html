@@ -1109,7 +1109,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <div class="live-badge">● LIVE — Données actualisées</div>
+      <div class="live-badge">● LIVE — Prix en temps réel <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span></div>
       <h1>3 Robots Traders IA</h1>
       <p class="hero-subtitle">
         Trois stratégies d'investissement, trois profils de risque, 30 000€ au service de votre portefeuille.
@@ -1549,6 +1549,106 @@
 
     fetchPortfolioData();
     setInterval(fetchPortfolioData, 60000);
+
+    // ══════════════════════════════════════════════════════════════
+    // PRIX EN TEMPS RÉEL — Mise à jour automatique toutes les 30s
+    // ══════════════════════════════════════════════════════════════
+
+    const CRYPTO_MAP = {
+      'BTC-USD': 'bitcoin',
+      'ETH-USD': 'ethereum',
+      'SOL-USD': 'solana',
+      'BNB-USD': 'binancecoin',
+      'XRP-USD': 'ripple',
+      'ADA-USD': 'cardano',
+      'DOGE-USD': 'dogecoin',
+      'AVAX-USD': 'avalanche-2',
+      'DOT-USD': 'polkadot',
+      'LINK-USD': 'chainlink'
+    };
+
+    async function fetchCryptoPrice(ticker) {
+      const coinId = CRYPTO_MAP[ticker];
+      if (!coinId) return null;
+      try {
+        const r = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);
+        const d = await r.json();
+        return d[coinId]?.usd || null;
+      } catch(e) { return null; }
+    }
+
+    async function fetchStockPrice(ticker) {
+      // Essayer Yahoo Finance via leur endpoint public
+      try {
+        const cleanTicker = ticker.replace('.', '-');
+        const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`, {
+          headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
+        if (r.ok) {
+          const d = await r.json();
+          const meta = d?.chart?.result?.[0]?.meta;
+          return meta?.regularMarketPrice || null;
+        }
+      } catch(e) {}
+
+      // Fallback: Finnhub (gratuit, 60 appels/min)
+      try {
+        const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(ticker)}&token=demo`);
+        if (r.ok) {
+          const d = await r.json();
+          return d?.c || null; // c = current price
+        }
+      } catch(e) {}
+
+      return null;
+    }
+
+    async function refreshLivePrices() {
+      if (!portfolioData?.robots) return;
+
+      let updated = false;
+      for (const [robotType, robot] of Object.entries(portfolioData.robots)) {
+        if (!robot.positions) continue;
+        for (const pos of robot.positions) {
+          let livePrice = null;
+
+          if (CRYPTO_MAP[pos.ticker]) {
+            livePrice = await fetchCryptoPrice(pos.ticker);
+          } else {
+            livePrice = await fetchStockPrice(pos.ticker);
+          }
+
+          if (livePrice && livePrice > 0) {
+            pos.prix_actuel = livePrice;
+            pos.current_price = livePrice;
+            const entryPrice = pos.prix_entree || pos.entry_price || 0;
+            const qty = pos.nb_actions || pos.quantity || 0;
+            if (entryPrice > 0) {
+              pos.pl_pct = ((livePrice - entryPrice) / entryPrice * 100);
+              pos.pl_euros = qty * (livePrice - entryPrice);
+            }
+            // Recalcul capital robot
+            const totalPL = robot.positions.reduce((sum, p) => sum + (p.pl_euros || 0), 0);
+            robot.capital_actuel = robot.capital_initial + totalPL;
+            robot.performance_pct = (totalPL / robot.capital_initial) * 100;
+            robot.performance_eur = totalPL;
+            updated = true;
+            console.log(`[AlphaBot LIVE] ${pos.ticker}: ${livePrice.toFixed(2)} (${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%)`);
+          }
+        }
+      }
+
+      if (updated) {
+        renderDashboard();
+        // Marqueur "live"
+        const liveEl = document.getElementById('live-timestamp');
+        if (liveEl) liveEl.textContent = `Dernière MAJ: ${new Date().toLocaleTimeString('fr-FR')}`;
+      }
+    }
+
+    // Lancer le refresh live après le chargement initial
+    setTimeout(refreshLivePrices, 2000);
+    setInterval(refreshLivePrices, 30000); // Toutes les 30 secondes
   </script>
   <script src="gate_subscriber.js"></script>
 </body>
