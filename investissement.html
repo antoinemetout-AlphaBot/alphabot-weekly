@@ -1097,6 +1097,55 @@
     100% { color: inherit; text-shadow: none; }
   }
 
+  /* ── Badge LIVE sur chaque prix ── */
+  .price-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    vertical-align: middle;
+  }
+
+  .price-live-badge.is-live {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .price-live-badge.is-closed {
+    background: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+  }
+
+  .price-live-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: livePulse 1.5s ease-in-out infinite;
+  }
+
+  .price-live-value {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .price-source-info {
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0.7;
+    padding: 0 0.25rem;
+    margin-top: -0.25rem;
+    margin-bottom: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   /* ===== ENHANCED ROBOT CARDS ===== */
   .robots-grid {
     gap: 2rem;
@@ -1526,8 +1575,15 @@
         const pnlEur = pos.pl_euros !== undefined ? pos.pl_euros.toFixed(2) : (qty * (currentPrice - entryPrice)).toFixed(2);
         const conviction = Math.round((convictionLevel / 10) * 100);
         const devise = pos.devise === 'USD' ? '$' : '€';
+        const source = _lastSourceUsed[pos.ticker] || '';
+        const isCrypto = !!CRYPTO_MAP[pos.ticker];
+        const market = getMarketStatus();
+        const tickerIsUS = !pos.ticker.includes('.') && !pos.ticker.includes('-');
+        const tickerIsEU = pos.ticker.includes('.DE') || pos.ticker.includes('.PA');
+        const isLive = isCrypto || (tickerIsUS && market.usOpen) || (tickerIsEU && market.euOpen);
+        const liveLabel = isLive ? '<span class="price-live-dot"></span> LIVE' : 'Clôture';
 
-        return `<div class="position-card">
+        return `<div class="position-card" data-ticker="${pos.ticker}">
           <div class="position-header">
             <div>
               <div class="position-ticker">${pos.ticker}</div>
@@ -1540,8 +1596,9 @@
           </div>
           <div class="position-prices">
             <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${entryPrice.toFixed(2)}${devise}</div></div>
-            <div class="price-item"><div class="price-label">Cours</div><div class="price-value">${currentPrice.toFixed(2)}${devise}</div></div>
+            <div class="price-item"><div class="price-label"><span class="price-live-badge ${isLive ? 'is-live' : 'is-closed'}">${liveLabel}</span></div><div class="price-value price-live-value" id="live-price-${pos.ticker}">${currentPrice.toFixed(2)}${devise}</div></div>
           </div>
+          <div class="price-source-info">${source ? 'via ' + source : ''}${isLive ? ' — rafraîchi toutes les 15s' : ' — marché fermé'}</div>
           <div class="position-reason">
             <div class="position-reason-title">Raison</div>
             <div class="position-reason-short">${pos.raison_courte || ''}</div>
