@@ -1,28 +1,59 @@
 {
   "meta": {
-    "timestamp": "2026-03-23 08:25",
+    "timestamp": "2026-03-23 12:00",
     "date": "23/03/2026",
     "semaine": "Semaine 12 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 67774,
-      "variation_24h": -2.03,
-      "variation_7j": -8.61,
-      "market_cap_mrd": 1355.7,
-      "volume_24h_mrd": 31.59,
+      "prix_usd": 68534,
+      "variation_24h": -0.07,
+      "variation_7j": -6.45,
+      "market_cap_mrd": 1370.9,
+      "volume_24h_mrd": 33.72,
       "ath_usd": 126080,
-      "ath_pct": -46.2
+      "ath_pct": -45.6
     }
   },
-  "news_crypto": [],
+  "news_crypto": [
+    {
+      "titre": "Siren (SIREN) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/siren-2",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Resolv USR (USR) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/resolv-usr",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Hyperliquid (HYPE) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/hyperliquid",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Bittensor (TAO) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/bittensor",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Bitcoin (BTC) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "date": "2026-03-23"
+    }
+  ],
   "bourse": {
     "indices": {
       "CAC 40": {
-        "valeur": 7665.62,
-        "variation_24h": -1.82,
-        "variation_7j": -3.41,
+        "valeur": 7515.92,
+        "variation_24h": -1.95,
+        "variation_7j": -5.75,
         "ticker": "^FCHI"
       },
       "S&P 500": {
@@ -38,9 +69,9 @@
         "ticker": "^NDX"
       },
       "DAX": {
-        "valeur": 22380.19,
-        "variation_24h": -2.01,
-        "variation_7j": -5.02,
+        "valeur": 21910.87,
+        "variation_24h": -2.1,
+        "variation_7j": -7.67,
         "ticker": "^GDAXI"
       },
       "Dow Jones": {
@@ -73,18 +104,18 @@
         "market_cap_mrd": 1380.7
       },
       "LVMH": {
-        "prix": 457.95,
-        "variation_24h": -0.5,
+        "prix": 454.05,
+        "variation_24h": -0.85,
         "ticker": "MC.PA",
         "devise": "EUR",
-        "market_cap_mrd": 227.1
+        "market_cap_mrd": 225.1
       },
       "TotalEnergies": {
-        "prix": 76.96,
-        "variation_24h": -2.07,
+        "prix": 76.8,
+        "variation_24h": -0.21,
         "ticker": "TTE.PA",
         "devise": "EUR",
-        "market_cap_mrd": 164.5
+        "market_cap_mrd": 164.2
       },
       "ExxonMobil": {
         "prix": 159.67,
@@ -104,27 +135,27 @@
   },
   "commodities": {
     "Dollar Index (DXY)": {
-      "valeur": 99.801,
-      "variation_24h": 0.15,
-      "variation_7j": -0.29,
+      "valeur": 100.11,
+      "variation_24h": 0.46,
+      "variation_7j": 0.02,
       "ticker": "DX-Y.NYB"
     },
     "Pétrole WTI": {
-      "valeur": 100.82,
-      "variation_24h": 2.54,
-      "variation_7j": 4.67,
+      "valeur": 98.33,
+      "variation_24h": 0.01,
+      "variation_7j": 2.09,
       "ticker": "CL=F"
     },
     "Or (XAU/USD)": {
-      "valeur": 4133.7998,
-      "variation_24h": -9.55,
-      "variation_7j": -15.46,
+      "valeur": 4268.7002,
+      "variation_24h": -6.6,
+      "variation_7j": -12.7,
       "ticker": "GC=F"
     },
     "EUR/USD": {
-      "valeur": 1.1533,
-      "variation_24h": -0.39,
-      "variation_7j": 0.29,
+      "valeur": 1.1489,
+      "variation_24h": -0.77,
+      "variation_7j": -0.09,
       "ticker": "EURUSD=X"
     }
   },
