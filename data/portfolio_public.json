@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23 13:01:02",
+  "generated_at": "2026-03-23 11:00:15",
   "robots": {
     "prudent": {
       "nom": "Robot Prudent",
@@ -10,53 +10,16 @@
       "capital_initial": 10000,
       "capital_actuel": 10000,
       "objectif": 50000,
-      "cash_disponible": 8764.36,
+      "cash_disponible": 10000,
       "performance_pct": 0.0,
       "performance_eur": 0,
-      "nb_trades": 1,
+      "nb_trades": 0,
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 13:00:30",
-      "positions": [
-        {
-          "ticker": "EXH7.DE",
-          "nom": "iShares STOXX Europe 600 Personal & Household Goods UCITS ETF (DE)",
-          "nb_actions": 14,
-          "prix_entree": 88.26,
-          "prix_actuel": 88.26,
-          "montant_investi": 1235.64,
-          "pl_euros": 0.0,
-          "pl_pct": 0.0,
-          "date_achat": "2026-03-23 13:00:30",
-          "stop_loss": 83.85,
-          "take_profit": 97.09,
-          "devise": "EUR",
-          "secteur": "N/A",
-          "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
-          "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
-          "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
-          "horizon": "long terme (mois)",
-          "niveau_conviction": 7,
-          "risques": "Une reprise surprise de l'inflation en zone euro forcerait la BCE à interrompre son cycle baissier, pesant sur les prix obligataires. Une désescalade géopolitique rapide pourrait aussi provoquer une rotation vers les actions au détriment des obligations."
-        }
-      ],
-      "trades_recent": [
-        {
-          "type": "achat",
-          "ticker": "EXH7.DE",
-          "nom": "iShares STOXX Europe 600 Personal & Household Goods UCITS ETF (DE)",
-          "nb_actions": 14,
-          "prix": 88.26,
-          "montant": 1235.64,
-          "date": "2026-03-23 13:00:30",
-          "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
-          "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
-          "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
-          "horizon": "long terme (mois)",
-          "niveau_conviction": 7
-        }
-      ]
+      "derniere_maj": "2026-03-23 11:00:15",
+      "positions": [],
+      "trades_recent": []
     },
     "modere": {
       "nom": "Robot Modéré",
@@ -67,53 +30,16 @@
       "capital_initial": 10000,
       "capital_actuel": 10000,
       "objectif": 100000,
-      "cash_disponible": 8204.6,
+      "cash_disponible": 10000,
       "performance_pct": 0.0,
       "performance_eur": 0,
-      "nb_trades": 1,
+      "nb_trades": 0,
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 13:00:43",
-      "positions": [
-        {
-          "ticker": "EWG",
-          "nom": "iShares MSCI Germany ETF",
-          "nb_actions": 47,
-          "prix_entree": 38.2,
-          "prix_actuel": 38.2,
-          "montant_investi": 1795.4,
-          "pl_euros": 0.0,
-          "pl_pct": 0.0,
-          "date_achat": "2026-03-23 13:00:43",
-          "stop_loss": 35.14,
-          "take_profit": 43.93,
-          "devise": "USD",
-          "secteur": "N/A",
-          "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
-          "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
-          "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
-          "horizon": "moyen terme (semaines)",
-          "niveau_conviction": 7,
-          "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
-        }
-      ],
-      "trades_recent": [
-        {
-          "type": "achat",
-          "ticker": "EWG",
-          "nom": "iShares MSCI Germany ETF",
-          "nb_actions": 47,
-          "prix": 38.2,
-          "montant": 1795.4,
-          "date": "2026-03-23 13:00:43",
-          "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
-          "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
-          "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
-          "horizon": "moyen terme (semaines)",
-          "niveau_conviction": 7
-        }
-      ]
+      "derniere_maj": "2026-03-23 11:00:15",
+      "positions": [],
+      "trades_recent": []
     },
     "agressif": {
       "nom": "Robot Agressif",
@@ -122,90 +48,18 @@
       "couleur": "#ef4444",
       "couleur_bg": "rgba(239,68,68,.08)",
       "capital_initial": 10000,
-      "capital_actuel": 10057.77,
+      "capital_actuel": 10000,
       "objectif": 200000,
-      "cash_disponible": 5657.67,
-      "performance_pct": 0.58,
-      "performance_eur": 57.77,
-      "nb_trades": 2,
+      "cash_disponible": 10000,
+      "performance_pct": 0.0,
+      "performance_eur": 0,
+      "nb_trades": 0,
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 13:01:01",
-      "positions": [
-        {
-          "ticker": "BTC-USD",
-          "nom": "Bitcoin USD",
-          "nb_actions": 0.0365,
-          "prix_entree": 68528.6,
-          "prix_actuel": 70111.26,
-          "montant_investi": 2501.29,
-          "pl_euros": 57.77,
-          "pl_pct": 2.31,
-          "date_achat": "2026-03-23 12:01:08",
-          "stop_loss": 60305.17,
-          "take_profit": 85660.75,
-          "devise": "USD",
-          "secteur": "N/A",
-          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
-          "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
-          "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
-          "horizon": "moyen terme (semaines)",
-          "niveau_conviction": 6,
-          "risques": "Un VIX à 30+ peut déclencher des ventes forcées supplémentaires si la crise s'aggrave, entraînant BTC sous les 65 000$ (stop-loss activé). Une récession confirmée ou un choc réglementaire crypto pourraient amplifier la baisse."
-        },
-        {
-          "ticker": "SOXL",
-          "nom": "Direxion Daily Semiconductor Bull 3X Shares",
-          "nb_actions": 36,
-          "prix_entree": 51.14,
-          "prix_actuel": 51.14,
-          "montant_investi": 1841.04,
-          "pl_euros": 0.0,
-          "pl_pct": 0.0,
-          "date_achat": "2026-03-23 13:01:01",
-          "stop_loss": 45.0,
-          "take_profit": 63.92,
-          "devise": "USD",
-          "secteur": "N/A",
-          "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
-          "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
-          "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
-          "horizon": "court terme (jours)",
-          "niveau_conviction": 7,
-          "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
-        }
-      ],
-      "trades_recent": [
-        {
-          "type": "achat",
-          "ticker": "BTC-USD",
-          "nom": "Bitcoin USD",
-          "nb_actions": 0.0365,
-          "prix": 68528.6,
-          "montant": 2501.29,
-          "date": "2026-03-23 12:01:08",
-          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
-          "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
-          "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
-          "horizon": "moyen terme (semaines)",
-          "niveau_conviction": 6
-        },
-        {
-          "type": "achat",
-          "ticker": "SOXL",
-          "nom": "Direxion Daily Semiconductor Bull 3X Shares",
-          "nb_actions": 36,
-          "prix": 51.14,
-          "montant": 1841.04,
-          "date": "2026-03-23 13:01:01",
-          "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
-          "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
-          "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
-          "horizon": "court terme (jours)",
-          "niveau_conviction": 7
-        }
-      ]
+      "derniere_maj": "2026-03-23 11:00:15",
+      "positions": [],
+      "trades_recent": []
     }
   }
 }

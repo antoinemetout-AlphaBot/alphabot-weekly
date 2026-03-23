@@ -1,1084 +1,1007 @@
 {
-  "generated_at": "2026-03-23T13:01:02.168660",
+  "generated_at": "2026-03-23T11:00:15.305753",
   "total_events": 100,
   "events": [
     {
-      "ts": "2026-03-23T13:01:02.152950",
+      "ts": "2026-03-23T11:00:15.286749",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "🤖 Robot Agressif: 10058€ (+0.58%) | 2 positions",
+      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
       "data": {}
     },
     {
-      "ts": "2026-03-23T13:01:02.146907",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.140910",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.133908",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10057.77,
-          "perf": 0.58
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T13:01:02.118222",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 36x SOXL @ 51.14",
-      "data": {
-        "profil": "agressif",
-        "ticker": "SOXL",
-        "prix": 51.14,
-        "montant": 1841.04,
-        "raison": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:01:01.335672",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter SOXL",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "SOXL",
-        "nom": "Direxion Daily Semiconductor Bull 3X Shares",
-        "allocation_pct": 25,
-        "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
-        "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
-        "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:44.736253",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Modéré: Achat 47x EWG @ 38.20",
-      "data": {
-        "profil": "modere",
-        "ticker": "EWG",
-        "prix": 38.2,
-        "montant": 1795.4,
-        "raison": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:43.853081",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: acheter EWG",
-      "data": {
-        "profil": "modere",
-        "action": "acheter",
-        "ticker": "EWG",
-        "nom": "iShares MSCI Germany ETF",
-        "allocation_pct": 18,
-        "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
-        "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
-        "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 7,
-        "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:31.154623",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Prudent: Achat 14x EXH7.DE @ 88.26",
-      "data": {
-        "profil": "prudent",
-        "ticker": "EXH7.DE",
-        "prix": 88.26,
-        "montant": 1235.64,
-        "raison": "Obligations souveraines euro: refuge sûr en période de turbulences."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:30.240345",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: acheter EXH7.DE",
-      "data": {
-        "profil": "prudent",
-        "action": "acheter",
-        "ticker": "EXH7.DE",
-        "nom": "iShares Euro Government Bond 7-10yr UCITS ETF",
-        "allocation_pct": 13,
-        "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
-        "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
-        "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
-        "horizon": "long terme (mois)",
-        "niveau_conviction": 7,
-        "risques": "Une reprise surprise de l'inflation en zone euro forcerait la BCE à interrompre son cycle baissier, pesant sur les prix obligataires. Une désescalade géopolitique rapide pourrait aussi provoquer une rotation vers les actions au détriment des obligations."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:09.676272",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 13h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:48.740344",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.081034",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.078561",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:43.663811",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:43.659806",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.039433",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.037433",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.031223",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.027710",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.896701",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.893701",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:10",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.612699",
-      "agent": "Agent Twitter",
-      "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.519691",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-23 12:09",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 30,
-            "problemes": 7
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.498692",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.487693",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:20.985922",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:09:20.689741",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10049.14,
-          "perf": 0.49
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:20.674228",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: attendre None",
-      "data": {
-        "profil": "agressif",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "VIX à 30, marchés en capitulation — cash est une arme",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une capitulation de marché en cours — ce n'est pas le moment d'ajouter du risque. Le DAX perd -7.70% sur 5 jours, signe d'une détérioration macroéconomique sérieuse en Europe, probablement liée à des tensions commerciales et à la faiblesse de la demande industrielle allemande. L'or qui chute de -6.64% en une seule journée est un signal exceptionnel et contre-intuitif : cela suggère des appels de marge massifs forçant des liquidations d'actifs refuges — exactement comme en mars 2020 ou septembre 2022. Dans ce contexte de deleveraging systémique, même les actifs solides se vendent. Notre position BTC-USD est en territoire positif (+1.96%) et Bitcoin tient bien (+2.99% aujourd'hui), ce qui confirme l'analyse d'achat. Avec 74.6% de cash disponible, nous sommes bien positionnés pour frapper quand la poussière retombera.",
-        "catalyseur": "Chute de l'or de -6.64% en 1 jour = appels de marge systémiques, deleveraging forcé sur tous les actifs",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Le rebond peut venir brutalement et nous laisser à quai — surveiller un VIX qui repasserait sous 25 et une stabilisation de l'or comme signaux d'entrée."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:07.321244",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Marché sous pression, VIX à 30 — cash est une position.",
-        "raison_complete": "Le contexte actuel impose une prudence maximale avant tout déploiement de capital. Le VIX a bondi de +34.51% sur 5 jours pour atteindre 30.09, signalant une volatilité institutionnelle élevée qui historiquement précède des mouvements violents dans les deux sens. Le S&P 500 cède -2.88% sur 5 jours et le DAX chute de -7.70% — une divergence transatlantique qui suggère une pression vendeuse systémique plutôt qu'un simple ajustement sectoriel. L'or, valeur refuge par excellence, plonge de -6.64% en une seule séance : cela évoque une liquidation forcée de positions (margin calls) plutôt qu'un regain d'appétit pour le risque. Le pétrole WTI à 98.65 USD (+0.34%) avec l'EUR/USD à 1.16 signale des tensions géopolitiques persistantes et une inflation importée potentielle en zone euro. Dans cet environnement, déployer du capital sans visibilité sur le catalyseur de la baisse serait imprudent — attendre la stabilisation du VIX sous 25 et un rebond technique confirmé est la décision la plus rigoureuse.",
-        "catalyseur": "Liquidation simultanée de l'or (-6.64% en 1j) et effondrement des indices (DAX -7.70% sur 5j) suggèrent une crise de liquidité ou un événement macro majeur non encore pleinement digéré par le marché.",
-        "horizon": null,
-        "niveau_conviction": 9,
-        "risques": "Le risque principal d'attendre est de manquer un rebond violent (short squeeze) si le catalyseur baissier se révèle temporaire. Cependant, protéger le capital en phase d'incertitude extrême prime sur la performance à court terme."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:53.968238",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême : patience avant tout déploiement de capital.",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une peur marquée sur les marchés — historiquement, un VIX au-dessus de 30 indique une instabilité structurelle et non un simple repli technique. Le CAC40 cède -5.74% sur la semaine et le DAX -7.70%, suggérant une pression vendeuse significative en Europe, potentiellement liée à des tensions géopolitiques ou à un resserrement des conditions financières. L'or, valeur refuge par excellence, chute de -6.64% sur une seule journée — un mouvement aberrant qui peut indiquer des appels de marge massifs forçant des liquidations tous azimuts, un signal classique de stress systémique. Le pétrole WTI à 98.65 USD avec une légère hausse (+0.34%) complique le tableau : des prix élevés alimentent l'inflation et réduisent la marge de manœuvre des banques centrales pour baisser les taux, pénalisant les obligations et les blue chips à valorisation élevée. Dans ce contexte, déployer du capital serait prématuré pour un profil prudent. La règle d'or : ne jamais attraper un couteau qui tombe.",
-        "catalyseur": "VIX +34% sur 5 jours + chute simultanée de l'or (-6.64% en 1j) = signal de stress systémique, probables liquidations forcées sur l'ensemble des classes d'actifs.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 9,
-        "risques": "Le risque de rester en cash est de manquer un rebond technique violent si les conditions se normalisent rapidement. Cependant, pour un profil sécurisé, la préservation du capital prime sur la performance à court terme."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:34.257403",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:32.456829",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (1s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:30.840675",
-      "agent": "Agent Growth",
-      "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:30.833673",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:30.825675",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.7
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:30.817677",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:31.490365",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.375963",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.373961",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:05:27.065817",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:27.058816",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.901750",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.898748",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.889754",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.885750",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.761747",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.759748",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:04",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.503181",
-      "agent": "Agent Twitter",
-      "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:53.963560",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-23 12:04",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 30,
-            "problemes": 7
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:53.940835",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:53.931914",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:12.292933",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:12.041226",
-      "agent": "Robot Trader",
-      "type": "start",
-      "message": "Initialisation 2026-03-23 12:04:12",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:12.013332",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:08.086065",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (2s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:05.942997",
-      "agent": "Agent Growth",
-      "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:05.934700",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:05.928318",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.1
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:05.920154",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:18.884374",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:18.853294",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit=2 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbid",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:10.805272",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:06.771669",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.744931",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.594807",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.568447",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/search/trending (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 4",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:56.524402",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:52.481680",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.444789",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.395058",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.364644",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/posts/?auth_token=free&public=true&kind=news&filter=hot&currencies=BTC (Caused by ProxyError('Unable ",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:42.305569",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:38.265851",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:36.240500",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:36.224311",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:36.197314",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&sparkline=false&price_change_percentage=",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:28.155808",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coin. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:24.109542",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coin. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:22.074605",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coin. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.445656",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.443658",
+      "ts": "2026-03-23T11:00:15.274466",
       "agent": "Orchestrateur",
       "type": "success",
       "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 0 positions",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:01:09.440574",
+      "ts": "2026-03-23T11:00:15.257469",
       "agent": "Orchestrateur",
       "type": "success",
       "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 0 positions",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:01:09.435565",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10000,
-          "perf": 0.0
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T12:01:09.426442",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 0.0365x BTC-USD @ 68528.60",
-      "data": {
-        "profil": "agressif",
-        "ticker": "BTC-USD",
-        "prix": 68528.6,
-        "montant": 2501.29,
-        "raison": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:01:08.922054",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter BTC-USD",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "BTC-USD",
-        "nom": "Bitcoin",
-        "allocation_pct": 25,
-        "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
-        "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
-        "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 6,
-        "risques": "Un VIX à 30+ peut déclencher des ventes forcées supplémentaires si la crise s'aggrave, entraînant BTC sous les 65 000$ (stop-loss activé). Une récession confirmée ou un choc réglementaire crypto pourraient amplifier la baisse."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:55.410912",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême — préserver le capital avant tout engagement",
-        "raison_complete": "Le VIX à 30.33 avec une hausse de +35.58% sur 5 jours signale une phase de panique ou de stress systémique significatif — historiquement, les entrées en position pendant ces pics de VIX sans signal de stabilisation mènent à des stop-loss prématurés. Le S&P 500 perd -2.88% sur 5 jours et le Nasdaq -3.07%, indiquant une correction en cours, pas encore exhaustée. L'or chute violemment de -6.60% en une seule journée, ce qui est inhabituel : cela suggère soit une liquidation forcée d'actifs (margin calls), soit un repositionnement brutal des grands fonds — un signal d'alerte macro majeur. Le pétrole WTI à 98.33 USD maintient une pression inflationniste qui complique la marge de manœuvre des banques centrales. L'EUR/USD à 1.15 avec un Dollar Index en hausse indique un flight-to-dollar classique en période de stress. Dans ce contexte, entrer sur n'importe quelle classe d'actif sans confirmation de stabilisation serait imprudent pour un profil modéré.",
-        "catalyseur": "Chute simultanée des actions (-3%), de l'or (-6.6%) et hausse du VIX (+35% sur 5j) : signal de liquidation généralisée nécessitant confirmation avant toute entrée",
-        "horizon": null,
-        "niveau_conviction": 9,
-        "risques": "Rester en cash implique de manquer un rebond potentiel, mais la préservation du capital de 10 000€ prime sur la performance dans ce contexte de stress aigu."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:42.356504",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême — préserver le capital est prioritaire aujourd'hui.",
-        "raison_complete": "Le VIX à 30.33 avec une hausse de +35.58% sur 5 jours signale une panique de marché structurelle, pas un simple repli technique. Le CAC40 cède -5.77% sur 5 jours et le DAX -7.68%, ce qui traduit une pression vendeuse massive sur les marchés européens — probablement alimentée par des tensions géopolitiques persistantes et une révision à la baisse des perspectives de croissance. L'or, valeur refuge par excellence, s'effondre de -6.60% en une seule séance, ce qui est atypique et suggère des appels de marge forcés ou une liquidation générale d'actifs — un signal d'alarme majeur. Le pétrole WTI à 98.33 USD exerce une pression inflationniste qui complique la tâche des banques centrales et réduit l'espace pour des baisses de taux accommodantes. Dans ce contexte, en tant que Robot Prudent avec 10 000€ de cash entièrement disponible, l'entrée sur des blue chips ou ETF obligataires maintenant reviendrait à attraper un couteau qui tombe. La règle fondamentale de la gestion prudente est : ne jamais acheter dans une capitulation non confirmée.",
-        "catalyseur": "VIX à 30+ avec hausse hebdomadaire de +35% — signal de capitulation ou de crise systémique en cours, liquidation de l'or anormale indicatrice d'appels de marge généralisés.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 9,
-        "risques": "Le risque principal d'attendre est de manquer un rebond technique violent si une annonce positive (cessez-le-feu, pivot de banque centrale) intervient. Toutefois, pour un profil prudent, ce risque est acceptable face au risque de perte en capital."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:19.527558",
+      "ts": "2026-03-23T11:00:11.381605",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Midi",
+      "message": "Lancement : 🤖 Robot Trader — 11h",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:00:19.503832",
+      "ts": "2026-03-23T10:00:11.141064",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T10:00:11.127614",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T10:00:11.113620",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T10:00:07.282499",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — 10h",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:40:07.157945",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:40:07.146687",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:40:07.133337",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:40:03.180289",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Investissement IA 📈 — Mise à jour portefeuille",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:27:33.104894",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "DA Site : 0 insight(s) géopolitiques générés",
+      "data": {
+        "date": "2026-03-23 09:25",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 30,
+            "problemes": 7
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 2
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": true,
+            "html_path": "outputs\\section_da_2026-03-23.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 25
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 27
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 27
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-23T09:27:33.088893",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (3 pages améliorées)",
+      "data": {
+        "date": "2026-03-23 09:25",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 30,
+            "problemes": 7
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 2
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": true,
+            "html_path": "outputs\\section_da_2026-03-23.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 25
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 27
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 27
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-23T09:26:19.182032",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-23.html"
+      }
+    },
+    {
+      "ts": "2026-03-23T09:26:19.153031",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-23T09:25:36.042539",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:25:25.779920",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : DA Site 🎨 — Insights Géopolitiques",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:06:56.925001",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:06:56.577160",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-23T09:06:56.246373",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:06:55.932362",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 14 agents | 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:06:55.097884",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:06:54.718818",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 23/03/2026 à 09:06",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:00:25.654400",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:00:25.642047",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:00:25.627045",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 0 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T09:00:21.362674",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Ouverture",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:45:21.243029",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Email quotidien CEO envoyé (1 destinataires)",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:45:21.228962",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Notification quotidienne → 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:45:19.473013",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Email Quotidien CEO 📧",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:25:19.371584",
       "agent": "Orchestrateur",
       "type": "success",
       "message": "Veille terminée — 1 crypto(s), 5 indices",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:00:07.118565",
+      "ts": "2026-03-23T08:25:06.104633",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : Veille Marchés — Midi 🔍",
+      "message": "Lancement : Veille Marchés — Ouverture 🔍",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:56:41.348586",
-      "agent": "Agent Analyste",
-      "type": "error",
-      "message": "Échec après 3 tentatives: Connection error.",
+      "ts": "2026-03-23T08:01:05.980520",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "DA matin — supervision terminée",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:56:31.915006",
-      "agent": "Agent Analyste",
+      "ts": "2026-03-23T08:01:05.945353",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:01:05.921383",
+      "agent": "Directeur Adjoint",
       "type": "warning",
-      "message": "Tentative 3/3 échouée: Connection error.. Retry dans 8s...",
+      "message": "Exécution terminée — 0 succès, 3 erreur(s)",
+      "data": {
+        "ok": 0,
+        "errors": 3
+      }
+    },
+    {
+      "ts": "2026-03-23T08:00:53.060938",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:56:26.454695",
-      "agent": "Agent Analyste",
+      "ts": "2026-03-23T08:00:53.046426",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Plan d'action généré — 6 action(s)",
+      "data": {
+        "nb_actions": 6
+      }
+    },
+    {
+      "ts": "2026-03-23T08:00:24.615949",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T08:00:24.597950",
+      "agent": "Directeur Adjoint",
       "type": "warning",
-      "message": "Tentative 2/3 échouée: Connection error.. Retry dans 4s...",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-23T08:00:24.538299",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:56:23.048087",
-      "agent": "Agent Analyste",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Connection error.. Retry dans 2s...",
+      "ts": "2026-03-23T08:00:24.498215",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 14 agents | 1 abonnés",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:55:33.532050",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 4s...",
+      "ts": "2026-03-23T08:00:24.110164",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:55:31.508597",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 2s...",
+      "ts": "2026-03-23T08:00:24.086391",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 23/03/2026 à 08:00",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:55:31.492547",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
+      "ts": "2026-03-23T08:00:13.592579",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Directeur Adjoint — Matin 🤝",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:55:31.464832",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/search/trending (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 4",
+      "ts": "2026-03-23T07:59:00.477074",
+      "agent": "Monitor",
+      "type": "start",
+      "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
       "data": {}
     },
     {
-      "ts": "2026-03-23T11:55:23.430524",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 8s...",
+      "ts": "2026-03-23T07:58:43.560417",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
       "data": {}
+    },
+    {
+      "ts": "2026-03-23T07:58:27.175657",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-22T19:37:21.982585",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:37:21.980315",
+        "capital": 10026.514469596135
+      }
+    },
+    {
+      "ts": "2026-03-22T19:37:21.724044",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:37:21.721756",
+        "capital": 10000.0
+      }
+    },
+    {
+      "ts": "2026-03-22T19:37:21.535883",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:37:21.532879",
+        "capital": 10000.0
+      }
+    },
+    {
+      "ts": "2026-03-22T19:37:21.340401",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 3x EURUSD=X @ 102.35€",
+      "data": {
+        "ticker": "EURUSD=X",
+        "nb": 3,
+        "prix": 102.35373033457829
+      }
+    },
+    {
+      "ts": "2026-03-22T19:37:21.149355",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:37:21.146791",
+        "capital": 10000.0
+      }
+    },
+    {
+      "ts": "2026-03-22T19:37:20.969982",
+      "agent": "Agent Investissement",
+      "type": "vente",
+      "message": "Vente 5x EURUSD=X @ 102.35€ | P&L: +26.51€",
+      "data": {
+        "ticker": "EURUSD=X",
+        "pl": 26.514469596135427
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:38.167733",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:38.165164",
+        "capital": 10000.0
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:37.867513",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:37.865235",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:37.688498",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:37.686158",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:37.480877",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 3x LMT @ 100.56€",
+      "data": {
+        "ticker": "LMT",
+        "nb": 3,
+        "prix": 100.55907048466963
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:37.308952",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:37.307435",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:37.130855",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:37.128430",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.960471",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 4x GC=F @ 102.55€",
+      "data": {
+        "ticker": "GC=F",
+        "nb": 4,
+        "prix": 102.5480777178719
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.814650",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:36.812807",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.623560",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:36.620911",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.462823",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 4x CL=F @ 101.36€",
+      "data": {
+        "ticker": "CL=F",
+        "nb": 4,
+        "prix": 101.36406726678861
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.279582",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:36.276228",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:36.071999",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:36.069173",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:35.900053",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x MC.PA @ 97.69€",
+      "data": {
+        "ticker": "MC.PA",
+        "nb": 5,
+        "prix": 97.6946038950809
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:35.718474",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:35.715977",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:35.536951",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:35.533771",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:35.335082",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x NVDA @ 97.75€",
+      "data": {
+        "ticker": "NVDA",
+        "nb": 5,
+        "prix": 97.75120879896934
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:24.406060",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:24.403497",
+        "capital": 10000.000000000002
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:24.176056",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:24.173795",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.995064",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:23.992600",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.839649",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x EURUSD=X @ 97.05€",
+      "data": {
+        "ticker": "EURUSD=X",
+        "nb": 5,
+        "prix": 97.0508364153512
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.697806",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:23.695745",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.546202",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:23.544298",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.360257",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 6x XOM @ 97.70€",
+      "data": {
+        "ticker": "XOM",
+        "nb": 6,
+        "prix": 97.70243247565148
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.215360",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:23.213134",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:23.049109",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:23.045916",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:22.861347",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 6x TTE.PA @ 97.81€",
+      "data": {
+        "ticker": "TTE.PA",
+        "nb": 6,
+        "prix": 97.80859651341049
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:22.697639",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:22.694841",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:22.519168",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:22.512809",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:22.330193",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 6x TSLA @ 101.90€",
+      "data": {
+        "ticker": "TSLA",
+        "nb": 6,
+        "prix": 101.89917306146745
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:22.149918",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:22.145119",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:21.967191",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:36:21.964805",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:36:21.777343",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 7x AAPL @ 102.31€",
+      "data": {
+        "ticker": "AAPL",
+        "nb": 7,
+        "prix": 102.31035709208989
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:13.103160",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:13.101234",
+        "capital": 6521.285926666906
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:12.839546",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:12.836894",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:12.652541",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:12.650276",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:12.482724",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x EURUSD=X @ 101.67€",
+      "data": {
+        "ticker": "EURUSD=X",
+        "nb": 5,
+        "prix": 101.67211598314614
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:12.320597",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:12.318263",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:12.148652",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:12.146859",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.938260",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x CL=F @ 102.16€",
+      "data": {
+        "ticker": "CL=F",
+        "nb": 5,
+        "prix": 102.16278101466554
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.794197",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:11.791956",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.610103",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:11.607541",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.416506",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 5x DX-Y.NYB @ 102.28€",
+      "data": {
+        "ticker": "DX-Y.NYB",
+        "nb": 5,
+        "prix": 102.28480721240794
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.217389",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:11.214235",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:11.068997",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:11.067066",
+        "capital": 10000
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:10.889805",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Achat 6x MC.PA @ 101.93€",
+      "data": {
+        "ticker": "MC.PA",
+        "nb": 6,
+        "prix": 101.93168188580411
+      }
+    },
+    {
+      "ts": "2026-03-22T19:35:10.732938",
+      "agent": "Agent Investissement",
+      "type": "portfolio_saved",
+      "message": "Portfolio sauvegardé",
+      "data": {
+        "timestamp": "2026-03-22T19:35:10.730795",
+        "capital": 10000
+      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-23T13:01:02.152950",
+        "ts": "2026-03-23T11:00:15.286749",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10058€ (+0.58%) | 2 positions",
+        "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
         "data": {}
       },
-      "last_ts": "2026-03-23T13:01:02.152950",
+      "last_ts": "2026-03-23T11:00:15.286749",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10058€ (+0.58%) | 2 positions",
-      "total_today": 10,
+      "last_message": "🤖 Robot Agressif: 10000€ (+0.00%) | 0 positions",
+      "total_today": 26,
       "errors_today": 0,
-      "successes_today": 7
-    },
-    {
-      "agent": "Agent Investissement",
-      "last_event": {
-        "ts": "2026-03-23T13:01:02.133908",
-        "agent": "Agent Investissement",
-        "type": "success",
-        "message": "Cycle robot trader complété",
-        "data": {
-          "prudent": {
-            "capital": 10000,
-            "perf": 0.0
-          },
-          "modere": {
-            "capital": 10000,
-            "perf": 0.0
-          },
-          "agressif": {
-            "capital": 10057.77,
-            "perf": 0.58
-          }
-        }
-      },
-      "last_ts": "2026-03-23T13:01:02.133908",
-      "last_type": "success",
-      "last_message": "Cycle robot trader complété",
-      "total_today": 16,
-      "errors_today": 0,
-      "successes_today": 3
-    },
-    {
-      "agent": "Directeur Adjoint",
-      "last_event": {
-        "ts": "2026-03-23T12:10:48.740344",
-        "agent": "Directeur Adjoint",
-        "type": "success",
-        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:10:48.740344",
-      "last_type": "success",
-      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 22,
-      "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Agent Twitter",
-      "last_event": {
-        "ts": "2026-03-23T12:10:05.612699",
-        "agent": "Agent Twitter",
-        "type": "error",
-        "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:10:05.612699",
-      "last_type": "error",
-      "last_message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "total_today": 2,
-      "errors_today": 2,
-      "successes_today": 0
+      "successes_today": 16
     },
     {
       "agent": "Agent DA Site",
       "last_event": {
-        "ts": "2026-03-23T12:10:05.519691",
+        "ts": "2026-03-23T09:27:33.088893",
         "agent": "Agent DA Site",
         "type": "success",
-        "message": "Mission DA terminée (0 pages améliorées)",
+        "message": "Mission DA terminée (3 pages améliorées)",
         "data": {
-          "date": "2026-03-23 12:09",
+          "date": "2026-03-23 09:25",
           "etapes": {
             "audit": {
               "ok": true,
@@ -1100,109 +1023,99 @@
               "details": [
                 {
                   "page": "index.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 25
                 },
                 {
                   "page": "investissement.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 27
                 },
                 {
                   "page": "newsletter.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 27
                 }
               ]
             }
           },
           "success": true,
-          "pages_ameliorees": 0,
+          "pages_ameliorees": 3,
           "insights_count": 5
         }
       },
-      "last_ts": "2026-03-23T12:10:05.519691",
+      "last_ts": "2026-03-23T09:27:33.088893",
       "last_type": "success",
-      "last_message": "Mission DA terminée (0 pages améliorées)",
-      "total_today": 8,
+      "last_message": "Mission DA terminée (3 pages améliorées)",
+      "total_today": 4,
       "errors_today": 0,
-      "successes_today": 6
+      "successes_today": 3
+    },
+    {
+      "agent": "Directeur Adjoint",
+      "last_event": {
+        "ts": "2026-03-23T09:06:56.925001",
+        "agent": "Directeur Adjoint",
+        "type": "progress",
+        "message": "Analyse du projet avec Claude IA en cours...",
+        "data": {}
+      },
+      "last_ts": "2026-03-23T09:06:56.925001",
+      "last_type": "progress",
+      "last_message": "Analyse du projet avec Claude IA en cours...",
+      "total_today": 16,
+      "errors_today": 0,
+      "successes_today": 0
     },
     {
       "agent": "Agent Growth",
       "last_event": {
-        "ts": "2026-03-23T12:08:34.257403",
+        "ts": "2026-03-23T08:45:21.228962",
         "agent": "Agent Growth",
         "type": "success",
         "message": "Notification quotidienne → 1 abonnés",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:08:34.257403",
+      "last_ts": "2026-03-23T08:45:21.228962",
       "last_type": "success",
       "last_message": "Notification quotidienne → 1 abonnés",
-      "total_today": 6,
+      "total_today": 1,
       "errors_today": 0,
-      "successes_today": 4
+      "successes_today": 1
     },
     {
-      "agent": "Agent Rédacteur",
+      "agent": "Monitor",
       "last_event": {
-        "ts": "2026-03-23T12:08:30.833673",
-        "agent": "Agent Rédacteur",
-        "type": "info",
-        "message": "Archive newsletters.html mise à jour",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:08:30.833673",
-      "last_type": "info",
-      "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 6,
-      "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Robot Trader",
-      "last_event": {
-        "ts": "2026-03-23T12:04:12.041226",
-        "agent": "Robot Trader",
+        "ts": "2026-03-23T07:59:00.477074",
+        "agent": "Monitor",
         "type": "start",
-        "message": "Initialisation 2026-03-23 12:04:12",
+        "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:04:12.041226",
+      "last_ts": "2026-03-23T07:59:00.477074",
       "last_type": "start",
-      "last_message": "Initialisation 2026-03-23 12:04:12",
+      "last_message": "Dashboard Live Monitor démarré sur http://localhost:8080",
       "total_today": 1,
       "errors_today": 0,
       "successes_today": 0
     },
     {
-      "agent": "Agent Veille",
+      "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-23T12:02:18.884374",
-        "agent": "Agent Veille",
-        "type": "warning",
-        "message": "Utilisation de la valeur par défaut après échecs",
-        "data": {}
+        "ts": "2026-03-22T19:37:21.982585",
+        "agent": "Agent Investissement",
+        "type": "portfolio_saved",
+        "message": "Portfolio sauvegardé",
+        "data": {
+          "timestamp": "2026-03-22T19:37:21.980315",
+          "capital": 10026.514469596135
+        }
       },
-      "last_ts": "2026-03-23T12:02:18.884374",
-      "last_type": "warning",
-      "last_message": "Utilisation de la valeur par défaut après échecs",
-      "total_today": 25,
-      "errors_today": 5,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent Analyste",
-      "last_event": {
-        "ts": "2026-03-23T11:56:41.348586",
-        "agent": "Agent Analyste",
-        "type": "error",
-        "message": "Échec après 3 tentatives: Connection error.",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T11:56:41.348586",
-      "last_type": "error",
-      "last_message": "Échec après 3 tentatives: Connection error.",
-      "total_today": 4,
-      "errors_today": 1,
+      "last_ts": "2026-03-22T19:37:21.982585",
+      "last_type": "portfolio_saved",
+      "last_message": "Portfolio sauvegardé",
+      "total_today": 0,
+      "errors_today": 0,
       "successes_today": 0
     }
   ]
