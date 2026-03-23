@@ -1364,16 +1364,19 @@
         const robot = portfolioData.robots[robotType];
         if (!robot) return;
 
-        const perf = ((robot.current_value - robot.initial_capital) / robot.initial_capital * 100).toFixed(2);
-        const objective = { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
-        const progress = Math.min((robot.current_value / objective) * 100, 100);
+        const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
+        const perfStr = perf.toFixed(2);
+        const objective = robot.objectif || { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
+        const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
+        const progress = Math.min((currentVal / objective) * 100, 100);
 
-        const closedTrades = robot.trades.filter(t => t.type === 'VENTE').length;
-        const winTrades = robot.trades.filter(t => t.type === 'VENTE' && parseFloat(t.pnl_percent) > 0).length;
-        const winRate = closedTrades > 0 ? ((winTrades / closedTrades) * 100).toFixed(0) : 0;
+        const trades = robot.trades_recent || robot.trades || [];
+        const closedTrades = trades.filter(t => (t.type||'').toLowerCase() === 'vente').length;
+        const winTrades = trades.filter(t => (t.type||'').toLowerCase() === 'vente' && parseFloat(t.pnl_percent||t.pl_pct||0) > 0).length;
+        const winRate = closedTrades > 0 ? ((winTrades / closedTrades) * 100).toFixed(0) : (robot.winrate || 0);
 
-        document.getElementById(`perf-${robotType}`).textContent = `${perf > 0 ? '+' : ''}${perf}%`;
-        document.getElementById(`trades-${robotType}`).textContent = robot.trades.length;
+        document.getElementById(`perf-${robotType}`).textContent = `${perf > 0 ? '+' : ''}${perfStr}%`;
+        document.getElementById(`trades-${robotType}`).textContent = robot.nb_trades !== undefined ? robot.nb_trades : trades.length;
         document.getElementById(`winrate-${robotType}`).textContent = `${winRate}%`;
         document.getElementById(`progress-${robotType}`).style.width = `${progress}%`;
 
@@ -1395,44 +1398,51 @@
       }
 
       posContainer.innerHTML = robot.positions.map((pos) => {
-        const pnlPercent = ((pos.current_price - pos.entry_price) / pos.entry_price * 100).toFixed(2);
-        const pnlEur = (pos.quantity * (pos.current_price - pos.entry_price)).toFixed(2);
-        const conviction = Math.round((pos.conviction_level / 10) * 100);
+        const entryPrice = pos.prix_entree || pos.entry_price || 0;
+        const currentPrice = pos.prix_actuel || pos.current_price || entryPrice;
+        const qty = pos.nb_actions || pos.quantity || 0;
+        const convictionLevel = pos.niveau_conviction || pos.conviction_level || 5;
+        const companyName = pos.nom || pos.company_name || pos.ticker;
+        const entryDate = pos.date_achat || pos.entry_date || '';
+        const pnlPercent = pos.pl_pct !== undefined ? pos.pl_pct.toFixed(2) : ((currentPrice - entryPrice) / entryPrice * 100).toFixed(2);
+        const pnlEur = pos.pl_euros !== undefined ? pos.pl_euros.toFixed(2) : (qty * (currentPrice - entryPrice)).toFixed(2);
+        const conviction = Math.round((convictionLevel / 10) * 100);
+        const devise = pos.devise === 'USD' ? '$' : '€';
 
         return `<div class="position-card">
           <div class="position-header">
             <div>
               <div class="position-ticker">${pos.ticker}</div>
-              <div class="position-company">${pos.company_name}</div>
+              <div class="position-company">${companyName}</div>
             </div>
             <div class="position-pnl">
               <div class="position-pnl-percent ${pnlPercent > 0 ? 'pnl-positive' : 'pnl-negative'}">${pnlPercent > 0 ? '+' : ''}${pnlPercent}%</div>
-              <div class="position-pnl-eur">${pnlEur > 0 ? '+' : ''}${pnlEur}€</div>
+              <div class="position-pnl-eur">${pnlEur > 0 ? '+' : ''}${pnlEur}${devise}</div>
             </div>
           </div>
           <div class="position-prices">
-            <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${pos.entry_price.toFixed(2)}€</div></div>
-            <div class="price-item"><div class="price-label">Cours</div><div class="price-value">${pos.current_price.toFixed(2)}€</div></div>
+            <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${entryPrice.toFixed(2)}${devise}</div></div>
+            <div class="price-item"><div class="price-label">Cours</div><div class="price-value">${currentPrice.toFixed(2)}${devise}</div></div>
           </div>
           <div class="position-reason">
             <div class="position-reason-title">Raison</div>
-            <div class="position-reason-short">${pos.raison_courte}</div>
+            <div class="position-reason-short">${pos.raison_courte || ''}</div>
             ${pos.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Voir justification complète →</button><div class="expanded-content">${pos.raison_complete}</div>` : ''}
           </div>
           <div style="margin-bottom: 1rem;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
               <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Conviction</span>
-              <span style="font-family: 'JetBrains Mono'; font-weight: 600;">${pos.conviction_level}/10</span>
+              <span style="font-family: 'JetBrains Mono'; font-weight: 600;">${convictionLevel}/10</span>
             </div>
             <div class="conviction-bar"><div class="conviction-fill" style="width: ${conviction}%"></div></div>
           </div>
           <div class="position-meta">
-            <span class="position-date">${new Date(pos.entry_date).toLocaleString('fr-FR')}</span>
-            <span class="badge badge-horizon">${pos.horizon}</span>
+            <span class="position-date">${entryDate ? new Date(entryDate).toLocaleString('fr-FR') : ''}</span>
+            <span class="badge badge-horizon">${pos.horizon || ''}</span>
           </div>
           <div class="sl-tp">
-            <div class="sl-tp-item"><div class="sl-tp-label">Stop Loss</div><div class="sl-tp-value">${pos.stop_loss.toFixed(2)}€</div></div>
-            <div class="sl-tp-item"><div class="sl-tp-label">Take Profit</div><div class="sl-tp-value">${pos.take_profit.toFixed(2)}€</div></div>
+            <div class="sl-tp-item"><div class="sl-tp-label">Stop Loss</div><div class="sl-tp-value">${(pos.stop_loss||0).toFixed(2)}${devise}</div></div>
+            <div class="sl-tp-item"><div class="sl-tp-label">Take Profit</div><div class="sl-tp-value">${(pos.take_profit||0).toFixed(2)}${devise}</div></div>
           </div>
         </div>`;
       }).join('');
@@ -1442,17 +1452,25 @@
       const robot = portfolioData.robots[currentRobot];
       const tradesContainer = document.getElementById('trades-container');
 
-      if (!robot || !robot.trades || robot.trades.length === 0) {
+      const trades = robot.trades_recent || robot.trades || [];
+      if (!robot || trades.length === 0) {
         tradesContainer.innerHTML = '<div class="loading-message">Aucun trade enregistré pour le moment</div>';
         return;
       }
 
-      const sortedTrades = [...robot.trades].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const sortedTrades = [...trades].sort((a, b) => new Date(b.date) - new Date(a.date));
 
       tradesContainer.innerHTML = sortedTrades.map(trade => {
-        const isBuy = trade.type === 'ACHAT';
-        const displayPnl = trade.pnl_percent ? `${trade.pnl_percent > 0 ? '+' : ''}${trade.pnl_percent}%` : 'N/A';
-        const displayDuration = trade.duration ? trade.duration : 'Ouvert';
+        const tradeType = (trade.type||'').toLowerCase();
+        const isBuy = tradeType === 'achat';
+        const pnlPct = trade.pnl_percent || trade.pl_pct || 0;
+        const displayPnl = !isBuy && pnlPct ? `${pnlPct > 0 ? '+' : ''}${pnlPct}%` : 'N/A';
+        const displayDuration = trade.duration || trade.duree || 'Ouvert';
+        const tradePrice = trade.prix || trade.price || 0;
+        const tradeQty = trade.nb_actions || trade.quantity || 0;
+        const tradeMontant = trade.montant || (tradePrice * tradeQty);
+        const companyName = trade.nom || trade.company_name || trade.ticker;
+        const devise = (trade.ticker||'').includes('USD') || (trade.ticker||'').includes('BTC') ? '$' : '€';
 
         return `<div class="trade-card">
           <div class="trade-header">
@@ -1460,23 +1478,23 @@
               <span class="trade-type-badge ${isBuy ? 'trade-type-buy' : 'trade-type-sell'}">${isBuy ? '↓ ACHAT' : '↑ VENTE'}</span>
               <div style="margin-top: 0.75rem;">
                 <div class="trade-ticker">${trade.ticker}</div>
-                <div class="trade-company">${trade.company_name}</div>
+                <div class="trade-company">${companyName}</div>
               </div>
             </div>
-            ${!isBuy ? `<div class="trade-pnl"><div style="font-family: 'JetBrains Mono'; font-size: 1.25rem; font-weight: 700; ${trade.pnl_percent > 0 ? 'color: var(--green)' : 'color: var(--red)'};">${displayPnl}</div><div style="color: var(--muted); font-size: 0.85rem;">${displayDuration}</div></div>` : ''}
+            ${!isBuy ? `<div class="trade-pnl"><div style="font-family: 'JetBrains Mono'; font-size: 1.25rem; font-weight: 700; ${pnlPct > 0 ? 'color: var(--green)' : 'color: var(--red)'};">${displayPnl}</div><div style="color: var(--muted); font-size: 0.85rem;">${displayDuration}</div></div>` : ''}
           </div>
           <div class="trade-main">
-            <div class="trade-item"><div class="trade-item-label">Prix</div><div class="trade-item-value">${trade.price.toFixed(2)}€</div></div>
-            <div class="trade-item"><div class="trade-item-label">Quantité</div><div class="trade-item-value">${trade.quantity}</div></div>
-            <div class="trade-item"><div class="trade-item-label">Montant</div><div class="trade-item-value">${(trade.price * trade.quantity).toFixed(0)}€</div></div>
+            <div class="trade-item"><div class="trade-item-label">Prix</div><div class="trade-item-value">${tradePrice.toFixed(2)}${devise}</div></div>
+            <div class="trade-item"><div class="trade-item-label">Quantité</div><div class="trade-item-value">${tradeQty}</div></div>
+            <div class="trade-item"><div class="trade-item-label">Montant</div><div class="trade-item-value">${tradeMontant.toFixed(0)}${devise}</div></div>
           </div>
           <div class="trade-reason">
             <div class="trade-reason-title">Justification</div>
-            <div class="trade-reason-short">${trade.raison_courte}</div>
+            <div class="trade-reason-short">${trade.raison_courte || ''}</div>
             ${trade.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Lire la justification complète →</button><div class="expanded-content">${trade.raison_complete}</div>` : ''}
           </div>
           <div class="trade-meta">
-            <span>${new Date(trade.date).toLocaleString('fr-FR')}</span>
+            <span>${trade.date ? new Date(trade.date).toLocaleString('fr-FR') : ''}</span>
             ${trade.catalyseur ? `<span class="catalyseur-tag">${trade.catalyseur}</span>` : ''}
           </div>
         </div>`;
