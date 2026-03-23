@@ -1,22 +1,28 @@
 {
   "meta": {
-    "timestamp": "2026-03-23 12:00",
+    "timestamp": "2026-03-23 14:25",
     "date": "23/03/2026",
     "semaine": "Semaine 12 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 68534,
-      "variation_24h": -0.07,
-      "variation_7j": -6.45,
-      "market_cap_mrd": 1370.9,
-      "volume_24h_mrd": 33.72,
+      "prix_usd": 70838,
+      "variation_24h": 2.96,
+      "variation_7j": -3.71,
+      "market_cap_mrd": 1417.1,
+      "volume_24h_mrd": 45.27,
       "ath_usd": 126080,
-      "ath_pct": -45.6
+      "ath_pct": -43.8
     }
   },
   "news_crypto": [
+    {
+      "titre": "Backpack (BP) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/backpack",
+      "date": "2026-03-23"
+    },
     {
       "titre": "Siren (SIREN) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
@@ -24,36 +30,30 @@
       "date": "2026-03-23"
     },
     {
-      "titre": "Resolv USR (USR) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/resolv-usr",
-      "date": "2026-03-23"
-    },
-    {
-      "titre": "Hyperliquid (HYPE) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/hyperliquid",
-      "date": "2026-03-23"
-    },
-    {
-      "titre": "Bittensor (TAO) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/bittensor",
-      "date": "2026-03-23"
-    },
-    {
       "titre": "Bitcoin (BTC) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
       "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Pudgy Penguins (PENGU) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/pudgy-penguins",
+      "date": "2026-03-23"
+    },
+    {
+      "titre": "Resolv USR (USR) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/resolv-usr",
       "date": "2026-03-23"
     }
   ],
   "bourse": {
     "indices": {
       "CAC 40": {
-        "valeur": 7515.92,
-        "variation_24h": -1.95,
-        "variation_7j": -5.75,
+        "valeur": 7799.64,
+        "variation_24h": 1.75,
+        "variation_7j": -2.19,
         "ticker": "^FCHI"
       },
       "S&P 500": {
@@ -69,9 +69,9 @@
         "ticker": "^NDX"
       },
       "DAX": {
-        "valeur": 21910.87,
-        "variation_24h": -2.1,
-        "variation_7j": -7.67,
+        "valeur": 22873.54,
+        "variation_24h": 2.2,
+        "variation_7j": -3.61,
         "ticker": "^GDAXI"
       },
       "Dow Jones": {
@@ -104,18 +104,18 @@
         "market_cap_mrd": 1380.7
       },
       "LVMH": {
-        "prix": 454.05,
-        "variation_24h": -0.85,
+        "prix": 473.4,
+        "variation_24h": 3.37,
         "ticker": "MC.PA",
         "devise": "EUR",
-        "market_cap_mrd": 225.1
+        "market_cap_mrd": 234.7
       },
       "TotalEnergies": {
-        "prix": 76.8,
-        "variation_24h": -0.21,
+        "prix": 74.81,
+        "variation_24h": -2.79,
         "ticker": "TTE.PA",
         "devise": "EUR",
-        "market_cap_mrd": 164.2
+        "market_cap_mrd": 159.9
       },
       "ExxonMobil": {
         "prix": 159.67,
@@ -135,27 +135,27 @@
   },
   "commodities": {
     "Dollar Index (DXY)": {
-      "valeur": 100.11,
-      "variation_24h": 0.46,
-      "variation_7j": 0.02,
+      "valeur": 99.271,
+      "variation_24h": -0.38,
+      "variation_7j": -0.82,
       "ticker": "DX-Y.NYB"
     },
     "Pétrole WTI": {
-      "valeur": 98.33,
-      "variation_24h": 0.01,
-      "variation_7j": 2.09,
+      "valeur": 90.23,
+      "variation_24h": -8.23,
+      "variation_7j": -6.32,
       "ticker": "CL=F"
     },
     "Or (XAU/USD)": {
-      "valeur": 4268.7002,
-      "variation_24h": -6.6,
-      "variation_7j": -12.7,
+      "valeur": 4453.6001,
+      "variation_24h": -2.56,
+      "variation_7j": -8.92,
       "ticker": "GC=F"
     },
     "EUR/USD": {
-      "valeur": 1.1489,
-      "variation_24h": -0.77,
-      "variation_7j": -0.09,
+      "valeur": 1.1587,
+      "variation_24h": 0.09,
+      "variation_7j": 0.76,
       "ticker": "EURUSD=X"
     }
   },

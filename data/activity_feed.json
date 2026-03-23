@@ -1,7 +1,124 @@
 {
-  "generated_at": "2026-03-23T14:25:22.453190",
+  "generated_at": "2026-03-23T16:27:17.861492",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-23T16:27:17.855275",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Analytics dashboard généré",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:27:17.803045",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Analytics 📊",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:27:17.795850",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:00:08.579673",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10275€ (+2.75%) | 2 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:00:08.575675",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10072€ (+0.72%) | 1 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:00:08.570673",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10024€ (+0.24%) | 1 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T16:00:08.550661",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10024.5,
+          "perf": 0.24
+        },
+        "modere": {
+          "capital": 10071.91,
+          "perf": 0.72
+        },
+        "agressif": {
+          "capital": 10274.9,
+          "perf": 2.75
+        }
+      }
+    },
+    {
+      "ts": "2026-03-23T16:00:00.597082",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — 16h",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T15:00:30.315339",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10268€ (+2.69%) | 2 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T15:00:30.306597",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10061€ (+0.61%) | 1 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T15:00:30.300553",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10033€ (+0.33%) | 1 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-23T15:00:30.293008",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10033.46,
+          "perf": 0.33
+        },
+        "modere": {
+          "capital": 10060.63,
+          "perf": 0.61
+        },
+        "agressif": {
+          "capital": 10268.5,
+          "perf": 2.69
+        }
+      }
+    },
+    {
+      "ts": "2026-03-23T15:00:22.572704",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — 15h",
+      "data": {}
+    },
     {
       "ts": "2026-03-23T14:25:22.425316",
       "agent": "Orchestrateur",
@@ -857,199 +974,53 @@
       "type": "warning",
       "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coin. Retry dans 2s...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.445656",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.443658",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 0 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.440574",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 0 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:09.435565",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10000,
-          "perf": 0.0
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T12:01:09.426442",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 0.0365x BTC-USD @ 68528.60",
-      "data": {
-        "profil": "agressif",
-        "ticker": "BTC-USD",
-        "prix": 68528.6,
-        "montant": 2501.29,
-        "raison": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:01:08.922054",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter BTC-USD",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "BTC-USD",
-        "nom": "Bitcoin",
-        "allocation_pct": 25,
-        "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
-        "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
-        "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 6,
-        "risques": "Un VIX à 30+ peut déclencher des ventes forcées supplémentaires si la crise s'aggrave, entraînant BTC sous les 65 000$ (stop-loss activé). Une récession confirmée ou un choc réglementaire crypto pourraient amplifier la baisse."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:55.410912",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême — préserver le capital avant tout engagement",
-        "raison_complete": "Le VIX à 30.33 avec une hausse de +35.58% sur 5 jours signale une phase de panique ou de stress systémique significatif — historiquement, les entrées en position pendant ces pics de VIX sans signal de stabilisation mènent à des stop-loss prématurés. Le S&P 500 perd -2.88% sur 5 jours et le Nasdaq -3.07%, indiquant une correction en cours, pas encore exhaustée. L'or chute violemment de -6.60% en une seule journée, ce qui est inhabituel : cela suggère soit une liquidation forcée d'actifs (margin calls), soit un repositionnement brutal des grands fonds — un signal d'alerte macro majeur. Le pétrole WTI à 98.33 USD maintient une pression inflationniste qui complique la marge de manœuvre des banques centrales. L'EUR/USD à 1.15 avec un Dollar Index en hausse indique un flight-to-dollar classique en période de stress. Dans ce contexte, entrer sur n'importe quelle classe d'actif sans confirmation de stabilisation serait imprudent pour un profil modéré.",
-        "catalyseur": "Chute simultanée des actions (-3%), de l'or (-6.6%) et hausse du VIX (+35% sur 5j) : signal de liquidation généralisée nécessitant confirmation avant toute entrée",
-        "horizon": null,
-        "niveau_conviction": 9,
-        "risques": "Rester en cash implique de manquer un rebond potentiel, mais la préservation du capital de 10 000€ prime sur la performance dans ce contexte de stress aigu."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:42.356504",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême — préserver le capital est prioritaire aujourd'hui.",
-        "raison_complete": "Le VIX à 30.33 avec une hausse de +35.58% sur 5 jours signale une panique de marché structurelle, pas un simple repli technique. Le CAC40 cède -5.77% sur 5 jours et le DAX -7.68%, ce qui traduit une pression vendeuse massive sur les marchés européens — probablement alimentée par des tensions géopolitiques persistantes et une révision à la baisse des perspectives de croissance. L'or, valeur refuge par excellence, s'effondre de -6.60% en une seule séance, ce qui est atypique et suggère des appels de marge forcés ou une liquidation générale d'actifs — un signal d'alarme majeur. Le pétrole WTI à 98.33 USD exerce une pression inflationniste qui complique la tâche des banques centrales et réduit l'espace pour des baisses de taux accommodantes. Dans ce contexte, en tant que Robot Prudent avec 10 000€ de cash entièrement disponible, l'entrée sur des blue chips ou ETF obligataires maintenant reviendrait à attraper un couteau qui tombe. La règle fondamentale de la gestion prudente est : ne jamais acheter dans une capitulation non confirmée.",
-        "catalyseur": "VIX à 30+ avec hausse hebdomadaire de +35% — signal de capitulation ou de crise systémique en cours, liquidation de l'or anormale indicatrice d'appels de marge généralisés.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 9,
-        "risques": "Le risque principal d'attendre est de manquer un rebond technique violent si une annonce positive (cessez-le-feu, pivot de banque centrale) intervient. Toutefois, pour un profil prudent, ce risque est acceptable face au risque de perte en capital."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:00:19.527558",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Midi",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:00:19.503832",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Veille terminée — 1 crypto(s), 5 indices",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:00:07.118565",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Veille Marchés — Midi 🔍",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T11:56:41.348586",
-      "agent": "Agent Analyste",
-      "type": "error",
-      "message": "Échec après 3 tentatives: Connection error.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T11:56:31.915006",
-      "agent": "Agent Analyste",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Connection error.. Retry dans 8s...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-23T14:25:22.425316",
+        "ts": "2026-03-23T16:27:17.855275",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "Veille terminée — 1 crypto(s), 5 indices",
+        "message": "Analytics dashboard généré",
         "data": {}
       },
-      "last_ts": "2026-03-23T14:25:22.425316",
+      "last_ts": "2026-03-23T16:27:17.855275",
       "last_type": "success",
-      "last_message": "Veille terminée — 1 crypto(s), 5 indices",
-      "total_today": 16,
+      "last_message": "Analytics dashboard généré",
+      "total_today": 21,
       "errors_today": 0,
-      "successes_today": 11
+      "successes_today": 14
     },
     {
       "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-23T14:00:10.256701",
+        "ts": "2026-03-23T16:00:08.550661",
         "agent": "Agent Investissement",
         "type": "success",
         "message": "Cycle robot trader complété",
         "data": {
           "prudent": {
-            "capital": 10017.36,
-            "perf": 0.17
+            "capital": 10024.5,
+            "perf": 0.24
           },
           "modere": {
-            "capital": 10000.0,
-            "perf": 0.0
+            "capital": 10071.91,
+            "perf": 0.72
           },
           "agressif": {
-            "capital": 10077.01,
-            "perf": 0.77
+            "capital": 10274.9,
+            "perf": 2.75
           }
         }
       },
-      "last_ts": "2026-03-23T14:00:10.256701",
+      "last_ts": "2026-03-23T16:00:08.550661",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 17,
+      "total_today": 14,
       "errors_today": 0,
-      "successes_today": 4
+      "successes_today": 5
     },
     {
       "agent": "Directeur Adjoint",
@@ -1200,22 +1171,6 @@
       "last_message": "Utilisation de la valeur par défaut après échecs",
       "total_today": 20,
       "errors_today": 4,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent Analyste",
-      "last_event": {
-        "ts": "2026-03-23T11:56:41.348586",
-        "agent": "Agent Analyste",
-        "type": "error",
-        "message": "Échec après 3 tentatives: Connection error.",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T11:56:41.348586",
-      "last_type": "error",
-      "last_message": "Échec après 3 tentatives: Connection error.",
-      "total_today": 2,
-      "errors_today": 1,
       "successes_today": 0
     }
   ]
