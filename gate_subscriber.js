@@ -69,6 +69,7 @@
 
     if(isSubscribed){
       sessionStorage.setItem(SESSION_KEY, email);
+      updateNavCTA(email);
       showContent();
     } else {
       errEl.style.display='block';

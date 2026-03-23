@@ -1312,8 +1312,8 @@
     </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section class="section">
+  <!-- CTA SECTION — masqué si déjà connecté -->
+  <section class="section" id="cta-subscribe-section">
     <div class="cta-section">
       <h2 class="cta-title">Suivez les Trades en Temps Réel</h2>
       <p style="color: var(--muted); margin-bottom: 2rem;">Recevez une alerte email dès qu'un robot ouvre ou ferme une position</p>
@@ -1323,6 +1323,13 @@
       </form>
     </div>
   </section>
+  <script>
+    // Masquer le CTA si déjà abonné
+    if (sessionStorage.getItem('ab_user')) {
+      const ctaSec = document.getElementById('cta-subscribe-section');
+      if (ctaSec) ctaSec.style.display = 'none';
+    }
+  </script>
 
   <!-- FOOTER -->
   <footer>
@@ -1335,25 +1342,19 @@
         <a href="dashboard-agents.html">Agents IA</a>
       </div>
       <div class="footer-section">
-        <h4>Ressources</h4>
-        <a href="#">Blog</a>
-        <a href="#">Documentation</a>
-        <a href="#">API</a>
-        <a href="#">Pricing</a>
+        <h4>Produit</h4>
+        <a href="newsletter.html">Newsletter gratuite</a>
+        <a href="investissement.html">Robot Trader</a>
+        <a href="dashboard-agents.html">Agents IA</a>
       </div>
       <div class="footer-section">
         <h4>Légal</h4>
-        <a href="#">Conditions d'utilisation</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Disclaimers</a>
-        <a href="#">RGPD</a>
+        <p style="color:var(--muted);font-size:12px;line-height:1.5;margin:0;">Les performances passées ne préjugent pas des performances futures. Ceci n'est pas un conseil en investissement.</p>
       </div>
       <div class="footer-section">
         <h4>Contact</h4>
-        <a href="#">Support</a>
-        <a href="#">Email</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
+        <a href="mailto:antoine.metout@gmail.com">Email</a>
+        <a href="https://twitter.com/AlphaBot_Weekly" target="_blank">Twitter</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1750,7 +1751,7 @@
     // ══════════════════════════════════════════════════════════════
     // GRAPHIQUE CHART.JS — Évolution des 3 robots
     // ══════════════════════════════════════════════════════════════
-    let robotChart = null;
+    window.robotChart = null;
 
     function buildChartData() {
       if (!portfolioData?.robots) return null;
@@ -1759,6 +1760,11 @@
       const robots = portfolioData.robots;
       const allDates = new Set();
       const robotColors = { prudent: '#22c55e', modere: '#f59e0b', agressif: '#ef4444' };
+      const robotFills = {
+        prudent: 'rgba(34,197,94,0.08)',
+        modere: 'rgba(245,158,11,0.08)',
+        agressif: 'rgba(239,68,68,0.08)'
+      };
 
       // Collecter toutes les dates de trades
       for (const [type, robot] of Object.entries(robots)) {
@@ -1797,7 +1803,7 @@
           label: `${robot.emoji || ''} ${robot.nom || type}`,
           data: data,
           borderColor: robotColors[type] || '#22d3ee',
-          backgroundColor: (robotColors[type] || '#22d3ee') + '20',
+          backgroundColor: robotFills[type] || 'rgba(34,211,238,0.08)',
           fill: true,
           tension: 0.3,
           pointRadius: 5,
@@ -1819,9 +1825,9 @@
       const chartData = buildChartData();
       if (!chartData) return;
 
-      if (robotChart) robotChart.destroy();
+      if (window.robotChart) window.robotChart.destroy();
 
-      robotChart = new Chart(canvas, {
+      window.robotChart = new Chart(canvas, {
         type: 'line',
         data: chartData,
         options: {
@@ -1873,24 +1879,34 @@
     const _origRenderDashboard = renderDashboard;
     renderDashboard = function() {
       _origRenderDashboard();
-      if (robotChart && portfolioData?.robots) {
-        // Mettre à jour le dernier point de chaque dataset
-        for (let i = 0; i < robotChart.data.datasets.length; i++) {
+      if (window.robotChart && portfolioData?.robots) {
+        for (let i = 0; i < window.robotChart.data.datasets.length; i++) {
           const robotType = Object.keys(portfolioData.robots)[i];
           const robot = portfolioData.robots[robotType];
-          const lastIdx = robotChart.data.datasets[i].data.length - 1;
-          robotChart.data.datasets[i].data[lastIdx] = robot.capital_actuel;
+          const lastIdx = window.robotChart.data.datasets[i].data.length - 1;
+          window.robotChart.data.datasets[i].data[lastIdx] = robot.capital_actuel;
         }
-        robotChart.update('none'); // update sans animation
+        window.robotChart.update('none');
       }
     };
+
+    // Boutons timeframe (7J / 30J / 90J / Tout)
+    document.querySelectorAll('.chart-timeframe button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.chart-timeframe button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Pour l'instant avec peu de données, tous les filtres affichent tout
+        // Quand il y aura plus d'historique, on filtrera ici
+        renderChart();
+      });
+    });
 
     // Lancer le refresh live DÈS que les données sont chargées
     let _liveInterval = null;
     function startLiveRefresh() {
       if (portfolioData?.robots) {
         console.log('[AlphaBot] Données chargées → lancement refresh live + graphique');
-        renderChart(); // Dessiner le graphique
+        renderChart();
         refreshLivePrices();
         if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 30000);
       } else {
