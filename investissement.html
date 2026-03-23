@@ -673,18 +673,36 @@
     }
 
     /* ===== CHART SECTION ===== */
-    .chart-placeholder {
+    .chart-container {
       background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.03) 100%);
       border: 1px solid rgba(34, 211, 238, 0.2);
       border-radius: 1rem;
-      padding: 4rem 2rem;
-      text-align: center;
+      padding: 1.5rem;
       margin-bottom: 3rem;
+      position: relative;
     }
-
-    .chart-placeholder p {
-      color: var(--muted);
-      font-size: 1.1rem;
+    .chart-container canvas { width: 100% !important; max-height: 350px; }
+    .chart-legend {
+      display: flex; gap: 1.5rem; justify-content: center;
+      margin-top: 1rem; flex-wrap: wrap;
+    }
+    .chart-legend-item {
+      display: flex; align-items: center; gap: .4rem;
+      color: var(--text); font-size: .85rem; font-family: 'Inter', sans-serif;
+    }
+    .chart-legend-dot {
+      width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+    }
+    .chart-timeframe {
+      display: flex; gap: .5rem; justify-content: flex-end; margin-bottom: 1rem;
+    }
+    .chart-timeframe button {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      color: var(--muted); padding: .3rem .8rem; border-radius: .5rem;
+      cursor: pointer; font-size: .8rem; transition: all .2s;
+    }
+    .chart-timeframe button.active, .chart-timeframe button:hover {
+      background: rgba(34, 211, 238, 0.15); color: var(--cyan); border-color: var(--cyan);
     }
 
     /* ===== FEATURES SECTION ===== */
@@ -1083,6 +1101,7 @@
     transition: background 0.3s ease, border-color 0.3s ease;
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
   <!-- NAVIGATION -->
@@ -1249,9 +1268,20 @@
 
   <!-- CHART SECTION -->
   <section class="section">
-    <h2 class="section-title">📉 Évolution des 3 Robots</h2>
-    <div class="chart-placeholder">
-      <p>📊 Graphique interactif en préparation — consultez les positions détaillées ci-dessus pour le suivi en temps réel</p>
+    <h2 class="section-title">📈 Évolution des 3 Robots</h2>
+    <div class="chart-container">
+      <div class="chart-timeframe">
+        <button class="active" data-range="all">Tout</button>
+        <button data-range="7">7J</button>
+        <button data-range="30">30J</button>
+        <button data-range="90">90J</button>
+      </div>
+      <canvas id="robotChart" height="300"></canvas>
+      <div class="chart-legend">
+        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#22c55e"></span> 🛡️ Prudent</span>
+        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#f59e0b"></span> ⚖️ Modéré</span>
+        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#ef4444"></span> 🔥 Agressif</span>
+      </div>
     </div>
   </section>
 
@@ -1717,16 +1747,154 @@
       }
     }
 
+    // ══════════════════════════════════════════════════════════════
+    // GRAPHIQUE CHART.JS — Évolution des 3 robots
+    // ══════════════════════════════════════════════════════════════
+    let robotChart = null;
+
+    function buildChartData() {
+      if (!portfolioData?.robots) return null;
+
+      // Construire l'historique : point de départ (10k) + trades + valeur actuelle
+      const robots = portfolioData.robots;
+      const allDates = new Set();
+      const robotColors = { prudent: '#22c55e', modere: '#f59e0b', agressif: '#ef4444' };
+
+      // Collecter toutes les dates de trades
+      for (const [type, robot] of Object.entries(robots)) {
+        if (robot.trades_recent) {
+          for (const t of robot.trades_recent) {
+            const d = t.date?.split(' ')[0];
+            if (d) allDates.add(d);
+          }
+        }
+      }
+
+      // Date de lancement (veille du 1er trade ou J-1)
+      const today = new Date().toISOString().split('T')[0];
+      allDates.add(today);
+      const sortedDates = [...allDates].sort();
+      const launchDate = new Date(sortedDates[0]);
+      launchDate.setDate(launchDate.getDate() - 1);
+      const launchStr = launchDate.toISOString().split('T')[0];
+
+      // Labels = dates formatées
+      const labels = [launchStr, ...sortedDates].map(d => {
+        const parts = d.split('-');
+        return `${parts[2]}/${parts[1]}`;
+      });
+
+      // Datasets
+      const datasets = [];
+      for (const [type, robot] of Object.entries(robots)) {
+        const data = new Array(labels.length).fill(null);
+        data[0] = robot.capital_initial || 10000; // Jour 0 = capital initial
+        data[data.length - 1] = robot.capital_actuel || robot.capital_initial; // Dernier point = capital actuel
+        // Remplir les points intermédiaires
+        for (let i = 1; i < data.length - 1; i++) { data[i] = data[i] || data[0]; }
+
+        datasets.push({
+          label: `${robot.emoji || ''} ${robot.nom || type}`,
+          data: data,
+          borderColor: robotColors[type] || '#22d3ee',
+          backgroundColor: (robotColors[type] || '#22d3ee') + '20',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          pointBackgroundColor: robotColors[type] || '#22d3ee',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          borderWidth: 3
+        });
+      }
+
+      return { labels, datasets };
+    }
+
+    function renderChart() {
+      const canvas = document.getElementById('robotChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+
+      const chartData = buildChartData();
+      if (!chartData) return;
+
+      if (robotChart) robotChart.destroy();
+
+      robotChart = new Chart(canvas, {
+        type: 'line',
+        data: chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { intersect: false, mode: 'index' },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(4,9,26,0.95)',
+              borderColor: 'rgba(34,211,238,0.3)',
+              borderWidth: 1,
+              titleFont: { family: 'Inter', size: 13 },
+              bodyFont: { family: 'JetBrains Mono', size: 12 },
+              padding: 12,
+              callbacks: {
+                label: ctx => {
+                  const val = ctx.parsed.y;
+                  const diff = val - 10000;
+                  const pct = (diff / 10000 * 100).toFixed(2);
+                  const sign = diff >= 0 ? '+' : '';
+                  return `${ctx.dataset.label}: ${val.toLocaleString('fr-FR', {minimumFractionDigits:0})}€ (${sign}${pct}%)`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255,255,255,0.04)' },
+              ticks: { color: '#64748b', font: { family: 'Inter', size: 11 } }
+            },
+            y: {
+              grid: { color: 'rgba(255,255,255,0.04)' },
+              ticks: {
+                color: '#64748b',
+                font: { family: 'JetBrains Mono', size: 11 },
+                callback: v => v.toLocaleString('fr-FR') + '€'
+              },
+              suggestedMin: 9800,
+              suggestedMax: 10500
+            }
+          }
+        }
+      });
+      console.log('[AlphaBot] Graphique rendu avec', chartData.labels.length, 'points');
+    }
+
+    // Mettre à jour le graphique quand les prix live changent
+    const _origRenderDashboard = renderDashboard;
+    renderDashboard = function() {
+      _origRenderDashboard();
+      if (robotChart && portfolioData?.robots) {
+        // Mettre à jour le dernier point de chaque dataset
+        for (let i = 0; i < robotChart.data.datasets.length; i++) {
+          const robotType = Object.keys(portfolioData.robots)[i];
+          const robot = portfolioData.robots[robotType];
+          const lastIdx = robotChart.data.datasets[i].data.length - 1;
+          robotChart.data.datasets[i].data[lastIdx] = robot.capital_actuel;
+        }
+        robotChart.update('none'); // update sans animation
+      }
+    };
+
     // Lancer le refresh live DÈS que les données sont chargées
-    // (pas de setTimeout aveugle — on attend que portfolioData existe)
     let _liveInterval = null;
     function startLiveRefresh() {
       if (portfolioData?.robots) {
-        console.log('[AlphaBot] Données chargées → lancement refresh live');
+        console.log('[AlphaBot] Données chargées → lancement refresh live + graphique');
+        renderChart(); // Dessiner le graphique
         refreshLivePrices();
         if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 30000);
       } else {
-        setTimeout(startLiveRefresh, 500); // Réessayer dans 500ms
+        setTimeout(startLiveRefresh, 500);
       }
     }
     startLiveRefresh();
