@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23 11:00:15",
+  "generated_at": "2026-03-23 12:09:20",
   "robots": {
     "prudent": {
       "nom": "Robot Prudent",
@@ -17,7 +17,7 @@
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 11:00:15",
+      "derniere_maj": "2026-03-23 12:08:40",
       "positions": [],
       "trades_recent": []
     },
@@ -37,7 +37,7 @@
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 11:00:15",
+      "derniere_maj": "2026-03-23 12:08:53",
       "positions": [],
       "trades_recent": []
     },
@@ -48,18 +48,55 @@
       "couleur": "#ef4444",
       "couleur_bg": "rgba(239,68,68,.08)",
       "capital_initial": 10000,
-      "capital_actuel": 10000,
+      "capital_actuel": 10049.14,
       "objectif": 200000,
-      "cash_disponible": 10000,
-      "performance_pct": 0.0,
-      "performance_eur": 0,
-      "nb_trades": 0,
+      "cash_disponible": 7498.71,
+      "performance_pct": 0.49,
+      "performance_eur": 49.14,
+      "nb_trades": 1,
       "winrate": 0,
       "meilleur_trade": 0.0,
       "pire_trade": 0.0,
-      "derniere_maj": "2026-03-23 11:00:15",
-      "positions": [],
-      "trades_recent": []
+      "derniere_maj": "2026-03-23 12:09:07",
+      "positions": [
+        {
+          "ticker": "BTC-USD",
+          "nom": "Bitcoin USD",
+          "nb_actions": 0.0365,
+          "prix_entree": 68528.6,
+          "prix_actuel": 69874.91,
+          "montant_investi": 2501.29,
+          "pl_euros": 49.14,
+          "pl_pct": 1.96,
+          "date_achat": "2026-03-23 12:01:08",
+          "stop_loss": 60305.17,
+          "take_profit": 85660.75,
+          "devise": "USD",
+          "secteur": "N/A",
+          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
+          "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
+          "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 6,
+          "risques": "Un VIX à 30+ peut déclencher des ventes forcées supplémentaires si la crise s'aggrave, entraînant BTC sous les 65 000$ (stop-loss activé). Une récession confirmée ou un choc réglementaire crypto pourraient amplifier la baisse."
+        }
+      ],
+      "trades_recent": [
+        {
+          "type": "achat",
+          "ticker": "BTC-USD",
+          "nom": "Bitcoin USD",
+          "nb_actions": 0.0365,
+          "prix": 68528.6,
+          "montant": 2501.29,
+          "date": "2026-03-23 12:01:08",
+          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
+          "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
+          "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 6
+        }
+      ]
     }
   }
 }

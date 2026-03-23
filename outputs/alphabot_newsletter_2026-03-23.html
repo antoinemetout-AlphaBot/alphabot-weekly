@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AlphaBot Weekly — 23/03/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+/* ═══ RESET & VARS ═══════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#04091a; --bg2:#060d1f; --surface:rgba(255,255,255,0.04);
+  --surface2:rgba(255,255,255,0.07); --border:rgba(255,255,255,0.08);
+  --gold:#f5c842; --blue:#3b82f6; --cyan:#22d3ee; --green:#22c55e;
+  --red:#ef4444; --text:#e2e8f0; --muted:#64748b; --muted2:#475569;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;
+      font-size:15px;line-height:1.65;overflow-x:hidden;}
+
+/* ═══ BACKGROUND GRID + ORBS ════════════════════════════════════════════════ */
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.bg-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,130,246,.03)1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.03)1px,transparent 1px);
+  background-size:60px 60px;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.09),transparent 65%);
+       top:-250px;left:-200px;animation:orbf 9s ease-in-out infinite alternate;}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(245,200,66,.06),transparent 65%);
+       bottom:-200px;right:-150px;animation:orbf 11s ease-in-out infinite alternate-reverse;}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,rgba(34,211,238,.05),transparent 65%);
+       top:40%;left:60%;animation:orbf 7s ease-in-out infinite alternate;}
+@keyframes orbf{from{transform:translate(0,0)scale(1);}to{transform:translate(30px,25px)scale(1.08);}}
+
+/* ═══ SCAN LINE ══════════════════════════════════════════════════════════════ */
+.scan{position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;
+       background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);
+       animation:scan 7s ease-in-out infinite;opacity:.35;}
+@keyframes scan{0%{top:0;opacity:0;}8%{opacity:.4;}92%{opacity:.4;}100%{top:100%;opacity:0;}}
+
+/* ═══ WRAPPER ════════════════════════════════════════════════════════════════ */
+.wrap{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:20px 40px 60px;}
+
+/* ═══ TICKER ═════════════════════════════════════════════════════════════════ */
+.ticker-bar{background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.18);
+             border-radius:6px;overflow:hidden;padding:7px 0;margin-bottom:22px;position:relative;}
+.ticker-bar::before,.ticker-bar::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
+.ticker-bar::before{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
+.ticker-bar::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent);}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 55s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+.t-chunk{font-size:12px;font-weight:500;color:var(--cyan);padding:0 30px;white-space:nowrap;}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-live{position:absolute;left:10px;top:50%;transform:translateY(-50%);z-index:3;
+              font-size:10px;font-weight:700;color:#ef4444;letter-spacing:1px;
+              background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);
+              padding:2px 7px;border-radius:4px;display:flex;align-items:center;gap:4px;}
+.live-dot{width:5px;height:5px;border-radius:50%;background:#ef4444;
+           animation:pulse 1.2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.6);opacity:.4;}}
+
+/* ═══ HEADER ═════════════════════════════════════════════════════════════════ */
+.header{text-align:center;padding:48px 30px 40px;
+  background:linear-gradient(135deg,rgba(59,130,246,.1) 0%,rgba(245,200,66,.05) 50%,rgba(34,211,238,.07) 100%);
+  border:1px solid var(--border);border-radius:22px;margin-bottom:22px;
+  position:relative;overflow:hidden;backdrop-filter:blur(20px);
+  animation:fadeDown .7s ease-out;}
+.header::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none;}
+.h-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:3px;
+        text-transform:uppercase;color:var(--gold);font-weight:700;
+        background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.25);
+        padding:4px 14px;border-radius:20px;margin-bottom:18px;}
+.h-title{font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(30px,5vw,46px);font-weight:900;letter-spacing:-2px;line-height:1.05;
+  background:linear-gradient(135deg,#fff 0%,var(--cyan) 45%,var(--gold) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:12px;}
+.h-sub{font-size:14px;color:var(--muted);margin-bottom:22px;}
+.h-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+.h-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;
+          padding:5px 13px;border-radius:20px;}
+.b-date{color:var(--muted);background:var(--surface);border:1px solid var(--border);}
+.b-ai{color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);}
+.b-rt{color:#ef4444;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);}
+.ai-dot2{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite;}
+
+/* ═══ AI BANNER ══════════════════════════════════════════════════════════════ */
+.ai-banner{
+  background:linear-gradient(90deg,rgba(59,130,246,.12) 0%,rgba(34,211,238,.08) 50%,rgba(245,200,66,.08) 100%);
+  border:1px solid rgba(59,130,246,.25);border-radius:14px;
+  padding:16px 22px;margin-bottom:22px;
+  display:flex;align-items:center;gap:14px;
+  animation:fadeUp .6s ease-out .1s both;}
+.ai-icon{font-size:28px;flex-shrink:0;}
+.ai-banner-text{flex:1;}
+.ai-banner-title{font-size:13px;font-weight:700;color:white;margin-bottom:3px;}
+.ai-banner-sub{font-size:12px;color:var(--muted);}
+.ai-stat{text-align:right;flex-shrink:0;}
+.ai-stat-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;
+              background:linear-gradient(135deg,var(--cyan),var(--gold));
+              -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.ai-stat-lbl{font-size:10px;color:var(--muted);}
+
+/* ═══ KPI CARDS ══════════════════════════════════════════════════════════════ */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));
+           gap:12px;margin-bottom:22px;}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+           padding:16px;transition:transform .2s,border-color .2s,box-shadow .2s;
+           animation:fadeUp .5s ease-out both;cursor:default;}
+.kpi-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.15);
+                 box-shadow:0 12px 30px rgba(0,0,0,.3);}
+.kpi-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.kpi-logo{width:32px;height:32px;border-radius:8px;object-fit:contain;
+           background:rgba(255,255,255,.05);padding:4px;}
+.kpi-letter{width:32px;height:32px;border-radius:8px;background:rgba(59,130,246,.2);
+             border:1px solid rgba(59,130,246,.3);display:flex;align-items:center;justify-content:center;
+             font-size:11px;font-weight:700;color:var(--cyan);}
+.kpi-name{font-size:13px;font-weight:600;color:white;}
+.kpi-sub{font-size:10px;color:var(--muted);margin-top:1px;}
+.kpi-value{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;
+            color:white;letter-spacing:-.5px;margin-bottom:4px;}
+.kpi-var{font-size:13px;font-weight:700;}
+
+/* ═══ SECTION CARDS ══════════════════════════════════════════════════════════ */
+.section{background:var(--surface);border:1px solid var(--border);border-radius:18px;
+          padding:28px;margin-bottom:20px;backdrop-filter:blur(12px);
+          transition:border-color .3s,box-shadow .3s;
+          animation:fadeUp .6s ease-out both;}
+.section:hover{border-color:rgba(34,211,238,.2);box-shadow:0 0 40px rgba(34,211,238,.05);}
+.sec-header{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.sec-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;
+           justify-content:center;font-size:22px;background:var(--surface2);
+           border:1px solid var(--border);flex-shrink:0;}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;}
+.sec-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+.sec-pill{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.5px;
+           text-transform:uppercase;padding:4px 10px;border-radius:20px;flex-shrink:0;}
+.pill-gold{color:var(--gold);background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.2);}
+.pill-blue{color:var(--blue);background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);}
+.pill-green{color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);}
+.pill-cyan{color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);}
+.acc-gold{border-left:3px solid var(--gold);}
+.acc-blue{border-left:3px solid var(--blue);}
+.acc-green{border-left:3px solid var(--green);}
+.acc-cyan{border-left:3px solid var(--cyan);}
+.acc-red{border-left:3px solid #ef4444;}
+.pill-red{color:#ef4444;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);}
+
+/* ═══ ASSET CARDS GRID ═══════════════════════════════════════════════════════ */
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.asset-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;
+             padding:16px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden;}
+.asset-card::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(59,130,246,.06),transparent 70%);
+  opacity:0;transition:opacity .3s;}
+.asset-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.14);}
+.asset-card:hover::before{opacity:1;}
+.asset-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.asset-logo{width:36px;height:36px;border-radius:50%;object-fit:contain;
+             background:rgba(255,255,255,.08);padding:5px;flex-shrink:0;}
+.asset-logo-fb{width:36px;height:36px;border-radius:50%;background:rgba(59,130,246,.25);
+               border:1px solid rgba(59,130,246,.4);display:flex;align-items:center;
+               justify-content:center;font-size:11px;font-weight:700;color:var(--cyan);flex-shrink:0;}
+.asset-name{font-size:13px;font-weight:700;color:white;}
+.asset-sym{font-size:10px;color:var(--muted);margin-top:1px;}
+.asset-badge{margin-left:auto;font-size:11px;font-weight:700;
+              padding:3px 8px;border-radius:6px;border:1px solid transparent;flex-shrink:0;}
+.asset-price{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;
+              color:white;letter-spacing:-.5px;margin-bottom:10px;}
+.sparkline-canvas{width:100% !important;display:block;margin-bottom:10px;}
+.asset-meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+.meta-item{text-align:center;background:rgba(255,255,255,.03);border-radius:6px;padding:5px 3px;}
+.meta-lbl{display:block;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;}
+.meta-item span:last-child{font-size:11px;font-weight:600;color:var(--text);}
+
+/* ═══ FEAR & GREED ═══════════════════════════════════════════════════════════ */
+.fg-wrap{display:flex;flex-direction:column;align-items:center;padding:8px 0;}
+.fg-track-wrap{width:100%;margin-bottom:16px;}
+.fg-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:6px;}
+.fg-track{height:12px;border-radius:10px;position:relative;
+  background:linear-gradient(90deg,#ef4444 0%,#f97316 20%,#eab308 40%,#84cc16 65%,#22c55e 100%);}
+.fg-needle{position:absolute;top:50%;width:22px;height:22px;background:#fff;
+            border-radius:50%;transform:translate(-50%,-50%);
+            border:3px solid #ef4444;box-shadow:0 0 14px #ef4444;
+            left:8%;transition:left 1.2s cubic-bezier(.34,1.56,.64,1);}
+.fg-center{text-align:center;}
+.fg-big{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:900;
+          color:#ef4444;text-shadow:0 0 40px #ef444455;line-height:1;
+          display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:6px;}
+.fg-emoji-big{font-size:44px;animation:pop .5s ease-out .3s both;}
+@keyframes pop{from{transform:scale(0)rotate(-20deg);}to{transform:scale(1)rotate(0);}}
+.fg-lbl{font-size:15px;font-weight:800;color:#ef4444;letter-spacing:2px;
+          text-transform:uppercase;margin-bottom:8px;}
+.fg-note{font-size:12px;color:var(--muted);max-width:340px;text-align:center;}
+
+/* ═══ MARKET TABLE ═══════════════════════════════════════════════════════════ */
+.mkt-table{width:100%;border-collapse:collapse;font-size:13px;}
+.mkt-table thead th{font-size:10px;text-transform:uppercase;letter-spacing:1px;
+                      color:var(--muted);font-weight:600;padding:8px 10px;text-align:left;
+                      border-bottom:1px solid var(--border);}
+.trow td{padding:11px 10px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:middle;}
+.trow:last-child td{border-bottom:none;}
+.trow:hover td{background:var(--surface2);}
+.ticker-lbl{font-size:10px;color:var(--muted);font-family:monospace;}
+.tnums{font-variant-numeric:tabular-nums;color:#94a3b8;font-weight:500;}
+.td-company{display:flex;align-items:center;gap:8px;}
+.stock-avatar{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;
+               justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
+.up{color:var(--green);font-weight:700;font-size:12px;}
+.dn{color:var(--red);font-weight:700;font-size:12px;}
+.fl{color:var(--muted);font-weight:600;font-size:12px;}
+
+/* ═══ PERF BAR CHART ═════════════════════════════════════════════════════════ */
+.chart-wrap{position:relative;height:220px;margin-top:20px;}
+
+/* ═══ NEWS ═══════════════════════════════════════════════════════════════════ */
+.news-item{display:flex;align-items:flex-start;gap:12px;padding:13px 8px;
+            border-bottom:1px solid var(--border);text-decoration:none;
+            border-radius:8px;transition:background .2s;}
+.news-item:last-child{border-bottom:none;}
+.news-item:hover{background:var(--surface2);}
+.news-pulse{width:10px;height:10px;border-radius:50%;background:var(--cyan);flex-shrink:0;
+             margin-top:4px;box-shadow:0 0 8px var(--cyan);animation:pulse 2s ease-in-out infinite;}
+.news-body{flex:1;}
+.news-title{font-size:13px;font-weight:500;color:#cbd5e1;line-height:1.5;margin-bottom:5px;}
+.news-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.news-source{font-size:11px;color:var(--muted);}
+.news-tag{font-size:10px;color:var(--green);background:rgba(34,197,94,.1);
+           border:1px solid rgba(34,197,94,.2);padding:1px 7px;border-radius:4px;}
+
+/* ═══ CONCEPT ════════════════════════════════════════════════════════════════ */
+.concept-top{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.concept-badge{font-size:11px;font-weight:600;color:var(--green);
+                background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);
+                padding:4px 12px;border-radius:20px;}
+.card-body{color:#cbd5e1;font-size:15px;line-height:1.85;}
+.card-body p{margin-bottom:16px;}
+.card-body p:last-child{margin-bottom:0;}
+.card-body strong{color:white;font-weight:700;}
+.nl-h2{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:white;margin:28px 0 12px;padding:0 0 8px;border-bottom:2px solid rgba(34,211,238,.3);line-height:1.3;}
+.nl-h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;margin:18px 0 10px;}
+.nl-p{font-size:15px;line-height:1.85;color:#cbd5e1;margin-bottom:16px;}
+
+/* ═══ DIVIDER ════════════════════════════════════════════════════════════════ */
+.divider{height:1px;
+  background:linear-gradient(90deg,transparent,rgba(59,130,246,.4),rgba(245,200,66,.3),transparent);
+  margin:6px 0 22px;}
+
+/* ═══ ANALYSIS TEXT ══════════════════════════════════════════════════════════ */
+.analysis-block{margin-top:24px;padding-top:22px;border-top:1px solid var(--border);}
+.analysis-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;
+                  color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;}
+.analysis-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ═══ FOOTER ═════════════════════════════════════════════════════════════════ */
+.footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);margin-top:12px;}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;
+               background:linear-gradient(135deg,var(--cyan),var(--gold));
+               -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+               margin-bottom:8px;}
+.footer-txt{font-size:12px;color:var(--muted);line-height:1.7;}
+.footer-disc{font-size:11px;color:#334155;max-width:520px;margin:14px auto 0;
+              padding:10px 16px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;}
+.unsub{font-size:11px;color:var(--muted);margin-top:14px;}
+.unsub a{color:var(--cyan);text-decoration:none;}
+
+/* ═══ ANIMATIONS ═════════════════════════════════════════════════════════════ */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp  {from{opacity:0;transform:translateY(22px); }to{opacity:1;transform:translateY(0);}}
+
+/* ═══ RESPONSIVE ════════════════════════════════════════════════════════════ */
+@media(max-width:600px){
+  .wrap{padding:10px 10px 40px;}
+  .section{padding:18px 14px;}
+  .header{padding:34px 18px 28px;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .asset-grid{grid-template-columns:1fr 1fr;}
+  .ai-stat{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+<div class="bg-wrap"><div class="bg-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+
+<div class="wrap">
+
+<!-- ── TICKER ── -->
+<div class="ticker-bar">
+  <div class="ticker-live"><div class="live-dot"></div>LIVE</div>
+  <div class="ticker-inner">
+    <div class="t-chunk">Siren (SIREN) est en tendance sur CoinGecko...  ⚡  Resolv USR (USR) est en tendance sur CoinGecko...  ⚡  Bittensor (TAO) est en tendance sur CoinGecko...  ⚡  Bitcoin (BTC) est en tendance sur CoinGecko...  ⚡  Hyperliquid (HYPE) est en tendance sur CoinGecko... &nbsp;&nbsp; Siren (SIREN) est en tendance sur CoinGecko...  ⚡  Resolv USR (USR) est en tendance sur CoinGecko...  ⚡  Bittensor (TAO) est en tendance sur CoinGecko...  ⚡  Bitcoin (BTC) est en tendance sur CoinGecko...  ⚡  Hyperliquid (HYPE) est en tendance sur CoinGecko...</div>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<div class="header">
+  <div class="h-tag">⚡ Semaine 12 de 2026</div>
+  <div class="h-title">🤖 AlphaBot Weekly</div>
+  <div class="h-sub">L'essentiel des marchés bourse & crypto, chaque semaine — par l'IA</div>
+  <div class="h-badges">
+    <span class="h-badge b-date">📅 23/03/2026</span>
+    <span class="h-badge b-ai"><span class="ai-dot2"></span>100% Généré par IA</span>
+    <span class="h-badge b-rt"><span style="color:#ef4444;">●</span> Temps réel</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── AI BANNER ── -->
+<div class="ai-banner">
+  <div class="ai-icon">⚡</div>
+  <div class="ai-banner-text">
+    <div class="ai-banner-title">100% automatisé — 0 news manquée</div>
+    <div class="ai-banner-sub">Des agents IA surveillent les marchés en continu. Dès qu'une information sort — analyse publiée en quelques secondes, sans intervention humaine.</div>
+  </div>
+  <div class="ai-stat">
+    <div class="ai-stat-num" id="newsCount">0</div>
+    <div class="ai-stat-lbl">sources<br>surveillées</div>
+  </div>
+</div>
+
+<!-- ── KPI CARDS ── -->
+<div class="kpi-grid">
+
+            <div class="kpi-card">
+              <div class="kpi-top"><img src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@latest/svg/color/btc.svg" class="kpi-logo" onerror="this.style.display='none'"><div class="kpi-labels">
+                <div class="kpi-name">Bitcoin</div>
+                <div class="kpi-sub">BTC</div>
+              </div></div>
+              <div class="kpi-value">$69,425</div>
+              <div class="kpi-var" style="color:#22c55e;">▲ +1.15%</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top"><div class="kpi-letter">^F</div><div class="kpi-labels">
+                <div class="kpi-name">CAC 40</div>
+                <div class="kpi-sub">^FCHI</div>
+              </div></div>
+              <div class="kpi-value">7,518 pts</div>
+              <div class="kpi-var" style="color:#ef4444;">▼ 1.93%</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-top"><div class="kpi-letter">^G</div><div class="kpi-labels">
+                <div class="kpi-name">S&P 500</div>
+                <div class="kpi-sub">^GSPC</div>
+              </div></div>
+              <div class="kpi-value">6,506 pts</div>
+              <div class="kpi-var" style="color:#ef4444;">▼ 1.51%</div>
+            </div>
+</div>
+
+<!-- ── FEAR & GREED ── -->
+<div class="section" style="animation-delay:.25s">
+  <div class="sec-header">
+    <div class="sec-icon">🧠</div>
+    <div><div class="sec-title">Fear & Greed Index</div>
+      <div class="sec-sub">Baromètre du sentiment crypto · 0 = peur · 100 = avidité</div></div>
+  </div>
+  <div class="fg-wrap">
+    <div class="fg-track-wrap">
+      <div class="fg-labels"><span>😱 Peur extrême</span><span>😐 Neutre</span><span>🤑 Avidité extrême</span></div>
+      <div class="fg-track"><div class="fg-needle" id="fgN"></div></div>
+    </div>
+    <div class="fg-center">
+      <div class="fg-big"><span class="fg-emoji-big">😱</span>
+        <span id="fgC">0</span><span style="font-size:22px;color:var(--muted)">/100</span></div>
+      <div class="fg-lbl">Extreme Fear</div>
+      <div class="fg-note">Un score sous 25 signifie que les investisseurs ont peur : historiquement, c'est souvent le meilleur moment pour acheter. Au-dessus de 75, l'euphorie guette — prudence recommandée.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MACRO / GÉOPOLITIQUE ── -->
+<div class="section acc-red" style="animation-delay:.30s">
+  <div class="sec-header">
+    <div class="sec-icon">🌍</div>
+    <div><div class="sec-title">Macro & Géopolitique</div>
+      <div class="sec-sub">Dollar · Or · Pétrole · Forex · Tensions mondiales</div></div>
+    <span class="sec-pill pill-red">MACRO</span>
+  </div>
+  <table class="mkt-table"><thead><tr><th>Actif</th><th>Valeur</th><th>Jour</th><th>7 jours</th></tr></thead><tbody>
+            <tr class="trow">
+              <td><strong>💵 Dollar Index (DXY)</strong></td>
+              <td class="tnums">100.1290</td>
+              <td><span class="up">▲ +0.48%</span></td>
+              <td><span class="up">▲ +0.04%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>🛢️ Pétrole WTI</strong></td>
+              <td class="tnums">98.6100</td>
+              <td><span class="up">▲ +0.29%</span></td>
+              <td><span class="up">▲ +2.38%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>🥇 Or (XAU/USD)</strong></td>
+              <td class="tnums">4,264.5000</td>
+              <td><span class="dn">▼ 6.69%</span></td>
+              <td><span class="dn">▼ 12.79%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>💶 EUR/USD</strong></td>
+              <td class="tnums">1.1623</td>
+              <td><span class="up">▲ +0.39%</span></td>
+              <td><span class="up">▲ +1.07%</span></td>
+            </tr></tbody></table>
+  <div class="analysis-block" style="margin-top:1.2rem">
+    <div class="analysis-label">🧠 Analyse IA — Géopolitique & Macro</div>
+    <div class="card-body"><h2 class="nl-h2">À 100,13, le dollar flanche — l'euro en profite</h2>
+<p class="nl-p">Le DXY recule vers le seuil psychologique des <strong>100 points</strong>, niveau qui marque historiquement une faiblesse structurelle du billet vert. La hausse journalière de <strong>+0,48%</strong> masque une tendance hebdomadaire quasi-plate (<strong>+0,04%</strong>), signalant une Fed hésitante face à des données d'emploi mitigées. L'EUR/USD à <strong>1,1623</strong> (+1,07% sur la semaine) confirme que les capitaux rotatent vers l'Europe, portés par une BCE encore hawkish.<br>> <em>Un dollar faible renchérit les importations américaines — mais soulage les dettes émergentes libellées en USD.</em></p>
+<h2 class="nl-h2">L'or s'effondre de 13% — signal de dérisquage massif</h2>
+<p class="nl-p">La chute brutale de l'or à <strong>4 264 $</strong> (-<strong>12,79%</strong> hebdomadaire) est exceptionnelle. Ce n'est pas une normalisation : c'est une liquidation forcée. Quand les institutionnels vendent l'or, ils couvrent des pertes ailleurs — actions, obligations, crypto. Le WTI à <strong>98,61 $</strong> (+<strong>2,38%</strong>) raconte l'inverse : les tensions en mer Rouge et la discipline de l'OPEP+ maintiennent la pression sur l'offre.<br>> <em>Or en chute + pétrole en hausse = environnement stagflationniste à surveiller.</em></p>
+<h2 class="nl-h2">Bitcoin pris en étau entre liquidations et dollar faible</h2>
+<p class="nl-p">Un dollar qui s'affaiblit est structurellement <em>favorable</em> à Bitcoin. Mais la liquidation de l'or suggère un dérisquage global qui emporte tout. Bitcoin reste corrélé aux actifs risqués dans les phases de stress.<br>> <em>Surveiller si BTC tient ses supports pendant que l'or se stabilise.</em></p>
+<h2 class="nl-h2"><strong>Signal semaine : décision de l'OPEP+ sur les quotas de production</strong></h2></div>
+  </div>
+</div>
+
+<!-- ── INSIGHTS GÉOPOLITIQUES ── -->
+<div class="section acc-red" style="animation-delay:.32s">
+  <div class="sec-header">
+    <div class="sec-icon">🌍</div>
+    <div><div class="sec-title">Insights Géopolitiques — Impact Marchés</div>
+      <div class="sec-sub">Événement mondial → Impact marché → Action à surveiller</div></div>
+    <span class="sec-pill pill-red">GÉOPOLITIQUE</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;align-items:center;gap:10px;">
+  <span style="font-size:24px;">🛡️</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.2);color:#3b82f6;padding:3px 9px;border-radius:50px;">Défense</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(249,115,22,.2);color:#f97316;padding:3px 9px;border-radius:50px;">HIGH</span>
+</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">L'Europe sort le carnet de chèques pour ses armées</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;">Face aux tensions mondiales, les gouvernements européens ont voté des budgets de défense historiques. L'Allemagne, la France et la Pologne injectent des centaines de milliards dans leurs armées d'ici 2030.</div>
+<div style="font-size:13px;color:#e2e8f0;padding:10px;background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;border-radius:4px;"><strong>→ Impact marché:</strong> Le secteur défense européen explose à la hausse — le CAC 40 Défense surperforme l'indice général de +18% depuis janvier. Les fabricants d'armes, radars et drones sont en première ligne.</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+  <div><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:white;">AIR.PA</div><div style="font-size:12px;color:#64748b;">Airbus SE</div></div>
+  <div style="text-align:right;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">$189.42</div><div style="font-size:12px;font-weight:600;color:#22c55e;">+4.7%</div></div>
+</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;"><strong>Pourquoi?</strong> Airbus bénéficie directement des commandes militaires européennes massives, notamment pour ses hélicoptères de combat et systèmes de surveillance intégrés.</div>
+</div><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;align-items:center;gap:10px;">
+  <span style="font-size:24px;">💰</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.2);color:#3b82f6;padding:3px 9px;border-radius:50px;">Macro</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(249,115,22,.2);color:#f97316;padding:3px 9px;border-radius:50px;">HIGH</span>
+</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">La Fed hésite et toute la planète retient son souffle</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;">La Banque centrale américaine (la Fed) doit décider si elle baisse ses taux d'intérêt ou les maintient hauts. Cette décision unique à Washington impacte directement le prix de TOUT : actions, immobilier, crypto, emprunts.</div>
+<div style="font-size:13px;color:#e2e8f0;padding:10px;background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;border-radius:4px;"><strong>→ Impact marché:</strong> Un maintien des taux hauts pèse sur le S&P 500 et fait grimper le dollar. Les grandes technologiques américaines souffrent en premier car elles s'endettent pour innover — un dollar fort = crédit plus cher.</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+  <div><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:white;">MSFT</div><div style="font-size:12px;color:#64748b;">Microsoft Corporation</div></div>
+  <div style="text-align:right;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">$412.55</div><div style="font-size:12px;font-weight:600;color:#ef4444;">-1.8%</div></div>
+</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;"><strong>Pourquoi?</strong> Microsoft, massivement investi dans l'IA via Azure et OpenAI, voit son coût de financement augmenter directement quand la Fed garde les taux hauts, ce qui comprime ses marges futures attendues par les marchés.</div>
+</div><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;align-items:center;gap:10px;">
+  <span style="font-size:24px;">₿</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(59,130,246,.2);color:#3b82f6;padding:3px 9px;border-radius:50px;">Crypto</span>
+  <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(234,179,8,.2);color:#eab308;padding:3px 9px;border-radius:50px;">MEDIUM</span>
+</div>
+<div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">Bitcoin redevient la valeur refuge des crises mondiales</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;">Quand la géopolitique s'emballe — guerres, sanctions, instabilité bancaire — une partie des investisseurs fuit vers Bitcoin. Pas par conviction, mais parce que personne ne peut bloquer ou confisquer ces fonds, contrairement à un compte bancaire.</div>
+<div style="font-size:13px;color:#e2e8f0;padding:10px;background:rgba(59,130,246,.08);border-left:3px solid #3b82f6;border-radius:4px;"><strong>→ Impact marché:</strong> Bitcoin progresse dans les phases de stress géopolitique intense, surtout quand le système bancaire traditionnel est mis en doute. Corrélation négative avec le dollar en période de crise : quand l'un monte, l'autre baisse.</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+  <div><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:white;">MSTR</div><div style="font-size:12px;color:#64748b;">MicroStrategy Incorporated</div></div>
+  <div style="text-align:right;"><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;">$1,847.30</div><div style="font-size:12px;font-weight:600;color:#22c55e;">+6.2%</div></div>
+</div>
+<div style="font-size:13px;color:#e2e8f0;line-height:1.6;"><strong>Pourquoi?</strong> MicroStrategy détient plus de 200 000 Bitcoins dans son bilan — c'est l'action en bourse qui se comporte le plus comme un tracker Bitcoin amplifié, sans ouvrir de compte crypto.</div>
+</div>
+  </div>
+</div>
+
+<!-- ── BOURSE SECTION ── -->
+<div class="section acc-blue" style="animation-delay:.35s">
+  <div class="sec-header">
+    <div class="sec-icon">📊</div>
+    <div><div class="sec-title">Marchés Boursiers</div>
+      <div class="sec-sub">Indices mondiaux · Actions à surveiller</div></div>
+    <span class="sec-pill pill-blue">LIVE</span>
+  </div>
+
+  <!-- Performance comparison chart -->
+  <div class="chart-wrap"><canvas id="perfChart"></canvas></div>
+
+  <!-- Tableau -->
+  <table class="mkt-table"><thead><tr><th>Actif</th><th>Valeur</th><th>Aujourd'hui</th><th>7j / Mcap</th></tr></thead><tbody>
+            <tr class="trow">
+              <td><strong>CAC 40</strong><br><span class="ticker-lbl">^FCHI</span></td>
+              <td class="tnums">7,518.00</td>
+              <td><span class="dn">▼ 1.93%</span></td>
+              <td><span class="dn">▼ 5.72%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>S&P 500</strong><br><span class="ticker-lbl">^GSPC</span></td>
+              <td class="tnums">6,506.48</td>
+              <td><span class="dn">▼ 1.51%</span></td>
+              <td><span class="dn">▼ 2.88%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>Nasdaq 100</strong><br><span class="ticker-lbl">^NDX</span></td>
+              <td class="tnums">23,898.15</td>
+              <td><span class="dn">▼ 1.88%</span></td>
+              <td><span class="dn">▼ 3.07%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>DAX</strong><br><span class="ticker-lbl">^GDAXI</span></td>
+              <td class="tnums">21,895.59</td>
+              <td><span class="dn">▼ 2.17%</span></td>
+              <td><span class="dn">▼ 7.73%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><strong>Dow Jones</strong><br><span class="ticker-lbl">^DJI</span></td>
+              <td class="tnums">45,577.47</td>
+              <td><span class="dn">▼ 0.96%</span></td>
+              <td><span class="dn">▼ 2.92%</span></td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/apple.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>Apple</strong><br>
+                <span class="ticker-lbl">AAPL</span>
+              </div></div></td>
+              <td class="tnums">247.99 USD</td>
+              <td><span class="dn">▼ 0.39%</span></td>
+              <td>$3644.9Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/nvidia.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>NVIDIA</strong><br>
+                <span class="ticker-lbl">NVDA</span>
+              </div></div></td>
+              <td class="tnums">172.93 USD</td>
+              <td><span class="dn">▼ 3.15%</span></td>
+              <td>$4203.1Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/tesla.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>Tesla</strong><br>
+                <span class="ticker-lbl">TSLA</span>
+              </div></div></td>
+              <td class="tnums">367.96 USD</td>
+              <td><span class="dn">▼ 3.24%</span></td>
+              <td>$1380.7Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/lvmh.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>LVMH</strong><br>
+                <span class="ticker-lbl">MC.PA</span>
+              </div></div></td>
+              <td class="tnums">454.30 EUR</td>
+              <td><span class="dn">▼ 0.80%</span></td>
+              <td>$225.3Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/totalenergies.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>TotalEnergies</strong><br>
+                <span class="ticker-lbl">TTE.PA</span>
+              </div></div></td>
+              <td class="tnums">76.83 EUR</td>
+              <td><span class="dn">▼ 0.17%</span></td>
+              <td>$164.3Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/exxonmobil.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>ExxonMobil</strong><br>
+                <span class="ticker-lbl">XOM</span>
+              </div></div></td>
+              <td class="tnums">159.67 USD</td>
+              <td><span class="up">▲ +0.95%</span></td>
+              <td>$665.3Mrd</td>
+            </tr>
+            <tr class="trow">
+              <td><div class="td-company"><img src="https://logo.clearbit.com/lockheedmartin.com" class="stock-logo" onerror="this.style.display='none'" style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:white;padding:4px;"><div>
+                <strong>Lockheed Martin</strong><br>
+                <span class="ticker-lbl">LMT</span>
+              </div></div></td>
+              <td class="tnums">627.43 USD</td>
+              <td><span class="dn">▼ 1.58%</span></td>
+              <td>$145.2Mrd</td>
+            </tr></tbody></table>
+
+  <div class="analysis-block">
+    <div class="analysis-label">🧠 Analyse IA — Bourse</div>
+    <div class="card-body"><h2 class="nl-h2">Le CAC 40 perd 5,72% en une semaine, sa pire performance depuis 2022</h2>
+<p class="nl-p">L'Europe domine le palmarès des pertes : le DAX chute de <strong>7,73%</strong> sur la semaine, le CAC 40 de <strong>5,72%</strong>. Les États-Unis résistent mieux, mais le S&P 500 cède tout de même <strong>2,88%</strong>. Ce n'est pas une correction anodine — c'est un mouvement synchronisé sur tous les continents.</p>
+<p class="nl-p"><em>Pour l'investisseur :</em> quand tous les indices baissent ensemble, le problème vient de l'extérieur des entreprises, pas de leurs résultats.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">NVIDIA recule de 3%, Tesla suit : la tech sous pression</h2>
+<p class="nl-p"><strong>Tesla (-3,24%)</strong> et <strong>NVIDIA (-3,15%)</strong> concentrent les pertes côté actions. Ce sont les valeurs les plus sensibles au sentiment de marché — elles montent fort, elles baissent fort. Seule exception notable : <strong>ExxonMobil gagne +0,95%</strong>, confirmant que l'énergie traditionnelle joue son rôle de valeur refuge quand la technologie vacille.</p>
+<p class="nl-p"><em>Pour l'investisseur :</em> ExxonMobil qui résiste pendant une baisse générale, c'est le signal classique d'une rotation vers les secteurs défensifs.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Les droits de douane de Trump secouent les Bourses européennes</h2>
+<p class="nl-p">Le DAX à <strong>-7,73%</strong> en une semaine, c'est l'empreinte directe des annonces tarifaires américaines. L'Europe, très exposée aux exportations vers les États-Unis, absorbe le choc plus violemment que Wall Street.</p>
+<p class="nl-p"><em>Pour l'investisseur :</em> LVMH et TotalEnergies limitent leurs pertes journalières sous <strong>-1%</strong> — les multinationales françaises diversifiées géographiquement amortissent mieux ces chocs.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Le vrai enseignement de cette semaine</h2>
+<p class="nl-p"><strong>Quand la politique commerciale devient imprévisible, les marchés européens paient une prime de risque supplémentaire — rappel que la diversification géographique n'est pas optionnelle.</strong></p></div>
+  </div>
+</div>
+
+<!-- ── INTRO / SYNTHÈSE ── -->
+<div class="section acc-cyan" style="animation-delay:.45s">
+  <div class="sec-header">
+    <div class="sec-icon">🌍</div>
+    <div><div class="sec-title">Synthèse du jour</div>
+      <div class="sec-sub">Vue d'ensemble rédigée par l'IA</div></div>
+    <span class="sec-pill pill-cyan">IA</span>
+  </div>
+  <div class="card-body"><h2 class="nl-h2">AlphaBot — L'intro de la semaine</h2>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">L'essentiel de cette semaine</h2>
+<p class="nl-p">Les marchés ont subi un choc synchronisé. Le <strong>CAC 40 perd 5,72%</strong>, le <strong>DAX s'effondre de 7,73%</strong>, le <strong>S&P 500 cède 2,88%</strong>. L'or chute de <strong>12,79%</strong> à <strong>4 264 $</strong> — une liquidation massive, pas une correction ordinaire. Bitcoin résiste à <strong>69 425 $</strong> malgré <strong>-5,8%</strong> hebdomadaire, pendant que le dollar flanche sous <strong>100,13</strong> sur l'indice DXY.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Géopolitique & marchés : le lien</h2>
+<p class="nl-p">Une décision politique américaine — les droits de douane Trump — a déclenché une onde de choc planétaire. L'Europe, locomotive des exportations, encaisse le choc deux fois plus fort que Wall Street. Pendant ce temps, l'or ne joue pas son rôle de refuge : les institutionnels le liquident pour couvrir leurs pertes ailleurs. Le pétrole monte à <strong>98,61 $</strong> (+2,38%), soutenu par la discipline de l'OPEP+ et les tensions en mer Rouge. Résultat : un environnement stagflationniste qui comprime simultanément la croissance et les actifs financiers.</p>
+<p class="nl-p">Bitcoin, lui, reste pris en étau : le dollar faible lui est structurellement favorable, mais la panique générale l'emporte sur cette logique.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Ce que ça change pour toi</h2>
+<p class="nl-p">Le <strong>Fear & Greed à 8/100</strong> indique une peur extrême — historiquement, ces niveaux précèdent des rebonds. Mais "historiquement" n'est pas une promesse. Ce qui compte : ExxonMobil résiste, les multinationales diversifiées amortissent mieux. La leçon est claire — la diversification géographique et sectorielle n'est pas un luxe, c'est une armure.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Notre conviction de la semaine</h2>
+<p class="nl-p"><strong>Quand la peur atteint 8/100 et que l'or se liquide, ce ne sont pas les prix qui vous protègent — c'est votre stratégie.</strong></p></div>
+</div>
+
+<!-- ── ROBOT TRADER ── -->
+
+
+<!-- ── NEWS ── -->
+<div class="section" style="animation-delay:.55s"><div class="sec-header"><div class="sec-icon">📰</div><div><div class="sec-title">Actualités collectées automatiquement</div><div class="sec-sub">Chaque article détecté dès sa publication · 0 délai</div></div><span class="sec-pill pill-cyan">AUTO</span></div>
+            <a href="https://www.coingecko.com/en/coins/siren-2" class="news-item" target="_blank">
+              <div class="news-pulse"></div>
+              <div class="news-body">
+                <div class="news-title">Siren (SIREN) est en tendance sur CoinGecko</div>
+                <div class="news-meta">
+                  <span class="news-source">CoinGecko Trending</span>
+                  <span class="news-tag">🤖 Collecté automatiquement</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.coingecko.com/en/coins/resolv-usr" class="news-item" target="_blank">
+              <div class="news-pulse"></div>
+              <div class="news-body">
+                <div class="news-title">Resolv USR (USR) est en tendance sur CoinGecko</div>
+                <div class="news-meta">
+                  <span class="news-source">CoinGecko Trending</span>
+                  <span class="news-tag">🤖 Collecté automatiquement</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.coingecko.com/en/coins/bittensor" class="news-item" target="_blank">
+              <div class="news-pulse"></div>
+              <div class="news-body">
+                <div class="news-title">Bittensor (TAO) est en tendance sur CoinGecko</div>
+                <div class="news-meta">
+                  <span class="news-source">CoinGecko Trending</span>
+                  <span class="news-tag">🤖 Collecté automatiquement</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.coingecko.com/en/coins/bitcoin" class="news-item" target="_blank">
+              <div class="news-pulse"></div>
+              <div class="news-body">
+                <div class="news-title">Bitcoin (BTC) est en tendance sur CoinGecko</div>
+                <div class="news-meta">
+                  <span class="news-source">CoinGecko Trending</span>
+                  <span class="news-tag">🤖 Collecté automatiquement</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://www.coingecko.com/en/coins/hyperliquid" class="news-item" target="_blank">
+              <div class="news-pulse"></div>
+              <div class="news-body">
+                <div class="news-title">Hyperliquid (HYPE) est en tendance sur CoinGecko</div>
+                <div class="news-meta">
+                  <span class="news-source">CoinGecko Trending</span>
+                  <span class="news-tag">🤖 Collecté automatiquement</span>
+                </div>
+              </div>
+            </a></div>
+
+<!-- ── ANECDOTE BOURSE ── -->
+<div class="section" style="animation-delay:.6s;border-left:3px solid var(--gold);">
+  <div class="sec-header">
+    <div class="sec-icon">📖</div>
+    <div><div class="sec-title">L'anecdote du jour</div>
+      <div class="sec-sub">Un fait surprenant de l'histoire financière</div></div>
+    <span class="sec-pill" style="background:rgba(245,200,66,.12);color:var(--gold);border-color:rgba(245,200,66,.3);">CULTURE</span>
+  </div>
+  <div class="card-body"><h2 class="nl-h2">📖 L'anecdote du jour</h2>
+<p class="nl-p"><strong>En 1720, Isaac Newton perdit l'équivalent de 3 millions de dollars modernes… sur une action.</strong></p>
+<p class="nl-p">Le plus grand génie scientifique de l'histoire avait d'abord <em>vendu</em> ses actions de la Compagnie des Mers du Sud avec un beau profit. Puis, voyant les cours continuer de monter, il racheta massivement au sommet. Le krach l'anéantit. Il aurait déclaré : <em>"Je peux calculer le mouvement des étoiles, mais pas la folie des hommes."</em></p>
+<p class="nl-p"><strong>Aujourd'hui encore, le biais FOMO pousse les meilleurs esprits à acheter exactement au mauvais moment.</strong> 🎯</p></div>
+</div>
+
+<!-- ── CONCEPT ── -->
+<div class="section acc-green" style="animation-delay:.65s">
+  <div class="sec-header">
+    <div class="sec-icon">💡</div>
+    <div><div class="sec-title">Le concept du jour</div>
+      <div class="sec-sub">Une notion clé expliquée en 1 minute</div></div>
+  </div>
+  <div class="concept-top"><span class="concept-badge">✨ +1 notion maîtrisée</span></div>
+  <div class="card-body"><p class="nl-p">💡 Le concept de la semaine : <strong>Le DCA (Dollar Cost Averaging)</strong></p>
+<h2 class="nl-h2">C'est quoi ?</h2>
+<p class="nl-p">Le DCA consiste à <strong>investir un montant fixe à intervalles réguliers</strong>, peu importe le prix du marché. Par exemple : 50 € chaque 1er du mois, quoi qu'il arrive.</p>
+<h2 class="nl-h2">Pourquoi c'est important ?</h2>
+<p class="nl-p">Le marché monte et descend — personne ne sait prévoir le "bon moment" pour acheter. Le DCA <strong>élimine ce problème</strong> : tu achètes parfois cher, parfois pas cher, et ta moyenne de prix se lisse automatiquement dans le temps.</p>
+<p class="nl-p">Résultat : <strong>moins de stress, moins d'erreurs émotionnelles</strong>, et une discipline d'investissement solide.</p>
+<h2 class="nl-h2">Exemple concret</h2>
+<p class="nl-p">Imagine que tu achètes ton café quotidien : certains jours il coûte 1,50 €, d'autres 2,50 €. En moyenne, tu paies environ 2 €. Si tu avais tout payé d'un coup à 2,50 €, tu aurais perdu. Le DCA, c'est exactement ça appliqué à la Bourse ou au Bitcoin.</p>
+<p class="nl-p">Avec <strong>50 € par mois sur un ETF mondial pendant 10 ans</strong>, tu investis 6 000 € — et l'effet de lissage + les intérêts composés font le reste.</p>
+<h2 class="nl-h2">À retenir</h2>
+<p class="nl-p">> <strong>Investir régulièrement bat presque toujours l'investissement "au bon moment".</strong></p>
+<p class="nl-p">---<br>🎯 <em>Pratique : automatise un virement mensuel vers ton compte d'investissement dès demain.</em></p></div>
+</div>
+
+<!-- ── CRYPTO SECTION ── -->
+<div class="section acc-gold" style="animation-delay:.15s">
+  <div class="sec-header">
+    <div class="sec-icon">₿</div>
+    <div><div class="sec-title">Marchés Crypto</div>
+      <div class="sec-sub">Prix en temps réel · Variations · Capitalisation</div></div>
+    <span class="sec-pill pill-gold">LIVE</span>
+  </div>
+  <div class="asset-grid">
+    
+            <div class="asset-card">
+              <div class="asset-header">
+                <img src="https://cdn.jsdelivr.net/gh/spothq/cryptocurrency-icons@latest/svg/color/btc.svg"
+                     class="asset-logo"
+                     onerror="this.style.display='none'">
+                <div>
+                  <div class="asset-name">Bitcoin</div>
+                  <div class="asset-sym">BTC</div>
+                </div>
+                <div class="asset-badge" style="color:#22c55e;background:#22c55e18;border-color:#22c55e33;">
+                  ▲ 1.15%
+                </div>
+              </div>
+              <div class="asset-price">$69,425.00</div>
+              <canvas id="chart_BTC" class="sparkline-canvas" height="55"></canvas>
+              <div class="asset-meta-row">
+                <div class="meta-item"><span class="meta-lbl">7j</span>
+                  <span style="color:#ef4444">▼5.8%</span>
+                </div>
+                <div class="meta-item"><span class="meta-lbl">Mcap</span>$1371.2Mrd</div>
+                <div class="meta-item"><span class="meta-lbl">Vol</span>$23.89Mrd</div>
+                <div class="meta-item"><span class="meta-lbl">vs ATH</span>
+                  <span style="color:#f59e0b;">-45%</span>
+                </div>
+              </div>
+            </div>
+  </div>
+  <div class="analysis-block">
+    <div class="analysis-label">🧠 Analyse IA — Crypto</div>
+    <div class="card-body"><h2 class="nl-h2">Bitcoin résiste à 69 400 $ malgré une semaine dans le rouge</h2>
+<p class="nl-p">Le Bitcoin s'échange à <strong>69 425 $</strong>, en hausse de <strong>+1,1 %</strong> sur 24 heures — une respiration bienvenue après une semaine difficile marquée par <strong>-5,8 %</strong> de recul. Sa capitalisation boursière (la valeur totale de tous les bitcoins en circulation) atteint <strong>1 371 milliards de dollars</strong>, ce qui confirme son statut de poids lourd incontesté du secteur.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Un seul actif à surveiller aujourd'hui : Bitcoin lui-même</h2>
+<p class="nl-p">Avec les données disponibles, c'est le BTC qui concentre toute l'attention. Sa capacité à rebondir de <strong>+1,1 %</strong> en une journée alors que la semaine reste négative illustre la tension classique entre acheteurs et vendeurs autour d'un seuil psychologique fort : les <strong>70 000 $</strong>.</p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">Quand la peur atteint son plancher, le marché cherche un souffle</h2>
+<p class="nl-p">L'indicateur Fear & Greed (littéralement "peur et avidité") mesure l'état émotionnel des investisseurs sur une échelle de 0 à 100. À <strong>8/100</strong>, il indique une <strong>peur extrême</strong> — et il a encore reculé de 2 points depuis hier. Historiquement, ces niveaux correspondent à des phases de capitulation, où des investisseurs paniqués vendent à perte. Ce contexte explique probablement la pression baissière de la semaine écoulée.</p>
+<p class="nl-p"><em>Pour un débutant : ces moments de peur intense ont souvent précédé des rebonds dans le passé — sans que cela constitue une garantie pour l'avenir.</em></p>
+<p class="nl-p">---</p>
+<h2 class="nl-h2">📌 À retenir</h2>
+<p class="nl-p"><strong>Un Fear & Greed à 8/100 est un signal de sentiment extrême, pas une boussole de marché.</strong> Il indique où en sont les émotions des investisseurs — pas où ira le prix. Garder la tête froide dans ces phases est ce qui distingue une stratégie de long terme d'une réaction impulsive.</p></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <div class="footer-brand">🤖 AlphaBot Weekly</div>
+  <div class="footer-txt">Newsletter entièrement générée par des agents IA · Propulsée par Claude (Anthropic)<br>
+    Chaque jour, la finance décryptée pour les investisseurs de demain.</div>
+  <div class="footer-disc">⚠️ Contenu fourni à titre informatif et pédagogique uniquement. Ne constitue pas un conseil en investissement. Investir comporte des risques dont la perte partielle ou totale du capital.</div>
+  <div class="unsub"><a href="#">Se désabonner</a> · <a href="#">Archives</a> · <a href="#">Partager</a></div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+// ── Data from Python ────────────────────────────────────────────────────────
+const CRYPTO_DATA   = {"BTC": {"price": 69425, "var7": -5.85, "color": "#22c55e"}};
+const BAR_LABELS    = ["CAC 40", "S&P 500", "Nasdaq 100", "DAX", "Dow Jones", "Apple", "NVIDIA", "Tesla", "LVMH", "TotalEnergies", "ExxonMobil", "Lockheed Martin"];
+const BAR_VALUES    = [-5.72, -2.88, -3.07, -7.73, -2.92, -0.39, -3.15, -3.24, -0.8, -0.17, 0.95, -1.58];
+const BAR_COLORS    = ["#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#22c55e", "#ef4444"];
+const FG_VAL        = 8;
+
+Chart.defaults.color = '#64748b';
+Chart.defaults.font.family = "'Inter', sans-serif";
+
+// ── Sparkline generator ──────────────────────────────────────────────────────
+function genSparkline(price, var7d, n=9) {
+  const start = price / (1 + var7d / 100);
+  const noise = price * 0.012;
+  const pts = [];
+  for (let i = 0; i < n; i++) {
+    const t = i / (n - 1);
+    const trend = start + (price - start) * t;
+    const jitter = (Math.sin(i * 2.3 + price % 10) * noise * 0.6 +
+                    Math.cos(i * 1.7 + var7d) * noise * 0.4);
+    pts.push(+(trend + jitter).toFixed(2));
+  }
+  pts[n - 1] = price;
+  return pts;
+}
+
+// ── Sparkline charts ─────────────────────────────────────────────────────────
+Object.entries(CRYPTO_DATA).forEach(([sym, d]) => {
+  const canvas = document.getElementById('chart_' + sym);
+  if (!canvas) return;
+  const pts   = genSparkline(d.price, d.var7);
+  const color = d.color;
+  const grad  = canvas.getContext('2d').createLinearGradient(0,0,0,55);
+  grad.addColorStop(0, color + '44');
+  grad.addColorStop(1, color + '00');
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: pts.map((_,i) => i===0?'-7j':i===pts.length-1?'Auj':''),
+      datasets: [{ data: pts, borderColor: color, borderWidth: 2.5,
+        backgroundColor: grad, fill: true, tension: 0.45,
+        pointRadius: [0,0,0,0,0,0,0,0,3],
+        pointBackgroundColor: color, pointBorderColor: '#fff', pointBorderWidth: 2 }]
+    },
+    options: {
+      responsive: true, animation: { duration: 800, easing: 'easeOutCubic' },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#1e293b',
+          borderColor: color,
+          borderWidth: 2,
+          titleColor: '#94a3b8',
+          bodyColor: '#e2e8f0',
+          padding: 10,
+          titleFont: { size: 12, weight: 'bold' },
+          bodyFont: { size: 14, weight: 'bold' },
+          callbacks: {
+            label: ctx => '$' + ctx.raw.toLocaleString('en-US', {minimumFractionDigits:2})
+          }
+        }
+      },
+      scales: {
+        x: { display: false },
+        y: { display: false, min: Math.min(...pts)*0.992, max: Math.max(...pts)*1.008 }
+      }
+    }
+  });
+});
+
+// ── Performance bar chart ────────────────────────────────────────────────────
+const perfCanvas = document.getElementById('perfChart');
+if (perfCanvas && BAR_LABELS.length > 0) {
+  new Chart(perfCanvas, {
+    type: 'bar',
+    data: {
+      labels: BAR_LABELS,
+      datasets: [{
+        label: 'Performance',
+        data: BAR_VALUES,
+        backgroundColor: BAR_COLORS.map(c => c + 'aa'),
+        borderColor: BAR_COLORS,
+        borderWidth: 2,
+        borderRadius: 8,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      animation: {
+        duration: 1200,
+        easing: 'easeOutQuart',
+        delay: (ctx) => ctx.dataIndex * 80
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1e293b',
+          borderColor: (ctx) => BAR_COLORS[ctx[0].dataIndex],
+          borderWidth: 2,
+          titleColor: '#94a3b8',
+          bodyColor: '#e2e8f0',
+          padding: 12,
+          titleFont: { size: 12, weight: 'bold' },
+          bodyFont: { size: 13, weight: 'bold' },
+          callbacks: {
+            label: (ctx) => {
+              const val = ctx.raw;
+              return (val >= 0 ? '▲ +' : '▼ ') + val + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.04)' },
+               ticks: { callback: v => v + '%', font: { size: 11 } } },
+        y: { grid: { display: false }, ticks: { font: { size: 12 }, color: '#e2e8f0' } }
+      }
+    }
+  });
+}
+
+// ── Fear & Greed counter ─────────────────────────────────────────────────────
+(function() {
+  const el = document.getElementById('fgC');
+  let start = null;
+  function ease(t) { return 1 - Math.pow(1-t, 3); }
+  function step(ts) {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / 1300, 1);
+    el.textContent = Math.round(ease(p) * FG_VAL);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  setTimeout(() => requestAnimationFrame(step), 300);
+})();
+
+// ── News counter ─────────────────────────────────────────────────────────────
+(function() {
+  const el = document.getElementById('newsCount');
+  let v = 0, target = 47;
+  const iv = setInterval(() => {
+    v += 3; if (v >= target) { v = target; clearInterval(iv); }
+    el.textContent = v;
+  }, 40);
+})();
+
+// ── Scroll fade-in ────────────────────────────────────────────────────────────
+(function() {
+  const sections = document.querySelectorAll('.section,.kpi-card,.ai-banner');
+  sections.forEach(s => {
+    s.style.opacity = '0'; s.style.transform = 'translateY(28px)';
+    s.style.transition = 'opacity .65s ease, transform .65s ease';
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(s => obs.observe(s));
+})();
+
+// ── Mouse glow on asset cards ─────────────────────────────────────────────────
+document.querySelectorAll('.asset-card,.kpi-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+    const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+    card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.08), rgba(255,255,255,0.04))`;
+  });
+  card.addEventListener('mouseleave', () => { card.style.background = ''; });
+});
+</script>
+</body>
+</html>

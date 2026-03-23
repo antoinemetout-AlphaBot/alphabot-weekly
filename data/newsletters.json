@@ -1,6 +1,11 @@
 {
   "editions": [
     {
+      "date": "2026-03-23",
+      "label": "Monday 23 march 2026",
+      "file": "alphabot_newsletter_2026-03-23.html"
+    },
+    {
       "date": "2026-03-22",
       "label": "Samedi 22 mars 2026",
       "file": "alphabot_newsletter_2026-03-22.html"
@@ -16,5 +21,5 @@
       "file": "alphabot_newsletter_2026-03-20.html"
     }
   ],
-  "count": 3
+  "count": 4
 }
