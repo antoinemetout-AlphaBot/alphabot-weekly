@@ -1577,39 +1577,100 @@
       } catch(e) { return null; }
     }
 
-    async function fetchStockPrice(ticker) {
-      // Yahoo Finance via CORS proxy (le direct est bloqué par les navigateurs)
-      const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
-      const proxies = [
-        url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
-        url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
-      ];
+    // ── SYSTÈME MULTI-SOURCES (jamais dépendant d'un seul fournisseur) ──
+    // Chaque source est indépendante. On prend la 1ère qui répond.
 
-      for (const makeProxy of proxies) {
+    async function _fetchWithTimeout(url, ms = 5000) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), ms);
+      try {
+        const r = await fetch(url, { signal: ctrl.signal });
+        clearTimeout(timer);
+        return r;
+      } catch(e) { clearTimeout(timer); throw e; }
+    }
+
+    // Source 1 : Yahoo Finance (via proxy CORS — le + fiable pour ETFs européens)
+    async function _yahooPrice(ticker) {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
+      const proxies = [
+        `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+      ];
+      for (const proxyUrl of proxies) {
         try {
-          const r = await fetch(makeProxy(yahooUrl), { signal: AbortSignal.timeout(6000) });
+          const r = await _fetchWithTimeout(proxyUrl, 6000);
           if (r.ok) {
             const d = await r.json();
-            const meta = d?.chart?.result?.[0]?.meta;
-            const price = meta?.regularMarketPrice;
-            if (price && price > 0) {
-              console.log(`[AlphaBot] ${ticker} prix via Yahoo proxy: ${price}`);
-              return price;
-            }
+            const price = d?.chart?.result?.[0]?.meta?.regularMarketPrice;
+            if (price && price > 0) { console.log(`[Prix] ${ticker} via Yahoo: ${price}`); return price; }
           }
-        } catch(e) { console.log(`[AlphaBot] Proxy échoué pour ${ticker}:`, e.message); }
+        } catch(e) {}
       }
+      return null;
+    }
 
-      // Fallback: Finnhub (gratuit, 60 appels/min)
+    // Source 2 : Yahoo Finance v6 (endpoint alternatif, même proxy)
+    async function _yahooV6Price(ticker) {
       try {
-        const cleanTicker = ticker.replace('.DE','').replace('.PA','');
-        const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(cleanTicker)}&token=demo`, { signal: AbortSignal.timeout(5000) });
+        const url = `https://query2.finance.yahoo.com/v6/finance/quote?symbols=${encodeURIComponent(ticker)}`;
+        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
         if (r.ok) {
           const d = await r.json();
-          if (d?.c && d.c > 0) return d.c;
+          const price = d?.quoteResponse?.result?.[0]?.regularMarketPrice;
+          if (price && price > 0) { console.log(`[Prix] ${ticker} via Yahoo v6: ${price}`); return price; }
         }
       } catch(e) {}
+      return null;
+    }
 
+    // Source 3 : Google Finance (scrape prix via proxy)
+    async function _googleFinancePrice(ticker) {
+      try {
+        // Convertir ticker format Yahoo → Google (EXH7.DE → EXH7:ETR, MC.PA → MC:EPA)
+        const EXCHANGE_MAP = {'.DE':':ETR', '.PA':':EPA', '.L':':LON', '.AS':':AMS'};
+        let gTicker = ticker;
+        for (const [yExt, gExt] of Object.entries(EXCHANGE_MAP)) {
+          if (ticker.endsWith(yExt)) { gTicker = ticker.replace(yExt, gExt); break; }
+        }
+        // US stocks → direct
+        if (!gTicker.includes(':') && !gTicker.includes('-')) gTicker = gTicker + ':NYSEARCA';
+
+        const url = `https://www.google.com/finance/quote/${gTicker}`;
+        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
+        if (r.ok) {
+          const html = await r.text();
+          const m = html.match(/data-last-price="([0-9.,]+)"/);
+          if (m) {
+            const price = parseFloat(m[1].replace(',', ''));
+            if (price > 0) { console.log(`[Prix] ${ticker} via Google Finance: ${price}`); return price; }
+          }
+        }
+      } catch(e) {}
+      return null;
+    }
+
+    // Source 4 : Finnhub (gratuit, bon pour US stocks)
+    async function _finnhubPrice(ticker) {
+      try {
+        const clean = ticker.replace('.DE','').replace('.PA','');
+        const r = await _fetchWithTimeout(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(clean)}&token=demo`, 5000);
+        if (r.ok) {
+          const d = await r.json();
+          if (d?.c && d.c > 0) { console.log(`[Prix] ${ticker} via Finnhub: ${d.c}`); return d.c; }
+        }
+      } catch(e) {}
+      return null;
+    }
+
+    async function fetchStockPrice(ticker) {
+      // Essayer toutes les sources en parallèle, prendre la 1ère qui répond
+      const sources = [_yahooPrice(ticker), _yahooV6Price(ticker), _googleFinancePrice(ticker), _finnhubPrice(ticker)];
+      const results = await Promise.allSettled(sources);
+      for (const r of results) {
+        if (r.status === 'fulfilled' && r.value && r.value > 0) return r.value;
+      }
+      console.warn(`[Prix] Aucune source n'a répondu pour ${ticker}`);
       return null;
     }
 
@@ -1656,9 +1717,19 @@
       }
     }
 
-    // Lancer le refresh live après le chargement initial
-    setTimeout(refreshLivePrices, 2000);
-    setInterval(refreshLivePrices, 30000); // Toutes les 30 secondes
+    // Lancer le refresh live DÈS que les données sont chargées
+    // (pas de setTimeout aveugle — on attend que portfolioData existe)
+    let _liveInterval = null;
+    function startLiveRefresh() {
+      if (portfolioData?.robots) {
+        console.log('[AlphaBot] Données chargées → lancement refresh live');
+        refreshLivePrices();
+        if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 30000);
+      } else {
+        setTimeout(startLiveRefresh, 500); // Réessayer dans 500ms
+      }
+    }
+    startLiveRefresh();
   </script>
   <script src="gate_subscriber.js"></script>
 </body>
