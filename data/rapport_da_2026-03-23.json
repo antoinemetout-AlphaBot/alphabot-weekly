@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-23 09:25",
+  "date": "2026-03-23 12:09",
   "etapes": {
     "audit": {
       "ok": true,
@@ -21,23 +21,20 @@
       "details": [
         {
           "page": "index.html",
-          "status": "improved",
-          "css_rules": 25
+          "status": "already_done"
         },
         {
           "page": "investissement.html",
-          "status": "improved",
-          "css_rules": 27
+          "status": "already_done"
         },
         {
           "page": "newsletter.html",
-          "status": "improved",
-          "css_rules": 27
+          "status": "already_done"
         }
       ]
     }
   },
   "success": true,
-  "pages_ameliorees": 3,
+  "pages_ameliorees": 0,
   "insights_count": 5
 }

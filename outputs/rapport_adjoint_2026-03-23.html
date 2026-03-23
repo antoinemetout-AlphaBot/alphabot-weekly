@@ -20,15 +20,15 @@
                 -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
       🤝 AlphaBot Weekly
     </div>
-    <div style="color:#94a3b8;font-size:13px;margin-top:4px;">23/03/2026 à 08:00</div>
+    <div style="color:#94a3b8;font-size:13px;margin-top:4px;">23/03/2026 à 12:10</div>
     <div style="margin-top:16px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
       <span style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);
                    color:#22c55e;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">
-        ✅ 0 action(s) réussie(s)
+        ✅ 1 action(s) réussie(s)
       </span>
       <span style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);
                    color:#f87171;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">
-        ❌ 3 erreur(s)
+        ❌ 2 erreur(s)
       </span>
       <span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);
                    color:#f59e0b;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;">
@@ -44,7 +44,7 @@
       💬 MESSAGE DE TON DIRECTEUR ADJOINT
     </div>
     <p style="color:#cbd5e1;font-size:14px;line-height:1.8;margin:0;">
-      Antoine, le pipeline AlphaBot est solide — 14 agents opérationnels, 3 éditions produites, infrastructure prête. Aujourd'hui on passe de 'construit' à 'distribué' : deux actions manuelles critiques t'attendent (Netlify + EmailJS, ~15 min au total) qui débloqueront la visibilité publique et les inscriptions automatiques. Le Growth Booster tourne en parallèle et génère les actions concrètes pour atteindre les 1 000 abonnés — la semaine 1 est celle de l'activation, pas de la construction.
+      Antoine, on a 14 agents qui tournent parfaitement et 0 abonné réel — c'est le paradoxe qu'on doit briser aujourd'hui. Les 3 actions techniques (Netlify, EmailJS, date dynamique) sont des déblocages purs : sans elles, même un abonné motivé tombe sur une expérience cassée. La publication LinkedIn est l'action à plus fort levier immédiat — un post bien placé peut ramener 5 à 10 abonnés réels cette semaine. On construit une machine solide, maintenant il faut ouvrir les portes.
     </p>
   </div>
 
@@ -68,10 +68,10 @@
     <div style="margin-bottom:14px;">
       <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
         <span style="color:#e2e8f0;font-size:13px;">📧 Éditions envoyées</span>
-        <span style="color:#3b82f6;font-size:13px;font-weight:700;">3 / 50</span>
+        <span style="color:#3b82f6;font-size:13px;font-weight:700;">5 / 50</span>
       </div>
       <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;">
-        <div style="width:6%;height:100%;background:#3b82f6;border-radius:3px;"></div>
+        <div style="width:10%;height:100%;background:#3b82f6;border-radius:3px;"></div>
       </div>
     </div>
 
@@ -95,14 +95,11 @@
     
             <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
                         background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:6px;
-                        border-left:3px solid #ef4444;">
-              <span style="font-size:16px;flex-shrink:0;">❌</span>
+                        border-left:3px solid #22c55e;">
+              <span style="font-size:16px;flex-shrink:0;">✅</span>
               <div>
                 <div style="color:#e2e8f0;font-size:13px;font-weight:600;">[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)</div>
-                <div style="color:#64748b;font-size:11px;margin-top:2px;">Traceback (most recent call last):
-  File "C:\Users\antoi\OneDrive\Desktop\Alphabot\main.py", line 347, in <module>
-    mode_cfo()
-  File "C:\Users\an</div>
+                <div style="color:#64748b;font-size:11px;margin-top:2px;">CFO OK — rapport généré</div>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
@@ -110,11 +107,12 @@
                         border-left:3px solid #f59e0b;">
               <span style="font-size:16px;flex-shrink:0;">📌</span>
               <div>
-                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour</div>
-                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE HAUTE PRIORITÉ — Netlify Deploy :
+                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Déployer le site sur Netlify — action bloquante depuis 3 jours, newsletters.html et index.html mis à jour ne sont pas encore en ligne</div>
+                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE PRIORITÉ 1 — Netlify Deploy
+
 1. Ouvre https://app.netlify.com
 2. Va sur ton site AlphaBot Weekly
-3. Onglet 'Deploys' → glisse-dép</div>
+3. Glisse-dépose l'intégralité du dos</div>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
@@ -122,10 +120,12 @@
                         border-left:3px solid #f59e0b;">
               <span style="font-size:16px;flex-shrink:0;">📌</span>
               <div>
-                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Mettre à jour le template EmailJS pour l'email de bienvenue avec la variable {{newsletter_url}}</div>
-                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE HAUTE PRIORITÉ — EmailJS Template :
-1. Connecte-toi sur https://dashboard.emailjs.com
-2. Va dans 'Email Templates' → édite ton templat</div>
+                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Mettre à jour le template EmailJS pour l'email de bienvenue avec les bonnes variables et un vrai CTA vers la newsletter du jour</div>
+                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE PRIORITÉ 2 — EmailJS Template
+
+1. Ouvre https://dashboard.emailjs.com
+2. Va dans Email Templates → ton template de bienvenue
+3. Modifi</div>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
@@ -133,7 +133,7 @@
                         border-left:3px solid #ef4444;">
               <span style="font-size:16px;flex-shrink:0;">❌</span>
               <div>
-                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour : posts LinkedIn, referral, SEO</div>
+                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour — posts LinkedIn, Twitter, referral, SEO</div>
                 <div style="color:#64748b;font-size:11px;margin-top:2px;">Traceback (most recent call last):
   File "C:\Users\antoi\OneDrive\Desktop\Alphabot\main.py", line 351, in <module>
     mode_booster(simulation=args.s</div>
@@ -144,8 +144,8 @@
                         border-left:3px solid #ef4444;">
               <span style="font-size:16px;flex-shrink:0;">❌</span>
               <div>
-                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Corriger la preview newsletter dans index.html pour pointer vers la date dynamique du jour au lieu d'une date fixe</div>
-                <div style="color:#64748b;font-size:11px;margin-top:2px;">old_string introuvable dans index.html</div>
+                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Corriger dans index.html la preview newsletter qui pointe vers une date fixe — la remplacer par une URL dynamique calculée en JavaScript à partir de la date du jour</div>
+                <div style="color:#64748b;font-size:11px;margin-top:2px;">Fichier introuvable : site/index.html</div>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
@@ -153,38 +153,61 @@
                         border-left:3px solid #f59e0b;">
               <span style="font-size:16px;flex-shrink:0;">📌</span>
               <div>
-                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Implémenter la connexion Formspree → subscribers.csv via webhook ou vérification manuelle hebdomadaire</div>
-                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE MOYENNE PRIORITÉ — Formspree → subscribers.csv :
-Option A (automatique, recommandée) :
-1. Va sur https://formspree.io → ton formulaire</div>
+                <div style="color:#e2e8f0;font-size:13px;font-weight:600;">Publier manuellement le post LinkedIn généré par le Growth Booster pour obtenir les premiers vrais abonnés humains</div>
+                <div style="color:#64748b;font-size:11px;margin-top:2px;">ACTION MANUELLE PRIORITÉ 3 — Publication LinkedIn
+
+Après avoir lancé 'python main.py --booster' :
+1. Ouvre le fichier outputs/growth_strategy_[date].h</div>
               </div>
             </div>
-    <div style="margin-top:20px;padding:16px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:10px;"><div style="font-size:11px;letter-spacing:2px;color:#f59e0b;font-weight:700;margin-bottom:10px;">📌 ACTIONS MANUELLES POUR TOI, ANTOINE</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE HAUTE PRIORITÉ — Netlify Deploy :
+    <div style="margin-top:20px;padding:16px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:10px;"><div style="font-size:11px;letter-spacing:2px;color:#f59e0b;font-weight:700;margin-bottom:10px;">📌 ACTIONS MANUELLES POUR TOI, ANTOINE</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE PRIORITÉ 1 — Netlify Deploy
+
 1. Ouvre https://app.netlify.com
 2. Va sur ton site AlphaBot Weekly
-3. Onglet 'Deploys' → glisse-dépose le dossier local 'Alphabot/' (racine du projet web)
-4. Vérifie après déploiement que https://[ton-site].netlify.app/newsletters.html est accessible
-5. Vérifie que le lien 'Voir tout l'historique →' sur index.html fonctionne
-Temps estimé : 5 minutes.</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE HAUTE PRIORITÉ — EmailJS Template :
-1. Connecte-toi sur https://dashboard.emailjs.com
-2. Va dans 'Email Templates' → édite ton template de bienvenue
-3. Change le SUJET en : '🤖 Bienvenue dans AlphaBot Weekly'
-4. Dans le CORPS, remplace le CTA principal par :
-   '👉 Lire la newsletter du jour : {{newsletter_url}}'
-5. Ajoute en bas : 'Voir toutes les éditions : {{archive_url}}'
-6. Sauvegarde et teste avec l'outil de preview EmailJS
-Variables disponibles : {{email}}, {{name}}, {{newsletter_url}}, {{archive_url}}
-Temps estimé : 10 minutes.</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE MOYENNE PRIORITÉ — Formspree → subscribers.csv :
-Option A (automatique, recommandée) :
-1. Va sur https://formspree.io → ton formulaire
-2. Onglet 'Integrations' → active 'Webhooks'
-3. URL du webhook : non disponible sans serveur → passe à l'Option B
-Option B (manuelle hebdomadaire, 5 min/semaine) :
-1. Va sur https://formspree.io → ton formulaire → onglet 'Submissions'
-2. Exporte les nouvelles inscriptions en CSV
-3. Copie les nouvelles lignes dans data/subscribers.csv
-4. Format attendu : email,name,date_inscription,source
-Planifie ce check chaque lundi matin avant le lancement de la newsletter.</div></div>
+3. Glisse-dépose l'intégralité du dossier Alphabot/ (ou le sous-dossier 'site/' si c'est ton dossier public)
+4. Attends le déploiement (< 1 min)
+5. Vérifie que https://[ton-site].netlify.app/newsletters.html est accessible
+6. Vérifie que le lien 'Voir tout l'historique' sur index.html pointe bien vers newsletters.html
+
+Pourquoi c'est critique : sans ça, les nouveaux abonnés arrivent sur une page avec des liens cassés → taux de confiance = 0.</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE PRIORITÉ 2 — EmailJS Template
+
+1. Ouvre https://dashboard.emailjs.com
+2. Va dans Email Templates → ton template de bienvenue
+3. Modifie le sujet : '🤖 Bienvenue dans AlphaBot Weekly — Ton 1er brief IA t'attend'
+4. Modifie le corps HTML avec ce contenu :
+
+---
+Bonjour {{name}},
+
+Bienvenue dans AlphaBot Weekly — la newsletter financière 100% pilotée par IA.
+
+Chaque matin (lun-ven, 7h30), tu reçois :
+• L'analyse des marchés du jour
+• Les signaux détectés par nos agents IA
+• Les opportunités à surveiller
+
+👉 [Lire la newsletter du jour]({{newsletter_url}})
+
+📚 [Consulter toutes les éditions]({{archive_url}})
+
+À demain matin,
+L'équipe AlphaBot Weekly
+---
+
+5. Sauvegarde le template
+6. Note le Template ID pour vérifier qu'il correspond à celui dans index.html (paramètre templateId)</div><div style="color:#fcd34d;font-size:13px;margin-bottom:6px;">→ ACTION MANUELLE PRIORITÉ 3 — Publication LinkedIn
+
+Après avoir lancé 'python main.py --booster' :
+1. Ouvre le fichier outputs/growth_strategy_[date].html
+2. Copie le post LinkedIn prioritaire (section 'Actions Immédiates')
+3. Publie-le sur ton profil LinkedIn personnel MAINTENANT
+4. Ajoute en commentaire le lien vers ton site Netlify
+5. Tag 2-3 personnes de ton réseau finance/tech qui pourraient être intéressées
+
+Objectif : 5 abonnés réels cette semaine via LinkedIn. C'est réaliste avec 1 post bien ciblé.
+
+Message suggéré si le booster ne génère rien d'utilisable :
+'J'ai créé une newsletter financière 100% pilotée par des agents IA. Chaque matin à 7h30, analyse de marchés, signaux et opportunités — sans intervention humaine. 5 éditions publiées, 0 bug. Si tu suis les marchés, ça pourrait t'intéresser 👇 [lien]'</div></div>
   </div>
 
   <!-- ── PRIORITÉS SEMAINE ────────────────────────────────────────────── -->
@@ -193,7 +216,7 @@ Planifie ce check chaque lundi matin avant le lancement de la newsletter.</div><
     <div style="font-size:10px;letter-spacing:2px;color:#64748b;font-weight:700;margin-bottom:14px;">
       🎯 PRIORITÉS DE LA SEMAINE
     </div>
-    <div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Déployer le site sur Netlify pour rendre newsletters.html et index.html mis à jour accessibles au public</div><div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Corriger le template EmailJS pour utiliser {{newsletter_url}} dans l'email de bienvenue</div><div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Lancer le Growth Booster et exécuter les premières actions de croissance réelle (LinkedIn, referral)</div>
+    <div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Déployer le site sur Netlify pour rendre newsletters.html et index.html publics et fonctionnels</div><div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Corriger le template EmailJS pour utiliser {{newsletter_url}} et donner une vraie expérience d'accueil</div><div style="padding:8px 14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:8px;margin-bottom:6px;color:#93c5fd;font-size:13px;">→ Lancer le Growth Booster et exécuter au moins 1 action concrète de croissance réelle (post LinkedIn publié)</div>
   </div>
 
   <!-- ── SUPERVISION ÉQUIPE ─────────────────────────────────────────── -->
@@ -206,8 +229,8 @@ Planifie ce check chaque lundi matin avant le lancement de la newsletter.</div><
       <div style="font-size:12px;color:#94a3b8;margin-bottom:12px;">
         CEO (Antoine) → Directeur Adjoint → 9 agents
       </div>
-      <div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Veille 📡</strong> — Fichier présent (vérification légère)</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Analyste 🧠</strong> — Fichier présent (vérification légère)</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Rédacteur ✍️</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Growth 📈</strong> — 3 entrée(s) dans le CSV</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Growth Booster 🚀</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Commercial 💼</strong> — 10 entrée(s) dans le CSV</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Analytics 📊</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent CEO Brief 👔</strong> — Dernier output : il y a 0j</div>
-      <div style="padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:6px;margin-bottom:6px;"><div style="color:#fca5a5;font-size:12px;font-weight:600;">⚠️  Agent CFO 💰</div><div style="color:#64748b;font-size:11px;">Aucun output trouvé (cfo_rapport_*.html)</div><div style="color:#f59e0b;font-size:11px;margin-top:2px;">→ Action : python main.py --cfo</div></div>
+      <div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Veille 📡</strong> — Fichier présent (vérification légère)</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Analyste 🧠</strong> — Fichier présent (vérification légère)</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Rédacteur ✍️</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Growth 📈</strong> — 5 entrée(s) dans le CSV</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Growth Booster 🚀</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Commercial 💼</strong> — 10 entrée(s) dans le CSV</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent Analytics 📊</strong> — Dernier output : il y a 0j</div><div style="padding:6px 12px;background:rgba(34,197,94,.05);border-radius:6px;margin-bottom:4px;color:#86efac;font-size:12px;">✅ <strong>Agent CEO Brief 👔</strong> — Dernier output : il y a 0j</div>
+      <div style="padding:8px 12px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:6px;margin-bottom:6px;"><div style="color:#fca5a5;font-size:12px;font-weight:600;">⚠️  Agent CFO 💰</div><div style="color:#64748b;font-size:11px;">Aucun output trouvé (cfo_rapport_*.html)</div><div style="color:#f59e0b;font-size:11px;margin-top:2px;">→ Action : run_direct:cfo</div></div>
     </div>
 
   <!-- ── ANALYSE ─────────────────────────────────────────────────────── -->
@@ -217,7 +240,7 @@ Planifie ce check chaque lundi matin avant le lancement de la newsletter.</div><
       🔍 ANALYSE DE L'ÉTAT DU PROJET
     </div>
     <p style="color:#94a3b8;font-size:13px;line-height:1.8;margin:0;">
-      AlphaBot Weekly est opérationnel avec 14 agents fonctionnels et 3 éditions produites, mais reste à 1 abonné actif réel et 0€ de revenus. Les priorités immédiates sont la mise en ligne du site (Netlify), la correction du template EmailJS, et le lancement du Growth Booster pour amorcer la croissance réelle. Le pipeline est solide — il faut maintenant activer la distribution.
+      AlphaBot Weekly tourne avec 14 agents fonctionnels et 5 éditions produites, mais reste bloqué à 1 abonné réel et 0€ de revenus. Les actions techniques répétées (agents, rapports) tournent en boucle sans impact croissance. Aujourd'hui, on sort de la boucle : priorité absolue aux actions qui ramènent de vrais abonnés et débloquent les problèmes d'infrastructure visibles (Netlify, EmailJS, Formspree).
     </p>
   </div>
 

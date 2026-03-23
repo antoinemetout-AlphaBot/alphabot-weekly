@@ -66,9 +66,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);
 .page-header p{color:var(--muted);font-size:15px;max-width:580px;margin:0 auto;line-height:1.6;}
 
 /* GATE */
-#gate{max-width:500px;margin:0 auto;}
-.gate-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:48px 44px;text-align:center;backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);animation:fadeInUp .65s var(--transition) .15s both;transition:all .4s var(--transition);}
-.gate-card:hover{border-color:var(--cyan);background:rgba(34,211,238,.04);transform:translateY(-3px);box-shadow:0 12px 48px rgba(34,211,238,.15),inset 0 1px 0 rgba(255,255,255,.06);}
+#gate{max-width:500px;margin:0 auto;position:relative;z-index:10;}
+.gate-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:48px 44px;text-align:center;backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);animation:fadeInUp .65s var(--transition) .15s both;transition:all .4s var(--transition);position:relative;z-index:10;}
+.gate-card:hover{border-color:var(--cyan);background:rgba(34,211,238,.04);box-shadow:0 12px 48px rgba(34,211,238,.15),inset 0 1px 0 rgba(255,255,255,.06);}
 
 .gate-icon{display:flex;align-items:center;justify-content:center;margin-bottom:24px;width:56px;height:56px;margin-left:auto;margin-right:auto;}
 .gate-icon svg{width:52px;height:52px;stroke:var(--cyan);stroke-width:1.5;}
@@ -81,7 +81,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);
 .gate-input::placeholder{color:var(--muted);}
 
 .gate-btn{width:100%;background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white;border:none;border-radius:10px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.3s var(--transition);letter-spacing:.3px;}
-.gate-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.3);}
+.gate-btn:hover{box-shadow:0 12px 32px rgba(34,211,238,.3);}
 .gate-btn:active{transform:scale(.98);}
 
 #gate-error{color:#ef4444;font-size:13px;margin-top:10px;display:none;}
@@ -267,7 +267,7 @@ nav {
   border-radius: 20px;
   padding: 52px 48px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.08) inset, 0 -1px 0 rgba(34,211,238,.05) inset;
 }
 .gate-card::before {
@@ -282,10 +282,10 @@ nav {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity .4s ease;
+  pointer-events: none;
 }
 .gate-card:hover::before { opacity: 1; }
 .gate-card:hover {
-  transform: translateY(-6px) scale(1.005);
   box-shadow: 0 32px 80px rgba(0,0,0,.5), var(--glow-cyan);
   background: rgba(13,20,37,.85);
 }
@@ -317,7 +317,6 @@ nav {
   border-color: var(--cyan);
   background: rgba(34,211,238,.05);
   box-shadow: 0 0 0 3px rgba(34,211,238,.1), 0 4px 16px rgba(34,211,238,.1);
-  transform: translateY(-1px);
 }
 
 /* GATE BUTTON — ANIMATED GRADIENT */
@@ -333,7 +332,6 @@ nav {
   transition: all .3s var(--ease-spring);
 }
 .gate-btn:hover {
-  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 12px 40px rgba(34,211,238,.4), inset 0 1px 0 rgba(255,255,255,.2);
 }
 .gate-btn:active { transform: scale(.97); }

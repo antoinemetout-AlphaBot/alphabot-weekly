@@ -1097,13 +1097,19 @@
       <a href="investissement.html" class="active">Robot Trader</a>
       <a href="dashboard-agents.html">Agents</a>
     </div>
-    <a href="newsletter.html" class="nav-cta">S'abonner gratuitement</a>
+    <a href="newsletter.html" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
   </nav>
+
+  <!-- GATE ABONNÉS -->
+  <div id="ab-gate" style="position:relative;z-index:10;"></div>
+
+  <!-- CONTENU RÉSERVÉ AUX ABONNÉS -->
+  <div id="ab-content" style="display:none">
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
-      <div class="live-badge">● LIVE — Données actualisées</div>
+      <div class="live-badge">● LIVE — Prix en temps réel <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span></div>
       <h1>3 Robots Traders IA</h1>
       <p class="hero-subtitle">
         Trois stratégies d'investissement, trois profils de risque, 30 000€ au service de votre portefeuille.
@@ -1127,7 +1133,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-prudent">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1163,7 +1169,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-modere">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1199,7 +1205,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-agressif">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1325,18 +1331,21 @@
     </div>
   </footer>
 
+  </div><!-- /ab-content -->
+
   <script>
     let currentRobot = 'modere';
     let portfolioData = null;
 
     async function fetchPortfolioData() {
       try {
-        const response = await fetch('data/portfolio_public.json');
-        if (!response.ok) throw new Error('Failed to load data');
+        const response = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!response.ok) throw new Error('HTTP ' + response.status);
         portfolioData = await response.json();
+        console.log('[AlphaBot] Portfolio chargé:', JSON.stringify(Object.keys(portfolioData.robots || {})));
         renderDashboard();
       } catch (error) {
-        console.error('Error loading portfolio data:', error);
+        console.error('[AlphaBot] Erreur chargement portfolio:', error);
         showLoadingMessage();
       }
     }
@@ -1361,26 +1370,42 @@
 
     function updateRobotStats() {
       ['prudent', 'modere', 'agressif'].forEach(robotType => {
-        const robot = portfolioData.robots[robotType];
-        if (!robot) return;
+        try {
+          const robot = portfolioData.robots[robotType];
+          if (!robot) { console.warn('[AlphaBot] Robot introuvable:', robotType); return; }
 
-        const perf = ((robot.current_value - robot.initial_capital) / robot.initial_capital * 100).toFixed(2);
-        const objective = { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
-        const progress = Math.min((robot.current_value / objective) * 100, 100);
+          const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
+          const perfStr = perf.toFixed(2);
+          const objective = robot.objectif || { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
+          const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
+          const progress = Math.min((currentVal / objective) * 100, 100);
+          const nbTrades = robot.nb_trades !== undefined ? robot.nb_trades : (robot.trades_recent || robot.trades || []).length;
+          const winRate = robot.winrate || 0;
 
-        const closedTrades = robot.trades.filter(t => t.type === 'VENTE').length;
-        const winTrades = robot.trades.filter(t => t.type === 'VENTE' && parseFloat(t.pnl_percent) > 0).length;
-        const winRate = closedTrades > 0 ? ((winTrades / closedTrades) * 100).toFixed(0) : 0;
+          // Capital
+          const capEl = document.getElementById(`capital-${robotType}`);
+          if (capEl) capEl.textContent = currentVal.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + '€';
 
-        document.getElementById(`perf-${robotType}`).textContent = `${perf > 0 ? '+' : ''}${perf}%`;
-        document.getElementById(`trades-${robotType}`).textContent = robot.trades.length;
-        document.getElementById(`winrate-${robotType}`).textContent = `${winRate}%`;
-        document.getElementById(`progress-${robotType}`).style.width = `${progress}%`;
+          // Perf
+          const perfEl = document.getElementById(`perf-${robotType}`);
+          if (perfEl) {
+            perfEl.textContent = `${perf > 0 ? '+' : ''}${perfStr}%`;
+            perfEl.style.color = perf > 0 ? 'var(--green)' : perf < 0 ? 'var(--red)' : '';
+          }
 
-        if (perf > 0) {
-          document.getElementById(`perf-${robotType}`).style.color = 'var(--green)';
-        } else if (perf < 0) {
-          document.getElementById(`perf-${robotType}`).style.color = 'var(--red)';
+          // Trades & Win Rate
+          const tradesEl = document.getElementById(`trades-${robotType}`);
+          if (tradesEl) tradesEl.textContent = nbTrades;
+          const wrEl = document.getElementById(`winrate-${robotType}`);
+          if (wrEl) wrEl.textContent = `${winRate}%`;
+
+          // Progress bar
+          const progEl = document.getElementById(`progress-${robotType}`);
+          if (progEl) progEl.style.width = `${progress}%`;
+
+          console.log(`[AlphaBot] ${robotType}: capital=${currentVal}, perf=${perfStr}%, trades=${nbTrades}`);
+        } catch (err) {
+          console.error(`[AlphaBot] Erreur updateRobotStats ${robotType}:`, err);
         }
       });
     }
@@ -1395,44 +1420,51 @@
       }
 
       posContainer.innerHTML = robot.positions.map((pos) => {
-        const pnlPercent = ((pos.current_price - pos.entry_price) / pos.entry_price * 100).toFixed(2);
-        const pnlEur = (pos.quantity * (pos.current_price - pos.entry_price)).toFixed(2);
-        const conviction = Math.round((pos.conviction_level / 10) * 100);
+        const entryPrice = pos.prix_entree || pos.entry_price || 0;
+        const currentPrice = pos.prix_actuel || pos.current_price || entryPrice;
+        const qty = pos.nb_actions || pos.quantity || 0;
+        const convictionLevel = pos.niveau_conviction || pos.conviction_level || 5;
+        const companyName = pos.nom || pos.company_name || pos.ticker;
+        const entryDate = pos.date_achat || pos.entry_date || '';
+        const pnlPercent = pos.pl_pct !== undefined ? pos.pl_pct.toFixed(2) : ((currentPrice - entryPrice) / entryPrice * 100).toFixed(2);
+        const pnlEur = pos.pl_euros !== undefined ? pos.pl_euros.toFixed(2) : (qty * (currentPrice - entryPrice)).toFixed(2);
+        const conviction = Math.round((convictionLevel / 10) * 100);
+        const devise = pos.devise === 'USD' ? '$' : '€';
 
         return `<div class="position-card">
           <div class="position-header">
             <div>
               <div class="position-ticker">${pos.ticker}</div>
-              <div class="position-company">${pos.company_name}</div>
+              <div class="position-company">${companyName}</div>
             </div>
             <div class="position-pnl">
               <div class="position-pnl-percent ${pnlPercent > 0 ? 'pnl-positive' : 'pnl-negative'}">${pnlPercent > 0 ? '+' : ''}${pnlPercent}%</div>
-              <div class="position-pnl-eur">${pnlEur > 0 ? '+' : ''}${pnlEur}€</div>
+              <div class="position-pnl-eur">${pnlEur > 0 ? '+' : ''}${pnlEur}${devise}</div>
             </div>
           </div>
           <div class="position-prices">
-            <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${pos.entry_price.toFixed(2)}€</div></div>
-            <div class="price-item"><div class="price-label">Cours</div><div class="price-value">${pos.current_price.toFixed(2)}€</div></div>
+            <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${entryPrice.toFixed(2)}${devise}</div></div>
+            <div class="price-item"><div class="price-label">Cours</div><div class="price-value">${currentPrice.toFixed(2)}${devise}</div></div>
           </div>
           <div class="position-reason">
             <div class="position-reason-title">Raison</div>
-            <div class="position-reason-short">${pos.raison_courte}</div>
+            <div class="position-reason-short">${pos.raison_courte || ''}</div>
             ${pos.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Voir justification complète →</button><div class="expanded-content">${pos.raison_complete}</div>` : ''}
           </div>
           <div style="margin-bottom: 1rem;">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
               <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Conviction</span>
-              <span style="font-family: 'JetBrains Mono'; font-weight: 600;">${pos.conviction_level}/10</span>
+              <span style="font-family: 'JetBrains Mono'; font-weight: 600;">${convictionLevel}/10</span>
             </div>
             <div class="conviction-bar"><div class="conviction-fill" style="width: ${conviction}%"></div></div>
           </div>
           <div class="position-meta">
-            <span class="position-date">${new Date(pos.entry_date).toLocaleString('fr-FR')}</span>
-            <span class="badge badge-horizon">${pos.horizon}</span>
+            <span class="position-date">${entryDate ? new Date(entryDate).toLocaleString('fr-FR') : ''}</span>
+            <span class="badge badge-horizon">${pos.horizon || ''}</span>
           </div>
           <div class="sl-tp">
-            <div class="sl-tp-item"><div class="sl-tp-label">Stop Loss</div><div class="sl-tp-value">${pos.stop_loss.toFixed(2)}€</div></div>
-            <div class="sl-tp-item"><div class="sl-tp-label">Take Profit</div><div class="sl-tp-value">${pos.take_profit.toFixed(2)}€</div></div>
+            <div class="sl-tp-item"><div class="sl-tp-label">Stop Loss</div><div class="sl-tp-value">${(pos.stop_loss||0).toFixed(2)}${devise}</div></div>
+            <div class="sl-tp-item"><div class="sl-tp-label">Take Profit</div><div class="sl-tp-value">${(pos.take_profit||0).toFixed(2)}${devise}</div></div>
           </div>
         </div>`;
       }).join('');
@@ -1442,17 +1474,25 @@
       const robot = portfolioData.robots[currentRobot];
       const tradesContainer = document.getElementById('trades-container');
 
-      if (!robot || !robot.trades || robot.trades.length === 0) {
+      const trades = robot.trades_recent || robot.trades || [];
+      if (!robot || trades.length === 0) {
         tradesContainer.innerHTML = '<div class="loading-message">Aucun trade enregistré pour le moment</div>';
         return;
       }
 
-      const sortedTrades = [...robot.trades].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const sortedTrades = [...trades].sort((a, b) => new Date(b.date) - new Date(a.date));
 
       tradesContainer.innerHTML = sortedTrades.map(trade => {
-        const isBuy = trade.type === 'ACHAT';
-        const displayPnl = trade.pnl_percent ? `${trade.pnl_percent > 0 ? '+' : ''}${trade.pnl_percent}%` : 'N/A';
-        const displayDuration = trade.duration ? trade.duration : 'Ouvert';
+        const tradeType = (trade.type||'').toLowerCase();
+        const isBuy = tradeType === 'achat';
+        const pnlPct = trade.pnl_percent || trade.pl_pct || 0;
+        const displayPnl = !isBuy && pnlPct ? `${pnlPct > 0 ? '+' : ''}${pnlPct}%` : 'N/A';
+        const displayDuration = trade.duration || trade.duree || 'Ouvert';
+        const tradePrice = trade.prix || trade.price || 0;
+        const tradeQty = trade.nb_actions || trade.quantity || 0;
+        const tradeMontant = trade.montant || (tradePrice * tradeQty);
+        const companyName = trade.nom || trade.company_name || trade.ticker;
+        const devise = (trade.ticker||'').includes('USD') || (trade.ticker||'').includes('BTC') ? '$' : '€';
 
         return `<div class="trade-card">
           <div class="trade-header">
@@ -1460,23 +1500,23 @@
               <span class="trade-type-badge ${isBuy ? 'trade-type-buy' : 'trade-type-sell'}">${isBuy ? '↓ ACHAT' : '↑ VENTE'}</span>
               <div style="margin-top: 0.75rem;">
                 <div class="trade-ticker">${trade.ticker}</div>
-                <div class="trade-company">${trade.company_name}</div>
+                <div class="trade-company">${companyName}</div>
               </div>
             </div>
-            ${!isBuy ? `<div class="trade-pnl"><div style="font-family: 'JetBrains Mono'; font-size: 1.25rem; font-weight: 700; ${trade.pnl_percent > 0 ? 'color: var(--green)' : 'color: var(--red)'};">${displayPnl}</div><div style="color: var(--muted); font-size: 0.85rem;">${displayDuration}</div></div>` : ''}
+            ${!isBuy ? `<div class="trade-pnl"><div style="font-family: 'JetBrains Mono'; font-size: 1.25rem; font-weight: 700; ${pnlPct > 0 ? 'color: var(--green)' : 'color: var(--red)'};">${displayPnl}</div><div style="color: var(--muted); font-size: 0.85rem;">${displayDuration}</div></div>` : ''}
           </div>
           <div class="trade-main">
-            <div class="trade-item"><div class="trade-item-label">Prix</div><div class="trade-item-value">${trade.price.toFixed(2)}€</div></div>
-            <div class="trade-item"><div class="trade-item-label">Quantité</div><div class="trade-item-value">${trade.quantity}</div></div>
-            <div class="trade-item"><div class="trade-item-label">Montant</div><div class="trade-item-value">${(trade.price * trade.quantity).toFixed(0)}€</div></div>
+            <div class="trade-item"><div class="trade-item-label">Prix</div><div class="trade-item-value">${tradePrice.toFixed(2)}${devise}</div></div>
+            <div class="trade-item"><div class="trade-item-label">Quantité</div><div class="trade-item-value">${tradeQty}</div></div>
+            <div class="trade-item"><div class="trade-item-label">Montant</div><div class="trade-item-value">${tradeMontant.toFixed(0)}${devise}</div></div>
           </div>
           <div class="trade-reason">
             <div class="trade-reason-title">Justification</div>
-            <div class="trade-reason-short">${trade.raison_courte}</div>
+            <div class="trade-reason-short">${trade.raison_courte || ''}</div>
             ${trade.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Lire la justification complète →</button><div class="expanded-content">${trade.raison_complete}</div>` : ''}
           </div>
           <div class="trade-meta">
-            <span>${new Date(trade.date).toLocaleString('fr-FR')}</span>
+            <span>${trade.date ? new Date(trade.date).toLocaleString('fr-FR') : ''}</span>
             ${trade.catalyseur ? `<span class="catalyseur-tag">${trade.catalyseur}</span>` : ''}
           </div>
         </div>`;
@@ -1509,6 +1549,107 @@
 
     fetchPortfolioData();
     setInterval(fetchPortfolioData, 60000);
+
+    // ══════════════════════════════════════════════════════════════
+    // PRIX EN TEMPS RÉEL — Mise à jour automatique toutes les 30s
+    // ══════════════════════════════════════════════════════════════
+
+    const CRYPTO_MAP = {
+      'BTC-USD': 'bitcoin',
+      'ETH-USD': 'ethereum',
+      'SOL-USD': 'solana',
+      'BNB-USD': 'binancecoin',
+      'XRP-USD': 'ripple',
+      'ADA-USD': 'cardano',
+      'DOGE-USD': 'dogecoin',
+      'AVAX-USD': 'avalanche-2',
+      'DOT-USD': 'polkadot',
+      'LINK-USD': 'chainlink'
+    };
+
+    async function fetchCryptoPrice(ticker) {
+      const coinId = CRYPTO_MAP[ticker];
+      if (!coinId) return null;
+      try {
+        const r = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`);
+        const d = await r.json();
+        return d[coinId]?.usd || null;
+      } catch(e) { return null; }
+    }
+
+    async function fetchStockPrice(ticker) {
+      // Essayer Yahoo Finance via leur endpoint public
+      try {
+        const cleanTicker = ticker.replace('.', '-');
+        const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`, {
+          headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
+        if (r.ok) {
+          const d = await r.json();
+          const meta = d?.chart?.result?.[0]?.meta;
+          return meta?.regularMarketPrice || null;
+        }
+      } catch(e) {}
+
+      // Fallback: Finnhub (gratuit, 60 appels/min)
+      try {
+        const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(ticker)}&token=demo`);
+        if (r.ok) {
+          const d = await r.json();
+          return d?.c || null; // c = current price
+        }
+      } catch(e) {}
+
+      return null;
+    }
+
+    async function refreshLivePrices() {
+      if (!portfolioData?.robots) return;
+
+      let updated = false;
+      for (const [robotType, robot] of Object.entries(portfolioData.robots)) {
+        if (!robot.positions) continue;
+        for (const pos of robot.positions) {
+          let livePrice = null;
+
+          if (CRYPTO_MAP[pos.ticker]) {
+            livePrice = await fetchCryptoPrice(pos.ticker);
+          } else {
+            livePrice = await fetchStockPrice(pos.ticker);
+          }
+
+          if (livePrice && livePrice > 0) {
+            pos.prix_actuel = livePrice;
+            pos.current_price = livePrice;
+            const entryPrice = pos.prix_entree || pos.entry_price || 0;
+            const qty = pos.nb_actions || pos.quantity || 0;
+            if (entryPrice > 0) {
+              pos.pl_pct = ((livePrice - entryPrice) / entryPrice * 100);
+              pos.pl_euros = qty * (livePrice - entryPrice);
+            }
+            // Recalcul capital robot
+            const totalPL = robot.positions.reduce((sum, p) => sum + (p.pl_euros || 0), 0);
+            robot.capital_actuel = robot.capital_initial + totalPL;
+            robot.performance_pct = (totalPL / robot.capital_initial) * 100;
+            robot.performance_eur = totalPL;
+            updated = true;
+            console.log(`[AlphaBot LIVE] ${pos.ticker}: ${livePrice.toFixed(2)} (${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%)`);
+          }
+        }
+      }
+
+      if (updated) {
+        renderDashboard();
+        // Marqueur "live"
+        const liveEl = document.getElementById('live-timestamp');
+        if (liveEl) liveEl.textContent = `Dernière MAJ: ${new Date().toLocaleTimeString('fr-FR')}`;
+      }
+    }
+
+    // Lancer le refresh live après le chargement initial
+    setTimeout(refreshLivePrices, 2000);
+    setInterval(refreshLivePrices, 30000); // Toutes les 30 secondes
   </script>
+  <script src="gate_subscriber.js"></script>
 </body>
 </html>
