@@ -1683,22 +1683,27 @@
       if (srcEl && detail?.source) srcEl.textContent = `(${detail.source})`;
     }
 
-    // ── Détection horaires marchés ──
+    // ── Détection horaires marchés (heure de Paris CET/CEST) ──
     function getMarketStatus() {
       const now = new Date();
-      const utcHour = now.getUTCHours();
-      const utcMin = now.getUTCMinutes();
-      const day = now.getUTCDay(); // 0=dim, 6=sam
+      const day = now.getDay(); // 0=dim, 6=sam
+
+      // Heure de Paris (gère automatiquement CET/CEST)
+      const parisStr = now.toLocaleString('en-US', {timeZone: 'Europe/Paris', hour12: false});
+      const parts = parisStr.split(', ')[1]?.split(':') || [];
+      const h = parseInt(parts[0]) || 0;
+      const m = parseInt(parts[1]) || 0;
+      const hDecimal = h + m / 60;
 
       // Weekend = marchés fermés (sauf crypto)
-      if (day === 0 || day === 6) return { usOpen: false, euOpen: false, weekend: true };
+      if (day === 0 || day === 6) return { usOpen: false, euOpen: false, weekend: true, parisHour: h };
 
-      // Marchés EU : 8:00-16:30 UTC (Xetra) / 8:00-16:30 UTC (Euronext)
-      const euOpen = (utcHour >= 8 && (utcHour < 16 || (utcHour === 16 && utcMin <= 30)));
-      // Marchés US : 14:30-21:00 UTC (NYSE/NASDAQ)
-      const usOpen = (utcHour >= 14 && (utcHour < 21 || (utcHour === 14 && utcMin >= 30)));
+      // Marchés EU (Xetra/Euronext) : 9h00 - 17h30 Paris
+      const euOpen = (hDecimal >= 9.0 && hDecimal < 17.5);
+      // Marchés US (NYSE/NASDAQ) : 15h30 - 22h00 Paris
+      const usOpen = (hDecimal >= 15.5 && hDecimal < 22.0);
 
-      return { usOpen, euOpen, weekend: false };
+      return { usOpen, euOpen, weekend: false, parisHour: h };
     }
 
     function isTickerUS(ticker) {
@@ -1904,28 +1909,36 @@
       const now = new Date().toLocaleTimeString('fr-FR');
       const sourceStr = [...sourcesUsed].join(', ') || 'aucune';
 
+      // Construire le message de statut des marchés
+      let marketLabel = '';
+      if (marketStatus.euOpen && marketStatus.usOpen) marketLabel = 'EU + US ouverts';
+      else if (marketStatus.euOpen) marketLabel = 'EU ouvert | US ouvre à 15h30';
+      else if (marketStatus.usOpen) marketLabel = 'EU fermé | US ouvert jusqu\'à 22h';
+      else if (!marketStatus.weekend) marketLabel = 'Marchés fermés | Crypto 24/7';
+
       if (updated) {
         renderDashboard();
         setLiveStatus('live', {
-          time: `MAJ: ${now} — ${tickersUpdated}/${tickersTotal} tickers`,
+          time: `MAJ: ${now} — ${tickersUpdated}/${tickersTotal} tickers${marketLabel ? ' | ' + marketLabel : ''}`,
           source: sourceStr
         });
       } else {
-        // Même si aucune donnée n'a changé, on montre que le refresh a tourné
-        const noMarket = !marketStatus.usOpen && !marketStatus.euOpen && !marketStatus.weekend;
         if (marketStatus.weekend) {
           setLiveStatus('market-closed', {
             time: `Weekend — marchés fermés. Crypto 24/7. MAJ: ${now}`,
             source: tickersUpdated > 0 ? sourceStr : 'en attente'
           });
-        } else if (noMarket) {
+        } else if (!marketStatus.euOpen && !marketStatus.usOpen) {
+          // Hors séance — message adapté selon l'heure
+          const h = marketStatus.parisHour || 0;
+          let nextOpen = h < 9 ? 'EU ouvre à 9h' : h >= 22 ? 'Reprise demain 9h' : 'US ouvre à 15h30';
           setLiveStatus('market-closed', {
-            time: `Hors séance — derniers cours de clôture. MAJ: ${now}`,
-            source: tickersUpdated > 0 ? sourceStr : 'en attente'
+            time: `Hors séance — ${nextOpen}. MAJ: ${now}`,
+            source: tickersUpdated > 0 ? sourceStr : 'derniers cours de clôture'
           });
         } else {
           setLiveStatus('live', {
-            time: `MAJ: ${now} — ${tickersUpdated > 0 ? tickersUpdated + ' sources OK' : 'en attente de données'}`,
+            time: `MAJ: ${now} — ${marketLabel}${tickersUpdated > 0 ? ' | ' + tickersUpdated + ' OK' : ''}`,
             source: tickersUpdated > 0 ? sourceStr : 'retry dans 15s'
           });
         }
