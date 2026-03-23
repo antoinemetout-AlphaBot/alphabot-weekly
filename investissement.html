@@ -1127,7 +1127,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-prudent">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1163,7 +1163,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-modere">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1199,7 +1199,7 @@
         <div class="robot-stats">
           <div class="stat-item">
             <div class="stat-label">Capital</div>
-            <div class="stat-value">10 000€</div>
+            <div class="stat-value" id="capital-agressif">10 000€</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Perf.</div>
@@ -1331,12 +1331,13 @@
 
     async function fetchPortfolioData() {
       try {
-        const response = await fetch('data/portfolio_public.json');
-        if (!response.ok) throw new Error('Failed to load data');
+        const response = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!response.ok) throw new Error('HTTP ' + response.status);
         portfolioData = await response.json();
+        console.log('[AlphaBot] Portfolio chargé:', JSON.stringify(Object.keys(portfolioData.robots || {})));
         renderDashboard();
       } catch (error) {
-        console.error('Error loading portfolio data:', error);
+        console.error('[AlphaBot] Erreur chargement portfolio:', error);
         showLoadingMessage();
       }
     }
@@ -1361,29 +1362,42 @@
 
     function updateRobotStats() {
       ['prudent', 'modere', 'agressif'].forEach(robotType => {
-        const robot = portfolioData.robots[robotType];
-        if (!robot) return;
+        try {
+          const robot = portfolioData.robots[robotType];
+          if (!robot) { console.warn('[AlphaBot] Robot introuvable:', robotType); return; }
 
-        const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
-        const perfStr = perf.toFixed(2);
-        const objective = robot.objectif || { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
-        const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
-        const progress = Math.min((currentVal / objective) * 100, 100);
+          const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
+          const perfStr = perf.toFixed(2);
+          const objective = robot.objectif || { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
+          const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
+          const progress = Math.min((currentVal / objective) * 100, 100);
+          const nbTrades = robot.nb_trades !== undefined ? robot.nb_trades : (robot.trades_recent || robot.trades || []).length;
+          const winRate = robot.winrate || 0;
 
-        const trades = robot.trades_recent || robot.trades || [];
-        const closedTrades = trades.filter(t => (t.type||'').toLowerCase() === 'vente').length;
-        const winTrades = trades.filter(t => (t.type||'').toLowerCase() === 'vente' && parseFloat(t.pnl_percent||t.pl_pct||0) > 0).length;
-        const winRate = closedTrades > 0 ? ((winTrades / closedTrades) * 100).toFixed(0) : (robot.winrate || 0);
+          // Capital
+          const capEl = document.getElementById(`capital-${robotType}`);
+          if (capEl) capEl.textContent = currentVal.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + '€';
 
-        document.getElementById(`perf-${robotType}`).textContent = `${perf > 0 ? '+' : ''}${perfStr}%`;
-        document.getElementById(`trades-${robotType}`).textContent = robot.nb_trades !== undefined ? robot.nb_trades : trades.length;
-        document.getElementById(`winrate-${robotType}`).textContent = `${winRate}%`;
-        document.getElementById(`progress-${robotType}`).style.width = `${progress}%`;
+          // Perf
+          const perfEl = document.getElementById(`perf-${robotType}`);
+          if (perfEl) {
+            perfEl.textContent = `${perf > 0 ? '+' : ''}${perfStr}%`;
+            perfEl.style.color = perf > 0 ? 'var(--green)' : perf < 0 ? 'var(--red)' : '';
+          }
 
-        if (perf > 0) {
-          document.getElementById(`perf-${robotType}`).style.color = 'var(--green)';
-        } else if (perf < 0) {
-          document.getElementById(`perf-${robotType}`).style.color = 'var(--red)';
+          // Trades & Win Rate
+          const tradesEl = document.getElementById(`trades-${robotType}`);
+          if (tradesEl) tradesEl.textContent = nbTrades;
+          const wrEl = document.getElementById(`winrate-${robotType}`);
+          if (wrEl) wrEl.textContent = `${winRate}%`;
+
+          // Progress bar
+          const progEl = document.getElementById(`progress-${robotType}`);
+          if (progEl) progEl.style.width = `${progress}%`;
+
+          console.log(`[AlphaBot] ${robotType}: capital=${currentVal}, perf=${perfStr}%, trades=${nbTrades}`);
+        } catch (err) {
+          console.error(`[AlphaBot] Erreur updateRobotStats ${robotType}:`, err);
         }
       });
     }
