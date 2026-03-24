@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T09:00:59.191936",
+  "generated_at": "2026-03-24T09:10:03.540571",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:10:03.514223",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:10:03.503092",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 9h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:00:59.186934",
       "agent": "Orchestrateur",
@@ -976,55 +990,23 @@
         "niveau_conviction": 7,
         "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
       }
-    },
-    {
-      "ts": "2026-03-23T13:00:44.736253",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Modéré: Achat 47x EWG @ 38.20",
-      "data": {
-        "profil": "modere",
-        "ticker": "EWG",
-        "prix": 38.2,
-        "montant": 1795.4,
-        "raison": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:43.853081",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: acheter EWG",
-      "data": {
-        "profil": "modere",
-        "action": "acheter",
-        "ticker": "EWG",
-        "nom": "iShares MSCI Germany ETF",
-        "allocation_pct": 18,
-        "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
-        "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
-        "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 7,
-        "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:00:59.186934",
+        "ts": "2026-03-24T09:10:03.514223",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T09:00:59.186934",
-      "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
-      "total_today": 12,
-      "errors_today": 0,
+      "last_ts": "2026-03-24T09:10:03.514223",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 14,
+      "errors_today": 1,
       "successes_today": 6
     },
     {
