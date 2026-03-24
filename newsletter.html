@@ -170,6 +170,14 @@ footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-ite
   .toolbar{padding:14px 16px;}
   .page-header h1{font-size:clamp(24px,6vw,32px);}
 }
+
+/* FOCUS STATES */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.skip-link:focus { top: 0; }
 </style>
 
 <!-- GOOGLE ANALYTICS — Remplacer G-XXXXXXXXXX par votre ID GA4 -->
