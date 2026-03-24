@@ -1,7 +1,35 @@
 {
-  "generated_at": "2026-03-24T16:40:24.429896",
+  "generated_at": "2026-03-24T17:10:08.964522",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T17:10:08.940455",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:10:04.192889",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 17h15",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:00:32.512929",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:00:28.025057",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 17h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T16:40:24.401295",
       "agent": "Orchestrateur",
@@ -875,52 +903,24 @@
         "niveau_conviction": 8,
         "risques": "Une détente soudaine du VIX pourrait signaler une opportunité manquée sur les blue chips. La hausse du pétrole pourrait alimenter l'inflation et déprimer les positions obligataires longues existantes."
       }
-    },
-    {
-      "ts": "2026-03-24T10:25:28.813278",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Matinée EU",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:10:24.168800",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:10:18.719208",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 10h15",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:10:13.945464",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Prix live : No module named 'update_prices'",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T16:40:24.401295",
+        "ts": "2026-03-24T17:10:08.940455",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T16:40:24.401295",
+      "last_ts": "2026-03-24T17:10:08.940455",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 77,
-      "errors_today": 8,
-      "successes_today": 35
+      "errors_today": 7,
+      "successes_today": 36
     },
     {
       "agent": "Agent Investissement",
