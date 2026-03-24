@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T16:00:26.238981",
+  "generated_at": "2026-03-24T16:00:36.575928",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T16:00:36.555425",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T16:00:32.131466",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 16h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T16:00:26.218477",
       "agent": "Orchestrateur",
@@ -928,80 +942,24 @@
         "pages_ameliorees": 0,
         "insights_count": 5
       }
-    },
-    {
-      "ts": "2026-03-24T09:26:17.946747",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-24 09:25",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 40,
-            "problemes": 6
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 4
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": false,
-            "html_path": "outputs\\section_da_2026-03-24.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-24T09:26:17.928312",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-24.html"
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T16:00:26.218477",
+        "ts": "2026-03-24T16:00:36.555425",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T16:00:26.218477",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 75,
+      "last_ts": "2026-03-24T16:00:36.555425",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 77,
       "errors_today": 8,
-      "successes_today": 34
+      "successes_today": 35
     },
     {
       "agent": "Agent Investissement",
@@ -1047,61 +1005,6 @@
       "total_today": 6,
       "errors_today": 1,
       "successes_today": 0
-    },
-    {
-      "agent": "Agent DA Site",
-      "last_event": {
-        "ts": "2026-03-24T09:26:17.946747",
-        "agent": "Agent DA Site",
-        "type": "success",
-        "message": "Mission DA terminée (0 pages améliorées)",
-        "data": {
-          "date": "2026-03-24 09:25",
-          "etapes": {
-            "audit": {
-              "ok": true,
-              "score": 40,
-              "problemes": 6
-            },
-            "navigation": {
-              "ok": true,
-              "pages_mises_a_jour": 4
-            },
-            "insights": {
-              "ok": true,
-              "count": 5,
-              "injected_in_index": false,
-              "html_path": "outputs\\section_da_2026-03-24.html"
-            },
-            "visuels": {
-              "ok": true,
-              "details": [
-                {
-                  "page": "index.html",
-                  "status": "already_done"
-                },
-                {
-                  "page": "investissement.html",
-                  "status": "already_done"
-                },
-                {
-                  "page": "newsletter.html",
-                  "status": "already_done"
-                }
-              ]
-            }
-          },
-          "success": true,
-          "pages_ameliorees": 0,
-          "insights_count": 5
-        }
-      },
-      "last_ts": "2026-03-24T09:26:17.946747",
-      "last_type": "success",
-      "last_message": "Mission DA terminée (0 pages améliorées)",
-      "total_today": 2,
-      "errors_today": 0,
-      "successes_today": 2
     }
   ]
 }
