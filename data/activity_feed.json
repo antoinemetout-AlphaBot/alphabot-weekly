@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T15:10:08.684204",
+  "generated_at": "2026-03-24T15:25:12.511989",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T15:25:12.486880",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T15:25:12.464956",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 15h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T15:10:08.665208",
       "agent": "Orchestrateur",
@@ -959,55 +973,23 @@
         "montant": 808.08,
         "raison": "L'or à 4424$ casse des records historiques sur fond de dollar faible."
       }
-    },
-    {
-      "ts": "2026-03-24T09:00:43.114246",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: acheter GLD",
-      "data": {
-        "profil": "modere",
-        "action": "acheter",
-        "ticker": "GLD",
-        "nom": "SPDR Gold Shares ETF",
-        "allocation_pct": 15,
-        "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible.",
-        "raison_complete": "L'or spot dépasse 4424 USD/oz, un niveau historique inédit, porté par plusieurs facteurs convergents. Le Dollar Index recule sous 99.30, au plus bas depuis plusieurs mois, ce qui rend les métaux précieux mécaniquement plus attractifs pour les investisseurs internationaux. Le VIX reste élevé à 26, signalant une incertitude de marché persistante qui favorise les valeurs refuges. La Fed maintient un discours ambigu sur les baisses de taux en 2026, et les anticipations d'inflation restent supérieures à 2.5%, ce qui soutient structurellement l'or comme hedge. Les achats des banques centrales (Chine, Inde, Pologne) restent massifs depuis 2024, réduisant l'offre disponible. GLD est la façon la plus liquide et efficiente d'accéder à cette dynamique sans risque de contrepartie sur les futures.",
-        "catalyseur": "Dollar Index sous 99.30 + or spot à 4424$ record absolu + VIX élevé = triple signal d'entrée refuge",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 8,
-        "risques": "Un rebond fort du dollar (données emploi US surprenantes ou hawkishness Fed) pourrait corriger l'or rapidement. Prise de profit technique possible après une hausse aussi verticale."
-      }
-    },
-    {
-      "ts": "2026-03-24T09:00:30.275240",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Prudent: Achat 323x IUSV.DE @ 2.83",
-      "data": {
-        "profil": "prudent",
-        "ticker": "IUSV.DE",
-        "prix": 2.83,
-        "montant": 914.09,
-        "raison": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T15:10:08.665208",
+        "ts": "2026-03-24T15:25:12.486880",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T15:10:08.665208",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 71,
-      "errors_today": 7,
+      "last_ts": "2026-03-24T15:25:12.486880",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 73,
+      "errors_today": 8,
       "successes_today": 33
     },
     {
@@ -1035,7 +1017,7 @@
       "last_ts": "2026-03-24T14:01:11.325922",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 19,
+      "total_today": 17,
       "errors_today": 0,
       "successes_today": 4
     },
