@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T15:41:13.618463",
+  "generated_at": "2026-03-24T15:41:21.319316",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T15:41:21.306752",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T15:41:17.268229",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 15h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T15:41:13.610987",
       "agent": "Orchestrateur",
@@ -972,35 +986,21 @@
       "type": "start",
       "message": "Mission DA complète démarrée",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T09:25:23.182209",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : DA Site 🎨 — Insights Géopolitiques",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T09:10:15.130867",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T15:41:13.610987",
+        "ts": "2026-03-24T15:41:21.306752",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10094€ (+0.94%) | 3 positions",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T15:41:13.610987",
+      "last_ts": "2026-03-24T15:41:21.306752",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10094€ (+0.94%) | 3 positions",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 73,
       "errors_today": 7,
       "successes_today": 34
