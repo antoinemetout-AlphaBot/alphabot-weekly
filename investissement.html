@@ -835,7 +835,7 @@
       nav{padding:12px 4%;}
       .nav-center{display:none;gap:0;width:100%;}
       .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-      .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+      .nav-hamburger{display:flex;}
 
       .robots-grid {
         grid-template-columns: 1fr;
@@ -1117,7 +1117,7 @@ body {
 
 /* ── Hero section ── */
 .hero {
-  padding: 7rem 2rem 5rem;
+  padding: calc(64px + 3rem) 2rem 5rem;
   background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(34,211,238,.08) 0%, transparent 70%);
   border-bottom: 1px solid rgba(34,211,238,.08);
 }

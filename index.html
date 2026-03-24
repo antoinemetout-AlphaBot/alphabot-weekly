@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>AlphaBot Weekly — Newsletter IA Bourse & Crypto + 3 Robots Traders</title>
 <meta name="description" content="Chaque semaine, l'IA décrypte la bourse, la crypto et la géopolitique pour vous. 3 robots traders IA investissent 10 000€ chacun sous vos yeux. 100% gratuit.">
+<meta property="og:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
+<meta property="og:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent 30 000€ sous vos yeux. Gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AlphaBot_Weekly">
+<meta name="twitter:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
+<meta name="twitter:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent sous vos yeux.">
+<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -426,7 +436,7 @@ nav {
 
     <div class="form-wrap" id="subscribe">
       <div class="form-group">
-        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email">
+        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email pour s'abonner">
         <button class="btn-sub" onclick="handleSubscribe()">S'abonner — c'est gratuit</button>
       </div>
       <div id="sub-status"></div>
@@ -652,7 +662,7 @@ nav {
     <h2>Demain, vous comprendrez les marchés</h2>
     <p>Rejoignez les investisseurs qui reçoivent chaque semaine l'essentiel de la bourse et de la crypto, décrypté par l'IA.</p>
     <div class="form-group" style="max-width:420px;margin:0 auto;">
-      <input type="email" id="email-input2" placeholder="votre@email.com">
+      <input type="email" id="email-input2" placeholder="votre@email.com" onkeydown="if(event.key==='Enter')handleSubscribe2()" aria-label="Adresse email pour s'abonner">
       <button class="btn-sub" onclick="handleSubscribe2()">S'abonner</button>
     </div>
     <div id="sub-status2" style="display:none;font-size:13px;text-align:center;margin-top:8px;"></div>
