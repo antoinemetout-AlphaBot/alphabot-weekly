@@ -1,7 +1,112 @@
 {
-  "generated_at": "2026-03-24T18:25:34.773552",
+  "generated_at": "2026-03-24T19:00:57.293447",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T19:00:57.281447",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T19:00:57.277449",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10065€ (+0.65%) | 4 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T19:00:57.272445",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10014€ (+0.14%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T19:00:57.268459",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10014.19,
+          "perf": 0.14
+        },
+        "modere": {
+          "capital": 10065.44,
+          "perf": 0.65
+        },
+        "agressif": {
+          "capital": 10135.27,
+          "perf": 1.35
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T19:00:57.249088",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: attendre None",
+      "data": {
+        "profil": "agressif",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "VIX à 27.36 en hausse : environnement hostile au levier",
+        "raison_complete": "Le VIX monte de +9.05% sur 5 jours et atteint 27.36, signalant une peur institutionnelle réelle et non anecdotique. Le Nasdaq 100 cède -1.61% sur 5 jours malgré un rebond intraday hier qui a justifié notre entrée TQQQ — rebond qui s'est immédiatement retourné (-1.57% de P&L). Le pétrole WTI bondit de +5.24% en une seule journée à 92.75$, ce qui indique une tension géopolitique ou supply-shock majeur susceptible de réactiver l'inflation et de forcer la Fed à maintenir ses taux. Le Dollar Index remonte à 99.57 (+0.63%), comprimant les actifs risqués. Dans cet environnement, déployer du capital supplémentaire sur des ETF 3x ou de la crypto serait irrationnel : nos trois positions existantes (BTC, SOXL, TQQQ) totalisent déjà 60% du capital et sont exposées au levier. Le cash de 4 276€ est notre bouclier. La patience ici n'est pas de l'inaction — c'est de la gestion du risque.",
+        "catalyseur": "Pétrole WTI +5.24% en 1 journée = choc inflationniste potentiel + VIX à 27 signalant stress de marché persistant",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Un apaisement géopolitique soudain ou un pivot Fed inattendu pourrait déclencher un short-squeeze violent — surveiller les headlines sur le pétrole et le FOMC."
+      }
+    },
+    {
+      "ts": "2026-03-24T19:00:43.183058",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: attendre None",
+      "data": {
+        "profil": "modere",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "VIX à 27, marchés sous tension — consolidation prudente recommandée",
+        "raison_complete": "Le contexte de marché actuel justifie la patience. Le VIX a bondi de +9% sur 5 jours pour atteindre 27.36, signalant une nervosité croissante des investisseurs institutionnels. Le Nasdaq recule de -1.61% sur 5 jours tandis que le DAX perd -3.68% — la rotation Europe semble marquer le pas. Le pétrole WTI bondit de +5.24% en une seule journée à 92.75$, ce qui soutient notre position XLE mais suggère un choc d'offre ou géopolitique non encore clairement identifié — investir dans ce contexte serait spéculer sur un catalyseur flou. Notre portefeuille est déjà bien diversifié avec 4 positions couvrant l'énergie (XLE), l'or (GLD), l'Europe (EWG) et la santé défensive (UNH) — soit ~49% du capital déployé. Le cash disponible de 5 146€ (51%) constitue un coussin précieux si les marchés continuent de corriger. Ajouter une 5e position dans un environnement VIX > 25 sans catalyseur directif clair augmenterait inutilement le risque global du portefeuille.",
+        "catalyseur": "VIX +9% sur 5 jours + WTI +5.24% en 1 jour = signal de stress géopolitique/macro non résolu",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Le risque principal est de laisser le cash idle si un rebond technique se matérialise rapidement. Surveiller le VIX : un retour sous 22 rouvrirait des opportunités d'achat sur la tech ou les marchés européens."
+      }
+    },
+    {
+      "ts": "2026-03-24T19:00:27.802106",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: attendre None",
+      "data": {
+        "profil": "prudent",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": null,
+        "raison_courte": "VIX à 27 et pétrole en hausse de 5%: attendre la stabilisation",
+        "raison_complete": "Le VIX à 27.36 (+9% sur 5 jours) signale une nervosité significative sur les marchés — un niveau qui historiquement précède des mouvements brusques dans les deux sens. La hausse violente du WTI à 92.75 USD (+5.24% en une seule séance) suggère un choc d'offre ou une escalade géopolitique (probable tension au Moyen-Orient ou décision OPEC+), ce qui alimente l'inflation et complique la trajectoire des banques centrales. Le Dollar Index qui rebondit à 99.57 (+0.63%) pèse sur les actifs émergents et comprime les marges des multinationales américaines. Nos trois positions actuelles (ETF biens ménagers européens, obligations UK et obligations US long terme) sont bien positionnées comme refuges. Avec 67% de cash disponible, la priorité est de préserver cette liquidité jusqu'à ce que le pic de volatilité soit clairement dépassé — typiquement quand le VIX redescend sous 22-23.",
+        "catalyseur": "Spike du pétrole WTI +5.24% en une séance combiné au VIX franchissant 27 — signal d'alerte géopolitique ou énergétique majeur",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Le risque principal est de manquer un rebond rapide si la cause du spike pétrolier est ponctuelle. Cependant, avec 67% de cash, la position défensive est cohérente avec le profil du Robot Prudent."
+      }
+    },
+    {
+      "ts": "2026-03-24T19:00:08.759347",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Soirée US",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T18:25:34.755639",
       "agent": "Orchestrateur",
@@ -847,125 +952,53 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:52.835887",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 12h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:45.736366",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Prix live : No module named 'update_prices'",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:45.720371",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 📊 Prix Live — 12h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:36.254976",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:32.900415",
-      "agent": "AlertDetector",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:31.726312",
-      "agent": "AlertDetector",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:31.698999",
-      "agent": "AlertDetector",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simple/price?ids=bitcoin&vs_currency=usd&include_24hr_change=true (Caused by NameResolutionError(\"HTTPSC",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T11:19:47.985009",
-      "agent": "AlertDetector",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 8s...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T18:25:34.755639",
+        "ts": "2026-03-24T19:00:57.281447",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
         "data": {}
       },
-      "last_ts": "2026-03-24T18:25:34.755639",
+      "last_ts": "2026-03-24T19:00:57.281447",
       "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "last_message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
       "total_today": 79,
-      "errors_today": 8,
-      "successes_today": 36
+      "errors_today": 7,
+      "successes_today": 38
     },
     {
       "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-24T17:26:01.622383",
+        "ts": "2026-03-24T19:00:57.268459",
         "agent": "Agent Investissement",
         "type": "success",
         "message": "Cycle robot trader complété",
         "data": {
           "prudent": {
-            "capital": 10016.46,
-            "perf": 0.16
+            "capital": 10014.19,
+            "perf": 0.14
           },
           "modere": {
-            "capital": 10080.02,
-            "perf": 0.8
+            "capital": 10065.44,
+            "perf": 0.65
           },
           "agressif": {
-            "capital": 10175.47,
-            "perf": 1.75
+            "capital": 10135.27,
+            "perf": 1.35
           }
         }
       },
-      "last_ts": "2026-03-24T17:26:01.622383",
+      "last_ts": "2026-03-24T19:00:57.268459",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 17,
+      "total_today": 21,
       "errors_today": 0,
-      "successes_today": 4
-    },
-    {
-      "agent": "AlertDetector",
-      "last_event": {
-        "ts": "2026-03-24T12:25:32.900415",
-        "agent": "AlertDetector",
-        "type": "warning",
-        "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
-        "data": {}
-      },
-      "last_ts": "2026-03-24T12:25:32.900415",
-      "last_type": "warning",
-      "last_message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
-      "total_today": 4,
-      "errors_today": 1,
-      "successes_today": 0
+      "successes_today": 5
     }
   ]
 }
