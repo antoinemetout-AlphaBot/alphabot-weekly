@@ -1,7 +1,125 @@
 {
-  "generated_at": "2026-03-24T09:26:17.970812",
+  "generated_at": "2026-03-24T09:41:13.854359",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:41:13.833352",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.822359",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.813348",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10028€ (+0.28%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.804364",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10027.59,
+          "perf": 0.28
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10159.24,
+          "perf": 1.59
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T09:41:13.772346",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Agressif: Achat 31x TQQQ @ 44.57",
+      "data": {
+        "profil": "agressif",
+        "ticker": "TQQQ",
+        "prix": 44.57,
+        "montant": 1381.67,
+        "raison": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:41:12.873672",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: acheter TQQQ",
+      "data": {
+        "profil": "agressif",
+        "action": "acheter",
+        "ticker": "TQQQ",
+        "nom": "ProShares UltraPro QQQ (3x Nasdaq 100)",
+        "allocation_pct": 25,
+        "raison_courte": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech.",
+        "raison_complete": "Le Nasdaq 100 rebondit de +1.22% aujourd'hui après une correction de -2.39% sur 5 jours, signalant un retour d'acheteurs sur les niveaux de support. Le VIX reste élevé à 26.38 mais stagne, et la rotation haussière sur les indices US (S&P 500 +1.15%) suggère une journée de 'risk-on' convaincante. Le Dollar Index remonte légèrement à 99.30 sans peser sur les technos pour l'instant. Le contexte macro reste porteur pour la tech : les anticipations de baisses de taux Fed en 2026 maintiennent la demande sur les valeurs de croissance. TQQQ amplifiera par 3x tout mouvement journalier positif du NDX, offrant un rendement asymétrique si le rebond se confirme en séance. Niveau technique clé : le NDX à 24 188 cherche à reconquérir sa MM20 jours, ce qui peut déclencher des achats algorithmiques supplémentaires.",
+        "catalyseur": "Rebond technique du Nasdaq 100 après -2.39% sur 5j, VIX se stabilisant à 26.38 sans nouveau pic",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "VIX toujours élevé à 26.38 avec une hausse sur 5j de +5.14% — un regain de stress géopolitique ou une surprise macro négative pourrait retourner le rebond violemment contre TQQQ. La corrélation avec SOXL déjà en portefeuille crée un risque de concentration sur la tech."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:58.183075",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: attendre None",
+      "data": {
+        "profil": "modere",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "Portefeuille bien positionné, patience avant nouveau déploiement.",
+        "raison_complete": "Le portefeuille est déjà exposé aux trois thèmes porteurs du moment : énergie via XLE (pétrole WTI à 90$, +2.61% aujourd'hui), or via GLD (4395$ l'once, protection contre l'incertitude macro), et Europe via EWG (+2.93% de P&L, DAX en consolidation après une semaine difficile -3.95%). Le VIX à 26.38 (+5.14% sur 5 jours) signale une nervosité persistante des marchés — ce n'est pas le moment idéal pour déployer du capital supplémentaire de manière agressive. Les marchés US rebondissent aujourd'hui (+1.15% S&P, +1.22% Nasdaq), mais ce rebond d'une journée sur fond de baisse hebdomadaire de -2% pourrait être un simple short-covering technique plutôt qu'une reprise structurelle. Le cash disponible de 5965€ représente près de 60% du portefeuille — une réserve précieuse à conserver pour saisir des opportunités lors d'une prochaine correction ou d'un catalyseur clair. Surveiller notamment les publications macro US de la semaine (données emploi, PCE) et toute annonce sur les tarifs douaniers.",
+        "catalyseur": "VIX élevé à 26 + rebond technique US non confirmé : attendre signal directionnel plus clair avant nouveau déploiement.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Le risque principal est de rater un rally de continuation si le rebond d'aujourd'hui se transforme en vrai retournement haussier. Cependant, avec 3 positions bien diversifiées déjà ouvertes et un VIX au-dessus de 25, la prudence reste la meilleure stratégie."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:42.562405",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: attendre None",
+      "data": {
+        "profil": "prudent",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": null,
+        "raison_courte": "VIX à 26 et marchés sous pression — patience avant tout déploiement",
+        "raison_complete": "Le VIX à 26.38 (+5.14% sur 5 jours) signale une nervosité persistante des marchés, incompatible avec un déploiement agressif du capital disponible. Les indices européens souffrent davantage que les marchés US : le DAX cède -3.95% sur 5 jours et le CAC -2.94%, ce qui suggère une pression spécifique sur la zone euro (incertitudes géopolitiques, interrogations sur la croissance). Le portefeuille est déjà bien positionné défensivement avec deux ETF obligataires (VGOV.L, IUSV.DE) et un ETF secteur biens de consommation stable (EXH7.DE, +1.97%). Le cash disponible de 6 711€ représente ~67% du capital — une réserve précieuse à ne pas brûler dans un marché encore instable. L'or à 4 395 USD reste à des niveaux historiquement élevés, réduisant l'attrait d'un achat à ce stade. La remontée du pétrole WTI à 90.43 USD (+2.61%) pourrait raviver des pressions inflationnistes, ce qui pèserait sur la valorisation des obligations détenues — à surveiller.",
+        "catalyseur": "VIX en hausse de +5.14% sur 5 jours : signal d'alerte justifiant la préservation du cash",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Rater un point d'entrée favorable si les marchés rebondissent brusquement. Une normalisation rapide du VIX sous 20 serait le signal pour redéployer le capital sur des blue chips ou ETF dividendes."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:22.591175",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Investissement IA 📈 — Mise à jour portefeuille",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:26:17.954177",
       "agent": "Orchestrateur",
@@ -953,139 +1071,53 @@
       "type": "success",
       "message": "🤖 Robot Agressif: 10268€ (+2.69%) | 2 positions",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.306597",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10061€ (+0.61%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.300553",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10033€ (+0.33%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.293008",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10033.46,
-          "perf": 0.33
-        },
-        "modere": {
-          "capital": 10060.63,
-          "perf": 0.61
-        },
-        "agressif": {
-          "capital": 10268.5,
-          "perf": 2.69
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T15:00:22.572704",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 15h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:25:22.425316",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Veille terminée — 1 crypto(s), 5 indices",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:25:10.406159",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Veille Marchés — Après-midi 🔍",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.284667",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10077€ (+0.77%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.276377",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.269338",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10017€ (+0.17%) | 1 positions",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:26:17.954177",
+        "ts": "2026-03-24T09:41:13.833352",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "DA Site : 0 insight(s) géopolitiques générés",
+        "message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T09:41:13.833352",
+      "last_type": "success",
+      "last_message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
+      "total_today": 22,
+      "errors_today": 1,
+      "successes_today": 11
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-24T09:41:13.804364",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "Cycle robot trader complété",
         "data": {
-          "date": "2026-03-24 09:25",
-          "etapes": {
-            "audit": {
-              "ok": true,
-              "score": 40,
-              "problemes": 6
-            },
-            "navigation": {
-              "ok": true,
-              "pages_mises_a_jour": 4
-            },
-            "insights": {
-              "ok": true,
-              "count": 5,
-              "injected_in_index": false,
-              "html_path": "outputs\\section_da_2026-03-24.html"
-            },
-            "visuels": {
-              "ok": true,
-              "details": [
-                {
-                  "page": "index.html",
-                  "status": "already_done"
-                },
-                {
-                  "page": "investissement.html",
-                  "status": "already_done"
-                },
-                {
-                  "page": "newsletter.html",
-                  "status": "already_done"
-                }
-              ]
-            }
+          "prudent": {
+            "capital": 10027.59,
+            "perf": 0.28
           },
-          "success": true,
-          "pages_ameliorees": 0,
-          "insights_count": 5
+          "modere": {
+            "capital": 10052.64,
+            "perf": 0.53
+          },
+          "agressif": {
+            "capital": 10159.24,
+            "perf": 1.59
+          }
         }
       },
-      "last_ts": "2026-03-24T09:26:17.954177",
+      "last_ts": "2026-03-24T09:41:13.804364",
       "last_type": "success",
-      "last_message": "DA Site : 0 insight(s) géopolitiques générés",
-      "total_today": 18,
-      "errors_today": 1,
-      "successes_today": 8
+      "last_message": "Cycle robot trader complété",
+      "total_today": 19,
+      "errors_today": 0,
+      "successes_today": 3
     },
     {
       "agent": "Agent DA Site",
@@ -1141,35 +1173,6 @@
       "total_today": 8,
       "errors_today": 0,
       "successes_today": 6
-    },
-    {
-      "agent": "Agent Investissement",
-      "last_event": {
-        "ts": "2026-03-24T09:00:59.173936",
-        "agent": "Agent Investissement",
-        "type": "success",
-        "message": "Cycle robot trader complété",
-        "data": {
-          "prudent": {
-            "capital": 10018.2,
-            "perf": 0.18
-          },
-          "modere": {
-            "capital": 10052.64,
-            "perf": 0.53
-          },
-          "agressif": {
-            "capital": 10166.89,
-            "perf": 1.67
-          }
-        }
-      },
-      "last_ts": "2026-03-24T09:00:59.173936",
-      "last_type": "success",
-      "last_message": "Cycle robot trader complété",
-      "total_today": 14,
-      "errors_today": 0,
-      "successes_today": 2
     },
     {
       "agent": "Sync Abonnés",
