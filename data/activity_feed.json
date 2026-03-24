@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T09:41:13.854359",
+  "generated_at": "2026-03-24T09:41:18.819795",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:41:18.796157",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:18.783180",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 9h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:41:13.833352",
       "agent": "Orchestrateur",
@@ -1057,37 +1071,23 @@
           "perf": 2.75
         }
       }
-    },
-    {
-      "ts": "2026-03-23T16:00:00.597082",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 16h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.315339",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10268€ (+2.69%) | 2 positions",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:41:13.833352",
+        "ts": "2026-03-24T09:41:18.796157",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T09:41:13.833352",
-      "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
-      "total_today": 22,
-      "errors_today": 1,
+      "last_ts": "2026-03-24T09:41:18.796157",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 24,
+      "errors_today": 2,
       "successes_today": 11
     },
     {
