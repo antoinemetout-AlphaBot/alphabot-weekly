@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T09:41:28.886604",
+  "generated_at": "2026-03-24T10:00:09.019615",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T10:00:08.994616",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:00:03.693589",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:41:28.865400",
       "agent": "Orchestrateur",
@@ -1044,38 +1058,24 @@
       "type": "start",
       "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.579673",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10275€ (+2.75%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.575675",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10072€ (+0.72%) | 1 positions",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:41:28.865400",
+        "ts": "2026-03-24T10:00:08.994616",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T09:41:28.865400",
+      "last_ts": "2026-03-24T10:00:08.994616",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 26,
+      "total_today": 28,
       "errors_today": 2,
-      "successes_today": 12
+      "successes_today": 13
     },
     {
       "agent": "Agent Investissement",
