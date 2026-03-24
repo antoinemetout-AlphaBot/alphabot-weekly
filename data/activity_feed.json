@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T10:26:18.447152",
+  "generated_at": "2026-03-24T10:26:28.401872",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T10:26:28.381793",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:23.254105",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T10:26:18.427888",
       "agent": "Orchestrateur",
@@ -1080,38 +1094,24 @@
       "type": "progress",
       "message": "Supervision de l'équipe en cours...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:05.098512",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:04.763817",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T10:26:18.427888",
+        "ts": "2026-03-24T10:26:28.381793",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10155€ (+1.55%) | 3 positions",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T10:26:18.427888",
+      "last_ts": "2026-03-24T10:26:28.381793",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10155€ (+1.55%) | 3 positions",
-      "total_today": 35,
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 37,
       "errors_today": 3,
-      "successes_today": 17
+      "successes_today": 18
     },
     {
       "agent": "Agent Investissement",
@@ -1241,7 +1241,7 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 21,
+      "total_today": 19,
       "errors_today": 0,
       "successes_today": 2
     },
