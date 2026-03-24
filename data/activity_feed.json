@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T10:00:09.019615",
+  "generated_at": "2026-03-24T10:10:13.971545",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T10:10:13.945464",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:10:13.922460",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 10h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T10:00:08.994616",
       "agent": "Orchestrateur",
@@ -1044,37 +1058,23 @@
       "type": "success",
       "message": "Analytics dashboard généré",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:27:17.803045",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Analytics 📊",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:27:17.795850",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T10:00:08.994616",
+        "ts": "2026-03-24T10:10:13.945464",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T10:00:08.994616",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 28,
-      "errors_today": 2,
+      "last_ts": "2026-03-24T10:10:13.945464",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 30,
+      "errors_today": 3,
       "successes_today": 13
     },
     {
