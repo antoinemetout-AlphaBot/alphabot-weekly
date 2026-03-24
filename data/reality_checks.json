@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-24",
+  "checks": [
+    {
+      "timestamp": "2026-03-24T17:30:00",
+      "citation": "Le portefeuille affiche +1.47% en 4 jours — encourageant mais statistiquement non significatif. Le vrai test viendra avec la première correction de -5%.",
+      "score_realite": 68,
+      "verdict_court": "Résultats prometteurs, mais trop tôt pour conclure.",
+      "branches_verifiees": ["newsletter", "trader", "arena"]
+    }
+  ],
+  "generated_at": "2026-03-24T17:30:00"
+}

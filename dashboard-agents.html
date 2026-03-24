@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Agents IA — AlphaBot Weekly | 13 agents IA en temps réel</title>
-<meta name="description" content="Visualisez l'activité en temps réel des 13 agents IA d'AlphaBot Weekly. Veille marchés, analyse, rédaction, trading — tout est transparent.">
+<title>Centre de Commande — AlphaBot Weekly | Dashboard Agents</title>
+<meta name="description" content="Centre de Commande AlphaBot: Score Global, 3 branches (Newsletter, Trader, Arène), COO, Reality Check, activité temps réel.">
 <meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@AlphaBot_Weekly">
@@ -27,933 +27,563 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh;}
 
-/* ══════════════════════════════════════════════════════════════
-   BACKGROUND - Subtle gradient mesh
-   ══════════════════════════════════════════════════════════════ */
-.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
-.bg-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(34,211,238,.06) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,200,66,.04) 0%, transparent 50%);animation:drift 20s ease-in-out infinite;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.15;mix-blend-mode:screen;}
+.orb-1{width:500px;height:500px;background:var(--cyan);top:-100px;left:10%;animation:float 8s ease-in-out infinite;}
+.orb-2{width:400px;height:400px;background:var(--gold);top:30%;right:5%;animation:float 10s ease-in-out infinite reverse;}
+.orb-3{width:300px;height:300px;background:var(--blue);bottom:10%;left:50%;animation:float 12s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-30px);}}
 
-/* ══════════════════════════════════════════════════════════════
-   SCROLLBAR
-   ══════════════════════════════════════════════════════════════ */
-::-webkit-scrollbar{width:6px;}
+.bg-grid{position:absolute;inset:0;background-image:
+  radial-gradient(circle at 20% 50%, rgba(34,211,238,.05) 0%, transparent 50%),
+  radial-gradient(circle at 80% 80%, rgba(245,200,66,.03) 0%, transparent 50%);
+  animation:drift 25s ease-in-out infinite;}
+@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(15px,-15px);}}
+
+::-webkit-scrollbar{width:8px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:3px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:4px;}
 
-/* ══════════════════════════════════════════════════════════════
-   NAVIGATION
-   ══════════════════════════════════════════════════════════════ */
-/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-.nav-center{display:flex;gap:28px;align-items:center;}
-.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-.nav-center a:hover{color:#fff;}
-.nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:#22d3ee;}
-.nav-center a.active::after{width:100%;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-.nav-cta::after{display:none!important;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-brand-sub{font-size:11px;font-weight:500;color:#64748b;}
+.nav-menu{display:flex;gap:1.5rem;align-items:center;font-size:13px;font-weight:500;flex-wrap:wrap;}
+.nav-menu a{color:var(--text);text-decoration:none;transition:all .2s var(--transition);}
+.nav-menu a:hover{color:var(--cyan);}
+.nav-menu a.active{color:var(--cyan);border-bottom:2px solid var(--cyan);}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:8px 18px;border-radius:4px;color:#fff!important;font-weight:600;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(34,211,238,.3);}
 
-/* ══════════════════════════════════════════════════════════════
-   PAGE LAYOUT
-   ══════════════════════════════════════════════════════════════ */
-.page{position:relative;z-index:1;padding:100px 5% 80px;max-width:1300px;margin:0 auto;}
+main{position:relative;z-index:1;margin-top:80px;padding:40px 5%;max-width:1600px;margin-left:auto;margin-right:auto;}
 
-/* ══════════════════════════════════════════════════════════════
-   ALERTES MARCHÉS
-   ══════════════════════════════════════════════════════════════ */
-.alerts-section{margin-bottom:48px;border:1px solid rgba(239,68,68,.15);border-radius:16px;background:rgba(239,68,68,.03);overflow:hidden;}
-.alerts-header{padding:24px 28px 16px;border-bottom:1px solid rgba(255,255,255,.06);}
-.alerts-title-row{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
-.alerts-icon{font-size:20px;}
-.alerts-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;}
-.alerts-badge{background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;min-width:22px;text-align:center;}
-.alerts-badge.zero{background:var(--green);}
-.alerts-subtitle{font-size:12px;color:var(--muted);margin-bottom:12px;}
-.alerts-filters{display:flex;gap:8px;flex-wrap:wrap;}
-.alert-filter-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:11px;font-weight:600;padding:5px 12px;border-radius:8px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
-.alert-filter-btn:hover{color:#fff;border-color:rgba(255,255,255,.2);}
-.alert-filter-btn.active{color:var(--cyan);border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.08);}
-.alerts-body{max-height:400px;overflow-y:auto;padding:8px;}
-.alerts-empty{padding:40px;text-align:center;color:var(--muted);font-size:13px;}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.8px;}
+.subtitle{color:var(--muted);font-size:13px;margin-bottom:40px;display:flex;align-items:center;gap:8px;}
 
-.alert-card{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;margin:4px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02);transition:background .2s;}
-.alert-card:hover{background:rgba(255,255,255,.05);}
-.alert-card.critical{border-left:3px solid var(--red);background:rgba(239,68,68,.05);}
-.alert-card.alert{border-left:3px solid var(--yellow);background:rgba(245,158,11,.04);}
-.alert-card.warning{border-left:3px solid var(--cyan);background:rgba(34,211,238,.03);}
-.alert-card.news{border-left:3px solid var(--blue);background:rgba(59,130,246,.04);}
-.alert-emoji{font-size:18px;flex-shrink:0;margin-top:1px;}
-.alert-content{flex:1;min-width:0;}
-.alert-msg{font-size:13px;color:var(--text);line-height:1.5;word-break:break-word;}
-.alert-meta{display:flex;gap:12px;margin-top:4px;font-size:11px;color:var(--muted);}
-.alert-variation{font-weight:700;font-family:'JetBrains Mono',monospace;}
-.alert-variation.up{color:var(--green);}
-.alert-variation.down{color:var(--red);}
-.alert-time{font-family:'JetBrains Mono',monospace;color:var(--muted2);font-size:11px;white-space:nowrap;margin-top:2px;}
+/* Global Score Section */
+.score-section{margin-bottom:50px;padding:30px;background:linear-gradient(135deg,rgba(34,211,238,.05),rgba(245,200,66,.05));border:1px solid rgba(34,211,238,.1);border-radius:12px;backdrop-filter:blur(10px);}
+.score-global{display:grid;grid-template-columns:1fr 3fr;gap:40px;align-items:center;margin-bottom:30px;}
+@media(max-width:768px){.score-global{grid-template-columns:1fr;gap:30px;}}
 
-/* ══════════════════════════════════════════════════════════════
-   HEADER
-   ══════════════════════════════════════════════════════════════ */
-.hero{text-align:center;margin-bottom:48px;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:50px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;}
-.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.8s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,5vw,44px);font-weight:800;color:white;margin-bottom:12px;line-height:1.15;}
-.hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.hero p{font-size:15px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.6;}
-.hero-stats{display:flex;justify-content:center;gap:32px;margin-top:24px;}
-.hero-stat{text-align:center;}
-.hero-stat-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;}
-.hero-stat-val.cyan{color:var(--cyan);}
-.hero-stat-val.green{color:var(--green);}
-.hero-stat-val.gold{color:var(--gold);}
-.hero-stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px;}
+.score-circle{width:200px;height:200px;border-radius:50%;background:conic-gradient(from 0deg, var(--green) 0%, var(--cyan) 33%, var(--gold) 66%, var(--red) 100%);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 40px rgba(34,211,238,.4);}
+.score-circle::before{content:'';position:absolute;inset:8px;border-radius:50%;background:var(--bg2);}
+.score-number{position:relative;z-index:2;font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
-/* ══════════════════════════════════════════════════════════════
-   PYRAMIDE HIÉRARCHIQUE
-   ══════════════════════════════════════════════════════════════ */
-.pyramid{margin-bottom:56px;}
-.pyramid-title{text-align:center;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:28px;}
+.score-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:768px){.score-cards{grid-template-columns:1fr;}}
+.score-card{padding:20px;background:var(--card2);border:1px solid var(--border);border-radius:8px;transition:all .3s var(--transition);}
+.score-card:hover{background:var(--card);border-color:var(--cyan);box-shadow:0 0 20px rgba(34,211,238,.2);}
+.score-label{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:8px;}
+.score-value{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
-/* Pyramid rows */
-.pyr-row{display:flex;justify-content:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+/* COO Status */
+.coo-section{margin-bottom:50px;padding:25px;background:linear-gradient(135deg,rgba(168,85,247,.05),rgba(34,211,238,.05));border:1px solid rgba(168,85,247,.2);border-radius:12px;backdrop-filter:blur(10px);}
+.coo-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;}
+.coo-dot{width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);}
+.coo-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);}
+.coo-time{color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.coo-status{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.coo-item{padding:15px;background:var(--card);border-left:3px solid var(--cyan);border-radius:6px;}
+.coo-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;}
+.coo-value{font-size:16px;font-weight:600;color:var(--text);margin-top:8px;}
 
-/* Agent node */
-.agent-node{position:relative;background:var(--card);border:1px solid var(--b);border-radius:16px;padding:20px 22px;min-width:200px;max-width:280px;flex:1;cursor:pointer;transition:all .3s ease;overflow:hidden;}
-.agent-node::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;opacity:0;transition:opacity .3s;}
-.agent-node:hover{border-color:var(--b2);background:var(--card2);transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.3);}
-.agent-node:hover::before{opacity:1;}
-.agent-node.active-now{animation:glowPulse 2s ease-in-out infinite;}
-@keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(34,211,238,0);}50%{box-shadow:0 0 20px rgba(34,211,238,.1);}}
+/* Reality Check */
+.reality-section{margin-bottom:50px;padding:25px;background:linear-gradient(135deg,rgba(239,68,68,.05),rgba(34,211,238,.05));border:1px solid rgba(239,68,68,.2);border-radius:12px;backdrop-filter:blur(10px);}
+.reality-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.reality-icon{font-size:20px;}
+.reality-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;}
+.reality-score{display:flex;align-items:center;gap:15px;}
+.score-bar{flex:1;height:8px;background:var(--b2);border-radius:4px;overflow:hidden;}
+.score-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:4px;transition:width .5s var(--transition);}
+.score-percent{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;min-width:50px;}
+.reality-verdict{padding:15px;margin-top:15px;background:var(--card);border-left:3px solid var(--yellow);border-radius:6px;font-size:13px;line-height:1.6;}
+.reality-issues{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:15px;}
+.issue{padding:10px;background:var(--b);border-left:3px solid var(--red);border-radius:4px;font-size:12px;}
 
-/* Color accents per tier */
-.tier-ceo .agent-node::before{background:linear-gradient(90deg,var(--gold),#fde68a);}
-.tier-ceo .agent-node{border-color:rgba(245,200,66,.15);}
-.tier-ceo .agent-node:hover{border-color:rgba(245,200,66,.35);}
+/* Three Branches */
+.branches{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:50px;}
+@media(max-width:1024px){.branches{grid-template-columns:1fr 1fr;gap:20px;}}
+@media(max-width:768px){.branches{grid-template-columns:1fr;}}
 
-.tier-director .agent-node::before{background:linear-gradient(90deg,var(--cyan),var(--blue));}
-.tier-director .agent-node{border-color:rgba(34,211,238,.12);}
-.tier-director .agent-node:hover{border-color:rgba(34,211,238,.3);}
+.branch{padding:25px;background:var(--card2);border:1px solid var(--border);border-radius:12px;transition:all .3s var(--transition);}
+.branch:hover{background:var(--card);border-color:var(--cyan);box-shadow:0 8px 32px rgba(34,211,238,.1);}
+.branch-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--b);}
+.branch-icon{font-size:24px;}
+.branch-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;}
+.branch-agents{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+.agent-item{padding:12px;background:var(--bg2);border-left:3px solid var(--cyan);border-radius:6px;display:flex;align-items:center;gap:10px;font-size:13px;}
+.agent-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.agent-dot.success{background:var(--green);box-shadow:0 0 6px var(--green);}
+.agent-dot.warning{background:var(--yellow);box-shadow:0 0 6px var(--yellow);}
+.agent-dot.error{background:var(--red);box-shadow:0 0 6px var(--red);}
+.agent-name{flex:1;}
+.agent-time{color:var(--muted);font-size:11px;}
+.branch-metric{padding:15px;background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(245,200,66,.1));border:1px solid rgba(34,211,238,.2);border-radius:8px;margin-top:15px;}
+.metric-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;}
+.metric-value{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);margin-top:8px;}
 
-.tier-senior .agent-node::before{background:linear-gradient(90deg,var(--blue),var(--purple));}
-.tier-senior .agent-node{border-color:rgba(59,130,246,.1);}
-.tier-senior .agent-node:hover{border-color:rgba(59,130,246,.25);}
+/* Arena Spotlight */
+.arena-section{margin-bottom:50px;padding:30px;background:linear-gradient(135deg,rgba(34,211,238,.05),rgba(168,85,247,.05));border:1px solid rgba(34,211,238,.1);border-radius:12px;backdrop-filter:blur(10px);}
+.arena-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.arena-combat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:center;}
+@media(max-width:768px){.arena-combat{grid-template-columns:1fr;}}
+.combatant{padding:20px;background:var(--card2);border:1px solid var(--border);border-radius:10px;text-align:center;}
+.combatant-name{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;}
+.combatant-performance{font-size:20px;font-weight:600;margin-bottom:10px;}
+.combatant-bull .combatant-performance{color:var(--green);}
+.combatant-bear .combatant-performance{color:var(--red);}
+.combatant-status{font-size:12px;color:var(--muted);}
+.vs{display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;}
 
-.tier-ops .agent-node::before{background:linear-gradient(90deg,var(--green),var(--cyan));}
-.tier-ops .agent-node{border-color:rgba(34,197,94,.08);}
-.tier-ops .agent-node:hover{border-color:rgba(34,197,94,.2);}
+/* Activity Terminal */
+.terminal-section{padding:30px;background:var(--card2);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(10px);}
+.terminal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.terminal-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;}
+.terminal-filters{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{padding:6px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;color:var(--text);cursor:pointer;font-size:12px;font-weight:500;transition:all .2s var(--transition);}
+.filter-btn:hover,.filter-btn.active{background:var(--cyan);color:var(--bg);border-color:var(--cyan);}
 
-/* Node header */
-.node-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
-.node-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-.tier-ceo .node-icon{background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.2);}
-.tier-director .node-icon{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);}
-.tier-senior .node-icon{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);}
-.tier-ops .node-icon{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);}
-.node-name{font-size:14px;font-weight:700;color:white;}
-.node-role{font-size:11px;color:var(--muted);margin-top:1px;}
+.terminal-logs{height:400px;overflow-y:auto;background:var(--bg2);border:1px solid var(--b);border-radius:8px;padding:15px;font-family:'JetBrains Mono',monospace;font-size:12px;}
+.log-entry{padding:8px;margin:5px 0;background:var(--bg);border-left:3px solid var(--cyan);border-radius:4px;display:grid;grid-template-columns:100px 120px 1fr;gap:10px;line-height:1.5;}
+.log-time{color:var(--gold);}
+.log-agent{color:var(--cyan);}
+.log-message{color:var(--text);}
+.log-entry.success .log-agent{color:var(--green);}
+.log-entry.warning .log-agent{color:var(--yellow);}
+.log-entry.error .log-agent{color:var(--red);}
 
-/* Status indicator */
-.node-status{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;margin-bottom:8px;}
-.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.status-dot.online{background:var(--green);box-shadow:0 0 6px var(--green);}
-.status-dot.error{background:var(--red);box-shadow:0 0 6px var(--red);}
-.status-dot.idle{background:var(--muted);box-shadow:none;}
-.status-text.online{color:var(--green);}
-.status-text.error{color:var(--red);}
-.status-text.idle{color:var(--muted);}
+.terminal-logs::-webkit-scrollbar{width:6px;}
+.terminal-logs::-webkit-scrollbar-track{background:var(--bg);}
+.terminal-logs::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
 
-/* Live task */
-.node-task{font-size:12px;color:var(--muted);line-height:1.5;padding:8px 10px;background:rgba(0,0,0,.2);border-radius:8px;border-left:2px solid var(--b);font-family:'JetBrains Mono',monospace;font-size:11px;}
-.node-task.active{border-left-color:var(--cyan);color:var(--text);}
-
-/* Node stats */
-.node-stats{display:flex;gap:12px;margin-top:10px;font-size:10px;color:var(--muted2);}
-.node-stat{display:flex;align-items:center;gap:3px;}
-
-/* Connector lines */
-.connector{display:flex;justify-content:center;margin-bottom:16px;position:relative;}
-.connector svg{display:block;}
-
-/* Tier labels */
-.tier-label{text-align:center;margin-bottom:12px;}
-.tier-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;}
-.tier-ceo .tier-badge{background:rgba(245,200,66,.08);color:var(--gold);border:1px solid rgba(245,200,66,.15);}
-.tier-director .tier-badge{background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid rgba(34,211,238,.15);}
-.tier-senior .tier-badge{background:rgba(59,130,246,.08);color:#93c5fd;border:1px solid rgba(59,130,246,.15);}
-.tier-ops .tier-badge{background:rgba(34,197,94,.06);color:var(--green);border:1px solid rgba(34,197,94,.12);}
-
-/* ══════════════════════════════════════════════════════════════
-   LIVE TERMINAL
-   ══════════════════════════════════════════════════════════════ */
-.terminal-section{margin-top:48px;}
-.terminal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.terminal-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;}
-.terminal-controls{display:flex;gap:8px;}
-.term-btn{padding:6px 14px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--b);background:transparent;color:var(--muted);transition:.2s;font-family:inherit;}
-.term-btn:hover{color:white;border-color:var(--b2);}
-.term-btn.active{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);color:var(--cyan);}
-
-.terminal{background:rgba(0,0,0,.4);border:1px solid var(--b);border-radius:16px;overflow:hidden;}
-.term-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:rgba(0,0,0,.3);border-bottom:1px solid var(--b);}
-.term-dot{width:10px;height:10px;border-radius:50%;}
-.term-dot.r{background:#ff5f57;}.term-dot.y{background:#febc2e;}.term-dot.g{background:#28c840;}
-.term-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);margin-left:8px;}
-.term-live{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:11px;color:var(--green);font-weight:600;}
-
-.term-body{max-height:420px;overflow-y:auto;padding:4px 0;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.8;}
-.term-body::-webkit-scrollbar{width:4px;}
-.term-body::-webkit-scrollbar-track{background:transparent;}
-.term-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
-
-.term-line{display:flex;align-items:flex-start;gap:10px;padding:4px 18px;transition:background .15s;}
-.term-line:hover{background:rgba(255,255,255,.02);}
-.term-time{color:var(--muted2);flex-shrink:0;min-width:62px;}
-.term-icon{flex-shrink:0;min-width:18px;text-align:center;}
-.term-agent{color:var(--cyan);font-weight:600;flex-shrink:0;min-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.term-msg{color:var(--text);word-break:break-word;flex:1;}
-.term-line.error .term-msg{color:rgba(252,165,165,.9);}
-.term-line.warning .term-msg{color:rgba(253,224,138,.9);}
-.term-line.milestone .term-msg{color:rgba(216,180,254,.9);}
-.term-line.milestone .term-agent{color:var(--purple);}
-
-/* ══════════════════════════════════════════════════════════════
-   REFRESH BAR
-   ══════════════════════════════════════════════════════════════ */
-.refresh-bar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(4,9,26,.95);backdrop-filter:blur(10px);border-top:1px solid var(--b);padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);}
-.refresh-btn{background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.2);color:var(--cyan);padding:6px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;transition:.2s;}
-.refresh-btn:hover{background:rgba(34,211,238,.2);}
-.countdown{font-family:'JetBrains Mono',monospace;color:var(--cyan);}
-
-/* ══════════════════════════════════════════════════════════════
-   FOOTER
-   ══════════════════════════════════════════════════════════════ */
-footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;flex-direction:column;gap:24px;position:relative;z-index:1;background:var(--bg);}
-.footer-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
-.footer-section{display:flex;flex-direction:column;gap:12px;}
-.footer-section h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:white;margin-bottom:4px;}
-.footer-section a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s;}
-.footer-section a:hover{color:white;}
-.footer-section p{color:var(--muted);font-size:12px;line-height:1.6;margin:0;}
-.footer-divider{width:100%;height:1px;background:var(--border);margin:0;}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--muted);}
-.footer-copy{text-align:center;width:100%;}
-.footer-disclaimer{text-align:center;width:100%;color:var(--muted2);font-size:11px;line-height:1.5;}
-
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════════════════════════════ */
+/* Responsive */
 @media(max-width:768px){
-  .pyr-row{flex-direction:column;align-items:center;}
-  .agent-node{min-width:280px;max-width:100%;}
-  .hero-stats{flex-wrap:wrap;gap:16px;}
-  .connector{display:none;}
-  nav{padding:12px 4%;}
-  .nav-center{display:none;gap:0;width:100%;}
-  .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-  .nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+  main{padding:30px 4%;margin-top:70px;}
+  h1{font-size:28px;}
+  .nav-menu{gap:1rem;font-size:12px;}
+  .score-circle{width:150px;height:150px;}
+  .score-number{font-size:48px;}
+  .score-value{font-size:24px;}
 }
 
-/* FOCUS STATES */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.skip-link:focus { top: 0; }
-</style>
-
-<!-- VISUAL-UPGRADE-2026-03-24 -->
-<style>
-/* ═══ DASHBOARD AGENTS VISUAL UPGRADE ═══ */
-
-/* Animated dot grid */
-body::after {
-  content:'';
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image: radial-gradient(circle, rgba(34,211,238,.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridPulse 4s ease-in-out infinite alternate;
-}
-@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
-
-/* Animated border glow */
-@keyframes borderGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-
-/* Pyramid container — glow border */
-.pyramid {
-  position:relative; z-index:1;
-}
-.pyramid::before {
-  content:''; position:absolute; inset:-2px; border-radius:inherit; z-index:-1;
-  background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(59,130,246,.15),rgba(245,200,66,.15),rgba(34,211,238,.3));
-  background-size:300% 300%; animation:borderGlow 8s ease infinite;
-  opacity:.4; border-radius:20px;
-}
-
-/* Node cards — glow on hover */
-.node-card, .pyramid-node {
-  transition: all .3s ease!important;
-}
-.node-card:hover, .pyramid-node:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 50px rgba(0,0,0,.3), 0 0 30px rgba(34,211,238,.08);
-  border-color: rgba(34,211,238,.3)!important;
-}
-
-/* Status dots — bigger pulse */
-.status-dot.active, .status-dot.success {
-  box-shadow: 0 0 10px rgba(34,197,94,.6), 0 0 20px rgba(34,197,94,.3);
-}
-
-/* Terminal — enhanced glow */
-.terminal-section {
-  position:relative; z-index:1;
-}
-.terminal-section::before {
-  content:''; position:absolute; inset:-1px; border-radius:inherit; z-index:-1;
-  background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(59,130,246,.1),rgba(34,211,238,.2));
-  background-size:300% 300%; animation:borderGlow 8s ease infinite;
-  opacity:.3; border-radius:16px;
-}
-
-/* Terminal header — glow text */
-.terminal-header {
-  text-shadow: 0 0 20px rgba(34,211,238,.3);
-}
-
-/* KPI values glow */
-.kpi-value, .stat-value {
-  text-shadow: 0 0 20px currentColor;
+@media(max-width:480px){
+  h1{font-size:24px;}
+  .terminal-logs{height:300px;}
+  .log-entry{grid-template-columns:1fr;}
+  .log-time,.log-agent{font-size:10px;}
 }
 </style>
-
-<!-- GOOGLE ANALYTICS — Remplacer G-XXXXXXXXXX par votre ID GA4 -->
-<!-- Créer un compte sur https://analytics.google.com puis décommenter -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
--->
-
-<!-- Analytics simple (fonctionne immédiatement) -->
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
-<div class="bg-wrap"><div class="bg-grid"></div></div>
 
-<!-- NAV -->
-<nav aria-label="Navigation principale">
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center" id="nav-menu">
-    <a href="index.html">Accueil</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html" class="active">Agents IA</a>
-    <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
-  </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- GATE ABONNÉS -->
-<div id="ab-gate"></div>
-
-<!-- CONTENU PROTÉGÉ -->
-<div id="ab-content" style="display:none;">
-<div class="page" id="main-content">
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-badge"><span class="live-dot"></span> Système en activité</div>
-    <h1>Plongez dans le<br><span>cerveau d'AlphaBot</span></h1>
-    <p>13 agents IA travaillent en autonomie pour analyser les marchés, rédiger votre newsletter et gérer le portefeuille. Observez-les en temps réel.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-val cyan" id="statAgents">—</div><div class="hero-stat-label">Agents actifs</div></div>
-      <div class="hero-stat"><div class="hero-stat-val green" id="statSuccess">—</div><div class="hero-stat-label">Tâches réussies</div></div>
-      <div class="hero-stat"><div class="hero-stat-val gold" id="statEvents">—</div><div class="hero-stat-label">Événements / jour</div></div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       PYRAMIDE HIÉRARCHIQUE
-       ═══════════════════════════════════════════ -->
-  <div class="pyramid">
-    <div class="pyramid-title">Hiérarchie du système</div>
-
-    <!-- TIER 1 : CEO -->
-    <div class="tier-ceo">
-      <div class="tier-label"><span class="tier-badge">Direction</span></div>
-      <div class="pyr-row" style="max-width:300px;margin:0 auto;">
-        <div class="agent-node" id="node-orchestrateur" onclick="focusAgent('Orchestrateur')">
-          <div class="node-head">
-            <div class="node-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-            </div>
-            <div>
-              <div class="node-name">Orchestrateur</div>
-              <div class="node-role">Cerveau central</div>
-            </div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-orchestrateur"></span><span class="status-text idle" id="status-orchestrateur">Chargement...</span></div>
-          <div class="node-task" id="task-orchestrateur">En attente de données...</div>
-          <div class="node-stats" id="stats-orchestrateur"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Connector -->
-    <div class="connector">
-      <svg width="200" height="32" viewBox="0 0 200 32"><line x1="100" y1="0" x2="40" y2="32" stroke="rgba(255,255,255,.08)" stroke-width="1"/><line x1="100" y1="0" x2="160" y2="32" stroke="rgba(255,255,255,.08)" stroke-width="1"/></svg>
-    </div>
-
-    <!-- TIER 2 : Directeurs -->
-    <div class="tier-director">
-      <div class="tier-label"><span class="tier-badge">Directeurs</span></div>
-      <div class="pyr-row" style="max-width:620px;margin:0 auto;">
-        <div class="agent-node" id="node-adjoint" onclick="focusAgent('Directeur Adjoint')">
-          <div class="node-head">
-            <div class="node-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div>
-              <div class="node-name">Directeur Adjoint</div>
-              <div class="node-role">Supervision & rapports CEO</div>
-            </div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-adjoint"></span><span class="status-text idle" id="status-adjoint">—</span></div>
-          <div class="node-task" id="task-adjoint">—</div>
-          <div class="node-stats" id="stats-adjoint"></div>
-        </div>
-        <div class="agent-node" id="node-cfo" onclick="focusAgent('Agent CFO')">
-          <div class="node-head">
-            <div class="node-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div>
-              <div class="node-name">Agent CFO</div>
-              <div class="node-role">Finances & projections</div>
-            </div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-cfo"></span><span class="status-text idle" id="status-cfo">—</span></div>
-          <div class="node-task" id="task-cfo">—</div>
-          <div class="node-stats" id="stats-cfo"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Connector -->
-    <div class="connector">
-      <svg width="600" height="32" viewBox="0 0 600 32"><line x1="150" y1="0" x2="75" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="150" y1="0" x2="200" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="450" y1="0" x2="350" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/><line x1="450" y1="0" x2="525" y2="32" stroke="rgba(255,255,255,.06)" stroke-width="1"/></svg>
-    </div>
-
-    <!-- TIER 3 : Agents Seniors -->
-    <div class="tier-senior">
-      <div class="tier-label"><span class="tier-badge">Agents Stratégiques</span></div>
-      <div class="pyr-row" style="max-width:900px;margin:0 auto;">
-        <div class="agent-node" id="node-veille" onclick="focusAgent('Agent Veille')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-            <div><div class="node-name">Agent Veille</div><div class="node-role">Données marchés</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-veille"></span><span class="status-text idle" id="status-veille">—</span></div>
-          <div class="node-task" id="task-veille">—</div>
-          <div class="node-stats" id="stats-veille"></div>
-        </div>
-        <div class="agent-node" id="node-analyste" onclick="focusAgent('Agent Analyste')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M20.5 7.3 12 12V2c3.2 0 6 1.2 8.5 3.3z" fill="rgba(147,197,253,.15)"/></svg></div>
-            <div><div class="node-name">Agent Analyste</div><div class="node-role">Analyse IA macro/crypto</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-analyste"></span><span class="status-text idle" id="status-analyste">—</span></div>
-          <div class="node-task" id="task-analyste">—</div>
-          <div class="node-stats" id="stats-analyste"></div>
-        </div>
-        <div class="agent-node" id="node-investissement" onclick="focusAgent('Agent Investissement')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-            <div><div class="node-name">Agent Investissement</div><div class="node-role">Robot Trader IA</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-investissement"></span><span class="status-text idle" id="status-investissement">—</span></div>
-          <div class="node-task" id="task-investissement">—</div>
-          <div class="node-stats" id="stats-investissement"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Connector -->
-    <div class="connector">
-      <svg width="800" height="28" viewBox="0 0 800 28"><line x1="200" y1="0" x2="100" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="400" y1="0" x2="280" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="400" y1="0" x2="520" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/><line x1="600" y1="0" x2="700" y2="28" stroke="rgba(255,255,255,.05)" stroke-width="1"/></svg>
-    </div>
-
-    <!-- TIER 4 : Opérations -->
-    <div class="tier-ops">
-      <div class="tier-label"><span class="tier-badge">Opérations</span></div>
-      <div class="pyr-row" style="max-width:1200px;margin:0 auto;">
-        <div class="agent-node" id="node-redacteur" onclick="focusAgent('Agent Rédacteur')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-            <div><div class="node-name">Rédacteur</div><div class="node-role">Newsletter</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-redacteur"></span><span class="status-text idle" id="status-redacteur">—</span></div>
-          <div class="node-task" id="task-redacteur">—</div>
-          <div class="node-stats" id="stats-redacteur"></div>
-        </div>
-        <div class="agent-node" id="node-growth" onclick="focusAgent('Agent Growth')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
-            <div><div class="node-name">Growth</div><div class="node-role">Abonnés</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-growth"></span><span class="status-text idle" id="status-growth">—</span></div>
-          <div class="node-task" id="task-growth">—</div>
-          <div class="node-stats" id="stats-growth"></div>
-        </div>
-        <div class="agent-node" id="node-da" onclick="focusAgent('Agent DA Site')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-            <div><div class="node-name">DA Site</div><div class="node-role">Design</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-da"></span><span class="status-text idle" id="status-da">—</span></div>
-          <div class="node-task" id="task-da">—</div>
-          <div class="node-stats" id="stats-da"></div>
-        </div>
-        <div class="agent-node" id="node-commercial" onclick="focusAgent('Agent Commercial')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-            <div><div class="node-name">Commercial</div><div class="node-role">Sponsors</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-commercial"></span><span class="status-text idle" id="status-commercial">—</span></div>
-          <div class="node-task" id="task-commercial">—</div>
-          <div class="node-stats" id="stats-commercial"></div>
-        </div>
-        <div class="agent-node" id="node-booster" onclick="focusAgent('Agent Growth Booster')">
-          <div class="node-head">
-            <div class="node-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div><div class="node-name">Booster</div><div class="node-role">Croissance</div></div>
-          </div>
-          <div class="node-status"><span class="status-dot idle" id="dot-booster"></span><span class="status-text idle" id="status-booster">—</span></div>
-          <div class="node-task" id="task-booster">—</div>
-          <div class="node-stats" id="stats-booster"></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /pyramid -->
-
-  <!-- ═══════════════════════════════════════════
-       ALERTES MARCHÉS EN TEMPS RÉEL
-       ═══════════════════════════════════════════ -->
-  <div class="alerts-section" id="alertsSection">
-    <div class="alerts-header">
-      <div class="alerts-title-row">
-        <span class="alerts-icon">🚨</span>
-        <h2 class="alerts-title">Alertes Marchés</h2>
-        <span class="alerts-badge" id="alertsBadge">0</span>
-      </div>
-      <div class="alerts-subtitle">Veille continue — scan toutes les 15 min</div>
-      <div class="alerts-filters">
-        <button class="alert-filter-btn active" onclick="setAlertFilter('all',this)">Toutes</button>
-        <button class="alert-filter-btn" onclick="setAlertFilter('critical',this)">🚨 Critiques</button>
-        <button class="alert-filter-btn" onclick="setAlertFilter('alert',this)">🔔 Alertes</button>
-        <button class="alert-filter-btn" onclick="setAlertFilter('warning',this)">⚠️ Avertissements</button>
-        <button class="alert-filter-btn" onclick="setAlertFilter('news',this)">📰 News</button>
-      </div>
-    </div>
-    <div class="alerts-body" id="alertsBody">
-      <div class="alerts-empty">En attente du premier scan...</div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       TERMINAL LIVE
-       ═══════════════════════════════════════════ -->
-  <div class="terminal-section">
-    <div class="terminal-header">
-      <div class="terminal-title">Terminal en direct</div>
-      <div class="terminal-controls">
-        <button class="term-btn active" onclick="setFilter('all',this)">Tout</button>
-        <button class="term-btn" onclick="setFilter('success',this)">Succès</button>
-        <button class="term-btn" onclick="setFilter('error',this)">Erreurs</button>
-        <button class="term-btn" onclick="setFilter('milestone',this)">Jalons</button>
-      </div>
-    </div>
-    <div class="terminal">
-      <div class="term-bar">
-        <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
-        <span class="term-title">alphabot-agents.log</span>
-        <div class="term-live"><span class="live-dot" style="width:6px;height:6px;"></span>LIVE</div>
-      </div>
-      <div class="term-body" id="termBody">
-        <div style="padding:40px;text-align:center;color:var(--muted)">Connexion au flux en cours...</div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /page -->
-
-<!-- REFRESH BAR -->
-<div class="refresh-bar">
-  <span>Prochaine mise à jour dans <span class="countdown" id="countdown">30s</span></span>
-  <button class="refresh-btn" onclick="loadFeed()">↻ Actualiser</button>
+<div class="bg-wrap">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="bg-grid"></div>
 </div>
 
-</div><!-- /ab-content -->
+<nav>
+  <div class="nav-brand">ALPHABOT<div class="nav-brand-sub">Centre de Commande</div></div>
+  <div class="nav-menu">
+    <a href="index.html">Accueil</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="investissement.html">Investissement</a>
+    <a href="arena.html">Arena</a>
+    <a href="dashboard-agents.html" class="active">Agents</a>
+    <a href="newsletter.html" class="nav-cta">S'abonner gratuitement</a>
+  </div>
+</nav>
+
+<main>
+  <h1>🎯 Centre de Commande AlphaBot</h1>
+  <div class="subtitle">
+    <span id="live-indicator">● Temps réel</span> • Mise à jour automatique toutes les 30s
+  </div>
+
+  <!-- Global Score Section -->
+  <div class="score-section">
+    <div class="score-global">
+      <div class="score-circle">
+        <div class="score-number" id="global-score">—</div>
+      </div>
+      <div class="score-cards">
+        <div class="score-card">
+          <div class="score-label">Newsletter</div>
+          <div class="score-value" id="newsletter-score">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">/100</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Trader Performance</div>
+          <div class="score-value" id="trader-perf">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">%</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Combats Arène</div>
+          <div class="score-value" id="arena-combats">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">aujourd'hui</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COO Status -->
+  <div class="coo-section">
+    <div class="coo-header">
+      <div class="coo-dot"></div>
+      <div class="coo-title">Directeur d'Exploitation (COO)</div>
+      <div class="coo-time" id="coo-time">—</div>
+    </div>
+    <div class="coo-status">
+      <div class="coo-item">
+        <div class="coo-label">Tâches du jour</div>
+        <div class="coo-value" id="coo-tasks">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Taux de succès</div>
+        <div class="coo-value" id="coo-success">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Erreurs aujourd'hui</div>
+        <div class="coo-value" id="coo-errors">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Status système</div>
+        <div class="coo-value" id="coo-system">✓ Normal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reality Check -->
+  <div class="reality-section">
+    <div class="reality-header">
+      <div class="reality-icon">⚠️</div>
+      <div class="reality-title">Reality Check</div>
+    </div>
+    <div class="reality-score">
+      <div class="score-bar">
+        <div class="score-bar-fill" id="reality-bar" style="width:75%;"></div>
+      </div>
+      <div class="score-percent" id="reality-score">75%</div>
+    </div>
+    <div class="reality-verdict" id="reality-verdict">
+      Système en bon état. Tous les agents fonctionnent normalement.
+    </div>
+    <div class="reality-issues" id="reality-issues">
+      <div class="issue">Pas de problèmes détectés</div>
+    </div>
+  </div>
+
+  <!-- Three Branches -->
+  <div class="branches">
+    <!-- Branch Newsletter -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">📰</div>
+        <div class="branch-name">Newsletter</div>
+      </div>
+      <div class="branch-agents" id="branch-newsletter">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Agent Rédacteur</div>
+          <div class="agent-time">—</div>
+        </div>
+      </div>
+      <div class="branch-metric">
+        <div class="metric-label">Performance</div>
+        <div class="metric-value" id="newsletter-perf">—</div>
+      </div>
+    </div>
+
+    <!-- Branch Trader -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">📈</div>
+        <div class="branch-name">Trader</div>
+      </div>
+      <div class="branch-agents" id="branch-trader">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Robot Trader</div>
+          <div class="agent-time">—</div>
+        </div>
+      </div>
+      <div class="branch-metric">
+        <div class="metric-label">P&L du jour</div>
+        <div class="metric-value" id="trader-pnl">—</div>
+      </div>
+    </div>
+
+    <!-- Branch Arène -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">⚔️</div>
+        <div class="branch-name">Arène</div>
+      </div>
+      <div class="branch-agents" id="branch-arena">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Bull vs Bear</div>
+          <div class="agent-time">—</div>
+        </div>
+      </div>
+      <div class="branch-metric">
+        <div class="metric-label">Dernier combat</div>
+        <div class="metric-value" id="arena-winner">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arena Spotlight -->
+  <div class="arena-section">
+    <div class="arena-title">⚔️ Combat du Jour</div>
+    <div class="arena-combat">
+      <div class="combatant combatant-bull">
+        <div class="combatant-name">🐂 Bull</div>
+        <div class="combatant-performance" id="arena-bull-perf">—</div>
+        <div class="combatant-status" id="arena-bull-status">En attente</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="combatant combatant-bear">
+        <div class="combatant-name">🐻 Bear</div>
+        <div class="combatant-performance" id="arena-bear-perf">—</div>
+        <div class="combatant-status" id="arena-bear-status">En attente</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Terminal -->
+  <div class="terminal-section">
+    <div class="terminal-header">
+      <div class="terminal-title">📡 Flux d'Activité en Direct</div>
+      <div class="terminal-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="newsletter">Newsletter</button>
+        <button class="filter-btn" data-filter="trader">Trader</button>
+        <button class="filter-btn" data-filter="arena">Arène</button>
+        <button class="filter-btn" data-filter="coo">COO</button>
+      </div>
+    </div>
+    <div class="terminal-logs" id="terminal-logs">
+      <div class="log-entry">
+        <div class="log-time">--:--:--</div>
+        <div class="log-agent">SYSTEM</div>
+        <div class="log-message">Connexion établie. Chargement des données...</div>
+      </div>
+    </div>
+  </div>
+
+</main>
 
 <script>
-// TOGGLE MENU
-function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// CONFIG
-// ═══════════════════════════════════════════════════════════════════════════════
-const FEED_URL   = 'data/activity_feed.json';
-const ALERTS_URL = 'data/alerts.json';
-const REFRESH_MS = 30000;
-
+const REFRESH_INTERVAL = 30000; // 30 seconds
+const API_BASE = '.';
 let currentFilter = 'all';
-let currentAlertFilter = 'all';
-let allEvents = [];
-let allAgents = [];
-let allAlerts = [];
-let countdownVal = 30;
-let countdownTimer;
+let allLogs = [];
 
-// Agent ID → node mapping
-const AGENT_MAP = {
-  'Orchestrateur':        {id:'orchestrateur', tier:'ceo'},
-  'Directeur Adjoint':    {id:'adjoint',       tier:'director'},
-  'Agent CFO':            {id:'cfo',           tier:'director'},
-  'Agent Veille':         {id:'veille',        tier:'senior'},
-  'Agent Analyste':       {id:'analyste',      tier:'senior'},
-  'Agent Investissement': {id:'investissement',tier:'senior'},
-  'Agent Rédacteur':      {id:'redacteur',     tier:'ops'},
-  'Agent Growth':         {id:'growth',        tier:'ops'},
-  'Agent DA Site':        {id:'da',            tier:'ops'},
-  'Agent Commercial':     {id:'commercial',    tier:'ops'},
-  'Agent Growth Booster': {id:'booster',       tier:'ops'},
-  'Agent Analytics':      {id:'analytics',     tier:'ops'},
-  'Agent Twitter':        {id:'twitter',       tier:'ops'},
-};
-
-const TYPE_ICON = {
-  success:'✅', error:'❌', warning:'⚠️', info:'ℹ️',
-  progress:'⏳', start:'🚀', milestone:'🏆'
-};
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// HELPERS
-// ═══════════════════════════════════════════════════════════════════════════════
-function timeOnly(ts) {
-  if (!ts) return '';
-  const d = new Date(ts);
-  return d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-
-function formatTs(ts) {
-  if (!ts) return '—';
-  const d = new Date(ts);
-  const now = new Date();
-  const diffMin = Math.floor((now - d) / 60000);
-  if (diffMin < 1)  return 'À l\'instant';
-  if (diffMin < 60) return `il y a ${diffMin}min`;
-  const diffH = Math.floor(diffMin / 60);
-  if (diffH < 24)   return `il y a ${diffH}h`;
-  return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'});
-}
-
-function esc(s) {
-  const d = document.createElement('div');
-  d.textContent = s || '';
-  return d.innerHTML;
-}
-
-function resolveAgent(name) {
-  if (!name) return null;
-  for (const [key, val] of Object.entries(AGENT_MAP)) {
-    if (name.includes(key.replace('Agent ',''))) return val;
+// Fetch data function with fallback
+async function fetchJSON(path) {
+  try {
+    const response = await fetch(`${API_BASE}/${path}`);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (e) {
+    console.log(`Could not load ${path}:`, e.message);
+    return null;
   }
-  return AGENT_MAP[name] || null;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// RENDER PYRAMID NODES
-// ═══════════════════════════════════════════════════════════════════════════════
-function updatePyramid(agents, events) {
-  const today = new Date().toISOString().slice(0,10);
-  const todayEvs = events.filter(e => (e.ts||'').startsWith(today));
+// Format time ago
+function timeAgo(dateString) {
+  if (!dateString) return '—';
+  const date = new Date(dateString);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
+}
 
-  // Stats header
-  document.getElementById('statAgents').textContent = new Set(todayEvs.map(e=>e.agent)).size;
-  document.getElementById('statSuccess').textContent = todayEvs.filter(e=>e.type==='success').length;
-  document.getElementById('statEvents').textContent = todayEvs.length;
+// Load Global Score
+async function loadGlobalScore() {
+  const data = await fetchJSON('data/score_global.json');
+  if (data) {
+    document.getElementById('global-score').textContent = Math.round(data.global_score || 0);
+    document.getElementById('newsletter-score').textContent = Math.round(data.newsletter_score || 0);
+    document.getElementById('trader-perf').textContent = (data.trader_performance || 0).toFixed(1);
+    document.getElementById('arena-combats').textContent = data.arena_combats_today || 0;
+  }
+}
 
-  // Update each known agent node
-  agents.forEach(ag => {
-    const mapped = resolveAgent(ag.agent);
-    if (!mapped) return;
-    const id = mapped.id;
+// Load Reality Check
+async function loadRealityCheck() {
+  const data = await fetchJSON('data/reality_checks.json');
+  if (data) {
+    const score = Math.round(data.score_realite || 75);
+    document.getElementById('reality-score').textContent = `${score}%`;
+    document.getElementById('reality-bar').style.width = `${score}%`;
+    document.getElementById('reality-verdict').textContent = data.verdict || 'Système nominal.';
 
-    const dot    = document.getElementById('dot-'+id);
-    const status = document.getElementById('status-'+id);
-    const task   = document.getElementById('task-'+id);
-    const stats  = document.getElementById('stats-'+id);
-    const node   = document.getElementById('node-'+id);
-
-    if (!dot) return;
-
-    // Determine status
-    const isError = ag.last_type === 'error';
-    const isActive = ag.last_type === 'progress' || ag.last_type === 'start';
-    const cls = isError ? 'error' : (ag.total_today > 0 ? 'online' : 'idle');
-
-    dot.className = 'status-dot ' + cls;
-    status.className = 'status-text ' + cls;
-    status.textContent = isError ? 'Erreur' : (isActive ? 'En cours...' : (ag.total_today > 0 ? 'Actif' : 'En veille'));
-
-    // Last task
-    const msg = ag.last_message || '—';
-    task.textContent = msg.length > 80 ? msg.slice(0,77)+'...' : msg;
-    task.className = 'node-task' + (ag.total_today > 0 ? ' active' : '');
-
-    // Stats
-    const ok = ag.successes_today || 0;
-    const err = ag.errors_today || 0;
-    stats.innerHTML = `
-      <span class="node-stat" style="color:var(--green)">${ok} ✓</span>
-      ${err > 0 ? `<span class="node-stat" style="color:var(--red)">${err} ✗</span>` : ''}
-      <span class="node-stat">${formatTs(ag.last_ts)}</span>
-    `;
-
-    // Active glow
-    if (node) {
-      node.classList.toggle('active-now', isActive);
+    const issuesContainer = document.getElementById('reality-issues');
+    issuesContainer.innerHTML = '';
+    if (data.issues && data.issues.length > 0) {
+      data.issues.forEach(issue => {
+        const issueEl = document.createElement('div');
+        issueEl.className = 'issue';
+        issueEl.textContent = issue;
+        issuesContainer.appendChild(issueEl);
+      });
+    } else {
+      const noIssue = document.createElement('div');
+      noIssue.className = 'issue';
+      noIssue.textContent = 'Pas de problèmes détectés';
+      issuesContainer.appendChild(noIssue);
     }
+  }
+}
+
+// Load COO Status
+async function loadCOOStatus() {
+  const feed = await fetchJSON('data/activity_feed.json');
+  if (feed) {
+    const coo = feed.agents?.find(a => a.agent === 'Orchestrateur');
+    if (coo) {
+      document.getElementById('coo-time').textContent = timeAgo(coo.last_ts);
+      document.getElementById('coo-tasks').textContent = coo.total_today || 0;
+      const total = (coo.successes_today || 0) + (coo.errors_today || 0);
+      const rate = total > 0 ? Math.round(((coo.successes_today || 0) / total) * 100) : 0;
+      document.getElementById('coo-success').textContent = `${rate}%`;
+      document.getElementById('coo-errors').textContent = coo.errors_today || 0;
+    }
+  }
+}
+
+// Load Activity Feed
+async function loadActivityFeed() {
+  const data = await fetchJSON('data/activity_feed.json');
+  if (data && data.events) {
+    allLogs = data.events.map(event => ({
+      time: event.ts ? new Date(event.ts).toLocaleTimeString('fr-FR') : '--:--:--',
+      agent: event.agent || 'UNKNOWN',
+      message: event.message || 'No message',
+      type: event.type || 'info',
+      category: categorizeAgent(event.agent || '')
+    }));
+    renderActivityFeed();
+  }
+}
+
+// Categorize agent to branch
+function categorizeAgent(agent) {
+  const lower = agent.toLowerCase();
+  if (lower.includes('newsletter') || lower.includes('redacteur') || lower.includes('analyste') || lower.includes('growth')) return 'newsletter';
+  if (lower.includes('trader') || lower.includes('investissement')) return 'trader';
+  if (lower.includes('arena') || lower.includes('combat')) return 'arena';
+  if (lower.includes('orchestrateur') || lower.includes('adjoint') || lower.includes('coo')) return 'coo';
+  return 'all';
+}
+
+// Render Activity Feed with Filter
+function renderActivityFeed() {
+  const logsDiv = document.getElementById('terminal-logs');
+  logsDiv.innerHTML = '';
+  const filtered = currentFilter === 'all' ? allLogs : allLogs.filter(log => log.category === currentFilter);
+  filtered.slice(-50).reverse().forEach(log => {
+    const entry = document.createElement('div');
+    entry.className = `log-entry ${log.type}`;
+    entry.innerHTML = `<div class="log-time">${log.time}</div><div class="log-agent">${log.agent}</div><div class="log-message">${log.message}</div>`;
+    logsDiv.appendChild(entry);
   });
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// RENDER TERMINAL
-// ═══════════════════════════════════════════════════════════════════════════════
-function renderTerminal() {
-  const body = document.getElementById('termBody');
-  let filtered = currentFilter === 'all'
-    ? allEvents
-    : allEvents.filter(e => e.type === currentFilter);
+// Load Arena Data
+async function loadArenaData() {
+  const data = await fetchJSON('data/arena_content.json');
+  if (data && data.combat) {
+    document.getElementById('arena-bull-perf').textContent = (data.combat.bull_perf || 0).toFixed(1) + '%';
+    document.getElementById('arena-bear-perf').textContent = (data.combat.bear_perf || 0).toFixed(1) + '%';
+    document.getElementById('arena-bull-status').textContent = data.combat.bull_status || 'Actif';
+    document.getElementById('arena-bear-status').textContent = data.combat.bear_status || 'Actif';
+    document.getElementById('arena-winner').textContent = data.combat.winner || '—';
+  }
+}
 
-  if (!filtered.length) {
-    body.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">Aucun événement à afficher</div>';
+// Load Branch Data
+async function loadBranchData() {
+  const feed = await fetchJSON('data/activity_feed.json');
+  if (feed && feed.agents) {
+    // Newsletter Branch
+    const newsletterAgents = feed.agents.filter(a => ['Agent Rédacteur', 'Agent Analyste', 'Agent Growth'].includes(a.agent));
+    updateBranchAgents('branch-newsletter', newsletterAgents);
+
+    // Trader Branch
+    const traderAgents = feed.agents.filter(a => ['Robot Trader', 'Agent Investissement'].includes(a.agent));
+    updateBranchAgents('branch-trader', traderAgents);
+
+    // Arena Branch
+    const arenaAgents = feed.agents.filter(a => a.agent && (a.agent.includes('Arena') || a.agent.includes('Combat')));
+    updateBranchAgents('branch-arena', arenaAgents);
+  }
+}
+
+// Update Branch Agents
+function updateBranchAgents(branchId, agents) {
+  const container = document.getElementById(branchId);
+  container.innerHTML = '';
+  if (agents.length === 0) {
+    container.innerHTML = '<div class="agent-item"><div class="agent-dot warning"></div><div class="agent-name">Pas d\'activité</div></div>';
     return;
   }
-
-  body.innerHTML = filtered.slice(0, 60).map(e => {
-    const icon = TYPE_ICON[e.type] || 'ℹ️';
-    const t = e.type || 'info';
-    return `<div class="term-line ${t}">
-      <span class="term-time">${timeOnly(e.ts)}</span>
-      <span class="term-icon">${icon}</span>
-      <span class="term-agent">${esc(e.agent||'')}</span>
-      <span class="term-msg">${esc(e.message||'')}</span>
-    </div>`;
-  }).join('');
+  agents.forEach(agent => {
+    const item = document.createElement('div');
+    item.className = 'agent-item';
+    const statusClass = agent.errors_today > 0 ? 'error' : (agent.last_type === 'success' ? 'success' : 'warning');
+    item.innerHTML = `
+      <div class="agent-dot ${statusClass}"></div>
+      <div class="agent-name">${agent.agent}</div>
+      <div class="agent-time">${timeAgo(agent.last_ts)}</div>
+    `;
+    container.appendChild(item);
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// FILTER & FOCUS
-// ═══════════════════════════════════════════════════════════════════════════════
-function setFilter(f, btn) {
-  currentFilter = f;
-  document.querySelectorAll('.term-btn').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  renderTerminal();
+// Filter Button Handlers
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderActivityFeed();
+  });
+});
+
+// Initial Load
+async function loadDashboard() {
+  await Promise.all([
+    loadGlobalScore(),
+    loadRealityCheck(),
+    loadCOOStatus(),
+    loadActivityFeed(),
+    loadArenaData(),
+    loadBranchData()
+  ]);
 }
 
-function focusAgent(agentName) {
-  // Scroll to terminal and filter by this agent
-  const body = document.getElementById('termBody');
-  const filtered = allEvents.filter(e => e.agent && e.agent.includes(agentName.replace('Agent ','')));
+// Load on init
+loadDashboard();
 
-  if (filtered.length) {
-    body.innerHTML = filtered.slice(0,30).map(e => {
-      const icon = TYPE_ICON[e.type]||'ℹ️';
-      return `<div class="term-line ${e.type||'info'}">
-        <span class="term-time">${timeOnly(e.ts)}</span>
-        <span class="term-icon">${icon}</span>
-        <span class="term-agent">${esc(e.agent||'')}</span>
-        <span class="term-msg">${esc(e.message||'')}</span>
-      </div>`;
-    }).join('');
-  }
+// Auto-refresh
+setInterval(loadDashboard, REFRESH_INTERVAL);
 
-  document.querySelector('.terminal-section').scrollIntoView({behavior:'smooth'});
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// ALERTS RENDERING
-// ═══════════════════════════════════════════════════════════════════════════════
-function setAlertFilter(f, btn) {
-  currentAlertFilter = f;
-  document.querySelectorAll('.alert-filter-btn').forEach(b=>b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  renderAlerts();
-}
-
-function renderAlerts() {
-  const body = document.getElementById('alertsBody');
-  const badge = document.getElementById('alertsBadge');
-
-  if (!allAlerts.length) {
-    body.innerHTML = '<div class="alerts-empty">Aucune alerte pour le moment — les marchés sont calmes</div>';
-    badge.textContent = '0';
-    badge.className = 'alerts-badge zero';
-    return;
-  }
-
-  // Filter
-  let filtered = allAlerts;
-  if (currentAlertFilter === 'news') {
-    filtered = allAlerts.filter(a => a.category === 'news');
-  } else if (currentAlertFilter !== 'all') {
-    filtered = allAlerts.filter(a => a.level === currentAlertFilter);
-  }
-
-  // Count today's alerts
-  const today = new Date().toISOString().slice(0,10);
-  const todayCount = allAlerts.filter(a => (a.ts||'').startsWith(today)).length;
-  badge.textContent = todayCount;
-  badge.className = 'alerts-badge' + (todayCount === 0 ? ' zero' : '');
-
-  if (!filtered.length) {
-    body.innerHTML = '<div class="alerts-empty">Aucune alerte dans cette catégorie</div>';
-    return;
-  }
-
-  body.innerHTML = filtered.slice(0, 50).map(a => {
-    const level = a.level || 'warning';
-    const cat = a.category || '';
-    const cardClass = cat === 'news' ? 'news' : level;
-    const emoji = cat === 'news' ? '📰' :
-                  level === 'critical' ? '🚨' :
-                  level === 'alert' ? '🔔' : '⚠️';
-    const variation = a.variation_pct || 0;
-    const varClass = variation > 0 ? 'up' : 'down';
-    const varText = variation !== 0 ? `${variation > 0 ? '+' : ''}${variation.toFixed(1)}%` : '';
-
-    return `<div class="alert-card ${cardClass}">
-      <span class="alert-emoji">${emoji}</span>
-      <div class="alert-content">
-        <div class="alert-msg">${esc(a.message || '')}</div>
-        <div class="alert-meta">
-          ${varText ? `<span class="alert-variation ${varClass}">${varText}</span>` : ''}
-          <span>${esc(a.asset || '')}</span>
-          <span>${esc(a.category || '')}</span>
-        </div>
-      </div>
-      <span class="alert-time">${formatTs(a.ts)}</span>
-    </div>`;
-  }).join('');
-}
-
-async function loadAlerts() {
-  try {
-    const r = await fetch(ALERTS_URL + '?t=' + Date.now());
-    if (!r.ok) return;
-    const data = await r.json();
-    allAlerts = data.alerts || [];
-    renderAlerts();
-  } catch(err) {
-    // Silently fail — alerts.json may not exist yet
-    console.warn('Alerts:', err.message);
-  }
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// LOAD
-// ═══════════════════════════════════════════════════════════════════════════════
-async function loadFeed() {
-  try {
-    const r = await fetch(FEED_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const data = await r.json();
-
-    allEvents = data.events || [];
-    allAgents = data.agents || [];
-
-    updatePyramid(allAgents, allEvents);
-    renderTerminal();
-    resetCountdown();
-  } catch(err) {
-    console.warn('Feed:', err.message);
-  }
-  // Also load alerts
-  loadAlerts();
-}
-
-function resetCountdown() {
-  clearInterval(countdownTimer);
-  countdownVal = 30;
-  document.getElementById('countdown').textContent = '30s';
-  countdownTimer = setInterval(()=>{
-    countdownVal--;
-    document.getElementById('countdown').textContent = countdownVal + 's';
-    if(countdownVal<=0){clearInterval(countdownTimer);loadFeed();}
-  },1000);
-}
-
-loadFeed();
+// Live indicator animation
+setInterval(() => {
+  const indicator = document.getElementById('live-indicator');
+  indicator.style.opacity = indicator.style.opacity === '0.5' ? '1' : '0.5';
+}, 1000);
 </script>
-
-<script src="assets/gate_subscriber.js"></script>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-top">
-    <div class="footer-section">
-      <h4>AlphaBot Weekly</h4>
-      <a href="index.html">Accueil</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="investissement.html">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-    </div>
-    <div class="footer-section">
-      <h4>Produit</h4>
-      <a href="newsletter.html">Newsletter gratuite</a>
-      <a href="investissement.html">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-    </div>
-    <div class="footer-section">
-      <h4>Ressources</h4>
-      <a href="newsletters.html">Archives</a>
-      <a href="mailto:antoine.metout@gmail.com">Contact</a>
-      <a href="https://twitter.com/AlphaBot_Weekly" target="_blank" rel="noopener">Twitter</a>
-      <a href="https://github.com/antoinemetout-AlphaBot/alphabot-weekly" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-  <div class="footer-divider"></div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 AlphaBot Weekly</div>
-    <div class="footer-disclaimer">Contenu informatif uniquement. Ne constitue pas un conseil en investissement.</div>
-  </div>
-</footer>
 
 </body>
 </html>

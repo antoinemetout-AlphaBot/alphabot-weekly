@@ -496,6 +496,287 @@ nav {
 
 /* TRUST ITEMS — SLIGHT GLOW */
 .trust-item { text-shadow:0 0 20px rgba(34,197,94,.3); }
+
+/* ═══════════════════════════════════════════════════ */
+/*  LIVE DASHBOARD — Score, Duel, Portfolio, Audio    */
+/* ═══════════════════════════════════════════════════ */
+
+/* Score AlphaBot box */
+.live-score-box {
+  background: linear-gradient(135deg, rgba(34,211,238,.08) 0%, rgba(59,130,246,.06) 100%);
+  border: 1px solid rgba(34,211,238,.25);
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.live-score-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(34,211,238,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.live-score-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+.live-score-left { display: flex; align-items: center; gap: 20px; }
+.live-score-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 11px/1 'JetBrains Mono', monospace;
+  color: var(--cyan);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.live-dot {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--cyan);
+  animation: livePulse 2s infinite;
+}
+@keyframes livePulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 10px var(--cyan); }
+  50% { opacity: .5; box-shadow: 0 0 20px var(--cyan); }
+}
+.live-score-number {
+  font: 800 56px/1 'Space Grotesk', sans-serif;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(34,211,238,.4);
+}
+.live-score-sub {
+  font: 600 20px/1 'Inter', sans-serif;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.live-score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  max-width: 280px;
+}
+.live-score-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 14px/1.4 'Inter', sans-serif;
+  padding: 4px 0;
+}
+.live-score-label { color: var(--muted); }
+.live-score-val { font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 15px; }
+.live-score-trend {
+  font: 600 14px/1 'JetBrains Mono', monospace;
+  margin-top: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+.live-score-trend.up { color: var(--green); background: rgba(34,197,94,.1); }
+.live-score-trend.down { color: var(--red); background: rgba(239,68,68,.1); }
+.live-score-trend.flat { color: var(--muted); background: rgba(100,116,139,.1); }
+
+/* 3-card grid */
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.live-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all .4s var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.live-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34,211,238,.3);
+  box-shadow: 0 12px 40px rgba(34,211,238,.08);
+}
+.live-card-header {
+  font: 700 13px/1 'JetBrains Mono', monospace;
+  color: var(--cyan);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.live-card-cta {
+  display: inline-block;
+  margin-top: 16px;
+  font: 600 13px/1 'Inter', sans-serif;
+  color: var(--cyan);
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.live-card-cta:hover { opacity: .7; }
+
+/* Duel Bull vs Bear card */
+.duel-actif {
+  font: 700 20px/1.2 'Space Grotesk', sans-serif;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.duel-versus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.duel-camp {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+}
+.duel-camp.bull { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.2); }
+.duel-camp.bear { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2); }
+.duel-camp-label {
+  font: 700 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.duel-camp.bull .duel-camp-label { color: var(--green); }
+.duel-camp.bear .duel-camp-label { color: var(--red); }
+.duel-score {
+  font: 800 28px/1 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+.duel-vs {
+  font: 800 16px/1 'Space Grotesk', sans-serif;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.duel-verdict {
+  font: 500 13px/1.6 'Inter', sans-serif;
+  color: var(--text);
+  padding: 10px 14px;
+  background: rgba(255,255,255,.03);
+  border-radius: 10px;
+  border-left: 3px solid var(--cyan);
+}
+
+/* Portfolio card */
+.live-card-portfolio { border-color: rgba(245,200,66,.15); }
+.live-card-portfolio:hover { border-color: rgba(245,200,66,.3); box-shadow: 0 12px 40px rgba(245,200,66,.08); }
+.portfolio-perf {
+  font: 800 36px/1 'Space Grotesk', sans-serif;
+  margin-bottom: 6px;
+}
+.portfolio-perf.up { color: var(--green); }
+.portfolio-perf.down { color: var(--red); }
+.portfolio-perf.flat { color: var(--muted); }
+.portfolio-label {
+  font: 500 13px/1 'Inter', sans-serif;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.portfolio-robots {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.portfolio-robot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 500 13px/1 'Inter', sans-serif;
+  color: var(--text);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.portfolio-robot:last-child { border-bottom: none; }
+.portfolio-robot-perf { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+.portfolio-robot-perf.up { color: var(--green); }
+.portfolio-robot-perf.down { color: var(--red); }
+
+/* Reality Check card */
+.live-card-reality { border-color: rgba(168,85,247,.15); }
+.live-card-reality:hover { border-color: rgba(168,85,247,.3); box-shadow: 0 12px 40px rgba(168,85,247,.08); }
+.live-card-reality .live-card-header { color: #a855f7; }
+.reality-quote {
+  font: 500 15px/1.6 'Inter', sans-serif;
+  color: var(--text);
+  font-style: italic;
+  padding: 14px 18px;
+  background: rgba(168,85,247,.06);
+  border-left: 3px solid #a855f7;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 12px;
+}
+.reality-score {
+  font: 700 13px/1 'JetBrains Mono', monospace;
+  color: #a855f7;
+  margin-bottom: 4px;
+}
+.reality-verdict {
+  font: 400 12px/1.4 'Inter', sans-serif;
+  color: var(--muted);
+}
+
+/* Audio bar */
+.audio-bar {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 24px;
+}
+.audio-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.audio-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all .3s var(--transition);
+}
+.audio-btn:hover { transform: scale(1.03); box-shadow: 0 4px 20px rgba(34,211,238,.3); }
+.audio-icon { font-size: 20px; }
+.audio-text {
+  font: 600 14px/1 'Inter', sans-serif;
+  color: #04091a;
+}
+.audio-status {
+  font: 500 13px/1 'Inter', sans-serif;
+  color: var(--muted);
+}
+
+/* ── Responsive live dashboard ── */
+@media(max-width:900px) {
+  .live-score-box { flex-direction: column; padding: 24px; text-align: center; }
+  .live-score-inner { flex-direction: column; }
+  .live-score-left { flex-direction: column; }
+  .live-score-details { max-width: 100%; }
+  .live-grid { grid-template-columns: 1fr; }
+  .live-score-number { font-size: 42px; }
+  .duel-versus { flex-direction: column; }
+  .duel-vs { transform: none; }
+}
 </style>
 </head>
 <body>
@@ -576,6 +857,102 @@ nav {
       <div class="tick"><span class="tick-name">CAC 40</span><span class="tick-val" id="cac-price">---</span><span class="tick-ch up" id="cac-change">--</span></div>
     </div>
   </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 🔥 LIVE DASHBOARD — Score + Duel + Portfolio + Reality Check + Audio -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="live-dashboard" style="padding-top:40px;padding-bottom:40px;">
+
+  <!-- SCORE GLOBAL ALPHABOT -->
+  <div class="live-score-box reveal">
+    <div class="live-score-inner">
+      <div class="live-score-left">
+        <div class="live-score-tag"><span class="live-dot"></span> SCORE ALPHABOT EN DIRECT</div>
+        <div class="live-score-number" id="score-global">--</div>
+        <div class="live-score-sub">/100</div>
+      </div>
+      <div class="live-score-details">
+        <div class="live-score-item">
+          <span class="live-score-label">📰 Newsletter</span>
+          <span class="live-score-val" id="score-newsletter" style="color:var(--cyan);">--</span>
+        </div>
+        <div class="live-score-item">
+          <span class="live-score-label">📈 Trader</span>
+          <span class="live-score-val" id="score-trader" style="color:var(--gold);">--</span>
+        </div>
+        <div class="live-score-item">
+          <span class="live-score-label">⚔️ Arène</span>
+          <span class="live-score-val" id="score-arena" style="color:var(--green);">--</span>
+        </div>
+        <div class="live-score-trend" id="score-trend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 BLOCS : Duel + Portfolio + Reality Check -->
+  <div class="live-grid reveal">
+
+    <!-- DUEL BULL VS BEAR -->
+    <div class="live-card live-card-duel">
+      <div class="live-card-header">⚔️ DUEL IA DU JOUR</div>
+      <div class="duel-actif" id="duel-actif">Chargement...</div>
+      <div class="duel-versus">
+        <div class="duel-camp bull">
+          <div class="duel-camp-label">🟢 BULL</div>
+          <div class="duel-score" id="duel-score-bull">--</div>
+        </div>
+        <div class="duel-vs">VS</div>
+        <div class="duel-camp bear">
+          <div class="duel-camp-label">🔴 BEAR</div>
+          <div class="duel-score" id="duel-score-bear">--</div>
+        </div>
+      </div>
+      <div class="duel-verdict" id="duel-verdict">En attente du verdict...</div>
+      <a href="arena.html" class="live-card-cta">Voir le combat complet →</a>
+    </div>
+
+    <!-- PORTEFEUILLE IA -->
+    <div class="live-card live-card-portfolio">
+      <div class="live-card-header">📈 PORTEFEUILLE IA</div>
+      <div class="portfolio-perf" id="portfolio-perf">+0.0%</div>
+      <div class="portfolio-accroche" id="portfolio-accroche">depuis le lancement</div>
+      <div class="portfolio-stats">
+        <div class="portfolio-stat">
+          <span class="portfolio-stat-val" id="portfolio-capital">30 000€</span>
+          <span class="portfolio-stat-lbl">Capital</span>
+        </div>
+        <div class="portfolio-stat">
+          <span class="portfolio-stat-val" id="portfolio-positions">0</span>
+          <span class="portfolio-stat-lbl">Positions</span>
+        </div>
+      </div>
+      <a href="investissement.html" class="live-card-cta" style="color:var(--gold);">Suivre les robots →</a>
+    </div>
+
+    <!-- REALITY CHECK -->
+    <div class="live-card live-card-reality">
+      <div class="live-card-header">🧪 REALITY CHECK</div>
+      <div class="reality-quote" id="reality-quote">"L'IA analyse, le Reality Check challenge."</div>
+      <div class="reality-score-wrap">
+        <span class="reality-label">Score réalité</span>
+        <span class="reality-score" id="reality-score">--/100</span>
+      </div>
+      <div class="reality-verdict" id="reality-verdict">En attente du prochain check...</div>
+    </div>
+  </div>
+
+  <!-- 🎧 RÉSUMÉ AUDIO 30 SECONDES -->
+  <div class="audio-bar reveal">
+    <div class="audio-inner">
+      <button class="audio-btn" id="audio-btn" onclick="playAudioResume()">
+        <span class="audio-icon">🎧</span>
+        <span class="audio-text">Écouter le résumé IA (30 sec)</span>
+      </button>
+      <div class="audio-status" id="audio-status"></div>
+    </div>
+  </div>
+
 </section>
 
 <div class="divider"></div>
@@ -904,9 +1281,204 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
+// ═══════════════════════════════════════════════════
+//  LIVE DASHBOARD — Score Global, Duel, Portfolio, Reality Check, Audio
+// ═══════════════════════════════════════════════════
+
+async function loadScoreGlobal() {
+  try {
+    const r = await fetch('data/score_global.json');
+    if (!r.ok) return;
+    const d = await r.json();
+
+    // Score principal
+    const score = d.score_global || d.score || 0;
+    const el = document.getElementById('score-global');
+    if (el) el.textContent = Math.round(score);
+
+    // Sous-scores
+    const scores = d.scores || d.details || {};
+    const nlScore = scores.newsletter || scores.newsletter_score || 0;
+    const trScore = scores.trader || scores.trader_score || 0;
+    const arScore = scores.arena || scores.arena_score || 0;
+
+    const nlEl = document.getElementById('score-newsletter');
+    const trEl = document.getElementById('score-trader');
+    const arEl = document.getElementById('score-arena');
+    if (nlEl) nlEl.textContent = Math.round(nlScore) + '/100';
+    if (trEl) trEl.textContent = Math.round(trScore) + '/100';
+    if (arEl) arEl.textContent = Math.round(arScore) + '/100';
+
+    // Effet addiction : tendance hier vs aujourd'hui
+    const trendEl = document.getElementById('score-trend');
+    if (trendEl) {
+      const prev = d.score_precedent || d.previous_score || null;
+      if (prev !== null && prev > 0) {
+        const diff = score - prev;
+        const arrow = diff > 0 ? '↑' : diff < 0 ? '↓' : '→';
+        const cls = diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat';
+        trendEl.className = 'live-score-trend ' + cls;
+        trendEl.textContent = arrow + ' ' + (diff > 0 ? '+' : '') + diff.toFixed(1) + ' vs hier';
+      } else {
+        trendEl.textContent = '📊 Premier jour de scoring';
+        trendEl.className = 'live-score-trend flat';
+      }
+    }
+  } catch(e) { console.log('Score global non disponible'); }
+}
+
+async function loadDuelDuJour() {
+  try {
+    const r = await fetch('data/arena_content.json');
+    if (!r.ok) return;
+    const d = await r.json();
+
+    // Dernier combat
+    const combat = d.dernier_combat || d.last_combat || d;
+    const actif = combat.actif || combat.asset || '—';
+    const verdict = combat.verdict || {};
+
+    document.getElementById('duel-actif').textContent = actif;
+    document.getElementById('duel-score-bull').textContent = (verdict.score_bull || '--') + '/100';
+    document.getElementById('duel-score-bear').textContent = (verdict.score_bear || '--') + '/100';
+
+    const verdictText = verdict.analyse || combat.resume || combat.titre || 'Verdict en cours...';
+    document.getElementById('duel-verdict').textContent = verdictText;
+  } catch(e) { console.log('Duel non disponible'); }
+}
+
+async function loadPortfolioLive() {
+  try {
+    const r = await fetch('data/trader_storytelling.json');
+    if (!r.ok) {
+      // Fallback sur portfolio_public.json
+      const r2 = await fetch('data/portfolio_public.json');
+      if (!r2.ok) return;
+      const d2 = await r2.json();
+      const robots = d2.robots || {};
+      let totalCapital = 0, totalInitial = 0;
+      for (const [key, rb] of Object.entries(robots)) {
+        totalCapital += rb.capital_actuel || 10000;
+        totalInitial += 10000;
+      }
+      const perf = ((totalCapital - totalInitial) / totalInitial * 100);
+      updatePortfolioUI(perf, robots);
+      return;
+    }
+    const d = await r.json();
+    const perf = d.performance_pct || d.performance || 0;
+    updatePortfolioUI(perf, d.robots || {});
+  } catch(e) { console.log('Portfolio live non disponible'); }
+}
+
+function updatePortfolioUI(perf, robots) {
+  const perfEl = document.getElementById('portfolio-perf');
+  if (perfEl) {
+    perfEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
+    perfEl.className = 'portfolio-perf ' + (perf > 0 ? 'up' : perf < 0 ? 'down' : 'flat');
+  }
+
+  // Robots individuels
+  const robotNames = {'prudent':'🛡️ Prudent','modere':'⚖️ Modéré','agressif':'🔥 Agressif'};
+  const container = document.querySelector('.portfolio-robots');
+  if (container && Object.keys(robots).length > 0) {
+    container.innerHTML = '';
+    for (const [key, label] of Object.entries(robotNames)) {
+      const rb = robots[key];
+      if (!rb) continue;
+      const rPerf = rb.performance_pct || 0;
+      const div = document.createElement('div');
+      div.className = 'portfolio-robot';
+      div.innerHTML = '<span>' + label + '</span><span class="portfolio-robot-perf ' +
+        (rPerf > 0 ? 'up' : rPerf < 0 ? 'down' : '') + '">' +
+        (rPerf >= 0 ? '+' : '') + rPerf.toFixed(2) + '%</span>';
+      container.appendChild(div);
+    }
+  }
+}
+
+async function loadRealityCheck() {
+  try {
+    const r = await fetch('data/reality_checks.json');
+    if (!r.ok) return;
+    const d = await r.json();
+
+    const checks = d.checks || d.results || [];
+    const last = Array.isArray(checks) ? checks[checks.length - 1] : d;
+
+    const quote = last.citation || last.quote || last.analyse || last.verdict ||
+                  '"L\'IA analyse. Le Reality Check challenge."';
+    const score = last.score_realite || last.score || 0;
+    const verdict = last.verdict_court || last.summary || '';
+
+    const quoteEl = document.getElementById('reality-quote');
+    const scoreEl = document.getElementById('reality-score');
+    const verdictEl = document.getElementById('reality-verdict');
+
+    if (quoteEl) quoteEl.textContent = quote;
+    if (scoreEl) scoreEl.textContent = '🎯 Score réalité : ' + Math.round(score) + '/100';
+    if (verdictEl) verdictEl.textContent = verdict || 'Prochain check en cours...';
+  } catch(e) { console.log('Reality check non disponible'); }
+}
+
+// 🎧 Audio TTS — Utilise Web Speech API (natif navigateur)
+function playAudioResume() {
+  const btn = document.getElementById('audio-btn');
+  const status = document.getElementById('audio-status');
+
+  if ('speechSynthesis' in window) {
+    // Arrêter si déjà en cours
+    if (speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+      if (status) status.textContent = 'Arrêté';
+      return;
+    }
+
+    // Construire le texte du résumé depuis les données affichées
+    const score = document.getElementById('score-global')?.textContent || '--';
+    const duel = document.getElementById('duel-actif')?.textContent || '';
+    const duelVerdict = document.getElementById('duel-verdict')?.textContent || '';
+    const perf = document.getElementById('portfolio-perf')?.textContent || '';
+
+    const texte = "Bonjour, voici votre résumé AlphaBot du jour. " +
+      "Le score global AlphaBot est de " + score + " sur 100. " +
+      (duel ? "Le duel du jour porte sur " + duel + ". " + duelVerdict + ". " : "") +
+      (perf ? "Le portefeuille IA affiche une performance de " + perf + " depuis le lancement. " : "") +
+      "Bonne journée et bons investissements !";
+
+    const utterance = new SpeechSynthesisUtterance(texte);
+    utterance.lang = 'fr-FR';
+    utterance.rate = 1.05;
+    utterance.pitch = 1;
+
+    // Essayer de trouver une voix française
+    const voices = speechSynthesis.getVoices();
+    const frVoice = voices.find(v => v.lang.startsWith('fr'));
+    if (frVoice) utterance.voice = frVoice;
+
+    utterance.onstart = () => { if (status) status.textContent = '🔊 Lecture en cours...'; };
+    utterance.onend = () => { if (status) status.textContent = '✅ Résumé terminé'; };
+    utterance.onerror = () => { if (status) status.textContent = '❌ Erreur audio'; };
+
+    speechSynthesis.speak(utterance);
+  } else {
+    if (status) status.textContent = '⚠️ Audio non supporté par ce navigateur';
+  }
+}
+
+// Précharger les voix (nécessaire sur certains navigateurs)
+if ('speechSynthesis' in window) {
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+}
+
 // ── INIT ──
 loadMarketData();
 loadChallengeData();
+loadScoreGlobal();
+loadDuelDuJour();
+loadPortfolioLive();
+loadRealityCheck();
 </script>
 <script src="assets/gate_subscriber.js"></script>
 </body>
