@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T13:10:29.686875",
+  "generated_at": "2026-03-24T13:25:03.232102",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T13:25:03.215347",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T13:25:03.188331",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 13h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T13:10:29.674251",
       "agent": "Orchestrateur",
@@ -1015,55 +1029,23 @@
         "montant": 1097.36,
         "raison": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte."
       }
-    },
-    {
-      "ts": "2026-03-24T08:33:22.799032",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter UVXY",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "UVXY",
-        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
-        "allocation_pct": 20,
-        "raison_courte": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte.",
-        "raison_complete": "Le VIX affiche +3.15% sur 5 jours malgré le rebond d'aujourd'hui (+1.15% S&P), signalant que le marché reste structurellement nerveux. Le DAX perd -4.54% sur 5 jours et le Nasdaq -2.39% : la correction de fond n'est pas terminée, le rebond du jour ressemble à un dead cat bounce. Le pétrole WTI bondit à 90.37$ (+2.54%), alimentant les craintes d'inflation persistante et compliquant la position de la Fed. Le Dollar Index à 99.16 reste sous pression, mais l'EUR/USD à 1.16 indique une fuite vers l'euro qui peut vite s'inverser si le risk-off reprend. Dans ce contexte, UVXY (2x levier sur les futures VIX court terme) offre un trade asymétrique : si le marché rechute cette semaine, le VIX peut exploser vers 30-35, générant +30 à +60% sur UVXY. C'est une couverture offensive sur nos deux positions longues existantes (BTC, SOXL).",
-        "catalyseur": "Rebond de surface sur marchés toujours sous stress structurel : pétrole à 90$, VIX en hausse sur 5j, correction Europe non terminée.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Si le rebond du jour se confirme et s'accélère, le VIX peut refluer vers 22-23, infligeant une perte rapide sur UVXY (contango et décroissance temporelle pénalisent fortement cet ETF à moyen terme). À utiliser exclusivement en trade court terme."
-      }
-    },
-    {
-      "ts": "2026-03-24T08:33:08.254456",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Modéré: Achat 24x XLE @ 59.63",
-      "data": {
-        "profil": "modere",
-        "ticker": "XLE",
-        "prix": 59.63,
-        "montant": 1431.12,
-        "raison": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T13:10:29.674251",
+        "ts": "2026-03-24T13:25:03.215347",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T13:10:29.674251",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 52,
-      "errors_today": 5,
+      "last_ts": "2026-03-24T13:25:03.215347",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 54,
+      "errors_today": 6,
       "successes_today": 24
     },
     {
@@ -1107,7 +1089,7 @@
       "last_ts": "2026-03-24T10:26:18.403104",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 20,
+      "total_today": 18,
       "errors_today": 0,
       "successes_today": 4
     },
