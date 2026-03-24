@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T13:00:20.148210",
+  "generated_at": "2026-03-24T13:10:29.686875",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T13:10:29.674251",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T13:10:25.320277",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 13h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T13:00:20.128299",
       "agent": "Orchestrateur",
@@ -1033,56 +1047,24 @@
         "montant": 1431.12,
         "raison": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
       }
-    },
-    {
-      "ts": "2026-03-24T08:33:07.490809",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: acheter XLE",
-      "data": {
-        "profil": "modere",
-        "action": "acheter",
-        "ticker": "XLE",
-        "nom": "Energy Select Sector SPDR Fund",
-        "allocation_pct": 18,
-        "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques.",
-        "raison_complete": "Le WTI affiche +2.54% sur la séance et consolide au-dessus de 90$/baril, un niveau psychologique clé non vu depuis plusieurs mois. Ce rebours est soutenu par plusieurs facteurs simultanés : tensions géopolitiques persistantes au Moyen-Orient, discipline de production maintenue par l'OPEP+ avec des coupes reconduites, et une demande asiatique (Chine, Inde) qui reprend de la vigueur au T1 2026. Le Dollar Index, bien qu'en légère hausse à 99.16, reste historiquement bas ce qui soutient le prix nominal des matières premières. XLE est l'ETF sectoriel le plus liquide sur l'énergie US et regroupe ExxonMobil, Chevron, ConocoPhillips — des entreprises avec des free cash flows records à ces niveaux de prix. Le VIX à 25.88 indique une nervosité du marché qui favorise traditionnellement la rotation vers les secteurs défensifs/value comme l'énergie, perçus comme des couvertures contre l'inflation et les chocs géopolitiques. La corrélation entre XLE et le WTI est très forte (>0.85), offrant une exposition directe à la hausse du brut sans risque spécifique d'une seule entreprise.",
-        "catalyseur": "WTI au-dessus de 90$/baril (+2.54% sur la séance) avec maintien des coupes OPEP+ et tensions géopolitiques persistantes",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 7,
-        "risques": "Un retournement brutal du pétrole en cas de désescalade géopolitique soudaine ou d'annonce surprise de production OPEP+ pourrait peser sur XLE. La remontée du Dollar Index est aussi un facteur adverse à surveiller car un dollar fort comprime les prix des matières premières."
-      }
-    },
-    {
-      "ts": "2026-03-24T08:32:52.914176",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Prudent: Achat 73x VGOV.L @ 15.60",
-      "data": {
-        "profil": "prudent",
-        "ticker": "VGOV.L",
-        "prix": 15.6,
-        "montant": 1138.8,
-        "raison": "Obligations souveraines comme bouclier face à la volatilité actuelle."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T13:00:20.128299",
+        "ts": "2026-03-24T13:10:29.674251",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T13:00:20.128299",
+      "last_ts": "2026-03-24T13:10:29.674251",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 50,
+      "total_today": 52,
       "errors_today": 5,
-      "successes_today": 23
+      "successes_today": 24
     },
     {
       "agent": "AlertDetector",
@@ -1125,7 +1107,7 @@
       "last_ts": "2026-03-24T10:26:18.403104",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 22,
+      "total_today": 20,
       "errors_today": 0,
       "successes_today": 4
     },
