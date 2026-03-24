@@ -10,6 +10,8 @@
 <meta property="og:description" content="L'essentiel des marchés en 5 minutes, décrypté par l'IA. Bourse, crypto, géopolitique — chaque semaine.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -356,184 +358,14 @@ nav {
   box-shadow: 0 4px 20px rgba(34,211,238,.25);
 }
 </style>
-
-<!-- DA-AMELIORATIONS-2026-03-24 -->
-<style>
-/* ── TYPOGRAPHY ENHANCEMENTS ── */
-.page-header h1 {
-  background: linear-gradient(135deg, #fff 30%, #22d3ee 60%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px rgba(34,211,238,.18));
-  letter-spacing: -.8px;
-  line-height: 1.1;
-}
-
-.page-header p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: #94a3b8;
-  letter-spacing: .01em;
-}
-
-/* ── PAGE TAG PULSE ── */
-.page-tag {
-  animation: tagPulse 3s ease-in-out infinite;
-  background: linear-gradient(135deg, rgba(34,211,238,.1), rgba(59,130,246,.08));
-}
-
-@keyframes tagPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34,211,238,.2); }
-  50%       { box-shadow: 0 0 18px 4px rgba(34,211,238,.12); }
-}
-
-/* ── GATE CARD ── */
-.gate-card {
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border: 1px solid rgba(34,211,238,.15);
-  box-shadow:
-    0 24px 64px rgba(0,0,0,.5),
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 1px 0 rgba(255,255,255,.1) inset;
-  transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s cubic-bezier(.4,0,.2,1), border-color .4s;
-}
-
-.gate-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(34,211,238,.35);
-  box-shadow:
-    0 32px 80px rgba(0,0,0,.55),
-    0 0 48px rgba(34,211,238,.12),
-    0 1px 0 rgba(255,255,255,.12) inset;
-}
-
-/* ── GATE ICON GLOW ── */
-.gate-icon {
-  background: radial-gradient(circle, rgba(34,211,238,.15) 0%, transparent 70%);
-  border-radius: 50%;
-  width: 72px;
-  height: 72px;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(34,211,238,.4)); }
-  50%       { transform: translateY(-6px); filter: drop-shadow(0 0 20px rgba(34,211,238,.7)); }
-}
-
-/* ── INPUT FIELDS ── */
-.gate-input {
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 14.5px;
-  letter-spacing: .02em;
-  transition: border-color .3s, box-shadow .3s, background .3s, transform .2s;
-}
-
-.gate-input:focus {
-  transform: translateY(-1px);
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 4px rgba(34,211,238,.14), 0 4px 16px rgba(34,211,238,.1);
-}
-
-/* ── CTA BUTTON ── */
-.gate-btn {
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 15px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 60%, #22c55e 100%);
-  background-size: 200% 200%;
-  animation: gradShift 4s ease infinite;
-  transition: transform .25s, box-shadow .25s, filter .25s;
-  position: relative;
-  overflow: hidden;
-}
-
-.gate-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity .3s;
-}
-
-.gate-btn:hover::after { opacity: 1; }
-.gate-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(34,211,238,.4), 0 4px 12px rgba(59,130,246,.3);
-  filter: brightness(1.08);
-}
-
-@keyframes gradShift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-
-/* ── TOOLBAR ── */
-.toolbar {
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
-  border: 1px solid rgba(255,255,255,.07);
-  box-shadow: 0 8px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.07);
-  transition: box-shadow .3s;
-}
-
-.toolbar:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.09);
-}
-
-/* ── WELCOME BAR ── */
-.welcome-bar {
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(34,197,94,.07), rgba(34,211,238,.04));
-  border: 1px solid rgba(34,197,94,.25);
-  box-shadow: 0 4px 24px rgba(34,197,94,.1), inset 0 1px 0 rgba(255,255,255,.06);
-}
-
-.welcome-name {
-  background: linear-gradient(90deg, #fff, #22c55e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ── LOGOUT BUTTON ── */
-.logout-btn {
-  border: 1px solid transparent;
-  transition: color .25s, background .25s, border-color .25s, transform .2s;
-}
-
-.logout-btn:hover {
-  transform: translateY(-1px);
-  border-color: rgba(239,68,68,.25);
-}
-
-/* ── NAV ENHANCEMENT ── */
-nav {
-  backdrop-filter: blur(24px) saturate(1.6);
-  background: rgba(4,9,26,.85) !important;
-  box-shadow: 0 1px 0 rgba(34,211,238,.08), 0 8px 40px rgba(0,0,0,.6);
-}
-
-.nav-cta {
-  border-radius: 10px;
-  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
-  letter-spacing: .3px;
-  box-shadow: 0 4px 20px rgba(34,211,238,.25);
-}
-</style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
 
 <div class="bg-wrap"><div class="bg-grid"></div></div>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
   <div class="nav-center" id="nav-menu">
     <a href="index.html">Accueil</a>
@@ -549,7 +381,7 @@ nav {
 
 </nav>
 
-<div class="page">
+<div class="page" id="main-content">
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="page-tag">
@@ -628,7 +460,7 @@ nav {
         <div class="spinner"></div>
         <p>Chargement de la newsletter...</p>
       </div>
-      <iframe id="newsletter-frame" style="display:none;" onload="frameLoaded()"></iframe>
+      <iframe id="newsletter-frame" style="display:none;" loading="lazy" onload="frameLoaded()"></iframe>
       <div id="no-edition" class="error-state" style="display:none;">
         <h3>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -642,7 +474,7 @@ nav {
       </div>
     </div>
 
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
         <div class="footer-brand" style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;">AlphaBot Weekly</div>
         <div class="footer-links" style="display:flex;gap:20px;">

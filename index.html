@@ -386,6 +386,7 @@ nav {
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
 
 <div class="scan"></div>
 <div class="bg-wrap">
@@ -393,7 +394,7 @@ nav {
 </div>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Navigation principale">
   <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
   <div class="nav-center" id="nav-menu">
     <a href="index.html" class="active">Accueil</a>
@@ -411,7 +412,7 @@ nav {
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- HERO -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="hero-inner">
     <div class="hero-tag"><span class="live-dot"></span> Système IA actif 24h/24</div>
     <h1>
@@ -674,7 +675,7 @@ nav {
 
 <!-- FOOTER -->
 
-<footer>
+<footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand">AlphaBot Weekly</div>
     <div class="footer-links">
