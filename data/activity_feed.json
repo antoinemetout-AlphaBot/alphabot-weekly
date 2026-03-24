@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T14:25:15.336308",
+  "generated_at": "2026-03-24T14:40:23.226804",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T14:40:23.206282",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T14:40:18.818779",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 14h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T14:25:15.313839",
       "agent": "Orchestrateur",
@@ -989,38 +1003,24 @@
       "type": "success",
       "message": "Email quotidien CEO envoyé (1 destinataires)",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:45:07.458703",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:45:05.217993",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Email Quotidien CEO 📧",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T14:25:15.313839",
+        "ts": "2026-03-24T14:40:23.206282",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T14:25:15.313839",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 68,
+      "last_ts": "2026-03-24T14:40:23.206282",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 69,
       "errors_today": 7,
-      "successes_today": 31
+      "successes_today": 32
     },
     {
       "agent": "Agent Investissement",
@@ -1134,22 +1134,6 @@
       "last_ts": "2026-03-24T08:48:50.190966",
       "last_type": "success",
       "last_message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
-      "total_today": 1,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Agent Growth",
-      "last_event": {
-        "ts": "2026-03-24T08:45:07.458703",
-        "agent": "Agent Growth",
-        "type": "success",
-        "message": "Notification quotidienne → 1 abonnés",
-        "data": {}
-      },
-      "last_ts": "2026-03-24T08:45:07.458703",
-      "last_type": "success",
-      "last_message": "Notification quotidienne → 1 abonnés",
       "total_today": 1,
       "errors_today": 0,
       "successes_today": 1
