@@ -66,9 +66,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bo
 .card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.25);box-shadow:0 12px 40px rgba(0,0,0,.3);}
 .card-date{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-family:'JetBrains Mono',monospace;}
 .card-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:8px;}
+.card-subtitle{font-size:13px;color:var(--muted);margin-top:4px;}
 .card-meta{font-size:12px;color:#475569;margin-bottom:14px;}
 .card-cta{font-size:13px;font-weight:600;color:var(--cyan);transition:color .2s;}
 .card:hover .card-cta{color:white;}
+.card-empty{opacity:0.5;cursor:default;pointer-events:none;}
+.card-empty:hover{transform:none;border-color:var(--border);}
+.card-empty .card-cta{color:var(--muted);}
 .update{text-align:center;color:#334155;font-size:11px;margin-top:32px;}
 
 /* FOOTER */
@@ -127,34 +131,40 @@ footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative
   <div class="grid">
     <a href="outputs/alphabot_newsletter_2026-03-24.html" target="_blank" class="card">
       <div class="card-date">Mardi 24 mars 2026</div>
-      <div class="card-title">Édition AlphaBot Weekly</div>
+      <div class="card-title">Marchés sous tension, or au sommet<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
       <div class="card-meta">64.1 KB · Générée par IA</div>
       <div class="card-cta">Lire l'édition →</div>
     </a>
     <a href="outputs/alphabot_newsletter_2026-03-23.html" target="_blank" class="card">
       <div class="card-date">Lundi 23 mars 2026</div>
-      <div class="card-title">Édition AlphaBot Weekly</div>
+      <div class="card-title">Bitcoin résiste, les indices hésitent<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
       <div class="card-meta">65.7 KB · Générée par IA</div>
       <div class="card-cta">Lire l'édition →</div>
     </a>
     <a href="outputs/alphabot_newsletter_2026-03-22.html" target="_blank" class="card">
       <div class="card-date">Dimanche 22 mars 2026</div>
-      <div class="card-title">Édition AlphaBot Weekly</div>
+      <div class="card-title">Week-end géopolitique : analyse spéciale<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
       <div class="card-meta">59.6 KB · Générée par IA</div>
       <div class="card-cta">Lire l'édition →</div>
     </a>
     <a href="outputs/alphabot_newsletter_2026-03-21.html" target="_blank" class="card">
       <div class="card-date">Samedi 21 mars 2026</div>
-      <div class="card-title">Édition AlphaBot Weekly</div>
+      <div class="card-title">Premiers signaux de la semaine<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
       <div class="card-meta">48.4 KB · Générée par IA</div>
       <div class="card-cta">Lire l'édition →</div>
     </a>
     <a href="outputs/alphabot_newsletter_2026-03-20.html" target="_blank" class="card">
       <div class="card-date">Vendredi 20 mars 2026</div>
-      <div class="card-title">Édition AlphaBot Weekly</div>
+      <div class="card-title">Clôture hebdo : le bilan des marchés<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
       <div class="card-meta">49.6 KB · Générée par IA</div>
       <div class="card-cta">Lire l'édition →</div>
     </a>
+    <div class="card card-empty">
+      <div class="card-date">Bientôt</div>
+      <div class="card-title">Prochaine édition bientôt...<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
+      <div class="card-meta">En préparation</div>
+      <div class="card-cta">Contenu à venir</div>
+    </div>
   </div>
   <div class="update">Mis à jour automatiquement · 24/03/2026 à 08:32</div>
 </div>
