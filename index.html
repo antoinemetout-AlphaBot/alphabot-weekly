@@ -777,6 +777,179 @@ nav {
   .duel-versus { flex-direction: column; }
   .duel-vs { transform: none; }
 }
+
+/* ═══════════════════════════════════════════════════ */
+/*  🧠 COMMENT FONCTIONNE ALPHABOT — 4 étapes IA    */
+/* ═══════════════════════════════════════════════════ */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+.how-step {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  transition: all .4s var(--transition);
+  overflow: hidden;
+}
+.how-step::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  opacity: 0;
+  transition: opacity .4s;
+}
+.how-step:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34,211,238,.3);
+  box-shadow: 0 16px 48px rgba(34,211,238,.1);
+}
+.how-step:hover::before { opacity: 1; }
+.how-num {
+  position: absolute;
+  top: 16px; right: 20px;
+  font: 800 48px/1 'Space Grotesk', sans-serif;
+  color: rgba(34,211,238,.08);
+}
+.how-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+.how-step h3 {
+  font: 700 18px/1.3 'Space Grotesk', sans-serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.how-step p {
+  font: 400 14px/1.6 'Inter', sans-serif;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.how-agents {
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  color: var(--cyan);
+  opacity: .6;
+  letter-spacing: .5px;
+}
+@media(max-width:900px) {
+  .how-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:600px) {
+  .how-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════ */
+/*  📰 EXTRAIT NEWSLETTER — Preuve produit           */
+/* ═══════════════════════════════════════════════════ */
+.newsletter-preview {
+  max-width: 720px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(34,211,238,.03) 100%);
+  border: 1px solid rgba(34,211,238,.2);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.nl-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(34,211,238,.06);
+  border-bottom: 1px solid rgba(34,211,238,.1);
+}
+.nl-preview-tag {
+  font: 700 12px/1 'JetBrains Mono', monospace;
+  color: var(--cyan);
+  letter-spacing: 1px;
+}
+.nl-preview-date {
+  font: 500 12px/1 'JetBrains Mono', monospace;
+  color: var(--muted);
+}
+.nl-preview-content {
+  padding: 28px 24px 48px;
+  max-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.nl-preview-title {
+  font: 700 20px/1.3 'Space Grotesk', sans-serif;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.nl-preview-text {
+  font: 400 14px/1.7 'Inter', sans-serif;
+  color: var(--text);
+}
+.nl-preview-fade {
+  position: absolute;
+  bottom: 60px;
+  left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(transparent, rgba(4,9,26,.95));
+  pointer-events: none;
+}
+.nl-preview-cta {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  font: 600 14px/1 'Inter', sans-serif;
+  color: var(--cyan);
+  text-decoration: none;
+  border-top: 1px solid var(--border);
+  transition: all .3s;
+}
+.nl-preview-cta:hover {
+  background: rgba(34,211,238,.06);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════ */
+/*  HIÉRARCHIE VISUELLE — Améliorations globales     */
+/* ═══════════════════════════════════════════════════ */
+
+/* Section titles plus gros */
+.section h2 {
+  font-size: clamp(28px, 4vw, 42px) !important;
+  letter-spacing: -0.5px;
+}
+
+/* Section tags plus visibles */
+.section-tag {
+  font-size: 13px !important;
+  letter-spacing: 2px !important;
+  padding: 6px 16px !important;
+}
+
+/* Animated counter for score */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.score-animated {
+  animation: countUp .6s ease-out forwards;
+}
+
+/* Hero stat vals bigger and more impactful */
+.hero-stat-val {
+  font-size: clamp(28px, 5vw, 40px) !important;
+}
+
+/* Glow pulse on score */
+@keyframes scoreGlow {
+  0%,100% { text-shadow: 0 0 20px rgba(34,211,238,.3); }
+  50% { text-shadow: 0 0 40px rgba(34,211,238,.6), 0 0 80px rgba(34,211,238,.2); }
+}
+.live-score-number {
+  animation: scoreGlow 3s ease-in-out infinite;
+}
 </style>
 </head>
 <body>
@@ -796,7 +969,7 @@ nav {
     <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
+    <a href="#subscribe" class="nav-cta">Recevoir les analyses IA</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -808,34 +981,34 @@ nav {
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="hero" id="main-content">
   <div class="hero-inner">
-    <div class="hero-tag"><span class="live-dot"></span> Système IA actif 24h/24</div>
+    <div class="hero-tag"><span class="live-dot"></span> IA active en ce moment — dernière analyse il y a <span id="last-analysis-ago">quelques minutes</span></div>
     <h1>
-      <div class="h1-white">La bourse et la crypto,</div>
-      <div class="h1-gradient">décryptées par l'IA.</div>
+      <div class="h1-white">Chaque matin, une IA analyse les marchés pour vous.</div>
+      <div class="h1-gradient">Comprenez la bourse en 5 minutes, même si vous débutez.</div>
     </h1>
     <p class="hero-sub">
-      Un système d'intelligence artificielle surveille les marchés <strong>24h/24</strong>, analyse chaque mouvement et vous livre l'essentiel en <strong>5 minutes</strong>. Pendant ce temps, <strong>3 robots traders</strong> investissent sous vos yeux. Vous, vous lisez avec votre café.
+      <strong>+1 200 données analysées chaque jour.</strong> Score IA en temps réel. Duel Bull vs Bear quotidien. 3 robots traders investissent 30 000€ sous vos yeux. Vous, vous lisez avec votre café.
     </p>
 
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-val cyan">24/7</div>
-        <div class="hero-stat-lbl">Surveillance IA</div>
+        <div class="hero-stat-val cyan" id="hero-score">--</div>
+        <div class="hero-stat-lbl">Score IA aujourd'hui</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val gold">3</div>
-        <div class="hero-stat-lbl">Robots traders</div>
+        <div class="hero-stat-val gold" id="hero-duel-winner">--</div>
+        <div class="hero-stat-lbl">Duel du jour</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-val green">30k€</div>
-        <div class="hero-stat-lbl">Investis en direct</div>
+        <div class="hero-stat-val green" id="hero-portfolio">--</div>
+        <div class="hero-stat-lbl">Portefeuille IA</div>
       </div>
     </div>
 
     <div class="form-wrap" id="subscribe">
       <div class="form-group">
         <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email pour s'abonner">
-        <button class="btn-sub" onclick="handleSubscribe()">S'abonner — c'est gratuit</button>
+        <button class="btn-sub" onclick="handleSubscribe()">Recevoir l'analyse IA chaque matin</button>
       </div>
       <div id="sub-status"></div>
       <div class="hero-trust">
@@ -1094,33 +1267,70 @@ nav {
 <div class="divider"></div>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- COMMENT ÇA MARCHE -->
+<!-- 🧠 COMMENT FONCTIONNE ALPHABOT — 4 étapes IA -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="section reveal">
   <div class="section-center">
-    <div class="section-tag">En 30 secondes</div>
-    <h2>3 étapes, c'est tout</h2>
+    <div class="section-tag cyan">Le système</div>
+    <h2>Comment fonctionne AlphaBot ?</h2>
+    <p class="section-sub">4 couches d'intelligence artificielle travaillent ensemble, chaque jour, sans interruption.</p>
   </div>
 
-  <div class="steps">
-    <div class="step">
-      <span class="step-num">1</span>
-      <span class="step-icon">📧</span>
-      <h3>Entrez votre email</h3>
-      <p>10 secondes. Pas de carte bancaire, pas de mot de passe. Juste votre email et c'est parti.</p>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <div class="how-icon">🔍</div>
+      <h3>L'IA analyse</h3>
+      <p>+1 200 données par jour. Cours, volumes, devises, matières premières, news. L'IA repère ce qui compte et ignore le bruit.</p>
+      <div class="how-agents">Agents : Veille · Analyste</div>
     </div>
-    <div class="step">
-      <span class="step-num">2</span>
-      <span class="step-icon">☕</span>
-      <h3>Ouvrez votre boîte mail</h3>
-      <p>Chaque semaine, un brief clair : ce qui s'est passé, pourquoi, et ce que les robots ont fait.</p>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <div class="how-icon">⚔️</div>
+      <h3>L'IA débat</h3>
+      <p>Chaque jour, un actif passe dans l'Arène. Un camp Bull, un camp Bear, un juge impartial. Le meilleur argument gagne.</p>
+      <div class="how-agents">Agents : Compétiteur · Juge · Vérificateur</div>
     </div>
-    <div class="step">
-      <span class="step-num">3</span>
-      <span class="step-icon">🚀</span>
-      <h3>Prenez une longueur d'avance</h3>
-      <p>En 5 minutes, vous comprenez les marchés mieux que 90% des gens. Sans effort, sans jargon.</p>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div class="how-icon">📈</div>
+      <h3>L'IA investit</h3>
+      <p>3 robots placent de l'argent réel avec 3 stratégies différentes. Chaque trade est public, justifié, daté. Transparence totale.</p>
+      <div class="how-agents">Agents : Stratégie · Risk Manager · Exécution · Audit</div>
     </div>
+    <div class="how-step">
+      <div class="how-num">4</div>
+      <div class="how-icon">🧪</div>
+      <h3>L'IA vérifie</h3>
+      <p>Le Reality Check challenge tout. Il détecte le bullshit, remet en question les analyses et score la fiabilité du système.</p>
+      <div class="how-agents">Agents : Reality Check · COO · Directeur Adjoint</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 📰 EXTRAIT DE LA NEWSLETTER — Preuve produit -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
+  <div class="section-center">
+    <div class="section-tag gold">Extrait réel</div>
+    <h2>Voici ce que vous recevez chaque matin</h2>
+    <p class="section-sub">Un extrait de la dernière newsletter, générée 100% par l'IA.</p>
+  </div>
+
+  <div class="newsletter-preview">
+    <div class="nl-preview-header">
+      <span class="nl-preview-tag">📰 NEWSLETTER DU JOUR</span>
+      <span class="nl-preview-date" id="nl-preview-date">--</span>
+    </div>
+    <div class="nl-preview-content" id="nl-preview-content">
+      <h3 class="nl-preview-title" id="nl-preview-title">Chargement de la dernière newsletter...</h3>
+      <p class="nl-preview-text" id="nl-preview-text">L'IA prépare votre briefing...</p>
+    </div>
+    <div class="nl-preview-fade"></div>
+    <a href="newsletter.html" class="nl-preview-cta">Lire la newsletter complète →</a>
   </div>
 </section>
 
@@ -1153,11 +1363,11 @@ nav {
 <section class="cta-section reveal">
   <div class="cta-box">
     <div class="section-tag">C'est gratuit. Pour de vrai.</div>
-    <h2>Demain, vous comprendrez les marchés</h2>
-    <p>Rejoignez les investisseurs qui reçoivent chaque semaine l'essentiel de la bourse et de la crypto, décrypté par l'IA.</p>
-    <div class="form-group" style="max-width:420px;margin:0 auto;">
+    <h2>Demain matin, vous comprendrez les marchés</h2>
+    <p>Rejoignez les investisseurs qui reçoivent chaque jour l'essentiel de la bourse et de la crypto, analysé par l'IA. 5 minutes de lecture. Zéro jargon.</p>
+    <div class="form-group" style="max-width:480px;margin:0 auto;">
       <input type="email" id="email-input2" placeholder="votre@email.com" onkeydown="if(event.key==='Enter')handleSubscribe2()" aria-label="Adresse email pour s'abonner">
-      <button class="btn-sub" onclick="handleSubscribe2()">S'abonner</button>
+      <button class="btn-sub" onclick="handleSubscribe2()">Accéder gratuitement aux analyses IA</button>
     </div>
     <div id="sub-status2" style="display:none;font-size:13px;text-align:center;margin-top:8px;"></div>
   </div>
@@ -1472,6 +1682,104 @@ if ('speechSynthesis' in window) {
   speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
 }
 
+// ═══════════════════════════════════════════════════
+//  HERO LIVE DATA — populate hero stats from JSON
+// ═══════════════════════════════════════════════════
+async function loadHeroData() {
+  try {
+    // Score in hero
+    const r1 = await fetch('data/score_global.json');
+    if (r1.ok) {
+      const d = await r1.json();
+      const heroScore = document.getElementById('hero-score');
+      if (heroScore) heroScore.textContent = Math.round(d.score_global || 0) + '/100';
+    }
+  } catch(e) {}
+
+  try {
+    // Duel winner in hero
+    const r2 = await fetch('data/arena_content.json');
+    if (r2.ok) {
+      const d = await r2.json();
+      const combat = d.dernier_combat || d;
+      const winner = combat.verdict?.gagnant || '';
+      const actif = combat.actif || '';
+      const heroEl = document.getElementById('hero-duel-winner');
+      if (heroEl) {
+        const emoji = winner === 'bull' ? '🟢' : winner === 'bear' ? '🔴' : '⚔️';
+        heroEl.textContent = emoji + ' ' + (winner ? winner.charAt(0).toUpperCase() + winner.slice(1) : actif);
+      }
+    }
+  } catch(e) {}
+
+  try {
+    // Portfolio in hero
+    const r3 = await fetch('data/trader_storytelling.json');
+    if (r3.ok) {
+      const d = await r3.json();
+      const perf = d.performance_pct || 0;
+      const heroEl = document.getElementById('hero-portfolio');
+      if (heroEl) heroEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
+    } else {
+      const r3b = await fetch('data/portfolio_public.json');
+      if (r3b.ok) {
+        const d = await r3b.json();
+        const robots = d.robots || {};
+        let total = 0, init = 0;
+        for (const rb of Object.values(robots)) { total += rb.capital_actuel || 10000; init += 10000; }
+        const perf = ((total - init) / init * 100);
+        const heroEl = document.getElementById('hero-portfolio');
+        if (heroEl) heroEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
+      }
+    }
+  } catch(e) {}
+}
+
+// ═══════════════════════════════════════════════════
+//  NEWSLETTER PREVIEW — load latest newsletter extract
+// ═══════════════════════════════════════════════════
+async function loadNewsletterPreview() {
+  try {
+    const r = await fetch('data/newsletters.json');
+    if (!r.ok) return;
+    const newsletters = await r.json();
+    if (!newsletters.length) return;
+
+    // Get the latest
+    const latest = newsletters[newsletters.length - 1];
+    const dateEl = document.getElementById('nl-preview-date');
+    const titleEl = document.getElementById('nl-preview-title');
+    const textEl = document.getElementById('nl-preview-text');
+
+    if (dateEl) dateEl.textContent = latest.date || '';
+    if (titleEl) titleEl.textContent = latest.titre || latest.title || 'Newsletter AlphaBot Weekly';
+
+    // Try to fetch the actual newsletter HTML to extract a preview
+    const nlFile = latest.fichier || latest.file || '';
+    if (nlFile) {
+      try {
+        const nr = await fetch(nlFile);
+        if (nr.ok) {
+          const html = await nr.text();
+          // Extract first meaningful paragraph
+          const tmp = document.createElement('div');
+          tmp.innerHTML = html;
+          const paragraphs = tmp.querySelectorAll('p');
+          let preview = '';
+          for (const p of paragraphs) {
+            const txt = p.textContent.trim();
+            if (txt.length > 80 && !txt.includes('©') && !txt.includes('désabonner')) {
+              preview += txt + '\n\n';
+              if (preview.length > 300) break;
+            }
+          }
+          if (textEl && preview) textEl.textContent = preview.substring(0, 400) + '...';
+        }
+      } catch(e) {}
+    }
+  } catch(e) { console.log('Newsletter preview non disponible'); }
+}
+
 // ── INIT ──
 loadMarketData();
 loadChallengeData();
@@ -1479,6 +1787,8 @@ loadScoreGlobal();
 loadDuelDuJour();
 loadPortfolioLive();
 loadRealityCheck();
+loadHeroData();
+loadNewsletterPreview();
 </script>
 <script src="assets/gate_subscriber.js"></script>
 </body>
