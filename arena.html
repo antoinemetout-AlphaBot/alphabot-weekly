@@ -2058,6 +2058,9 @@
       </div>
 
       <div class="arena-cta-group">
+        <button class="arena-button arena-button-primary" onclick="arenaOpenImportModal()" style="font-size:16px;padding:14px 32px;">
+          📁 Importer mon portefeuille
+        </button>
         <button class="arena-button arena-button-primary" onclick="arenaOpenAuthModal('signup')">
           Créer mon portefeuille
         </button>
@@ -2673,42 +2676,33 @@
 
     // ==================== DEMO DATA ====================
     const DEMO_PORTFOLIOS = [
+      // Les robots traders — données synchronisées depuis portfolio_public.json
+      // (les vrais résultats sont chargés dynamiquement dans loadLeaderboard)
       {
         id: 'robot-prudent',
-        displayName: 'Alpha Prudent',
+        displayName: '🤖 Robot Trader Prudent',
         isRobot: true,
-        positions: [
-          { ticker: 'MSFT', type: 'stock', quantity: 10, avgPrice: 420.50 },
-          { ticker: 'GOLD', type: 'etf', quantity: 5, avgPrice: 180.00 },
-          { ticker: 'EUR/USD', type: 'forex', quantity: 1000, avgPrice: 1.08 }
-        ],
-        return: 32.8
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-modere',
-        displayName: 'Alpha Modéré',
+        displayName: '🤖 Robot Trader Modéré',
         isRobot: true,
-        positions: [
-          { ticker: 'AAPL', type: 'stock', quantity: 15, avgPrice: 178.50 },
-          { ticker: 'BTC', type: 'crypto', quantity: 0.5, avgPrice: 68000 },
-          { ticker: 'ETH', type: 'crypto', quantity: 5, avgPrice: 3600 }
-        ],
-        return: 27.4
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-agressif',
-        displayName: 'Alpha Agressif',
+        displayName: '🤖 Robot Trader Agressif',
         isRobot: true,
-        positions: [
-          { ticker: 'SOL', type: 'crypto', quantity: 50, avgPrice: 190 },
-          { ticker: 'DOGE', type: 'crypto', quantity: 10000, avgPrice: 0.35 },
-          { ticker: 'NVDA', type: 'stock', quantity: 20, avgPrice: 850 }
-        ],
-        return: 45.2
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
+      // Participants communautaires (pseudos)
       {
         id: 'user-1',
-        displayName: 'Jean Lambert',
+        displayName: 'CryptoJean_75',
         isRobot: false,
         positions: [
           { ticker: 'AAPL', type: 'stock', quantity: 50, avgPrice: 150 },
@@ -2718,7 +2712,7 @@
       },
       {
         id: 'user-2',
-        displayName: 'Sophie Mallet',
+        displayName: 'SophTrader',
         isRobot: false,
         positions: [
           { ticker: 'BTC', type: 'crypto', quantity: 1, avgPrice: 50000 },
@@ -2728,7 +2722,7 @@
       },
       {
         id: 'user-3',
-        displayName: 'Marc Dupont',
+        displayName: 'MarketSurfer_33',
         isRobot: false,
         positions: [
           { ticker: 'GOOGL', type: 'stock', quantity: 30, avgPrice: 140 },
@@ -2738,7 +2732,7 @@
       },
       {
         id: 'user-4',
-        displayName: 'Lisa Chen',
+        displayName: 'LisaInvest',
         isRobot: false,
         positions: Array.from({ length: 23 }, (_, i) => ({
           ticker: ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'NFLX', 'SPOT', 'UBER'][i % 10] || 'ETH',
@@ -2750,7 +2744,7 @@
       },
       {
         id: 'user-5',
-        displayName: 'Laurent Brun',
+        displayName: 'L_Brun_92',
         isRobot: false,
         positions: [
           { ticker: 'SOL', type: 'crypto', quantity: 100, avgPrice: 160 },
@@ -2760,7 +2754,7 @@
       },
       {
         id: 'user-6',
-        displayName: 'Alice Mercier',
+        displayName: 'AliceCrypto',
         isRobot: false,
         positions: [
           { ticker: 'NVIDIA', type: 'stock', quantity: 5, avgPrice: 400 },
@@ -2831,10 +2825,11 @@
     let currentFilter = 'all';
 
     // ==================== INITIALIZATION ====================
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', async function() {
       initializeApp();
       setupEventListeners();
       animateCounters();
+      await syncRobotData();  // Sync real robot performance before rendering
       loadLeaderboard();
     });
 
@@ -2875,6 +2870,35 @@
       });
     }
 
+    // ==================== SYNC ROBOT DATA FROM PORTFOLIO ====================
+    async function syncRobotData() {
+      try {
+        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const robots = data.robots || {};
+        const mapping = {
+          'robot-prudent': 'prudent',
+          'robot-modere': 'modere',
+          'robot-agressif': 'agressif'
+        };
+        allPortfolios.forEach(p => {
+          if (p.isRobot && mapping[p.id]) {
+            const r = robots[mapping[p.id]];
+            if (r) {
+              p.return = r.performance_pct || 0;
+              p.positions = (r.positions || []).map(pos => ({
+                ticker: pos.ticker,
+                type: pos.ticker && pos.ticker.includes('BTC') ? 'crypto' : 'stock',
+                quantity: pos.nb_actions || 0,
+                avgPrice: pos.prix_entree || 0
+              }));
+            }
+          }
+        });
+      } catch(e) { /* silent fail — use demo data */ }
+    }
+
     // ==================== LEADERBOARD ====================
     function loadLeaderboard() {
       let portfolios = [...allPortfolios];
@@ -2911,7 +2935,7 @@
                 </div>
                 <div class="arena-investor-name">
                   ${p.displayName}
-                  ${p.isRobot ? '<span class="arena-robot-badge">Robot</span>' : ''}
+                  ${p.isRobot ? '<span class="arena-robot-badge">Robot Trader IA</span>' : ''}
                 </div>
               </div>
             </td>

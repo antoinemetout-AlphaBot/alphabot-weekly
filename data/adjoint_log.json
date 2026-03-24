@@ -347,6 +347,38 @@
         }
       ],
       "resume": "AlphaBot Weekly tourne avec 14 agents fonctionnels et 5 éditions produites, mais reste bloqué à 1 abonné réel et 0€ de revenus. Les actions techniques répétées (agents, rapports) tournent en boucle sa"
+    },
+    {
+      "date": "24/03/2026 à 00:28",
+      "duree_sec": 55,
+      "nb_actions": 6,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "success"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour pointer vers une URL dynamique basée sur la date du jour (JS), au lieu d'une date fixe codée en dur. Ainsi le bouton 'Lire la newsletter' pointe toujours vers l'édition la plus récente.",
+          "status": "error"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour l'email de bienvenue avec le vrai sujet et les bonnes variables",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer le plan de croissance réelle du jour (posts LinkedIn, stratégie referral, pistes SEO). Output dans outputs/growth_strategy_2026-03-24.html",
+          "status": "success"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour",
+          "status": "noted"
+        },
+        {
+          "action": "Publier le post LinkedIn généré par le Growth Booster pour démarrer la croissance organique réelle",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly tourne de façon stable avec 14 agents fonctionnels et 5 éditions produites, mais reste bloqué à 1 abonné réel et 0€ de revenus. Les problèmes techniques prioritaires (EmailJS générique"
     }
   ]
 }

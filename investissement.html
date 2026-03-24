@@ -1244,10 +1244,26 @@
         <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span>
         <span id="live-source" style="font-size:9px;opacity:.5;margin-left:4px;"></span>
       </div>
-      <h1>3 Robots Traders IA</h1>
+      <h1>Le Challenge : 10 000€ → 100 000€</h1>
       <p class="hero-subtitle">
-        Trois stratégies d'investissement, trois profils de risque, 30 000€ au service de votre portefeuille.
-        Chaque décision est argumentée, chaque prix réel. Suivez en temps réel.
+        3 robots traders IA partent chacun avec <strong>10 000€</strong>. Même objectif : atteindre <strong>100 000€</strong>. Trois stratégies radicalement différentes. Qui y arrivera en premier ?
+      </p>
+      <div style="display:flex;justify-content:center;gap:20px;margin-top:20px;flex-wrap:wrap;">
+        <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:12px 20px;text-align:center;">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Prudent</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#10b981;">🛡️ Sécurité</div>
+        </div>
+        <div style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:12px 20px;text-align:center;">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Modéré</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#f59e0b;">⚖️ Équilibre</div>
+        </div>
+        <div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:12px 20px;text-align:center;">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Agressif</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#ef4444;">🔥 Performance</div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:16px;">
+        100% transparent — chaque trade est réel, argumenté et vérifiable. Zéro manipulation.
       </p>
     </div>
   </section>
@@ -1283,7 +1299,7 @@
           </div>
         </div>
         <div class="robot-performance">
-          <span>Objectif: 50 000€ (+400%)</span>
+          <span>Objectif: 100 000€ (+900%)</span>
         </div>
         <div class="progress-bar">
           <div class="progress-fill" id="progress-prudent" style="width: 0%"></div>
@@ -1355,7 +1371,7 @@
           </div>
         </div>
         <div class="robot-performance">
-          <span>Objectif: 200 000€ (+1900%)</span>
+          <span>Objectif: 100 000€ (+900%)</span>
         </div>
         <div class="progress-bar">
           <div class="progress-fill" id="progress-agressif" style="width: 0%"></div>
@@ -1522,7 +1538,7 @@
 
           const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
           const perfStr = perf.toFixed(2);
-          const objective = robot.objectif || { prudent: 50000, modere: 100000, agressif: 200000 }[robotType];
+          const objective = robot.objectif || 100000;
           const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
           const progress = Math.min((currentVal / objective) * 100, 100);
           const nbTrades = robot.nb_trades !== undefined ? robot.nb_trades : (robot.trades_recent || robot.trades || []).length;
