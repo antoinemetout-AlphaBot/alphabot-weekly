@@ -104,6 +104,66 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .skip-link:focus { top: 0; }
 </style>
 
+<!-- VISUAL-UPGRADE-2026-03-24 -->
+<style>
+/* ═══ ARCHIVES VISUAL UPGRADE ═══ */
+
+/* Animated dot grid */
+.bg-wrap::after {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridPulse 4s ease-in-out infinite alternate;
+}
+@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
+
+/* Nav glassmorphism */
+nav {
+  background: rgba(4,9,26,.72)!important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+/* Animated border glow */
+@keyframes borderGlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Cards — animated gradient border */
+.card {
+  position:relative!important; z-index:1;
+  border:none!important;
+  background:rgba(255,255,255,.03)!important;
+}
+.card::after {
+  content:''; position:absolute; inset:-1px; border-radius:17px; z-index:-1;
+  background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(59,130,246,.15),rgba(245,200,66,.15),rgba(34,211,238,.3));
+  background-size:300% 300%; animation:borderGlow 6s ease infinite;
+  opacity:.3; transition:opacity .4s;
+}
+.card:hover::after { opacity:1; }
+.card:hover {
+  transform:translateY(-8px)!important;
+  box-shadow:0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(34,211,238,.08)!important;
+}
+
+/* Card title — glow on hover */
+.card:hover .card-title { color:#22d3ee; text-shadow:0 0 20px rgba(34,211,238,.3); }
+
+/* CTA text — glow */
+.card:hover .card-cta {
+  color:white!important;
+  text-shadow:0 0 15px rgba(34,211,238,.4);
+}
+
+/* Page header — title glow */
+.page-header h1 {
+  filter: drop-shadow(0 0 30px rgba(34,211,238,.15));
+}
+</style>
+
 <!-- Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>

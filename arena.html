@@ -1940,6 +1940,80 @@
     }
     .skip-link:focus { top: 0; }
   </style>
+
+  <!-- VISUAL-UPGRADE-2026-03-24 -->
+  <style>
+  /* ═══ ARENA VISUAL UPGRADE ═══ */
+
+  /* Animated dot grid */
+  body::before {
+    background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px)!important;
+    background-size: 40px 40px!important;
+    animation: gridPulse 4s ease-in-out infinite alternate;
+    filter:none!important;
+  }
+  @keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
+
+  /* Arena hero — bigger glow */
+  .arena-hero h1 {
+    filter: drop-shadow(0 0 40px rgba(34,211,238,.25)) drop-shadow(0 0 80px rgba(245,200,66,.15));
+  }
+
+  /* Stats — glow effect */
+  .arena-stat-value {
+    text-shadow: 0 0 30px currentColor;
+  }
+  .arena-stat {
+    position:relative;
+    transition: transform .3s ease;
+  }
+  .arena-stat:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Animated gradient border keyframe */
+  @keyframes borderGlow {
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+  }
+
+  /* Leaderboard rows glow on hover */
+  .leaderboard-row:hover, .arena-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 30px rgba(34,211,238,.08)!important;
+    border-color: rgba(34,211,238,.3)!important;
+    transform: translateY(-4px)!important;
+  }
+
+  /* Podium — glowing borders */
+  .podium-card, .arena-card {
+    position:relative; z-index:1;
+  }
+  .podium-card::after, .arena-card::after {
+    content:''; position:absolute; inset:-1px; border-radius:inherit; z-index:-1;
+    background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(245,200,66,.15),rgba(34,211,238,.3));
+    background-size:300% 300%; animation:borderGlow 6s ease infinite;
+    opacity:.3; transition:opacity .4s;
+  }
+  .podium-card:hover::after, .arena-card:hover::after { opacity:1; }
+
+  /* Import card CTA — glow */
+  .import-card, .arena-cta-group .btn, .arena-cta-group a {
+    transition: all .3s ease;
+  }
+  .import-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 40px rgba(34,211,238,.1);
+  }
+
+  /* CTA button glow */
+  .arena-cta-group .btn:first-child, .arena-cta-group a:first-child {
+    box-shadow: 0 4px 24px rgba(34,211,238,.3);
+  }
+  .arena-cta-group .btn:first-child:hover, .arena-cta-group a:first-child:hover {
+    box-shadow: 0 12px 40px rgba(34,211,238,.5)!important;
+    transform: translateY(-3px);
+  }
+  </style>
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </head>

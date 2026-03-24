@@ -365,6 +365,43 @@ nav {
   letter-spacing: .3px;
   box-shadow: 0 4px 20px rgba(34,211,238,.25);
 }
+
+/* ═══ VISUAL UPGRADE ═══ */
+@keyframes borderGlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Animated dot grid */
+.bg-wrap::after {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridPulse 4s ease-in-out infinite alternate;
+}
+@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
+
+/* Nav glassmorphism */
+nav {
+  background: rgba(4,9,26,.72)!important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+/* Reader container — glow border */
+.reader-wrap, .nl-reader, .newsletter-frame {
+  position:relative; z-index:1;
+}
+
+/* Dropdown select — enhanced */
+select, .edition-select {
+  transition: all .3s ease;
+}
+select:hover, .edition-select:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,.3), 0 0 20px rgba(34,211,238,.08);
+  border-color: rgba(34,211,238,.3)!important;
+}
 </style>
 </head>
 <body>

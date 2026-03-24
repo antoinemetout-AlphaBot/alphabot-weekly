@@ -271,6 +271,75 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .skip-link:focus { top: 0; }
 </style>
 
+<!-- VISUAL-UPGRADE-2026-03-24 -->
+<style>
+/* ═══ DASHBOARD AGENTS VISUAL UPGRADE ═══ */
+
+/* Animated dot grid */
+body::after {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(circle, rgba(34,211,238,.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridPulse 4s ease-in-out infinite alternate;
+}
+@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
+
+/* Animated border glow */
+@keyframes borderGlow {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Pyramid container — glow border */
+.pyramid {
+  position:relative; z-index:1;
+}
+.pyramid::before {
+  content:''; position:absolute; inset:-2px; border-radius:inherit; z-index:-1;
+  background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(59,130,246,.15),rgba(245,200,66,.15),rgba(34,211,238,.3));
+  background-size:300% 300%; animation:borderGlow 8s ease infinite;
+  opacity:.4; border-radius:20px;
+}
+
+/* Node cards — glow on hover */
+.node-card, .pyramid-node {
+  transition: all .3s ease!important;
+}
+.node-card:hover, .pyramid-node:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,.3), 0 0 30px rgba(34,211,238,.08);
+  border-color: rgba(34,211,238,.3)!important;
+}
+
+/* Status dots — bigger pulse */
+.status-dot.active, .status-dot.success {
+  box-shadow: 0 0 10px rgba(34,197,94,.6), 0 0 20px rgba(34,197,94,.3);
+}
+
+/* Terminal — enhanced glow */
+.terminal-section {
+  position:relative; z-index:1;
+}
+.terminal-section::before {
+  content:''; position:absolute; inset:-1px; border-radius:inherit; z-index:-1;
+  background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(59,130,246,.1),rgba(34,211,238,.2));
+  background-size:300% 300%; animation:borderGlow 8s ease infinite;
+  opacity:.3; border-radius:16px;
+}
+
+/* Terminal header — glow text */
+.terminal-header {
+  text-shadow: 0 0 20px rgba(34,211,238,.3);
+}
+
+/* KPI values glow */
+.kpi-value, .stat-value {
+  text-shadow: 0 0 20px currentColor;
+}
+</style>
+
 <!-- GOOGLE ANALYTICS — Remplacer G-XXXXXXXXXX par votre ID GA4 -->
 <!-- Créer un compte sur https://analytics.google.com puis décommenter -->
 <!--
