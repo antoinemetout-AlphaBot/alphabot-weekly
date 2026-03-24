@@ -485,11 +485,11 @@ nav {
 
 <!-- NAV -->
 <nav>
-  <a href="index.html?v=2" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
   <div class="nav-center" id="nav-menu">
-    <a href="index.html?v=2">Accueil</a>
+    <a href="index.html">Accueil</a>
     <a href="newsletter.html" class="active">Newsletter</a>
-    <a href="investissement.html?v=2">Robot Trader</a>
+    <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html">Agents IA</a>
     <a href="#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
@@ -527,8 +527,8 @@ nav {
       <p>Entrez l'adresse email avec laquelle vous êtes abonné pour accéder aux newsletters.</p>
       <input class="gate-input" type="email" id="gate-email" placeholder="votre@email.com" autocomplete="email">
       <button class="gate-btn" onclick="verifyAccess()">Accéder à ma newsletter</button>
-      <div id="gate-error">Email non reconnu. <a href="index.html?v=2" style="color:var(--cyan)">S'abonner gratuitement</a></div>
-      <div class="gate-note">Pas encore abonné ? <a href="index.html?v=2">C'est gratuit</a></div>
+      <div id="gate-error">Email non reconnu. <a href="index.html" style="color:var(--cyan)">S'abonner gratuitement</a></div>
+      <div class="gate-note">Pas encore abonné ? <a href="index.html">C'est gratuit</a></div>
     </div>
   </div>
 
@@ -599,7 +599,7 @@ nav {
 <footer>
   <div class="footer-brand">AlphaBot Weekly</div>
   <div class="footer-links">
-    <a href="index.html?v=2">Accueil</a>
+    <a href="index.html">Accueil</a>
     <a href="newsletters.html">Archive</a>
   </div>
   <div class="footer-copy">© 2026 AlphaBot Weekly</div>
@@ -640,7 +640,7 @@ async function verifyAccess(){
     showContent(email);
   } else {
     errEl.style.display='block';
-    errEl.innerHTML='Email non reconnu. <a href="index.html?v=2" style="color:var(--cyan)">S\'abonner gratuitement</a>';
+    errEl.innerHTML='Email non reconnu. <a href="index.html" style="color:var(--cyan)">S\'abonner gratuitement</a>';
   }
 }
 
