@@ -1,28 +1,22 @@
 {
   "meta": {
-    "timestamp": "2026-03-24 08:30",
+    "timestamp": "2026-03-24 14:25",
     "date": "24/03/2026",
     "semaine": "Semaine 12 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 70920,
-      "variation_24h": 4.36,
-      "variation_7j": -4.27,
-      "market_cap_mrd": 1417.9,
-      "volume_24h_mrd": 50.49,
+      "prix_usd": 70615,
+      "variation_24h": -0.31,
+      "variation_7j": -4.21,
+      "market_cap_mrd": 1412.4,
+      "volume_24h_mrd": 38.34,
       "ath_usd": 126080,
-      "ath_pct": -43.7
+      "ath_pct": -44.0
     }
   },
   "news_crypto": [
-    {
-      "titre": "Bitcoin (BTC) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/bitcoin",
-      "date": "2026-03-24"
-    },
     {
       "titre": "Bittensor (TAO) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
@@ -33,6 +27,12 @@
       "titre": "Backpack (BP) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
       "url": "https://www.coingecko.com/en/coins/backpack",
+      "date": "2026-03-24"
+    },
+    {
+      "titre": "Concordium (CCD) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/concordium",
       "date": "2026-03-24"
     },
     {
@@ -51,9 +51,9 @@
   "bourse": {
     "indices": {
       "CAC 40": {
-        "valeur": 7726.2,
-        "variation_24h": 0.79,
-        "variation_7j": -3.11,
+        "valeur": 7676.92,
+        "variation_24h": -0.64,
+        "variation_7j": -3.68,
         "ticker": "^FCHI"
       },
       "S&P 500": {
@@ -69,9 +69,9 @@
         "ticker": "^NDX"
       },
       "DAX": {
-        "valeur": 22653.86,
-        "variation_24h": 1.22,
-        "variation_7j": -4.54,
+        "valeur": 22385.01,
+        "variation_24h": -1.19,
+        "variation_7j": -4.75,
         "ticker": "^GDAXI"
       },
       "Dow Jones": {
@@ -104,18 +104,18 @@
         "market_cap_mrd": 1429.1
       },
       "LVMH": {
-        "prix": 466.6,
-        "variation_24h": 1.89,
+        "prix": 462.3,
+        "variation_24h": -0.92,
         "ticker": "MC.PA",
         "devise": "EUR",
-        "market_cap_mrd": 231.4
+        "market_cap_mrd": 229.2
       },
       "TotalEnergies": {
-        "prix": 76.0,
-        "variation_24h": -1.25,
+        "prix": 76.26,
+        "variation_24h": 0.34,
         "ticker": "TTE.PA",
         "devise": "EUR",
-        "market_cap_mrd": 162.5
+        "market_cap_mrd": 163.0
       },
       "ExxonMobil": {
         "prix": 161.13,
@@ -135,27 +135,27 @@
   },
   "commodities": {
     "Dollar Index (DXY)": {
-      "valeur": 99.187,
-      "variation_24h": 0.24,
-      "variation_7j": -0.04,
+      "valeur": 99.428,
+      "variation_24h": 0.48,
+      "variation_7j": 0.2,
       "ticker": "DX-Y.NYB"
     },
     "Pétrole WTI": {
-      "valeur": 90.34,
-      "variation_24h": 2.51,
-      "variation_7j": -6.03,
+      "valeur": 91.83,
+      "variation_24h": 4.2,
+      "variation_7j": -4.48,
       "ticker": "CL=F"
     },
     "Or (XAU/USD)": {
-      "valeur": 4423.1001,
-      "variation_24h": 0.43,
-      "variation_7j": -3.86,
+      "valeur": 4381.6001,
+      "variation_24h": -0.51,
+      "variation_7j": -4.76,
       "ticker": "GC=F"
     },
     "EUR/USD": {
-      "valeur": 1.1606,
-      "variation_24h": 0.4,
-      "variation_7j": 0.58,
+      "valeur": 1.1578,
+      "variation_24h": 0.16,
+      "variation_7j": 0.33,
       "ticker": "EURUSD=X"
     }
   },
