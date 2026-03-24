@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T14:01:18.948665",
+  "generated_at": "2026-03-24T14:10:27.413642",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T14:10:27.387383",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T14:10:22.846351",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 14h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T14:01:18.939141",
       "agent": "Orchestrateur",
@@ -989,41 +1003,24 @@
       "type": "progress",
       "message": "Génération du rapport CEO...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:35:51.998341",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-24T08:35:49.926180",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T14:01:18.939141",
+        "ts": "2026-03-24T14:10:27.387383",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T14:01:18.939141",
+      "last_ts": "2026-03-24T14:10:27.387383",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 64,
+      "total_today": 66,
       "errors_today": 6,
-      "successes_today": 30
+      "successes_today": 31
     },
     {
       "agent": "Agent Investissement",
@@ -1169,7 +1166,7 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 4,
+      "total_today": 2,
       "errors_today": 0,
       "successes_today": 1
     }
