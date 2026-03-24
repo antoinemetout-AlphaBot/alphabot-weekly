@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T10:40:08.545965",
+  "generated_at": "2026-03-24T11:00:16.260895",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T11:00:16.245247",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:16.230652",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 11h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T10:40:08.523400",
       "agent": "Orchestrateur",
@@ -1076,37 +1090,23 @@
       "data": {
         "nb_actions": 6
       }
-    },
-    {
-      "ts": "2026-03-24T00:28:08.065126",
-      "agent": "Monitor",
-      "type": "start",
-      "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:05.190981",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T10:40:08.523400",
+        "ts": "2026-03-24T11:00:16.245247",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T10:40:08.523400",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 39,
-      "errors_today": 3,
+      "last_ts": "2026-03-24T11:00:16.245247",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 41,
+      "errors_today": 4,
       "successes_today": 19
     },
     {
@@ -1237,7 +1237,7 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 17,
+      "total_today": 16,
       "errors_today": 0,
       "successes_today": 2
     },
@@ -1290,22 +1290,6 @@
       "total_today": 3,
       "errors_today": 0,
       "successes_today": 1
-    },
-    {
-      "agent": "Monitor",
-      "last_event": {
-        "ts": "2026-03-24T00:28:08.065126",
-        "agent": "Monitor",
-        "type": "start",
-        "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
-        "data": {}
-      },
-      "last_ts": "2026-03-24T00:28:08.065126",
-      "last_type": "start",
-      "last_message": "Dashboard Live Monitor démarré sur http://localhost:8080",
-      "total_today": 1,
-      "errors_today": 0,
-      "successes_today": 0
     }
   ]
 }
