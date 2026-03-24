@@ -498,6 +498,198 @@ nav {
 .trust-item { text-shadow:0 0 20px rgba(34,197,94,.3); }
 
 /* ═══════════════════════════════════════════════════ */
+/*  🔄 3 PILIERS — Comprendre / Investir / Se comparer */
+/* ═══════════════════════════════════════════════════ */
+.pillars-grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.pillar {
+  flex: 1;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--transition);
+  text-align: center;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+}
+.pillar-newsletter::before { background: linear-gradient(90deg, var(--cyan), var(--blue)); }
+.pillar-robots::before { background: linear-gradient(90deg, var(--gold), #f59e0b); }
+.pillar-arena::before { background: linear-gradient(90deg, var(--red), #f97316); }
+.pillar:hover {
+  transform: translateY(-8px);
+  border-color: rgba(34,211,238,.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 40px rgba(34,211,238,.06);
+}
+.pillar-num {
+  position: absolute;
+  top: 14px; right: 18px;
+  font: 800 52px/1 'Space Grotesk', sans-serif;
+  color: rgba(34,211,238,.06);
+}
+.pillar-icon { font-size: 44px; margin-bottom: 14px; }
+.pillar-label {
+  font: 800 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.pillar-newsletter .pillar-label { color: var(--cyan); }
+.pillar-robots .pillar-label { color: var(--gold); }
+.pillar-arena .pillar-label { color: var(--red); }
+.pillar h3 {
+  font: 700 18px/1.3 'Space Grotesk', sans-serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.pillar p {
+  font: 400 14px/1.65 'Inter', sans-serif;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.pillar-cta {
+  display: inline-block;
+  font: 600 13px/1 'Inter', sans-serif;
+  color: var(--cyan);
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid rgba(34,211,238,.2);
+  border-radius: 10px;
+  transition: all .3s;
+}
+.pillar-cta:hover { background: rgba(34,211,238,.08); transform: translateX(4px); }
+.pillar-cta.gold { color: var(--gold); border-color: rgba(245,200,66,.2); }
+.pillar-cta.gold:hover { background: rgba(245,200,66,.08); }
+.pillar-cta.red { color: #f97316; border-color: rgba(239,68,68,.2); }
+.pillar-cta.red:hover { background: rgba(239,68,68,.08); }
+
+.pillar-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 800 28px/1 'Space Grotesk', sans-serif;
+  color: rgba(34,211,238,.3);
+  min-width: 40px;
+  flex-shrink: 0;
+}
+
+/* Boucle visuelle */
+.loop-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 16px 28px;
+  background: rgba(34,211,238,.04);
+  border: 1px solid rgba(34,211,238,.12);
+  border-radius: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loop-step {
+  font: 600 13px/1 'Inter', sans-serif;
+  color: var(--text);
+  white-space: nowrap;
+}
+.loop-arrow {
+  font: 700 16px/1 'Space Grotesk', sans-serif;
+  color: var(--cyan);
+  opacity: .6;
+}
+.loop-return {
+  font-size: 22px;
+  color: var(--gold);
+  animation: loopSpin 3s ease-in-out infinite;
+}
+@keyframes loopSpin {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════════════ */
+/*  🏆 LEADERBOARD ARÈNE                             */
+/* ═══════════════════════════════════════════════════ */
+.leaderboard {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.lb-header {
+  display: grid;
+  grid-template-columns: 50px 1fr 120px 100px;
+  padding: 14px 20px;
+  font: 700 11px/1 'JetBrains Mono', monospace;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid var(--border);
+}
+.lb-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 120px 100px;
+  padding: 16px 20px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  transition: all .3s;
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-row:hover { background: rgba(34,211,238,.04); }
+.lb-gold { background: rgba(245,200,66,.03); }
+.lb-rank { font: 700 18px/1 'Space Grotesk', sans-serif; text-align: center; }
+.lb-name { font: 600 15px/1 'Inter', sans-serif; color: #fff; }
+.lb-type { font: 500 11px/1 'JetBrains Mono', monospace; }
+.lb-type-bot { color: var(--cyan); }
+.lb-type-human { color: var(--gold); }
+.lb-perf {
+  font: 700 15px/1 'JetBrains Mono', monospace;
+  text-align: right;
+}
+.lb-perf.up { color: var(--green); }
+.lb-perf.down { color: var(--red); }
+.lb-you {
+  background: linear-gradient(135deg, rgba(245,200,66,.06), rgba(34,211,238,.04));
+  border: 1px dashed rgba(245,200,66,.3);
+}
+.lb-you .lb-rank { color: var(--gold); font-size: 22px; }
+.lb-you .lb-name { color: var(--gold); }
+.lb-you .lb-perf { color: var(--gold); cursor: pointer; }
+
+.btn-arena {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #f59e0b);
+  color: var(--bg);
+  font: 700 15px/1 'Inter', sans-serif;
+  padding: 14px 32px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all .3s;
+  box-shadow: 0 4px 24px rgba(245,200,66,.25);
+}
+.btn-arena:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(245,200,66,.4);
+}
+
+/* ═══════════════════════════════════════════════════ */
 /*  LIVE DASHBOARD — Score, Duel, Portfolio, Audio    */
 /* ═══════════════════════════════════════════════════ */
 
@@ -766,8 +958,12 @@ nav {
   color: var(--muted);
 }
 
-/* ── Responsive live dashboard ── */
+/* ── Responsive piliers + leaderboard + live dashboard ── */
 @media(max-width:900px) {
+  .pillars-grid { flex-direction: column; gap: 16px; }
+  .pillar-arrow { transform: rotate(90deg); min-width: auto; padding: 8px 0; }
+  .loop-bar { flex-wrap: wrap; gap: 8px; border-radius: 16px; }
+  .lb-header, .lb-row { grid-template-columns: 40px 1fr 90px 80px; font-size: 12px; padding: 12px 14px; }
   .live-score-box { flex-direction: column; padding: 24px; text-align: center; }
   .live-score-inner { flex-direction: column; }
   .live-score-left { flex-direction: column; }
@@ -969,7 +1165,7 @@ nav {
     <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta">Recevoir les analyses IA</a>
+    <a href="#subscribe" class="nav-cta">Rejoindre l'arène</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -977,49 +1173,38 @@ nav {
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- HERO -->
+<!-- HERO — Vision produit claire -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="hero" id="main-content">
   <div class="hero-inner">
-    <div class="hero-tag"><span class="live-dot"></span> IA active en ce moment — dernière analyse il y a <span id="last-analysis-ago">quelques minutes</span></div>
+    <div class="hero-tag"><span class="live-dot"></span> Système IA actif en ce moment</div>
     <h1>
-      <div class="h1-white">Chaque matin, une IA analyse les marchés pour vous.</div>
-      <div class="h1-gradient">Comprenez la bourse en 5 minutes, même si vous débutez.</div>
+      <div class="h1-white">Investissez avec l'IA.</div>
+      <div class="h1-white">Comparez vos performances.</div>
+      <div class="h1-gradient">Progressez.</div>
     </h1>
     <p class="hero-sub">
-      <strong>+1 200 données analysées chaque jour.</strong> Score IA en temps réel. Duel Bull vs Bear quotidien. 3 robots traders investissent 30 000€ sous vos yeux. Vous, vous lisez avec votre café.
+      Analyse des marchés, robots d'investissement et classement en temps réel. <strong>3 robots</strong> investissent 30 000€ sous vos yeux. <strong>Entrez dans l'arène</strong> et comparez-vous aux meilleurs.
     </p>
 
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-val cyan" id="hero-score">--</div>
-        <div class="hero-stat-lbl">Score IA aujourd'hui</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val gold" id="hero-duel-winner">--</div>
-        <div class="hero-stat-lbl">Duel du jour</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val green" id="hero-portfolio">--</div>
-        <div class="hero-stat-lbl">Portefeuille IA</div>
+    <div class="hero-cta-row">
+      <div class="form-wrap" id="subscribe">
+        <div class="form-group">
+          <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email">
+          <button class="btn-sub" onclick="handleSubscribe()">Rejoindre l'arène gratuitement</button>
+        </div>
+        <div id="sub-status"></div>
       </div>
     </div>
 
-    <div class="form-wrap" id="subscribe">
-      <div class="form-group">
-        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email pour s'abonner">
-        <button class="btn-sub" onclick="handleSubscribe()">Recevoir l'analyse IA chaque matin</button>
-      </div>
-      <div id="sub-status"></div>
-      <div class="hero-trust">
-        <span class="trust-item">100% gratuit</span>
-        <span class="trust-sep">·</span>
-        <span class="trust-item">5 min de lecture</span>
-        <span class="trust-sep">·</span>
-        <span class="trust-item">Zéro jargon</span>
-        <span class="trust-sep">·</span>
-        <span class="trust-item">Désabonnement en 1 clic</span>
-      </div>
+    <div class="hero-trust">
+      <span class="trust-item">100% gratuit</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">Classement en temps réel</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">3 robots IA actifs</span>
+      <span class="trust-sep">·</span>
+      <span class="trust-item">Newsletter quotidienne</span>
     </div>
 
     <div class="ticker-bar">
@@ -1033,11 +1218,162 @@ nav {
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🔥 LIVE DASHBOARD — Score + Duel + Portfolio + Reality Check + Audio -->
+<!-- 🔄 LES 3 PILIERS — Comprendre → Investir → Se comparer -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="pillars" style="padding-top:40px;">
+  <div class="section-center">
+    <div class="section-tag cyan">La boucle AlphaBot</div>
+    <h2>Comprendre. Investir. Se comparer.</h2>
+    <p class="section-sub">3 piliers connectés qui forment un cycle vertueux. Chaque jour, la boucle recommence.</p>
+  </div>
+
+  <div class="pillars-grid reveal">
+    <div class="pillar pillar-newsletter">
+      <div class="pillar-num">1</div>
+      <div class="pillar-icon">📰</div>
+      <div class="pillar-label">Comprendre</div>
+      <h3>Newsletter IA quotidienne</h3>
+      <p>L'IA analyse +1 200 données et vous résume l'essentiel en 5 minutes. Marchés, crypto, géopolitique — zéro jargon.</p>
+      <a href="newsletter.html" class="pillar-cta">Recevoir l'analyse IA →</a>
+    </div>
+
+    <div class="pillar-arrow reveal">→</div>
+
+    <div class="pillar pillar-robots">
+      <div class="pillar-num">2</div>
+      <div class="pillar-icon">🤖</div>
+      <div class="pillar-label">Investir</div>
+      <h3>3 robots investissent pour vous</h3>
+      <p>Safe, Modéré, Risqué — choisissez votre stratégie. Chaque trade est public, justifié, daté. 30 000€ investis sous vos yeux.</p>
+      <a href="investissement.html" class="pillar-cta gold">Tester les robots →</a>
+    </div>
+
+    <div class="pillar-arrow reveal">→</div>
+
+    <div class="pillar pillar-arena">
+      <div class="pillar-num">3</div>
+      <div class="pillar-icon">🏆</div>
+      <div class="pillar-label">Se comparer</div>
+      <h3>Classement des portefeuilles</h3>
+      <p>Humains VS robots IA. Connectez votre portefeuille, comparez vos performances et grimpez dans le classement.</p>
+      <a href="arena.html" class="pillar-cta red">Rejoindre l'arène →</a>
+    </div>
+  </div>
+
+  <!-- Boucle visuelle -->
+  <div class="loop-bar reveal">
+    <div class="loop-step">📰 Comprendre</div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">🤖 Investir</div>
+    <div class="loop-arrow">→</div>
+    <div class="loop-step">🏆 Se comparer</div>
+    <div class="loop-arrow loop-return">↻</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 🏆 LEADERBOARD ARÈNE — Classement en direct -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal" id="leaderboard">
+  <div class="section-center">
+    <div class="section-tag gold">En direct</div>
+    <h2>L'Arène — Classement des performances</h2>
+    <p class="section-sub">Qui performe le mieux ? Robots IA et investisseurs humains s'affrontent dans un classement transparent.</p>
+  </div>
+
+  <div class="leaderboard">
+    <div class="lb-header">
+      <span class="lb-col-rank">#</span>
+      <span class="lb-col-name">Investisseur</span>
+      <span class="lb-col-type">Type</span>
+      <span class="lb-col-perf">Performance</span>
+    </div>
+    <div class="lb-row lb-gold" id="lb-row-1">
+      <span class="lb-rank">🥇</span>
+      <span class="lb-name">Bot Risqué</span>
+      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
+      <span class="lb-perf up" id="lb-perf-1">+2.41%</span>
+    </div>
+    <div class="lb-row lb-silver" id="lb-row-2">
+      <span class="lb-rank">🥈</span>
+      <span class="lb-name">Bot Modéré</span>
+      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
+      <span class="lb-perf up" id="lb-perf-2">+1.58%</span>
+    </div>
+    <div class="lb-row lb-bronze" id="lb-row-3">
+      <span class="lb-rank">🥉</span>
+      <span class="lb-name">Bot Safe</span>
+      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
+      <span class="lb-perf up" id="lb-perf-3">+0.42%</span>
+    </div>
+    <div class="lb-row lb-you">
+      <span class="lb-rank">?</span>
+      <span class="lb-name">Vous</span>
+      <span class="lb-type lb-type-human">👤 Humain</span>
+      <span class="lb-perf">Rejoindre →</span>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:24px;">
+    <a href="arena.html" class="btn-arena">Rejoindre l'arène et se classer</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 🤖 CHOISISSEZ VOTRE STRATÉGIE — 3 Robots -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
+  <div class="section-center">
+    <div class="section-tag green">3 stratégies</div>
+    <h2>Choisissez votre robot</h2>
+    <p class="section-sub">Chaque robot part avec 10 000€ et une stratégie unique. Suivez leurs performances en temps réel.</p>
+  </div>
+
+  <div class="challenge-grid">
+    <div class="challenge-card prudent">
+      <div class="challenge-emoji">🛡️</div>
+      <div class="challenge-name">Robot Safe</div>
+      <div class="challenge-style">Faible risque · Obligations · ETF défensifs</div>
+      <div class="challenge-capital blue" id="robot-p-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€</div>
+      <div class="challenge-perf flat" id="robot-p-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-p-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
+    </div>
+    <div class="challenge-card modere">
+      <div class="challenge-emoji">⚖️</div>
+      <div class="challenge-name">Robot Modéré</div>
+      <div class="challenge-style">Équilibre · Actions + ETF · Moyen terme</div>
+      <div class="challenge-capital gold" id="robot-m-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€</div>
+      <div class="challenge-perf flat" id="robot-m-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-m-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
+    </div>
+    <div class="challenge-card agressif">
+      <div class="challenge-emoji">🔥</div>
+      <div class="challenge-name">Robot Risqué</div>
+      <div class="challenge-style">Performance max · Levier · Haut risque</div>
+      <div class="challenge-capital red" id="robot-a-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€</div>
+      <div class="challenge-perf flat" id="robot-a-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-a-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- SCORE IA LIVE + DUEL DU JOUR (résumé compact) -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="section" id="live-dashboard" style="padding-top:40px;padding-bottom:40px;">
 
-  <!-- SCORE GLOBAL ALPHABOT -->
   <div class="live-score-box reveal">
     <div class="live-score-inner">
       <div class="live-score-left">
@@ -1063,10 +1399,8 @@ nav {
     </div>
   </div>
 
-  <!-- 3 BLOCS : Duel + Portfolio + Reality Check -->
+  <!-- DUEL DU JOUR (compact) -->
   <div class="live-grid reveal">
-
-    <!-- DUEL BULL VS BEAR -->
     <div class="live-card live-card-duel">
       <div class="live-card-header">⚔️ DUEL IA DU JOUR</div>
       <div class="duel-actif" id="duel-actif">Chargement...</div>
@@ -1085,37 +1419,23 @@ nav {
       <a href="arena.html" class="live-card-cta">Voir le combat complet →</a>
     </div>
 
-    <!-- PORTEFEUILLE IA -->
     <div class="live-card live-card-portfolio">
       <div class="live-card-header">📈 PORTEFEUILLE IA</div>
       <div class="portfolio-perf" id="portfolio-perf">+0.0%</div>
-      <div class="portfolio-accroche" id="portfolio-accroche">depuis le lancement</div>
-      <div class="portfolio-stats">
-        <div class="portfolio-stat">
-          <span class="portfolio-stat-val" id="portfolio-capital">30 000€</span>
-          <span class="portfolio-stat-lbl">Capital</span>
-        </div>
-        <div class="portfolio-stat">
-          <span class="portfolio-stat-val" id="portfolio-positions">0</span>
-          <span class="portfolio-stat-lbl">Positions</span>
-        </div>
-      </div>
+      <div class="portfolio-label">depuis le lancement</div>
+      <div class="portfolio-robots"></div>
       <a href="investissement.html" class="live-card-cta" style="color:var(--gold);">Suivre les robots →</a>
     </div>
 
-    <!-- REALITY CHECK -->
     <div class="live-card live-card-reality">
       <div class="live-card-header">🧪 REALITY CHECK</div>
       <div class="reality-quote" id="reality-quote">"L'IA analyse, le Reality Check challenge."</div>
-      <div class="reality-score-wrap">
-        <span class="reality-label">Score réalité</span>
-        <span class="reality-score" id="reality-score">--/100</span>
-      </div>
+      <div class="reality-score" id="reality-score">--/100</div>
       <div class="reality-verdict" id="reality-verdict">En attente du prochain check...</div>
     </div>
   </div>
 
-  <!-- 🎧 RÉSUMÉ AUDIO 30 SECONDES -->
+  <!-- Audio -->
   <div class="audio-bar reveal">
     <div class="audio-inner">
       <button class="audio-btn" id="audio-btn" onclick="playAudioResume()">
@@ -1126,142 +1446,6 @@ nav {
     </div>
   </div>
 
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- LE CHALLENGE 100K -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag gold">En direct</div>
-    <h2>Le Challenge : 10k€ → 100k€</h2>
-    <p class="section-sub">3 robots traders IA partent chacun avec 10 000€. Même objectif : 100 000€. Trois stratégies. Qui y arrivera en premier ? Suivez-les en temps réel.</p>
-  </div>
-
-  <div class="challenge-grid">
-    <div class="challenge-card prudent">
-      <div class="challenge-emoji">🛡️</div>
-      <div class="challenge-name">Robot Prudent</div>
-      <div class="challenge-style">Sécurité · Diversification · Long terme</div>
-      <div class="challenge-capital blue" id="robot-p-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
-      <div class="challenge-perf flat" id="robot-p-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-p-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
-    </div>
-
-    <div class="challenge-card modere">
-      <div class="challenge-emoji">⚖️</div>
-      <div class="challenge-name">Robot Modéré</div>
-      <div class="challenge-style">Équilibre · Actions + Crypto · Moyen terme</div>
-      <div class="challenge-capital gold" id="robot-m-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
-      <div class="challenge-perf flat" id="robot-m-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-m-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
-    </div>
-
-    <div class="challenge-card agressif">
-      <div class="challenge-emoji">🔥</div>
-      <div class="challenge-name">Robot Agressif</div>
-      <div class="challenge-style">Croissance max · Levier · Haut risque</div>
-      <div class="challenge-capital red" id="robot-a-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
-      <div class="challenge-perf flat" id="robot-a-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-a-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 3 PRODUITS -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag">Tout ce que vous obtenez</div>
-    <h2>3 produits. 0 euros. Une longueur d'avance.</h2>
-    <p class="section-sub">Newsletter, robots traders et arène d'investisseurs — tout est inclus gratuitement.</p>
-  </div>
-
-  <div class="products">
-    <!-- NEWSLETTER -->
-    <div class="product">
-      <div class="product-icon">📰</div>
-      <div class="product-badge cyan">Chaque semaine</div>
-      <h3>La newsletter qui vous fait gagner 2h de veille</h3>
-      <p>L'essentiel des marchés en 5 minutes. Pas de blabla — des faits, des chiffres, et ce que ça signifie pour vous.</p>
-      <ul class="product-features">
-        <li>Bourse, crypto, géopolitique — tout en un email</li>
-        <li>Style aktionnaire : un fait chiffré, une explication, un takeaway</li>
-        <li>Un concept financier expliqué simplement chaque semaine</li>
-      </ul>
-      <a href="newsletter.html" class="product-cta">Lire un exemple →</a>
-    </div>
-
-    <!-- ROBOTS -->
-    <div class="product">
-      <div class="product-icon">🤖</div>
-      <div class="product-badge gold">En direct</div>
-      <h3>3 robots qui investissent 30 000€ sous vos yeux</h3>
-      <p>Chaque trade est justifié, daté et public. Vous voyez tout : achats, ventes, erreurs. Transparence totale.</p>
-      <ul class="product-features">
-        <li>3 profils : prudent, modéré, agressif — trouvez le vôtre</li>
-        <li>Actions, crypto, ETF, matières premières — aucune limite</li>
-        <li>Objectif unifié : transformer 10k€ en 100k€</li>
-      </ul>
-      <a href="investissement.html" class="product-cta gold">Voir les robots →</a>
-    </div>
-
-    <!-- ARÈNE -->
-    <div class="product">
-      <div class="product-icon">⚔️</div>
-      <div class="product-badge red">Nouveau</div>
-      <h3>Affrontez les robots et les autres investisseurs</h3>
-      <p>Importez votre portefeuille et comparez-vous au classement. Les robots, les humains — qui performe le mieux ?</p>
-      <ul class="product-features">
-        <li>Classement en direct avec tous les participants</li>
-        <li>Importez votre portefeuille en 30 secondes</li>
-        <li>Prix du mois : meilleur rendement, meilleure position, série gagnante</li>
-      </ul>
-      <a href="arena.html" class="product-cta red">Rejoindre l'arène →</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- CHIFFRES CLÉS -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag green">Pourquoi ça marche</div>
-    <h2>Des vrais chiffres, pas des promesses</h2>
-  </div>
-
-  <div class="kpis-grid">
-    <div class="kpi">
-      <div class="kpi-val" style="color:var(--cyan);">24/7</div>
-      <div class="kpi-label">L'IA ne dort jamais</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val" style="color:var(--gold);">47+</div>
-      <div class="kpi-label">Sources surveillées</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val" style="color:var(--green);">5 min</div>
-      <div class="kpi-label">Pour tout comprendre</div>
-    </div>
-    <div class="kpi">
-      <div class="kpi-val" style="color:white;">0€</div>
-      <div class="kpi-label">Ça ne coûte rien</div>
-    </div>
-  </div>
 </section>
 
 <div class="divider"></div>
@@ -1363,11 +1547,11 @@ nav {
 <section class="cta-section reveal">
   <div class="cta-box">
     <div class="section-tag">C'est gratuit. Pour de vrai.</div>
-    <h2>Demain matin, vous comprendrez les marchés</h2>
-    <p>Rejoignez les investisseurs qui reçoivent chaque jour l'essentiel de la bourse et de la crypto, analysé par l'IA. 5 minutes de lecture. Zéro jargon.</p>
+    <h2>Prêt à entrer dans l'arène ?</h2>
+    <p>Newsletter IA quotidienne + 3 robots traders + classement en direct. Tout est gratuit. Inscrivez-vous en 10 secondes.</p>
     <div class="form-group" style="max-width:480px;margin:0 auto;">
       <input type="email" id="email-input2" placeholder="votre@email.com" onkeydown="if(event.key==='Enter')handleSubscribe2()" aria-label="Adresse email pour s'abonner">
-      <button class="btn-sub" onclick="handleSubscribe2()">Accéder gratuitement aux analyses IA</button>
+      <button class="btn-sub" onclick="handleSubscribe2()">Rejoindre l'arène gratuitement</button>
     </div>
     <div id="sub-status2" style="display:none;font-size:13px;text-align:center;margin-top:8px;"></div>
   </div>
@@ -1683,56 +1867,39 @@ if ('speechSynthesis' in window) {
 }
 
 // ═══════════════════════════════════════════════════
-//  HERO LIVE DATA — populate hero stats from JSON
+//  LEADERBOARD — populate from portfolio data
 // ═══════════════════════════════════════════════════
-async function loadHeroData() {
+async function loadLeaderboard() {
   try {
-    // Score in hero
-    const r1 = await fetch('data/score_global.json');
-    if (r1.ok) {
-      const d = await r1.json();
-      const heroScore = document.getElementById('hero-score');
-      if (heroScore) heroScore.textContent = Math.round(d.score_global || 0) + '/100';
-    }
-  } catch(e) {}
+    const r = await fetch('data/trader_storytelling.json');
+    if (!r.ok) return;
+    const d = await r.json();
+    const robots = d.robots || {};
 
-  try {
-    // Duel winner in hero
-    const r2 = await fetch('data/arena_content.json');
-    if (r2.ok) {
-      const d = await r2.json();
-      const combat = d.dernier_combat || d;
-      const winner = combat.verdict?.gagnant || '';
-      const actif = combat.actif || '';
-      const heroEl = document.getElementById('hero-duel-winner');
-      if (heroEl) {
-        const emoji = winner === 'bull' ? '🟢' : winner === 'bear' ? '🔴' : '⚔️';
-        heroEl.textContent = emoji + ' ' + (winner ? winner.charAt(0).toUpperCase() + winner.slice(1) : actif);
-      }
+    // Build sorted entries
+    const entries = [];
+    const names = {agressif:'Bot Risqué', modere:'Bot Modéré', prudent:'Bot Safe'};
+    for (const [key, label] of Object.entries(names)) {
+      const rb = robots[key];
+      if (rb) entries.push({name: label, perf: rb.performance_pct || 0});
     }
-  } catch(e) {}
+    entries.sort((a, b) => b.perf - a.perf);
 
-  try {
-    // Portfolio in hero
-    const r3 = await fetch('data/trader_storytelling.json');
-    if (r3.ok) {
-      const d = await r3.json();
-      const perf = d.performance_pct || 0;
-      const heroEl = document.getElementById('hero-portfolio');
-      if (heroEl) heroEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
-    } else {
-      const r3b = await fetch('data/portfolio_public.json');
-      if (r3b.ok) {
-        const d = await r3b.json();
-        const robots = d.robots || {};
-        let total = 0, init = 0;
-        for (const rb of Object.values(robots)) { total += rb.capital_actuel || 10000; init += 10000; }
-        const perf = ((total - init) / init * 100);
-        const heroEl = document.getElementById('hero-portfolio');
-        if (heroEl) heroEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
+    // Update leaderboard rows
+    const medals = ['🥇','🥈','🥉'];
+    entries.forEach((e, i) => {
+      const perfEl = document.getElementById('lb-perf-' + (i + 1));
+      const row = document.getElementById('lb-row-' + (i + 1));
+      if (perfEl) {
+        perfEl.textContent = (e.perf >= 0 ? '+' : '') + e.perf.toFixed(2) + '%';
+        perfEl.className = 'lb-perf ' + (e.perf >= 0 ? 'up' : 'down');
       }
-    }
-  } catch(e) {}
+      if (row) {
+        row.querySelector('.lb-name').textContent = e.name;
+        row.querySelector('.lb-rank').textContent = medals[i];
+      }
+    });
+  } catch(e) { console.log('Leaderboard data non disponible'); }
 }
 
 // ═══════════════════════════════════════════════════
@@ -1787,7 +1954,7 @@ loadScoreGlobal();
 loadDuelDuJour();
 loadPortfolioLive();
 loadRealityCheck();
-loadHeroData();
+loadLeaderboard();
 loadNewsletterPreview();
 </script>
 <script src="assets/gate_subscriber.js"></script>
