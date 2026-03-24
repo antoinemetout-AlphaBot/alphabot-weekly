@@ -1,7 +1,87 @@
 {
-  "generated_at": "2026-03-24T19:25:27.191030",
+  "generated_at": "2026-03-24T22:16:14.017725",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T22:16:14.003559",
+      "agent": "Orchestrateur",
+      "type": "alert",
+      "message": "🚨 Veille continue : 2 alerte(s) sur 16 actifs",
+      "data": {
+        "new_alerts": 2,
+        "assets_checked": 16
+      }
+    },
+    {
+      "ts": "2026-03-24T22:16:09.713273",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:09.638391",
+      "agent": "AlertDetector",
+      "type": "error",
+      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simple/price?ids=bitcoin&vs_currency=usd&include_24hr_change=true (Caused by NameResolutionError(\"HTTPSC",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:15:55.767324",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:35.081670",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:33.065352",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:33.017924",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 20h30",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:30.434379",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:30.422772",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10065€ (+0.65%) | 4 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:30.412153",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10014€ (+0.14%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T20:35:29.524507",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Pré-clôture US",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T19:25:27.164880",
       "agent": "Orchestrateur",
@@ -839,137 +919,43 @@
           "perf": 1.56
         }
       }
-    },
-    {
-      "ts": "2026-03-24T14:01:11.309779",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: attendre None",
-      "data": {
-        "profil": "agressif",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "VIX à 27 : volatilité trop élevée pour ajouter du risque maintenant.",
-        "raison_complete": "Le portefeuille est déjà exposé à 3 positions levierisées (BTC, SOXL 3x, TQQQ 3x) représentant ~58% du capital. Le VIX à 27.16 avec une hausse de +8.25% sur 5 jours signale une peur institutionnelle réelle — ajouter une 4e position dans cet environnement reviendrait à empiler du risque corrélé. Le Nasdaq rebondit +1.22% aujourd'hui mais reste -2.39% sur 5 jours, ce rebond intraday peut être un dead-cat bounce. Les marchés européens (DAX -4.48% sur 5j, CAC -3.46%) confirment une pression vendeuse structurelle persistante, probablement liée aux tensions commerciales US-UE et aux signaux macro dégradés. Le pétrole WTI à +4.40% aujourd'hui à 92$/baril est un signal inflationniste qui complique la position de la Fed et pèse sur les multiples de valorisation tech. Nos positions existantes BTC (+3.51%) et SOXL (+3.70%) sont déjà en territoire positif — la priorité est de protéger ces gains, pas de chercher de nouveaux catalyseurs dans un marché schizophrène.",
-        "catalyseur": "VIX +8.25% sur 5j + pétrole +4.40% en une séance : double signal de stress macro incompatible avec un déploiement agressif",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Risque de rater un rally si le rebond Nasdaq se confirme en clôture. Surveiller le VIX sous 24 et le pétrole stabilisé sous 90$ comme signaux de réentrée."
-      }
-    },
-    {
-      "ts": "2026-03-24T14:00:56.596417",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Consolider les positions existantes dans un marché incertain.",
-        "raison_complete": "Le portefeuille est déjà bien positionné avec 3 positions cohérentes : EWG profite de la rotation Europe (+2.93%), XLE bénéficie du WTI à 92$ (+4.4% sur 1 jour), et GLD joue le rôle de valeur refuge avec l'or à 4385$. Le VIX à 27.16 (+8.25% sur 5 jours) signale une nervosité croissante des marchés — déployer du capital supplémentaire dans ce contexte serait imprudent. Les indices US affichent une faiblesse hebdomadaire (-2.01% S&P500, -2.39% NDX) malgré le rebond intraday, suggérant que la tendance de fond reste fragile. L'Europe (DAX -4.48% sur 5j, CAC -3.46%) souffre davantage que les US, ce qui modère l'enthousiasme sur EWG à court terme. Le dollar index remonte (+0.40%) ce qui pourrait peser sur l'or à terme. Mieux vaut laisser les positions existantes travailler et surveiller l'évolution du VIX avant tout nouveau déploiement.",
-        "catalyseur": "VIX à 27+ et faiblesse hebdomadaire des indices européens et US suggèrent d'attendre une stabilisation avant d'engager les 5965€ de cash restant.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Un rebond inattendu du marché pourrait réduire les opportunités d'entrée à meilleur prix. La position XLE ne montre aucun P&L — surveiller si le WTI consolide sous 90$ ce qui activerait le stop-loss à -8%."
-      }
-    },
-    {
-      "ts": "2026-03-24T14:00:42.232719",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": null,
-        "raison_courte": "Volatilité élevée : patience et consolidation du portefeuille obligataire.",
-        "raison_complete": "Le VIX à 27.16 (+8.25% sur 5 jours) signale une nervosité persistante des marchés, incompatible avec de nouveaux achats précipités. Le CAC 40 et le DAX affichent des baisses hebdomadaires sévères (-3.46% et -4.48%), suggérant une pression vendeuse structurelle sur les actions européennes. La forte remontée du pétrole WTI (+4.40% sur 5 jours, à 92$/baril) alimente les craintes inflationnistes, ce qui pourrait retarder de nouvelles baisses de taux de la Fed ou de la BCE — un signal négatif pour les obligations à long terme déjà en portefeuille. Nos trois positions actuelles (EXH7.DE +1.64%, VGOV.L -0.13%, IUSV.DE 0%) sont globalement stables et remplissent leur rôle défensif. Avec 6 711€ de cash disponible (67% du portefeuille), nous conservons une flexibilité maximale pour saisir une opportunité de meilleure qualité une fois la volatilité retombée sous les 20. Aucune thèse d'investissement supplémentaire ne justifie aujourd'hui une prise de risque additionnelle.",
-        "catalyseur": "VIX à 27 et pétrole à 92$ : environnement défavorable à tout déploiement de capital supplémentaire.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Un apaisement soudain des tensions géopolitiques ou un signal dovish de la BCE pourrait créer une opportunité manquée sur les obligations ou les blue chips européens. La patience reste néanmoins la stratégie dominante dans ce contexte."
-      }
-    },
-    {
-      "ts": "2026-03-24T14:00:23.198634",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Pré-ouverture US",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:40:18.813186",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:40:14.655395",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 13h45",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:25:11.097274",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:25:06.732650",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 13h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:25:03.215347",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Prix live : No module named 'update_prices'",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:25:03.188331",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 📊 Prix Live — 13h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:10:29.674251",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T19:25:27.164880",
+        "ts": "2026-03-24T22:16:14.003559",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "alert",
+        "message": "🚨 Veille continue : 2 alerte(s) sur 16 actifs",
+        "data": {
+          "new_alerts": 2,
+          "assets_checked": 16
+        }
+      },
+      "last_ts": "2026-03-24T22:16:14.003559",
+      "last_type": "alert",
+      "last_message": "🚨 Veille continue : 2 alerte(s) sur 16 actifs",
+      "total_today": 77,
+      "errors_today": 7,
+      "successes_today": 37
+    },
+    {
+      "agent": "AlertDetector",
+      "last_event": {
+        "ts": "2026-03-24T22:16:09.713273",
+        "agent": "AlertDetector",
+        "type": "warning",
+        "message": "Utilisation de la valeur par défaut après échecs",
         "data": {}
       },
-      "last_ts": "2026-03-24T19:25:27.164880",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 79,
-      "errors_today": 8,
-      "successes_today": 37
+      "last_ts": "2026-03-24T22:16:09.713273",
+      "last_type": "warning",
+      "last_message": "Utilisation de la valeur par défaut après échecs",
+      "total_today": 5,
+      "errors_today": 1,
+      "successes_today": 0
     },
     {
       "agent": "Agent Investissement",
@@ -996,7 +982,7 @@
       "last_ts": "2026-03-24T19:00:57.268459",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 21,
+      "total_today": 18,
       "errors_today": 0,
       "successes_today": 5
     }
