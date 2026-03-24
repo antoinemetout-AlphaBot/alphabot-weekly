@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T17:40:13.393005",
+  "generated_at": "2026-03-24T18:00:21.557303",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T18:00:21.544649",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T18:00:17.327429",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 18h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T17:40:13.373392",
       "agent": "Orchestrateur",
@@ -889,38 +903,24 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T11:00:20.811086",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 11h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T11:00:16.245247",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Prix live : No module named 'update_prices'",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T17:40:13.373392",
+        "ts": "2026-03-24T18:00:21.544649",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T17:40:13.373392",
+      "last_ts": "2026-03-24T18:00:21.544649",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 77,
-      "errors_today": 8,
-      "successes_today": 35
+      "errors_today": 7,
+      "successes_today": 36
     },
     {
       "agent": "Agent Investissement",
