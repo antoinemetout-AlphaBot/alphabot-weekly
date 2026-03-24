@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T15:25:12.511989",
+  "generated_at": "2026-03-24T15:25:20.883766",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T15:25:20.857846",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T15:25:16.555356",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 15h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T15:25:12.486880",
       "agent": "Orchestrateur",
@@ -941,56 +955,24 @@
         "pl_euros": 0.0,
         "pl_pct": 0.0
       }
-    },
-    {
-      "ts": "2026-03-24T09:00:58.712055",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: vendre UVXY",
-      "data": {
-        "profil": "agressif",
-        "action": "vendre",
-        "ticker": "UVXY",
-        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
-        "allocation_pct": 0,
-        "raison_courte": "VIX en recul, rebond marché global : UVXY se retourne contre nous.",
-        "raison_complete": "L'achat d'UVXY ce matin à 08:33 reposait sur une tension persistante du VIX. Or, en seulement quelques heures, le contexte a significativement changé : S&P 500 +1.15%, Nasdaq +1.22%, DAX +1.22% — les grands indices rebondissent franchement. Le VIX lui-même marque -0.50% sur la journée à 26.02, signalant une décrue de la peur à très court terme. UVXY est un produit 2x levier sur les futures VIX à court terme, structurellement perdant en dehors des spikes de volatilité : le contango (futures VIX en déport permanent) le ronge quotidiennement. Avec un P&L à 0.00%, c'est le moment de sortir proprement avant que le déclin du VIX et le contango n'entament le capital. La position a été ouverte il y a moins de 30 minutes — mieux vaut couper net qu'attendre le stop-loss à -12%. Le rebond synchronisé des marchés US et européens suggère un apaisement à court terme des tensions.",
-        "catalyseur": "Rebond synchronisé S&P +1.15% / Nasdaq +1.22% / DAX +1.22% et VIX -0.50% sur la séance : la pression vendeuse se dissipe.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Si un catalyseur macro négatif inattendu (choc géopolitique, données économiques mauvaises) survient en cours de séance, le VIX pourrait repartir à la hausse et UVXY rebondir — mais le risque de rester exposé est asymétriquement défavorable."
-      }
-    },
-    {
-      "ts": "2026-03-24T09:00:43.807307",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Modéré: Achat 2x GLD @ 404.04",
-      "data": {
-        "profil": "modere",
-        "ticker": "GLD",
-        "prix": 404.04,
-        "montant": 808.08,
-        "raison": "L'or à 4424$ casse des records historiques sur fond de dollar faible."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T15:25:12.486880",
+        "ts": "2026-03-24T15:25:20.857846",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T15:25:12.486880",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 73,
+      "last_ts": "2026-03-24T15:25:20.857846",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 75,
       "errors_today": 8,
-      "successes_today": 33
+      "successes_today": 34
     },
     {
       "agent": "Agent Investissement",
@@ -1017,7 +999,7 @@
       "last_ts": "2026-03-24T14:01:11.325922",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 17,
+      "total_today": 15,
       "errors_today": 0,
       "successes_today": 4
     },
