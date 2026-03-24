@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T09:41:18.819795",
+  "generated_at": "2026-03-24T09:41:28.886604",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:41:28.865400",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:23.597339",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 9h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:41:18.796157",
       "agent": "Orchestrateur",
@@ -1044,51 +1058,24 @@
       "type": "success",
       "message": "🤖 Robot Modéré: 10072€ (+0.72%) | 1 positions",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.570673",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10024€ (+0.24%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.550661",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10024.5,
-          "perf": 0.24
-        },
-        "modere": {
-          "capital": 10071.91,
-          "perf": 0.72
-        },
-        "agressif": {
-          "capital": 10274.9,
-          "perf": 2.75
-        }
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:41:18.796157",
+        "ts": "2026-03-24T09:41:28.865400",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T09:41:18.796157",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 24,
+      "last_ts": "2026-03-24T09:41:28.865400",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 26,
       "errors_today": 2,
-      "successes_today": 11
+      "successes_today": 12
     },
     {
       "agent": "Agent Investissement",
