@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T14:01:11.356646",
+  "generated_at": "2026-03-24T14:01:18.948665",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T14:01:18.939141",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T14:01:14.973138",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 14h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T14:01:11.340934",
       "agent": "Orchestrateur",
@@ -992,40 +1006,24 @@
       "type": "progress",
       "message": "Exécution de 6 action(s) en cours...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:35:49.915185",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-24T08:35:13.525074",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T14:01:11.340934",
+        "ts": "2026-03-24T14:01:18.939141",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10156€ (+1.56%) | 3 positions",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T14:01:11.340934",
+      "last_ts": "2026-03-24T14:01:18.939141",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10156€ (+1.56%) | 3 positions",
-      "total_today": 62,
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 64,
       "errors_today": 6,
-      "successes_today": 29
+      "successes_today": 30
     },
     {
       "agent": "Agent Investissement",
@@ -1171,7 +1169,7 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 6,
+      "total_today": 4,
       "errors_today": 0,
       "successes_today": 1
     }
