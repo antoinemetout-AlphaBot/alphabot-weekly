@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T13:25:03.232102",
+  "generated_at": "2026-03-24T13:25:11.106641",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T13:25:11.097274",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T13:25:06.732650",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 13h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T13:25:03.215347",
       "agent": "Orchestrateur",
@@ -996,57 +1010,24 @@
       "type": "start",
       "message": "Mission DA complète démarrée",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:33:23.563260",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10018.2,
-          "perf": 0.18
-        },
-        "modere": {
-          "capital": 10052.64,
-          "perf": 0.53
-        },
-        "agressif": {
-          "capital": 10154.52,
-          "perf": 1.55
-        }
-      }
-    },
-    {
-      "ts": "2026-03-24T08:33:23.549169",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 22x UVXY @ 49.88",
-      "data": {
-        "profil": "agressif",
-        "ticker": "UVXY",
-        "prix": 49.88,
-        "montant": 1097.36,
-        "raison": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T13:25:03.215347",
+        "ts": "2026-03-24T13:25:11.097274",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T13:25:03.215347",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 54,
+      "last_ts": "2026-03-24T13:25:11.097274",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 56,
       "errors_today": 6,
-      "successes_today": 24
+      "successes_today": 25
     },
     {
       "agent": "AlertDetector",
@@ -1089,9 +1070,9 @@
       "last_ts": "2026-03-24T10:26:18.403104",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 18,
+      "total_today": 16,
       "errors_today": 0,
-      "successes_today": 4
+      "successes_today": 3
     },
     {
       "agent": "Agent DA Site",
