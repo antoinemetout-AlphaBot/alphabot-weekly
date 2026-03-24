@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T13:25:11.106641",
+  "generated_at": "2026-03-24T13:40:18.831184",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T13:40:18.813186",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T13:40:14.655395",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 13h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T13:25:11.097274",
       "agent": "Orchestrateur",
@@ -994,40 +1008,24 @@
         "insights_file": "data\\contenu_da.json",
         "html_file": "outputs\\section_da_2026-03-24.html"
       }
-    },
-    {
-      "ts": "2026-03-24T08:33:59.524058",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-24T08:33:23.810272",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T13:25:11.097274",
+        "ts": "2026-03-24T13:40:18.813186",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T13:25:11.097274",
+      "last_ts": "2026-03-24T13:40:18.813186",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 56,
+      "total_today": 58,
       "errors_today": 6,
-      "successes_today": 25
+      "successes_today": 26
     },
     {
       "agent": "AlertDetector",
@@ -1125,9 +1123,9 @@
       "last_ts": "2026-03-24T09:26:17.946747",
       "last_type": "success",
       "last_message": "Mission DA terminée (0 pages améliorées)",
-      "total_today": 8,
+      "total_today": 6,
       "errors_today": 0,
-      "successes_today": 6
+      "successes_today": 5
     },
     {
       "agent": "Sync Abonnés",
