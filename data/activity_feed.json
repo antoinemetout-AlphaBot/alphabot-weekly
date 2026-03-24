@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T19:25:15.074447",
+  "generated_at": "2026-03-24T19:25:27.191030",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T19:25:27.164880",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T19:25:21.689736",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 19h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T19:25:15.041307",
       "agent": "Orchestrateur",
@@ -938,35 +952,21 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:10:25.320277",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 13h15",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T13:00:20.128299",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T19:25:15.041307",
+        "ts": "2026-03-24T19:25:27.164880",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T19:25:15.041307",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
+      "last_ts": "2026-03-24T19:25:27.164880",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 79,
       "errors_today": 8,
       "successes_today": 37
