@@ -1,7 +1,63 @@
 {
-  "generated_at": "2026-03-24T11:00:25.101321",
+  "generated_at": "2026-03-24T12:25:36.273119",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T12:25:36.254976",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:32.900415",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:31.726312",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:31.698999",
+      "agent": "AlertDetector",
+      "type": "error",
+      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simple/price?ids=bitcoin&vs_currency=usd&include_24hr_change=true (Caused by NameResolutionError(\"HTTPSC",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:47.985009",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:43.968660",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:41.953887",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:41.928431",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 11h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T11:00:25.083195",
       "agent": "Orchestrateur",
@@ -1027,85 +1083,40 @@
       "type": "success",
       "message": "Veille terminée — 1 crypto(s), 5 indices",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:30:48.672613",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Veille Marchés — Ouverture 🔍",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:30:48.667612",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:59.708393",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:59.647523",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:59.632997",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 2 succès, 1 erreur(s)",
-      "data": {
-        "ok": 2,
-        "errors": 1
-      }
-    },
-    {
-      "ts": "2026-03-24T00:28:59.318184",
-      "agent": "Agent Growth Booster",
-      "type": "success",
-      "message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
-      "data": {
-        "objectif": "Atteindre 10 abonnés humains avant le 31 mars 2026 via 2 posts Reddit, 1 lead magnet publié sur le site et 1 approche partenariat envoyée"
-      }
-    },
-    {
-      "ts": "2026-03-24T00:28:36.641147",
-      "agent": "Agent Growth Booster",
-      "type": "progress",
-      "message": "Génération des stratégies de croissance avec Claude IA...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:36.623077",
-      "agent": "Agent Growth Booster",
-      "type": "start",
-      "message": "Cycle Growth Booster démarré (simulation=non)",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T11:00:25.083195",
+        "ts": "2026-03-24T12:25:36.254976",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T11:00:25.083195",
+      "last_ts": "2026-03-24T12:25:36.254976",
       "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "last_message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
       "total_today": 43,
       "errors_today": 4,
-      "successes_today": 20
+      "successes_today": 21
+    },
+    {
+      "agent": "AlertDetector",
+      "last_event": {
+        "ts": "2026-03-24T12:25:32.900415",
+        "agent": "AlertDetector",
+        "type": "warning",
+        "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T12:25:32.900415",
+      "last_type": "warning",
+      "last_message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+      "total_today": 6,
+      "errors_today": 1,
+      "successes_today": 0
     },
     {
       "agent": "Agent Investissement",
@@ -1235,9 +1246,9 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 14,
+      "total_today": 11,
       "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 1
     },
     {
       "agent": "Agent Twitter",
@@ -1267,24 +1278,6 @@
       "last_ts": "2026-03-24T08:32:29.913871",
       "last_type": "info",
       "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 3,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Agent Growth Booster",
-      "last_event": {
-        "ts": "2026-03-24T00:28:59.318184",
-        "agent": "Agent Growth Booster",
-        "type": "success",
-        "message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
-        "data": {
-          "objectif": "Atteindre 10 abonnés humains avant le 31 mars 2026 via 2 posts Reddit, 1 lead magnet publié sur le site et 1 approche partenariat envoyée"
-        }
-      },
-      "last_ts": "2026-03-24T00:28:59.318184",
-      "last_type": "success",
-      "last_message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
       "total_today": 3,
       "errors_today": 0,
       "successes_today": 1
