@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T17:26:01.645930",
+  "generated_at": "2026-03-24T17:26:05.219790",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T17:26:05.203264",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:26:05.190231",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 17h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T17:26:01.639412",
       "agent": "Orchestrateur",
@@ -889,38 +903,24 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:40:03.127472",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 10h45",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:28.381793",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T17:26:01.639412",
+        "ts": "2026-03-24T17:26:05.203264",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🤖 Robot Agressif: 10175€ (+1.75%) | 3 positions",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T17:26:01.639412",
-      "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10175€ (+1.75%) | 3 positions",
+      "last_ts": "2026-03-24T17:26:05.203264",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
       "total_today": 77,
-      "errors_today": 7,
-      "successes_today": 36
+      "errors_today": 8,
+      "successes_today": 35
     },
     {
       "agent": "Agent Investissement",
