@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T12:25:36.273119",
+  "generated_at": "2026-03-24T12:25:45.758365",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T12:25:45.736366",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:45.720371",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 12h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T12:25:36.254976",
       "agent": "Orchestrateur",
@@ -1069,38 +1083,24 @@
         "fichier": "alphabot_newsletter_2026-03-24.html",
         "taille_kb": 59.1
       }
-    },
-    {
-      "ts": "2026-03-24T08:32:29.881828",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:31:01.447294",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Veille terminée — 1 crypto(s), 5 indices",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T12:25:36.254976",
+        "ts": "2026-03-24T12:25:45.736366",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T12:25:36.254976",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
-      "total_today": 43,
-      "errors_today": 4,
-      "successes_today": 21
+      "last_ts": "2026-03-24T12:25:45.736366",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 44,
+      "errors_today": 5,
+      "successes_today": 20
     },
     {
       "agent": "AlertDetector",
@@ -1278,7 +1278,7 @@
       "last_ts": "2026-03-24T08:32:29.913871",
       "last_type": "info",
       "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 3,
+      "total_today": 2,
       "errors_today": 0,
       "successes_today": 1
     }
