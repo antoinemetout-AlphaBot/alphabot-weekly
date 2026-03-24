@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T15:41:21.319316",
+  "generated_at": "2026-03-24T16:00:26.238981",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T16:00:26.218477",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T16:00:26.208675",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 16h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T15:41:21.306752",
       "agent": "Orchestrateur",
@@ -970,39 +984,23 @@
         "insights_file": "data\\contenu_da.json",
         "html_file": "outputs\\section_da_2026-03-24.html"
       }
-    },
-    {
-      "ts": "2026-03-24T09:26:17.915064",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-24T09:25:34.604863",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T15:41:21.306752",
+        "ts": "2026-03-24T16:00:26.218477",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T15:41:21.306752",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 73,
-      "errors_today": 7,
+      "last_ts": "2026-03-24T16:00:26.218477",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
+      "total_today": 75,
+      "errors_today": 8,
       "successes_today": 34
     },
     {
@@ -1101,9 +1099,9 @@
       "last_ts": "2026-03-24T09:26:17.946747",
       "last_type": "success",
       "last_message": "Mission DA terminée (0 pages améliorées)",
-      "total_today": 4,
+      "total_today": 2,
       "errors_today": 0,
-      "successes_today": 3
+      "successes_today": 2
     }
   ]
 }
