@@ -1,7 +1,107 @@
 {
-  "generated_at": "2026-03-24T22:16:14.017725",
+  "generated_at": "2026-03-24T22:17:14.954032",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T22:17:14.944026",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "DA soir — rapport CEO envoyé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:17:14.930957",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:17:12.898508",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:17:12.892507",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
+      "data": {
+        "ok": 1,
+        "errors": 2
+      }
+    },
+    {
+      "ts": "2026-03-24T22:16:59.855931",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:59.849328",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Plan d'action généré — 6 action(s)",
+      "data": {
+        "nb_actions": 6
+      }
+    },
+    {
+      "ts": "2026-03-24T22:16:22.878369",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:22.871730",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-24T22:16:22.856991",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:22.852502",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 19 agents | 2 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:22.281052",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:22.274055",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 24/03/2026 à 22:16",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T22:16:21.786816",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Directeur Adjoint — Soir + Rapport CEO 🤝",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T22:16:14.003559",
       "agent": "Orchestrateur",
@@ -815,131 +915,40 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:40:18.818779",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 14h45",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:25:15.313839",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Prix live : No module named 'update_prices'",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:25:15.304076",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 📊 Prix Live — 14h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:25:11.340345",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Veille terminée — 1 crypto(s), 5 indices",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:25:01.774794",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Veille Marchés — Après-midi 🔍",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:10:27.387383",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:10:22.846351",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 14h15",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:18.939141",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:14.973138",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 14h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:11.340934",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10156€ (+1.56%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:11.337936",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:11.334933",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10019€ (+0.19%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T14:01:11.325922",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10018.84,
-          "perf": 0.19
-        },
-        "modere": {
-          "capital": 10052.64,
-          "perf": 0.53
-        },
-        "agressif": {
-          "capital": 10155.85,
-          "perf": 1.56
-        }
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T22:16:14.003559",
+        "ts": "2026-03-24T22:17:14.944026",
         "agent": "Orchestrateur",
-        "type": "alert",
-        "message": "🚨 Veille continue : 2 alerte(s) sur 16 actifs",
-        "data": {
-          "new_alerts": 2,
-          "assets_checked": 16
-        }
+        "type": "success",
+        "message": "DA soir — rapport CEO envoyé",
+        "data": {}
       },
-      "last_ts": "2026-03-24T22:16:14.003559",
-      "last_type": "alert",
-      "last_message": "🚨 Veille continue : 2 alerte(s) sur 16 actifs",
-      "total_today": 77,
-      "errors_today": 7,
-      "successes_today": 37
+      "last_ts": "2026-03-24T22:17:14.944026",
+      "last_type": "success",
+      "last_message": "DA soir — rapport CEO envoyé",
+      "total_today": 67,
+      "errors_today": 6,
+      "successes_today": 32
+    },
+    {
+      "agent": "Directeur Adjoint",
+      "last_event": {
+        "ts": "2026-03-24T22:17:14.930957",
+        "agent": "Directeur Adjoint",
+        "type": "success",
+        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T22:17:14.930957",
+      "last_type": "success",
+      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "total_today": 11,
+      "errors_today": 0,
+      "successes_today": 1
     },
     {
       "agent": "AlertDetector",
@@ -982,9 +991,9 @@
       "last_ts": "2026-03-24T19:00:57.268459",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 18,
+      "total_today": 17,
       "errors_today": 0,
-      "successes_today": 5
+      "successes_today": 4
     }
   ]
 }
