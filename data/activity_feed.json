@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T15:00:31.067456",
+  "generated_at": "2026-03-24T15:10:08.684204",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T15:10:08.665208",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T15:10:04.633652",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 15h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T15:00:31.055550",
       "agent": "Orchestrateur",
@@ -977,50 +991,24 @@
         "montant": 914.09,
         "raison": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
       }
-    },
-    {
-      "ts": "2026-03-24T09:00:29.550576",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: acheter IUSV.DE",
-      "data": {
-        "profil": "prudent",
-        "action": "acheter",
-        "ticker": "IUSV.DE",
-        "nom": "iShares Edge MSCI Europe Value Factor UCITS ETF",
-        "allocation_pct": 12,
-        "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
-        "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
-        "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
-        "horizon": "long terme (mois)",
-        "niveau_conviction": 7,
-        "risques": "Un apaisement des tensions géopolitiques pourrait provoquer un retour des capitaux vers les valeurs de croissance américaines, pénalisant temporairement la value européenne. La hausse du pétrole WTI à 90.43 USD (+2.61%) pourrait peser sur les marges des entreprises industrielles européennes."
-      }
-    },
-    {
-      "ts": "2026-03-24T09:00:07.558506",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Ouverture Europe",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T15:00:31.055550",
+        "ts": "2026-03-24T15:10:08.665208",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T15:00:31.055550",
+      "last_ts": "2026-03-24T15:10:08.665208",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 70,
+      "total_today": 71,
       "errors_today": 7,
-      "successes_today": 32
+      "successes_today": 33
     },
     {
       "agent": "Agent Investissement",
@@ -1047,7 +1035,7 @@
       "last_ts": "2026-03-24T14:01:11.325922",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 20,
+      "total_today": 19,
       "errors_today": 0,
       "successes_today": 4
     },
