@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T14:40:23.226804",
+  "generated_at": "2026-03-24T15:00:31.067456",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T15:00:31.055550",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T15:00:26.875328",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 15h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T14:40:23.206282",
       "agent": "Orchestrateur",
@@ -989,36 +1003,22 @@
       "type": "start",
       "message": "Lancement : 🤖 Robot Trader — Ouverture Europe",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:48:50.190966",
-      "agent": "Sync Abonnés",
-      "type": "success",
-      "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:45:07.468702",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Email quotidien CEO envoyé (1 destinataires)",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T14:40:23.206282",
+        "ts": "2026-03-24T15:00:31.055550",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T14:40:23.206282",
+      "last_ts": "2026-03-24T15:00:31.055550",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 69,
+      "total_today": 70,
       "errors_today": 7,
       "successes_today": 32
     },
@@ -1121,22 +1121,6 @@
       "total_today": 4,
       "errors_today": 0,
       "successes_today": 3
-    },
-    {
-      "agent": "Sync Abonnés",
-      "last_event": {
-        "ts": "2026-03-24T08:48:50.190966",
-        "agent": "Sync Abonnés",
-        "type": "success",
-        "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
-        "data": {}
-      },
-      "last_ts": "2026-03-24T08:48:50.190966",
-      "last_type": "success",
-      "last_message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
-      "total_today": 1,
-      "errors_today": 0,
-      "successes_today": 1
     }
   ]
 }
