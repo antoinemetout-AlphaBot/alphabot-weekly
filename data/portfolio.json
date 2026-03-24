@@ -7,20 +7,20 @@
       "capital_actuel": 10018.2,
       "objectif": 100000,
       "date_creation": "2026-03-22",
-      "derniere_maj": "2026-03-24 08:32:52",
+      "derniere_maj": "2026-03-24 09:00:29",
       "devise": "EUR",
       "performance_totale_pct": 0.18,
       "performance_totale_eur": 18.2,
-      "nb_trades": 2,
+      "nb_trades": 3,
       "nb_trades_gagnants": 0,
       "nb_trades_perdants": 0,
       "meilleur_trade_pct": 0.0,
       "pire_trade_pct": 0.0,
-      "trades_aujourdhui": 1,
+      "trades_aujourdhui": 2,
       "date_dernier_trade": "2026-03-24",
       "performance_pct": 0.34
     },
-    "cash_disponible": 7625.56,
+    "cash_disponible": 6711.47,
     "positions": [
       {
         "ticker": "EXH7.DE",
@@ -63,6 +63,27 @@
         "horizon": "moyen terme (semaines)",
         "niveau_conviction": 7,
         "risques": "Une accélération inattendue de l'inflation au Royaume-Uni pourrait contraindre la BoE à durcir sa politique et peser sur les gilts. Le risque de change EUR/GBP est également à surveiller si la livre se renforce."
+      },
+      {
+        "ticker": "IUSV.DE",
+        "nom": "iShares $ Treasury Bond 20+yr UCITS ETF",
+        "nb_actions": 323,
+        "prix_entree": 2.83,
+        "prix_actuel": 2.83,
+        "montant_investi": 914.09,
+        "pl_euros": 0.0,
+        "pl_pct": 0.0,
+        "date_achat": "2026-03-24 09:00:29",
+        "stop_loss": 2.69,
+        "take_profit": 3.11,
+        "devise": "EUR",
+        "secteur": "N/A",
+        "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
+        "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
+        "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
+        "horizon": "long terme (mois)",
+        "niveau_conviction": 7,
+        "risques": "Un apaisement des tensions géopolitiques pourrait provoquer un retour des capitaux vers les valeurs de croissance américaines, pénalisant temporairement la value européenne. La hausse du pétrole WTI à 90.43 USD (+2.61%) pourrait peser sur les marges des entreprises industrielles européennes."
       }
     ],
     "trades_historique": [
@@ -93,6 +114,20 @@
         "catalyseur": "VIX à 25.88 et recul marqué des indices européens (-4.54% DAX sur 5j) confirmant un cycle de risk-off qui favorise les obligations souveraines.",
         "horizon": "moyen terme (semaines)",
         "niveau_conviction": 7
+      },
+      {
+        "type": "achat",
+        "ticker": "IUSV.DE",
+        "nom": "iShares $ Treasury Bond 20+yr UCITS ETF",
+        "nb_actions": 323,
+        "prix": 2.83,
+        "montant": 914.09,
+        "date": "2026-03-24 09:00:29",
+        "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
+        "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
+        "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
+        "horizon": "long terme (mois)",
+        "niveau_conviction": 7
       }
     ]
   },
@@ -104,20 +139,20 @@
       "capital_actuel": 10052.64,
       "objectif": 100000,
       "date_creation": "2026-03-22",
-      "derniere_maj": "2026-03-24 08:33:07",
+      "derniere_maj": "2026-03-24 09:00:43",
       "devise": "EUR",
       "performance_totale_pct": 0.53,
       "performance_totale_eur": 52.64,
-      "nb_trades": 2,
+      "nb_trades": 3,
       "nb_trades_gagnants": 0,
       "nb_trades_perdants": 0,
       "meilleur_trade_pct": 0.0,
       "pire_trade_pct": 0.0,
-      "trades_aujourdhui": 1,
+      "trades_aujourdhui": 2,
       "date_dernier_trade": "2026-03-24",
       "performance_pct": 0.74
     },
-    "cash_disponible": 6773.48,
+    "cash_disponible": 5965.4,
     "positions": [
       {
         "ticker": "EWG",
@@ -160,6 +195,27 @@
         "horizon": "moyen terme (semaines)",
         "niveau_conviction": 7,
         "risques": "Un retournement brutal du pétrole en cas de désescalade géopolitique soudaine ou d'annonce surprise de production OPEP+ pourrait peser sur XLE. La remontée du Dollar Index est aussi un facteur adverse à surveiller car un dollar fort comprime les prix des matières premières."
+      },
+      {
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares",
+        "nb_actions": 2,
+        "prix_entree": 404.04,
+        "prix_actuel": 404.04,
+        "montant_investi": 808.08,
+        "pl_euros": 0.0,
+        "pl_pct": 0.0,
+        "date_achat": "2026-03-24 09:00:43",
+        "stop_loss": 371.72,
+        "take_profit": 464.65,
+        "devise": "USD",
+        "secteur": "N/A",
+        "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible.",
+        "raison_complete": "L'or spot dépasse 4424 USD/oz, un niveau historique inédit, porté par plusieurs facteurs convergents. Le Dollar Index recule sous 99.30, au plus bas depuis plusieurs mois, ce qui rend les métaux précieux mécaniquement plus attractifs pour les investisseurs internationaux. Le VIX reste élevé à 26, signalant une incertitude de marché persistante qui favorise les valeurs refuges. La Fed maintient un discours ambigu sur les baisses de taux en 2026, et les anticipations d'inflation restent supérieures à 2.5%, ce qui soutient structurellement l'or comme hedge. Les achats des banques centrales (Chine, Inde, Pologne) restent massifs depuis 2024, réduisant l'offre disponible. GLD est la façon la plus liquide et efficiente d'accéder à cette dynamique sans risque de contrepartie sur les futures.",
+        "catalyseur": "Dollar Index sous 99.30 + or spot à 4424$ record absolu + VIX élevé = triple signal d'entrée refuge",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 8,
+        "risques": "Un rebond fort du dollar (données emploi US surprenantes ou hawkishness Fed) pourrait corriger l'or rapidement. Prise de profit technique possible après une hausse aussi verticale."
       }
     ],
     "trades_historique": [
@@ -190,6 +246,20 @@
         "catalyseur": "WTI au-dessus de 90$/baril (+2.54% sur la séance) avec maintien des coupes OPEP+ et tensions géopolitiques persistantes",
         "horizon": "moyen terme (semaines)",
         "niveau_conviction": 7
+      },
+      {
+        "type": "achat",
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares",
+        "nb_actions": 2,
+        "prix": 404.04,
+        "montant": 808.08,
+        "date": "2026-03-24 09:00:43",
+        "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible.",
+        "raison_complete": "L'or spot dépasse 4424 USD/oz, un niveau historique inédit, porté par plusieurs facteurs convergents. Le Dollar Index recule sous 99.30, au plus bas depuis plusieurs mois, ce qui rend les métaux précieux mécaniquement plus attractifs pour les investisseurs internationaux. Le VIX reste élevé à 26, signalant une incertitude de marché persistante qui favorise les valeurs refuges. La Fed maintient un discours ambigu sur les baisses de taux en 2026, et les anticipations d'inflation restent supérieures à 2.5%, ce qui soutient structurellement l'or comme hedge. Les achats des banques centrales (Chine, Inde, Pologne) restent massifs depuis 2024, réduisant l'offre disponible. GLD est la façon la plus liquide et efficiente d'accéder à cette dynamique sans risque de contrepartie sur les futures.",
+        "catalyseur": "Dollar Index sous 99.30 + or spot à 4424$ record absolu + VIX élevé = triple signal d'entrée refuge",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 8
       }
     ]
   },
@@ -198,33 +268,33 @@
       "profil": "agressif",
       "nom": "Robot Agressif",
       "capital_initial": 10000,
-      "capital_actuel": 10154.52,
+      "capital_actuel": 10166.89,
       "objectif": 100000,
       "date_creation": "2026-03-22",
-      "derniere_maj": "2026-03-24 08:33:22",
+      "derniere_maj": "2026-03-24 09:00:58",
       "devise": "EUR",
-      "performance_totale_pct": 1.55,
-      "performance_totale_eur": 154.52,
-      "nb_trades": 3,
+      "performance_totale_pct": 1.67,
+      "performance_totale_eur": 166.89,
+      "nb_trades": 4,
       "nb_trades_gagnants": 0,
-      "nb_trades_perdants": 0,
+      "nb_trades_perdants": 1,
       "meilleur_trade_pct": 0.0,
       "pire_trade_pct": 0.0,
       "trades_aujourdhui": 1,
       "date_dernier_trade": "2026-03-24",
       "performance_pct": 2.46
     },
-    "cash_disponible": 4560.31,
+    "cash_disponible": 5657.67,
     "positions": [
       {
         "ticker": "BTC-USD",
         "nom": "Bitcoin USD",
         "nb_actions": 0.0365,
         "prix_entree": 68528.6,
-        "prix_actuel": 70897.89,
+        "prix_actuel": 71236.66,
         "montant_investi": 2501.29,
-        "pl_euros": 86.48,
-        "pl_pct": 3.46,
+        "pl_euros": 98.85,
+        "pl_pct": 3.95,
         "date_achat": "2026-03-23 12:01:08",
         "stop_loss": 60305.17,
         "take_profit": 85660.75,
@@ -257,27 +327,6 @@
         "horizon": "court terme (jours)",
         "niveau_conviction": 7,
         "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
-      },
-      {
-        "ticker": "UVXY",
-        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
-        "nb_actions": 22,
-        "prix_entree": 49.88,
-        "prix_actuel": 49.88,
-        "montant_investi": 1097.36,
-        "pl_euros": 0.0,
-        "pl_pct": 0.0,
-        "date_achat": "2026-03-24 08:33:22",
-        "stop_loss": 43.89,
-        "take_profit": 62.35,
-        "devise": "USD",
-        "secteur": "N/A",
-        "raison_courte": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte.",
-        "raison_complete": "Le VIX affiche +3.15% sur 5 jours malgré le rebond d'aujourd'hui (+1.15% S&P), signalant que le marché reste structurellement nerveux. Le DAX perd -4.54% sur 5 jours et le Nasdaq -2.39% : la correction de fond n'est pas terminée, le rebond du jour ressemble à un dead cat bounce. Le pétrole WTI bondit à 90.37$ (+2.54%), alimentant les craintes d'inflation persistante et compliquant la position de la Fed. Le Dollar Index à 99.16 reste sous pression, mais l'EUR/USD à 1.16 indique une fuite vers l'euro qui peut vite s'inverser si le risk-off reprend. Dans ce contexte, UVXY (2x levier sur les futures VIX court terme) offre un trade asymétrique : si le marché rechute cette semaine, le VIX peut exploser vers 30-35, générant +30 à +60% sur UVXY. C'est une couverture offensive sur nos deux positions longues existantes (BTC, SOXL).",
-        "catalyseur": "Rebond de surface sur marchés toujours sous stress structurel : pétrole à 90$, VIX en hausse sur 5j, correction Europe non terminée.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Si le rebond du jour se confirme et s'accélère, le VIX peut refluer vers 22-23, infligeant une perte rapide sur UVXY (contango et décroissance temporelle pénalisent fortement cet ETF à moyen terme). À utiliser exclusivement en trade court terme."
       }
     ],
     "trades_historique": [
@@ -322,6 +371,22 @@
         "catalyseur": "Rebond de surface sur marchés toujours sous stress structurel : pétrole à 90$, VIX en hausse sur 5j, correction Europe non terminée.",
         "horizon": "court terme (jours)",
         "niveau_conviction": 7
+      },
+      {
+        "type": "vente",
+        "ticker": "UVXY",
+        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
+        "nb_actions": 22,
+        "prix": 49.88,
+        "prix_entree": 49.88,
+        "montant": 1097.36,
+        "pl_euros": 0.0,
+        "pl_pct": 0.0,
+        "date": "2026-03-24 09:00:58",
+        "date_achat": "2026-03-24 08:33:22",
+        "duree_position": "0:27:37",
+        "raison_courte": "VIX en recul, rebond marché global : UVXY se retourne contre nous.",
+        "raison_complete": "L'achat d'UVXY ce matin à 08:33 reposait sur une tension persistante du VIX. Or, en seulement quelques heures, le contexte a significativement changé : S&P 500 +1.15%, Nasdaq +1.22%, DAX +1.22% — les grands indices rebondissent franchement. Le VIX lui-même marque -0.50% sur la journée à 26.02, signalant une décrue de la peur à très court terme. UVXY est un produit 2x levier sur les futures VIX à court terme, structurellement perdant en dehors des spikes de volatilité : le contango (futures VIX en déport permanent) le ronge quotidiennement. Avec un P&L à 0.00%, c'est le moment de sortir proprement avant que le déclin du VIX et le contango n'entament le capital. La position a été ouverte il y a moins de 30 minutes — mieux vaut couper net qu'attendre le stop-loss à -12%. Le rebond synchronisé des marchés US et européens suggère un apaisement à court terme des tensions."
       }
     ]
   }

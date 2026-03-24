@@ -1,7 +1,157 @@
 {
-  "generated_at": "2026-03-24T08:45:07.480388",
+  "generated_at": "2026-03-24T09:00:59.191936",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:00:59.186934",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.183937",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.178939",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10018€ (+0.18%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.173936",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10018.2,
+          "perf": 0.18
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10166.89,
+          "perf": 1.67
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:59.154066",
+      "agent": "Agent Investissement",
+      "type": "vente",
+      "message": "Robot Agressif: Vente UVXY @ 49.88 | P&L: +0.00€",
+      "data": {
+        "profil": "agressif",
+        "ticker": "UVXY",
+        "pl_euros": 0.0,
+        "pl_pct": 0.0
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:58.712055",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: vendre UVXY",
+      "data": {
+        "profil": "agressif",
+        "action": "vendre",
+        "ticker": "UVXY",
+        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
+        "allocation_pct": 0,
+        "raison_courte": "VIX en recul, rebond marché global : UVXY se retourne contre nous.",
+        "raison_complete": "L'achat d'UVXY ce matin à 08:33 reposait sur une tension persistante du VIX. Or, en seulement quelques heures, le contexte a significativement changé : S&P 500 +1.15%, Nasdaq +1.22%, DAX +1.22% — les grands indices rebondissent franchement. Le VIX lui-même marque -0.50% sur la journée à 26.02, signalant une décrue de la peur à très court terme. UVXY est un produit 2x levier sur les futures VIX à court terme, structurellement perdant en dehors des spikes de volatilité : le contango (futures VIX en déport permanent) le ronge quotidiennement. Avec un P&L à 0.00%, c'est le moment de sortir proprement avant que le déclin du VIX et le contango n'entament le capital. La position a été ouverte il y a moins de 30 minutes — mieux vaut couper net qu'attendre le stop-loss à -12%. Le rebond synchronisé des marchés US et européens suggère un apaisement à court terme des tensions.",
+        "catalyseur": "Rebond synchronisé S&P +1.15% / Nasdaq +1.22% / DAX +1.22% et VIX -0.50% sur la séance : la pression vendeuse se dissipe.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Si un catalyseur macro négatif inattendu (choc géopolitique, données économiques mauvaises) survient en cours de séance, le VIX pourrait repartir à la hausse et UVXY rebondir — mais le risque de rester exposé est asymétriquement défavorable."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:43.807307",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Modéré: Achat 2x GLD @ 404.04",
+      "data": {
+        "profil": "modere",
+        "ticker": "GLD",
+        "prix": 404.04,
+        "montant": 808.08,
+        "raison": "L'or à 4424$ casse des records historiques sur fond de dollar faible."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:43.114246",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: acheter GLD",
+      "data": {
+        "profil": "modere",
+        "action": "acheter",
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares ETF",
+        "allocation_pct": 15,
+        "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible.",
+        "raison_complete": "L'or spot dépasse 4424 USD/oz, un niveau historique inédit, porté par plusieurs facteurs convergents. Le Dollar Index recule sous 99.30, au plus bas depuis plusieurs mois, ce qui rend les métaux précieux mécaniquement plus attractifs pour les investisseurs internationaux. Le VIX reste élevé à 26, signalant une incertitude de marché persistante qui favorise les valeurs refuges. La Fed maintient un discours ambigu sur les baisses de taux en 2026, et les anticipations d'inflation restent supérieures à 2.5%, ce qui soutient structurellement l'or comme hedge. Les achats des banques centrales (Chine, Inde, Pologne) restent massifs depuis 2024, réduisant l'offre disponible. GLD est la façon la plus liquide et efficiente d'accéder à cette dynamique sans risque de contrepartie sur les futures.",
+        "catalyseur": "Dollar Index sous 99.30 + or spot à 4424$ record absolu + VIX élevé = triple signal d'entrée refuge",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 8,
+        "risques": "Un rebond fort du dollar (données emploi US surprenantes ou hawkishness Fed) pourrait corriger l'or rapidement. Prise de profit technique possible après une hausse aussi verticale."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:30.275240",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Prudent: Achat 323x IUSV.DE @ 2.83",
+      "data": {
+        "profil": "prudent",
+        "ticker": "IUSV.DE",
+        "prix": 2.83,
+        "montant": 914.09,
+        "raison": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:29.550576",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: acheter IUSV.DE",
+      "data": {
+        "profil": "prudent",
+        "action": "acheter",
+        "ticker": "IUSV.DE",
+        "nom": "iShares Edge MSCI Europe Value Factor UCITS ETF",
+        "allocation_pct": 12,
+        "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
+        "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
+        "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
+        "horizon": "long terme (mois)",
+        "niveau_conviction": 7,
+        "risques": "Un apaisement des tensions géopolitiques pourrait provoquer un retour des capitaux vers les valeurs de croissance américaines, pénalisant temporairement la value européenne. La hausse du pétrole WTI à 90.43 USD (+2.61%) pourrait peser sur les marges des entreprises industrielles européennes."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:07.558506",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Ouverture Europe",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:48:50.190966",
+      "agent": "Sync Abonnés",
+      "type": "success",
+      "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T08:45:07.468702",
       "agent": "Orchestrateur",
@@ -858,135 +1008,69 @@
         "niveau_conviction": 7,
         "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
       }
-    },
-    {
-      "ts": "2026-03-23T13:00:31.154623",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Prudent: Achat 14x EXH7.DE @ 88.26",
-      "data": {
-        "profil": "prudent",
-        "ticker": "EXH7.DE",
-        "prix": 88.26,
-        "montant": 1235.64,
-        "raison": "Obligations souveraines euro: refuge sûr en période de turbulences."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:30.240345",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: acheter EXH7.DE",
-      "data": {
-        "profil": "prudent",
-        "action": "acheter",
-        "ticker": "EXH7.DE",
-        "nom": "iShares Euro Government Bond 7-10yr UCITS ETF",
-        "allocation_pct": 13,
-        "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
-        "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
-        "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
-        "horizon": "long terme (mois)",
-        "niveau_conviction": 7,
-        "risques": "Une reprise surprise de l'inflation en zone euro forcerait la BCE à interrompre son cycle baissier, pesant sur les prix obligataires. Une désescalade géopolitique rapide pourrait aussi provoquer une rotation vers les actions au détriment des obligations."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:09.676272",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 13h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:48.740344",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.081034",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.078561",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:43.663811",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:43.659806",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.039433",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.037433",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.031223",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.027710",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T08:45:07.468702",
+        "ts": "2026-03-24T09:00:59.186934",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "Email quotidien CEO envoyé (1 destinataires)",
+        "message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
         "data": {}
       },
-      "last_ts": "2026-03-24T08:45:07.468702",
+      "last_ts": "2026-03-24T09:00:59.186934",
       "last_type": "success",
-      "last_message": "Email quotidien CEO envoyé (1 destinataires)",
-      "total_today": 8,
+      "last_message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
+      "total_today": 12,
       "errors_today": 0,
-      "successes_today": 3
+      "successes_today": 6
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-24T09:00:59.173936",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "Cycle robot trader complété",
+        "data": {
+          "prudent": {
+            "capital": 10018.2,
+            "perf": 0.18
+          },
+          "modere": {
+            "capital": 10052.64,
+            "perf": 0.53
+          },
+          "agressif": {
+            "capital": 10166.89,
+            "perf": 1.67
+          }
+        }
+      },
+      "last_ts": "2026-03-24T09:00:59.173936",
+      "last_type": "success",
+      "last_message": "Cycle robot trader complété",
+      "total_today": 14,
+      "errors_today": 0,
+      "successes_today": 2
+    },
+    {
+      "agent": "Sync Abonnés",
+      "last_event": {
+        "ts": "2026-03-24T08:48:50.190966",
+        "agent": "Sync Abonnés",
+        "type": "success",
+        "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T08:48:50.190966",
+      "last_type": "success",
+      "last_message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
     },
     {
       "agent": "Agent Growth",
@@ -1093,35 +1177,6 @@
       "total_today": 4,
       "errors_today": 0,
       "successes_today": 3
-    },
-    {
-      "agent": "Agent Investissement",
-      "last_event": {
-        "ts": "2026-03-24T08:33:23.563260",
-        "agent": "Agent Investissement",
-        "type": "success",
-        "message": "Cycle robot trader complété",
-        "data": {
-          "prudent": {
-            "capital": 10018.2,
-            "perf": 0.18
-          },
-          "modere": {
-            "capital": 10052.64,
-            "perf": 0.53
-          },
-          "agressif": {
-            "capital": 10154.52,
-            "perf": 1.55
-          }
-        }
-      },
-      "last_ts": "2026-03-24T08:33:23.563260",
-      "last_type": "success",
-      "last_message": "Cycle robot trader complété",
-      "total_today": 7,
-      "errors_today": 0,
-      "successes_today": 1
     },
     {
       "agent": "Agent Rédacteur",
