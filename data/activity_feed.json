@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T11:00:16.260895",
+  "generated_at": "2026-03-24T11:00:25.101321",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T11:00:25.083195",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:20.811086",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 11h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T11:00:16.245247",
       "agent": "Orchestrateur",
@@ -1074,40 +1088,24 @@
       "type": "start",
       "message": "Cycle Growth Booster démarré (simulation=non)",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:33.398767",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T00:28:33.375487",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T11:00:16.245247",
+        "ts": "2026-03-24T11:00:25.083195",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T11:00:16.245247",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 41,
+      "last_ts": "2026-03-24T11:00:25.083195",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 43,
       "errors_today": 4,
-      "successes_today": 19
+      "successes_today": 20
     },
     {
       "agent": "Agent Investissement",
@@ -1237,7 +1235,7 @@
       "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 16,
+      "total_today": 14,
       "errors_today": 0,
       "successes_today": 2
     },
