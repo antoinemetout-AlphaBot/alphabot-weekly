@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T09:10:03.540571",
+  "generated_at": "2026-03-24T09:10:15.153862",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:10:15.130867",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:10:09.169782",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 9h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:10:03.514223",
       "agent": "Orchestrateur",
@@ -958,56 +972,24 @@
           "perf": 0.58
         }
       }
-    },
-    {
-      "ts": "2026-03-23T13:01:02.118222",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 36x SOXL @ 51.14",
-      "data": {
-        "profil": "agressif",
-        "ticker": "SOXL",
-        "prix": 51.14,
-        "montant": 1841.04,
-        "raison": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:01:01.335672",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter SOXL",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "SOXL",
-        "nom": "Direxion Daily Semiconductor Bull 3X Shares",
-        "allocation_pct": 25,
-        "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
-        "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
-        "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:10:03.514223",
+        "ts": "2026-03-24T09:10:15.130867",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T09:10:03.514223",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 14,
+      "last_ts": "2026-03-24T09:10:15.130867",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 16,
       "errors_today": 1,
-      "successes_today": 6
+      "successes_today": 7
     },
     {
       "agent": "Agent Investissement",
