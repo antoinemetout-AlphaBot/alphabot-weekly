@@ -97,37 +97,42 @@
 
     const pseudo = getPseudoFromEmail(email);
 
-    // Crée le HTML pour le profil utilisateur
+    // Crée le HTML pour le profil utilisateur — couleurs EN DUR pour cohérence totale
     navCtaBtn.innerHTML = `
       <span style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;" onclick="window._abToggleUserMenu(event)">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:linear-gradient(135deg,var(--cyan),var(--green));border-radius:50%;font-size:10px;color:white;font-weight:700;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:linear-gradient(135deg,#22d3ee,#22c55e);border-radius:50%;font-size:10px;color:#fff;font-weight:700;flex-shrink:0;">
           ${pseudo.charAt(0).toUpperCase()}
         </span>
-        <span>${pseudo}</span>
+        <span style="color:#e2e8f0;font-weight:600;font-size:13px;font-family:Inter,sans-serif;">${pseudo}</span>
       </span>
     `;
 
-    // Styles du bouton utilisateur
-    navCtaBtn.style.background = 'transparent';
-    navCtaBtn.style.color = 'white';
-    navCtaBtn.style.padding = '8px 12px';
-    navCtaBtn.style.borderRadius = '8px';
-    navCtaBtn.style.fontWeight = '600';
-    navCtaBtn.style.fontSize = '13px';
-    navCtaBtn.style.textDecoration = 'none';
-    navCtaBtn.style.cursor = 'pointer';
-    navCtaBtn.style.transition = 'all .2s';
-    navCtaBtn.style.border = '1px solid rgba(34,211,238,0.3)';
-    navCtaBtn.style.position = 'relative';
+    // Styles du bouton — tout en cssText pour écraser n'importe quel CSS de page
+    navCtaBtn.style.cssText = `
+      background: transparent !important;
+      color: #e2e8f0 !important;
+      padding: 7px 14px !important;
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      transition: all .2s !important;
+      border: 1px solid rgba(34,211,238,0.3) !important;
+      box-shadow: none !important;
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    `;
 
     // Hover effect
     navCtaBtn.onmouseenter = function(){
-      this.style.borderColor = 'rgba(34,211,238,0.6)';
-      this.style.background = 'rgba(34,211,238,0.1)';
+      this.style.setProperty('border-color', 'rgba(34,211,238,0.6)', 'important');
+      this.style.setProperty('background', 'rgba(34,211,238,0.08)', 'important');
     };
     navCtaBtn.onmouseleave = function(){
-      this.style.borderColor = 'rgba(34,211,238,0.3)';
-      this.style.background = 'transparent';
+      this.style.setProperty('border-color', 'rgba(34,211,238,0.3)', 'important');
+      this.style.setProperty('background', 'transparent', 'important');
     };
 
     // Crée le dropdown menu
