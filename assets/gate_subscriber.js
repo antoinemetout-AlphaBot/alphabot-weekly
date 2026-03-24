@@ -164,7 +164,7 @@
           Mon compte
         </a>
         <a href="#" style="display:block;padding:12px 16px;color:#ef4444;text-decoration:none;transition:background .2s;font-size:13px;" onmouseover="this.style.background='rgba(239,68,68,0.1)'" onmouseout="this.style.background='transparent'" onclick="event.preventDefault();window._abLogout();">
-          Se deconnecter
+          Se déconnecter
         </a>
       `;
       const navCtaBtn = document.getElementById('nav-cta-btn') || document.querySelector('.nav-cta');

@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T12:40:09.411455",
+  "generated_at": "2026-03-24T13:00:20.148210",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T13:00:20.128299",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T13:00:16.033268",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 13h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T12:40:09.399587",
       "agent": "Orchestrateur",
@@ -1051,50 +1065,24 @@
         "montant": 1138.8,
         "raison": "Obligations souveraines comme bouclier face à la volatilité actuelle."
       }
-    },
-    {
-      "ts": "2026-03-24T08:32:52.109878",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: acheter VGOV.L",
-      "data": {
-        "profil": "prudent",
-        "action": "acheter",
-        "ticker": "VGOV.L",
-        "nom": "Vanguard U.K. Government Bond UCITS ETF",
-        "allocation_pct": 13,
-        "raison_courte": "Obligations souveraines comme bouclier face à la volatilité actuelle.",
-        "raison_complete": "Le VIX à 25.88 (+3.15% sur 5 jours) signale une nervosité persistante des marchés malgré le rebond technique de ce mardi. Le S&P 500 et le DAX affichent respectivement -2.01% et -4.54% sur 5 jours, révélant une tendance baissière de fond. Dans ce contexte, les obligations souveraines constituent le refuge classique du gestionnaire prudent. Le Dollar Index à 99.16 et l'EUR/USD à 1.16 indiquent un dollar légèrement affaibli, ce qui rend les obligations libellées en sterling attractives pour un portefeuille euro cherchant une diversification devises. Par ailleurs, la Banque d'Angleterre maintient une politique monétaire plus prévisible que la Fed en ce moment, avec des anticipations de baisses de taux progressives en 2026 qui soutiendraient mécaniquement la valeur des gilts. L'or à 4422 USD (+0.42%) confirme l'appétit général pour les actifs de qualité et de préservation du capital.",
-        "catalyseur": "VIX à 25.88 et recul marqué des indices européens (-4.54% DAX sur 5j) confirmant un cycle de risk-off qui favorise les obligations souveraines.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 7,
-        "risques": "Une accélération inattendue de l'inflation au Royaume-Uni pourrait contraindre la BoE à durcir sa politique et peser sur les gilts. Le risque de change EUR/GBP est également à surveiller si la livre se renforce."
-      }
-    },
-    {
-      "ts": "2026-03-24T08:32:33.516672",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T12:40:09.399587",
+        "ts": "2026-03-24T13:00:20.128299",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T12:40:09.399587",
+      "last_ts": "2026-03-24T13:00:20.128299",
       "last_type": "success",
       "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 48,
+      "total_today": 50,
       "errors_today": 5,
-      "successes_today": 22
+      "successes_today": 23
     },
     {
       "agent": "AlertDetector",
@@ -1137,7 +1125,7 @@
       "last_ts": "2026-03-24T10:26:18.403104",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 23,
+      "total_today": 22,
       "errors_today": 0,
       "successes_today": 4
     },
@@ -1224,9 +1212,9 @@
       "last_ts": "2026-03-24T08:45:07.458703",
       "last_type": "success",
       "last_message": "Notification quotidienne → 1 abonnés",
-      "total_today": 2,
+      "total_today": 1,
       "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 1
     },
     {
       "agent": "Directeur Adjoint",
