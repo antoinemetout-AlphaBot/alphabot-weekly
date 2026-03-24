@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T18:00:21.557303",
+  "generated_at": "2026-03-24T18:25:25.871476",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T18:25:25.830724",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T18:25:25.772721",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 18h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T18:00:21.544649",
       "agent": "Orchestrateur",
@@ -889,38 +903,24 @@
       "type": "warning",
       "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 2s...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T11:19:41.928431",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 11h15",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T11:00:25.083195",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T18:00:21.544649",
+        "ts": "2026-03-24T18:25:25.830724",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "type": "error",
+        "message": "Prix live : No module named 'update_prices'",
         "data": {}
       },
-      "last_ts": "2026-03-24T18:00:21.544649",
-      "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "last_ts": "2026-03-24T18:25:25.830724",
+      "last_type": "error",
+      "last_message": "Prix live : No module named 'update_prices'",
       "total_today": 77,
-      "errors_today": 7,
-      "successes_today": 36
+      "errors_today": 8,
+      "successes_today": 35
     },
     {
       "agent": "Agent Investissement",
