@@ -1,7 +1,112 @@
 {
-  "generated_at": "2026-03-24T17:10:08.964522",
+  "generated_at": "2026-03-24T17:26:01.645930",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T17:26:01.639412",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10175€ (+1.75%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:26:01.631900",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10080€ (+0.80%) | 4 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:26:01.625386",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10016€ (+0.16%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T17:26:01.622383",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10016.46,
+          "perf": 0.16
+        },
+        "modere": {
+          "capital": 10080.02,
+          "perf": 0.8
+        },
+        "agressif": {
+          "capital": 10175.47,
+          "perf": 1.75
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T17:26:01.607357",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: attendre None",
+      "data": {
+        "profil": "agressif",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "Trois positions levier actives, marché indécis : préserver le cash.",
+        "raison_complete": "Le portefeuille est déjà exposé à 3 positions levier simultanées (BTC, SOXL 3x, TQQQ 3x), ce qui représente une exposition synthétique très élevée. Le VIX à 26.28 (+4.74% sur 5 jours) indique une nervosité persistante : les ETF leveraged sont particulièrement vulnérables à la 'volatility decay' dans ce régime. Le Nasdaq est en recul de -1.26% sur 5 jours malgré un micro-rebond aujourd'hui (+0.04% S&P), signal que la reprise n'est pas confirmée. Le pétrole WTI à +4.89% sur une séance est un signal d'alerte géopolitique ou supply-shock qui peut peser sur les marges tech. Avec seulement 4 276€ de cash (42% du capital), nous conservons notre dry powder pour un point d'entrée mieux défini. TQQQ est légèrement en négatif (-0.79%) : surveiller si le support des 44$ tient en clôture.",
+        "catalyseur": "VIX à 26+ avec volatility decay sur les ETF 3x : mieux vaut gérer les positions existantes que d'ouvrir une 4ème exposition.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Un catalyseur positif surprise (détente géopolitique, données macro US favorables) pourrait faire rater une entrée, mais la discipline prime sur le FOMO dans un environnement VIX >25."
+      }
+    },
+    {
+      "ts": "2026-03-24T17:25:47.608208",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: attendre None",
+      "data": {
+        "profil": "modere",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "Marché indécis, portefeuille bien positionné — consolidation prudente.",
+        "raison_complete": "Le portefeuille est déjà bien diversifié avec 4 positions couvrant l'énergie (XLE, +2.73%), l'or (GLD, +0.59%), l'Europe (EWG, +2.17%) et la santé défensive (UNH, -0.35%). Le VIX à 26.28 (+4.74% sur 5 jours) signale une tension persistante sur les marchés — ce n'est pas le moment d'accumuler de nouvelles positions risquées. Le Nasdaq perd -1.26% sur 5 jours et le DAX -3.92%, ce qui indique une pression vendeuse sur nos positions EWG notamment. Le pétrole WTI à +4.89% en une seule séance est un mouvement brutal qui justifie de laisser XLE respirer avant d'arbitrer. Avec 5 146€ de cash disponible (51% du capital), nous gardons une poudre sèche précieuse pour saisir une opportunité à meilleur point d'entrée si les marchés corrigent davantage. La priorité est de surveiller si UNH reprend de la vigueur (résultats Q1 attendus) et si EWG tient le support des 38.50€ malgré la faiblesse du DAX.",
+        "catalyseur": "VIX à 26.28 et Nasdaq en repli sur 5 jours — mieux vaut consolider les gains existants que diluer avec de nouveaux risques.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Un rebond rapide des marchés pourrait nous faire manquer une opportunité d'entrée. La position UNH est légèrement en perte (-0.35%) et mérite une surveillance rapprochée au-dessus du stop-loss à 251.15€."
+      }
+    },
+    {
+      "ts": "2026-03-24T17:25:32.443642",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: attendre None",
+      "data": {
+        "profil": "prudent",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": null,
+        "raison_courte": "VIX à 26 et marchés instables — prudence maximale justifiée",
+        "raison_complete": "Le VIX à 26.28 avec une hausse de +4.74% sur 5 jours signale une nervosité croissante des marchés. Le CAC40 cède -2.95% sur 5 jours et le DAX -3.92%, ce qui témoigne d'une pression vendeuse marquée sur les indices européens. La hausse brutale du pétrole WTI (+4.89% aujourd'hui à 92.44 USD) est un signal inflationniste préoccupant qui pourrait contraindre les banques centrales à maintenir des taux élevés plus longtemps, pénalisant les obligations existantes. Le dollar index reprend des couleurs (+0.45%) malgré un euro fort à 1.16, créant une incertitude sur les flux de capitaux. Notre portefeuille est déjà bien positionné avec 3 lignes défensives (obligations UK, Treasuries US, biens de consommation européens) et dispose de 67% de cash — il n'est pas nécessaire de forcer une entrée dans un environnement aussi instable. La patience est ici la meilleure protection du capital.",
+        "catalyseur": "Hausse du pétrole +4.89% en une séance couplée à un VIX en progression — signal de stress macro non résolu",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Rester inactif comporte le risque d'opportunité manquée si les marchés rebondissent, mais le profil défensif du Robot Prudent impose de privilégier la préservation du capital face à cette volatilité."
+      }
+    },
+    {
+      "ts": "2026-03-24T17:25:13.319523",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Clôture Europe",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T17:10:08.940455",
       "agent": "Orchestrateur",
@@ -798,126 +903,21 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:23.254105",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 10h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:18.427888",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10155€ (+1.55%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:18.420828",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:18.411518",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10021€ (+0.21%) | 3 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:26:18.403104",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10021.12,
-          "perf": 0.21
-        },
-        "modere": {
-          "capital": 10052.64,
-          "perf": 0.53
-        },
-        "agressif": {
-          "capital": 10155.21,
-          "perf": 1.55
-        }
-      }
-    },
-    {
-      "ts": "2026-03-24T10:26:18.374281",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: attendre None",
-      "data": {
-        "profil": "agressif",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Positions levier déjà en place, VIX élevé impose la discipline",
-        "raison_complete": "Le portefeuille est déjà chargé avec 3 positions à fort levier — BTC, SOXL (3x semi), et TQQQ (3x Nasdaq) — couvrant une exposition synthétique massive. Le VIX à 26.97 (+7.49% sur 5 jours) signale que la volatilité reste structurellement élevée : ajouter une 4e position dans cet environnement serait imprudent sans confirmation du rebond. Le S&P 500 rebondit de +1.15% aujourd'hui mais affiche -2.01% sur 5 jours, signe que le marché hésite entre relief rally et rechute. Les indices européens (CAC -3.33%, DAX -4.44% sur 5j) confirment un stress macro persistant, potentiellement lié à des tensions géopolitiques et à la résistance de l'inflation en zone euro. Le pétrole WTI à 91.01$ (+3.27% aujourd'hui) est une donnée inquiétante pour les marges tech si le mouvement se confirme. Avec 4,276€ de cash disponible, mieux vaut garder cette poudre sèche pour renforcer sur une correction ou initier une position de conviction sur cassure technique claire.",
-        "catalyseur": "VIX à 26.97 + pétrole WTI en hausse violente (+3.27%) = environnement trop instable pour surcharger le portefeuille",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Le risque principal est de rater un rally prolongé si le rebond du Nasdaq se transforme en tendance. Toutefois, les positions TQQQ et SOXL déjà ouvertes capturent ce scénario haussier avec levier 3x."
-      }
-    },
-    {
-      "ts": "2026-03-24T10:26:03.461399",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Marché incertain — consolider les positions existantes avant d'agir",
-        "raison_complete": "Le VIX à 26.97 avec une hausse de +7.49% sur 5 jours signale une anxiété de marché persistante. Le Nasdaq et le S&P 500 rebondissent aujourd'hui (+1.15% / +1.22%) après une semaine difficile (-2% / -2.39%), mais ce rebond technique n'est pas encore confirmé comme un retournement durable. Les marchés européens restent sous pression avec le DAX en repli de -4.44% sur 5 jours, ce qui fragilise notre position EWG malgré son P&L positif actuel. Le pétrole WTI à 91$ et le dollar Index à 99.38 en hausse (+0.43%) créent un environnement mixte : bon pour XLE, mais potentiellement négatif pour les actifs libellés en euros. Nos trois positions (EWG, XLE, GLD) couvrent déjà bien les thèmes macro dominants (énergie, or, Europe), et nous avons 59% de cash disponible — mieux vaut attendre une consolidation du VIX sous 24 avant d'engager du capital supplémentaire.",
-        "catalyseur": "VIX à 26.97 (+7.49% sur 5j) : stress de marché trop élevé pour initier de nouvelles positions sans signal clair",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Un apaisement rapide du VIX et une confirmation du rebond US pourraient faire manquer une entrée optimale. Surveiller les données macro (PCE US, PMI Zone Euro) attendues cette semaine."
-      }
-    },
-    {
-      "ts": "2026-03-24T10:25:49.094614",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": null,
-        "raison_courte": "Portefeuille obligataire bien positionné, patience requise en volatilité élevée",
-        "raison_complete": "Le VIX à 26.97 (+7.49% sur 5 jours) signale une nervosité persistante des marchés — ce n'est pas le moment d'augmenter l'exposition. Les marchés européens souffrent (CAC -3.33%, DAX -4.44% sur 5 jours), confirmant des vents contraires structurels. Le portefeuille actuel est défensivement bien construit : deux lignes obligataires (VGOV.L sur gilts UK, IUSV.DE sur T-Bonds US 20+) offrent un bouclier crédible, et EXH7.DE affiche déjà +1.51%. Le pétrole WTI à 91$/baril (+3.27% en 1j) introduit un risque inflationniste qui pèse sur les obligations à long terme — une dégradation des prix obligataires est à surveiller. Avec 67% du capital en cash (6 711€), nous avons la capacité d'agir mais aucune opportunité asymétrique clairement identifiable aujourd'hui ne justifie un déploiement supplémentaire dans ce contexte.",
-        "catalyseur": "VIX en hausse à 27 et pétrole WTI à 91$ créent une incertitude macro qui commande l'attentisme",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Une détente soudaine du VIX pourrait signaler une opportunité manquée sur les blue chips. La hausse du pétrole pourrait alimenter l'inflation et déprimer les positions obligataires longues existantes."
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T17:10:08.940455",
+        "ts": "2026-03-24T17:26:01.639412",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+        "message": "🤖 Robot Agressif: 10175€ (+1.75%) | 3 positions",
         "data": {}
       },
-      "last_ts": "2026-03-24T17:10:08.940455",
+      "last_ts": "2026-03-24T17:26:01.639412",
       "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "last_message": "🤖 Robot Agressif: 10175€ (+1.75%) | 3 positions",
       "total_today": 77,
       "errors_today": 7,
       "successes_today": 36
@@ -925,26 +925,26 @@
     {
       "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-24T16:26:12.306778",
+        "ts": "2026-03-24T17:26:01.622383",
         "agent": "Agent Investissement",
         "type": "success",
         "message": "Cycle robot trader complété",
         "data": {
           "prudent": {
-            "capital": 10018.29,
-            "perf": 0.18
+            "capital": 10016.46,
+            "perf": 0.16
           },
           "modere": {
-            "capital": 10084.31,
-            "perf": 0.84
+            "capital": 10080.02,
+            "perf": 0.8
           },
           "agressif": {
-            "capital": 10236.38,
-            "perf": 2.36
+            "capital": 10175.47,
+            "perf": 1.75
           }
         }
       },
-      "last_ts": "2026-03-24T16:26:12.306778",
+      "last_ts": "2026-03-24T17:26:01.622383",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
       "total_today": 17,
