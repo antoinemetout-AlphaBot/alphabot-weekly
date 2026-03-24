@@ -1,0 +1,43 @@
+{
+  "date": "2026-03-24 08:33",
+  "etapes": {
+    "audit": {
+      "ok": true,
+      "score": 40,
+      "problemes": 6
+    },
+    "navigation": {
+      "ok": true,
+      "pages_mises_a_jour": 4
+    },
+    "insights": {
+      "ok": true,
+      "count": 5,
+      "injected_in_index": true,
+      "html_path": "outputs\\section_da_2026-03-24.html"
+    },
+    "visuels": {
+      "ok": true,
+      "details": [
+        {
+          "page": "index.html",
+          "status": "improved",
+          "css_rules": 21
+        },
+        {
+          "page": "investissement.html",
+          "status": "improved",
+          "css_rules": 25
+        },
+        {
+          "page": "newsletter.html",
+          "status": "improved",
+          "css_rules": 29
+        }
+      ]
+    }
+  },
+  "success": true,
+  "pages_ameliorees": 3,
+  "insights_count": 5
+}

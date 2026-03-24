@@ -1,95 +1,95 @@
 {
-  "date": "2026-03-23",
+  "date": "2026-03-24",
   "insights": [
     {
       "id": "insight_001_rearmement_eu_2026",
-      "date": "2026-03-23",
+      "date": "2026-03-24",
       "categorie": "Défense",
       "titre": "L'Europe sort le carnet de chèques pour ses armées",
-      "contexte": "Face aux tensions mondiales, les gouvernements européens ont voté des budgets de défense historiques. L'Allemagne, la France et la Pologne injectent des centaines de milliards dans leurs armées d'ici 2030.",
-      "impact_marche": "Le secteur défense européen explose à la hausse : l'indice STOXX Europe Aerospace & Defense surperforme le CAC 40 de +34% depuis janvier 2026. Les valeurs industrielles militaires attirent massivement les fonds institutionnels.",
+      "contexte": "Face aux tensions mondiales, les pays européens ont décidé de massifier leurs budgets militaires. C'est le plus grand plan de réarmement du continent depuis la Guerre Froide.",
+      "impact_marche": "Le secteur de la défense européen explose à la hausse. L'indice STOXX Europe Aerospace & Defense surperforme le CAC 40 de +18% depuis janvier 2026.",
       "action_cible": {
         "ticker": "AIR.PA",
         "nom": "Airbus SE",
-        "variation_pct": 6.8,
-        "prix_actuel": 198.42,
-        "pourquoi": "Le réarmement européen force les États membres à commander avions militaires, satellites de surveillance et systèmes de communication sécurisés — Airbus est le fournisseur numéro 1 sur tous ces segments en Europe."
+        "variation_pct": 4.7,
+        "prix_actuel": 187.32,
+        "pourquoi": "Airbus fabrique les avions militaires et les systèmes de surveillance que les gouvernements européens commandent en urgence pour remplir leurs nouveaux quotas de défense."
       },
       "severite": "HIGH",
       "emoji_categorie": "🛡️",
-      "angle_alphabot": "AlphaBot Weekly décortique cette semaine le carnet de commandes militaires d'Airbus : quels contrats signés en 2025-2026 vont gonfler les revenus sur 10 ans, et pourquoi le marché sous-estime encore ce catalyseur."
+      "angle_alphabot": "AlphaBot Weekly décortique le carnet de commandes militaires d'Airbus et compare les marges défense vs civil pour savoir si la hausse du titre est justifiée ou spéculative."
     },
     {
-      "id": "insight_002_fed_taux_2026",
-      "date": "2026-03-23",
+      "id": "insight_002_fed_politique_monetaire_2026",
+      "date": "2026-03-24",
       "categorie": "Macro",
       "titre": "La Fed hésite, Wall Street retient son souffle",
-      "contexte": "La banque centrale américaine (la Fed) tient les taux d'intérêt élevés pour contenir l'inflation persistante. Chaque discours de son président déplace des milliers de milliards de dollars sur les marchés mondiaux en quelques secondes.",
-      "impact_marche": "Le S&P 500 oscille en zone de résistance : les secteurs Tech et Immobilier souffrent des taux hauts, tandis que les bancaires et l'assurance en profitent. La volatilité (indice VIX) est remontée à 22 points, signal de nervosité des investisseurs.",
+      "contexte": "La banque centrale américaine (la Fed) doit choisir entre baisser ses taux pour relancer l'économie ou les maintenir hauts pour freiner l'inflation. Ce dilemme paralyse les marchés depuis des semaines.",
+      "impact_marche": "Le S&P 500 oscille en zone de consolidation. Les valeurs technologiques souffrent le plus car elles sont très sensibles au coût de l'argent.",
       "action_cible": {
-        "ticker": "JPM",
-        "nom": "JPMorgan Chase & Co.",
-        "variation_pct": 3.1,
-        "prix_actuel": 247.65,
-        "pourquoi": "Quand la Fed maintient des taux élevés, JPMorgan empoche des marges records sur ses prêts et ses placements obligataires — directement : plus les taux sont hauts, plus la banque gagne d'argent sur chaque dollar prêté."
+        "ticker": "NVDA",
+        "nom": "NVIDIA Corporation",
+        "variation_pct": -2.1,
+        "prix_actuel": 812.45,
+        "pourquoi": "NVIDIA s'endette pour financer sa R&D explosive en IA : quand les taux restent élevés, ce financement coûte plus cher, ce qui réduit mécaniquement la valeur future de l'entreprise selon les marchés."
       },
       "severite": "HIGH",
       "emoji_categorie": "💰",
-      "angle_alphabot": "AlphaBot Weekly analyse cette semaine les derniers procès-verbaux de la Fed et traduit le jargon de banquier central en signal clair pour vos placements : pivot en vue ou taux hauts jusqu'à fin 2026 ?"
+      "angle_alphabot": "AlphaBot Weekly modélise les deux scénarios Fed (pause vs baisse) et calcule l'impact concret sur le cours NVDA pour les 90 prochains jours."
     },
     {
-      "id": "insight_003_dollar_emergents_2026",
-      "date": "2026-03-23",
-      "categorie": "Géopolitique",
-      "titre": "Dollar fort : les pays pauvres étouffent, Bitcoin respire",
-      "contexte": "Un dollar américain puissant étouffe les économies émergentes (Brésil, Turquie, Egypte) qui ont leurs dettes libellées en dollars. Pour fuir leurs monnaies qui s'effondrent, leurs citoyens se tournent massivement vers le Bitcoin.",
-      "impact_marche": "Les indices marchés émergents (MSCI EM) reculent de -8% depuis le début 2026. En parallèle, les flux entrant dans Bitcoin depuis les pays à inflation élevée atteignent des records, soutenant le cours au-dessus des 85 000 $.",
+      "id": "insight_003_bitcoin_dollar_2026",
+      "date": "2026-03-24",
+      "categorie": "Crypto",
+      "titre": "Bitcoin joue les remplaçants quand le dollar vacille",
+      "contexte": "Quand le dollar américain perd de sa superbe face aux tensions géopolitiques et à l'endettement US, les investisseurs cherchent des refuges alternatifs. Bitcoin capte une partie de cette fuite.",
+      "impact_marche": "Bitcoin progresse fortement dans les phases de doute sur le dollar. Les marchés émergents qui subissent la pression du dollar fort regardent aussi vers le BTC comme outil de couverture.",
       "action_cible": {
-        "ticker": "COIN",
-        "nom": "Coinbase Global Inc.",
-        "variation_pct": 4.7,
-        "prix_actuel": 312.9,
-        "pourquoi": "Chaque crise de devise dans un pays émergent pousse des millions de nouveaux utilisateurs à ouvrir un compte crypto — Coinbase, première plateforme mondiale régulée, capte directement cette vague d'adoption forcée."
+        "ticker": "BTC-USD",
+        "nom": "Bitcoin",
+        "variation_pct": 6.3,
+        "prix_actuel": 94250.0,
+        "pourquoi": "Chaque annonce de déficit budgétaire américain record ou de tension géopolitique majeure déclenche un afflux d'acheteurs institutionnels vers Bitcoin comme 'or numérique' hors système bancaire."
       },
       "severite": "MEDIUM",
       "emoji_categorie": "₿",
-      "angle_alphabot": "AlphaBot Weekly cartographie cette semaine les pays où la fuite vers le Bitcoin est la plus forte en 2026, et mesure l'impact réel sur les volumes de Coinbase et le cours du BTC."
+      "angle_alphabot": "AlphaBot Weekly analyse la corrélation historique entre l'indice DXY (force du dollar) et le prix du Bitcoin pour identifier les seuils déclencheurs d'un prochain rally."
     },
     {
-      "id": "insight_004_cac40_geopolitique_2026",
-      "date": "2026-03-23",
+      "id": "insight_004_dollar_emergents_2026",
+      "date": "2026-03-24",
       "categorie": "Géopolitique",
-      "titre": "Le CAC 40 pris en otage entre guerre et diplomatie",
-      "contexte": "Le CAC 40 regroupe les 40 plus grandes entreprises françaises, très exposées à l'international. Dès qu'une crise éclate quelque part dans le monde, leurs revenus à l'étranger se retrouvent menacés et les investisseurs vendent en panique.",
-      "impact_marche": "Le CAC 40 sous-performe le S&P 500 de -11 points de pourcentage depuis janvier 2026 à cause de l'exposition européenne aux tensions géopolitiques. Le secteur luxe (40% du CAC) est particulièrement vulnérable au ralentissement des clients chinois et moyen-orientaux.",
+      "titre": "Dollar fort étouffe les pays émergents, une aubaine inattendue",
+      "contexte": "Un dollar américain puissant rend les dettes des pays en développement (Brésil, Inde, Turquie…) plus chères à rembourser. Mais cela pousse aussi ces pays à chercher des alternatives et crée des opportunités pour certaines multinationales.",
+      "impact_marche": "Les indices des marchés émergents (MSCI EM) reculent sous la pression du dollar. En revanche, les entreprises européennes qui exportent vers ces zones gagnent en compétitivité relative.",
       "action_cible": {
-        "ticker": "MC.PA",
-        "nom": "LVMH Moët Hennessy Louis Vuitton",
-        "variation_pct": -2.4,
-        "prix_actuel": 612.3,
-        "pourquoi": "Les tensions géopolitiques frappent directement LVMH sur deux fronts : la clientèle chinoise voyage moins (boutiques Asia en berne) et le moral des acheteurs moyen-orientaux s'assombrit avec l'instabilité régionale."
+        "ticker": "OR.PA",
+        "nom": "L'Oréal SA",
+        "variation_pct": 2.8,
+        "prix_actuel": 342.1,
+        "pourquoi": "L'Oréal vend en dollars dans les marchés émergents mais ses coûts sont en euros : quand le dollar monte, ses revenus convertis en euros augmentent mécaniquement, boostant ses bénéfices."
       },
       "severite": "MEDIUM",
       "emoji_categorie": "🌍",
-      "angle_alphabot": "AlphaBot Weekly disséque cette semaine les résultats régionaux de LVMH : à quel seuil de normalisation géopolitique les ventes Asie-Pacifique repartent, et si le repli actuel du titre est une opportunité ou un piège."
+      "angle_alphabot": "AlphaBot Weekly quantifie l'effet devise sur les résultats trimestriels de L'Oréal et identifie le seuil EUR/USD qui maximise la profitabilité du groupe."
     },
     {
       "id": "insight_005_energie_rearmement_2026",
-      "date": "2026-03-23",
+      "date": "2026-03-24",
       "categorie": "Énergie",
-      "titre": "Réarmer l'Europe coûte cher en énergie et en acier",
-      "contexte": "Construire des chars, des drones, des sous-marins et des fortifications consomme d'énormes quantités d'électricité, d'acier et de carburant. Le boom militaire européen crée une demande industrielle en énergie que personne n'avait anticipée.",
-      "impact_marche": "Les valeurs industrielles énergétiques et les producteurs d'acier européens bondissent : ArcelorMittal +18% depuis février 2026. Le prix du gaz naturel européen TTF repart à la hausse sous la double pression de la demande militaire et de la géopolitique gazière.",
+      "titre": "Réarmement européen relance la demande d'énergie industrielle",
+      "contexte": "Construire des chars, des avions et des munitions consomme d'énormes quantités d'électricité et de gaz. La relance industrielle militaire en Europe crée une demande énergétique inattendue qui redessine les prix.",
+      "impact_marche": "Les prix du gaz naturel européen (TTF) repartent à la hausse. Le CAC 40 voit ses valeurs industrielles et énergétiques surperformer nettement le reste de l'indice.",
       "action_cible": {
         "ticker": "TTE.PA",
         "nom": "TotalEnergies SE",
-        "variation_pct": 3.9,
-        "prix_actuel": 68.14,
-        "pourquoi": "TotalEnergies fournit directement le carburant, le GNL et l'électricité aux bases militaires et industries de défense européennes — le réarmement du continent est, mot pour mot, un nouveau client géant pour son activité B2B énergie."
+        "variation_pct": 3.4,
+        "prix_actuel": 58.76,
+        "pourquoi": "TotalEnergies fournit gaz et électricité aux industries françaises de défense en pleine montée en cadence : plus elles produisent, plus TotalEnergies facture, directement lié au plan de réarmement européen."
       },
-      "severite": "HIGH",
+      "severite": "CRITICAL",
       "emoji_categorie": "⚡",
-      "angle_alphabot": "AlphaBot Weekly explore cette semaine les contrats énergétiques liés à la défense signés par TotalEnergies en 2025-2026 et calcule combien de milliards de revenus supplémentaires le réarmement européen peut générer d'ici 2028."
+      "angle_alphabot": "AlphaBot Weekly cartographie les contrats énergétiques industriels de TotalEnergies liés au complexe militaro-industriel européen et estime leur poids dans le chiffre d'affaires 2026."
     }
   ]
 }

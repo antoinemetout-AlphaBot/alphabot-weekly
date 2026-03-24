@@ -379,6 +379,38 @@
         }
       ],
       "resume": "AlphaBot Weekly tourne de façon stable avec 14 agents fonctionnels et 5 éditions produites, mais reste bloqué à 1 abonné réel et 0€ de revenus. Les problèmes techniques prioritaires (EmailJS générique"
+    },
+    {
+      "date": "24/03/2026 à 08:35",
+      "duree_sec": 40,
+      "nb_actions": 6,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "success"
+        },
+        {
+          "action": "Redéployer le site sur Netlify pour publier newsletters.html et index.html mis à jour — action bloquante depuis 4 jours",
+          "status": "noted"
+        },
+        {
+          "action": "Mettre à jour le template EmailJS pour utiliser newsletter_url dans le CTA — tunnel d'onboarding abonnés cassé tant que c'est générique",
+          "status": "noted"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour : posts LinkedIn, Twitter, actions SEO et referral",
+          "status": "error"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour afficher une date dynamique au lieu d'une date fixe — améliore la crédibilité du site pour les nouveaux visiteurs",
+          "status": "error"
+        },
+        {
+          "action": "Connecter Formspree à subscribers.csv via webhook ou vérification manuelle — sans cela, les inscriptions depuis le site ne rejoignent pas le pipeline Python",
+          "status": "noted"
+        }
+      ],
+      "resume": "AlphaBot Weekly tourne de façon stable avec 14 agents fonctionnels et 6 éditions produites, mais reste bloqué à 1 abonné réel et 0€ de revenus. Les problèmes techniques prioritaires (EmailJS, Formspre"
     }
   ]
 }

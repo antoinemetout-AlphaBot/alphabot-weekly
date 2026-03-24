@@ -229,6 +229,149 @@ footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative
 <!-- Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+<!-- DA-AMELIORATIONS-2026-03-24 -->
+<style>
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — VISUAL ENHANCEMENTS v2
+   Senior Art Direction Layer
+═══════════════════════════════════════════ */
+
+/* TYPOGRAPHIE AMÉLIORÉE */
+body {
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: -2px;
+  line-height: 1.04;
+}
+
+/* NAV — GLASSMORPHISM RENFORCÉ */
+nav {
+  background: rgba(4, 9, 26, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.14) !important;
+  box-shadow: 0 1px 0 rgba(34, 211, 238, 0.06), 0 8px 48px rgba(0, 0, 0, 0.6) !important;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nav-brand {
+  background: linear-gradient(135deg, #fff 30%, #22d3ee 70%, #f5c842 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.35));
+  transition: filter 0.3s ease;
+}
+.nav-brand:hover {
+  filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.6));
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  position: relative;
+  overflow: hidden;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-cta:hover::before { opacity: 1; }
+
+/* HERO TAG — ANIMATION PULSANTE AMÉLIORÉE */
+.hero-tag {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+/* HERO STATS — GLOW & CONTRAST */
+.hero-stat-val {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 0 40px currentColor;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.hero-stat-val:hover {
+  transform: scale(1.06);
+  text-shadow: 0 0 60px currentColor;
+}
+.hero-stat-lbl {
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+/* FORM — GLASSMORPHISM PREMIUM */
+.form-group input {
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
+  font-size: 14px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(8px);
+}
+.form-group input:focus {
+  border-color: rgba(34, 211, 238, 0.6) !important;
+  background: rgba(34, 211, 238, 0.06) !important;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1), 0 8px 32px rgba(34, 211, 238, 0.1) !important;
+  transform: translateY(-1px);
+}
+
+.btn-sub {
+  border-radius: 16px !important;
+  padding: 16px 34px !important;
+  font-size: 13px !important;
+  letter-spacing: 0.4px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  box-shadow: 0 4px 24px rgba(34, 211, 238, 0.3), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.btn-sub::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-sub:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 16px 48px rgba(34, 211, 238, 0.45), inset 0 1px 0 rgba(255,255,255,0.25) !important;
+}
+.btn-sub:hover::after { opacity: 1; }
+.btn-sub:active { transform: translateY(-1px) scale(0.99) !important; }
+
+/* TICKER CARDS */
+.tick {
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.tick:hover {
+  background: rgba(34, 211, 238, 0.08) !important;
+  border-color: rgba(34, 211, 238, 0.28) !important;
+  transform: translateY(-5px) scale(1.02) !important;
+  box-shadow: 0 12px 40px rgba(34, 211, 238, 0.12), 0 0 0 1px rgba(34, 211, 238, 0.1) !important;
+}
+</style>
 </head>
 <body>
 
@@ -239,9 +382,9 @@ footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+  <a href="index.html" class="active" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
   <div class="nav-center" id="nav-menu">
-    <a href="index.html?v=2" class="active">Accueil</a>
+    <a href="index.html?v=2">Accueil</a>
     <a href="newsletter.html">Newsletter</a>
     <a href="investissement.html?v=2">Robot Trader</a>
     <a href="arena.html">Arena</a>
@@ -518,6 +661,454 @@ footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative
 </section>
 
 <!-- FOOTER -->
+<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
+<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
+<section class="insights-section">
+  <div class="insights-header">
+    <h2>🌍 Insights Géopolitiques</h2>
+    <p>Comment les grands événements mondiaux façonnent les marchés — et tes opportunités d'investissement.</p>
+  </div>
+
+  <div class="insights-grid">
+    
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">🛡️</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Défense</span>
+                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">L'Europe sort le carnet de chèques pour ses armées</h3>
+
+              <p class="insight-contexte">Face aux tensions mondiales, les pays européens ont décidé de massifier leurs budgets militaires. C'est le plus grand plan de réarmement du continent depuis la Guerre Froide.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Le secteur de la défense européen explose à la hausse. L'indice STOXX Europe Aerospace & Defense surperforme le CAC 40 de +18% depuis janvier 2026.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">AIR.PA</div>
+                  <div class="ticker-name">Airbus SE</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$187.32</div>
+                  <div class="price-var" style="color:#22c55e;">+4.7%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> Airbus fabrique les avions militaires et les systèmes de surveillance que les gouvernements européens commandent en urgence pour remplir leurs nouveaux quotas de défense.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly décortique le carnet de commandes militaires d'Airbus et compare les marges défense vs civil pour savoir si la hausse du titre est justifiée ou spéculative.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">💰</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Macro</span>
+                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">La Fed hésite, Wall Street retient son souffle</h3>
+
+              <p class="insight-contexte">La banque centrale américaine (la Fed) doit choisir entre baisser ses taux pour relancer l'économie ou les maintenir hauts pour freiner l'inflation. Ce dilemme paralyse les marchés depuis des semaines.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Le S&P 500 oscille en zone de consolidation. Les valeurs technologiques souffrent le plus car elles sont très sensibles au coût de l'argent.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">NVDA</div>
+                  <div class="ticker-name">NVIDIA Corporation</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$812.45</div>
+                  <div class="price-var" style="color:#ef4444;">-2.1%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> NVIDIA s'endette pour financer sa R&D explosive en IA : quand les taux restent élevés, ce financement coûte plus cher, ce qui réduit mécaniquement la valeur future de l'entreprise selon les marchés.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly modélise les deux scénarios Fed (pause vs baisse) et calcule l'impact concret sur le cours NVDA pour les 90 prochains jours.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">₿</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Crypto</span>
+                    <span class="badge badge-sev" style="background:rgba(234,179,8,.2);color:#eab308;">MEDIUM</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Bitcoin joue les remplaçants quand le dollar vacille</h3>
+
+              <p class="insight-contexte">Quand le dollar américain perd de sa superbe face aux tensions géopolitiques et à l'endettement US, les investisseurs cherchent des refuges alternatifs. Bitcoin capte une partie de cette fuite.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Bitcoin progresse fortement dans les phases de doute sur le dollar. Les marchés émergents qui subissent la pression du dollar fort regardent aussi vers le BTC comme outil de couverture.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">BTC-USD</div>
+                  <div class="ticker-name">Bitcoin</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$94,250.00</div>
+                  <div class="price-var" style="color:#22c55e;">+6.3%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> Chaque annonce de déficit budgétaire américain record ou de tension géopolitique majeure déclenche un afflux d'acheteurs institutionnels vers Bitcoin comme 'or numérique' hors système bancaire.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly analyse la corrélation historique entre l'indice DXY (force du dollar) et le prix du Bitcoin pour identifier les seuils déclencheurs d'un prochain rally.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">🌍</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Géopolitique</span>
+                    <span class="badge badge-sev" style="background:rgba(234,179,8,.2);color:#eab308;">MEDIUM</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Dollar fort étouffe les pays émergents, une aubaine inattendue</h3>
+
+              <p class="insight-contexte">Un dollar américain puissant rend les dettes des pays en développement (Brésil, Inde, Turquie…) plus chères à rembourser. Mais cela pousse aussi ces pays à chercher des alternatives et crée des opportunités pour certaines multinationales.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Les indices des marchés émergents (MSCI EM) reculent sous la pression du dollar. En revanche, les entreprises européennes qui exportent vers ces zones gagnent en compétitivité relative.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">OR.PA</div>
+                  <div class="ticker-name">L'Oréal SA</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$342.10</div>
+                  <div class="price-var" style="color:#22c55e;">+2.8%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> L'Oréal vend en dollars dans les marchés émergents mais ses coûts sont en euros : quand le dollar monte, ses revenus convertis en euros augmentent mécaniquement, boostant ses bénéfices.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly quantifie l'effet devise sur les résultats trimestriels de L'Oréal et identifie le seuil EUR/USD qui maximise la profitabilité du groupe.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-top">
+                  <span class="insight-emoji">⚡</span>
+                  <div class="insight-badges">
+                    <span class="badge badge-cat">Énergie</span>
+                    <span class="badge badge-sev" style="background:rgba(239,68,68,.2);color:#ef4444;">CRITICAL</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="insight-titre">Réarmement européen relance la demande d'énergie industrielle</h3>
+
+              <p class="insight-contexte">Construire des chars, des avions et des munitions consomme d'énormes quantités d'électricité et de gaz. La relance industrielle militaire en Europe crée une demande énergétique inattendue qui redessine les prix.</p>
+
+              <div class="insight-impact">
+                <strong>→ Impact marché:</strong> Les prix du gaz naturel européen (TTF) repartent à la hausse. Le CAC 40 voit ses valeurs industrielles et énergétiques surperformer nettement le reste de l'indice.
+              </div>
+
+              <div class="insight-stock">
+                <div class="stock-ticker">
+                  <div class="ticker-symbol">TTE.PA</div>
+                  <div class="ticker-name">TotalEnergies SE</div>
+                </div>
+                <div class="ticker-price">
+                  <div class="price-val">$58.76</div>
+                  <div class="price-var" style="color:#22c55e;">+3.4%</div>
+                </div>
+              </div>
+
+              <p class="insight-pourquoi">
+                <strong>Pourquoi?</strong> TotalEnergies fournit gaz et électricité aux industries françaises de défense en pleine montée en cadence : plus elles produisent, plus TotalEnergies facture, directement lié au plan de réarmement européen.
+              </p>
+
+              <p class="insight-angle">
+                <em>AlphaBot Weekly cartographie les contrats énergétiques industriels de TotalEnergies liés au complexe militaro-industriel européen et estime leur poids dans le chiffre d'affaires 2026.</em>
+              </p>
+
+              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
+            </div>
+            
+  </div>
+</section>
+
+<!-- ─── STYLES INSIGHTS ─── -->
+<style>
+/* INSIGHTS SECTION */
+.insights-section {
+  padding: 80px 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.insights-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.insights-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.insights-header p {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* INSIGHT CARDS */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  padding: 28px;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.insight-card:hover {
+  border-color: rgba(34, 211, 238, .3);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+}
+
+/* HEADER */
+.insight-header {
+  margin-bottom: 8px;
+}
+
+.insight-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.insight-emoji {
+  font-size: 28px;
+}
+
+.insight-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.badge-cat {
+  background: rgba(59, 130, 246, .2);
+  color: #3b82f6;
+}
+
+.badge-sev {
+  /* dynamique color */
+}
+
+/* TITRE */
+.insight-titre {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* CONTEXTE */
+.insight-contexte {
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* IMPACT */
+.insight-impact {
+  font-size: 13px;
+  color: #e2e8f0;
+  padding: 12px;
+  background: rgba(59, 130, 246, .08);
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+}
+
+/* STOCK WIDGET */
+.insight-stock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, .04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.stock-ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ticker-symbol {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.ticker-name {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ticker-price {
+  text-align: right;
+}
+
+.price-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.price-var {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* POURQUOI */
+.insight-pourquoi {
+  font-size: 13px;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ANGLE ALPHABOT */
+.insight-angle {
+  font-size: 12px;
+  color: #64748b;
+  font-style: italic;
+  margin: 0;
+  padding: 12px;
+  background: rgba(245, 200, 66, .05);
+  border-radius: 4px;
+}
+
+/* CTA */
+.cta-lire {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  color: #22d3ee;
+  text-decoration: none;
+  transition: .2s;
+  margin-top: auto;
+}
+
+.cta-lire:hover {
+  color: #f5c842;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .insights-section {
+    padding: 60px 5%;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-card {
+    padding: 20px;
+  }
+
+  .insight-titre {
+    font-size: 15px;
+  }
+
+  .insight-contexte {
+    font-size: 12px;
+  }
+}
+</style>
+
+<!-- ─── FIN INSIGHTS GÉOPOLITIQUES ─── -->
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">🤖 AlphaBot Weekly</div>

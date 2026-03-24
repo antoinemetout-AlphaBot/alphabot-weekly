@@ -1,7 +1,518 @@
 {
-  "generated_at": "2026-03-23T17:00:09.449869",
+  "generated_at": "2026-03-24T08:45:07.480388",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T08:45:07.468702",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Email quotidien CEO envoyé (1 destinataires)",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:45:07.458703",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Notification quotidienne → 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:45:05.217993",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Email Quotidien CEO 📧",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:40:05.176732",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:40:01.494395",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 8h45",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:53.630630",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:52.000342",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:51.998341",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
+      "data": {
+        "ok": 1,
+        "errors": 2
+      }
+    },
+    {
+      "ts": "2026-03-24T08:35:49.926180",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:49.915185",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Plan d'action généré — 6 action(s)",
+      "data": {
+        "nb_actions": 6
+      }
+    },
+    {
+      "ts": "2026-03-24T08:35:13.525074",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.523075",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-24T08:35:13.519075",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.517076",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 14 agents | 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.355093",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.352092",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 24/03/2026 à 08:35",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.129751",
+      "agent": "Agent Twitter",
+      "type": "error",
+      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:12.687695",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (3 pages améliorées)",
+      "data": {
+        "date": "2026-03-24 08:33",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 40,
+            "problemes": 6
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 4
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": true,
+            "html_path": "outputs\\section_da_2026-03-24.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 21
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 25
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 29
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:59.538408",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-24.html"
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:59.524058",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:23.810272",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:33:23.563260",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10018.2,
+          "perf": 0.18
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10154.52,
+          "perf": 1.55
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:23.549169",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Agressif: Achat 22x UVXY @ 49.88",
+      "data": {
+        "profil": "agressif",
+        "ticker": "UVXY",
+        "prix": 49.88,
+        "montant": 1097.36,
+        "raison": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:22.799032",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: acheter UVXY",
+      "data": {
+        "profil": "agressif",
+        "action": "acheter",
+        "ticker": "UVXY",
+        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
+        "allocation_pct": 20,
+        "raison_courte": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte.",
+        "raison_complete": "Le VIX affiche +3.15% sur 5 jours malgré le rebond d'aujourd'hui (+1.15% S&P), signalant que le marché reste structurellement nerveux. Le DAX perd -4.54% sur 5 jours et le Nasdaq -2.39% : la correction de fond n'est pas terminée, le rebond du jour ressemble à un dead cat bounce. Le pétrole WTI bondit à 90.37$ (+2.54%), alimentant les craintes d'inflation persistante et compliquant la position de la Fed. Le Dollar Index à 99.16 reste sous pression, mais l'EUR/USD à 1.16 indique une fuite vers l'euro qui peut vite s'inverser si le risk-off reprend. Dans ce contexte, UVXY (2x levier sur les futures VIX court terme) offre un trade asymétrique : si le marché rechute cette semaine, le VIX peut exploser vers 30-35, générant +30 à +60% sur UVXY. C'est une couverture offensive sur nos deux positions longues existantes (BTC, SOXL).",
+        "catalyseur": "Rebond de surface sur marchés toujours sous stress structurel : pétrole à 90$, VIX en hausse sur 5j, correction Europe non terminée.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Si le rebond du jour se confirme et s'accélère, le VIX peut refluer vers 22-23, infligeant une perte rapide sur UVXY (contango et décroissance temporelle pénalisent fortement cet ETF à moyen terme). À utiliser exclusivement en trade court terme."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:08.254456",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Modéré: Achat 24x XLE @ 59.63",
+      "data": {
+        "profil": "modere",
+        "ticker": "XLE",
+        "prix": 59.63,
+        "montant": 1431.12,
+        "raison": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:07.490809",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: acheter XLE",
+      "data": {
+        "profil": "modere",
+        "action": "acheter",
+        "ticker": "XLE",
+        "nom": "Energy Select Sector SPDR Fund",
+        "allocation_pct": 18,
+        "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques.",
+        "raison_complete": "Le WTI affiche +2.54% sur la séance et consolide au-dessus de 90$/baril, un niveau psychologique clé non vu depuis plusieurs mois. Ce rebours est soutenu par plusieurs facteurs simultanés : tensions géopolitiques persistantes au Moyen-Orient, discipline de production maintenue par l'OPEP+ avec des coupes reconduites, et une demande asiatique (Chine, Inde) qui reprend de la vigueur au T1 2026. Le Dollar Index, bien qu'en légère hausse à 99.16, reste historiquement bas ce qui soutient le prix nominal des matières premières. XLE est l'ETF sectoriel le plus liquide sur l'énergie US et regroupe ExxonMobil, Chevron, ConocoPhillips — des entreprises avec des free cash flows records à ces niveaux de prix. Le VIX à 25.88 indique une nervosité du marché qui favorise traditionnellement la rotation vers les secteurs défensifs/value comme l'énergie, perçus comme des couvertures contre l'inflation et les chocs géopolitiques. La corrélation entre XLE et le WTI est très forte (>0.85), offrant une exposition directe à la hausse du brut sans risque spécifique d'une seule entreprise.",
+        "catalyseur": "WTI au-dessus de 90$/baril (+2.54% sur la séance) avec maintien des coupes OPEP+ et tensions géopolitiques persistantes",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 7,
+        "risques": "Un retournement brutal du pétrole en cas de désescalade géopolitique soudaine ou d'annonce surprise de production OPEP+ pourrait peser sur XLE. La remontée du Dollar Index est aussi un facteur adverse à surveiller car un dollar fort comprime les prix des matières premières."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:32:52.914176",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Prudent: Achat 73x VGOV.L @ 15.60",
+      "data": {
+        "profil": "prudent",
+        "ticker": "VGOV.L",
+        "prix": 15.6,
+        "montant": 1138.8,
+        "raison": "Obligations souveraines comme bouclier face à la volatilité actuelle."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:32:52.109878",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: acheter VGOV.L",
+      "data": {
+        "profil": "prudent",
+        "action": "acheter",
+        "ticker": "VGOV.L",
+        "nom": "Vanguard U.K. Government Bond UCITS ETF",
+        "allocation_pct": 13,
+        "raison_courte": "Obligations souveraines comme bouclier face à la volatilité actuelle.",
+        "raison_complete": "Le VIX à 25.88 (+3.15% sur 5 jours) signale une nervosité persistante des marchés malgré le rebond technique de ce mardi. Le S&P 500 et le DAX affichent respectivement -2.01% et -4.54% sur 5 jours, révélant une tendance baissière de fond. Dans ce contexte, les obligations souveraines constituent le refuge classique du gestionnaire prudent. Le Dollar Index à 99.16 et l'EUR/USD à 1.16 indiquent un dollar légèrement affaibli, ce qui rend les obligations libellées en sterling attractives pour un portefeuille euro cherchant une diversification devises. Par ailleurs, la Banque d'Angleterre maintient une politique monétaire plus prévisible que la Fed en ce moment, avec des anticipations de baisses de taux progressives en 2026 qui soutiendraient mécaniquement la valeur des gilts. L'or à 4422 USD (+0.42%) confirme l'appétit général pour les actifs de qualité et de préservation du capital.",
+        "catalyseur": "VIX à 25.88 et recul marqué des indices européens (-4.54% DAX sur 5j) confirmant un cycle de risk-off qui favorise les obligations souveraines.",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 7,
+        "risques": "Une accélération inattendue de l'inflation au Royaume-Uni pourrait contraindre la BoE à durcir sa politique et peser sur les gilts. Le risque de change EUR/GBP est également à surveiller si la livre se renforce."
+      }
+    },
+    {
+      "ts": "2026-03-24T08:32:33.516672",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Notification quotidienne → 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:32:31.823876",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Newsletter envoyée — 1 succès, 0 erreurs (1s)",
+      "data": {
+        "envoyes": 1,
+        "erreurs": 0
+      }
+    },
+    {
+      "ts": "2026-03-24T08:32:29.928873",
+      "agent": "Agent Growth",
+      "type": "start",
+      "message": "Envoi newsletter démarré — sujet auto",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:32:29.913871",
+      "agent": "Agent Rédacteur",
+      "type": "info",
+      "message": "Archive newsletters.html mise à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:32:29.891412",
+      "agent": "Agent Rédacteur",
+      "type": "success",
+      "message": "Newsletter générée : alphabot_newsletter_2026-03-24.html",
+      "data": {
+        "fichier": "alphabot_newsletter_2026-03-24.html",
+        "taille_kb": 59.1
+      }
+    },
+    {
+      "ts": "2026-03-24T08:32:29.881828",
+      "agent": "Agent Rédacteur",
+      "type": "start",
+      "message": "Génération de la newsletter en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:31:01.447294",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Veille terminée — 1 crypto(s), 5 indices",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:30:48.672613",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Veille Marchés — Ouverture 🔍",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:30:48.667612",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:59.708393",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:59.647523",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:59.632997",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "Exécution terminée — 2 succès, 1 erreur(s)",
+      "data": {
+        "ok": 2,
+        "errors": 1
+      }
+    },
+    {
+      "ts": "2026-03-24T00:28:59.318184",
+      "agent": "Agent Growth Booster",
+      "type": "success",
+      "message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
+      "data": {
+        "objectif": "Atteindre 10 abonnés humains avant le 31 mars 2026 via 2 posts Reddit, 1 lead magnet publié sur le site et 1 approche partenariat envoyée"
+      }
+    },
+    {
+      "ts": "2026-03-24T00:28:36.641147",
+      "agent": "Agent Growth Booster",
+      "type": "progress",
+      "message": "Génération des stratégies de croissance avec Claude IA...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:36.623077",
+      "agent": "Agent Growth Booster",
+      "type": "start",
+      "message": "Cycle Growth Booster démarré (simulation=non)",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:33.398767",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:33.375487",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Plan d'action généré — 6 action(s)",
+      "data": {
+        "nb_actions": 6
+      }
+    },
+    {
+      "ts": "2026-03-24T00:28:08.065126",
+      "agent": "Monitor",
+      "type": "start",
+      "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:05.190981",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:05.170865",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-24T00:28:05.111562",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:05.098512",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 14 agents | 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:04.763817",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:28:04.705360",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 24/03/2026 à 00:28",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T00:00:33.961331",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "📅 Nouveau jour — 2026-03-24",
+      "data": {}
+    },
     {
       "ts": "2026-03-23T17:00:09.445868",
       "agent": "Orchestrateur",
@@ -458,593 +969,51 @@
       "type": "info",
       "message": "Scan terminé — 14 agents | 1 abonnés",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.896701",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.893701",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:10",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.612699",
-      "agent": "Agent Twitter",
-      "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.519691",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-23 12:09",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 30,
-            "problemes": 7
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.498692",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.487693",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:20.985922",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:09:20.689741",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10049.14,
-          "perf": 0.49
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:20.674228",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: attendre None",
-      "data": {
-        "profil": "agressif",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "VIX à 30, marchés en capitulation — cash est une arme",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une capitulation de marché en cours — ce n'est pas le moment d'ajouter du risque. Le DAX perd -7.70% sur 5 jours, signe d'une détérioration macroéconomique sérieuse en Europe, probablement liée à des tensions commerciales et à la faiblesse de la demande industrielle allemande. L'or qui chute de -6.64% en une seule journée est un signal exceptionnel et contre-intuitif : cela suggère des appels de marge massifs forçant des liquidations d'actifs refuges — exactement comme en mars 2020 ou septembre 2022. Dans ce contexte de deleveraging systémique, même les actifs solides se vendent. Notre position BTC-USD est en territoire positif (+1.96%) et Bitcoin tient bien (+2.99% aujourd'hui), ce qui confirme l'analyse d'achat. Avec 74.6% de cash disponible, nous sommes bien positionnés pour frapper quand la poussière retombera.",
-        "catalyseur": "Chute de l'or de -6.64% en 1 jour = appels de marge systémiques, deleveraging forcé sur tous les actifs",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Le rebond peut venir brutalement et nous laisser à quai — surveiller un VIX qui repasserait sous 25 et une stabilisation de l'or comme signaux d'entrée."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:07.321244",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: attendre None",
-      "data": {
-        "profil": "modere",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Marché sous pression, VIX à 30 — cash est une position.",
-        "raison_complete": "Le contexte actuel impose une prudence maximale avant tout déploiement de capital. Le VIX a bondi de +34.51% sur 5 jours pour atteindre 30.09, signalant une volatilité institutionnelle élevée qui historiquement précède des mouvements violents dans les deux sens. Le S&P 500 cède -2.88% sur 5 jours et le DAX chute de -7.70% — une divergence transatlantique qui suggère une pression vendeuse systémique plutôt qu'un simple ajustement sectoriel. L'or, valeur refuge par excellence, plonge de -6.64% en une seule séance : cela évoque une liquidation forcée de positions (margin calls) plutôt qu'un regain d'appétit pour le risque. Le pétrole WTI à 98.65 USD (+0.34%) avec l'EUR/USD à 1.16 signale des tensions géopolitiques persistantes et une inflation importée potentielle en zone euro. Dans cet environnement, déployer du capital sans visibilité sur le catalyseur de la baisse serait imprudent — attendre la stabilisation du VIX sous 25 et un rebond technique confirmé est la décision la plus rigoureuse.",
-        "catalyseur": "Liquidation simultanée de l'or (-6.64% en 1j) et effondrement des indices (DAX -7.70% sur 5j) suggèrent une crise de liquidité ou un événement macro majeur non encore pleinement digéré par le marché.",
-        "horizon": null,
-        "niveau_conviction": 9,
-        "risques": "Le risque principal d'attendre est de manquer un rebond violent (short squeeze) si le catalyseur baissier se révèle temporaire. Cependant, protéger le capital en phase d'incertitude extrême prime sur la performance à court terme."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:53.968238",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême : patience avant tout déploiement de capital.",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une peur marquée sur les marchés — historiquement, un VIX au-dessus de 30 indique une instabilité structurelle et non un simple repli technique. Le CAC40 cède -5.74% sur la semaine et le DAX -7.70%, suggérant une pression vendeuse significative en Europe, potentiellement liée à des tensions géopolitiques ou à un resserrement des conditions financières. L'or, valeur refuge par excellence, chute de -6.64% sur une seule journée — un mouvement aberrant qui peut indiquer des appels de marge massifs forçant des liquidations tous azimuts, un signal classique de stress systémique. Le pétrole WTI à 98.65 USD avec une légère hausse (+0.34%) complique le tableau : des prix élevés alimentent l'inflation et réduisent la marge de manœuvre des banques centrales pour baisser les taux, pénalisant les obligations et les blue chips à valorisation élevée. Dans ce contexte, déployer du capital serait prématuré pour un profil prudent. La règle d'or : ne jamais attraper un couteau qui tombe.",
-        "catalyseur": "VIX +34% sur 5 jours + chute simultanée de l'or (-6.64% en 1j) = signal de stress systémique, probables liquidations forcées sur l'ensemble des classes d'actifs.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 9,
-        "risques": "Le risque de rester en cash est de manquer un rebond technique violent si les conditions se normalisent rapidement. Cependant, pour un profil sécurisé, la préservation du capital prime sur la performance à court terme."
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:34.257403",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:32.456829",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (1s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:30.840675",
-      "agent": "Agent Growth",
-      "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:30.833673",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:30.825675",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.7
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:30.817677",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:31.490365",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.375963",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.373961",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:05:27.065817",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:27.058816",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.901750",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.898748",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.889754",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.885750",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.761747",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.759748",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:04",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.503181",
-      "agent": "Agent Twitter",
-      "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:53.963560",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-23 12:04",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 30,
-            "problemes": 7
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:53.940835",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:53.931914",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:12.292933",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:12.041226",
-      "agent": "Robot Trader",
-      "type": "start",
-      "message": "Initialisation 2026-03-23 12:04:12",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:12.013332",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:08.086065",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (2s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:05.942997",
-      "agent": "Agent Growth",
-      "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:05.934700",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:05.928318",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.1
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:05.920154",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:18.884374",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:18.853294",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit=2 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbid",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:10.805272",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:06.771669",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.744931",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.594807",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:04.568447",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/search/trending (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 4",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:56.524402",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:52.481680",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.444789",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.395058",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.364644",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/posts/?auth_token=free&public=true&kind=news&filter=hot&currencies=BTC (Caused by ProxyError('Unable ",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:42.305569",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 8s...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-23T17:00:09.445868",
+        "ts": "2026-03-24T08:45:07.468702",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10130€ (+1.30%) | 2 positions",
+        "message": "Email quotidien CEO envoyé (1 destinataires)",
         "data": {}
       },
-      "last_ts": "2026-03-23T17:00:09.445868",
+      "last_ts": "2026-03-24T08:45:07.468702",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10130€ (+1.30%) | 2 positions",
-      "total_today": 27,
+      "last_message": "Email quotidien CEO envoyé (1 destinataires)",
+      "total_today": 8,
       "errors_today": 0,
-      "successes_today": 18
+      "successes_today": 3
     },
     {
-      "agent": "Agent Investissement",
+      "agent": "Agent Growth",
       "last_event": {
-        "ts": "2026-03-23T17:00:09.433869",
-        "agent": "Agent Investissement",
+        "ts": "2026-03-24T08:45:07.458703",
+        "agent": "Agent Growth",
         "type": "success",
-        "message": "Cycle robot trader complété",
-        "data": {
-          "prudent": {
-            "capital": 10030.94,
-            "perf": 0.31
-          },
-          "modere": {
-            "capital": 10045.12,
-            "perf": 0.45
-          },
-          "agressif": {
-            "capital": 10130.31,
-            "perf": 1.3
-          }
-        }
+        "message": "Notification quotidienne → 1 abonnés",
+        "data": {}
       },
-      "last_ts": "2026-03-23T17:00:09.433869",
+      "last_ts": "2026-03-24T08:45:07.458703",
       "last_type": "success",
-      "last_message": "Cycle robot trader complété",
-      "total_today": 15,
+      "last_message": "Notification quotidienne → 1 abonnés",
+      "total_today": 4,
       "errors_today": 0,
-      "successes_today": 6
+      "successes_today": 3
     },
     {
       "agent": "Directeur Adjoint",
       "last_event": {
-        "ts": "2026-03-23T12:10:48.740344",
+        "ts": "2026-03-24T08:35:53.630630",
         "agent": "Directeur Adjoint",
         "type": "success",
         "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:10:48.740344",
+      "last_ts": "2026-03-24T08:35:53.630630",
       "last_type": "success",
       "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
       "total_today": 22,
@@ -1054,136 +1023,154 @@
     {
       "agent": "Agent Twitter",
       "last_event": {
-        "ts": "2026-03-23T12:10:05.612699",
+        "ts": "2026-03-24T08:35:13.129751",
         "agent": "Agent Twitter",
         "type": "error",
         "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:10:05.612699",
+      "last_ts": "2026-03-24T08:35:13.129751",
       "last_type": "error",
       "last_message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "total_today": 2,
-      "errors_today": 2,
+      "total_today": 1,
+      "errors_today": 1,
       "successes_today": 0
     },
     {
       "agent": "Agent DA Site",
       "last_event": {
-        "ts": "2026-03-23T12:10:05.519691",
+        "ts": "2026-03-24T08:35:12.687695",
         "agent": "Agent DA Site",
         "type": "success",
-        "message": "Mission DA terminée (0 pages améliorées)",
+        "message": "Mission DA terminée (3 pages améliorées)",
         "data": {
-          "date": "2026-03-23 12:09",
+          "date": "2026-03-24 08:33",
           "etapes": {
             "audit": {
               "ok": true,
-              "score": 30,
-              "problemes": 7
+              "score": 40,
+              "problemes": 6
             },
             "navigation": {
               "ok": true,
-              "pages_mises_a_jour": 2
+              "pages_mises_a_jour": 4
             },
             "insights": {
               "ok": true,
               "count": 5,
               "injected_in_index": true,
-              "html_path": "outputs\\section_da_2026-03-23.html"
+              "html_path": "outputs\\section_da_2026-03-24.html"
             },
             "visuels": {
               "ok": true,
               "details": [
                 {
                   "page": "index.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 21
                 },
                 {
                   "page": "investissement.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 25
                 },
                 {
                   "page": "newsletter.html",
-                  "status": "already_done"
+                  "status": "improved",
+                  "css_rules": 29
                 }
               ]
             }
           },
           "success": true,
-          "pages_ameliorees": 0,
+          "pages_ameliorees": 3,
           "insights_count": 5
         }
       },
-      "last_ts": "2026-03-23T12:10:05.519691",
+      "last_ts": "2026-03-24T08:35:12.687695",
       "last_type": "success",
-      "last_message": "Mission DA terminée (0 pages améliorées)",
-      "total_today": 8,
+      "last_message": "Mission DA terminée (3 pages améliorées)",
+      "total_today": 4,
       "errors_today": 0,
-      "successes_today": 6
+      "successes_today": 3
     },
     {
-      "agent": "Agent Growth",
+      "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-23T12:08:34.257403",
-        "agent": "Agent Growth",
+        "ts": "2026-03-24T08:33:23.563260",
+        "agent": "Agent Investissement",
         "type": "success",
-        "message": "Notification quotidienne → 1 abonnés",
-        "data": {}
+        "message": "Cycle robot trader complété",
+        "data": {
+          "prudent": {
+            "capital": 10018.2,
+            "perf": 0.18
+          },
+          "modere": {
+            "capital": 10052.64,
+            "perf": 0.53
+          },
+          "agressif": {
+            "capital": 10154.52,
+            "perf": 1.55
+          }
+        }
       },
-      "last_ts": "2026-03-23T12:08:34.257403",
+      "last_ts": "2026-03-24T08:33:23.563260",
       "last_type": "success",
-      "last_message": "Notification quotidienne → 1 abonnés",
-      "total_today": 6,
+      "last_message": "Cycle robot trader complété",
+      "total_today": 7,
       "errors_today": 0,
-      "successes_today": 4
+      "successes_today": 1
     },
     {
       "agent": "Agent Rédacteur",
       "last_event": {
-        "ts": "2026-03-23T12:08:30.833673",
+        "ts": "2026-03-24T08:32:29.913871",
         "agent": "Agent Rédacteur",
         "type": "info",
         "message": "Archive newsletters.html mise à jour",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:08:30.833673",
+      "last_ts": "2026-03-24T08:32:29.913871",
       "last_type": "info",
       "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 6,
+      "total_today": 3,
       "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 1
     },
     {
-      "agent": "Robot Trader",
+      "agent": "Agent Growth Booster",
       "last_event": {
-        "ts": "2026-03-23T12:04:12.041226",
-        "agent": "Robot Trader",
+        "ts": "2026-03-24T00:28:59.318184",
+        "agent": "Agent Growth Booster",
+        "type": "success",
+        "message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
+        "data": {
+          "objectif": "Atteindre 10 abonnés humains avant le 31 mars 2026 via 2 posts Reddit, 1 lead magnet publié sur le site et 1 approche partenariat envoyée"
+        }
+      },
+      "last_ts": "2026-03-24T00:28:59.318184",
+      "last_type": "success",
+      "last_message": "Stratégie générée : Créer et publier le PDF lead magnet sur le site GitHub Pages avec formulaire de ",
+      "total_today": 3,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Monitor",
+      "last_event": {
+        "ts": "2026-03-24T00:28:08.065126",
+        "agent": "Monitor",
         "type": "start",
-        "message": "Initialisation 2026-03-23 12:04:12",
+        "message": "Dashboard Live Monitor démarré sur http://localhost:8080",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:04:12.041226",
+      "last_ts": "2026-03-24T00:28:08.065126",
       "last_type": "start",
-      "last_message": "Initialisation 2026-03-23 12:04:12",
+      "last_message": "Dashboard Live Monitor démarré sur http://localhost:8080",
       "total_today": 1,
       "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent Veille",
-      "last_event": {
-        "ts": "2026-03-23T12:02:18.884374",
-        "agent": "Agent Veille",
-        "type": "warning",
-        "message": "Utilisation de la valeur par défaut après échecs",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:02:18.884374",
-      "last_type": "warning",
-      "last_message": "Utilisation de la valeur par défaut après échecs",
-      "total_today": 13,
-      "errors_today": 3,
       "successes_today": 0
     }
   ]
