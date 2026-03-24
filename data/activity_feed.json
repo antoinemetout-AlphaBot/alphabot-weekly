@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T10:10:13.971545",
+  "generated_at": "2026-03-24T10:10:24.195103",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T10:10:24.168800",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:10:18.719208",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h15",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T10:10:13.945464",
       "agent": "Orchestrateur",
@@ -1044,38 +1058,24 @@
       "type": "success",
       "message": "📊 Prix mis à jour en temps réel",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:27:20.515649",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 📊 Prix Live — 16h30",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:27:17.855275",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Analytics dashboard généré",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T10:10:13.945464",
+        "ts": "2026-03-24T10:10:24.168800",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T10:10:13.945464",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 30,
+      "last_ts": "2026-03-24T10:10:24.168800",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 32,
       "errors_today": 3,
-      "successes_today": 13
+      "successes_today": 14
     },
     {
       "agent": "Agent Investissement",

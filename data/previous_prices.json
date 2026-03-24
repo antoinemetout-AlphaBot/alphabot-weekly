@@ -1,19 +1,19 @@
 {
-  "indice_^FCHI": 7723.3701171875,
+  "indice_^FCHI": 7724.22998046875,
   "indice_^GSPC": 6581.0,
   "indice_^NDX": 24188.58984375,
-  "indice_^GDAXI": 22527.830078125,
+  "indice_^GDAXI": 22520.890625,
   "indice_^DJI": 46208.46875,
   "action_AAPL": 251.49000549316406,
   "action_NVDA": 175.63999938964844,
   "action_TSLA": 380.8500061035156,
-  "action_MC.PA": 468.6000061035156,
-  "action_TTE.PA": 76.93000030517578,
+  "action_MC.PA": 467.95001220703125,
+  "action_TTE.PA": 76.83999633789062,
   "action_XOM": 161.1300048828125,
   "action_LMT": 616.25,
-  "commodity_DX-Y.NYB": 99.28399658203125,
-  "commodity_CL=F": 90.0,
-  "commodity_GC=F": 4410.7001953125,
-  "commodity_EURUSD=X": 1.159151554107666,
-  "_updated": "2026-03-24T10:00:08.985874"
+  "commodity_DX-Y.NYB": 99.34500122070312,
+  "commodity_CL=F": 90.70999908447266,
+  "commodity_GC=F": 4410.39990234375,
+  "commodity_EURUSD=X": 1.1590172052383423,
+  "_updated": "2026-03-24T10:10:24.162395"
 }
