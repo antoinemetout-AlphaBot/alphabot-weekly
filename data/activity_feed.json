@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T16:40:16.075989",
+  "generated_at": "2026-03-24T16:40:24.429896",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T16:40:24.401295",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T16:40:20.302972",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 16h45",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T16:40:16.057211",
       "agent": "Orchestrateur",
@@ -889,35 +903,21 @@
       "type": "error",
       "message": "Prix live : No module named 'update_prices'",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:10:13.922460",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 📊 Prix Live — 10h15",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T10:00:08.994616",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T16:40:16.057211",
+        "ts": "2026-03-24T16:40:24.401295",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T16:40:16.057211",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
+      "last_ts": "2026-03-24T16:40:24.401295",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 77,
       "errors_today": 8,
       "successes_today": 35
