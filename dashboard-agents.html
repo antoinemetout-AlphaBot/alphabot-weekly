@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Agents IA — AlphaBot Weekly</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Agents IA — AlphaBot Weekly | 13 agents IA en temps réel</title>
+<meta name="description" content="Visualisez l'activité en temps réel des 13 agents IA d'AlphaBot Weekly. Veille marchés, analyse, rédaction, trading — tout est transparent.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --bg:#04091a;--bg2:#060d1f;--card:rgba(255,255,255,.03);--card2:rgba(255,255,255,.06);
-  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.15);
+  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.15);--border:rgba(255,255,255,.08);
   --gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
   --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--purple:#a855f7;
   --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
@@ -36,29 +38,60 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overf
 /* ══════════════════════════════════════════════════════════════
    NAVIGATION
    ══════════════════════════════════════════════════════════════ */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;text-decoration:none;letter-spacing:-.5px;transition:.3s;}
-.nav-brand:hover{color:var(--cyan);}
-
-.nav-center{display:flex;gap:32px;align-items:center;flex:1;justify-content:center;}
-.nav-center a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s var(--transition);}
-.nav-center a:hover{color:white;}
+/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
+.nav-center{display:flex;gap:28px;align-items:center;}
+.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
+.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
+.nav-center a:hover{color:#fff;}
 .nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:var(--cyan);}
+.nav-center a.active{color:#22d3ee;}
 .nav-center a.active::after{width:100%;}
-
-.nav-cta{background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white!important;padding:9px 20px;border-radius:10px;font-weight:600;font-size:13px;text-decoration:none;border:none;cursor:pointer;transition:all .3s var(--transition);}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.3);}
-
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
-.nav-hamburger span{width:20px;height:2px;background:var(--muted);transition:.3s;}
+.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
 
 /* ══════════════════════════════════════════════════════════════
    PAGE LAYOUT
    ══════════════════════════════════════════════════════════════ */
 .page{position:relative;z-index:1;padding:100px 5% 80px;max-width:1300px;margin:0 auto;}
+
+/* ══════════════════════════════════════════════════════════════
+   ALERTES MARCHÉS
+   ══════════════════════════════════════════════════════════════ */
+.alerts-section{margin-bottom:48px;border:1px solid rgba(239,68,68,.15);border-radius:16px;background:rgba(239,68,68,.03);overflow:hidden;}
+.alerts-header{padding:24px 28px 16px;border-bottom:1px solid rgba(255,255,255,.06);}
+.alerts-title-row{display:flex;align-items:center;gap:10px;margin-bottom:4px;}
+.alerts-icon{font-size:20px;}
+.alerts-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;}
+.alerts-badge{background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;min-width:22px;text-align:center;}
+.alerts-badge.zero{background:var(--green);}
+.alerts-subtitle{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.alerts-filters{display:flex;gap:8px;flex-wrap:wrap;}
+.alert-filter-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:11px;font-weight:600;padding:5px 12px;border-radius:8px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+.alert-filter-btn:hover{color:#fff;border-color:rgba(255,255,255,.2);}
+.alert-filter-btn.active{color:var(--cyan);border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.08);}
+.alerts-body{max-height:400px;overflow-y:auto;padding:8px;}
+.alerts-empty{padding:40px;text-align:center;color:var(--muted);font-size:13px;}
+
+.alert-card{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;margin:4px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02);transition:background .2s;}
+.alert-card:hover{background:rgba(255,255,255,.05);}
+.alert-card.critical{border-left:3px solid var(--red);background:rgba(239,68,68,.05);}
+.alert-card.alert{border-left:3px solid var(--yellow);background:rgba(245,158,11,.04);}
+.alert-card.warning{border-left:3px solid var(--cyan);background:rgba(34,211,238,.03);}
+.alert-card.news{border-left:3px solid var(--blue);background:rgba(59,130,246,.04);}
+.alert-emoji{font-size:18px;flex-shrink:0;margin-top:1px;}
+.alert-content{flex:1;min-width:0;}
+.alert-msg{font-size:13px;color:var(--text);line-height:1.5;word-break:break-word;}
+.alert-meta{display:flex;gap:12px;margin-top:4px;font-size:11px;color:var(--muted);}
+.alert-variation{font-weight:700;font-family:'JetBrains Mono',monospace;}
+.alert-variation.up{color:var(--green);}
+.alert-variation.down{color:var(--red);}
+.alert-time{font-family:'JetBrains Mono',monospace;color:var(--muted2);font-size:11px;white-space:nowrap;margin-top:2px;}
 
 /* ══════════════════════════════════════════════════════════════
    HEADER
@@ -195,6 +228,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);
 .countdown{font-family:'JetBrains Mono',monospace;color:var(--cyan);}
 
 /* ══════════════════════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════════════════════ */
+footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;flex-direction:column;gap:24px;position:relative;z-index:1;background:var(--bg);}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+.footer-section{display:flex;flex-direction:column;gap:12px;}
+.footer-section h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:white;margin-bottom:4px;}
+.footer-section a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s;}
+.footer-section a:hover{color:white;}
+.footer-section p{color:var(--muted);font-size:12px;line-height:1.6;margin:0;}
+.footer-divider{width:100%;height:1px;background:var(--border);margin:0;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:var(--muted);}
+.footer-copy{text-align:center;width:100%;}
+.footer-disclaimer{text-align:center;width:100%;color:var(--muted2);font-size:11px;line-height:1.5;}
+
+/* ══════════════════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════════════════ */
 @media(max-width:768px){
@@ -202,7 +250,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);
   .agent-node{min-width:280px;max-width:100%;}
   .hero-stats{flex-wrap:wrap;gap:16px;}
   .connector{display:none;}
-  .nav-center{gap:16px;font-size:12px;}
+  nav{padding:12px 4%;}
+  .nav-center{display:none;gap:0;width:100%;}
+  .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+  .nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
 }
 </style>
 
@@ -227,15 +278,18 @@ gtag('config', 'G-XXXXXXXXXX');
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">AlphaBot Weekly</a>
-  <div class="nav-center">
+  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+  <div class="nav-center" id="nav-menu">
     <a href="index.html">Accueil</a>
     <a href="newsletter.html">Newsletter</a>
     <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html" class="active">Agents IA</a>
-    <a href="index.html#subscribe" class="nav-cta">S'abonner</a>
+    <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
   </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- GATE ABONNÉS -->
@@ -423,6 +477,30 @@ gtag('config', 'G-XXXXXXXXXX');
   </div><!-- /pyramid -->
 
   <!-- ═══════════════════════════════════════════
+       ALERTES MARCHÉS EN TEMPS RÉEL
+       ═══════════════════════════════════════════ -->
+  <div class="alerts-section" id="alertsSection">
+    <div class="alerts-header">
+      <div class="alerts-title-row">
+        <span class="alerts-icon">🚨</span>
+        <h2 class="alerts-title">Alertes Marchés</h2>
+        <span class="alerts-badge" id="alertsBadge">0</span>
+      </div>
+      <div class="alerts-subtitle">Veille continue — scan toutes les 15 min</div>
+      <div class="alerts-filters">
+        <button class="alert-filter-btn active" onclick="setAlertFilter('all',this)">Toutes</button>
+        <button class="alert-filter-btn" onclick="setAlertFilter('critical',this)">🚨 Critiques</button>
+        <button class="alert-filter-btn" onclick="setAlertFilter('alert',this)">🔔 Alertes</button>
+        <button class="alert-filter-btn" onclick="setAlertFilter('warning',this)">⚠️ Avertissements</button>
+        <button class="alert-filter-btn" onclick="setAlertFilter('news',this)">📰 News</button>
+      </div>
+    </div>
+    <div class="alerts-body" id="alertsBody">
+      <div class="alerts-empty">En attente du premier scan...</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
        TERMINAL LIVE
        ═══════════════════════════════════════════ -->
   <div class="terminal-section">
@@ -458,15 +536,21 @@ gtag('config', 'G-XXXXXXXXXX');
 </div><!-- /ab-content -->
 
 <script>
+// TOGGLE MENU
+function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // CONFIG
 // ═══════════════════════════════════════════════════════════════════════════════
 const FEED_URL   = 'data/activity_feed.json';
+const ALERTS_URL = 'data/alerts.json';
 const REFRESH_MS = 30000;
 
 let currentFilter = 'all';
+let currentAlertFilter = 'all';
 let allEvents = [];
 let allAgents = [];
+let allAlerts = [];
 let countdownVal = 30;
 let countdownTimer;
 
@@ -640,6 +724,85 @@ function focusAgent(agentName) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// ALERTS RENDERING
+// ═══════════════════════════════════════════════════════════════════════════════
+function setAlertFilter(f, btn) {
+  currentAlertFilter = f;
+  document.querySelectorAll('.alert-filter-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderAlerts();
+}
+
+function renderAlerts() {
+  const body = document.getElementById('alertsBody');
+  const badge = document.getElementById('alertsBadge');
+
+  if (!allAlerts.length) {
+    body.innerHTML = '<div class="alerts-empty">Aucune alerte pour le moment — les marchés sont calmes</div>';
+    badge.textContent = '0';
+    badge.className = 'alerts-badge zero';
+    return;
+  }
+
+  // Filter
+  let filtered = allAlerts;
+  if (currentAlertFilter === 'news') {
+    filtered = allAlerts.filter(a => a.category === 'news');
+  } else if (currentAlertFilter !== 'all') {
+    filtered = allAlerts.filter(a => a.level === currentAlertFilter);
+  }
+
+  // Count today's alerts
+  const today = new Date().toISOString().slice(0,10);
+  const todayCount = allAlerts.filter(a => (a.ts||'').startsWith(today)).length;
+  badge.textContent = todayCount;
+  badge.className = 'alerts-badge' + (todayCount === 0 ? ' zero' : '');
+
+  if (!filtered.length) {
+    body.innerHTML = '<div class="alerts-empty">Aucune alerte dans cette catégorie</div>';
+    return;
+  }
+
+  body.innerHTML = filtered.slice(0, 50).map(a => {
+    const level = a.level || 'warning';
+    const cat = a.category || '';
+    const cardClass = cat === 'news' ? 'news' : level;
+    const emoji = cat === 'news' ? '📰' :
+                  level === 'critical' ? '🚨' :
+                  level === 'alert' ? '🔔' : '⚠️';
+    const variation = a.variation_pct || 0;
+    const varClass = variation > 0 ? 'up' : 'down';
+    const varText = variation !== 0 ? `${variation > 0 ? '+' : ''}${variation.toFixed(1)}%` : '';
+
+    return `<div class="alert-card ${cardClass}">
+      <span class="alert-emoji">${emoji}</span>
+      <div class="alert-content">
+        <div class="alert-msg">${esc(a.message || '')}</div>
+        <div class="alert-meta">
+          ${varText ? `<span class="alert-variation ${varClass}">${varText}</span>` : ''}
+          <span>${esc(a.asset || '')}</span>
+          <span>${esc(a.category || '')}</span>
+        </div>
+      </div>
+      <span class="alert-time">${formatTs(a.ts)}</span>
+    </div>`;
+  }).join('');
+}
+
+async function loadAlerts() {
+  try {
+    const r = await fetch(ALERTS_URL + '?t=' + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    allAlerts = data.alerts || [];
+    renderAlerts();
+  } catch(err) {
+    // Silently fail — alerts.json may not exist yet
+    console.warn('Alerts:', err.message);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // LOAD
 // ═══════════════════════════════════════════════════════════════════════════════
 async function loadFeed() {
@@ -657,6 +820,8 @@ async function loadFeed() {
   } catch(err) {
     console.warn('Feed:', err.message);
   }
+  // Also load alerts
+  loadAlerts();
 }
 
 function resetCountdown() {
@@ -674,5 +839,37 @@ loadFeed();
 </script>
 
 <script src="assets/gate_subscriber.js"></script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-section">
+      <h4>AlphaBot Weekly</h4>
+      <a href="index.html">Accueil</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="investissement.html">Robot Trader</a>
+      <a href="arena.html">Arena</a>
+    </div>
+    <div class="footer-section">
+      <h4>Produit</h4>
+      <a href="newsletter.html">Newsletter gratuite</a>
+      <a href="investissement.html">Robot Trader</a>
+      <a href="arena.html">Arena</a>
+    </div>
+    <div class="footer-section">
+      <h4>Ressources</h4>
+      <a href="newsletters.html">Archives</a>
+      <a href="mailto:antoine.metout@gmail.com">Contact</a>
+      <a href="https://twitter.com/AlphaBot_Weekly" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://github.com/antoinemetout-AlphaBot/alphabot-weekly" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 AlphaBot Weekly</div>
+    <div class="footer-disclaimer">Contenu informatif uniquement. Ne constitue pas un conseil en investissement.</div>
+  </div>
+</footer>
+
 </body>
 </html>

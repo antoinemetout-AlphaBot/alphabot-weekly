@@ -3,173 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 - Page non trouvée | AlphaBot Weekly</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>404 — Page non trouvée | AlphaBot Weekly</title>
+    <meta name="description" content="Cette page n'existe pas. Retournez à l'accueil d'AlphaBot Weekly, votre newsletter IA bourse et crypto.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --bg: #04091a;
-            --bg2: #060d1f;
-            --cyan: #22d3ee;
-            --blue: #3b82f6;
-            --text: #e2e8f0;
-            --muted: #64748b;
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #04091a; --bg2: #060d1f; --cyan: #22d3ee; --blue: #3b82f6;
+            --text: #e2e8f0; --muted: #64748b; --border: rgba(255, 255, 255, 0.08);
         }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* BG */
+        .bg-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+        .bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px); background-size: 60px 60px; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(90px); }
+        .o1 { width: 800px; height: 800px; background: radial-gradient(circle, rgba(59, 130, 246, 0.09), transparent 65%); top: -300px; left: -250px; animation: of 9s ease-in-out infinite alternate; }
+        .o2 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(34, 211, 238, 0.08), transparent 65%); bottom: -200px; right: -200px; animation: of 11s ease-in-out infinite alternate-reverse; }
+        @keyframes of { from { transform: translate(0, 0) scale(1); } to { transform: translate(25px, 20px) scale(1.06); } }
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        /* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+        .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+        .nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
+        .nav-center{display:flex;gap:28px;align-items:center;}
+        .nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
+        .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
+        .nav-center a:hover{color:#fff;}
+        .nav-center a:hover::after{width:100%;}
+        .nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+        .nav-cta::after{display:none!important;}
+        .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+        .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+        .nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
 
-        /* ── BG ── */
-        .bg-wrap {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
+        /* CONTENT */
+        .container { position: relative; z-index: 10; text-align: center; padding: 40px 20px; max-width: 600px; margin: auto; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .error-code { font-family: 'Space Grotesk', sans-serif; font-size: clamp(80px, 15vw, 160px); font-weight: 700; background: linear-gradient(135deg, var(--cyan), var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0; line-height: 1; margin-bottom: 20px; }
+        .error-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); margin: 0 0 16px 0; }
+        .error-message { font-size: 16px; color: var(--muted); margin: 0 0 32px 0; line-height: 1.6; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--blue), var(--cyan)); color: white; text-decoration: none; padding: 14px 32px; border-radius: 12px; font-weight: 600; font-size: 15px; transition: all 0.3s ease; border: 1px solid rgba(34, 211, 238, 0.3); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3); border-color: rgba(34, 211, 238, 0.6); }
 
-        .bg-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
+        /* FOOTER */
+        footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative;z-index:1;}
+        .footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:16px;}
+        .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
+        .footer-links{display:flex;gap:20px;}
+        .footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s;}
+        .footer-links a:hover{color:white;}
+        .footer-copy{color:var(--muted);font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);}
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-        }
-
-        .o1 {
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.09), transparent 65%);
-            top: -300px;
-            left: -250px;
-            animation: of 9s ease-in-out infinite alternate;
-        }
-
-        .o2 {
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(34, 211, 238, 0.08), transparent 65%);
-            bottom: -200px;
-            right: -200px;
-            animation: of 11s ease-in-out infinite alternate-reverse;
-        }
-
-        .o3 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(34, 211, 238, 0.06), transparent 65%);
-            top: 50%;
-            left: 50%;
-            animation: of 7s ease-in-out infinite alternate;
-        }
-
-        @keyframes of {
-            from {
-                transform: translate(0, 0) scale(1);
-            }
-            to {
-                transform: translate(25px, 20px) scale(1.06);
-            }
-        }
-
-        /* ── CONTENT ── */
-        .container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 40px 20px;
-            max-width: 600px;
-        }
-
-        .error-code {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(80px, 15vw, 160px);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--cyan), var(--blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-
-        .error-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text);
-            margin: 0 0 16px 0;
-        }
-
-        .error-message {
-            font-size: 16px;
-            color: var(--muted);
-            margin: 0 0 32px 0;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--blue), var(--cyan));
-            color: white;
-            text-decoration: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(34, 211, 238, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3);
-            border-color: rgba(34, 211, 238, 0.6);
-        }
-
-        .cta-button:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 640px) {
-            .error-code {
-                font-size: clamp(60px, 12vw, 100px);
-            }
-
-            .error-title {
-                font-size: 24px;
-            }
-
-            .error-message {
-                font-size: 15px;
-            }
+        /* RESPONSIVE */
+        @media(max-width:768px){
+          nav{padding:12px 4%;}
+          .nav-center{display:none;gap:0;width:100%;}
+          .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+          .nav-hamburger{display:flex;}
+          .error-code{font-size:clamp(60px,12vw,100px);}
+          .error-title{font-size:24px;}
+          .footer-inner{flex-direction:column;text-align:center;}
         }
     </style>
 </head>
@@ -178,14 +74,50 @@
         <div class="bg-grid"></div>
         <div class="orb o1"></div>
         <div class="orb o2"></div>
-        <div class="orb o3"></div>
     </div>
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+      <div class="nav-center" id="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="investissement.html">Robot Trader</a>
+        <a href="arena.html">Arena</a>
+        <a href="dashboard-agents.html">Agents IA</a>
+        <a href="index.html#subscribe" class="nav-cta">S'abonner gratuitement</a>
+      </div>
+      <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
     <div class="container">
         <h1 class="error-code">404</h1>
         <h2 class="error-title">Page non trouvée</h2>
-        <p class="error-message">Cette page n'existe pas ou a été déplacée.</p>
+        <p class="error-message">Cette page n'existe pas ou a été déplacée.<br>Pas de panique, les marchés sont toujours surveillés.</p>
         <a href="index.html" class="cta-button">Retour à l'accueil</a>
     </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">AlphaBot Weekly</div>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="investissement.html">Robot Trader</a>
+          <a href="arena.html">Arena</a>
+          <a href="dashboard-agents.html">Agents IA</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
+        Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
+      </div>
+    </footer>
+
+    <script>
+    function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
+    </script>
 </body>
 </html>

@@ -1,579 +1,218 @@
 {
-  "generated_at": "2026-03-23T17:00:09.449869",
+  "generated_at": "2026-03-24T13:00:20.148210",
   "total_events": 100,
   "events": [
     {
-      "ts": "2026-03-23T17:00:09.445868",
+      "ts": "2026-03-24T13:00:20.128299",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "🤖 Robot Agressif: 10130€ (+1.30%) | 2 positions",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
     },
     {
-      "ts": "2026-03-23T17:00:09.443870",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10045€ (+0.45%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T17:00:09.440870",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10031€ (+0.31%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T17:00:09.433869",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10030.94,
-          "perf": 0.31
-        },
-        "modere": {
-          "capital": 10045.12,
-          "perf": 0.45
-        },
-        "agressif": {
-          "capital": 10130.31,
-          "perf": 1.3
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T17:00:00.151769",
+      "ts": "2026-03-24T13:00:16.033268",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — Clôture",
+      "message": "Lancement : 🔍 Scan Alertes — 13h",
       "data": {}
     },
     {
-      "ts": "2026-03-23T16:27:25.968925",
+      "ts": "2026-03-24T12:40:09.399587",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "📊 Prix mis à jour en temps réel",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
     },
     {
-      "ts": "2026-03-23T16:27:20.515649",
+      "ts": "2026-03-24T12:40:04.856879",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : 📊 Prix Live — 16h30",
+      "message": "Lancement : 🔍 Scan Alertes — 12h45",
       "data": {}
     },
     {
-      "ts": "2026-03-23T16:27:17.855275",
+      "ts": "2026-03-24T12:25:58.247620",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Analytics dashboard généré",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
     },
     {
-      "ts": "2026-03-23T16:27:17.803045",
+      "ts": "2026-03-24T12:25:52.835887",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Lancement : Analytics 📊",
+      "message": "Lancement : 🔍 Scan Alertes — 12h30",
       "data": {}
     },
     {
-      "ts": "2026-03-23T16:27:17.795850",
+      "ts": "2026-03-24T12:25:45.736366",
       "agent": "Orchestrateur",
-      "type": "start",
-      "message": "🚀 Orchestrateur démarré — Planning 8h-18h actif",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.579673",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10275€ (+2.75%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.575675",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10072€ (+0.72%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.570673",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10024€ (+0.24%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T16:00:08.550661",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10024.5,
-          "perf": 0.24
-        },
-        "modere": {
-          "capital": 10071.91,
-          "perf": 0.72
-        },
-        "agressif": {
-          "capital": 10274.9,
-          "perf": 2.75
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T16:00:00.597082",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 16h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.315339",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10268€ (+2.69%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.306597",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10061€ (+0.61%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.300553",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10033€ (+0.33%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T15:00:30.293008",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10033.46,
-          "perf": 0.33
-        },
-        "modere": {
-          "capital": 10060.63,
-          "perf": 0.61
-        },
-        "agressif": {
-          "capital": 10268.5,
-          "perf": 2.69
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T15:00:22.572704",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 15h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:25:22.425316",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Veille terminée — 1 crypto(s), 5 indices",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:25:10.406159",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : Veille Marchés — Après-midi 🔍",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.284667",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10077€ (+0.77%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.276377",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.269338",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10017€ (+0.17%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.256701",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10017.36,
-          "perf": 0.17
-        },
-        "modere": {
-          "capital": 10000.0,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10077.01,
-          "perf": 0.77
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T14:00:02.419745",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 14h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.152950",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10058€ (+0.58%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.146907",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.140910",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.133908",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10057.77,
-          "perf": 0.58
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T13:01:02.118222",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Agressif: Achat 36x SOXL @ 51.14",
-      "data": {
-        "profil": "agressif",
-        "ticker": "SOXL",
-        "prix": 51.14,
-        "montant": 1841.04,
-        "raison": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:01:01.335672",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: acheter SOXL",
-      "data": {
-        "profil": "agressif",
-        "action": "acheter",
-        "ticker": "SOXL",
-        "nom": "Direxion Daily Semiconductor Bull 3X Shares",
-        "allocation_pct": 25,
-        "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
-        "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
-        "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 7,
-        "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:44.736253",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Modéré: Achat 47x EWG @ 38.20",
-      "data": {
-        "profil": "modere",
-        "ticker": "EWG",
-        "prix": 38.2,
-        "montant": 1795.4,
-        "raison": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:43.853081",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: acheter EWG",
-      "data": {
-        "profil": "modere",
-        "action": "acheter",
-        "ticker": "EWG",
-        "nom": "iShares MSCI Germany ETF",
-        "allocation_pct": 18,
-        "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
-        "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
-        "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
-        "horizon": "moyen terme (semaines)",
-        "niveau_conviction": 7,
-        "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:31.154623",
-      "agent": "Agent Investissement",
-      "type": "achat",
-      "message": "Robot Prudent: Achat 14x EXH7.DE @ 88.26",
-      "data": {
-        "profil": "prudent",
-        "ticker": "EXH7.DE",
-        "prix": 88.26,
-        "montant": 1235.64,
-        "raison": "Obligations souveraines euro: refuge sûr en période de turbulences."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:30.240345",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: acheter EXH7.DE",
-      "data": {
-        "profil": "prudent",
-        "action": "acheter",
-        "ticker": "EXH7.DE",
-        "nom": "iShares Euro Government Bond 7-10yr UCITS ETF",
-        "allocation_pct": 13,
-        "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
-        "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
-        "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
-        "horizon": "long terme (mois)",
-        "niveau_conviction": 7,
-        "risques": "Une reprise surprise de l'inflation en zone euro forcerait la BCE à interrompre son cycle baissier, pesant sur les prix obligataires. Une désescalade géopolitique rapide pourrait aussi provoquer une rotation vers les actions au détriment des obligations."
-      }
-    },
-    {
-      "ts": "2026-03-23T13:00:09.676272",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 13h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:48.740344",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.081034",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:46.078561",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:43.663811",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:43.659806",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.039433",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.037433",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:06.031223",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:06.027710",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.896701",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.893701",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:10",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:10:05.612699",
-      "agent": "Agent Twitter",
       "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
+      "message": "Prix live : No module named 'update_prices'",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:10:05.519691",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
-      "data": {
-        "date": "2026-03-23 12:09",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 30,
-            "problemes": 7
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "already_done"
-              },
-              {
-                "page": "investissement.html",
-                "status": "already_done"
-              },
-              {
-                "page": "newsletter.html",
-                "status": "already_done"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 0,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.498692",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
-      }
-    },
-    {
-      "ts": "2026-03-23T12:10:05.487693",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-23T12:09:20.985922",
-      "agent": "Agent DA Site",
+      "ts": "2026-03-24T12:25:45.720371",
+      "agent": "Orchestrateur",
       "type": "start",
-      "message": "Mission DA complète démarrée",
+      "message": "Lancement : 📊 Prix Live — 12h30",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:09:20.689741",
+      "ts": "2026-03-24T12:25:36.254976",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 0 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:32.900415",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:31.726312",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:31.698999",
+      "agent": "AlertDetector",
+      "type": "error",
+      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simple/price?ids=bitcoin&vs_currency=usd&include_24hr_change=true (Caused by NameResolutionError(\"HTTPSC",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:47.985009",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:43.968660",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:41.953887",
+      "agent": "AlertDetector",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/simp. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:19:41.928431",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 11h15",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:25.083195",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:20.811086",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 11h",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:16.245247",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T11:00:16.230652",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 11h",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:40:08.523400",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:40:03.127472",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h45",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:28.381793",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:23.254105",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h30",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:18.427888",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10155€ (+1.55%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:18.420828",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:18.411518",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10021€ (+0.21%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:26:18.403104",
       "agent": "Agent Investissement",
       "type": "success",
       "message": "Cycle robot trader complété",
       "data": {
         "prudent": {
-          "capital": 10000,
-          "perf": 0.0
+          "capital": 10021.12,
+          "perf": 0.21
         },
         "modere": {
-          "capital": 10000,
-          "perf": 0.0
+          "capital": 10052.64,
+          "perf": 0.53
         },
         "agressif": {
-          "capital": 10049.14,
-          "perf": 0.49
+          "capital": 10155.21,
+          "perf": 1.55
         }
       }
     },
     {
-      "ts": "2026-03-23T12:09:20.674228",
+      "ts": "2026-03-24T10:26:18.374281",
       "agent": "Agent Investissement",
       "type": "decision_ia",
       "message": "Robot Agressif: attendre None",
@@ -583,16 +222,16 @@
         "ticker": null,
         "nom": null,
         "allocation_pct": 0,
-        "raison_courte": "VIX à 30, marchés en capitulation — cash est une arme",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une capitulation de marché en cours — ce n'est pas le moment d'ajouter du risque. Le DAX perd -7.70% sur 5 jours, signe d'une détérioration macroéconomique sérieuse en Europe, probablement liée à des tensions commerciales et à la faiblesse de la demande industrielle allemande. L'or qui chute de -6.64% en une seule journée est un signal exceptionnel et contre-intuitif : cela suggère des appels de marge massifs forçant des liquidations d'actifs refuges — exactement comme en mars 2020 ou septembre 2022. Dans ce contexte de deleveraging systémique, même les actifs solides se vendent. Notre position BTC-USD est en territoire positif (+1.96%) et Bitcoin tient bien (+2.99% aujourd'hui), ce qui confirme l'analyse d'achat. Avec 74.6% de cash disponible, nous sommes bien positionnés pour frapper quand la poussière retombera.",
-        "catalyseur": "Chute de l'or de -6.64% en 1 jour = appels de marge systémiques, deleveraging forcé sur tous les actifs",
+        "raison_courte": "Positions levier déjà en place, VIX élevé impose la discipline",
+        "raison_complete": "Le portefeuille est déjà chargé avec 3 positions à fort levier — BTC, SOXL (3x semi), et TQQQ (3x Nasdaq) — couvrant une exposition synthétique massive. Le VIX à 26.97 (+7.49% sur 5 jours) signale que la volatilité reste structurellement élevée : ajouter une 4e position dans cet environnement serait imprudent sans confirmation du rebond. Le S&P 500 rebondit de +1.15% aujourd'hui mais affiche -2.01% sur 5 jours, signe que le marché hésite entre relief rally et rechute. Les indices européens (CAC -3.33%, DAX -4.44% sur 5j) confirment un stress macro persistant, potentiellement lié à des tensions géopolitiques et à la résistance de l'inflation en zone euro. Le pétrole WTI à 91.01$ (+3.27% aujourd'hui) est une donnée inquiétante pour les marges tech si le mouvement se confirme. Avec 4,276€ de cash disponible, mieux vaut garder cette poudre sèche pour renforcer sur une correction ou initier une position de conviction sur cassure technique claire.",
+        "catalyseur": "VIX à 26.97 + pétrole WTI en hausse violente (+3.27%) = environnement trop instable pour surcharger le portefeuille",
         "horizon": "court terme (jours)",
         "niveau_conviction": 8,
-        "risques": "Le rebond peut venir brutalement et nous laisser à quai — surveiller un VIX qui repasserait sous 25 et une stabilisation de l'or comme signaux d'entrée."
+        "risques": "Le risque principal est de rater un rally prolongé si le rebond du Nasdaq se transforme en tendance. Toutefois, les positions TQQQ et SOXL déjà ouvertes capturent ce scénario haussier avec levier 3x."
       }
     },
     {
-      "ts": "2026-03-23T12:09:07.321244",
+      "ts": "2026-03-24T10:26:03.461399",
       "agent": "Agent Investissement",
       "type": "decision_ia",
       "message": "Robot Modéré: attendre None",
@@ -602,16 +241,16 @@
         "ticker": null,
         "nom": null,
         "allocation_pct": 0,
-        "raison_courte": "Marché sous pression, VIX à 30 — cash est une position.",
-        "raison_complete": "Le contexte actuel impose une prudence maximale avant tout déploiement de capital. Le VIX a bondi de +34.51% sur 5 jours pour atteindre 30.09, signalant une volatilité institutionnelle élevée qui historiquement précède des mouvements violents dans les deux sens. Le S&P 500 cède -2.88% sur 5 jours et le DAX chute de -7.70% — une divergence transatlantique qui suggère une pression vendeuse systémique plutôt qu'un simple ajustement sectoriel. L'or, valeur refuge par excellence, plonge de -6.64% en une seule séance : cela évoque une liquidation forcée de positions (margin calls) plutôt qu'un regain d'appétit pour le risque. Le pétrole WTI à 98.65 USD (+0.34%) avec l'EUR/USD à 1.16 signale des tensions géopolitiques persistantes et une inflation importée potentielle en zone euro. Dans cet environnement, déployer du capital sans visibilité sur le catalyseur de la baisse serait imprudent — attendre la stabilisation du VIX sous 25 et un rebond technique confirmé est la décision la plus rigoureuse.",
-        "catalyseur": "Liquidation simultanée de l'or (-6.64% en 1j) et effondrement des indices (DAX -7.70% sur 5j) suggèrent une crise de liquidité ou un événement macro majeur non encore pleinement digéré par le marché.",
-        "horizon": null,
-        "niveau_conviction": 9,
-        "risques": "Le risque principal d'attendre est de manquer un rebond violent (short squeeze) si le catalyseur baissier se révèle temporaire. Cependant, protéger le capital en phase d'incertitude extrême prime sur la performance à court terme."
+        "raison_courte": "Marché incertain — consolider les positions existantes avant d'agir",
+        "raison_complete": "Le VIX à 26.97 avec une hausse de +7.49% sur 5 jours signale une anxiété de marché persistante. Le Nasdaq et le S&P 500 rebondissent aujourd'hui (+1.15% / +1.22%) après une semaine difficile (-2% / -2.39%), mais ce rebond technique n'est pas encore confirmé comme un retournement durable. Les marchés européens restent sous pression avec le DAX en repli de -4.44% sur 5 jours, ce qui fragilise notre position EWG malgré son P&L positif actuel. Le pétrole WTI à 91$ et le dollar Index à 99.38 en hausse (+0.43%) créent un environnement mixte : bon pour XLE, mais potentiellement négatif pour les actifs libellés en euros. Nos trois positions (EWG, XLE, GLD) couvrent déjà bien les thèmes macro dominants (énergie, or, Europe), et nous avons 59% de cash disponible — mieux vaut attendre une consolidation du VIX sous 24 avant d'engager du capital supplémentaire.",
+        "catalyseur": "VIX à 26.97 (+7.49% sur 5j) : stress de marché trop élevé pour initier de nouvelles positions sans signal clair",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Un apaisement rapide du VIX et une confirmation du rebond US pourraient faire manquer une entrée optimale. Surveiller les données macro (PCE US, PMI Zone Euro) attendues cette semaine."
       }
     },
     {
-      "ts": "2026-03-23T12:08:53.968238",
+      "ts": "2026-03-24T10:25:49.094614",
       "agent": "Agent Investissement",
       "type": "decision_ia",
       "message": "Robot Prudent: attendre None",
@@ -620,178 +259,232 @@
         "action": "attendre",
         "ticker": null,
         "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Volatilité extrême : patience avant tout déploiement de capital.",
-        "raison_complete": "Le VIX à 30.09 avec une hausse de +34.51% sur 5 jours signale une peur marquée sur les marchés — historiquement, un VIX au-dessus de 30 indique une instabilité structurelle et non un simple repli technique. Le CAC40 cède -5.74% sur la semaine et le DAX -7.70%, suggérant une pression vendeuse significative en Europe, potentiellement liée à des tensions géopolitiques ou à un resserrement des conditions financières. L'or, valeur refuge par excellence, chute de -6.64% sur une seule journée — un mouvement aberrant qui peut indiquer des appels de marge massifs forçant des liquidations tous azimuts, un signal classique de stress systémique. Le pétrole WTI à 98.65 USD avec une légère hausse (+0.34%) complique le tableau : des prix élevés alimentent l'inflation et réduisent la marge de manœuvre des banques centrales pour baisser les taux, pénalisant les obligations et les blue chips à valorisation élevée. Dans ce contexte, déployer du capital serait prématuré pour un profil prudent. La règle d'or : ne jamais attraper un couteau qui tombe.",
-        "catalyseur": "VIX +34% sur 5 jours + chute simultanée de l'or (-6.64% en 1j) = signal de stress systémique, probables liquidations forcées sur l'ensemble des classes d'actifs.",
+        "allocation_pct": null,
+        "raison_courte": "Portefeuille obligataire bien positionné, patience requise en volatilité élevée",
+        "raison_complete": "Le VIX à 26.97 (+7.49% sur 5 jours) signale une nervosité persistante des marchés — ce n'est pas le moment d'augmenter l'exposition. Les marchés européens souffrent (CAC -3.33%, DAX -4.44% sur 5 jours), confirmant des vents contraires structurels. Le portefeuille actuel est défensivement bien construit : deux lignes obligataires (VGOV.L sur gilts UK, IUSV.DE sur T-Bonds US 20+) offrent un bouclier crédible, et EXH7.DE affiche déjà +1.51%. Le pétrole WTI à 91$/baril (+3.27% en 1j) introduit un risque inflationniste qui pèse sur les obligations à long terme — une dégradation des prix obligataires est à surveiller. Avec 67% du capital en cash (6 711€), nous avons la capacité d'agir mais aucune opportunité asymétrique clairement identifiable aujourd'hui ne justifie un déploiement supplémentaire dans ce contexte.",
+        "catalyseur": "VIX en hausse à 27 et pétrole WTI à 91$ créent une incertitude macro qui commande l'attentisme",
         "horizon": "court terme (jours)",
-        "niveau_conviction": 9,
-        "risques": "Le risque de rester en cash est de manquer un rebond technique violent si les conditions se normalisent rapidement. Cependant, pour un profil sécurisé, la préservation du capital prime sur la performance à court terme."
+        "niveau_conviction": 8,
+        "risques": "Une détente soudaine du VIX pourrait signaler une opportunité manquée sur les blue chips. La hausse du pétrole pourrait alimenter l'inflation et déprimer les positions obligataires longues existantes."
       }
     },
     {
-      "ts": "2026-03-23T12:08:34.257403",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:32.456829",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (1s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:08:30.840675",
-      "agent": "Agent Growth",
+      "ts": "2026-03-24T10:25:28.813278",
+      "agent": "Orchestrateur",
       "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
+      "message": "Lancement : 🤖 Robot Trader — Matinée EU",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:08:30.833673",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:08:30.825675",
-      "agent": "Agent Rédacteur",
+      "ts": "2026-03-24T10:10:24.168800",
+      "agent": "Orchestrateur",
       "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.7
-      }
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
     },
     {
-      "ts": "2026-03-23T12:08:30.817677",
-      "agent": "Agent Rédacteur",
+      "ts": "2026-03-24T10:10:18.719208",
+      "agent": "Orchestrateur",
       "type": "start",
-      "message": "Génération de la newsletter en cours...",
+      "message": "Lancement : 🔍 Scan Alertes — 10h15",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:05:31.490365",
-      "agent": "Directeur Adjoint",
-      "type": "success",
-      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.375963",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:29.373961",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
-      "data": {
-        "ok": 1,
-        "errors": 2
-      }
-    },
-    {
-      "ts": "2026-03-23T12:05:27.065817",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Exécution de 6 action(s) en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:05:27.058816",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Plan d'action généré — 6 action(s)",
-      "data": {
-        "nb_actions": 6
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.901750",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Analyse du projet avec Claude IA en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.898748",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "1 agent(s) en retard sur leurs objectifs",
-      "data": {
-        "agents": [
-          "Agent CFO 💰"
-        ]
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:54.889754",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.885750",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 14 agents | 1 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.761747",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.759748",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 23/03/2026 à 12:04",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:54.503181",
-      "agent": "Agent Twitter",
+      "ts": "2026-03-24T10:10:13.945464",
+      "agent": "Orchestrateur",
       "type": "error",
-      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
+      "message": "Prix live : No module named 'update_prices'",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:04:53.963560",
-      "agent": "Agent DA Site",
+      "ts": "2026-03-24T10:10:13.922460",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 10h15",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:00:08.994616",
+      "agent": "Orchestrateur",
       "type": "success",
-      "message": "Mission DA terminée (0 pages améliorées)",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T10:00:03.693589",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 10h",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:28.865400",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:23.597339",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 9h45",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:18.796157",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:18.783180",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 9h45",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.833352",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10159€ (+1.59%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.822359",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.813348",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10028€ (+0.28%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:41:13.804364",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
       "data": {
-        "date": "2026-03-23 12:04",
+        "prudent": {
+          "capital": 10027.59,
+          "perf": 0.28
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10159.24,
+          "perf": 1.59
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T09:41:13.772346",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Agressif: Achat 31x TQQQ @ 44.57",
+      "data": {
+        "profil": "agressif",
+        "ticker": "TQQQ",
+        "prix": 44.57,
+        "montant": 1381.67,
+        "raison": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:41:12.873672",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: acheter TQQQ",
+      "data": {
+        "profil": "agressif",
+        "action": "acheter",
+        "ticker": "TQQQ",
+        "nom": "ProShares UltraPro QQQ (3x Nasdaq 100)",
+        "allocation_pct": 25,
+        "raison_courte": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech.",
+        "raison_complete": "Le Nasdaq 100 rebondit de +1.22% aujourd'hui après une correction de -2.39% sur 5 jours, signalant un retour d'acheteurs sur les niveaux de support. Le VIX reste élevé à 26.38 mais stagne, et la rotation haussière sur les indices US (S&P 500 +1.15%) suggère une journée de 'risk-on' convaincante. Le Dollar Index remonte légèrement à 99.30 sans peser sur les technos pour l'instant. Le contexte macro reste porteur pour la tech : les anticipations de baisses de taux Fed en 2026 maintiennent la demande sur les valeurs de croissance. TQQQ amplifiera par 3x tout mouvement journalier positif du NDX, offrant un rendement asymétrique si le rebond se confirme en séance. Niveau technique clé : le NDX à 24 188 cherche à reconquérir sa MM20 jours, ce qui peut déclencher des achats algorithmiques supplémentaires.",
+        "catalyseur": "Rebond technique du Nasdaq 100 après -2.39% sur 5j, VIX se stabilisant à 26.38 sans nouveau pic",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "VIX toujours élevé à 26.38 avec une hausse sur 5j de +5.14% — un regain de stress géopolitique ou une surprise macro négative pourrait retourner le rebond violemment contre TQQQ. La corrélation avec SOXL déjà en portefeuille crée un risque de concentration sur la tech."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:58.183075",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: attendre None",
+      "data": {
+        "profil": "modere",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "Portefeuille bien positionné, patience avant nouveau déploiement.",
+        "raison_complete": "Le portefeuille est déjà exposé aux trois thèmes porteurs du moment : énergie via XLE (pétrole WTI à 90$, +2.61% aujourd'hui), or via GLD (4395$ l'once, protection contre l'incertitude macro), et Europe via EWG (+2.93% de P&L, DAX en consolidation après une semaine difficile -3.95%). Le VIX à 26.38 (+5.14% sur 5 jours) signale une nervosité persistante des marchés — ce n'est pas le moment idéal pour déployer du capital supplémentaire de manière agressive. Les marchés US rebondissent aujourd'hui (+1.15% S&P, +1.22% Nasdaq), mais ce rebond d'une journée sur fond de baisse hebdomadaire de -2% pourrait être un simple short-covering technique plutôt qu'une reprise structurelle. Le cash disponible de 5965€ représente près de 60% du portefeuille — une réserve précieuse à conserver pour saisir des opportunités lors d'une prochaine correction ou d'un catalyseur clair. Surveiller notamment les publications macro US de la semaine (données emploi, PCE) et toute annonce sur les tarifs douaniers.",
+        "catalyseur": "VIX élevé à 26 + rebond technique US non confirmé : attendre signal directionnel plus clair avant nouveau déploiement.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Le risque principal est de rater un rally de continuation si le rebond d'aujourd'hui se transforme en vrai retournement haussier. Cependant, avec 3 positions bien diversifiées déjà ouvertes et un VIX au-dessus de 25, la prudence reste la meilleure stratégie."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:42.562405",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: attendre None",
+      "data": {
+        "profil": "prudent",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": null,
+        "raison_courte": "VIX à 26 et marchés sous pression — patience avant tout déploiement",
+        "raison_complete": "Le VIX à 26.38 (+5.14% sur 5 jours) signale une nervosité persistante des marchés, incompatible avec un déploiement agressif du capital disponible. Les indices européens souffrent davantage que les marchés US : le DAX cède -3.95% sur 5 jours et le CAC -2.94%, ce qui suggère une pression spécifique sur la zone euro (incertitudes géopolitiques, interrogations sur la croissance). Le portefeuille est déjà bien positionné défensivement avec deux ETF obligataires (VGOV.L, IUSV.DE) et un ETF secteur biens de consommation stable (EXH7.DE, +1.97%). Le cash disponible de 6 711€ représente ~67% du capital — une réserve précieuse à ne pas brûler dans un marché encore instable. L'or à 4 395 USD reste à des niveaux historiquement élevés, réduisant l'attrait d'un achat à ce stade. La remontée du pétrole WTI à 90.43 USD (+2.61%) pourrait raviver des pressions inflationnistes, ce qui pèserait sur la valorisation des obligations détenues — à surveiller.",
+        "catalyseur": "VIX en hausse de +5.14% sur 5 jours : signal d'alerte justifiant la préservation du cash",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Rater un point d'entrée favorable si les marchés rebondissent brusquement. Une normalisation rapide du VIX sous 20 serait le signal pour redéployer le capital sur des blue chips ou ETF dividendes."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:40:22.591175",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : Investissement IA 📈 — Mise à jour portefeuille",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:26:17.954177",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "DA Site : 0 insight(s) géopolitiques générés",
+      "data": {
+        "date": "2026-03-24 09:25",
         "etapes": {
           "audit": {
             "ok": true,
-            "score": 30,
-            "problemes": 7
+            "score": 40,
+            "problemes": 6
           },
           "navigation": {
             "ok": true,
-            "pages_mises_a_jour": 2
+            "pages_mises_a_jour": 4
           },
           "insights": {
             "ok": true,
             "count": 5,
-            "injected_in_index": true,
-            "html_path": "outputs\\section_da_2026-03-23.html"
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-24.html"
           },
           "visuels": {
             "ok": true,
@@ -817,17 +510,63 @@
       }
     },
     {
-      "ts": "2026-03-23T12:04:53.940835",
+      "ts": "2026-03-24T09:26:17.946747",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (0 pages améliorées)",
+      "data": {
+        "date": "2026-03-24 09:25",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 40,
+            "problemes": 6
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 4
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-24.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "already_done"
+              },
+              {
+                "page": "investissement.html",
+                "status": "already_done"
+              },
+              {
+                "page": "newsletter.html",
+                "status": "already_done"
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 0,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T09:26:17.928312",
       "agent": "Agent DA Site",
       "type": "success",
       "message": "Contenu sauvegardé",
       "data": {
         "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-23.html"
+        "html_file": "outputs\\section_da_2026-03-24.html"
       }
     },
     {
-      "ts": "2026-03-23T12:04:53.931914",
+      "ts": "2026-03-24T09:26:17.915064",
       "agent": "Agent DA Site",
       "type": "success",
       "message": "Générés 5 insights géopolitiques",
@@ -836,261 +575,584 @@
       }
     },
     {
-      "ts": "2026-03-23T12:04:12.292933",
+      "ts": "2026-03-24T09:25:34.604863",
       "agent": "Agent DA Site",
       "type": "start",
       "message": "Mission DA complète démarrée",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:04:12.041226",
-      "agent": "Robot Trader",
+      "ts": "2026-03-24T09:25:23.182209",
+      "agent": "Orchestrateur",
       "type": "start",
-      "message": "Initialisation 2026-03-23 12:04:12",
+      "message": "Lancement : DA Site 🎨 — Insights Géopolitiques",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:04:12.013332",
+      "ts": "2026-03-24T09:10:15.130867",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:10:09.169782",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 9h15",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:10:03.514223",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Prix live : No module named 'update_prices'",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:10:03.503092",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 📊 Prix Live — 9h15",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.186934",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Agressif: 10167€ (+1.67%) | 2 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.183937",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Modéré: 10053€ (+0.53%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.178939",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🤖 Robot Prudent: 10018€ (+0.18%) | 3 positions",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:00:59.173936",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10018.2,
+          "perf": 0.18
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10166.89,
+          "perf": 1.67
+        }
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:59.154066",
+      "agent": "Agent Investissement",
+      "type": "vente",
+      "message": "Robot Agressif: Vente UVXY @ 49.88 | P&L: +0.00€",
+      "data": {
+        "profil": "agressif",
+        "ticker": "UVXY",
+        "pl_euros": 0.0,
+        "pl_pct": 0.0
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:58.712055",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: vendre UVXY",
+      "data": {
+        "profil": "agressif",
+        "action": "vendre",
+        "ticker": "UVXY",
+        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
+        "allocation_pct": 0,
+        "raison_courte": "VIX en recul, rebond marché global : UVXY se retourne contre nous.",
+        "raison_complete": "L'achat d'UVXY ce matin à 08:33 reposait sur une tension persistante du VIX. Or, en seulement quelques heures, le contexte a significativement changé : S&P 500 +1.15%, Nasdaq +1.22%, DAX +1.22% — les grands indices rebondissent franchement. Le VIX lui-même marque -0.50% sur la journée à 26.02, signalant une décrue de la peur à très court terme. UVXY est un produit 2x levier sur les futures VIX à court terme, structurellement perdant en dehors des spikes de volatilité : le contango (futures VIX en déport permanent) le ronge quotidiennement. Avec un P&L à 0.00%, c'est le moment de sortir proprement avant que le déclin du VIX et le contango n'entament le capital. La position a été ouverte il y a moins de 30 minutes — mieux vaut couper net qu'attendre le stop-loss à -12%. Le rebond synchronisé des marchés US et européens suggère un apaisement à court terme des tensions.",
+        "catalyseur": "Rebond synchronisé S&P +1.15% / Nasdaq +1.22% / DAX +1.22% et VIX -0.50% sur la séance : la pression vendeuse se dissipe.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Si un catalyseur macro négatif inattendu (choc géopolitique, données économiques mauvaises) survient en cours de séance, le VIX pourrait repartir à la hausse et UVXY rebondir — mais le risque de rester exposé est asymétriquement défavorable."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:43.807307",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Modéré: Achat 2x GLD @ 404.04",
+      "data": {
+        "profil": "modere",
+        "ticker": "GLD",
+        "prix": 404.04,
+        "montant": 808.08,
+        "raison": "L'or à 4424$ casse des records historiques sur fond de dollar faible."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:43.114246",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: acheter GLD",
+      "data": {
+        "profil": "modere",
+        "action": "acheter",
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares ETF",
+        "allocation_pct": 15,
+        "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible.",
+        "raison_complete": "L'or spot dépasse 4424 USD/oz, un niveau historique inédit, porté par plusieurs facteurs convergents. Le Dollar Index recule sous 99.30, au plus bas depuis plusieurs mois, ce qui rend les métaux précieux mécaniquement plus attractifs pour les investisseurs internationaux. Le VIX reste élevé à 26, signalant une incertitude de marché persistante qui favorise les valeurs refuges. La Fed maintient un discours ambigu sur les baisses de taux en 2026, et les anticipations d'inflation restent supérieures à 2.5%, ce qui soutient structurellement l'or comme hedge. Les achats des banques centrales (Chine, Inde, Pologne) restent massifs depuis 2024, réduisant l'offre disponible. GLD est la façon la plus liquide et efficiente d'accéder à cette dynamique sans risque de contrepartie sur les futures.",
+        "catalyseur": "Dollar Index sous 99.30 + or spot à 4424$ record absolu + VIX élevé = triple signal d'entrée refuge",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 8,
+        "risques": "Un rebond fort du dollar (données emploi US surprenantes ou hawkishness Fed) pourrait corriger l'or rapidement. Prise de profit technique possible après une hausse aussi verticale."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:30.275240",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Prudent: Achat 323x IUSV.DE @ 2.83",
+      "data": {
+        "profil": "prudent",
+        "ticker": "IUSV.DE",
+        "prix": 2.83,
+        "montant": 914.09,
+        "raison": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:29.550576",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: acheter IUSV.DE",
+      "data": {
+        "profil": "prudent",
+        "action": "acheter",
+        "ticker": "IUSV.DE",
+        "nom": "iShares Edge MSCI Europe Value Factor UCITS ETF",
+        "allocation_pct": 12,
+        "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
+        "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
+        "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
+        "horizon": "long terme (mois)",
+        "niveau_conviction": 7,
+        "risques": "Un apaisement des tensions géopolitiques pourrait provoquer un retour des capitaux vers les valeurs de croissance américaines, pénalisant temporairement la value européenne. La hausse du pétrole WTI à 90.43 USD (+2.61%) pourrait peser sur les marges des entreprises industrielles européennes."
+      }
+    },
+    {
+      "ts": "2026-03-24T09:00:07.558506",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🤖 Robot Trader — Ouverture Europe",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:48:50.190966",
+      "agent": "Sync Abonnés",
+      "type": "success",
+      "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:45:07.468702",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Email quotidien CEO envoyé (1 destinataires)",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:45:07.458703",
       "agent": "Agent Growth",
       "type": "success",
       "message": "Notification quotidienne → 1 abonnés",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:04:08.086065",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 1 succès, 0 erreurs (2s)",
-      "data": {
-        "envoyes": 1,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-23T12:04:05.942997",
-      "agent": "Agent Growth",
+      "ts": "2026-03-24T08:45:05.217993",
+      "agent": "Orchestrateur",
       "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
+      "message": "Lancement : Email Quotidien CEO 📧",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:04:05.934700",
-      "agent": "Agent Rédacteur",
+      "ts": "2026-03-24T08:40:05.176732",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:40:01.494395",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 8h45",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:53.630630",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:52.000342",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:51.998341",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "Exécution terminée — 1 succès, 2 erreur(s)",
+      "data": {
+        "ok": 1,
+        "errors": 2
+      }
+    },
+    {
+      "ts": "2026-03-24T08:35:49.926180",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:49.915185",
+      "agent": "Directeur Adjoint",
       "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:04:05.928318",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-23.html",
+      "message": "Plan d'action généré — 6 action(s)",
       "data": {
-        "fichier": "alphabot_newsletter_2026-03-23.html",
-        "taille_kb": 60.1
+        "nb_actions": 6
       }
     },
     {
-      "ts": "2026-03-23T12:04:05.920154",
-      "agent": "Agent Rédacteur",
+      "ts": "2026-03-24T08:35:13.525074",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.523075",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-24T08:35:13.519075",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.517076",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 14 agents | 1 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.355093",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T08:35:13.352092",
+      "agent": "Directeur Adjoint",
       "type": "start",
-      "message": "Génération de la newsletter en cours...",
+      "message": "Cycle quotidien démarré — 24/03/2026 à 08:35",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:02:18.884374",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:02:18.853294",
-      "agent": "Agent Veille",
+      "ts": "2026-03-24T08:35:13.129751",
+      "agent": "Agent Twitter",
       "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit=2 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbid",
+      "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:02:10.805272",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 8s...",
+      "ts": "2026-03-24T08:35:12.687695",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (3 pages améliorées)",
+      "data": {
+        "date": "2026-03-24 08:33",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 40,
+            "problemes": 6
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 4
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": true,
+            "html_path": "outputs\\section_da_2026-03-24.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 21
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 25
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 29
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:59.538408",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-24.html"
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:59.524058",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T08:33:23.810272",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
       "data": {}
     },
     {
-      "ts": "2026-03-23T12:02:06.771669",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 4s...",
-      "data": {}
+      "ts": "2026-03-24T08:33:23.563260",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10018.2,
+          "perf": 0.18
+        },
+        "modere": {
+          "capital": 10052.64,
+          "perf": 0.53
+        },
+        "agressif": {
+          "capital": 10154.52,
+          "perf": 1.55
+        }
+      }
     },
     {
-      "ts": "2026-03-23T12:02:04.744931",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.alternative.me', port=443): Max retries exceeded with url: /fng/?limit. Retry dans 2s...",
-      "data": {}
+      "ts": "2026-03-24T08:33:23.549169",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Agressif: Achat 22x UVXY @ 49.88",
+      "data": {
+        "profil": "agressif",
+        "ticker": "UVXY",
+        "prix": 49.88,
+        "montant": 1097.36,
+        "raison": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte."
+      }
     },
     {
-      "ts": "2026-03-23T12:02:04.594807",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
+      "ts": "2026-03-24T08:33:22.799032",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: acheter UVXY",
+      "data": {
+        "profil": "agressif",
+        "action": "acheter",
+        "ticker": "UVXY",
+        "nom": "ProShares Ultra VIX Short-Term Futures ETF",
+        "allocation_pct": 20,
+        "raison_courte": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte.",
+        "raison_complete": "Le VIX affiche +3.15% sur 5 jours malgré le rebond d'aujourd'hui (+1.15% S&P), signalant que le marché reste structurellement nerveux. Le DAX perd -4.54% sur 5 jours et le Nasdaq -2.39% : la correction de fond n'est pas terminée, le rebond du jour ressemble à un dead cat bounce. Le pétrole WTI bondit à 90.37$ (+2.54%), alimentant les craintes d'inflation persistante et compliquant la position de la Fed. Le Dollar Index à 99.16 reste sous pression, mais l'EUR/USD à 1.16 indique une fuite vers l'euro qui peut vite s'inverser si le risk-off reprend. Dans ce contexte, UVXY (2x levier sur les futures VIX court terme) offre un trade asymétrique : si le marché rechute cette semaine, le VIX peut exploser vers 30-35, générant +30 à +60% sur UVXY. C'est une couverture offensive sur nos deux positions longues existantes (BTC, SOXL).",
+        "catalyseur": "Rebond de surface sur marchés toujours sous stress structurel : pétrole à 90$, VIX en hausse sur 5j, correction Europe non terminée.",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 7,
+        "risques": "Si le rebond du jour se confirme et s'accélère, le VIX peut refluer vers 22-23, infligeant une perte rapide sur UVXY (contango et décroissance temporelle pénalisent fortement cet ETF à moyen terme). À utiliser exclusivement en trade court terme."
+      }
     },
     {
-      "ts": "2026-03-23T12:02:04.568447",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/search/trending (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 4",
-      "data": {}
+      "ts": "2026-03-24T08:33:08.254456",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Modéré: Achat 24x XLE @ 59.63",
+      "data": {
+        "profil": "modere",
+        "ticker": "XLE",
+        "prix": 59.63,
+        "montant": 1431.12,
+        "raison": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
+      }
     },
     {
-      "ts": "2026-03-23T12:01:56.524402",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 8s...",
-      "data": {}
+      "ts": "2026-03-24T08:33:07.490809",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: acheter XLE",
+      "data": {
+        "profil": "modere",
+        "action": "acheter",
+        "ticker": "XLE",
+        "nom": "Energy Select Sector SPDR Fund",
+        "allocation_pct": 18,
+        "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques.",
+        "raison_complete": "Le WTI affiche +2.54% sur la séance et consolide au-dessus de 90$/baril, un niveau psychologique clé non vu depuis plusieurs mois. Ce rebours est soutenu par plusieurs facteurs simultanés : tensions géopolitiques persistantes au Moyen-Orient, discipline de production maintenue par l'OPEP+ avec des coupes reconduites, et une demande asiatique (Chine, Inde) qui reprend de la vigueur au T1 2026. Le Dollar Index, bien qu'en légère hausse à 99.16, reste historiquement bas ce qui soutient le prix nominal des matières premières. XLE est l'ETF sectoriel le plus liquide sur l'énergie US et regroupe ExxonMobil, Chevron, ConocoPhillips — des entreprises avec des free cash flows records à ces niveaux de prix. Le VIX à 25.88 indique une nervosité du marché qui favorise traditionnellement la rotation vers les secteurs défensifs/value comme l'énergie, perçus comme des couvertures contre l'inflation et les chocs géopolitiques. La corrélation entre XLE et le WTI est très forte (>0.85), offrant une exposition directe à la hausse du brut sans risque spécifique d'une seule entreprise.",
+        "catalyseur": "WTI au-dessus de 90$/baril (+2.54% sur la séance) avec maintien des coupes OPEP+ et tensions géopolitiques persistantes",
+        "horizon": "moyen terme (semaines)",
+        "niveau_conviction": 7,
+        "risques": "Un retournement brutal du pétrole en cas de désescalade géopolitique soudaine ou d'annonce surprise de production OPEP+ pourrait peser sur XLE. La remontée du Dollar Index est aussi un facteur adverse à surveiller car un dollar fort comprime les prix des matières premières."
+      }
     },
     {
-      "ts": "2026-03-23T12:01:52.481680",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.444789",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/sear. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.395058",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:50.364644",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/posts/?auth_token=free&public=true&kind=news&filter=hot&currencies=BTC (Caused by ProxyError('Unable ",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T12:01:42.305569",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 8s...",
-      "data": {}
+      "ts": "2026-03-24T08:32:52.914176",
+      "agent": "Agent Investissement",
+      "type": "achat",
+      "message": "Robot Prudent: Achat 73x VGOV.L @ 15.60",
+      "data": {
+        "profil": "prudent",
+        "ticker": "VGOV.L",
+        "prix": 15.6,
+        "montant": 1138.8,
+        "raison": "Obligations souveraines comme bouclier face à la volatilité actuelle."
+      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-23T17:00:09.445868",
+        "ts": "2026-03-24T13:00:20.128299",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10130€ (+1.30%) | 2 positions",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-23T17:00:09.445868",
+      "last_ts": "2026-03-24T13:00:20.128299",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10130€ (+1.30%) | 2 positions",
-      "total_today": 27,
-      "errors_today": 0,
-      "successes_today": 18
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 50,
+      "errors_today": 5,
+      "successes_today": 23
+    },
+    {
+      "agent": "AlertDetector",
+      "last_event": {
+        "ts": "2026-03-24T12:25:32.900415",
+        "agent": "AlertDetector",
+        "type": "warning",
+        "message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T12:25:32.900415",
+      "last_type": "warning",
+      "last_message": "Tentative 1/3 échouée: HTTPSConnectionPool(host='cryptopanic.com', port=443): Max retries exceeded with url: /api/free/v1/p. Retry dans 2s...",
+      "total_today": 6,
+      "errors_today": 1,
+      "successes_today": 0
     },
     {
       "agent": "Agent Investissement",
       "last_event": {
-        "ts": "2026-03-23T17:00:09.433869",
+        "ts": "2026-03-24T10:26:18.403104",
         "agent": "Agent Investissement",
         "type": "success",
         "message": "Cycle robot trader complété",
         "data": {
           "prudent": {
-            "capital": 10030.94,
-            "perf": 0.31
+            "capital": 10021.12,
+            "perf": 0.21
           },
           "modere": {
-            "capital": 10045.12,
-            "perf": 0.45
+            "capital": 10052.64,
+            "perf": 0.53
           },
           "agressif": {
-            "capital": 10130.31,
-            "perf": 1.3
+            "capital": 10155.21,
+            "perf": 1.55
           }
         }
       },
-      "last_ts": "2026-03-23T17:00:09.433869",
+      "last_ts": "2026-03-24T10:26:18.403104",
       "last_type": "success",
       "last_message": "Cycle robot trader complété",
-      "total_today": 15,
-      "errors_today": 0,
-      "successes_today": 6
-    },
-    {
-      "agent": "Directeur Adjoint",
-      "last_event": {
-        "ts": "2026-03-23T12:10:48.740344",
-        "agent": "Directeur Adjoint",
-        "type": "success",
-        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:10:48.740344",
-      "last_type": "success",
-      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
       "total_today": 22,
       "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Agent Twitter",
-      "last_event": {
-        "ts": "2026-03-23T12:10:05.612699",
-        "agent": "Agent Twitter",
-        "type": "error",
-        "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:10:05.612699",
-      "last_type": "error",
-      "last_message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
-      "total_today": 2,
-      "errors_today": 2,
-      "successes_today": 0
+      "successes_today": 4
     },
     {
       "agent": "Agent DA Site",
       "last_event": {
-        "ts": "2026-03-23T12:10:05.519691",
+        "ts": "2026-03-24T09:26:17.946747",
         "agent": "Agent DA Site",
         "type": "success",
         "message": "Mission DA terminée (0 pages améliorées)",
         "data": {
-          "date": "2026-03-23 12:09",
+          "date": "2026-03-24 09:25",
           "etapes": {
             "audit": {
               "ok": true,
-              "score": 30,
-              "problemes": 7
+              "score": 40,
+              "problemes": 6
             },
             "navigation": {
               "ok": true,
-              "pages_mises_a_jour": 2
+              "pages_mises_a_jour": 4
             },
             "insights": {
               "ok": true,
               "count": 5,
-              "injected_in_index": true,
-              "html_path": "outputs\\section_da_2026-03-23.html"
+              "injected_in_index": false,
+              "html_path": "outputs\\section_da_2026-03-24.html"
             },
             "visuels": {
               "ok": true,
@@ -1115,7 +1177,7 @@
           "insights_count": 5
         }
       },
-      "last_ts": "2026-03-23T12:10:05.519691",
+      "last_ts": "2026-03-24T09:26:17.946747",
       "last_type": "success",
       "last_message": "Mission DA terminée (0 pages améliorées)",
       "total_today": 8,
@@ -1123,67 +1185,67 @@
       "successes_today": 6
     },
     {
+      "agent": "Sync Abonnés",
+      "last_event": {
+        "ts": "2026-03-24T08:48:50.190966",
+        "agent": "Sync Abonnés",
+        "type": "success",
+        "message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T08:48:50.190966",
+      "last_type": "success",
+      "last_message": "Sync terminée via Gmail/Formspree — 2 abonné(s) actifs. +1 nouveau : emmafischer110204@gmail.com",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
       "agent": "Agent Growth",
       "last_event": {
-        "ts": "2026-03-23T12:08:34.257403",
+        "ts": "2026-03-24T08:45:07.458703",
         "agent": "Agent Growth",
         "type": "success",
         "message": "Notification quotidienne → 1 abonnés",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:08:34.257403",
+      "last_ts": "2026-03-24T08:45:07.458703",
       "last_type": "success",
       "last_message": "Notification quotidienne → 1 abonnés",
-      "total_today": 6,
-      "errors_today": 0,
-      "successes_today": 4
-    },
-    {
-      "agent": "Agent Rédacteur",
-      "last_event": {
-        "ts": "2026-03-23T12:08:30.833673",
-        "agent": "Agent Rédacteur",
-        "type": "info",
-        "message": "Archive newsletters.html mise à jour",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:08:30.833673",
-      "last_type": "info",
-      "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 6,
-      "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Robot Trader",
-      "last_event": {
-        "ts": "2026-03-23T12:04:12.041226",
-        "agent": "Robot Trader",
-        "type": "start",
-        "message": "Initialisation 2026-03-23 12:04:12",
-        "data": {}
-      },
-      "last_ts": "2026-03-23T12:04:12.041226",
-      "last_type": "start",
-      "last_message": "Initialisation 2026-03-23 12:04:12",
       "total_today": 1,
       "errors_today": 0,
-      "successes_today": 0
+      "successes_today": 1
     },
     {
-      "agent": "Agent Veille",
+      "agent": "Directeur Adjoint",
       "last_event": {
-        "ts": "2026-03-23T12:02:18.884374",
-        "agent": "Agent Veille",
-        "type": "warning",
-        "message": "Utilisation de la valeur par défaut après échecs",
+        "ts": "2026-03-24T08:35:53.630630",
+        "agent": "Directeur Adjoint",
+        "type": "success",
+        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
         "data": {}
       },
-      "last_ts": "2026-03-23T12:02:18.884374",
-      "last_type": "warning",
-      "last_message": "Utilisation de la valeur par défaut après échecs",
-      "total_today": 13,
-      "errors_today": 3,
+      "last_ts": "2026-03-24T08:35:53.630630",
+      "last_type": "success",
+      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "total_today": 11,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Agent Twitter",
+      "last_event": {
+        "ts": "2026-03-24T08:35:13.129751",
+        "agent": "Agent Twitter",
+        "type": "error",
+        "message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
+        "data": {}
+      },
+      "last_ts": "2026-03-24T08:35:13.129751",
+      "last_type": "error",
+      "last_message": "❌ Erreur critique : variables d'environnement manquantes : TWITTER_BEARER_TOKEN\n   Ajouter à .env : TWITTER_BEARER_TOKEN",
+      "total_today": 1,
+      "errors_today": 1,
       "successes_today": 0
     }
   ]

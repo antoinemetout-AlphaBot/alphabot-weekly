@@ -56,6 +56,12 @@
       "pts_session": 0,
       "abonnes_avant": 17,
       "abonnes_apres": 17
+    },
+    {
+      "date": "2026-03-24 00:28",
+      "pts_session": 0,
+      "abonnes_avant": 1,
+      "abonnes_apres": 1
     }
   ]
 }

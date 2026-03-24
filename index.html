@@ -3,352 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AlphaBot Weekly — Newsletter IA quotidienne + Robot Trader autonome</title>
-<meta name="description" content="Recevez chaque jour l'essentiel des marchés (bourse, crypto, géopolitique) analysé par l'IA. Accédez au robot trader IA le plus performant. 100% gratuit.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>AlphaBot Weekly — Newsletter IA Bourse & Crypto + 3 Robots Traders</title>
+<meta name="description" content="Chaque semaine, l'IA décrypte la bourse, la crypto et la géopolitique pour vous. 3 robots traders IA investissent 10 000€ chacun sous vos yeux. 100% gratuit.">
+<meta property="og:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
+<meta property="og:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent 30 000€ sous vos yeux. Gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AlphaBot_Weekly">
+<meta name="twitter:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
+<meta name="twitter:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent sous vos yeux.">
+<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#04091a;
-  --bg2:#060d1f;
-  --bg3:#0d1425;
-  --cyan:#22d3ee;
-  --gold:#f5c842;
-  --text:#e2e8f0;
-  --muted:#64748b;
-  --border:rgba(255,255,255,.08);
-  --border-light:rgba(255,255,255,.04);
+  --bg:#04091a;--bg2:#060d1f;--cyan:#22d3ee;--gold:#f5c842;
+  --blue:#3b82f6;--green:#22c55e;--red:#ef4444;
+  --text:#e2e8f0;--muted:#64748b;--border:rgba(255,255,255,.08);
   --transition:cubic-bezier(.4,0,.2,1);
 }
-
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
-
-/* BACKGROUND */
-.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
-.bg-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(34,211,238,.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,200,66,.06) 0%, transparent 50%);animation:drift 20s ease-in-out infinite;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.65;}
 
 /* SCROLLBAR */
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:3px;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:10px;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.85);backdrop-filter:blur(32px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+/* BG */
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);}
+.orb1{width:800px;height:800px;background:radial-gradient(circle,rgba(34,211,238,.1),transparent 65%);top:-300px;left:-200px;animation:orbf 10s ease-in-out infinite alternate;}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(245,200,66,.07),transparent 65%);bottom:-200px;right:-100px;animation:orbf 12s ease-in-out infinite alternate-reverse;}
+.orb3{width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.06),transparent 65%);top:50%;left:60%;animation:orbf 8s ease-in-out infinite alternate;}
+@keyframes orbf{from{transform:translate(0,0)scale(1);}to{transform:translate(30px,25px)scale(1.06);}}
+.scan{position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:scanline 8s ease-in-out infinite;opacity:.3;}
+@keyframes scanline{0%{top:0;opacity:0;}5%{opacity:.35;}95%{opacity:.35;}100%{top:100%;opacity:0;}}
 
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;text-decoration:none;letter-spacing:-.5px;transition:.3s;}
-.nav-brand:hover{color:var(--cyan);}
-.nav-brand-sub{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.3px;}
-
-.nav-center{display:flex;gap:32px;align-items:center;}
-.nav-center a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s var(--transition);}
-.nav-center a:hover{color:white;}
+/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
+.nav-center{display:flex;gap:28px;align-items:center;}
+.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
+.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
+.nav-center a:hover{color:#fff;}
 .nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:var(--cyan);}
+.nav-center a.active{color:#22d3ee;}
 .nav-center a.active::after{width:100%;}
-
-.nav-cta{background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white!important;padding:9px 20px;border-radius:10px;font-weight:600;font-size:13px;text-decoration:none;border:none;cursor:pointer;transition:all .3s var(--transition);}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.3);}
-
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
-.nav-hamburger span{width:20px;height:2px;background:var(--muted);transition:.3s;}
+.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+.nav-cta::after{display:none!important;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 80px;position:relative;z-index:1;text-align:center;}
-.hero-inner{max-width:900px;}
-
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:50px;padding:7px 18px;font-size:11px;font-weight:700;color:#22c55e;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;animation:fadeInDown .8s var(--transition);}
-.hero-tag::before{content:'';width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.2);}}
-
-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,5.5vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.8px;margin-bottom:24px;animation:fadeInDown .9s .15s var(--transition) both;}
-.h1-line1{color:white;margin-bottom:8px;}
-.h1-line2{background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-
-.hero-sub{font-size:clamp(15px,1.8vw,18px);color:var(--muted);line-height:1.7;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto;animation:fadeInDown .9s .25s var(--transition) both;}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 60px;position:relative;z-index:1;text-align:center;}
+.hero-inner{max-width:920px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.22);border-radius:50px;padding:8px 20px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;animation:fadeDown .8s var(--transition);}
+.hero-tag .live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5.5vw,62px);font-weight:800;line-height:1.06;letter-spacing:-1.5px;margin-bottom:24px;animation:fadeDown .9s .1s var(--transition) both;}
+.h1-white{color:white;}
+.h1-gradient{background:linear-gradient(135deg,var(--gold) 0%,#fbbf24 40%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(245,200,66,.2));}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:#94a3b8;line-height:1.75;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;animation:fadeDown .9s .2s var(--transition) both;}
 .hero-sub strong{color:white;}
 
-/* TICKER BAR */
-.ticker-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px;animation:fadeInUp .8s .35s var(--transition) both;overflow-x:auto;padding-bottom:8px;}
-.ticker-bar::-webkit-scrollbar{height:3px;}
-.ticker-bar::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px;}
-
-.tick{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:12px 16px;flex-shrink:0;transition:all .3s var(--transition);cursor:default;}
-.tick:hover{background:rgba(34,211,238,.08);border-color:rgba(34,211,238,.2);transform:translateY(-2px);}
-
-.tick-name{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.tick-val{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:white;}
-.tick-ch{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;}
-.tick-ch.up{color:#22c55e;}
-.tick-ch.down{color:#ef4444;}
+/* HERO STATS */
+.hero-stats{display:flex;justify-content:center;gap:32px;margin-bottom:36px;animation:fadeUp .8s .3s var(--transition) both;}
+.hero-stat{text-align:center;}
+.hero-stat-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;}
+.hero-stat-val.cyan{color:var(--cyan);}
+.hero-stat-val.gold{color:var(--gold);}
+.hero-stat-val.green{color:var(--green);}
+.hero-stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
 
 /* FORM */
-.form-group{display:flex;gap:8px;max-width:500px;margin:0 auto 24px;animation:fadeInUp .8s .45s var(--transition) both;}
-.form-group input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:13px 16px;color:white;font-size:14px;outline:none;transition:.3s var(--transition);}
-.form-group input:focus{border-color:var(--cyan);background:rgba(34,211,238,.06);box-shadow:0 0 16px rgba(34,211,238,.15);}
+.form-wrap{animation:fadeUp .8s .4s var(--transition) both;}
+.form-group{display:flex;gap:8px;max-width:480px;margin:0 auto 16px;}
+.form-group input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:15px 18px;color:white;font-size:14px;outline:none;transition:.3s;font-family:inherit;}
+.form-group input:focus{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.05);box-shadow:0 0 0 3px rgba(34,211,238,.12);}
 .form-group input::placeholder{color:var(--muted);}
-
-.btn-sub{background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white;border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s var(--transition);white-space:nowrap;font-family:inherit;}
-.btn-sub:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-
-#sub-status{display:none;font-size:13px;text-align:center;margin-top:12px;color:var(--cyan);}
-#sub-status.error{color:#ef4444;}
-#sub-status.success{color:#22c55e;}
-
-/* TRUST BADGES */
-.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;margin:20px 0 32px;animation:fadeInUp .8s .5s var(--transition) both;}
-.trust-item{font-size:13px;font-weight:600;color:#22c55e;letter-spacing:.2px;}
+.btn-sub{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;border:none;border-radius:14px;padding:15px 30px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;white-space:nowrap;font-family:inherit;box-shadow:0 4px 24px rgba(34,211,238,.25);}
+.btn-sub:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(34,211,238,.4);}
+#sub-status{display:none;font-size:13px;text-align:center;margin-top:8px;color:var(--cyan);}
+#sub-status.error{color:var(--red);}
+#sub-status.success{color:var(--green);}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;animation:fadeUp .8s .5s var(--transition) both;}
+.trust-item{font-size:12px;font-weight:600;color:var(--green);}
 .trust-sep{color:var(--muted);font-size:10px;}
 
-/* DIVIDER */
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:80px 0;position:relative;z-index:1;}
+/* TICKER BAR */
+.ticker-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:40px;animation:fadeUp .8s .55s var(--transition) both;}
+.tick{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:14px;padding:12px 16px;transition:all .3s;cursor:default;}
+.tick:hover{background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.2);transform:translateY(-3px);}
+.tick-name{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.tick-val{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:white;}
+.tick-ch{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;}
+.tick-ch.up{color:var(--green);}.tick-ch.down{color:var(--red);}
 
-/* SECTION */
+/* SECTIONS */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;position:relative;z-index:1;}
 .section{padding:80px 5%;position:relative;z-index:1;}
-.section-center{text-align:center;max-width:700px;margin:0 auto 60px;}
-
-.section-tag{display:inline-block;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);color:var(--cyan);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;}
-
-h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;margin-bottom:16px;color:white;letter-spacing:-.5px;}
-
+.section-center{text-align:center;max-width:700px;margin:0 auto 50px;}
+.section-tag{display:inline-block;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);color:var(--cyan);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:16px;}
+.section-tag.gold{background:rgba(245,200,66,.08);border-color:rgba(245,200,66,.2);color:var(--gold);}
+.section-tag.red{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2);color:var(--red);}
+.section-tag.green{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--green);}
+h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.12;margin-bottom:16px;color:white;letter-spacing:-.5px;}
 .section-sub{font-size:16px;color:var(--muted);line-height:1.7;}
 
-/* PILLARS */
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1100px;margin:0 auto;}
+/* CHALLENGE SECTION */
+.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+.challenge-card{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:20px;padding:32px 28px;text-align:center;transition:all .4s var(--transition);position:relative;overflow:hidden;}
+.challenge-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
+.challenge-card.prudent::before{background:linear-gradient(90deg,var(--blue),var(--cyan));}
+.challenge-card.modere::before{background:linear-gradient(90deg,var(--gold),#f59e0b);}
+.challenge-card.agressif::before{background:linear-gradient(90deg,var(--red),#f97316);}
+.challenge-card:hover{border-color:rgba(34,211,238,.2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.challenge-emoji{font-size:44px;margin-bottom:12px;}
+.challenge-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;margin-bottom:4px;}
+.challenge-style{font-size:12px;color:var(--muted);margin-bottom:20px;}
+.challenge-capital{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;margin-bottom:4px;}
+.challenge-capital.blue{color:var(--cyan);}
+.challenge-capital.gold{color:var(--gold);}
+.challenge-capital.red{color:#f97316;}
+.challenge-objectif{font-size:12px;color:var(--muted);margin-bottom:20px;}
+.challenge-perf{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;padding:8px 16px;border-radius:10px;display:inline-block;margin-bottom:16px;}
+.challenge-perf.up{color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);}
+.challenge-perf.down{color:var(--red);background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);}
+.challenge-perf.flat{color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--border);}
+.challenge-trades{font-size:12px;color:var(--muted);}
+.challenge-cta{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--cyan);text-decoration:none;padding:8px 16px;border:1px solid rgba(34,211,238,.2);border-radius:8px;transition:all .2s;}
+.challenge-cta:hover{background:rgba(34,211,238,.08);transform:translateX(4px);}
 
-.pillar{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;padding:36px;transition:all .4s var(--transition);position:relative;overflow:hidden;}
-.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;}
-.pillar.nl::before{background:linear-gradient(90deg,var(--cyan),#3b82f6);}
-.pillar.tr::before{background:linear-gradient(90deg,var(--gold),#f59e0b);}
-
-.pillar:hover{border-color:var(--cyan);transform:translateY(-6px);background:rgba(255,255,255,.04);}
-
-.pillar-icon{font-size:40px;margin-bottom:16px;}
-
-.pillar-badge{display:inline-block;font-size:10px;font-weight:700;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;}
-.pillar.nl .pillar-badge{background:rgba(34,211,238,.12);color:var(--cyan);}
-.pillar.tr .pillar-badge{background:rgba(245,200,66,.12);color:var(--gold);}
-
-.pillar h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:12px;line-height:1.3;letter-spacing:-.3px;}
-
-.pillar p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:20px;}
-
-.pillar-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
-.pillar-features li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text);line-height:1.5;}
-.pillar-features li::before{content:'→';flex-shrink:0;color:var(--cyan);font-weight:700;}
-
-.pillar-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-decoration:none;color:var(--cyan);padding:10px 16px;border-radius:8px;transition:all .2s var(--transition);}
-.pillar.nl .pillar-cta{background:rgba(34,211,238,.08);}
-.pillar.tr .pillar-cta{color:var(--gold);background:rgba(245,200,66,.08);}
-.pillar-cta:hover{transform:translateX(4px);}
+/* PRODUCTS GRID */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+.product{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:20px;padding:36px 28px;transition:all .4s var(--transition);position:relative;overflow:hidden;}
+.product::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
+.product:nth-child(1)::before{background:linear-gradient(90deg,var(--cyan),var(--blue));}
+.product:nth-child(2)::before{background:linear-gradient(90deg,var(--gold),#f59e0b);}
+.product:nth-child(3)::before{background:linear-gradient(90deg,var(--red),#f97316);}
+.product:hover{border-color:rgba(34,211,238,.2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.product-icon{font-size:36px;margin-bottom:14px;}
+.product-badge{display:inline-block;font-size:10px;font-weight:700;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
+.product-badge.cyan{background:rgba(34,211,238,.1);color:var(--cyan);}
+.product-badge.gold{background:rgba(245,200,66,.1);color:var(--gold);}
+.product-badge.red{background:rgba(239,68,68,.1);color:var(--red);}
+.product h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;margin-bottom:10px;line-height:1.3;}
+.product p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px;}
+.product-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.product-features li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text);line-height:1.5;}
+.product-features li::before{content:'→';flex-shrink:0;color:var(--cyan);font-weight:700;}
+.product-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-decoration:none;color:var(--cyan);padding:10px 16px;border-radius:8px;background:rgba(34,211,238,.08);transition:all .2s;}
+.product-cta:hover{transform:translateX(4px);background:rgba(34,211,238,.12);}
+.product-cta.gold{color:var(--gold);background:rgba(245,200,66,.08);}
+.product-cta.gold:hover{background:rgba(245,200,66,.12);}
+.product-cta.red{color:#f97316;background:rgba(239,68,68,.08);}
+.product-cta.red:hover{background:rgba(239,68,68,.12);}
 
 /* KPIs */
-.kpis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto 40px;}
-
-.kpi{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:28px 20px;text-align:center;transition:all .3s var(--transition);}
-.kpi:hover{border-color:var(--cyan);background:rgba(34,211,238,.05);transform:translateY(-2px);}
-
-.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;color:white;margin-bottom:6px;}
-.kpi-val.cyan{color:var(--cyan);}
-.kpi-val.gold{color:var(--gold);}
-.kpi-val.green{color:#22c55e;}
-
+.kpis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto;}
+.kpi{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:28px 20px;text-align:center;transition:all .3s;}
+.kpi:hover{border-color:var(--cyan);background:rgba(34,211,238,.04);transform:translateY(-2px);}
+.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;margin-bottom:6px;}
 .kpi-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;}
 
-/* PREVIEW */
-.preview-box{max-width:800px;margin:0 auto;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
-.preview-header{background:rgba(255,255,255,.04);padding:16px 24px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);}
-.preview-dot{width:8px;height:8px;border-radius:50%;}
-.preview-label{font-size:12px;color:var(--muted);}
-
-.preview-content{padding:32px;text-align:left;}
-.preview-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;}
-.preview-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:white;margin-bottom:16px;line-height:1.3;}
-.preview-text{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px;}
-.preview-blur{position:relative;max-height:200px;overflow:hidden;}
-.preview-blur::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,var(--bg));}
-
-.preview-footer{border-top:1px solid var(--border);padding:16px 24px;text-align:center;}
-.preview-cta{color:var(--cyan);font-size:13px;font-weight:600;text-decoration:none;transition:.2s;}
-.preview-cta:hover{color:var(--gold);}
-
-/* HOW IT WORKS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1000px;margin:0 auto;}
-.step{text-align:center;padding:36px 24px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;transition:all .3s var(--transition);position:relative;}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
+.step{text-align:center;padding:32px 24px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:18px;transition:all .3s;position:relative;}
 .step:hover{border-color:var(--cyan);transform:translateY(-4px);background:rgba(34,211,238,.04);}
-.step-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:800;color:rgba(34,211,238,.15);position:absolute;top:12px;right:16px;line-height:1;}
-.step-icon{font-size:36px;margin-bottom:16px;display:block;}
-.step h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:10px;letter-spacing:-.2px;}
-.step p{font-size:14px;color:var(--muted);line-height:1.6;}
-.step-arrow{display:none;}
-
-/* CREDIBILITY */
-.credibility{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
-.cred-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;transition:all .3s var(--transition);}
-.cred-card:hover{border-color:var(--cyan);transform:translateY(-2px);}
-.cred-icon{font-size:28px;margin-bottom:12px;}
-.cred-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;margin-bottom:6px;}
-.cred-label{font-size:13px;color:var(--muted);line-height:1.5;}
+.step-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:800;color:rgba(34,211,238,.12);position:absolute;top:12px;right:16px;line-height:1;}
+.step-icon{font-size:32px;margin-bottom:14px;display:block;}
+.step h3{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.65;}
 
 /* FOUNDER */
-.founder{display:flex;align-items:center;gap:24px;max-width:700px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s var(--transition);}
+.founder{display:flex;align-items:center;gap:24px;max-width:700px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;padding:32px;transition:all .3s;}
 .founder:hover{border-color:rgba(245,200,66,.2);}
 .founder-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--bg);font-family:'Space Grotesk',sans-serif;flex-shrink:0;}
 .founder-info h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
 .founder-info .founder-role{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:8px;}
-.founder-info p{font-size:14px;color:var(--muted);line-height:1.6;}
+.founder-info p{font-size:14px;color:var(--muted);line-height:1.65;}
 
 /* CTA BOX */
 .cta-section{padding:80px 5%;position:relative;z-index:1;}
-.cta-box{background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(245,200,66,.06));border:1px solid rgba(34,211,238,.15);border-radius:20px;padding:60px 40px;text-align:center;max-width:700px;margin:0 auto;}
-.cta-box h2{margin-bottom:16px;}
-.cta-box p{color:var(--muted);margin-bottom:32px;font-size:16px;line-height:1.7;}
+.cta-box{background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(245,200,66,.06));border:1px solid rgba(34,211,238,.15);border-radius:22px;padding:60px 40px;text-align:center;max-width:700px;margin:0 auto;}
+.cta-box h2{margin-bottom:12px;}
+.cta-box p{color:var(--muted);margin-bottom:28px;font-size:16px;line-height:1.7;}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:48px 5% 32px;position:relative;z-index:1;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto 32px;}
-.footer-col h4{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:white;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;}
-.footer-col a{display:block;color:var(--muted);font-size:13px;text-decoration:none;line-height:2;transition:color .2s;}
-.footer-col a:hover{color:white;}
-.footer-brand-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px;}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative;z-index:1;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:16px;}
 .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-.footer-copy{color:var(--muted);font-size:12px;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:white;}
+.footer-copy{color:var(--muted);font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);}
 
 /* ANIMATIONS */
-@keyframes fadeInDown{
-  from{opacity:0;transform:translateY(-16px);}
-  to{opacity:1;transform:translateY(0);}
-}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 
-@keyframes fadeInUp{
-  from{opacity:0;transform:translateY(16px);}
-  to{opacity:1;transform:translateY(0);}
-}
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
-@media(max-width:1024px){
-  .pillars{gap:20px;}
-  .pillar{padding:28px;}
-}
-
 @media(max-width:768px){
-  nav{flex-direction:column;height:auto;padding:12px 5%;gap:12px;}
+  nav{padding:12px 4%;}
   .nav-center{display:none;gap:0;width:100%;}
   .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
   .nav-hamburger{display:flex;}
-
-  .hero{padding:100px 20px 60px;}
-  .hero-inner{max-width:100%;}
-
-  .ticker-bar{gap:6px;}
+  .hero{padding:100px 16px 50px;}
+  .hero-stats{gap:20px;}
+  .hero-stat-val{font-size:22px;}
   .form-group{flex-direction:column;}
-
-  .pillars{grid-template-columns:1fr;}
-  .pillar{padding:24px;}
-
-  .steps{grid-template-columns:1fr;}
-  .credibility{grid-template-columns:1fr;}
+  .ticker-bar{gap:6px;}
+  .challenge-grid,.products,.steps{grid-template-columns:1fr;}
+  .kpis-grid{grid-template-columns:1fr 1fr;}
+  .section{padding:60px 4%;}
   .founder{flex-direction:column;text-align:center;}
-
-  .kpis-grid{grid-template-columns:1fr 1fr;gap:12px;}
-
-  .section{padding:60px 5%;}
-  .divider{margin:60px 0;}
-
-  .footer-grid{grid-template-columns:1fr 1fr;gap:24px;}
-  .footer-bottom{flex-direction:column;text-align:center;}
+  .footer-inner{flex-direction:column;text-align:center;}
 }
-
 @media(max-width:480px){
-  h1{font-size:clamp(28px,7vw,48px);}
-
-  .ticker-bar{gap:4px;margin-bottom:32px;}
-  .tick{padding:10px 12px;font-size:12px;}
-
+  h1{font-size:clamp(28px,7vw,42px);}
+  h2{font-size:clamp(22px,5vw,32px);}
   .kpis-grid{grid-template-columns:1fr;}
-  .steps{gap:16px;}
-  .footer-grid{grid-template-columns:1fr;}
-
   .cta-box{padding:40px 20px;}
-  .section-tag{font-size:10px;padding:5px 12px;}
-  h2{font-size:clamp(24px,5vw,32px);}
 }
 </style>
 
-<!-- GOOGLE ANALYTICS — Remplacer G-XXXXXXXXXX par votre ID GA4 -->
-<!-- Créer un compte sur https://analytics.google.com puis décommenter -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
--->
-
-<!-- Analytics simple (fonctionne immédiatement) -->
+<!-- Analytics -->
 <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 
-<!-- DA-AMELIORATIONS-2026-03-23 -->
+<!-- DA-AMELIORATIONS-2026-03-24 -->
 <style>
-/* ── GLOBAL ENHANCEMENTS ── */
-:root {
-  --glow-cyan: 0 0 40px rgba(34,211,238,.18), 0 0 80px rgba(34,211,238,.08);
-  --glow-gold: 0 0 40px rgba(245,200,66,.18), 0 0 80px rgba(245,200,66,.08);
-  --card-bg: rgba(255,255,255,.025);
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-}
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — VISUAL ENHANCEMENTS v2
+   Senior Art Direction Layer
+═══════════════════════════════════════════ */
 
-/* BODY — richer background depth */
+/* TYPOGRAPHIE AMÉLIORÉE */
 body {
-  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34,211,238,.07) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 40% at 90% 90%, rgba(245,200,66,.05) 0%, transparent 55%),
-              var(--bg);
-  line-height: 1.65;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* SCROLLBAR — thicker, more visible */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--cyan), var(--gold));
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(34,211,238,.4);
+h1 {
+  letter-spacing: -2px;
+  line-height: 1.04;
 }
 
-/* NAV — glass elevated */
+/* NAV — GLASSMORPHISM RENFORCÉ */
 nav {
-  background: rgba(4,9,26,.75);
-  backdrop-filter: blur(48px) saturate(180%);
-  -webkit-backdrop-filter: blur(48px) saturate(180%);
-  border-bottom: 1px solid rgba(34,211,238,.1);
-  box-shadow: 0 1px 0 rgba(34,211,238,.06), 0 4px 32px rgba(0,0,0,.4);
-  transition: all .4s cubic-bezier(.4,0,.2,1);
+  background: rgba(4, 9, 26, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.14) !important;
+  box-shadow: 0 1px 0 rgba(34, 211, 238, 0.06), 0 8px 48px rgba(0, 0, 0, 0.6) !important;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .nav-brand {
-  font-size: 19px;
-  letter-spacing: -.8px;
-  background: linear-gradient(135deg, #fff 40%, var(--cyan));
+  background: linear-gradient(135deg, #fff 30%, #22d3ee 70%, #f5c842 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all .3s;
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, 0.35));
+  transition: filter 0.3s ease;
 }
-.nav-brand:hover { filter: brightness(1.2); }
+.nav-brand:hover {
+  filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.6));
+}
 
 .nav-cta {
-  background: linear-gradient(135deg, #3b82f6, var(--cyan));
-  box-shadow: 0 4px 20px rgba(34,211,238,.2);
-  padding: 9px 22px;
-  border-radius: 12px;
-  letter-spacing: .3px;
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
   position: relative;
   overflow: hidden;
 }
@@ -356,267 +292,320 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity 0.3s ease;
 }
 .nav-cta:hover::before { opacity: 1; }
-.nav-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(34,211,238,.4), 0 0 0 1px rgba(34,211,238,.3);
-}
 
-/* HERO — enhanced typography */
-h1 {
-  line-height: 1.06;
-  letter-spacing: -1.5px;
-}
-.h1-line2 {
-  background: linear-gradient(135deg, var(--gold) 0%, #fbbf24 40%, var(--cyan) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 30px rgba(245,200,66,.3));
-}
-
-.hero-sub {
-  font-size: clamp(15px,1.8vw,18px);
-  line-height: 1.75;
-  color: #94a3b8;
-  letter-spacing: .1px;
-}
-
-/* HERO TAG — punchier */
+/* HERO TAG — ANIMATION PULSANTE AMÉLIORÉE */
 .hero-tag {
-  background: rgba(34,197,94,.06);
-  border-color: rgba(34,197,94,.25);
-  box-shadow: 0 0 24px rgba(34,197,94,.08);
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+  letter-spacing: 2px;
+  backdrop-filter: blur(8px);
+}
+
+/* HERO STATS — GLOW & CONTRAST */
+.hero-stat-val {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 0 40px currentColor;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.hero-stat-val:hover {
+  transform: scale(1.06);
+  text-shadow: 0 0 60px currentColor;
+}
+.hero-stat-lbl {
   font-size: 10px;
-  letter-spacing: 1.5px;
-  padding: 8px 20px;
+  letter-spacing: 1px;
+  margin-top: 6px;
 }
 
-/* TICKER — elevated cards */
-.tick {
-  background: rgba(255,255,255,.035);
-  border: 1px solid rgba(255,255,255,.07);
-  border-radius: 14px;
-  padding: 14px 18px;
-  box-shadow: 0 2px 16px rgba(0,0,0,.2);
-  transition: all .35s cubic-bezier(.4,0,.2,1);
-}
-.tick:hover {
-  background: rgba(34,211,238,.07);
-  border-color: rgba(34,211,238,.25);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(34,211,238,.15), 0 0 0 1px rgba(34,211,238,.15);
-}
-.tick-val { font-size: 15px; letter-spacing: -.3px; }
-
-/* FORM — premium feel */
+/* FORM — GLASSMORPHISM PREMIUM */
 .form-group input {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.09);
-  border-radius: 14px;
-  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.035) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
   font-size: 14px;
-  letter-spacing: .1px;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(8px);
 }
 .form-group input:focus {
-  border-color: rgba(34,211,238,.5);
-  background: rgba(34,211,238,.05);
-  box-shadow: 0 0 0 3px rgba(34,211,238,.12), 0 0 24px rgba(34,211,238,.1);
+  border-color: rgba(34, 211, 238, 0.6) !important;
+  background: rgba(34, 211, 238, 0.06) !important;
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1), 0 8px 32px rgba(34, 211, 238, 0.1) !important;
+  transform: translateY(-1px);
 }
 
 .btn-sub {
-  border-radius: 14px;
-  padding: 15px 30px;
-  font-size: 14px;
-  letter-spacing: .4px;
-  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
-  box-shadow: 0 4px 24px rgba(34,211,238,.25);
+  border-radius: 16px !important;
+  padding: 16px 34px !important;
+  font-size: 13px !important;
+  letter-spacing: 0.4px;
   position: relative;
   overflow: hidden;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  box-shadow: 0 4px 24px rgba(34, 211, 238, 0.3), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 .btn-sub::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.2), transparent 60%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 60%);
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity 0.3s ease;
+}
+.btn-sub:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 16px 48px rgba(34, 211, 238, 0.45), inset 0 1px 0 rgba(255,255,255,0.25) !important;
 }
 .btn-sub:hover::after { opacity: 1; }
-.btn-sub:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(34,211,238,.4), 0 0 0 1px rgba(34,211,238,.3);
+.btn-sub:active { transform: translateY(-1px) scale(0.99) !important; }
+
+/* TICKER CARDS */
+.tick {
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
-.btn-sub:active { transform: translateY(-1px) scale(.99); }
+.tick:hover {
+  background: rgba(34, 211, 238, 0.08) !important;
+  border-color: rgba(34, 211, 238, 0.28) !important;
+  transform: translateY(-5px) scale(1.02) !important;
+  box-shadow: 0 12px 40px rgba(34, 211, 238, 0.12), 0 0 0 1px rgba(34, 211, 238, 0.1) !important;
+}
 </style>
 </head>
 <body>
 
-<div class="bg-wrap"><div class="bg-grid"></div></div>
+<div class="scan"></div>
+<div class="bg-wrap">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+</div>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center">
+  <div class="nav-center" id="nav-menu">
     <a href="index.html" class="active">Accueil</a>
     <a href="newsletter.html">Newsletter</a>
     <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner</a>
+    <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- HERO -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Gratuit — Newsletter IA</div>
+    <div class="hero-tag"><span class="live-dot"></span> Système IA actif 24h/24</div>
     <h1>
-      <div class="h1-line1">La bourse, expliquée</div>
-      <div class="h1-line2">simplement. Chaque matin.</div>
+      <div class="h1-white">La bourse et la crypto,</div>
+      <div class="h1-gradient">décryptées par l'IA.</div>
     </h1>
     <p class="hero-sub">
-      Recevez un email de 5 minutes qui vous dit <strong>ce qui monte, ce qui descend, et pourquoi.</strong><br>Pas besoin d'y connaître quoi que ce soit.
+      Un système d'intelligence artificielle surveille les marchés <strong>24h/24</strong>, analyse chaque mouvement et vous livre l'essentiel en <strong>5 minutes</strong>. Pendant ce temps, <strong>3 robots traders</strong> investissent sous vos yeux. Vous, vous lisez avec votre café.
     </p>
 
-    <!-- SUBSCRIBE FORM -->
-    <div id="subscribe">
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val cyan">24/7</div>
+        <div class="hero-stat-lbl">Surveillance IA</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val gold">3</div>
+        <div class="hero-stat-lbl">Robots traders</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val green">30k€</div>
+        <div class="hero-stat-lbl">Investis en direct</div>
+      </div>
+    </div>
+
+    <div class="form-wrap" id="subscribe">
       <div class="form-group">
-        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email">
-        <button class="btn-sub" onclick="handleSubscribe()">S'abonner</button>
+        <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email pour s'abonner">
+        <button class="btn-sub" onclick="handleSubscribe()">S'abonner — c'est gratuit</button>
       </div>
       <div id="sub-status"></div>
+      <div class="hero-trust">
+        <span class="trust-item">100% gratuit</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">5 min de lecture</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">Zéro jargon</span>
+        <span class="trust-sep">·</span>
+        <span class="trust-item">Désabonnement en 1 clic</span>
+      </div>
     </div>
 
-    <!-- TRUST BADGES -->
-    <div class="hero-trust">
-      <span class="trust-item">Gratuit</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">5 min/jour</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">Zéro jargon</span>
-    </div>
-
-    <!-- TICKER -->
     <div class="ticker-bar">
-      <div class="tick">
-        <span class="tick-name">BTC</span>
-        <span class="tick-val" id="btc-price">---</span>
-        <span class="tick-ch up" id="btc-change">--</span>
-      </div>
-      <div class="tick">
-        <span class="tick-name">S&P 500</span>
-        <span class="tick-val" id="sp-price">---</span>
-        <span class="tick-ch up" id="sp-change">--</span>
-      </div>
-      <div class="tick">
-        <span class="tick-name">Or</span>
-        <span class="tick-val" id="gold-price">---</span>
-        <span class="tick-ch up" id="gold-change">--</span>
-      </div>
-      <div class="tick">
-        <span class="tick-name">EUR/USD</span>
-        <span class="tick-val" id="eur-price">---</span>
-        <span class="tick-ch up" id="eur-change">--</span>
-      </div>
+      <div class="tick"><span class="tick-name">BTC</span><span class="tick-val" id="btc-price">---</span><span class="tick-ch up" id="btc-change">--</span></div>
+      <div class="tick"><span class="tick-name">S&P 500</span><span class="tick-val" id="sp-price">---</span><span class="tick-ch up" id="sp-change">--</span></div>
+      <div class="tick"><span class="tick-name">Or</span><span class="tick-val" id="gold-price">---</span><span class="tick-ch up" id="gold-change">--</span></div>
+      <div class="tick"><span class="tick-name">EUR/USD</span><span class="tick-val" id="eur-price">---</span><span class="tick-ch up" id="eur-change">--</span></div>
+      <div class="tick"><span class="tick-name">CAC 40</span><span class="tick-val" id="cac-price">---</span><span class="tick-ch up" id="cac-change">--</span></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PILLARS SECTION -->
-<section class="section">
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- LE CHALLENGE 100K -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
   <div class="section-center">
-    <div class="section-tag">Ce que vous obtenez</div>
-    <h2>Concrètement, ça vous apporte quoi ?</h2>
-    <p class="section-sub">Deux services complémentaires pour ne plus jamais être largué quand on parle de bourse.</p>
+    <div class="section-tag gold">En direct</div>
+    <h2>Le Challenge : 10k€ → 100k€</h2>
+    <p class="section-sub">3 robots traders IA partent chacun avec 10 000€. Même objectif : 100 000€. Trois stratégies. Qui y arrivera en premier ? Suivez-les en temps réel.</p>
   </div>
 
-  <div class="pillars">
+  <div class="challenge-grid">
+    <div class="challenge-card prudent">
+      <div class="challenge-emoji">🛡️</div>
+      <div class="challenge-name">Robot Prudent</div>
+      <div class="challenge-style">Sécurité · Diversification · Long terme</div>
+      <div class="challenge-capital blue" id="robot-p-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
+      <div class="challenge-perf flat" id="robot-p-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-p-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
+    </div>
+
+    <div class="challenge-card modere">
+      <div class="challenge-emoji">⚖️</div>
+      <div class="challenge-name">Robot Modéré</div>
+      <div class="challenge-style">Équilibre · Actions + Crypto · Moyen terme</div>
+      <div class="challenge-capital gold" id="robot-m-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
+      <div class="challenge-perf flat" id="robot-m-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-m-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
+    </div>
+
+    <div class="challenge-card agressif">
+      <div class="challenge-emoji">🔥</div>
+      <div class="challenge-name">Robot Agressif</div>
+      <div class="challenge-style">Croissance max · Levier · Haut risque</div>
+      <div class="challenge-capital red" id="robot-a-capital">10 000€</div>
+      <div class="challenge-objectif">Objectif : 100 000€ (+900%)</div>
+      <div class="challenge-perf flat" id="robot-a-perf">+0.00%</div>
+      <div class="challenge-trades" id="robot-a-trades">0 trades</div>
+      <a href="investissement.html" class="challenge-cta">Voir ses trades →</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- 3 PRODUITS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
+  <div class="section-center">
+    <div class="section-tag">Tout ce que vous obtenez</div>
+    <h2>3 produits. 0 euros. Une longueur d'avance.</h2>
+    <p class="section-sub">Newsletter, robots traders et arène d'investisseurs — tout est inclus gratuitement.</p>
+  </div>
+
+  <div class="products">
     <!-- NEWSLETTER -->
-    <div class="pillar nl">
-      <div class="pillar-icon">📰</div>
-      <div class="pillar-badge">Chaque matin dans votre boîte mail</div>
-      <h3>Vous savez ce qui s'est passé sur les marchés — sans effort</h3>
-      <p>Plus besoin de lire 15 sites différents. En 5 minutes, vous savez si le CAC 40 monte ou descend, pourquoi l'or explose, et si c'est le moment de regarder Tesla ou NVIDIA.</p>
-      <ul class="pillar-features">
-        <li><strong>Vous comprenez les mouvements :</strong> "Le S&P a chuté de 1,2% à cause de la Fed" — pas juste un chiffre, une explication</li>
-        <li><strong>Vous suivez les actions qui comptent :</strong> Apple, NVIDIA, Tesla, LVMH, TotalEnergies — avec ce qui fait bouger leur cours</li>
-        <li><strong>Vous découvrez les opportunités :</strong> quand la géopolitique crée une occasion d'investissement, on vous le dit clairement</li>
-        <li><strong>Vous apprenez sans vous ennuyer :</strong> chaque édition contient un concept expliqué simplement (ex: "C'est quoi un ETF ?")</li>
+    <div class="product">
+      <div class="product-icon">📰</div>
+      <div class="product-badge cyan">Chaque semaine</div>
+      <h3>La newsletter qui vous fait gagner 2h de veille</h3>
+      <p>L'essentiel des marchés en 5 minutes. Pas de blabla — des faits, des chiffres, et ce que ça signifie pour vous.</p>
+      <ul class="product-features">
+        <li>Bourse, crypto, géopolitique — tout en un email</li>
+        <li>Style aktionnaire : un fait chiffré, une explication, un takeaway</li>
+        <li>Un concept financier expliqué simplement chaque semaine</li>
       </ul>
-      <a href="newsletter.html" class="pillar-cta">Voir un exemple de newsletter →</a>
+      <a href="newsletter.html" class="product-cta">Lire un exemple →</a>
     </div>
 
-    <!-- ROBOT TRADER -->
-    <div class="pillar tr">
-      <div class="pillar-icon">🤖</div>
-      <div class="pillar-badge">3 robots — En direct — vrais prix de marché</div>
-      <h3>3 robots investissent 30 000€ sous vos yeux — et justifient chaque décision</h3>
-      <p>Trois robots IA avec des profils différents investissent en temps réel sur les vrais marchés mondiaux. 🛡️ Le Prudent vise la sécurité, ⚖️ le Modéré cherche l'équilibre, 🔥 l'Agressif prend des risques. Choisissez celui qui vous ressemble et apprenez en suivant ses trades.</p>
-      <ul class="pillar-features">
-        <li><strong>Chaque trade est justifié :</strong> "Achat NVIDIA à $142 — résultats Q4 au-dessus des attentes, IA générative en accélération" — des vraies raisons, pas du blabla</li>
-        <li><strong>3 profils pour tous les investisseurs :</strong> du débutant prudent au trader agressif, trouvez le robot qui correspond à votre tolérance au risque</li>
-        <li><strong>N'importe quelle action dans le monde :</strong> les robots peuvent trader actions US, européennes, crypto, ETF, matières premières — pas de limite</li>
-        <li><strong>Transparence totale :</strong> date exacte, prix d'entrée, stop-loss, take-profit, conviction — tout est public</li>
+    <!-- ROBOTS -->
+    <div class="product">
+      <div class="product-icon">🤖</div>
+      <div class="product-badge gold">En direct</div>
+      <h3>3 robots qui investissent 30 000€ sous vos yeux</h3>
+      <p>Chaque trade est justifié, daté et public. Vous voyez tout : achats, ventes, erreurs. Transparence totale.</p>
+      <ul class="product-features">
+        <li>3 profils : prudent, modéré, agressif — trouvez le vôtre</li>
+        <li>Actions, crypto, ETF, matières premières — aucune limite</li>
+        <li>Objectif unifié : transformer 10k€ en 100k€</li>
       </ul>
-      <a href="investissement.html" class="pillar-cta">Voir les 3 robots en direct →</a>
+      <a href="investissement.html" class="product-cta gold">Voir les robots →</a>
+    </div>
+
+    <!-- ARÈNE -->
+    <div class="product">
+      <div class="product-icon">⚔️</div>
+      <div class="product-badge red">Nouveau</div>
+      <h3>Affrontez les robots et les autres investisseurs</h3>
+      <p>Importez votre portefeuille et comparez-vous au classement. Les robots, les humains — qui performe le mieux ?</p>
+      <ul class="product-features">
+        <li>Classement en direct avec tous les participants</li>
+        <li>Importez votre portefeuille en 30 secondes</li>
+        <li>Prix du mois : meilleur rendement, meilleure position, série gagnante</li>
+      </ul>
+      <a href="arena.html" class="product-cta red">Rejoindre l'arène →</a>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PREVIEW SECTION -->
-<section class="section">
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- CHIFFRES CLÉS -->
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
   <div class="section-center">
-    <div class="section-tag">Un vrai exemple</div>
-    <h2>Voici ce que vous recevez demain matin</h2>
-    <p class="section-sub">Pas une promesse vague — voici un vrai extrait d'une édition AlphaBot.</p>
+    <div class="section-tag green">Pourquoi ça marche</div>
+    <h2>Des vrais chiffres, pas des promesses</h2>
   </div>
 
-  <div class="preview-box">
-    <div class="preview-header">
-      <div class="preview-dot" style="background:#ef4444;"></div>
-      <div class="preview-dot" style="background:var(--gold);"></div>
-      <div class="preview-dot" style="background:#22c55e;"></div>
-      <span class="preview-label">AlphaBot Weekly — Votre boîte mail, 8h du matin</span>
+  <div class="kpis-grid">
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--cyan);">24/7</div>
+      <div class="kpi-label">L'IA ne dort jamais</div>
     </div>
-    <div class="preview-content">
-      <div class="preview-date">Temps de lecture : 5 minutes</div>
-      <div class="preview-title">L'or franchit $3 050 : les banques centrales accumulent, Pékin accélère — ce que ça change pour votre portefeuille</div>
-      <div class="preview-blur">
-        <div class="preview-text">
-          <strong>Le chiffre du jour :</strong> +12,4% — c'est la hausse de l'or depuis janvier. La Banque Populaire de Chine a acheté 10 tonnes en février, son 4ème mois consécutif d'achats. Le signal est clair : la dédollarisation s'accélère.
-        </div>
-        <div class="preview-text">
-          <strong>Pourquoi ça compte :</strong> Quand les banques centrales achètent de l'or massivement, c'est qu'elles ne font plus confiance au dollar pour stocker leur richesse. Résultat : l'or monte, le dollar baisse, et les marchés actions en profitent à court terme.
-        </div>
-        <div class="preview-text">
-          <strong>Ce que les 3 robots ont fait :</strong> 🛡️ Le Prudent a renforcé sa position or (GLD). ⚖️ Le Modéré a acheté TotalEnergies qui profite du pétrole en hausse. 🔥 L'Agressif a misé sur Barrick Gold (GOLD), le mineur le plus exposé à la hausse de l'once.
-        </div>
-      </div>
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--gold);">47+</div>
+      <div class="kpi-label">Sources surveillées</div>
     </div>
-    <div class="preview-footer">
-      <a href="#subscribe" class="preview-cta">Recevoir ce type d'email demain matin →</a>
+    <div class="kpi">
+      <div class="kpi-val" style="color:var(--green);">5 min</div>
+      <div class="kpi-label">Pour tout comprendre</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" style="color:white;">0€</div>
+      <div class="kpi-label">Ça ne coûte rien</div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- COMMENT ÇA MARCHE -->
-<section class="section">
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
   <div class="section-center">
     <div class="section-tag">En 30 secondes</div>
     <h2>3 étapes, c'est tout</h2>
@@ -626,98 +615,33 @@ h1 {
     <div class="step">
       <span class="step-num">1</span>
       <span class="step-icon">📧</span>
-      <h3>Entrez votre email ci-dessus</h3>
-      <p>10 secondes. Pas de carte bancaire, pas de mot de passe, pas de piège. Juste votre email.</p>
+      <h3>Entrez votre email</h3>
+      <p>10 secondes. Pas de carte bancaire, pas de mot de passe. Juste votre email et c'est parti.</p>
     </div>
     <div class="step">
       <span class="step-num">2</span>
       <span class="step-icon">☕</span>
-      <h3>Demain matin, ouvrez votre boîte mail</h3>
-      <p>Vous y trouvez un résumé clair de ce qui s'est passé sur les marchés, ce que ça veut dire, et ce que le robot a fait.</p>
+      <h3>Ouvrez votre boîte mail</h3>
+      <p>Chaque semaine, un brief clair : ce qui s'est passé, pourquoi, et ce que les robots ont fait.</p>
     </div>
     <div class="step">
       <span class="step-num">3</span>
-      <span class="step-icon">💡</span>
-      <h3>Vous comprenez la bourse sans effort</h3>
-      <p>En 5 minutes par jour, vous savez de quoi on parle quand quelqu'un mentionne le CAC 40, Bitcoin ou la Fed. Fini le flou.</p>
+      <span class="step-icon">🚀</span>
+      <h3>Prenez une longueur d'avance</h3>
+      <p>En 5 minutes, vous comprenez les marchés mieux que 90% des gens. Sans effort, sans jargon.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- BIENTÔT DISPONIBLE -->
-<section class="section">
-  <div class="section-center">
-    <div class="section-tag">On ne s'arrête pas là</div>
-    <h2>Bientôt sur AlphaBot</h2>
-    <p class="section-sub">On construit la plateforme financière IA la plus complète pour les investisseurs débutants. Voici ce qui arrive.</p>
-  </div>
-
-  <div class="steps" style="grid-template-columns:repeat(4,1fr);">
-    <div class="step" style="border-color:rgba(34,211,238,.15);">
-      <span class="step-icon">🚨</span>
-      <h3>Alertes Marché IA</h3>
-      <p>Recevez une alerte instantanée quand un mouvement important se produit : krach, rally, décision de banque centrale. L'IA filtre le bruit pour vous.</p>
-      <div style="margin-top:16px;display:inline-block;background:rgba(34,211,238,.08);color:var(--cyan);padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Avril 2026</div>
-    </div>
-    <div class="step" style="border-color:rgba(245,200,66,.15);">
-      <span class="step-icon">🔍</span>
-      <h3>Screener IA</h3>
-      <p>Demandez "montre-moi les actions tech qui ont chuté de plus de 5% cette semaine" et l'IA vous les trouve. Un moteur de recherche intelligent pour les marchés.</p>
-      <div style="margin-top:16px;display:inline-block;background:rgba(245,200,66,.08);color:var(--gold);padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Mai 2026</div>
-    </div>
-    <div class="step" style="border-color:rgba(34,197,94,.15);">
-      <span class="step-icon">🎓</span>
-      <h3>Academy</h3>
-      <p>Des micro-cours de 3 minutes pour maîtriser les concepts financiers : ETF, options, analyse technique, géopolitique... Apprenez à votre rythme.</p>
-      <div style="margin-top:16px;display:inline-block;background:rgba(34,197,94,.08);color:#22c55e;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Juin 2026</div>
-    </div>
-    <div class="step" style="border-color:rgba(139,92,246,.15);">
-      <span class="step-icon">📊</span>
-      <h3>Ma Watchlist</h3>
-      <p>Créez votre propre liste d'actions à suivre. L'IA surveille pour vous et vous alerte si quelque chose d'important se passe sur vos valeurs préférées.</p>
-      <div style="margin-top:16px;display:inline-block;background:rgba(139,92,246,.08);color:#8b5cf6;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Été 2026</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CRÉDIBILITÉ -->
-<section class="section">
-  <div class="section-center">
-    <div class="section-tag">Pourquoi nous faire confiance ?</div>
-    <h2>On ne vous vend rien. On vous informe.</h2>
-    <p class="section-sub">Pas de cours à 997€, pas de formation miracle, pas de signaux payants. Juste une newsletter gratuite qui vous rend plus intelligent sur les marchés.</p>
-  </div>
-
-  <div class="credibility">
-    <div class="cred-card">
-      <div class="cred-icon">🎯</div>
-      <div class="cred-val" style="color:var(--cyan);">5 min/jour</div>
-      <div class="cred-label">C'est le temps qu'il faut pour lire la newsletter. Pas 2h de vidéo, pas de webinaire. 5 minutes, c'est fait.</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-icon">👁️</div>
-      <div class="cred-val" style="color:var(--gold);">0 secret</div>
-      <div class="cred-label">Chaque décision du robot trader est publique. Vous voyez ses achats, ses ventes, ses erreurs. Rien n'est caché.</div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-icon">🚫</div>
-      <div class="cred-val" style="color:#22c55e;">0 arnaque</div>
-      <div class="cred-label">Pas de pub, pas de sponsor, pas de données revendues. Votre email sert à une seule chose : recevoir la newsletter.</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- FONDATEUR -->
-<section class="section">
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="section reveal">
   <div class="section-center">
     <div class="section-tag">Un vrai humain derrière le projet</div>
-    <h2>Qui vous écrit chaque matin ?</h2>
+    <h2>Qui est derrière AlphaBot ?</h2>
   </div>
 
   <div class="founder">
@@ -725,672 +649,151 @@ h1 {
     <div class="founder-info">
       <h3>Antoine Metout</h3>
       <div class="founder-role">Fondateur — Paris, France</div>
-      <p>J'ai créé AlphaBot parce que quand j'ai commencé à m'intéresser à la bourse, je ne comprenais rien. Les sites financiers parlaient un langage incompréhensible. Alors j'ai construit 13 agents IA qui font le travail à ma place : ils lisent les données, analysent les marchés, et écrivent un résumé clair chaque matin. Aujourd'hui, je partage ça gratuitement avec vous.</p>
+      <p>J'ai créé AlphaBot parce que quand j'ai commencé à m'intéresser à la bourse, je ne comprenais rien. Les sites financiers parlaient un langage incompréhensible. Alors j'ai construit 13 agents IA qui analysent les marchés à ma place et écrivent un résumé clair. Aujourd'hui, je partage ça gratuitement.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <!-- CTA FINAL -->
-<section class="cta-section">
+<!-- ═══════════════════════════════════════════════════════════════════════════ -->
+<section class="cta-section reveal">
   <div class="cta-box">
-    <div class="section-tag">C'est gratuit</div>
-    <h2>Demain matin, vous comprendrez les marchés</h2>
-    <p>Entrez votre email. Demain à 8h, vous recevez votre premier brief. Si ça ne vous plaît pas, vous vous désabonnez en un clic.</p>
-    <div class="form-group" style="max-width:420px;">
-      <input type="email" id="email-input2" placeholder="votre@email.com">
+    <div class="section-tag">C'est gratuit. Pour de vrai.</div>
+    <h2>Demain, vous comprendrez les marchés</h2>
+    <p>Rejoignez les investisseurs qui reçoivent chaque semaine l'essentiel de la bourse et de la crypto, décrypté par l'IA.</p>
+    <div class="form-group" style="max-width:420px;margin:0 auto;">
+      <input type="email" id="email-input2" placeholder="votre@email.com" onkeydown="if(event.key==='Enter')handleSubscribe2()" aria-label="Adresse email pour s'abonner">
       <button class="btn-sub" onclick="handleSubscribe2()">S'abonner</button>
     </div>
-    <div id="sub-status2"></div>
+    <div id="sub-status2" style="display:none;font-size:13px;text-align:center;margin-top:8px;"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
-<!-- ─── SECTION INSIGHTS GÉOPOLITIQUES ─── -->
-<section class="insights-section">
-  <div class="insights-header">
-    <h2>🌍 Insights Géopolitiques</h2>
-    <p>Comment les grands événements mondiaux façonnent les marchés — et tes opportunités d'investissement.</p>
-  </div>
-
-  <div class="insights-grid">
-    
-            <div class="insight-card">
-              <div class="insight-header">
-                <div class="insight-top">
-                  <span class="insight-emoji">🛡️</span>
-                  <div class="insight-badges">
-                    <span class="badge badge-cat">Défense</span>
-                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="insight-titre">L'Europe sort le carnet de chèques pour ses armées</h3>
-
-              <p class="insight-contexte">Face aux tensions mondiales, les gouvernements européens ont voté des budgets de défense historiques. L'Allemagne, la France et la Pologne injectent des centaines de milliards dans leurs armées d'ici 2030.</p>
-
-              <div class="insight-impact">
-                <strong>→ Impact marché:</strong> Le secteur défense européen explose à la hausse : l'indice STOXX Europe Aerospace & Defense surperforme le CAC 40 de +34% depuis janvier 2026. Les valeurs industrielles militaires attirent massivement les fonds institutionnels.
-              </div>
-
-              <div class="insight-stock">
-                <div class="stock-ticker">
-                  <div class="ticker-symbol">AIR.PA</div>
-                  <div class="ticker-name">Airbus SE</div>
-                </div>
-                <div class="ticker-price">
-                  <div class="price-val">$198.42</div>
-                  <div class="price-var" style="color:#22c55e;">+6.8%</div>
-                </div>
-              </div>
-
-              <p class="insight-pourquoi">
-                <strong>Pourquoi?</strong> Le réarmement européen force les États membres à commander avions militaires, satellites de surveillance et systèmes de communication sécurisés — Airbus est le fournisseur numéro 1 sur tous ces segments en Europe.
-              </p>
-
-              <p class="insight-angle">
-                <em>AlphaBot Weekly décortique cette semaine le carnet de commandes militaires d'Airbus : quels contrats signés en 2025-2026 vont gonfler les revenus sur 10 ans, et pourquoi le marché sous-estime encore ce catalyseur.</em>
-              </p>
-
-              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
-            </div>
-            
-            <div class="insight-card">
-              <div class="insight-header">
-                <div class="insight-top">
-                  <span class="insight-emoji">💰</span>
-                  <div class="insight-badges">
-                    <span class="badge badge-cat">Macro</span>
-                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="insight-titre">La Fed hésite, Wall Street retient son souffle</h3>
-
-              <p class="insight-contexte">La banque centrale américaine (la Fed) tient les taux d'intérêt élevés pour contenir l'inflation persistante. Chaque discours de son président déplace des milliers de milliards de dollars sur les marchés mondiaux en quelques secondes.</p>
-
-              <div class="insight-impact">
-                <strong>→ Impact marché:</strong> Le S&P 500 oscille en zone de résistance : les secteurs Tech et Immobilier souffrent des taux hauts, tandis que les bancaires et l'assurance en profitent. La volatilité (indice VIX) est remontée à 22 points, signal de nervosité des investisseurs.
-              </div>
-
-              <div class="insight-stock">
-                <div class="stock-ticker">
-                  <div class="ticker-symbol">JPM</div>
-                  <div class="ticker-name">JPMorgan Chase & Co.</div>
-                </div>
-                <div class="ticker-price">
-                  <div class="price-val">$247.65</div>
-                  <div class="price-var" style="color:#22c55e;">+3.1%</div>
-                </div>
-              </div>
-
-              <p class="insight-pourquoi">
-                <strong>Pourquoi?</strong> Quand la Fed maintient des taux élevés, JPMorgan empoche des marges records sur ses prêts et ses placements obligataires — directement : plus les taux sont hauts, plus la banque gagne d'argent sur chaque dollar prêté.
-              </p>
-
-              <p class="insight-angle">
-                <em>AlphaBot Weekly analyse cette semaine les derniers procès-verbaux de la Fed et traduit le jargon de banquier central en signal clair pour vos placements : pivot en vue ou taux hauts jusqu'à fin 2026 ?</em>
-              </p>
-
-              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
-            </div>
-            
-            <div class="insight-card">
-              <div class="insight-header">
-                <div class="insight-top">
-                  <span class="insight-emoji">₿</span>
-                  <div class="insight-badges">
-                    <span class="badge badge-cat">Géopolitique</span>
-                    <span class="badge badge-sev" style="background:rgba(234,179,8,.2);color:#eab308;">MEDIUM</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="insight-titre">Dollar fort : les pays pauvres étouffent, Bitcoin respire</h3>
-
-              <p class="insight-contexte">Un dollar américain puissant étouffe les économies émergentes (Brésil, Turquie, Egypte) qui ont leurs dettes libellées en dollars. Pour fuir leurs monnaies qui s'effondrent, leurs citoyens se tournent massivement vers le Bitcoin.</p>
-
-              <div class="insight-impact">
-                <strong>→ Impact marché:</strong> Les indices marchés émergents (MSCI EM) reculent de -8% depuis le début 2026. En parallèle, les flux entrant dans Bitcoin depuis les pays à inflation élevée atteignent des records, soutenant le cours au-dessus des 85 000 $.
-              </div>
-
-              <div class="insight-stock">
-                <div class="stock-ticker">
-                  <div class="ticker-symbol">COIN</div>
-                  <div class="ticker-name">Coinbase Global Inc.</div>
-                </div>
-                <div class="ticker-price">
-                  <div class="price-val">$312.90</div>
-                  <div class="price-var" style="color:#22c55e;">+4.7%</div>
-                </div>
-              </div>
-
-              <p class="insight-pourquoi">
-                <strong>Pourquoi?</strong> Chaque crise de devise dans un pays émergent pousse des millions de nouveaux utilisateurs à ouvrir un compte crypto — Coinbase, première plateforme mondiale régulée, capte directement cette vague d'adoption forcée.
-              </p>
-
-              <p class="insight-angle">
-                <em>AlphaBot Weekly cartographie cette semaine les pays où la fuite vers le Bitcoin est la plus forte en 2026, et mesure l'impact réel sur les volumes de Coinbase et le cours du BTC.</em>
-              </p>
-
-              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
-            </div>
-            
-            <div class="insight-card">
-              <div class="insight-header">
-                <div class="insight-top">
-                  <span class="insight-emoji">🌍</span>
-                  <div class="insight-badges">
-                    <span class="badge badge-cat">Géopolitique</span>
-                    <span class="badge badge-sev" style="background:rgba(234,179,8,.2);color:#eab308;">MEDIUM</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="insight-titre">Le CAC 40 pris en otage entre guerre et diplomatie</h3>
-
-              <p class="insight-contexte">Le CAC 40 regroupe les 40 plus grandes entreprises françaises, très exposées à l'international. Dès qu'une crise éclate quelque part dans le monde, leurs revenus à l'étranger se retrouvent menacés et les investisseurs vendent en panique.</p>
-
-              <div class="insight-impact">
-                <strong>→ Impact marché:</strong> Le CAC 40 sous-performe le S&P 500 de -11 points de pourcentage depuis janvier 2026 à cause de l'exposition européenne aux tensions géopolitiques. Le secteur luxe (40% du CAC) est particulièrement vulnérable au ralentissement des clients chinois et moyen-orientaux.
-              </div>
-
-              <div class="insight-stock">
-                <div class="stock-ticker">
-                  <div class="ticker-symbol">MC.PA</div>
-                  <div class="ticker-name">LVMH Moët Hennessy Louis Vuitton</div>
-                </div>
-                <div class="ticker-price">
-                  <div class="price-val">$612.30</div>
-                  <div class="price-var" style="color:#ef4444;">-2.4%</div>
-                </div>
-              </div>
-
-              <p class="insight-pourquoi">
-                <strong>Pourquoi?</strong> Les tensions géopolitiques frappent directement LVMH sur deux fronts : la clientèle chinoise voyage moins (boutiques Asia en berne) et le moral des acheteurs moyen-orientaux s'assombrit avec l'instabilité régionale.
-              </p>
-
-              <p class="insight-angle">
-                <em>AlphaBot Weekly disséque cette semaine les résultats régionaux de LVMH : à quel seuil de normalisation géopolitique les ventes Asie-Pacifique repartent, et si le repli actuel du titre est une opportunité ou un piège.</em>
-              </p>
-
-              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
-            </div>
-            
-            <div class="insight-card">
-              <div class="insight-header">
-                <div class="insight-top">
-                  <span class="insight-emoji">⚡</span>
-                  <div class="insight-badges">
-                    <span class="badge badge-cat">Énergie</span>
-                    <span class="badge badge-sev" style="background:rgba(249,115,22,.2);color:#f97316;">HIGH</span>
-                  </div>
-                </div>
-              </div>
-
-              <h3 class="insight-titre">Réarmer l'Europe coûte cher en énergie et en acier</h3>
-
-              <p class="insight-contexte">Construire des chars, des drones, des sous-marins et des fortifications consomme d'énormes quantités d'électricité, d'acier et de carburant. Le boom militaire européen crée une demande industrielle en énergie que personne n'avait anticipée.</p>
-
-              <div class="insight-impact">
-                <strong>→ Impact marché:</strong> Les valeurs industrielles énergétiques et les producteurs d'acier européens bondissent : ArcelorMittal +18% depuis février 2026. Le prix du gaz naturel européen TTF repart à la hausse sous la double pression de la demande militaire et de la géopolitique gazière.
-              </div>
-
-              <div class="insight-stock">
-                <div class="stock-ticker">
-                  <div class="ticker-symbol">TTE.PA</div>
-                  <div class="ticker-name">TotalEnergies SE</div>
-                </div>
-                <div class="ticker-price">
-                  <div class="price-val">$68.14</div>
-                  <div class="price-var" style="color:#22c55e;">+3.9%</div>
-                </div>
-              </div>
-
-              <p class="insight-pourquoi">
-                <strong>Pourquoi?</strong> TotalEnergies fournit directement le carburant, le GNL et l'électricité aux bases militaires et industries de défense européennes — le réarmement du continent est, mot pour mot, un nouveau client géant pour son activité B2B énergie.
-              </p>
-
-              <p class="insight-angle">
-                <em>AlphaBot Weekly explore cette semaine les contrats énergétiques liés à la défense signés par TotalEnergies en 2025-2026 et calcule combien de milliards de revenus supplémentaires le réarmement européen peut générer d'ici 2028.</em>
-              </p>
-
-              <a href="#" class="cta-lire">Lire dans la newsletter →</a>
-            </div>
-            
-  </div>
-</section>
-
-<!-- ─── STYLES INSIGHTS ─── -->
-<style>
-/* INSIGHTS SECTION */
-.insights-section {
-  padding: 80px 5%;
-  position: relative;
-  z-index: 1;
-}
-
-.insights-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-}
-
-.insights-header h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 16px;
-  color: white;
-}
-
-.insights-header p {
-  font-size: 16px;
-  color: #64748b;
-  line-height: 1.7;
-}
-
-/* INSIGHT CARDS */
-.insights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.insight-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
-  border: 1px solid rgba(255, 255, 255, .08);
-  border-radius: 16px;
-  padding: 28px;
-  transition: .3s;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.insight-card:hover {
-  border-color: rgba(34, 211, 238, .3);
-  transform: translateY(-4px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
-}
-
-/* HEADER */
-.insight-header {
-  margin-bottom: 8px;
-}
-
-.insight-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.insight-emoji {
-  font-size: 28px;
-}
-
-.insight-badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-
-.badge-cat {
-  background: rgba(59, 130, 246, .2);
-  color: #3b82f6;
-}
-
-.badge-sev {
-  /* dynamique color */
-}
-
-/* TITRE */
-.insight-titre {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* CONTEXTE */
-.insight-contexte {
-  font-size: 13px;
-  color: #e2e8f0;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* IMPACT */
-.insight-impact {
-  font-size: 13px;
-  color: #e2e8f0;
-  padding: 12px;
-  background: rgba(59, 130, 246, .08);
-  border-left: 3px solid #3b82f6;
-  border-radius: 4px;
-}
-
-/* STOCK WIDGET */
-.insight-stock {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background: rgba(255, 255, 255, .04);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .06);
-}
-
-.stock-ticker {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.ticker-symbol {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-}
-
-.ticker-name {
-  font-size: 12px;
-  color: #64748b;
-}
-
-.ticker-price {
-  text-align: right;
-}
-
-.price-val {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: white;
-}
-
-.price-var {
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 2px;
-}
-
-/* POURQUOI */
-.insight-pourquoi {
-  font-size: 13px;
-  color: #e2e8f0;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* ANGLE ALPHABOT */
-.insight-angle {
-  font-size: 12px;
-  color: #64748b;
-  font-style: italic;
-  margin: 0;
-  padding: 12px;
-  background: rgba(245, 200, 66, .05);
-  border-radius: 4px;
-}
-
-/* CTA */
-.cta-lire {
-  align-self: flex-start;
-  font-size: 12px;
-  font-weight: 600;
-  color: #22d3ee;
-  text-decoration: none;
-  transition: .2s;
-  margin-top: auto;
-}
-
-.cta-lire:hover {
-  color: #f5c842;
-  text-decoration: underline;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .insights-section {
-    padding: 60px 5%;
-  }
-
-  .insights-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .insight-card {
-    padding: 20px;
-  }
-
-  .insight-titre {
-    font-size: 15px;
-  }
-
-  .insight-contexte {
-    font-size: 12px;
-  }
-}
-</style>
-
-<!-- ─── FIN INSIGHTS GÉOPOLITIQUES ─── -->
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-col">
-      <div class="footer-brand" style="margin-bottom:12px;font-size:16px;">AlphaBot Weekly</div>
-      <p class="footer-brand-desc">Newsletter financière IA gratuite. 13 agents autonomes analysent les marchés chaque jour pour vous aider à comprendre la bourse, la crypto et la géopolitique.</p>
-      <p style="font-size:12px;color:var(--muted);">Fondé par Antoine Metout</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
+  <div class="footer-inner">
+    <div class="footer-brand">AlphaBot Weekly</div>
+    <div class="footer-links">
       <a href="index.html">Accueil</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="investissement.html">Robot Trader</a>
       <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    </div>
-    <div class="footer-col">
-      <h4>Ressources</h4>
-      <a href="newsletter.html">Archives newsletters</a>
-      <a href="investissement.html">Portefeuille en direct</a>
-      <a href="dashboard-agents.html">Dashboard agents</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="mailto:antoine.metout@gmail.com">antoine.metout@gmail.com</a>
-      <a href="#subscribe">S'abonner gratuitement</a>
-      <p style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;">Paris, France</p>
+      <a href="dashboard-agents.html">Agents IA</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 AlphaBot Weekly — Projet indépendant propulsé par Claude AI</div>
-    <div style="display:flex;gap:16px;">
-      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;">Mentions légales</a>
-      <a href="#" style="color:var(--muted);font-size:12px;text-decoration:none;">Politique de confidentialité</a>
-    </div>
+  <div class="footer-copy">
+    © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
+    Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
   </div>
 </footer>
 
 <script>
-// EmailJS Init
-(function(){emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");})();
+// ── NAV TOGGLE ──
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
 
-function handleSubscribe(){doSubscribe('email-input','sub-status');}
-function handleSubscribe2(){doSubscribe('email-input2','sub-status2');}
+// ── SUBSCRIBE ──
+function handleSubscribe(){subscribe('email-input','sub-status');}
+function handleSubscribe2(){subscribe('email-input2','sub-status2');}
 
-// Formspree Submission
-function submitToFormspree(email){
-  const formData = new FormData();
-  formData.append('email', email);
-  formData.append('source', 'site_web');
-  formData.append('date', new Date().toISOString().split('T')[0]);
-  fetch('https://formspree.io/f/xovdbjzk', {method:'POST', body:formData, headers:{'Accept':'application/json'}}).catch(()=>{});
-}
-
-function doSubscribe(inputId, statusId){
-  const email = document.getElementById(inputId).value.trim();
-  const status = document.getElementById(statusId);
+function subscribe(inputId,statusId){
+  const email=document.getElementById(inputId).value.trim();
+  const status=document.getElementById(statusId);
   status.style.display='block';
+  if(!email||!email.includes('@')){status.className='error';status.textContent='Entrez un email valide';return;}
+  status.className='';status.textContent='Inscription en cours...';
 
-  if(!email || !email.includes('@')){
-    status.textContent='Entrez un email valide.';
-    status.className='error';
-    return;
-  }
-
-  status.textContent='Inscription en cours...';
-  status.className='';
-
-  const today = new Date();
-  const dateStr = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
-  const newsletterUrl = `https://antoinemetout-alphabot.github.io/alphabot-weekly/outputs/alphabot_newsletter_${dateStr}.html`;
-  const archiveUrl = `https://antoinemetout-alphabot.github.io/alphabot-weekly/newsletters.html`;
-
-  emailjs.send("service_k6oih79","template_hbzn9ek",{
-    email:email, name:email.split('@')[0],
-    newsletter_url:newsletterUrl, archive_url:archiveUrl
-  }).then(()=>{
-    status.textContent='Bienvenue ! Vérifiez votre boîte mail.';
-    status.className='success';
-    document.getElementById(inputId).value='';
-    submitToFormspree(email);
-  }).catch(()=>{
-    submitToFormspree(email);
-    status.textContent='Inscription enregistrée ! Bienvenue.';
-    status.className='success';
-    document.getElementById(inputId).value='';
-  });
+  fetch('https://formspree.io/f/xzzbqwaa',{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email:email,source:'homepage',date:new Date().toISOString()})
+  }).then(r=>{
+    if(r.ok){status.className='success';status.textContent='Bienvenue ! Votre première newsletter arrive bientôt.';document.getElementById(inputId).value='';}
+    else{status.className='error';status.textContent='Erreur — réessayez.';}
+  }).catch(()=>{status.className='error';status.textContent='Erreur réseau — réessayez.';});
 }
 
-// Live Ticker
-fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true')
-  .then(r=>r.json()).then(d=>{
-    const btc = d.bitcoin;
-    document.getElementById('btc-price').textContent='$'+btc.usd.toLocaleString('en-US');
-    const ch = btc.usd_24h_change.toFixed(1);
-    const el = document.getElementById('btc-change');
-    el.textContent=(ch>0?'+':'')+ch+'%';
-    el.className='tick-ch '+(ch>0?'up':'down');
-  }).catch(()=>{
-    document.getElementById('btc-price').textContent='$87,420';
-    document.getElementById('btc-change').textContent='+1.2%';
-  });
-
-// Fallback values
-document.getElementById('sp-price').textContent='5,780';
-document.getElementById('sp-change').textContent='+0.3%';
-document.getElementById('gold-price').textContent='$3,045';
-document.getElementById('gold-change').textContent='+0.8%';
-document.getElementById('eur-price').textContent='1.0842';
-document.getElementById('eur-change').textContent='+0.2%';
-
-// Mobile Menu
-function toggleMenu(){
-  const nav = document.querySelector('.nav-center');
-  nav.classList.toggle('mobile-open');
-}
-
-// User Session Management
-(function(){
-  const SESSION_KEY = 'ab_user';
-
-  function getPseudoFromEmail(email){
-    const pseudo = email.split('@')[0];
-    return pseudo.charAt(0).toUpperCase() + pseudo.slice(1);
-  }
-
-  function updateNavCTA(email){
-    const navCtaBtn = document.getElementById('nav-cta-btn');
-    if(!navCtaBtn) return;
-
-    const pseudo = getPseudoFromEmail(email);
-    navCtaBtn.innerHTML = `
-      <span style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;" onclick="window._abToggleUserMenu(event)">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:linear-gradient(135deg,var(--cyan),#22c55e);border-radius:50%;font-size:9px;color:white;font-weight:700;">
-          ${pseudo.charAt(0).toUpperCase()}
-        </span>
-        <span>${pseudo}</span>
-      </span>
-    `;
-
-    navCtaBtn.style.background='transparent';
-    navCtaBtn.style.color='white';
-    navCtaBtn.style.padding='8px 12px';
-    navCtaBtn.style.borderRadius='8px';
-    navCtaBtn.style.border='1px solid rgba(34,211,238,.2)';
-    navCtaBtn.style.position='relative';
-    navCtaBtn.onmouseenter = function(){
-      this.style.background='rgba(34,211,238,.1)';
-    };
-    navCtaBtn.onmouseleave = function(){
-      this.style.background='transparent';
-    };
-
-    createUserMenu();
-  }
-
-  function createUserMenu(){
-    let menu = document.getElementById('ab-user-menu');
-    if(!menu){
-      menu = document.createElement('div');
-      menu.id='ab-user-menu';
-      menu.style.cssText=`
-        position:absolute;top:calc(100% + 8px);right:0;
-        background:rgba(15,23,42,.95);border:1px solid rgba(34,211,238,.2);border-radius:10px;
-        min-width:160px;box-shadow:0 12px 32px rgba(0,0,0,.4);
-        display:none;z-index:1000;backdrop-filter:blur(10px);overflow:hidden;
-      `;
-      menu.innerHTML=`
-        <a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08);transition:background .2s;font-size:13px;" onmouseover="this.style.background='rgba(34,211,238,.1)'" onmouseout="this.style.background='transparent'" onclick="event.preventDefault();alert('Mon compte - À implementer');">Mon compte</a>
-        <a href="#" style="display:block;padding:12px 16px;color:#ef4444;text-decoration:none;transition:background .2s;font-size:13px;" onmouseover="this.style.background='rgba(239,68,68,.1)'" onmouseout="this.style.background='transparent'" onclick="event.preventDefault();window._abLogout();">Se déconnecter</a>
-      `;
-      const navCtaBtn = document.getElementById('nav-cta-btn');
-      if(navCtaBtn) navCtaBtn.appendChild(menu);
+// ── LOAD LIVE DATA ──
+async function loadMarketData(){
+  try{
+    const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    const c=d.crypto||{};const b=d.bourse||{};const m=d.commodities||{};
+    if(c.BTC){
+      document.getElementById('btc-price').textContent='$'+Number(c.BTC.prix_usd||0).toLocaleString('en');
+      const v=c.BTC.variation_24h||0;
+      const el=document.getElementById('btc-change');
+      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(1)+'%';
+      el.className='tick-ch '+(v>=0?'up':'down');
     }
-  }
+    const indices=b.indices||{};
+    if(indices['S&P 500']){
+      document.getElementById('sp-price').textContent=Number(indices['S&P 500'].valeur||0).toLocaleString('en',{maximumFractionDigits:0})+' pts';
+      const v=indices['S&P 500'].variation_24h||0;
+      const el=document.getElementById('sp-change');
+      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+      el.className='tick-ch '+(v>=0?'up':'down');
+    }
+    if(indices['CAC 40']){
+      document.getElementById('cac-price').textContent=Number(indices['CAC 40'].valeur||0).toLocaleString('fr',{maximumFractionDigits:0})+' pts';
+      const v=indices['CAC 40'].variation_24h||0;
+      const el=document.getElementById('cac-change');
+      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+      el.className='tick-ch '+(v>=0?'up':'down');
+    }
+    if(m['Or (XAU/USD)']){
+      document.getElementById('gold-price').textContent='$'+Number(m['Or (XAU/USD)'].valeur||0).toLocaleString('en',{maximumFractionDigits:0});
+      const v=m['Or (XAU/USD)'].variation_24h||0;
+      const el=document.getElementById('gold-change');
+      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+      el.className='tick-ch '+(v>=0?'up':'down');
+    }
+    if(m['EUR/USD']){
+      document.getElementById('eur-price').textContent=Number(m['EUR/USD'].valeur||0).toFixed(4);
+      const v=m['EUR/USD'].variation_24h||0;
+      const el=document.getElementById('eur-change');
+      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+      el.className='tick-ch '+(v>=0?'up':'down');
+    }
+  }catch(e){}
+}
 
-  window._abToggleUserMenu = function(e){
-    e.stopPropagation();
-    const menu = document.getElementById('ab-user-menu');
-    if(menu) menu.style.display = menu.style.display==='none' ? 'block' : 'none';
-  };
+// ── LOAD ROBOT CHALLENGE DATA ──
+async function loadChallengeData(){
+  try{
+    const r=await fetch('data/portfolio_public.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    const robots=d.robots||{};
+    const map={prudent:{cap:'robot-p-capital',perf:'robot-p-perf',trades:'robot-p-trades'},modere:{cap:'robot-m-capital',perf:'robot-m-perf',trades:'robot-m-trades'},agressif:{cap:'robot-a-capital',perf:'robot-a-perf',trades:'robot-a-trades'}};
+    for(const[key,ids]of Object.entries(map)){
+      const rb=robots[key];
+      if(!rb)continue;
+      const capital=rb.capital_actuel||10000;
+      const perf=rb.performance_pct||0;
+      const trades=rb.nb_trades||0;
+      document.getElementById(ids.cap).textContent=capital.toLocaleString('fr')+' €';
+      const perfEl=document.getElementById(ids.perf);
+      perfEl.textContent=(perf>=0?'+':'')+perf.toFixed(2)+'%';
+      perfEl.className='challenge-perf '+(perf>0?'up':perf<0?'down':'flat');
+      document.getElementById(ids.trades).textContent=trades+' trade'+(trades>1?'s':'');
+    }
+  }catch(e){}
+}
 
-  document.addEventListener('click', function(){
-    const menu = document.getElementById('ab-user-menu');
-    if(menu) menu.style.display='none';
-  });
+// ── SCROLL REVEAL ──
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-  window._abLogout = function(){
-    sessionStorage.removeItem(SESSION_KEY);
-    location.reload();
-  };
-
-  document.addEventListener('DOMContentLoaded', function(){
-    const saved = sessionStorage.getItem(SESSION_KEY);
-    if(saved) updateNavCTA(saved);
-  });
-})();
+// ── INIT ──
+loadMarketData();
+loadChallengeData();
 </script>
+<script src="assets/gate_subscriber.js"></script>
 </body>
 </html>

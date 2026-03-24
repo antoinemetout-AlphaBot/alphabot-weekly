@@ -1,168 +1,168 @@
 {
   "meta": {
-    "timestamp": "2026-03-23 14:25",
-    "date": "23/03/2026",
+    "timestamp": "2026-03-24 08:30",
+    "date": "24/03/2026",
     "semaine": "Semaine 12 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 70838,
-      "variation_24h": 2.96,
-      "variation_7j": -3.71,
-      "market_cap_mrd": 1417.1,
-      "volume_24h_mrd": 45.27,
+      "prix_usd": 70920,
+      "variation_24h": 4.36,
+      "variation_7j": -4.27,
+      "market_cap_mrd": 1417.9,
+      "volume_24h_mrd": 50.49,
       "ath_usd": 126080,
-      "ath_pct": -43.8
+      "ath_pct": -43.7
     }
   },
   "news_crypto": [
     {
+      "titre": "Bitcoin (BTC) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/bitcoin",
+      "date": "2026-03-24"
+    },
+    {
+      "titre": "Bittensor (TAO) est en tendance sur CoinGecko",
+      "source": "CoinGecko Trending",
+      "url": "https://www.coingecko.com/en/coins/bittensor",
+      "date": "2026-03-24"
+    },
+    {
       "titre": "Backpack (BP) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
       "url": "https://www.coingecko.com/en/coins/backpack",
-      "date": "2026-03-23"
+      "date": "2026-03-24"
     },
     {
       "titre": "Siren (SIREN) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
       "url": "https://www.coingecko.com/en/coins/siren-2",
-      "date": "2026-03-23"
-    },
-    {
-      "titre": "Bitcoin (BTC) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/bitcoin",
-      "date": "2026-03-23"
+      "date": "2026-03-24"
     },
     {
       "titre": "Pudgy Penguins (PENGU) est en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
       "url": "https://www.coingecko.com/en/coins/pudgy-penguins",
-      "date": "2026-03-23"
-    },
-    {
-      "titre": "Resolv USR (USR) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/resolv-usr",
-      "date": "2026-03-23"
+      "date": "2026-03-24"
     }
   ],
   "bourse": {
     "indices": {
       "CAC 40": {
-        "valeur": 7799.64,
-        "variation_24h": 1.75,
-        "variation_7j": -2.19,
+        "valeur": 7726.2,
+        "variation_24h": 0.79,
+        "variation_7j": -3.11,
         "ticker": "^FCHI"
       },
       "S&P 500": {
-        "valeur": 6506.48,
-        "variation_24h": -1.51,
-        "variation_7j": -2.88,
+        "valeur": 6581.0,
+        "variation_24h": 1.15,
+        "variation_7j": -2.01,
         "ticker": "^GSPC"
       },
       "Nasdaq 100": {
-        "valeur": 23898.15,
-        "variation_24h": -1.88,
-        "variation_7j": -3.07,
+        "valeur": 24188.59,
+        "variation_24h": 1.22,
+        "variation_7j": -2.39,
         "ticker": "^NDX"
       },
       "DAX": {
-        "valeur": 22873.54,
-        "variation_24h": 2.2,
-        "variation_7j": -3.61,
+        "valeur": 22653.86,
+        "variation_24h": 1.22,
+        "variation_7j": -4.54,
         "ticker": "^GDAXI"
       },
       "Dow Jones": {
-        "valeur": 45577.47,
-        "variation_24h": -0.96,
-        "variation_7j": -2.92,
+        "valeur": 46208.47,
+        "variation_24h": 1.38,
+        "variation_7j": -1.67,
         "ticker": "^DJI"
       }
     },
     "actions": {
       "Apple": {
-        "prix": 247.99,
-        "variation_24h": -0.39,
+        "prix": 251.49,
+        "variation_24h": 1.41,
         "ticker": "AAPL",
         "devise": "USD",
-        "market_cap_mrd": 3644.9
+        "market_cap_mrd": 3696.4
       },
       "NVIDIA": {
-        "prix": 172.93,
-        "variation_24h": -3.15,
+        "prix": 175.64,
+        "variation_24h": 1.7,
         "ticker": "NVDA",
         "devise": "USD",
-        "market_cap_mrd": 4203.1
+        "market_cap_mrd": 4268.9
       },
       "Tesla": {
-        "prix": 367.96,
-        "variation_24h": -3.24,
+        "prix": 380.85,
+        "variation_24h": 3.5,
         "ticker": "TSLA",
         "devise": "USD",
-        "market_cap_mrd": 1380.7
+        "market_cap_mrd": 1429.1
       },
       "LVMH": {
-        "prix": 473.4,
-        "variation_24h": 3.37,
+        "prix": 466.6,
+        "variation_24h": 1.89,
         "ticker": "MC.PA",
         "devise": "EUR",
-        "market_cap_mrd": 234.7
+        "market_cap_mrd": 231.4
       },
       "TotalEnergies": {
-        "prix": 74.81,
-        "variation_24h": -2.79,
+        "prix": 76.0,
+        "variation_24h": -1.25,
         "ticker": "TTE.PA",
         "devise": "EUR",
-        "market_cap_mrd": 159.9
+        "market_cap_mrd": 162.5
       },
       "ExxonMobil": {
-        "prix": 159.67,
-        "variation_24h": 0.95,
+        "prix": 161.13,
+        "variation_24h": 0.91,
         "ticker": "XOM",
         "devise": "USD",
-        "market_cap_mrd": 665.3
+        "market_cap_mrd": 671.4
       },
       "Lockheed Martin": {
-        "prix": 627.43,
-        "variation_24h": -1.58,
+        "prix": 616.25,
+        "variation_24h": -1.78,
         "ticker": "LMT",
         "devise": "USD",
-        "market_cap_mrd": 145.2
+        "market_cap_mrd": 142.6
       }
     }
   },
   "commodities": {
     "Dollar Index (DXY)": {
-      "valeur": 99.271,
-      "variation_24h": -0.38,
-      "variation_7j": -0.82,
+      "valeur": 99.187,
+      "variation_24h": 0.24,
+      "variation_7j": -0.04,
       "ticker": "DX-Y.NYB"
     },
     "Pétrole WTI": {
-      "valeur": 90.23,
-      "variation_24h": -8.23,
-      "variation_7j": -6.32,
+      "valeur": 90.34,
+      "variation_24h": 2.51,
+      "variation_7j": -6.03,
       "ticker": "CL=F"
     },
     "Or (XAU/USD)": {
-      "valeur": 4453.6001,
-      "variation_24h": -2.56,
-      "variation_7j": -8.92,
+      "valeur": 4423.1001,
+      "variation_24h": 0.43,
+      "variation_7j": -3.86,
       "ticker": "GC=F"
     },
     "EUR/USD": {
-      "valeur": 1.1587,
-      "variation_24h": 0.09,
-      "variation_7j": 0.76,
+      "valeur": 1.1606,
+      "variation_24h": 0.4,
+      "variation_7j": 0.58,
       "ticker": "EURUSD=X"
     }
   },
   "mood": {
-    "valeur": 8,
+    "valeur": 11,
     "sentiment": "Extreme Fear",
-    "hier_valeur": 10,
+    "hier_valeur": 8,
     "hier_sentiment": "Extreme Fear"
   }
 }

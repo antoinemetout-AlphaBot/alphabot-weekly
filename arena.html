@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L'Arène des Investisseurs - AlphaBot Weekly</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>L'Arène des Investisseurs — AlphaBot Weekly | Classement en direct</title>
+<meta name="description" content="Affrontez les robots traders et les autres investisseurs dans l'Arène AlphaBot. Classement en direct, importez votre portefeuille et comparez vos performances.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -128,100 +130,22 @@
       padding: 0 20px;
     }
 
-    /* NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 70px;
-      background: rgba(4, 9, 26, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      z-index: 99;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-    }
-
-    .nav-brand {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--cyan);
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .nav-brand-sub {
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .nav-center {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .nav-center a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.3s var(--transition);
-      position: relative;
-    }
-
-    .nav-center a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--cyan);
-      transition: width 0.3s var(--transition);
-    }
-
-    .nav-center a:hover::after,
-    .nav-center a.active::after {
-      width: 100%;
-    }
-
-    .nav-center a.active {
-      color: var(--cyan);
-    }
-
-    .nav-cta {
-      background: linear-gradient(135deg, var(--cyan), var(--blue)) !important;
-      color: var(--bg) !important;
-      padding: 10px 20px !important;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .nav-hamburger span {
-      width: 25px;
-      height: 2px;
-      background: var(--cyan);
-      transition: 0.3s var(--transition);
-    }
+    /* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+    .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
+    .nav-center{display:flex;gap:28px;align-items:center;}
+    .nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
+    .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
+    .nav-center a:hover{color:#fff;}
+    .nav-center a:hover::after{width:100%;}
+    .nav-center a.active{color:#22d3ee;}
+    .nav-center a.active::after{width:100%;}
+    .nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+    .nav-cta::after{display:none!important;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+    .nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
 
     /* HERO SECTION */
     .arena-hero {
@@ -232,7 +156,7 @@
 
     .arena-hero h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 72px;
+      font-size: clamp(32px, 8vw, 72px);
       font-weight: 700;
       margin-bottom: 20px;
       background: linear-gradient(135deg, var(--cyan), var(--gold));
@@ -1415,18 +1339,10 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 0 20px;
-        height: 60px;
-      }
-
-      .nav-center {
-        display: none;
-      }
-
-      .nav-hamburger {
-        display: flex;
-      }
+      nav{padding:12px 4%;}
+      .nav-center{display:none;gap:0;width:100%;}
+      .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+      .nav-hamburger{display:flex;}
 
       .arena-hero {
         padding-top: 100px;
@@ -1579,6 +1495,436 @@
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease-out forwards;
     }
+
+    /* ==================== PORTFOLIO IMPORT SYSTEM ==================== */
+    .arena-import-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--gold), #fbbf24);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(245, 200, 66, 0.4);
+    }
+
+    /* Import Modal */
+    .arena-import-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .arena-import-modal-overlay.show {
+      display: flex;
+    }
+
+    .arena-import-modal {
+      background: linear-gradient(135deg, rgba(6, 13, 31, 0.95), rgba(13, 20, 37, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 50px rgba(34, 211, 238, 0.2);
+      animation: slideUp 0.3s ease-out;
+      position: relative;
+    }
+
+    .arena-import-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.3s var(--transition);
+    }
+
+    .arena-import-modal-close:hover {
+      color: var(--cyan);
+    }
+
+    .arena-import-modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .arena-import-steps {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-import-step {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .arena-import-step.active {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+    }
+
+    .arena-import-step-content {
+      display: none;
+    }
+
+    .arena-import-step-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Upload Zone */
+    .arena-upload-zone {
+      border: 2px dashed var(--cyan);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      background: rgba(34, 211, 238, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .arena-upload-zone:hover,
+    .arena-upload-zone.dragover {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+    }
+
+    .arena-upload-zone-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .arena-upload-zone-text {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .arena-upload-zone-subtext {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    #arena-import-file {
+      display: none;
+    }
+
+    /* Broker Logo Grid */
+    .arena-broker-logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .arena-broker-logo {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      background: rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .arena-broker-logo:hover {
+      border-color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+    }
+
+    .arena-broker-logo-icon {
+      font-size: 28px;
+    }
+
+    /* Preview Table */
+    .arena-import-preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .arena-import-preview-table thead {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-import-preview-table th {
+      padding: 12px;
+      text-align: left;
+      color: var(--cyan);
+      font-weight: 600;
+      background: rgba(34, 211, 238, 0.05);
+    }
+
+    .arena-import-preview-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .arena-import-preview-row {
+      transition: background 0.3s var(--transition);
+    }
+
+    .arena-import-preview-row:hover {
+      background: rgba(34, 211, 238, 0.05);
+    }
+
+    .arena-import-preview-row.unchecked {
+      opacity: 0.5;
+    }
+
+    .arena-import-checkbox {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .arena-import-summary {
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid var(--cyan);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .arena-import-summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .arena-import-summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .arena-import-summary-label {
+      color: var(--muted);
+    }
+
+    .arena-import-summary-value {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* Broker Help */
+    .arena-broker-help {
+      margin-top: 30px;
+    }
+
+    .arena-broker-help-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      transition: color 0.3s var(--transition);
+    }
+
+    .arena-broker-help-title:hover {
+      color: var(--cyan);
+    }
+
+    .arena-broker-help-content {
+      display: none;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 2px solid var(--cyan);
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    .arena-broker-help-content.open {
+      display: block;
+    }
+
+    .arena-broker-help-item {
+      margin-bottom: 16px;
+    }
+
+    .arena-broker-help-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .arena-broker-help-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .arena-broker-help-steps {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Success Message */
+    .arena-import-success {
+      text-align: center;
+    }
+
+    .arena-import-success-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      animation: pulse-scale 1s ease-out;
+    }
+
+    .arena-import-success-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .arena-import-success-subtext {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    @keyframes pulse-scale {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Import Action Buttons */
+    .arena-import-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .arena-import-btn-secondary {
+      flex: 1;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--cyan);
+    }
+
+    .arena-import-btn-primary {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    .arena-import-btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Error Message */
+    .arena-import-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--red);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--red);
+      display: none;
+    }
+
+    .arena-import-error.show {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .arena-import-modal {
+        padding: 20px;
+      }
+
+      .arena-broker-logos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .arena-import-actions {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1587,20 +1933,18 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="index.html" class="nav-brand">AlphaBot<span class="nav-brand-sub">Weekly</span></a>
-    <div class="nav-center">
+    <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+    <div class="nav-center" id="nav-menu">
       <a href="index.html">Accueil</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="investissement.html">Robot Trader</a>
       <a href="arena.html" class="active">Arena</a>
       <a href="dashboard-agents.html">Agents IA</a>
-      <a href="arena.html" class="nav-cta">Rejoindre l'Arène</a>
+      <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
     </div>
-    <div class="nav-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- MAIN CONTENT -->
@@ -1628,6 +1972,9 @@
       </div>
 
       <div class="arena-cta-group">
+        <button class="arena-button arena-button-primary" onclick="arenaOpenImportModal()" style="font-size:16px;padding:14px 32px;">
+          📁 Importer mon portefeuille
+        </button>
         <button class="arena-button arena-button-primary" onclick="arenaOpenAuthModal('signup')">
           Créer mon portefeuille
         </button>
@@ -1684,7 +2031,7 @@
           <div class="arena-podium-box">2</div>
           <div class="arena-podium-info">
             <div class="arena-podium-avatar">J</div>
-            <div class="arena-podium-name">Jean Lambert</div>
+            <div class="arena-podium-name">CryptoJean_75</div>
             <div class="arena-podium-return">+24.3%</div>
             <div class="arena-podium-value">€12,430</div>
           </div>
@@ -1695,7 +2042,7 @@
           <div class="arena-podium-box">1</div>
           <div class="arena-podium-info">
             <div class="arena-podium-avatar">A</div>
-            <div class="arena-podium-name">Alpha Prudent</div>
+            <div class="arena-podium-name">🤖 Robot Trader Prudent</div>
             <div class="arena-podium-return" style="color: var(--gold);">+32.8%</div>
             <div class="arena-podium-value" style="color: var(--gold);">€15,640</div>
           </div>
@@ -1706,7 +2053,7 @@
           <div class="arena-podium-box">3</div>
           <div class="arena-podium-info">
             <div class="arena-podium-avatar">S</div>
-            <div class="arena-podium-name">Sophie Mallet</div>
+            <div class="arena-podium-name">SophTrader</div>
             <div class="arena-podium-return">+21.7%</div>
             <div class="arena-podium-value">€11,085</div>
           </div>
@@ -1721,42 +2068,42 @@
         <div class="arena-award-card">
           <div class="arena-award-icon">🏆</div>
           <div class="arena-award-title">Meilleur rendement</div>
-          <div class="arena-award-winner" id="award-1-winner">Alpha Prudent</div>
+          <div class="arena-award-winner" id="award-1-winner">🤖 Robot Trader Prudent</div>
           <div class="arena-award-stat" id="award-1-stat">+32.8%</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">📈</div>
           <div class="arena-award-title">Plus forte hausse</div>
-          <div class="arena-award-winner" id="award-2-winner">Marc Dupont</div>
+          <div class="arena-award-winner" id="award-2-winner">MarketSurfer_33</div>
           <div class="arena-award-stat" id="award-2-stat">+7.2%</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🎯</div>
           <div class="arena-award-title">Diversification</div>
-          <div class="arena-award-winner" id="award-3-winner">Lisa Chen</div>
+          <div class="arena-award-winner" id="award-3-winner">LisaInvest</div>
           <div class="arena-award-stat" id="award-3-stat">23 positions</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🤖</div>
           <div class="arena-award-title">Meilleur robot</div>
-          <div class="arena-award-winner" id="award-4-winner">Alpha Modéré</div>
+          <div class="arena-award-winner" id="award-4-winner">🤖 Robot Trader Modéré</div>
           <div class="arena-award-stat" id="award-4-stat">+27.4%</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🔥</div>
           <div class="arena-award-title">Série gagnante</div>
-          <div class="arena-award-winner" id="award-5-winner">Laurent Brun</div>
+          <div class="arena-award-winner" id="award-5-winner">L_Brun_92</div>
           <div class="arena-award-stat" id="award-5-stat">15 jours</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">💡</div>
           <div class="arena-award-title">Meilleure position</div>
-          <div class="arena-award-winner" id="award-6-winner">Alice Mercier</div>
+          <div class="arena-award-winner" id="award-6-winner">AliceCrypto</div>
           <div class="arena-award-stat" id="award-6-stat">+64.2%</div>
         </div>
       </div>
@@ -1771,7 +2118,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">🤖</div>
             <div>
-              <div class="arena-robot-name">Alpha Prudent</div>
+              <div class="arena-robot-name">🤖 Robot Trader Prudent</div>
               <div class="arena-robot-subtitle">Conservative</div>
             </div>
           </div>
@@ -1811,7 +2158,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">🤖</div>
             <div>
-              <div class="arena-robot-name">Alpha Modéré</div>
+              <div class="arena-robot-name">🤖 Robot Trader Modéré</div>
               <div class="arena-robot-subtitle">Balanced</div>
             </div>
           </div>
@@ -1851,7 +2198,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">🤖</div>
             <div>
-              <div class="arena-robot-name">Alpha Agressif</div>
+              <div class="arena-robot-name">🤖 Robot Trader Agressif</div>
               <div class="arena-robot-subtitle">Aggressive</div>
             </div>
           </div>
@@ -1894,7 +2241,10 @@
 
     <!-- MY PORTFOLIO SECTION (HIDDEN IF NOT LOGGED IN) -->
     <section class="arena-section arena-hidden" id="my-portfolio-section">
-      <h2 class="arena-section-title">Mon portefeuille</h2>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;">
+        <h2 class="arena-section-title">Mon portefeuille</h2>
+        <button class="arena-import-btn" onclick="arenaOpenImportModal()">📥 Importer mon portefeuille</button>
+      </div>
 
       <div class="arena-my-portfolio">
         <!-- PORTFOLIO SUMMARY -->
@@ -1999,26 +2349,15 @@
 
         <div class="footer-col">
           <h3>Ressources</h3>
-          <a href="#">Documentation</a>
-          <a href="#">FAQ</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
-        </div>
-
-        <div class="footer-col">
-          <h3>Légal</h3>
-          <a href="#">Mentions légales</a>
-          <a href="#">Confidentialité</a>
-          <a href="#">Conditions</a>
-          <a href="#">Cookies</a>
+          <a href="newsletters.html">Archives</a>
+          <a href="dashboard-agents.html">Agents IA</a>
+          <a href="mailto:antoine.metout@gmail.com">Contact</a>
         </div>
 
         <div class="footer-col">
           <h3>Communauté</h3>
-          <a href="#">Discord</a>
-          <a href="#">Twitter</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
+          <a href="https://twitter.com/AlphaBot_Weekly" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://github.com/antoinemetout-AlphaBot/alphabot-weekly" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
@@ -2091,8 +2430,143 @@
     </div>
   </div>
 
+  <!-- PORTFOLIO IMPORT MODAL -->
+  <div class="arena-import-modal-overlay" id="import-modal">
+    <button class="arena-import-modal-close" onclick="arenaCloseImportModal()">✕</button>
+    <div class="arena-import-modal">
+      <h2 class="arena-import-modal-title">Importer mon portefeuille</h2>
+
+      <!-- STEP INDICATORS -->
+      <div class="arena-import-steps">
+        <div class="arena-import-step active" onclick="arenaGoToStep(1)">1. Fichier</div>
+        <div class="arena-import-step" onclick="arenaGoToStep(2)">2. Aperçu</div>
+        <div class="arena-import-step" onclick="arenaGoToStep(3)">3. Confirmation</div>
+      </div>
+
+      <!-- ERROR MESSAGE -->
+      <div class="arena-import-error" id="import-error"></div>
+
+      <!-- STEP 1: UPLOAD -->
+      <div class="arena-import-step-content active" id="import-step-1">
+        <div class="arena-upload-zone" id="upload-zone" ondrop="arenaDragDrop(event)" ondragover="arenaDragOver(event)" ondragleave="arenaDragLeave(event)" onclick="document.getElementById('arena-import-file').click();">
+          <div class="arena-upload-zone-icon">📁</div>
+          <div class="arena-upload-zone-text">Déposez votre fichier CSV ici</div>
+          <div class="arena-upload-zone-subtext">ou cliquez pour sélectionner</div>
+          <input type="file" id="arena-import-file" accept=".csv,.xlsx,.xls" onchange="arenaHandleFileSelect(event)">
+        </div>
+
+        <div style="text-align: center; margin-bottom: 20px; font-size: 12px; color: var(--muted);">
+          Exportez votre portefeuille depuis votre broker et déposez le fichier ici. On détecte automatiquement le format.
+        </div>
+
+        <!-- BROKER LOGOS (Official Apple App Store icons) -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 16px;">Brokers supportés:</div>
+          <div class="arena-broker-logos">
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/b1/08/05b10852-1827-9b45-65ac-6dcd53caa4b9/ComposedAppIcon-0-0-1x_U007ephone-0-1-P3-85-220.png/128x128bb.jpg" alt="Trade Republic" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Trade Republic</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/50/f5/1f50f517-60ce-657b-098a-cc5a0471a37d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/128x128bb.jpg" alt="eToro" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>eToro</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/b8/bf/d9b8bfe6-f84b-0b37-ea45-cb122b11a366/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/128x128bb.jpg" alt="Boursorama" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Boursorama</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/e7/c0/05e7c056-2ee5-fd86-4c76-809c4c7a7aa7/Fortuneo_AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.jpg" alt="Fortuneo" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Fortuneo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BROKER HELP -->
+        <div class="arena-broker-help">
+          <div class="arena-broker-help-title" onclick="arenaToggleBrokerHelp()">ℹ️ Comment exporter depuis mon broker?</div>
+          <div class="arena-broker-help-content" id="broker-help-content">
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/b1/08/05b10852-1827-9b45-65ac-6dcd53caa4b9/ComposedAppIcon-0-0-1x_U007ephone-0-1-P3-85-220.png/128x128bb.jpg" alt="TR" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Trade Republic</div>
+              <div class="arena-broker-help-steps">Profil → Documents → Relevé de portefeuille → Télécharger CSV</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/50/f5/1f50f517-60ce-657b-098a-cc5a0471a37d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/128x128bb.jpg" alt="eToro" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> eToro</div>
+              <div class="arena-broker-help-steps">Portfolio → Historique → Exporter vers Excel</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/b8/bf/d9b8bfe6-f84b-0b37-ea45-cb122b11a366/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/128x128bb.jpg" alt="Boursorama" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Boursorama</div>
+              <div class="arena-broker-help-steps">Mon portefeuille → Exporter → CSV</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/e7/c0/05e7c056-2ee5-fd86-4c76-809c4c7a7aa7/Fortuneo_AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.jpg" alt="Fortuneo" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Fortuneo</div>
+              <div class="arena-broker-help-steps">Portefeuille → Actions → Exporter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: PREVIEW -->
+      <div class="arena-import-step-content" id="import-step-2">
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">
+            <span id="detected-broker" style="font-weight: 600; color: var(--cyan);">--</span> positions détectées
+          </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-bottom: 20px;">
+          <table class="arena-import-preview-table">
+            <thead>
+              <tr>
+                <th style="width: 30px;">✓</th>
+                <th>Ticker</th>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Prix d'achat</th>
+              </tr>
+            </thead>
+            <tbody id="import-preview-body">
+              <!-- POPULATED BY JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="arena-import-summary" id="import-summary">
+          <div class="arena-import-summary-item">
+            <span class="arena-import-summary-label">Positions à importer:</span>
+            <span class="arena-import-summary-value" id="summary-count">0</span>
+          </div>
+          <div class="arena-import-summary-item">
+            <span class="arena-import-summary-label">Valeur totale (à 0€):</span>
+            <span class="arena-import-summary-value" id="summary-value">€0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: CONFIRMATION -->
+      <div class="arena-import-step-content" id="import-step-3">
+        <div class="arena-import-success">
+          <div class="arena-import-success-icon">✨</div>
+          <div class="arena-import-success-text">Portefeuille importé avec succès!</div>
+          <div class="arena-import-success-subtext">
+            <span id="success-count">0</span> positions ajoutées à votre portefeuille.
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="arena-import-actions">
+        <button class="arena-import-btn-secondary" onclick="arenaCloseImportModal()" id="cancel-btn">Annuler</button>
+        <button class="arena-import-btn-primary" id="next-btn" onclick="arenaNextStep()">Suivant →</button>
+      </div>
+    </div>
+  </div>
+
   <!-- JAVASCRIPT -->
   <script>
+    // ==================== TOGGLE MENU ====================
+    function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
+
     // ==================== FIREBASE CONFIG ====================
     const firebaseConfig = {
       apiKey: "AIzaSyB-qHIr4T0JPnQ7ejCMntYF4uCe-OmJLg4",
@@ -2108,42 +2582,33 @@
 
     // ==================== DEMO DATA ====================
     const DEMO_PORTFOLIOS = [
+      // Les robots traders — données synchronisées depuis portfolio_public.json
+      // (les vrais résultats sont chargés dynamiquement dans loadLeaderboard)
       {
         id: 'robot-prudent',
-        displayName: 'Alpha Prudent',
+        displayName: '🤖 Robot Trader Prudent',
         isRobot: true,
-        positions: [
-          { ticker: 'MSFT', type: 'stock', quantity: 10, avgPrice: 420.50 },
-          { ticker: 'GOLD', type: 'etf', quantity: 5, avgPrice: 180.00 },
-          { ticker: 'EUR/USD', type: 'forex', quantity: 1000, avgPrice: 1.08 }
-        ],
-        return: 32.8
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-modere',
-        displayName: 'Alpha Modéré',
+        displayName: '🤖 Robot Trader Modéré',
         isRobot: true,
-        positions: [
-          { ticker: 'AAPL', type: 'stock', quantity: 15, avgPrice: 178.50 },
-          { ticker: 'BTC', type: 'crypto', quantity: 0.5, avgPrice: 68000 },
-          { ticker: 'ETH', type: 'crypto', quantity: 5, avgPrice: 3600 }
-        ],
-        return: 27.4
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-agressif',
-        displayName: 'Alpha Agressif',
+        displayName: '🤖 Robot Trader Agressif',
         isRobot: true,
-        positions: [
-          { ticker: 'SOL', type: 'crypto', quantity: 50, avgPrice: 190 },
-          { ticker: 'DOGE', type: 'crypto', quantity: 10000, avgPrice: 0.35 },
-          { ticker: 'NVDA', type: 'stock', quantity: 20, avgPrice: 850 }
-        ],
-        return: 45.2
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
       },
+      // Participants communautaires (pseudos)
       {
         id: 'user-1',
-        displayName: 'Jean Lambert',
+        displayName: 'CryptoJean_75',
         isRobot: false,
         positions: [
           { ticker: 'AAPL', type: 'stock', quantity: 50, avgPrice: 150 },
@@ -2153,7 +2618,7 @@
       },
       {
         id: 'user-2',
-        displayName: 'Sophie Mallet',
+        displayName: 'SophTrader',
         isRobot: false,
         positions: [
           { ticker: 'BTC', type: 'crypto', quantity: 1, avgPrice: 50000 },
@@ -2163,7 +2628,7 @@
       },
       {
         id: 'user-3',
-        displayName: 'Marc Dupont',
+        displayName: 'MarketSurfer_33',
         isRobot: false,
         positions: [
           { ticker: 'GOOGL', type: 'stock', quantity: 30, avgPrice: 140 },
@@ -2173,7 +2638,7 @@
       },
       {
         id: 'user-4',
-        displayName: 'Lisa Chen',
+        displayName: 'LisaInvest',
         isRobot: false,
         positions: Array.from({ length: 23 }, (_, i) => ({
           ticker: ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'TSLA', 'META', 'NFLX', 'SPOT', 'UBER'][i % 10] || 'ETH',
@@ -2185,7 +2650,7 @@
       },
       {
         id: 'user-5',
-        displayName: 'Laurent Brun',
+        displayName: 'L_Brun_92',
         isRobot: false,
         positions: [
           { ticker: 'SOL', type: 'crypto', quantity: 100, avgPrice: 160 },
@@ -2195,7 +2660,7 @@
       },
       {
         id: 'user-6',
-        displayName: 'Alice Mercier',
+        displayName: 'AliceCrypto',
         isRobot: false,
         positions: [
           { ticker: 'NVIDIA', type: 'stock', quantity: 5, avgPrice: 400 },
@@ -2205,7 +2670,7 @@
       },
       {
         id: 'user-7',
-        displayName: 'Xavier Leblanc',
+        displayName: 'Xav_Invest',
         isRobot: false,
         positions: [
           { ticker: 'XRP', type: 'crypto', quantity: 5000, avgPrice: 0.60 }
@@ -2214,7 +2679,7 @@
       },
       {
         id: 'user-8',
-        displayName: 'Camille Rousseau',
+        displayName: 'Cam_Trading',
         isRobot: false,
         positions: [
           { ticker: 'AAPL', type: 'stock', quantity: 100, avgPrice: 145 }
@@ -2223,7 +2688,7 @@
       },
       {
         id: 'user-9',
-        displayName: 'Nicolas Petit',
+        displayName: 'Nico_Crypto',
         isRobot: false,
         positions: [
           { ticker: 'BTC', type: 'crypto', quantity: 2, avgPrice: 62000 }
@@ -2232,7 +2697,7 @@
       },
       {
         id: 'user-10',
-        displayName: 'Margot Durand',
+        displayName: 'MargotFin',
         isRobot: false,
         positions: [
           { ticker: 'MSFT', type: 'stock', quantity: 75, avgPrice: 400 }
@@ -2241,7 +2706,7 @@
       },
       {
         id: 'user-11',
-        displayName: 'Théo Martin',
+        displayName: 'TheoETH',
         isRobot: false,
         positions: [
           { ticker: 'ETH', type: 'crypto', quantity: 25, avgPrice: 3200 }
@@ -2250,7 +2715,7 @@
       },
       {
         id: 'user-12',
-        displayName: 'Pauline Blanc',
+        displayName: 'PauTrader',
         isRobot: false,
         positions: [
           { ticker: 'GOOGL', type: 'stock', quantity: 40, avgPrice: 135 }
@@ -2266,10 +2731,11 @@
     let currentFilter = 'all';
 
     // ==================== INITIALIZATION ====================
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', async function() {
       initializeApp();
       setupEventListeners();
       animateCounters();
+      await syncRobotData();  // Sync real robot performance before rendering
       loadLeaderboard();
     });
 
@@ -2310,6 +2776,35 @@
       });
     }
 
+    // ==================== SYNC ROBOT DATA FROM PORTFOLIO ====================
+    async function syncRobotData() {
+      try {
+        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const robots = data.robots || {};
+        const mapping = {
+          'robot-prudent': 'prudent',
+          'robot-modere': 'modere',
+          'robot-agressif': 'agressif'
+        };
+        allPortfolios.forEach(p => {
+          if (p.isRobot && mapping[p.id]) {
+            const r = robots[mapping[p.id]];
+            if (r) {
+              p.return = r.performance_pct || 0;
+              p.positions = (r.positions || []).map(pos => ({
+                ticker: pos.ticker,
+                type: pos.ticker && pos.ticker.includes('BTC') ? 'crypto' : 'stock',
+                quantity: pos.nb_actions || 0,
+                avgPrice: pos.prix_entree || 0
+              }));
+            }
+          }
+        });
+      } catch(e) { /* silent fail — use demo data */ }
+    }
+
     // ==================== LEADERBOARD ====================
     function loadLeaderboard() {
       let portfolios = [...allPortfolios];
@@ -2346,7 +2841,7 @@
                 </div>
                 <div class="arena-investor-name">
                   ${p.displayName}
-                  ${p.isRobot ? '<span class="arena-robot-badge">Robot</span>' : ''}
+                  ${p.isRobot ? '<span class="arena-robot-badge">Robot Trader IA</span>' : ''}
                 </div>
               </div>
             </td>
@@ -2601,11 +3096,607 @@
       });
     }
 
+    // ==================== PORTFOLIO IMPORT ====================
+
+    let importData = {
+      csvText: null,
+      broker: null,
+      positions: [],
+      selectedPositions: []
+    };
+
+    let currentImportStep = 1;
+
+    function arenaOpenImportModal() {
+      document.getElementById('import-modal').classList.add('show');
+      importData = { csvText: null, broker: null, positions: [], selectedPositions: [] };
+      currentImportStep = 1;
+      arenaGoToStep(1);
+    }
+
+    function arenaCloseImportModal() {
+      document.getElementById('import-modal').classList.remove('show');
+      importData = { csvText: null, broker: null, positions: [], selectedPositions: [] };
+    }
+
+    function arenaDragOver(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.add('dragover');
+    }
+
+    function arenaDragLeave(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.remove('dragover');
+    }
+
+    function arenaDragDrop(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        processImportFile(file);
+      }
+    }
+
+    function arenaHandleFileSelect(e) {
+      const file = e.target.files[0];
+      if (file) {
+        processImportFile(file);
+      }
+    }
+
+    function processImportFile(file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          importData.csvText = e.target.result;
+          const parsed = parsePortfolioCSV(importData.csvText, file.name);
+          importData.broker = parsed.broker;
+          importData.positions = parsed.positions;
+          importData.selectedPositions = parsed.positions.map((_, i) => i);
+          arenaShowError('');
+          arenaGoToStep(2);
+        } catch (error) {
+          arenaShowError('Erreur: ' + error.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function arenaGoToStep(step) {
+      if (step === 2 && importData.positions.length === 0) {
+        arenaShowError('Veuillez d\'abord sélectionner un fichier CSV');
+        return;
+      }
+
+      currentImportStep = step;
+
+      // Update step indicators
+      document.querySelectorAll('.arena-import-step').forEach((el, i) => {
+        if (i + 1 <= step) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update step content
+      document.querySelectorAll('.arena-import-step-content').forEach((el, i) => {
+        if (i + 1 === step) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update button labels
+      const nextBtn = document.getElementById('next-btn');
+      const cancelBtn = document.getElementById('cancel-btn');
+
+      if (step === 1) {
+        nextBtn.textContent = 'Suivant →';
+        nextBtn.disabled = false;
+        cancelBtn.style.display = 'block';
+      } else if (step === 2) {
+        nextBtn.textContent = 'Importer →';
+        nextBtn.disabled = false;
+        cancelBtn.style.display = 'block';
+      } else if (step === 3) {
+        nextBtn.textContent = 'Fermer';
+        nextBtn.onclick = arenaCloseImportModal;
+        cancelBtn.style.display = 'none';
+      }
+
+      // Populate preview if step 2
+      if (step === 2) {
+        populateImportPreview();
+      }
+    }
+
+    function arenaNextStep() {
+      if (currentImportStep === 1) {
+        if (importData.positions.length === 0) {
+          arenaShowError('Veuillez sélectionner un fichier CSV');
+          return;
+        }
+        arenaGoToStep(2);
+      } else if (currentImportStep === 2) {
+        if (importData.selectedPositions.length === 0) {
+          arenaShowError('Veuillez sélectionner au moins une position');
+          return;
+        }
+        arenaImportPositions();
+      }
+    }
+
+    function populateImportPreview() {
+      const tbody = document.getElementById('import-preview-body');
+      let selectedCount = 0;
+      let totalValue = 0;
+
+      tbody.innerHTML = importData.positions.map((pos, idx) => {
+        const isSelected = importData.selectedPositions.includes(idx);
+        const posValue = (pos.quantity || 0) * (pos.avgPrice || 0);
+        if (isSelected) {
+          selectedCount++;
+          totalValue += posValue;
+        }
+
+        return `
+          <tr class="arena-import-preview-row ${!isSelected ? 'unchecked' : ''}">
+            <td>
+              <input type="checkbox" class="arena-import-checkbox" ${isSelected ? 'checked' : ''}
+                onchange="arenaToggleImportPosition(${idx})">
+            </td>
+            <td><strong>${pos.ticker || '--'}</strong></td>
+            <td>${pos.name || '--'}</td>
+            <td>${(pos.quantity || 0).toLocaleString('fr-FR')}</td>
+            <td>€${(pos.avgPrice || 0).toFixed(2)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('summary-count').textContent = selectedCount;
+      document.getElementById('summary-value').textContent = '€' + totalValue.toLocaleString('fr-FR', { minimumFractionDigits: 2 });
+      document.getElementById('detected-broker').textContent = importData.broker || 'CSV générique';
+    }
+
+    function arenaToggleImportPosition(idx) {
+      const checkbox = document.querySelectorAll('.arena-import-checkbox')[idx];
+      if (checkbox.checked) {
+        if (!importData.selectedPositions.includes(idx)) {
+          importData.selectedPositions.push(idx);
+        }
+      } else {
+        importData.selectedPositions = importData.selectedPositions.filter(i => i !== idx);
+      }
+      populateImportPreview();
+    }
+
+    function arenaImportPositions() {
+      const positionsToImport = importData.selectedPositions.map(idx => importData.positions[idx]);
+
+      if (window.currentUser && isFirebaseConfigured) {
+        // Firebase mode
+        const db = firebase.firestore();
+        const batch = db.batch();
+        const positionsRef = db.collection('portfolios').doc(window.currentUser.uid).collection('positions');
+
+        positionsToImport.forEach(pos => {
+          const docRef = positionsRef.doc(pos.ticker);
+          batch.set(docRef, {
+            ticker: pos.ticker,
+            name: pos.name,
+            type: pos.type || 'stock',
+            quantity: pos.quantity,
+            avgPrice: pos.avgPrice,
+            addedAt: new Date()
+          }, { merge: true });
+        });
+
+        batch.commit().then(() => {
+          arenaGoToStep(3);
+          document.getElementById('success-count').textContent = positionsToImport.length;
+          setTimeout(() => {
+            arenaCloseImportModal();
+            arenaRefreshPortfolio();
+          }, 2000);
+        }).catch(error => {
+          arenaShowError('Erreur lors de l\'importation: ' + error.message);
+        });
+      } else {
+        // Demo mode
+        if (!window.demoUserPortfolio) {
+          window.demoUserPortfolio = { positions: [] };
+        }
+
+        positionsToImport.forEach(pos => {
+          const existingIdx = window.demoUserPortfolio.positions.findIndex(p => p.ticker === pos.ticker);
+          if (existingIdx >= 0) {
+            window.demoUserPortfolio.positions[existingIdx] = {
+              ...window.demoUserPortfolio.positions[existingIdx],
+              quantity: pos.quantity,
+              avgPrice: pos.avgPrice
+            };
+          } else {
+            window.demoUserPortfolio.positions.push({
+              ticker: pos.ticker,
+              name: pos.name,
+              type: pos.type || 'stock',
+              quantity: pos.quantity,
+              avgPrice: pos.avgPrice,
+              addedAt: new Date()
+            });
+          }
+        });
+
+        arenaGoToStep(3);
+        document.getElementById('success-count').textContent = positionsToImport.length;
+        setTimeout(() => {
+          arenaCloseImportModal();
+          arenaRefreshPortfolio();
+        }, 2000);
+      }
+    }
+
+    function arenaShowError(message) {
+      const errorEl = document.getElementById('import-error');
+      if (message) {
+        errorEl.textContent = message;
+        errorEl.classList.add('show');
+      } else {
+        errorEl.classList.remove('show');
+      }
+    }
+
+    function arenaToggleBrokerHelp() {
+      const content = document.getElementById('broker-help-content');
+      content.classList.toggle('open');
+    }
+
+    function arenaRefreshPortfolio() {
+      if (window.demoUserPortfolio) {
+        arenaRenderPositionsTable();
+        arenaUpdatePortfolioSummary();
+      }
+    }
+
+    // ==================== CSV PARSER ====================
+
+    function parsePortfolioCSV(csvText, filename) {
+      csvText = cleanBOM(csvText);
+      const separator = detectSeparator(csvText);
+      const broker = detectBroker(csvText, filename);
+
+      switch (broker) {
+        case 'Trade Republic':
+          return { broker, positions: parseTradeRepublic(csvText, separator) };
+        case 'eToro':
+          return { broker, positions: parseEToro(csvText, separator) };
+        case 'Trading 212':
+          return { broker, positions: parseTrading212(csvText, separator) };
+        case 'Boursorama':
+          return { broker, positions: parseBoursorama(csvText, separator) };
+        case 'Fortuneo':
+          return { broker, positions: parseFortunevo(csvText, separator) };
+        case 'Bourse Direct':
+          return { broker, positions: parseBourseDirect(csvText, separator) };
+        default:
+          return { broker: 'CSV générique', positions: parseGenericCSV(csvText, separator) };
+      }
+    }
+
+    function cleanBOM(text) {
+      if (text.charCodeAt(0) === 0xFEFF) {
+        return text.slice(1);
+      }
+      return text;
+    }
+
+    function detectSeparator(csvText) {
+      const lines = csvText.split('\n').slice(0, 3);
+      let commaCount = 0, semicolonCount = 0;
+
+      lines.forEach(line => {
+        commaCount += (line.match(/,/g) || []).length;
+        semicolonCount += (line.match(/;/g) || []).length;
+      });
+
+      return semicolonCount > commaCount ? ';' : ',';
+    }
+
+    function detectBroker(csvText, filename) {
+      const lower = csvText.toLowerCase();
+      const headers = csvText.split('\n')[0].toLowerCase();
+
+      if (headers.includes('isin') && headers.includes('shares')) {
+        return 'Trade Republic';
+      }
+      if (headers.includes('instrument') && headers.includes('units')) {
+        return 'eToro';
+      }
+      if (headers.includes('ticker') && headers.includes('current price')) {
+        return 'Trading 212';
+      }
+      if (headers.includes('libellé') || headers.includes('pru')) {
+        return 'Boursorama';
+      }
+      if (headers.includes('valeur') && headers.includes('qté')) {
+        return 'Fortuneo';
+      }
+      if (headers.includes('libellé valeur') || headers.includes('prix de revient')) {
+        return 'Bourse Direct';
+      }
+      if (filename.includes('trade') || filename.includes('republic')) return 'Trade Republic';
+      if (filename.includes('etoro')) return 'eToro';
+      if (filename.includes('trading212')) return 'Trading 212';
+      if (filename.includes('bourso')) return 'Boursorama';
+      if (filename.includes('fortuneo')) return 'Fortuneo';
+      if (filename.includes('bourse')) return 'Bourse Direct';
+
+      return null;
+    }
+
+    function parseTradeRepublic(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const isinIdx = header.findIndex(h => h.toLowerCase().includes('isin'));
+      const nameIdx = header.findIndex(h => h.toLowerCase().includes('name'));
+      const sharesIdx = header.findIndex(h => h.toLowerCase().includes('shares'));
+      const costIdx = header.findIndex(h => h.toLowerCase().includes('average') || h.toLowerCase().includes('cost'));
+      const priceIdx = header.findIndex(h => h.toLowerCase().includes('price'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[isinIdx] || parts[0]),
+          name: parts[nameIdx] || parts[1],
+          quantity: normalizeNumber(parts[sharesIdx] || 0),
+          avgPrice: normalizeNumber(parts[costIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseEToro(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const instrumentIdx = header.findIndex(h => h.toLowerCase().includes('instrument'));
+      const unitsIdx = header.findIndex(h => h.toLowerCase().includes('units'));
+      const openIdx = header.findIndex(h => h.toLowerCase().includes('open rate'));
+      const closeIdx = header.findIndex(h => h.toLowerCase().includes('close rate'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: parts[instrumentIdx] || parts[0],
+          name: parts[instrumentIdx] || parts[0],
+          quantity: normalizeNumber(parts[unitsIdx] || 0),
+          avgPrice: normalizeNumber(parts[openIdx] || parts[closeIdx] || 0),
+          type: parts[instrumentIdx]?.toLowerCase().includes('crypto') ? 'crypto' : 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseTrading212(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const tickerIdx = header.findIndex(h => h.toLowerCase().includes('ticker'));
+      const nameIdx = header.findIndex(h => h.toLowerCase().includes('name'));
+      const sharesIdx = header.findIndex(h => h.toLowerCase().includes('shares'));
+      const avgIdx = header.findIndex(h => h.toLowerCase().includes('avg'));
+      const priceIdx = header.findIndex(h => h.toLowerCase().includes('current'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: parts[tickerIdx] || parts[0],
+          name: parts[nameIdx] || parts[1],
+          quantity: normalizeNumber(parts[sharesIdx] || 0),
+          avgPrice: normalizeNumber(parts[avgIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseBoursorama(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const libelleIdx = header.findIndex(h => h.toLowerCase().includes('libellé'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('quantité') || h.toLowerCase().includes('qté'));
+      const pruIdx = header.findIndex(h => h.toLowerCase().includes('pru'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[libelleIdx] || parts[0]),
+          name: parts[libelleIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[pruIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseFortunevo(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const valeurIdx = header.findIndex(h => h.toLowerCase().includes('valeur'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('qté'));
+      const pruIdx = header.findIndex(h => h.toLowerCase().includes('pru'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[valeurIdx] || parts[0]),
+          name: parts[valeurIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[pruIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseBourseDirect(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const libelleIdx = header.findIndex(h => h.toLowerCase().includes('libellé'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('quantité'));
+      const prixIdx = header.findIndex(h => h.toLowerCase().includes('prix'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[libelleIdx] || parts[0]),
+          name: parts[libelleIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[prixIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseGenericCSV(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      if (lines.length < 2) return [];
+
+      const header = lines[0].split(sep).map(h => h.trim().toLowerCase());
+
+      const tickerIdx = header.findIndex(h => h.includes('ticker') || h.includes('isin') || h === 'symbol');
+      const nameIdx = header.findIndex(h => h.includes('name'));
+      const qtyIdx = header.findIndex(h => h.includes('quantity') || h.includes('shares') || h.includes('qté'));
+      const priceIdx = header.findIndex(h => h.includes('price') || h.includes('pru') || h.includes('cost'));
+
+      if (tickerIdx < 0 || qtyIdx < 0 || priceIdx < 0) {
+        throw new Error('Format de CSV non reconnu. Veuillez vérifier les en-têtes de colonnes.');
+      }
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[tickerIdx] || parts[0]),
+          name: nameIdx >= 0 ? parts[nameIdx] : parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[priceIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseCsvLine(line, sep) {
+      const insideQuotes = (str, index) => {
+        let count = 0;
+        for (let i = 0; i < index; i++) {
+          if (str[i] === '"') count++;
+        }
+        return count % 2 === 1;
+      };
+
+      const parts = [];
+      let current = '';
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        if (char === '"') {
+          current += char;
+        } else if (char === sep && !insideQuotes(line, i)) {
+          parts.push(current.trim().replace(/^"|"$/g, ''));
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      parts.push(current.trim().replace(/^"|"$/g, ''));
+      return parts;
+    }
+
+    function normalizeNumber(str) {
+      if (!str) return 0;
+      str = String(str).trim();
+
+      // Replace common decimal separators
+      if (str.includes(',') && !str.includes('.')) {
+        str = str.replace(',', '.');
+      } else if (str.includes('.') && str.includes(',')) {
+        // Has both, need to determine which is decimal
+        const lastComma = str.lastIndexOf(',');
+        const lastDot = str.lastIndexOf('.');
+        if (lastComma > lastDot) {
+          // European format: 1.234,56
+          str = str.replace(/\./g, '').replace(',', '.');
+        } else {
+          // US format: 1,234.56
+          str = str.replace(/,/g, '');
+        }
+      }
+
+      return parseFloat(str) || 0;
+    }
+
+    function extractTicker(text) {
+      if (!text) return null;
+      text = String(text).trim();
+
+      // Extract from common formats
+      const isinMatch = text.match(/[A-Z]{2}[A-Z0-9]{9}[0-9]/);
+      if (isinMatch) {
+        // Try to find a known ticker in the text
+        const words = text.split(/[\s\-()]/);
+        for (let word of words) {
+          if (word.length >= 1 && word.length <= 5 && /^[A-Z0-9]+$/.test(word)) {
+            return word;
+          }
+        }
+        // ISIN doesn't have obvious ticker, return first word
+        return text.split(/[\s\-()]/)[0];
+      }
+
+      // Extract first word if it looks like a ticker
+      const words = text.split(/[\s\-()]/);
+      for (let word of words) {
+        word = word.trim();
+        if (word.length >= 1 && word.length <= 5 && /^[A-Z0-9]+$/.test(word)) {
+          return word;
+        }
+      }
+
+      return text.split(/[\s\-()]/)[0];
+    }
+
     // ==================== UTILITY ====================
     window.addEventListener('click', function(e) {
       const modal = document.getElementById('auth-modal');
+      const importModal = document.getElementById('import-modal');
       if (e.target === modal) {
         arenaCloseAuthModal();
+      }
+      if (e.target === importModal) {
+        arenaCloseImportModal();
       }
     });
 
@@ -2614,5 +3705,6 @@
       loadLeaderboard();
     });
   </script>
+  <script src="assets/gate_subscriber.js"></script>
 </body>
 </html>
