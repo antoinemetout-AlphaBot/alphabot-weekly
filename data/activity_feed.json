@@ -1,7 +1,132 @@
 {
-  "generated_at": "2026-03-24T09:10:15.153862",
+  "generated_at": "2026-03-24T09:26:17.970812",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T09:26:17.954177",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "DA Site : 0 insight(s) géopolitiques générés",
+      "data": {
+        "date": "2026-03-24 09:25",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 40,
+            "problemes": 6
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 4
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-24.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "already_done"
+              },
+              {
+                "page": "investissement.html",
+                "status": "already_done"
+              },
+              {
+                "page": "newsletter.html",
+                "status": "already_done"
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 0,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T09:26:17.946747",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (0 pages améliorées)",
+      "data": {
+        "date": "2026-03-24 09:25",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 40,
+            "problemes": 6
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 4
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-24.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "already_done"
+              },
+              {
+                "page": "investissement.html",
+                "status": "already_done"
+              },
+              {
+                "page": "newsletter.html",
+                "status": "already_done"
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 0,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T09:26:17.928312",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-24.html"
+      }
+    },
+    {
+      "ts": "2026-03-24T09:26:17.915064",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-24T09:25:34.604863",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T09:25:23.182209",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : DA Site 🎨 — Insights Géopolitiques",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T09:10:15.130867",
       "agent": "Orchestrateur",
@@ -904,92 +1029,118 @@
       "type": "success",
       "message": "🤖 Robot Prudent: 10017€ (+0.17%) | 1 positions",
       "data": {}
-    },
-    {
-      "ts": "2026-03-23T14:00:10.256701",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10017.36,
-          "perf": 0.17
-        },
-        "modere": {
-          "capital": 10000.0,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10077.01,
-          "perf": 0.77
-        }
-      }
-    },
-    {
-      "ts": "2026-03-23T14:00:02.419745",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🤖 Robot Trader — 14h",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.152950",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Agressif: 10058€ (+0.58%) | 2 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.146907",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Modéré: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.140910",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🤖 Robot Prudent: 10000€ (+0.00%) | 1 positions",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-23T13:01:02.133908",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "modere": {
-          "capital": 10000,
-          "perf": 0.0
-        },
-        "agressif": {
-          "capital": 10057.77,
-          "perf": 0.58
-        }
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T09:10:15.130867",
+        "ts": "2026-03-24T09:26:17.954177",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-        "data": {}
+        "message": "DA Site : 0 insight(s) géopolitiques générés",
+        "data": {
+          "date": "2026-03-24 09:25",
+          "etapes": {
+            "audit": {
+              "ok": true,
+              "score": 40,
+              "problemes": 6
+            },
+            "navigation": {
+              "ok": true,
+              "pages_mises_a_jour": 4
+            },
+            "insights": {
+              "ok": true,
+              "count": 5,
+              "injected_in_index": false,
+              "html_path": "outputs\\section_da_2026-03-24.html"
+            },
+            "visuels": {
+              "ok": true,
+              "details": [
+                {
+                  "page": "index.html",
+                  "status": "already_done"
+                },
+                {
+                  "page": "investissement.html",
+                  "status": "already_done"
+                },
+                {
+                  "page": "newsletter.html",
+                  "status": "already_done"
+                }
+              ]
+            }
+          },
+          "success": true,
+          "pages_ameliorees": 0,
+          "insights_count": 5
+        }
       },
-      "last_ts": "2026-03-24T09:10:15.130867",
+      "last_ts": "2026-03-24T09:26:17.954177",
       "last_type": "success",
-      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "total_today": 16,
+      "last_message": "DA Site : 0 insight(s) géopolitiques générés",
+      "total_today": 18,
       "errors_today": 1,
-      "successes_today": 7
+      "successes_today": 8
+    },
+    {
+      "agent": "Agent DA Site",
+      "last_event": {
+        "ts": "2026-03-24T09:26:17.946747",
+        "agent": "Agent DA Site",
+        "type": "success",
+        "message": "Mission DA terminée (0 pages améliorées)",
+        "data": {
+          "date": "2026-03-24 09:25",
+          "etapes": {
+            "audit": {
+              "ok": true,
+              "score": 40,
+              "problemes": 6
+            },
+            "navigation": {
+              "ok": true,
+              "pages_mises_a_jour": 4
+            },
+            "insights": {
+              "ok": true,
+              "count": 5,
+              "injected_in_index": false,
+              "html_path": "outputs\\section_da_2026-03-24.html"
+            },
+            "visuels": {
+              "ok": true,
+              "details": [
+                {
+                  "page": "index.html",
+                  "status": "already_done"
+                },
+                {
+                  "page": "investissement.html",
+                  "status": "already_done"
+                },
+                {
+                  "page": "newsletter.html",
+                  "status": "already_done"
+                }
+              ]
+            }
+          },
+          "success": true,
+          "pages_ameliorees": 0,
+          "insights_count": 5
+        }
+      },
+      "last_ts": "2026-03-24T09:26:17.946747",
+      "last_type": "success",
+      "last_message": "Mission DA terminée (0 pages améliorées)",
+      "total_today": 8,
+      "errors_today": 0,
+      "successes_today": 6
     },
     {
       "agent": "Agent Investissement",
@@ -1083,64 +1234,6 @@
       "total_today": 1,
       "errors_today": 1,
       "successes_today": 0
-    },
-    {
-      "agent": "Agent DA Site",
-      "last_event": {
-        "ts": "2026-03-24T08:35:12.687695",
-        "agent": "Agent DA Site",
-        "type": "success",
-        "message": "Mission DA terminée (3 pages améliorées)",
-        "data": {
-          "date": "2026-03-24 08:33",
-          "etapes": {
-            "audit": {
-              "ok": true,
-              "score": 40,
-              "problemes": 6
-            },
-            "navigation": {
-              "ok": true,
-              "pages_mises_a_jour": 4
-            },
-            "insights": {
-              "ok": true,
-              "count": 5,
-              "injected_in_index": true,
-              "html_path": "outputs\\section_da_2026-03-24.html"
-            },
-            "visuels": {
-              "ok": true,
-              "details": [
-                {
-                  "page": "index.html",
-                  "status": "improved",
-                  "css_rules": 21
-                },
-                {
-                  "page": "investissement.html",
-                  "status": "improved",
-                  "css_rules": 25
-                },
-                {
-                  "page": "newsletter.html",
-                  "status": "improved",
-                  "css_rules": 29
-                }
-              ]
-            }
-          },
-          "success": true,
-          "pages_ameliorees": 3,
-          "insights_count": 5
-        }
-      },
-      "last_ts": "2026-03-24T08:35:12.687695",
-      "last_type": "success",
-      "last_message": "Mission DA terminée (3 pages améliorées)",
-      "total_today": 4,
-      "errors_today": 0,
-      "successes_today": 3
     },
     {
       "agent": "Agent Rédacteur",

@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-24 08:33",
+  "date": "2026-03-24 09:25",
   "etapes": {
     "audit": {
       "ok": true,
@@ -13,7 +13,7 @@
     "insights": {
       "ok": true,
       "count": 5,
-      "injected_in_index": true,
+      "injected_in_index": false,
       "html_path": "outputs\\section_da_2026-03-24.html"
     },
     "visuels": {
@@ -21,23 +21,20 @@
       "details": [
         {
           "page": "index.html",
-          "status": "improved",
-          "css_rules": 21
+          "status": "already_done"
         },
         {
           "page": "investissement.html",
-          "status": "improved",
-          "css_rules": 25
+          "status": "already_done"
         },
         {
           "page": "newsletter.html",
-          "status": "improved",
-          "css_rules": 29
+          "status": "already_done"
         }
       ]
     }
   },
   "success": true,
-  "pages_ameliorees": 3,
+  "pages_ameliorees": 0,
   "insights_count": 5
 }

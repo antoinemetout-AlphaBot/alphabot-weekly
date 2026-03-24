@@ -2,94 +2,94 @@
   "date": "2026-03-24",
   "insights": [
     {
-      "id": "insight_001_rearmement_eu_2026",
-      "date": "2026-03-24",
-      "categorie": "Défense",
-      "titre": "L'Europe sort le carnet de chèques pour ses armées",
-      "contexte": "Face aux tensions mondiales, les pays européens ont décidé de massifier leurs budgets militaires. C'est le plus grand plan de réarmement du continent depuis la Guerre Froide.",
-      "impact_marche": "Le secteur de la défense européen explose à la hausse. L'indice STOXX Europe Aerospace & Defense surperforme le CAC 40 de +18% depuis janvier 2026.",
-      "action_cible": {
-        "ticker": "AIR.PA",
-        "nom": "Airbus SE",
-        "variation_pct": 4.7,
-        "prix_actuel": 187.32,
-        "pourquoi": "Airbus fabrique les avions militaires et les systèmes de surveillance que les gouvernements européens commandent en urgence pour remplir leurs nouveaux quotas de défense."
-      },
-      "severite": "HIGH",
-      "emoji_categorie": "🛡️",
-      "angle_alphabot": "AlphaBot Weekly décortique le carnet de commandes militaires d'Airbus et compare les marges défense vs civil pour savoir si la hausse du titre est justifiée ou spéculative."
-    },
-    {
-      "id": "insight_002_fed_politique_monetaire_2026",
+      "id": "insight_2026_w12_001",
       "date": "2026-03-24",
       "categorie": "Macro",
-      "titre": "La Fed hésite, Wall Street retient son souffle",
-      "contexte": "La banque centrale américaine (la Fed) doit choisir entre baisser ses taux pour relancer l'économie ou les maintenir hauts pour freiner l'inflation. Ce dilemme paralyse les marchés depuis des semaines.",
-      "impact_marche": "Le S&P 500 oscille en zone de consolidation. Les valeurs technologiques souffrent le plus car elles sont très sensibles au coût de l'argent.",
+      "titre": "L'or explose : les banques centrales fuient le dollar",
+      "contexte": "L'or vient d'atteindre 4 418 $ l'once — un niveau historique jamais vu. Pendant ce temps, le Dollar Index (DXY) s'effondre sous les 100 points, son plus bas depuis des mois.",
+      "impact_marche": "Le secteur des matières premières précieuses est en feu haussier. L'indice CAC 40 et le S&P 500 restent fragiles (-2% sur 7 jours), ce qui pousse les investisseurs vers les valeurs refuge comme l'or.",
       "action_cible": {
-        "ticker": "NVDA",
-        "nom": "NVIDIA Corporation",
-        "variation_pct": -2.1,
-        "prix_actuel": 812.45,
-        "pourquoi": "NVIDIA s'endette pour financer sa R&D explosive en IA : quand les taux restent élevés, ce financement coûte plus cher, ce qui réduit mécaniquement la valeur future de l'entreprise selon les marchés."
+        "ticker": "GC=F",
+        "nom": "Or Spot (Gold Futures)",
+        "variation_pct": 0.33,
+        "prix_actuel": 4418.7,
+        "pourquoi": "La défiance mondiale envers le dollar américain — alimentée par les tensions commerciales et les déficits budgétaires US — transforme l'or en bouée de sauvetage pour les banques centrales et les gros investisseurs."
       },
       "severite": "HIGH",
       "emoji_categorie": "💰",
-      "angle_alphabot": "AlphaBot Weekly modélise les deux scénarios Fed (pause vs baisse) et calcule l'impact concret sur le cours NVDA pour les 90 prochains jours."
+      "angle_alphabot": "AlphaBot Weekly décortique ce seuil historique des 4 400$ : est-ce une bulle spéculative ou le début d'un nouveau régime monétaire mondial ? On analyse les flux d'achat des banques centrales et les ETF or les plus accessibles pour un investisseur français."
     },
     {
-      "id": "insight_003_bitcoin_dollar_2026",
-      "date": "2026-03-24",
-      "categorie": "Crypto",
-      "titre": "Bitcoin joue les remplaçants quand le dollar vacille",
-      "contexte": "Quand le dollar américain perd de sa superbe face aux tensions géopolitiques et à l'endettement US, les investisseurs cherchent des refuges alternatifs. Bitcoin capte une partie de cette fuite.",
-      "impact_marche": "Bitcoin progresse fortement dans les phases de doute sur le dollar. Les marchés émergents qui subissent la pression du dollar fort regardent aussi vers le BTC comme outil de couverture.",
-      "action_cible": {
-        "ticker": "BTC-USD",
-        "nom": "Bitcoin",
-        "variation_pct": 6.3,
-        "prix_actuel": 94250.0,
-        "pourquoi": "Chaque annonce de déficit budgétaire américain record ou de tension géopolitique majeure déclenche un afflux d'acheteurs institutionnels vers Bitcoin comme 'or numérique' hors système bancaire."
-      },
-      "severite": "MEDIUM",
-      "emoji_categorie": "₿",
-      "angle_alphabot": "AlphaBot Weekly analyse la corrélation historique entre l'indice DXY (force du dollar) et le prix du Bitcoin pour identifier les seuils déclencheurs d'un prochain rally."
-    },
-    {
-      "id": "insight_004_dollar_emergents_2026",
+      "id": "insight_2026_w12_002",
       "date": "2026-03-24",
       "categorie": "Géopolitique",
-      "titre": "Dollar fort étouffe les pays émergents, une aubaine inattendue",
-      "contexte": "Un dollar américain puissant rend les dettes des pays en développement (Brésil, Inde, Turquie…) plus chères à rembourser. Mais cela pousse aussi ces pays à chercher des alternatives et crée des opportunités pour certaines multinationales.",
-      "impact_marche": "Les indices des marchés émergents (MSCI EM) reculent sous la pression du dollar. En revanche, les entreprises européennes qui exportent vers ces zones gagnent en compétitivité relative.",
+      "titre": "Peur extrême : les marchés paniquent, Tesla résiste seul",
+      "contexte": "L'indice Fear & Greed affiche 11/100 — c'est la zone de panique absolue, identique à celle du crash COVID en 2020. Tous les grands indices mondiaux reculent sur 7 jours, mais Tesla bondit de +3,5% aujourd'hui.",
+      "impact_marche": "Le S&P 500 et le Nasdaq perdent plus de 2% sur la semaine. La peur est généralisée. Paradoxalement, certaines actions de croissance comme Tesla profitent de rachats opportunistes par des investisseurs qui 'achètent la peur'.",
       "action_cible": {
-        "ticker": "OR.PA",
-        "nom": "L'Oréal SA",
-        "variation_pct": 2.8,
-        "prix_actuel": 342.1,
-        "pourquoi": "L'Oréal vend en dollars dans les marchés émergents mais ses coûts sont en euros : quand le dollar monte, ses revenus convertis en euros augmentent mécaniquement, boostant ses bénéfices."
+        "ticker": "TSLA",
+        "nom": "Tesla Inc.",
+        "variation_pct": 3.5,
+        "prix_actuel": 380.85,
+        "pourquoi": "Dans les phases de panique extrême, les actifs les plus volatils comme Tesla deviennent des cibles de rebond technique pour les traders qui parient sur un retour au calme géopolitique et commercial."
       },
-      "severite": "MEDIUM",
+      "severite": "CRITICAL",
       "emoji_categorie": "🌍",
-      "angle_alphabot": "AlphaBot Weekly quantifie l'effet devise sur les résultats trimestriels de L'Oréal et identifie le seuil EUR/USD qui maximise la profitabilité du groupe."
+      "angle_alphabot": "AlphaBot Weekly analyse l'historique des niveaux Fear & Greed sous 15 : que se passe-t-il statistiquement dans les 30 jours qui suivent ? Spoiler : les données sur 10 ans donnent un signal très précis que nous détaillons cette semaine."
     },
     {
-      "id": "insight_005_energie_rearmement_2026",
+      "id": "insight_2026_w12_003",
       "date": "2026-03-24",
       "categorie": "Énergie",
-      "titre": "Réarmement européen relance la demande d'énergie industrielle",
-      "contexte": "Construire des chars, des avions et des munitions consomme d'énormes quantités d'électricité et de gaz. La relance industrielle militaire en Europe crée une demande énergétique inattendue qui redessine les prix.",
-      "impact_marche": "Les prix du gaz naturel européen (TTF) repartent à la hausse. Le CAC 40 voit ses valeurs industrielles et énergétiques surperformer nettement le reste de l'indice.",
+      "titre": "Le pétrole chute de 7% : qui gagne, qui perd vraiment ?",
+      "contexte": "Le baril de WTI perd 7% en une semaine pour tomber à 89$. Cette chute est liée aux craintes de récession mondiale et aux signaux d'un accord possible entre grandes puissances sur les tensions au Moyen-Orient.",
+      "impact_marche": "Le secteur énergétique est sous pression. TotalEnergies et ExxonMobil limitent la casse grâce à leurs dividendes élevés, mais leurs marges vont se comprimer si le pétrole reste sous les 90$.",
       "action_cible": {
         "ticker": "TTE.PA",
         "nom": "TotalEnergies SE",
-        "variation_pct": 3.4,
-        "prix_actuel": 58.76,
-        "pourquoi": "TotalEnergies fournit gaz et électricité aux industries françaises de défense en pleine montée en cadence : plus elles produisent, plus TotalEnergies facture, directement lié au plan de réarmement européen."
+        "variation_pct": 0.82,
+        "prix_actuel": 76.62,
+        "pourquoi": "Malgré la chute du brut, TotalEnergies tient grâce à sa diversification GNL (gaz naturel liquéfié) et ses contrats long terme qui protègent ses revenus des fluctuations à court terme du WTI."
       },
-      "severite": "CRITICAL",
+      "severite": "MEDIUM",
       "emoji_categorie": "⚡",
-      "angle_alphabot": "AlphaBot Weekly cartographie les contrats énergétiques industriels de TotalEnergies liés au complexe militaro-industriel européen et estime leur poids dans le chiffre d'affaires 2026."
+      "angle_alphabot": "AlphaBot Weekly compare TotalEnergies vs ExxonMobil dans ce contexte de pétrole sous 90$ : laquelle des deux protège le mieux le portefeuille d'un investisseur européen ? On sort les chiffres des dividendes et des couvertures de prix."
+    },
+    {
+      "id": "insight_2026_w12_004",
+      "date": "2026-03-24",
+      "categorie": "Défense",
+      "titre": "Lockheed Martin recule : la paix fait peur aux armuriers",
+      "contexte": "Lockheed Martin perd -1,78% alors que tous les marchés rebondissent aujourd'hui. Ce mouvement contre-intuitif signale que des discussions diplomatiques en coulisses refroidissent les anticipations de nouvelles commandes militaires.",
+      "impact_marche": "Le secteur défense européen et américain (DAX militaire, ETF défense) recule légèrement. Les investisseurs arbitrent vers d'autres secteurs, signe que la prime de 'guerre' intégrée dans ces actions se dégonfle.",
+      "action_cible": {
+        "ticker": "LMT",
+        "nom": "Lockheed Martin Corporation",
+        "variation_pct": -1.78,
+        "prix_actuel": 616.25,
+        "pourquoi": "Quand des signaux diplomatiques apparaissent (négociations Ukraine, Moyen-Orient), les marchés réduisent mécaniquement leurs attentes de commandes militaires d'urgence, ce qui pèse directement sur le cours de l'armurier numéro 1 mondial."
+      },
+      "severite": "MEDIUM",
+      "emoji_categorie": "🛡️",
+      "angle_alphabot": "AlphaBot Weekly analyse le paradoxe défense : comment investir dans ce secteur sans parier sur la guerre ? On décrypte les commandes civiles (satellites, cybersécurité) de Lockheed qui représentent 30% de son activité et sont totalement ignorées des débutants."
+    },
+    {
+      "id": "insight_2026_w12_005",
+      "date": "2026-03-24",
+      "categorie": "Crypto",
+      "titre": "Bitcoin à -43% de son sommet : panique ou opportunité historique ?",
+      "contexte": "Bitcoin tourne autour de 70 900$ mais reste à 43,7% sous son record absolu de 126 080$. En parallèle, l'intelligence artificielle décentralisée (Bittensor/TAO) explose en tendance, signe d'une rotation vers la crypto-tech.",
+      "impact_marche": "Le marché crypto global est en phase de consolidation douloureuse. Le sentiment Extreme Fear (11/100) touche aussi les cryptos. Mais les volumes de Bitcoin restent solides à 50 milliards $ en 24h, ce qui évite l'effondrement.",
+      "action_cible": {
+        "ticker": "BTC-USD",
+        "nom": "Bitcoin",
+        "variation_pct": 3.62,
+        "prix_actuel": 70937.0,
+        "pourquoi": "La défiance envers le dollar (DXY sous 100) et l'instabilité géopolitique mondiale poussent une partie des investisseurs institutionnels à se repositionner sur Bitcoin comme 'or numérique', soutenant les prix malgré la panique générale."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "₿",
+      "angle_alphabot": "AlphaBot Weekly compare les 4 dernières fois où Bitcoin était à -40% de son ATH avec un Fear & Greed sous 15 : que s'est-il passé à 3 mois, 6 mois, 1 an ? Une analyse historique chiffrée, sans promesses, pour comprendre où on en est vraiment dans le cycle."
     }
   ]
 }
