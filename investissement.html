@@ -37,90 +37,20 @@
     }
 
     /* ===== NAVIGATION ===== */
-    nav {
-      background-color: var(--bg2);
-      border-bottom: 1px solid rgba(34, 211, 238, 0.1);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav-brand {
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .nav-brand-main {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      background: linear-gradient(135deg, var(--cyan), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .nav-brand-sub {
-      font-size: 0.625rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--muted);
-    }
-
-    .nav-center {
-      display: flex;
-      gap: 2rem;
-      flex: 1;
-      justify-content: center;
-    }
-
-    .nav-center a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    .nav-center a:hover {
-      color: var(--cyan);
-    }
-
-    .nav-center a.active {
-      color: var(--cyan);
-    }
-
-    .nav-center a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--cyan);
-    }
-
-    .nav-cta {
-      text-decoration: none;
-      background: var(--gold);
-      color: var(--bg);
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .nav-cta:hover {
-      background: #fcd34d;
-      transform: translateY(-2px);
-    }
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.8);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border-bottom:1px solid rgba(34,211,238,.08);box-shadow:0 4px 32px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+    .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-brand-sub{font-size:10px;color:var(--muted);font-weight:500;-webkit-text-fill-color:var(--muted);}
+    .nav-center{display:flex;gap:28px;align-items:center;}
+    .nav-center a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;position:relative;}
+    .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s;}
+    .nav-center a:hover{color:white;}
+    .nav-center a:hover::after{width:100%;}
+    .nav-center a.active{color:var(--cyan);}
+    .nav-center a.active::after{width:100%;}
+    .nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+    .nav-hamburger span{width:20px;height:2px;background:var(--muted);transition:.3s;}
 
     /* ===== HERO SECTION ===== */
     .hero {
@@ -897,17 +827,10 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .nav-center {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
+      nav{padding:12px 4%;}
+      .nav-center{display:none;gap:0;width:100%;}
+      .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+      .nav-hamburger{display:flex;}
 
       .robots-grid {
         grid-template-columns: 1fr;
@@ -938,57 +861,7 @@
 
 <!-- DA-AMELIORATIONS-2026-03-23 -->
 <style>
-  /* ===== ENHANCED NAVIGATION ===== */
-  nav {
-    background: rgba(4, 9, 26, 0.85);
-    backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(34, 211, 238, 0.15);
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(34, 211, 238, 0.08);
-    padding: 1.25rem 2rem;
-    transition: all 0.3s ease;
-  }
-
-  .nav-brand-main {
-    font-size: 1.35rem;
-    letter-spacing: -0.5px;
-    filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.4));
-  }
-
-  .nav-center a {
-    font-size: 0.925rem;
-    letter-spacing: 0.3px;
-    padding: 0.4rem 0;
-  }
-
-  .nav-center a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--cyan), var(--gold));
-    transform: scaleX(0);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
-  }
-
-  .nav-center a:hover::after {
-    transform: scaleX(1);
-  }
-
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), #e6b800);
-    box-shadow: 0 4px 16px rgba(245, 200, 66, 0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-    border-radius: 0.6rem;
-    letter-spacing: 0.3px;
-    font-size: 0.9rem;
-  }
-
-  .nav-cta:hover {
-    box-shadow: 0 8px 28px rgba(245, 200, 66, 0.45), inset 0 1px 0 rgba(255,255,255,0.2);
-    transform: translateY(-3px);
-  }
+  /* (nav styles unified — no overrides needed) */
 
   /* ===== ENHANCED HERO ===== */
   .hero {
@@ -1216,18 +1089,18 @@
 <body>
   <!-- NAVIGATION -->
   <nav>
-    <a href="index.html?v=2" class="nav-brand">
-      <span class="nav-brand-main">AlphaBot Weekly</span>
-      <span class="nav-brand-sub">Powered by AI</span>
-    </a>
-    <div class="nav-center">
+    <a href="index.html?v=2" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+    <div class="nav-center" id="nav-menu">
       <a href="index.html?v=2">Accueil</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="investissement.html?v=2" class="active">Robot Trader</a>
       <a href="arena.html">Arena</a>
-      <a href="dashboard-agents.html">Agents</a>
+      <a href="dashboard-agents.html">Agents IA</a>
+      <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
     </div>
-    <a href="newsletter.html" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- GATE ABONNÉS -->
@@ -1455,6 +1328,8 @@
     </div>
   </section>
   <script>
+    // Toggle mobile menu
+    function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
     // Masquer le CTA si déjà abonné
     if (sessionStorage.getItem('ab_user')) {
       const ctaSec = document.getElementById('cta-subscribe-section');

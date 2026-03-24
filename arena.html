@@ -129,99 +129,21 @@
     }
 
     /* NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 70px;
-      background: rgba(4, 9, 26, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      z-index: 99;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-    }
-
-    .nav-brand {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--cyan);
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-
-    .nav-brand-sub {
-      font-size: 14px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .nav-center {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .nav-center a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.3s var(--transition);
-      position: relative;
-    }
-
-    .nav-center a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--cyan);
-      transition: width 0.3s var(--transition);
-    }
-
-    .nav-center a:hover::after,
-    .nav-center a.active::after {
-      width: 100%;
-    }
-
-    .nav-center a.active {
-      color: var(--cyan);
-    }
-
-    .nav-cta {
-      background: linear-gradient(135deg, var(--cyan), var(--blue)) !important;
-      color: var(--bg) !important;
-      padding: 10px 20px !important;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .nav-hamburger span {
-      width: 25px;
-      height: 2px;
-      background: var(--cyan);
-      transition: 0.3s var(--transition);
-    }
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,26,.8);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border-bottom:1px solid rgba(34,211,238,.08);box-shadow:0 4px 32px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+    .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-brand-sub{font-size:10px;color:var(--muted);font-weight:500;-webkit-text-fill-color:var(--muted);}
+    .nav-center{display:flex;gap:28px;align-items:center;}
+    .nav-center a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;position:relative;}
+    .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--cyan);transition:width .3s;}
+    .nav-center a:hover{color:white;}
+    .nav-center a:hover::after{width:100%;}
+    .nav-center a.active{color:var(--cyan);}
+    .nav-center a.active::after{width:100%;}
+    .nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+    .nav-cta::after{display:none!important;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+    .nav-hamburger span{width:20px;height:2px;background:var(--muted);transition:.3s;}
 
     /* HERO SECTION */
     .arena-hero {
@@ -1415,18 +1337,10 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        padding: 0 20px;
-        height: 60px;
-      }
-
-      .nav-center {
-        display: none;
-      }
-
-      .nav-hamburger {
-        display: flex;
-      }
+      nav{padding:12px 4%;}
+      .nav-center{display:none;gap:0;width:100%;}
+      .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+      .nav-hamburger{display:flex;}
 
       .arena-hero {
         padding-top: 100px;
@@ -2017,20 +1931,18 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="index.html?v=2" class="nav-brand">AlphaBot<span class="nav-brand-sub">Weekly</span></a>
-    <div class="nav-center">
+    <a href="index.html?v=2" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+    <div class="nav-center" id="nav-menu">
       <a href="index.html?v=2">Accueil</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="investissement.html?v=2">Robot Trader</a>
       <a href="arena.html" class="active">Arena</a>
       <a href="dashboard-agents.html">Agents IA</a>
-      <a href="arena.html" class="nav-cta">Rejoindre l'Arène</a>
+      <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
     </div>
-    <div class="nav-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- MAIN CONTENT -->
@@ -2661,6 +2573,9 @@
 
   <!-- JAVASCRIPT -->
   <script>
+    // ==================== TOGGLE MENU ====================
+    function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
+
     // ==================== FIREBASE CONFIG ====================
     const firebaseConfig = {
       apiKey: "AIzaSyB-qHIr4T0JPnQ7ejCMntYF4uCe-OmJLg4",
