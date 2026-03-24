@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AlphaBot — Dashboard Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--bg:#04091a;--bg2:#060d1f;--s:rgba(255,255,255,.04);--s2:rgba(255,255,255,.07);
+       --b:rgba(255,255,255,.08);--gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
+       --green:#22c55e;--red:#ef4444;--text:#e2e8f0;--muted:#64748b;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;}
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(59,130,246,.025)1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.025)1px,transparent 1px);
+  background-size:60px 60px;}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:28px 18px 60px;}
+
+/* HEADER */
+.dash-header{display:flex;align-items:center;justify-content:space-between;
+              flex-wrap:wrap;gap:12px;margin-bottom:32px;
+              padding:24px 28px;border-radius:16px;
+              background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(245,200,66,.06));
+              border:1px solid var(--b);}
+.dash-title{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;
+             background:linear-gradient(135deg,#fff,var(--cyan),var(--gold));
+             -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.dash-sub{font-size:13px;color:var(--muted);margin-top:3px;}
+.dash-badge{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+             color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);
+             padding:6px 14px;border-radius:20px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);
+           animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.6);opacity:.4;}}
+
+/* SECTIONS */
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;
+                color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;
+                display:flex;align-items:center;gap:8px;margin:28px 0 14px;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--b);}
+
+/* KPI GRID */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.kpi{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:18px;
+      display:flex;align-items:center;gap:14px;
+      transition:transform .2s,border-color .2s;cursor:default;}
+.kpi:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.14);}
+.kpi-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;
+           justify-content:center;font-size:20px;flex-shrink:0;border:1px solid;}
+.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:800;line-height:1;}
+.kpi-lbl{font-size:12px;color:var(--muted);margin-top:3px;font-weight:500;}
+.kpi-sub{font-size:11px;color:#475569;margin-top:2px;}
+
+/* CHARTS GRID */
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.chart-card{background:var(--s);border:1px solid var(--b);border-radius:16px;padding:22px;}
+.chart-title{font-size:14px;font-weight:700;color:white;margin-bottom:4px;}
+.chart-sub{font-size:11px;color:var(--muted);margin-bottom:18px;}
+.chart-wrap{position:relative;height:200px;}
+
+/* PIPELINE FUNNEL */
+.funnel{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+.funnel-row{display:flex;align-items:center;gap:10px;}
+.funnel-bar-wrap{flex:1;height:28px;background:var(--s2);border-radius:6px;overflow:hidden;}
+.funnel-bar{height:100%;border-radius:6px;transition:width 1s cubic-bezier(.34,1.56,.64,1);}
+.funnel-lbl{font-size:12px;font-weight:600;color:var(--muted);width:90px;text-align:right;}
+.funnel-num{font-size:13px;font-weight:700;color:white;width:30px;text-align:right;}
+
+/* ACTIVITY LOG */
+.activity{display:flex;flex-direction:column;gap:6px;}
+.act-item{display:flex;align-items:center;gap:10px;padding:10px 12px;
+           background:var(--s2);border-radius:8px;font-size:12px;}
+.act-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.act-text{flex:1;color:#cbd5e1;}
+.act-time{color:var(--muted);font-size:11px;}
+
+/* OBJECTIFS */
+.obj-list{display:flex;flex-direction:column;gap:10px;}
+.obj-item{background:var(--s2);border-radius:10px;padding:14px;}
+.obj-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.obj-name{font-size:13px;font-weight:600;color:white;}
+.obj-pct{font-size:12px;font-weight:700;}
+.obj-bar-wrap{height:6px;background:var(--s);border-radius:3px;overflow:hidden;}
+.obj-bar{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.34,1.56,.64,1);}
+
+@media(max-width:600px){
+  .wrap{padding:12px 10px 40px;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .charts-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="dash-header">
+  <div>
+    <div class="dash-title">📊 AlphaBot — Dashboard Analytics</div>
+    <div class="dash-sub">Vue d'ensemble de l'entreprise IA • Mis à jour le 24/03/2026 16:25</div>
+  </div>
+  <div class="dash-badge"><div class="live-dot"></div>Rapport hebdomadaire</div>
+</div>
+
+<!-- SECTION GROWTH -->
+<div class="section-title">📈 Growth & Audience</div>
+<div class="kpi-grid">
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#22c55e18;border-color:#22c55e33;">👥</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#22c55e;">2</div>
+                <div class="kpi-lbl">Abonnés actifs</div>
+                <div class="kpi-sub">+2 cette semaine</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#3b82f618;border-color:#3b82f633;">📈</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#3b82f6;">2</div>
+                <div class="kpi-lbl">Nouveaux / 7j</div>
+                <div class="kpi-sub">2 sur 30j</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#f59e0b18;border-color:#f59e0b33;">📧</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#f59e0b;">6</div>
+                <div class="kpi-lbl">Éditions envoyées</div>
+                <div class="kpi-sub">33 emails au total</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#22c55e18;border-color:#22c55e33;">✅</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#22c55e;">100.0%</div>
+                <div class="kpi-lbl">Taux livraison</div>
+                <div class="kpi-sub">des emails arrivent à destination</div>
+              </div>
+            </div></div>
+
+<!-- SECTION COMMERCIAL -->
+<div class="section-title">💼 Pipeline Commercial</div>
+<div class="kpi-grid">
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#8b5cf618;border-color:#8b5cf633;">🎯</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#8b5cf6;">10</div>
+                <div class="kpi-lbl">Pipeline total</div>
+                <div class="kpi-sub">8 disponibles</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#3b82f618;border-color:#3b82f633;">📨</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#3b82f6;">2</div>
+                <div class="kpi-lbl">Contactés</div>
+                <div class="kpi-sub">en attente de réponse</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#f59e0b18;border-color:#f59e0b33;">💬</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#f59e0b;">0</div>
+                <div class="kpi-lbl">En discussion</div>
+                <div class="kpi-sub">partenariat en cours</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#22c55e18;border-color:#22c55e33;">🤝</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#22c55e;">0</div>
+                <div class="kpi-lbl">Partenaires</div>
+                <div class="kpi-sub">taux conversion : 0.0%</div>
+              </div>
+            </div></div>
+
+<!-- SECTION FINANCE -->
+<div class="section-title">💰 Finance & Revenus</div>
+<div class="kpi-grid">
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#f5c84218;border-color:#f5c84233;">💰</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#f5c842;">0€</div>
+                <div class="kpi-lbl">Revenus 30 jours</div>
+                <div class="kpi-sub">ce mois</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#22c55e18;border-color:#22c55e33;">💎</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#22c55e;">0€</div>
+                <div class="kpi-lbl">Revenus totaux</div>
+                <div class="kpi-sub">depuis le lancement</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#ef444418;border-color:#ef444433;">📉</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#ef4444;">0.0%</div>
+                <div class="kpi-lbl">Taux churn</div>
+                <div class="kpi-sub">désabonnements</div>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-icon" style="background:#8b5cf618;border-color:#8b5cf633;">🚀</div>
+              <div class="kpi-body">
+                <div class="kpi-val" style="color:#8b5cf6;">1 000 abonnés</div>
+                <div class="kpi-lbl">Objectif</div>
+                <div class="kpi-sub">progression : 2/1000</div>
+              </div>
+            </div></div>
+
+<!-- GRAPHIQUES -->
+<div class="section-title">📉 Visualisations</div>
+<div class="charts-grid">
+
+  <!-- Tendance abonnés -->
+  <div class="chart-card">
+    <div class="chart-title">Croissance abonnés</div>
+    <div class="chart-sub">Nouveaux abonnés par semaine</div>
+    <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+  </div>
+
+  <!-- Sources acquisition -->
+  <div class="chart-card">
+    <div class="chart-title">Sources d'acquisition</div>
+    <div class="chart-sub">D'où viennent vos abonnés</div>
+    <div class="chart-wrap"><canvas id="sourcesChart"></canvas></div>
+  </div>
+
+  <!-- Pipeline commercial funnel -->
+  <div class="chart-card">
+    <div class="chart-title">Funnel commercial</div>
+    <div class="chart-sub">Pipeline de prospection sponsors</div>
+    <div class="funnel" id="funnelViz"></div>
+  </div>
+
+  <!-- Objectifs -->
+  <div class="chart-card">
+    <div class="chart-title">Objectifs</div>
+    <div class="chart-sub">Progression vers les jalons clés</div>
+    <div class="obj-list">
+      
+        <div class="obj-item">
+          <div class="obj-header">
+            <div class="obj-name">1 000 abonnés</div>
+            <div class="obj-pct" style="color:#22c55e;">0%</div>
+          </div>
+          <div class="obj-bar-wrap">
+            <div class="obj-bar" style="width:0%;background:#22c55e;" data-target="0%"></div>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-header">
+            <div class="obj-name">5 partenaires actifs</div>
+            <div class="obj-pct" style="color:#f5c842;">0%</div>
+          </div>
+          <div class="obj-bar-wrap">
+            <div class="obj-bar" style="width:0%;background:#f5c842;" data-target="0%"></div>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-header">
+            <div class="obj-name">1 000€ / mois</div>
+            <div class="obj-pct" style="color:#3b82f6;">0%</div>
+          </div>
+          <div class="obj-bar-wrap">
+            <div class="obj-bar" style="width:0%;background:#3b82f6;" data-target="0%"></div>
+          </div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-header">
+            <div class="obj-name">10 éditions envoyées</div>
+            <div class="obj-pct" style="color:#8b5cf6;">60%</div>
+          </div>
+          <div class="obj-bar-wrap">
+            <div class="obj-bar" style="width:0%;background:#8b5cf6;" data-target="60%"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div><!-- /charts-grid -->
+</div><!-- /wrap -->
+
+<script>
+Chart.defaults.color = '#64748b';
+Chart.defaults.font.family = "'Inter',sans-serif";
+
+const TREND_LABELS  = ["S-6", "S-5", "S-4", "S-3", "S-2", "S-1", "Cette sem."];
+const TREND_DATA    = [0, 0, 0, 0, 0, 0, 2];
+const PIPE_LABELS   = ["Prospects", "Contact\u00e9s", "En discussion", "Partenaires"];
+const PIPE_DATA     = [8, 2, 0, 0];
+const PIPE_COLORS   = ["#475569", "#3b82f6", "#f59e0b", "#22c55e"];
+const SRC_LABELS    = ["fondateur", "formspree"];
+const SRC_DATA      = [1, 1];
+const SRC_COLORS    = ["#3b82f6", "#22c55e", "#f59e0b", "#ec4899", "#8b5cf6", "#06b6d4"];
+
+// ── Trend chart ───────────────────────────────────────────────────────────────
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+const trendGrad = trendCtx.createLinearGradient(0,0,0,180);
+trendGrad.addColorStop(0,'rgba(34,197,94,.3)');
+trendGrad.addColorStop(1,'rgba(34,197,94,.0)');
+new Chart(trendCtx, {
+  type: 'line',
+  data: { labels: TREND_LABELS,
+    datasets: [{ label: 'Nouveaux abonnés', data: TREND_DATA,
+      borderColor: '#22c55e', borderWidth: 2.5, backgroundColor: trendGrad,
+      fill: true, tension: 0.4,
+      pointRadius: 4, pointBackgroundColor: '#22c55e', pointBorderColor: '#fff', pointBorderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,.04)' } },
+      y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,.04)' },
+             ticks: { stepSize: 1 } }
+    }
+  }
+});
+
+// ── Sources doughnut ──────────────────────────────────────────────────────────
+new Chart(document.getElementById('sourcesChart'), {
+  type: 'doughnut',
+  data: { labels: SRC_LABELS,
+    datasets: [{ data: SRC_DATA, backgroundColor: SRC_COLORS.slice(0,SRC_DATA.length),
+      borderWidth: 0, hoverOffset: 8 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom', labels: { padding: 16, font: { size: 12 } } }
+    }
+  }
+});
+
+// ── Funnel bars ────────────────────────────────────────────────────────────────
+(function() {
+  const funnel = document.getElementById('funnelViz');
+  const max = Math.max(...PIPE_DATA, 1);
+  PIPE_LABELS.forEach((lbl, i) => {
+    const pct = Math.round(PIPE_DATA[i] / max * 100);
+    const row = document.createElement('div');
+    row.className = 'funnel-row';
+    row.innerHTML = `
+      <div class="funnel-lbl">${lbl}</div>
+      <div class="funnel-bar-wrap">
+        <div class="funnel-bar" style="width:0%;background:${PIPE_COLORS[i]};"
+             data-target="${pct}%"></div>
+      </div>
+      <div class="funnel-num">${PIPE_DATA[i]}</div>`;
+    funnel.appendChild(row);
+  });
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.funnel-bar').forEach(bar => {
+      bar.style.width = bar.dataset.target;
+    });
+  }, 200);
+})();
+
+// ── Progress bars (objectifs) ─────────────────────────────────────────────────
+setTimeout(() => {
+  document.querySelectorAll('.obj-bar').forEach(bar => {
+    bar.style.width = bar.dataset.target;
+  });
+}, 300);
+
+// ── Scroll fade-in ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.kpi,.chart-card').forEach((el,i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = `opacity .5s ease ${i*0.05}s, transform .5s ease ${i*0.05}s`;
+});
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1}).observe(document.body) ||
+document.querySelectorAll('.kpi,.chart-card').forEach(el => {
+  el.style.opacity = '1'; el.style.transform = 'translateY(0)';
+});
+
+// Simple scroll observer
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+  });
+}, {threshold:0.05});
+document.querySelectorAll('.kpi,.chart-card').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
