@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T19:00:57.293447",
+  "generated_at": "2026-03-24T19:01:06.735076",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T19:01:06.721078",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T19:01:02.897705",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 19h",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T19:00:57.281447",
       "agent": "Orchestrateur",
@@ -938,35 +952,21 @@
       "type": "success",
       "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:40:04.856879",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Lancement : 🔍 Scan Alertes — 12h45",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T12:25:58.247620",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T19:00:57.281447",
+        "ts": "2026-03-24T19:01:06.721078",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T19:00:57.281447",
+      "last_ts": "2026-03-24T19:01:06.721078",
       "last_type": "success",
-      "last_message": "🤖 Robot Agressif: 10135€ (+1.35%) | 3 positions",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
       "total_today": 79,
       "errors_today": 7,
       "successes_today": 38
