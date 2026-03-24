@@ -1,7 +1,21 @@
 {
-  "generated_at": "2026-03-24T12:25:45.758365",
+  "generated_at": "2026-03-24T12:25:58.272289",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-24T12:25:58.247620",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-24T12:25:52.835887",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Lancement : 🔍 Scan Alertes — 12h30",
+      "data": {}
+    },
     {
       "ts": "2026-03-24T12:25:45.736366",
       "agent": "Orchestrateur",
@@ -1066,41 +1080,24 @@
       "type": "start",
       "message": "Envoi newsletter démarré — sujet auto",
       "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:32:29.913871",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-24T08:32:29.891412",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-24.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-24.html",
-        "taille_kb": 59.1
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-24T12:25:45.736366",
+        "ts": "2026-03-24T12:25:58.247620",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Prix live : No module named 'update_prices'",
+        "type": "success",
+        "message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
         "data": {}
       },
-      "last_ts": "2026-03-24T12:25:45.736366",
-      "last_type": "error",
-      "last_message": "Prix live : No module named 'update_prices'",
-      "total_today": 44,
+      "last_ts": "2026-03-24T12:25:58.247620",
+      "last_type": "success",
+      "last_message": "🔍 Veille continue : 16 actifs OK — aucun mouvement significatif",
+      "total_today": 46,
       "errors_today": 5,
-      "successes_today": 20
+      "successes_today": 21
     },
     {
       "agent": "AlertDetector",
@@ -1265,22 +1262,6 @@
       "total_today": 1,
       "errors_today": 1,
       "successes_today": 0
-    },
-    {
-      "agent": "Agent Rédacteur",
-      "last_event": {
-        "ts": "2026-03-24T08:32:29.913871",
-        "agent": "Agent Rédacteur",
-        "type": "info",
-        "message": "Archive newsletters.html mise à jour",
-        "data": {}
-      },
-      "last_ts": "2026-03-24T08:32:29.913871",
-      "last_type": "info",
-      "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 2,
-      "errors_today": 0,
-      "successes_today": 1
     }
   ]
 }
