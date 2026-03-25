@@ -2006,4 +2006,31 @@ function playAudioResume() {
     const frVoice = voices.find(v => v.lang.startsWith('fr'));
     if (frVoice) utterance.voice = frVoice;
 
-    utterance.onstart = () => { i
+    utterance.onstart = () => { if (status) status.textContent = '🔊 Lecture en cours...'; };
+    utterance.onend = () => { if (status) status.textContent = '✅ Terminé'; };
+    utterance.onerror = () => { if (status) status.textContent = '❌ Erreur audio'; };
+
+    speechSynthesis.speak(utterance);
+    if (status) status.textContent = '🔊 Préparation...';
+  } else {
+    if (document.getElementById('audio-status'))
+      document.getElementById('audio-status').textContent = '❌ Audio non supporté par votre navigateur';
+  }
+}
+
+// ── INIT ──
+loadMarketData();
+loadChallengeData();
+loadScoreGlobal();
+loadPortfolioLive();
+loadRealityCheck();
+
+// Refresh toutes les 2 minutes
+setInterval(()=>{
+  loadMarketData();
+  loadChallengeData();
+  loadPortfolioLive();
+}, 120000);
+</script>
+</body>
+</html>
