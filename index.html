@@ -1149,6 +1149,160 @@ nav {
   animation: scoreGlow 3s ease-in-out infinite;
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-25 -->
+<style>
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — VISUAL ENHANCEMENT LAYER
+   Senior Art Direction by AlphaBot DA Studio
+═══════════════════════════════════════════ */
+
+/* TYPOGRAPHIE RENFORCÉE */
+body {
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: -2px;
+  line-height: 1.03;
+}
+
+h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+/* NAV — GLASS UPGRADE */
+nav {
+  background: rgba(4, 9, 26, 0.82) !important;
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgba(34, 211, 238, 0.13) !important;
+  box-shadow: 0 1px 0 rgba(34, 211, 238, 0.07), 0 8px 40px rgba(0, 0, 0, 0.6) !important;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nav-brand {
+  filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.35));
+  transition: filter 0.3s ease;
+}
+.nav-brand:hover {
+  filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.6));
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.25), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  letter-spacing: 0.2px;
+  position: relative;
+  overflow: hidden;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.nav-cta:hover::before { opacity: 1; }
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 16px 40px rgba(34, 211, 238, 0.45) !important;
+}
+
+/* HERO — PROFONDEUR & ENTRÉE */
+.hero-tag {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.12), inset 0 1px 0 rgba(34,197,94,0.15);
+  font-size: 10.5px;
+  letter-spacing: 1.8px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.hero-tag:hover {
+  box-shadow: 0 0 36px rgba(34, 197, 94, 0.22);
+  transform: translateY(-1px);
+}
+
+.h1-gradient {
+  filter: drop-shadow(0 0 40px rgba(245, 200, 66, 0.3));
+  background: linear-gradient(135deg, #f5c842 0%, #fbbf24 30%, #38bdf8 70%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-sub {
+  color: #8fa8c8;
+  font-size: clamp(15px, 1.85vw, 18.5px);
+  line-height: 1.8;
+}
+
+/* HERO STATS — CARDS GLOW */
+.hero-stats {
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  position: relative;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.hero-stat:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: 0 12px 40px rgba(34, 211, 238, 0.1), 0 0 0 1px rgba(34,211,238,0.1);
+}
+.hero-stat-val {
+  font-size: 32px;
+  letter-spacing: -1px;
+  filter: drop-shadow(0 0 16px currentColor);
+}
+.hero-stat-lbl {
+  font-size: 10.5px;
+  letter-spacing: 0.8px;
+  margin-top: 6px;
+}
+
+/* FORM — FOCUS & BUTTON */
+.form-group input {
+  border-radius: 14px !important;
+  font-size: 14.5px;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s !important;
+}
+.form-group input:focus {
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.15), 0 4px 20px rgba(34,211,238,0.08) !important;
+}
+
+.btn-sub {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+.btn-sub::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: rgba(255, 255, 255, 0.18);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-sub:hover::after { left: 130%; }
+.btn-sub:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(34, 211, 238, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn-sub:active { transform: translateY(0) scale(0.98); }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>

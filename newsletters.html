@@ -3,251 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Archives — AlphaBot Weekly | Toutes les newsletters</title>
-<meta name="description" content="Retrouvez toutes les éditions d'AlphaBot Weekly. Archives complètes de la newsletter IA bourse et crypto pour investisseurs débutants francophones.">
-<meta property="og:title" content="Archives — Toutes les newsletters AlphaBot Weekly">
-<meta property="og:description" content="Retrouvez toutes les éditions de la newsletter IA bourse et crypto. Archives complètes et gratuites.">
-<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@AlphaBot_Weekly">
-<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/newsletters.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>AlphaBot Weekly — Toutes les newsletters</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#04091a;--bg2:#060d1f;--cyan:#22d3ee;--gold:#f5c842;
-  --blue:#3b82f6;--green:#22c55e;--red:#ef4444;
-  --text:#e2e8f0;--muted:#64748b;--border:rgba(255,255,255,.08);
-  --transition:cubic-bezier(.4,0,.2,1);
-}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh;}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:10px;}
-
-/* BG */
-.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.bg-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(34,211,238,.06) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,200,66,.04) 0%, transparent 50%);animation:drift 20s ease-in-out infinite;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
-
-/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-.nav-center{display:flex;gap:28px;align-items:center;}
-.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-.nav-center a:hover{color:#fff;}
-.nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:#22d3ee;}
-.nav-center a.active::after{width:100%;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-.nav-cta::after{display:none!important;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
-
-/* PAGE */
-.page{position:relative;z-index:1;padding:120px 5% 80px;max-width:1000px;margin:0 auto;}
-
-/* HEADER */
-.page-header{text-align:center;margin-bottom:48px;}
-.page-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);color:var(--cyan);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:18px;}
-.page-header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;color:white;margin-bottom:14px;line-height:1.15;letter-spacing:-.5px;}
-.page-header p{color:var(--muted);font-size:15px;max-width:580px;margin:0 auto;line-height:1.6;}
-
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
-.card{display:block;background:rgba(255,255,255,.03);border:1px solid var(--border);
-  border-radius:16px;padding:24px;text-decoration:none;transition:all .3s var(--transition);}
-.card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.25);box-shadow:0 12px 40px rgba(0,0,0,.3);}
-.card-date{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;font-family:'JetBrains Mono',monospace;}
-.card-title{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:8px;}
-.card-subtitle{font-size:13px;color:var(--muted);margin-top:4px;}
-.card-meta{font-size:12px;color:#475569;margin-bottom:14px;}
-.card-cta{font-size:13px;font-weight:600;color:var(--cyan);transition:color .2s;}
-.card:hover .card-cta{color:white;}
-.card-empty{opacity:0.5;cursor:default;pointer-events:none;}
-.card-empty:hover{transform:none;border-color:var(--border);}
-.card-empty .card-cta{color:var(--muted);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#04091a;color:#e2e8f0;font-family:'Inter',sans-serif;min-height:100vh;padding:32px 16px 60px;}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(59,130,246,.025)1px,transparent 1px),
+  linear-gradient(90deg,rgba(59,130,246,.025)1px,transparent 1px);
+  background-size:60px 60px;}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;}
+header{text-align:center;margin-bottom:40px;padding:36px 24px;
+  background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(245,200,66,.06));
+  border:1px solid rgba(59,130,246,.2);border-radius:20px;}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:900;
+  background:linear-gradient(135deg,#fff,#63b3ed,#f5c842);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:8px;}
+.sub{color:#64748b;font-size:14px;margin-bottom:16px;}
+.badge{display:inline-block;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
+  color:#22c55e;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.card{display:block;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:20px;text-decoration:none;
+  transition:transform .2s,border-color .2s;}
+.card:hover{transform:translateY(-3px);border-color:rgba(99,179,237,.35);}
+.card-date{font-size:11px;color:#64748b;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.card-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:6px;}
+.card-meta{font-size:12px;color:#475569;margin-bottom:12px;}
+.card-cta{font-size:13px;font-weight:600;color:#63b3ed;}
+.back{display:inline-block;color:#64748b;font-size:13px;text-decoration:none;margin-bottom:28px;}
+.back:hover{color:#93c5fd;}
 .update{text-align:center;color:#334155;font-size:11px;margin-top:32px;}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative;z-index:1;margin-top:60px;}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-.footer-links{display:flex;gap:20px;}
-.footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:white;}
-.footer-copy{color:var(--muted);font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:12px 4%;}
-  .nav-center{display:none;gap:0;width:100%;}
-  .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-  .nav-hamburger{display:flex;}
-  .page{padding:100px 4% 60px;}
-  .grid{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;text-align:center;}
-}
-
-/* FOCUS STATES */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.skip-link:focus { top: 0; }
 </style>
-
-<!-- VISUAL-UPGRADE-2026-03-24 -->
 <style>
-/* ═══ ARCHIVES VISUAL UPGRADE ═══ */
-
-/* Animated dot grid */
-.bg-wrap::after {
-  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridPulse 4s ease-in-out infinite alternate;
-}
-@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
-
-/* Nav glassmorphism */
-nav {
-  background: rgba(4,9,26,.72)!important;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-}
-
-/* Animated border glow */
-@keyframes borderGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-
-/* Cards — animated gradient border */
-.card {
-  position:relative!important; z-index:1;
-  border:none!important;
-  background:rgba(255,255,255,.03)!important;
-}
-.card::after {
-  content:''; position:absolute; inset:-1px; border-radius:17px; z-index:-1;
-  background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(59,130,246,.15),rgba(245,200,66,.15),rgba(34,211,238,.3));
-  background-size:300% 300%; animation:borderGlow 6s ease infinite;
-  opacity:.3; transition:opacity .4s;
-}
-.card:hover::after { opacity:1; }
-.card:hover {
-  transform:translateY(-8px)!important;
-  box-shadow:0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(34,211,238,.08)!important;
-}
-
-/* Card title — glow on hover */
-.card:hover .card-title { color:#22d3ee; text-shadow:0 0 20px rgba(34,211,238,.3); }
-
-/* CTA text — glow */
-.card:hover .card-cta {
-  color:white!important;
-  text-shadow:0 0 15px rgba(34,211,238,.4);
-}
-
-/* Page header — title glow */
-.page-header h1 {
-  filter: drop-shadow(0 0 30px rgba(34,211,238,.15));
+/* ═══ NAV (injecté par Agent DA) ═══ */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 40px;background:rgba(4,9,26,.85);backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;
+           text-decoration:none;display:flex;align-items:center;gap:6px;}
+.nav-brand-sub{font-weight:400;font-size:14px;color:#64748b;}
+.nav-center{display:flex;align-items:center;gap:24px;}
+.nav-center a{color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+.nav-center a:hover,.nav-center a.active{color:white;}
+.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:white!important;
+         padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px;}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:white;margin:5px 0;transition:.3s;}
+@media(max-width:768px){
+  .nav-center{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;
+              background:rgba(4,9,26,.95);backdrop-filter:blur(20px);padding:20px;gap:16px;
+              border-bottom:1px solid rgba(255,255,255,.08);}
+  .nav-center.mobile-open{display:flex;}
+  .nav-hamburger{display:block;}
 }
 </style>
-
-<!-- Analytics -->
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+<style>
+/* ═══ FOOTER (injecté par Agent DA) ═══ */
+footer{margin-top:60px;padding:40px;border-top:1px solid rgba(255,255,255,.06);
+       text-align:center;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;
+              max-width:900px;margin:0 auto 20px;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:#64748b;text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:#e2e8f0;}
+.footer-copy{font-size:12px;color:#334155;line-height:1.8;}
+</style>
 </head>
 <body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
-
-<div class="bg-wrap"><div class="bg-grid"></div></div>
-
-<!-- NAV -->
-<nav aria-label="Navigation principale">
+<nav>
   <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
   <div class="nav-center" id="nav-menu">
     <a href="index.html">Accueil</a>
-    <a href="newsletter.html" class="active">Newsletter</a>
+    <a href="newsletter.html">Newsletter</a>
     <a href="investissement.html">Robot Trader</a>
     <a href="arena.html">Arena</a>
     <a href="dashboard-agents.html">Agents IA</a>
-    <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
+    <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
   </div>
   <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="page" id="main-content">
-  <div class="page-header">
-    <div class="page-tag">Archives</div>
-    <h1>Toutes les éditions</h1>
-    <p>Retrouvez l'intégralité des newsletters AlphaBot Weekly. Chaque édition décrypte la bourse, la crypto et la géopolitique en 5 minutes.</p>
-  </div>
-
+<div class="bg"></div>
+<div class="wrap">
+  <a href="index.html" class="back">← Retour à l'accueil</a>
+  <header>
+    <div class="logo">🤖 AlphaBot Weekly</div>
+    <div class="sub">L'essentiel des marchés bourse &amp; crypto — par l'IA</div>
+    <div class="badge">📚 6 édition(s) disponible(s)</div>
+  </header>
   <div class="grid">
-    <a href="outputs/alphabot_newsletter_2026-03-24.html" target="_blank" class="card">
-      <div class="card-date">Mardi 24 mars 2026</div>
-      <div class="card-title">Marchés sous tension, or au sommet<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">64.1 KB · Générée par IA</div>
-      <div class="card-cta">Lire l'édition →</div>
-    </a>
-    <a href="outputs/alphabot_newsletter_2026-03-23.html" target="_blank" class="card">
-      <div class="card-date">Lundi 23 mars 2026</div>
-      <div class="card-title">Bitcoin résiste, les indices hésitent<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">65.7 KB · Générée par IA</div>
-      <div class="card-cta">Lire l'édition →</div>
-    </a>
-    <a href="outputs/alphabot_newsletter_2026-03-22.html" target="_blank" class="card">
-      <div class="card-date">Dimanche 22 mars 2026</div>
-      <div class="card-title">Week-end géopolitique : analyse spéciale<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">59.6 KB · Générée par IA</div>
-      <div class="card-cta">Lire l'édition →</div>
-    </a>
-    <a href="outputs/alphabot_newsletter_2026-03-21.html" target="_blank" class="card">
-      <div class="card-date">Samedi 21 mars 2026</div>
-      <div class="card-title">Premiers signaux de la semaine<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">48.4 KB · Générée par IA</div>
-      <div class="card-cta">Lire l'édition →</div>
-    </a>
-    <a href="outputs/alphabot_newsletter_2026-03-20.html" target="_blank" class="card">
-      <div class="card-date">Vendredi 20 mars 2026</div>
-      <div class="card-title">Clôture hebdo : le bilan des marchés<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">49.6 KB · Générée par IA</div>
-      <div class="card-cta">Lire l'édition →</div>
-    </a>
-    <div class="card card-empty">
-      <div class="card-date">Bientôt</div>
-      <div class="card-title">Prochaine édition bientôt...<div class="card-subtitle">Édition AlphaBot Weekly</div></div>
-      <div class="card-meta">En préparation</div>
-      <div class="card-cta">Contenu à venir</div>
-    </div>
+    
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-25.html" target="_blank" class="card">
+          <div class="card-date">Mercredi 25 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">63.6 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-24.html" target="_blank" class="card">
+          <div class="card-date">Mardi 24 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">64.1 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-23.html" target="_blank" class="card">
+          <div class="card-date">Lundi 23 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">65.7 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-22.html" target="_blank" class="card">
+          <div class="card-date">Dimanche 22 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">59.6 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-21.html" target="_blank" class="card">
+          <div class="card-date">Samedi 21 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">48.4 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
+        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-20.html" target="_blank" class="card">
+          <div class="card-date">Vendredi 20 March 2026</div>
+          <div class="card-title">📊 Édition AlphaBot Weekly</div>
+          <div class="card-meta">49.6 KB · Générée par IA</div>
+          <div class="card-cta">Lire l'édition →</div>
+        </a>
   </div>
-  <div class="update">Mis à jour automatiquement · 24/03/2026 à 08:32</div>
+  <div class="update">Mis à jour automatiquement · 25/03/2026 à 08:23</div>
 </div>
-
 <script>
 function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
 </script>
-
-<footer role="contentinfo">
+<footer>
   <div class="footer-inner">
-    <div class="footer-brand">AlphaBot Weekly</div>
+    <div class="footer-brand">🤖 AlphaBot Weekly</div>
     <div class="footer-links">
-      <a href="index.html">Accueil</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="investissement.html">Robot Trader</a>
       <a href="arena.html">Arena</a>
@@ -256,9 +152,8 @@ function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobi
   </div>
   <div class="footer-copy">
     © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-    Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
+    ⚠️ Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
   </div>
 </footer>
-<script src="assets/gate_subscriber.js"></script>
 </body>
 </html>

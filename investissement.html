@@ -1357,6 +1357,180 @@ body::before {
   box-shadow:0 0 16px rgba(34,211,238,.6), 0 0 40px rgba(34,211,238,.2)!important;
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-25 -->
+<style>
+/* ============================================================
+   ALPHABOT WEEKLY — investissement.html — DA Senior Enhancements
+   ============================================================ */
+
+/* GLOBAL REFINEMENTS */
+:root {
+  --glow-cyan: 0 0 30px rgba(34,211,238,.25), 0 0 60px rgba(34,211,238,.1);
+  --glow-gold: 0 0 30px rgba(245,200,66,.25), 0 0 60px rgba(245,200,66,.1);
+  --glow-green: 0 0 20px rgba(34,197,94,.3);
+  --card-bg: linear-gradient(145deg, rgba(6,13,31,.95) 0%, rgba(4,9,26,.98) 100%);
+  --border-glow: rgba(34,211,238,.15);
+}
+
+body {
+  background: radial-gradient(ellipse at 20% 50%, rgba(34,211,238,.04) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(59,130,246,.04) 0%, transparent 60%),
+              var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO ENHANCEMENTS */
+.hero {
+  padding: 130px 2rem 5rem;
+  background: radial-gradient(ellipse at 50% 0%, rgba(34,211,238,.08) 0%, transparent 65%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59,130,246,.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 9vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  filter: drop-shadow(0 0 40px rgba(34,211,238,.3));
+  animation: heroFadeIn .8s var(--transition) both;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  letter-spacing: .01em;
+  color: #94a3b8;
+  animation: heroFadeIn .8s .15s var(--transition) both;
+}
+
+.live-badge {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: .45rem 1.1rem;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 4px 20px rgba(239,68,68,.4), 0 0 0 0 rgba(239,68,68,.5);
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(239,68,68,.4), 0 0 0 0 rgba(239,68,68,.5); }
+  50%      { box-shadow: 0 4px 30px rgba(239,68,68,.5), 0 0 0 12px rgba(239,68,68,0); }
+}
+
+/* ROBOT CARDS */
+.robot-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-glow);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: transform .35s var(--transition),
+              box-shadow .35s var(--transition),
+              border-color .35s var(--transition);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.robot-card::before {
+  height: 2px;
+  opacity: .85;
+  transition: opacity .3s;
+}
+
+.robot-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(34,211,238,.45);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 8px 32px rgba(34,211,238,.12),
+              inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.robot-card:hover::before { opacity: 1; }
+
+.robot-card.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-color), var(--glow-cyan);
+  background: linear-gradient(145deg, rgba(34,211,238,.07) 0%, rgba(6,13,31,.97) 100%);
+}
+
+.robot-card.prudent:hover  { box-shadow: 0 24px 60px rgba(0,0,0,.5), var(--glow-green); }
+.robot-card.agressif:hover { box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(239,68,68,.2); }
+.robot-card.modere:hover   { box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(245,158,11,.2); }
+
+/* ROBOT HEADER */
+.robot-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(34,211,238,.4));
+  transition: transform .3s;
+}
+
+.robot-card:hover .robot-emoji { transform: scale(1.15) rotate(-5deg); }
+
+.robot-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.4px;
+}
+
+/* STAT ITEMS */
+.stat-item {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: .75rem;
+  padding: .9rem 1rem;
+  transition: background .3s, border-color .3s;
+}
+
+.robot-card:hover .stat-item {
+  background: rgba(34,211,238,.06);
+  border-color: rgba(34,211,238,.12);
+}
+
+.stat-label {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: .35rem;
+}
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  background: linear-gradient(135deg, #22d3ee 0%, #f5c842 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(34,211,238,.2));
+}
+
+/* ROBOTS GRID */
+.robots-grid {
+  gap: 1.75rem;
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
