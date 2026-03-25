@@ -674,6 +674,7 @@ select:hover, .edition-select:hover {
         <p>Chargement de la newsletter...</p>
       </div>
       <iframe id="newsletter-frame" style="display:none;" loading="lazy" onload="frameLoaded()"></iframe>
+      <div id="newsletter-content" style="display:none;background:white;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);"></div>
       <div id="no-edition" class="error-state" style="display:none;">
         <h3>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -804,25 +805,52 @@ async function loadAvailableEditions(){
   }
 }
 
-// ── Load a specific edition ──
-function loadEdition(date){
+// ── Load a specific edition via fetch (plus fiable que iframe) ──
+async function loadEdition(date){
   if(!date) return;
   const frame = document.getElementById('newsletter-frame');
+  const contentDiv = document.getElementById('newsletter-content');
   const loading = document.getElementById('loading');
   const noEd = document.getElementById('no-edition');
 
   frame.style.display='none';
+  contentDiv.style.display='none';
   loading.style.display='block';
   noEd.style.display='none';
 
-  frame.src = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
+  const url = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
+
+  try {
+    const response = await fetch(url + '?t=' + Date.now());
+    if(!response.ok) throw new Error('HTTP ' + response.status);
+    const html = await response.text();
+
+    if(html.length < 200 || html.includes('Page non trouvée')){
+      loading.style.display='none';
+      noEd.style.display='block';
+      return;
+    }
+
+    // Injecter le HTML directement dans la div
+    contentDiv.innerHTML = html;
+    loading.style.display='none';
+    contentDiv.style.display='block';
+
+  } catch(e) {
+    console.error('Erreur chargement newsletter:', e);
+    // Fallback: essayer avec iframe
+    frame.src = url;
+    loading.style.display='none';
+    frame.style.display='block';
+    frame.style.height='800px';
+  }
 }
 
+// Fallback iframe onload (si fetch échoue)
 function frameLoaded(){
   const frame = document.getElementById('newsletter-frame');
   const loading = document.getElementById('loading');
   try{
-    // Check if frame loaded properly
     const h = frame.contentDocument.body;
     if(h && h.innerHTML.length > 100){
       loading.style.display='none';
