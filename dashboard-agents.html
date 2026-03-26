@@ -1,408 +1,589 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Agents — AlphaBot Weekly | Centre de Commande</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface": "#0e0e0e",
-            "surface-low": "#131313",
-            "surface-container": "#1a1919",
-            "surface-high": "#201f1f",
-            "surface-highest": "#262626",
-            "primary": "#ff906d",
-            "primary-container": "#ff784d",
-            "secondary": "#ff725e",
-            "on-surface": "#ffffff",
-            "on-surface-variant": "#adaaaa",
-            "outline-variant": "#484847",
-          },
-          fontFamily: {
-            "headline": ["Space Grotesk", "sans-serif"],
-            "body": ["Manrope", "sans-serif"],
-            "label": ["Inter", "sans-serif"]
-          },
-        },
-      },
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Centre de Commande — AlphaBot Weekly | Dashboard Agents</title>
+<meta name="description" content="Centre de Commande AlphaBot: Score Global, 3 branches (Newsletter, Trader, Arène), COO, Reality Check, activité temps réel.">
+<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AlphaBot_Weekly">
+<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/dashboard-agents.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#04091a;--bg2:#060d1f;--card:rgba(255,255,255,.03);--card2:rgba(255,255,255,.06);
+  --b:rgba(255,255,255,.08);--b2:rgba(255,255,255,.15);--border:rgba(255,255,255,.08);
+  --gold:#f5c842;--blue:#3b82f6;--cyan:#22d3ee;
+  --green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--purple:#a855f7;
+  --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
+  --transition:cubic-bezier(.4,0,.2,1);
+}
 
-  <style>
-    * { @apply antialiased; }
-    html, body { background: #0e0e0e; }
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh;}
 
-    /* Neural mesh background */
-    .neural-mesh {
-      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
-      background-size: 40px 40px;
-    }
+.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.15;mix-blend-mode:screen;}
+.orb-1{width:500px;height:500px;background:var(--cyan);top:-100px;left:10%;animation:float 8s ease-in-out infinite;}
+.orb-2{width:400px;height:400px;background:var(--gold);top:30%;right:5%;animation:float 10s ease-in-out infinite reverse;}
+.orb-3{width:300px;height:300px;background:var(--blue);bottom:10%;left:50%;animation:float 12s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-30px);}}
 
-    /* Glassmorphism */
-    .glass-card {
-      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
-    }
+.bg-grid{position:absolute;inset:0;background-image:
+  radial-gradient(circle at 20% 50%, rgba(34,211,238,.05) 0%, transparent 50%),
+  radial-gradient(circle at 80% 80%, rgba(245,200,66,.03) 0%, transparent 50%);
+  animation:drift 25s ease-in-out infinite;}
+@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(15px,-15px);}}
 
-    /* Glow effects */
-    .glow-primary {
-      box-shadow: 0 0 20px rgba(255, 144, 109, 0.15);
-    }
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:4px;}
 
-    .glow-success {
-      box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
-    }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-brand-sub{font-size:11px;font-weight:500;color:#64748b;}
+.nav-menu{display:flex;gap:1.5rem;align-items:center;font-size:13px;font-weight:500;flex-wrap:wrap;}
+.nav-menu a{color:var(--text);text-decoration:none;transition:all .2s var(--transition);}
+.nav-menu a:hover{color:var(--cyan);}
+.nav-menu a.active{color:var(--cyan);border-bottom:2px solid var(--cyan);}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));padding:8px 18px;border-radius:4px;color:#fff!important;font-weight:600;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(34,211,238,.3);}
 
-    .glow-error {
-      box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
-    }
+main{position:relative;z-index:1;margin-top:80px;padding:40px 5%;max-width:1600px;margin-left:auto;margin-right:auto;}
 
-    /* Status dots */
-    .dot-success {
-      @apply w-2 h-2 rounded-full bg-green-500;
-      animation: pulse-success 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.8px;}
+.subtitle{color:var(--muted);font-size:13px;margin-bottom:40px;display:flex;align-items:center;gap:8px;}
 
-    .dot-error {
-      @apply w-2 h-2 rounded-full bg-red-500;
-      animation: pulse-error 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+/* Global Score Section */
+.score-section{margin-bottom:50px;padding:30px;background:linear-gradient(135deg,rgba(34,211,238,.05),rgba(245,200,66,.05));border:1px solid rgba(34,211,238,.1);border-radius:12px;backdrop-filter:blur(10px);}
+.score-global{display:grid;grid-template-columns:1fr 3fr;gap:40px;align-items:center;margin-bottom:30px;}
+@media(max-width:768px){.score-global{grid-template-columns:1fr;gap:30px;}}
 
-    .dot-warning {
-      @apply w-2 h-2 rounded-full bg-yellow-500;
-      animation: pulse-warning 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+.score-circle{width:200px;height:200px;border-radius:50%;background:conic-gradient(from 0deg, var(--green) 0%, var(--cyan) 33%, var(--gold) 66%, var(--red) 100%);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 40px rgba(34,211,238,.4);}
+.score-circle::before{content:'';position:absolute;inset:8px;border-radius:50%;background:var(--bg2);}
+.score-number{position:relative;z-index:2;font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
-    @keyframes pulse-success {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
+.score-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:768px){.score-cards{grid-template-columns:1fr;}}
+.score-card{padding:20px;background:var(--card2);border:1px solid var(--border);border-radius:8px;transition:all .3s var(--transition);}
+.score-card:hover{background:var(--card);border-color:var(--cyan);box-shadow:0 0 20px rgba(34,211,238,.2);}
+.score-label{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:8px;}
+.score-value{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 
-    @keyframes pulse-error {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
+/* COO Status */
+.coo-section{margin-bottom:50px;padding:25px;background:linear-gradient(135deg,rgba(168,85,247,.05),rgba(34,211,238,.05));border:1px solid rgba(168,85,247,.2);border-radius:12px;backdrop-filter:blur(10px);}
+.coo-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;}
+.coo-dot{width:12px;height:12px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);}
+.coo-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);}
+.coo-time{color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.coo-status{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.coo-item{padding:15px;background:var(--card);border-left:3px solid var(--cyan);border-radius:6px;}
+.coo-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;}
+.coo-value{font-size:16px;font-weight:600;color:var(--text);margin-top:8px;}
 
-    @keyframes pulse-warning {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
+/* Reality Check */
+.reality-section{margin-bottom:50px;padding:25px;background:linear-gradient(135deg,rgba(239,68,68,.05),rgba(34,211,238,.05));border:1px solid rgba(239,68,68,.2);border-radius:12px;backdrop-filter:blur(10px);}
+.reality-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.reality-icon{font-size:20px;}
+.reality-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;}
+.reality-score{display:flex;align-items:center;gap:15px;}
+.score-bar{flex:1;height:8px;background:var(--b2);border-radius:4px;overflow:hidden;}
+.score-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:4px;transition:width .5s var(--transition);}
+.score-percent{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;min-width:50px;}
+.reality-verdict{padding:15px;margin-top:15px;background:var(--card);border-left:3px solid var(--yellow);border-radius:6px;font-size:13px;line-height:1.6;}
+.reality-issues{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:15px;}
+.issue{padding:10px;background:var(--b);border-left:3px solid var(--red);border-radius:4px;font-size:12px;}
 
-    /* Mobile menu */
-    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    #nav-menu.mobile-open { max-height: 300px; }
+/* Three Branches */
+.branches{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:50px;}
+@media(max-width:1024px){.branches{grid-template-columns:1fr 1fr;gap:20px;}}
+@media(max-width:768px){.branches{grid-template-columns:1fr;}}
 
-    /* Activity log */
-    .log-terminal {
-      @apply font-mono text-xs overflow-y-auto bg-[#0a0a0a] border border-white/5 rounded-lg p-4;
-      max-height: 500px;
-    }
+.branch{padding:25px;background:var(--card2);border:1px solid var(--border);border-radius:12px;transition:all .3s var(--transition);}
+.branch:hover{background:var(--card);border-color:var(--cyan);box-shadow:0 8px 32px rgba(34,211,238,.1);}
+.branch-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--b);}
+.branch-icon{font-size:24px;}
+.branch-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;}
+.branch-agents{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+.agent-item{padding:12px;background:var(--bg2);border-left:3px solid var(--cyan);border-radius:6px;display:flex;align-items:center;gap:10px;font-size:13px;}
+.agent-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.agent-dot.success{background:var(--green);box-shadow:0 0 6px var(--green);}
+.agent-dot.warning{background:var(--yellow);box-shadow:0 0 6px var(--yellow);}
+.agent-dot.error{background:var(--red);box-shadow:0 0 6px var(--red);}
+.agent-name{flex:1;}
+.agent-time{color:var(--muted);font-size:11px;}
+.branch-metric{padding:15px;background:linear-gradient(135deg,rgba(34,211,238,.1),rgba(245,200,66,.1));border:1px solid rgba(34,211,238,.2);border-radius:8px;margin-top:15px;}
+.metric-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;}
+.metric-value{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);margin-top:8px;}
 
-    .log-entry {
-      @apply py-1 flex gap-3 items-start;
-    }
+/* Arena Spotlight */
+.arena-section{margin-bottom:50px;padding:30px;background:linear-gradient(135deg,rgba(34,211,238,.05),rgba(168,85,247,.05));border:1px solid rgba(34,211,238,.1);border-radius:12px;backdrop-filter:blur(10px);}
+.arena-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.arena-combat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:center;}
+@media(max-width:768px){.arena-combat{grid-template-columns:1fr;}}
+.combatant{padding:20px;background:var(--card2);border:1px solid var(--border);border-radius:10px;text-align:center;}
+.combatant-name{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;}
+.combatant-performance{font-size:20px;font-weight:600;margin-bottom:10px;}
+.combatant-bull .combatant-performance{color:var(--green);}
+.combatant-bear .combatant-performance{color:var(--red);}
+.combatant-status{font-size:12px;color:var(--muted);}
+.vs{display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;}
 
-    .log-entry.success .log-agent { @apply text-green-400; }
-    .log-entry.error .log-agent { @apply text-red-400; }
-    .log-entry.warning .log-agent { @apply text-yellow-400; }
-    .log-entry.info .log-agent { @apply text-primary; }
+/* Activity Terminal */
+.terminal-section{padding:30px;background:var(--card2);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(10px);}
+.terminal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.terminal-title{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;}
+.terminal-filters{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{padding:6px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;color:var(--text);cursor:pointer;font-size:12px;font-weight:500;transition:all .2s var(--transition);}
+.filter-btn:hover,.filter-btn.active{background:var(--cyan);color:var(--bg);border-color:var(--cyan);}
 
-    .log-time { @apply text-outline-variant flex-shrink-0 w-20; }
-    .log-agent { @apply font-semibold w-24 flex-shrink-0; }
-    .log-message { @apply text-on-surface-variant flex-1; }
+.terminal-logs{height:400px;overflow-y:auto;background:var(--bg2);border:1px solid var(--b);border-radius:8px;padding:15px;font-family:'JetBrains Mono',monospace;font-size:12px;}
+.log-entry{padding:8px;margin:5px 0;background:var(--bg);border-left:3px solid var(--cyan);border-radius:4px;display:grid;grid-template-columns:100px 120px 1fr;gap:10px;line-height:1.5;}
+.log-time{color:var(--gold);}
+.log-agent{color:var(--cyan);}
+.log-message{color:var(--text);}
+.log-entry.success .log-agent{color:var(--green);}
+.log-entry.warning .log-agent{color:var(--yellow);}
+.log-entry.error .log-agent{color:var(--red);}
 
-    /* Primary button */
-    .btn-primary {
-      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg hover:glow-primary;
-    }
-  </style>
+.terminal-logs::-webkit-scrollbar{width:6px;}
+.terminal-logs::-webkit-scrollbar-track{background:var(--bg);}
+.terminal-logs::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px;}
+
+/* Responsive */
+@media(max-width:768px){
+  main{padding:30px 4%;margin-top:70px;}
+  h1{font-size:28px;}
+  .nav-menu{gap:1rem;font-size:12px;}
+  .score-circle{width:150px;height:150px;}
+  .score-number{font-size:48px;}
+  .score-value{font-size:24px;}
+}
+
+@media(max-width:480px){
+  h1{font-size:24px;}
+  .terminal-logs{height:300px;}
+  .log-entry{grid-template-columns:1fr;}
+  .log-time,.log-agent{font-size:10px;}
+}
+</style>
 </head>
-<body class="bg-surface text-on-surface font-body dark">
+<body>
 
-  <!-- ═══════════════════════════════════════════════════
-       NAV (Fixed Glassmorphism)
-       ═══════════════════════════════════════════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
+<div class="bg-wrap">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="bg-grid"></div>
+</div>
 
-      <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
-        <a href="newsletter.html" class="text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
-        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
-        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
-        <a href="dashboard-agents.html" class="text-sm text-primary font-semibold">Agents</a>
-        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
+<nav>
+  <div class="nav-brand">ALPHABOT<div class="nav-brand-sub">Centre de Commande</div></div>
+  <div class="nav-menu">
+    <a href="index.html">Accueil</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="investissement.html">Investissement</a>
+    <a href="arena.html">Arena</a>
+    <a href="dashboard-agents.html" class="active">Agents</a>
+    <a href="newsletter.html" class="nav-cta">S'abonner gratuitement</a>
+  </div>
+</nav>
+
+<main>
+  <h1>🎯 Centre de Commande AlphaBot</h1>
+  <div class="subtitle">
+    <span id="live-indicator">● Temps réel</span> • Mise à jour automatique toutes les 30s
+  </div>
+
+  <!-- Global Score Section -->
+  <div class="score-section">
+    <div class="score-global">
+      <div class="score-circle">
+        <div class="score-number" id="global-score">—</div>
       </div>
+      <div class="score-cards">
+        <div class="score-card">
+          <div class="score-label">Newsletter</div>
+          <div class="score-value" id="newsletter-score">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">/100</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Trader Performance</div>
+          <div class="score-value" id="trader-perf">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">%</div>
+        </div>
+        <div class="score-card">
+          <div class="score-label">Combats Arène</div>
+          <div class="score-value" id="arena-combats">—</div>
+          <div class="score-label" style="margin-top:10px;font-size:10px;color:var(--muted);">aujourd'hui</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <!-- Mobile menu button -->
-      <button class="md:hidden" onclick="toggleMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+  <!-- COO Status -->
+  <div class="coo-section">
+    <div class="coo-header">
+      <div class="coo-dot"></div>
+      <div class="coo-title">Directeur d'Exploitation (COO)</div>
+      <div class="coo-time" id="coo-time">—</div>
+    </div>
+    <div class="coo-status">
+      <div class="coo-item">
+        <div class="coo-label">Tâches du jour</div>
+        <div class="coo-value" id="coo-tasks">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Taux de succès</div>
+        <div class="coo-value" id="coo-success">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Erreurs aujourd'hui</div>
+        <div class="coo-value" id="coo-errors">—</div>
+      </div>
+      <div class="coo-item">
+        <div class="coo-label">Status système</div>
+        <div class="coo-value" id="coo-system">✓ Normal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reality Check -->
+  <div class="reality-section">
+    <div class="reality-header">
+      <div class="reality-icon">⚠️</div>
+      <div class="reality-title">Reality Check</div>
+    </div>
+    <div class="reality-score">
+      <div class="score-bar">
+        <div class="score-bar-fill" id="reality-bar" style="width:75%;"></div>
+      </div>
+      <div class="score-percent" id="reality-score">75%</div>
+    </div>
+    <div class="reality-verdict" id="reality-verdict">
+      Système en bon état. Tous les agents fonctionnent normalement.
+    </div>
+    <div class="reality-issues" id="reality-issues">
+      <div class="issue">Pas de problèmes détectés</div>
+    </div>
+  </div>
+
+  <!-- Three Branches -->
+  <div class="branches">
+    <!-- Branch Newsletter -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">📰</div>
+        <div class="branch-name">Newsletter</div>
+      </div>
+      <div class="branch-agents" id="branch-newsletter">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Agent Rédacteur</div>
+          <div class="agent-time">—</div>
+        </div>
+      </div>
+      <div class="branch-metric">
+        <div class="metric-label">Performance</div>
+        <div class="metric-value" id="newsletter-perf">—</div>
+      </div>
     </div>
 
-    <!-- Mobile nav -->
-    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
-      <div class="px-4 py-4 space-y-3">
-        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
-        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
-        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
-        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
-        <a href="dashboard-agents.html" class="block text-sm text-primary font-semibold">Agents</a>
-        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
+    <!-- Branch Trader -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">📈</div>
+        <div class="branch-name">Trader</div>
+      </div>
+      <div class="branch-agents" id="branch-trader">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Robot Trader</div>
+          <div class="agent-time">—</div>
+        </div>
+      </div>
+      <div class="branch-metric">
+        <div class="metric-label">P&L du jour</div>
+        <div class="metric-value" id="trader-pnl">—</div>
       </div>
     </div>
-  </nav>
 
-  <!-- Main content -->
-  <main class="pt-20">
-
-    <!-- ═══════════════════════════════════════════════════
-         HERO SECTION
-         ═══════════════════════════════════════════════════ -->
-    <section class="relative overflow-hidden py-20 sm:py-28 neural-mesh">
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20"></div>
-        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl opacity-20"></div>
+    <!-- Branch Arène -->
+    <div class="branch">
+      <div class="branch-header">
+        <div class="branch-icon">⚔️</div>
+        <div class="branch-name">Arène</div>
       </div>
-
-      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-        <h1 class="text-5xl sm:text-6xl font-headline font-black text-center leading-tight mb-4">
-          Centre de Commande
-          <span class="block bg-gradient-to-r from-primary via-[#ff906d] to-secondary bg-clip-text text-transparent">
-            AlphaBot IA
-          </span>
-        </h1>
-        <p class="text-center text-lg text-on-surface-variant mb-8">
-          Supervision temps réel de tous les agents. Auto-refresh toutes les 30 secondes.
-        </p>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         KPI CARDS
-         ═══════════════════════════════════════════════════ -->
-    <section class="py-16 px-4 sm:px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <!-- Total tasks -->
-          <div class="glass-card rounded-lg p-6 text-center">
-            <div class="text-3xl font-headline font-black text-primary mb-2" id="kpi-total">—</div>
-            <div class="text-xs text-on-surface-variant font-semibold uppercase">Tâches/jour</div>
-          </div>
-
-          <!-- Success rate -->
-          <div class="glass-card rounded-lg p-6 text-center">
-            <div class="text-3xl font-headline font-black text-green-400 mb-2" id="kpi-success">—</div>
-            <div class="text-xs text-on-surface-variant font-semibold uppercase">Taux succès</div>
-          </div>
-
-          <!-- Errors -->
-          <div class="glass-card rounded-lg p-6 text-center">
-            <div class="text-3xl font-headline font-black text-red-400 mb-2" id="kpi-errors">—</div>
-            <div class="text-xs text-on-surface-variant font-semibold uppercase">Erreurs/jour</div>
-          </div>
-
-          <!-- Last update -->
-          <div class="glass-card rounded-lg p-6 text-center">
-            <div class="text-xs font-mono text-primary mb-2" id="kpi-time">—:—:—</div>
-            <div class="text-xs text-on-surface-variant font-semibold uppercase">Dernière MAJ</div>
-          </div>
+      <div class="branch-agents" id="branch-arena">
+        <div class="agent-item">
+          <div class="agent-dot success"></div>
+          <div class="agent-name">Bull vs Bear</div>
+          <div class="agent-time">—</div>
         </div>
       </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
-         AGENTS STATUS GRID
-         ═══════════════════════════════════════════════════ -->
-    <section class="py-16 px-4 sm:px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl font-headline font-bold mb-8">État des Agents</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="agents-grid">
-          <!-- Rempli dynamiquement par JS -->
-        </div>
+      <div class="branch-metric">
+        <div class="metric-label">Dernier combat</div>
+        <div class="metric-value" id="arena-winner">—</div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         ACTIVITY LOG
-         ═══════════════════════════════════════════════════ -->
-    <section class="py-16 px-4 sm:px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl font-headline font-bold mb-8">Journal d'Activité (50 derniers)</h2>
-        <div class="glass-card rounded-xl p-6">
-          <div class="log-terminal" id="activity-log">
-            <div class="log-entry info">
-              <span class="log-time">--:--:--</span>
-              <span class="log-agent">SYSTEM</span>
-              <span class="log-message">Chargement des données...</span>
-            </div>
-          </div>
-        </div>
+  <!-- Arena Spotlight -->
+  <div class="arena-section">
+    <div class="arena-title">⚔️ Combat du Jour</div>
+    <div class="arena-combat">
+      <div class="combatant combatant-bull">
+        <div class="combatant-name">🐂 Bull</div>
+        <div class="combatant-performance" id="arena-bull-perf">—</div>
+        <div class="combatant-status" id="arena-bull-status">En attente</div>
       </div>
-    </section>
+      <div class="vs">VS</div>
+      <div class="combatant combatant-bear">
+        <div class="combatant-name">🐻 Bear</div>
+        <div class="combatant-performance" id="arena-bear-perf">—</div>
+        <div class="combatant-status" id="arena-bear-status">En attente</div>
+      </div>
+    </div>
+  </div>
 
-  </main>
+  <!-- Activity Terminal -->
+  <div class="terminal-section">
+    <div class="terminal-header">
+      <div class="terminal-title">📡 Flux d'Activité en Direct</div>
+      <div class="terminal-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="newsletter">Newsletter</button>
+        <button class="filter-btn" data-filter="trader">Trader</button>
+        <button class="filter-btn" data-filter="arena">Arène</button>
+        <button class="filter-btn" data-filter="coo">COO</button>
+      </div>
+    </div>
+    <div class="terminal-logs" id="terminal-logs">
+      <div class="log-entry">
+        <div class="log-time">--:--:--</div>
+        <div class="log-agent">SYSTEM</div>
+        <div class="log-message">Connexion établie. Chargement des données...</div>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    const REFRESH_INTERVAL = 30000; // 30 secondes
-    let allEvents = [];
+</main>
 
-    // ── MENU TOGGLE ──
-    function toggleMenu() {
-      const menu = document.getElementById('nav-menu');
-      menu.classList.toggle('mobile-open');
-    }
+<script>
+const REFRESH_INTERVAL = 30000; // 30 seconds
+const API_BASE = '.';
+let currentFilter = 'all';
+let allLogs = [];
 
-    // ── FORMAT TIME ──
-    function formatTimeAgo(dateStr) {
-      if (!dateStr) return '—';
-      const date = new Date(dateStr);
-      const now = new Date();
-      const seconds = Math.floor((now - date) / 1000);
-      if (seconds < 60) return `${seconds}s`;
-      const minutes = Math.floor(seconds / 60);
-      if (minutes < 60) return `${minutes}m`;
-      const hours = Math.floor(minutes / 60);
-      return `${hours}h`;
-    }
+// Fetch data function with fallback
+async function fetchJSON(path) {
+  try {
+    const response = await fetch(`${API_BASE}/${path}`);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (e) {
+    console.log(`Could not load ${path}:`, e.message);
+    return null;
+  }
+}
 
-    // ── FETCH DATA ──
-    async function fetchJSON(path) {
-      try {
-        const res = await fetch(path + '?t=' + Date.now());
-        if (!res.ok) return null;
-        return await res.json();
-      } catch (e) {
-        console.log(`Erreur chargement ${path}:`, e.message);
-        return null;
-      }
-    }
+// Format time ago
+function timeAgo(dateString) {
+  if (!dateString) return '—';
+  const date = new Date(dateString);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
+}
 
-    // ── LOAD DASHBOARD ──
-    async function loadDashboard() {
-      const feed = await fetchJSON('data/activity_feed.json');
+// Load Global Score
+async function loadGlobalScore() {
+  const data = await fetchJSON('data/score_global.json');
+  if (data) {
+    document.getElementById('global-score').textContent = Math.round(data.global_score || 0);
+    document.getElementById('newsletter-score').textContent = Math.round(data.newsletter_score || 0);
+    document.getElementById('trader-perf').textContent = (data.trader_performance || 0).toFixed(1);
+    document.getElementById('arena-combats').textContent = data.arena_combats_today || 0;
+  }
+}
 
-      if (!feed) {
-        console.error('Impossible de charger activity_feed.json');
-        return;
-      }
+// Load Reality Check
+async function loadRealityCheck() {
+  const data = await fetchJSON('data/reality_checks.json');
+  if (data) {
+    const score = Math.round(data.score_realite || 75);
+    document.getElementById('reality-score').textContent = `${score}%`;
+    document.getElementById('reality-bar').style.width = `${score}%`;
+    document.getElementById('reality-verdict').textContent = data.verdict || 'Système nominal.';
 
-      // Update KPIs
-      const agents = feed.agents || [];
-      let totalToday = 0, successToday = 0, errorsToday = 0;
-
-      agents.forEach(a => {
-        totalToday += a.total_today || 0;
-        successToday += a.successes_today || 0;
-        errorsToday += a.errors_today || 0;
+    const issuesContainer = document.getElementById('reality-issues');
+    issuesContainer.innerHTML = '';
+    if (data.issues && data.issues.length > 0) {
+      data.issues.forEach(issue => {
+        const issueEl = document.createElement('div');
+        issueEl.className = 'issue';
+        issueEl.textContent = issue;
+        issuesContainer.appendChild(issueEl);
       });
-
-      const successRate = totalToday > 0 ? Math.round((successToday / totalToday) * 100) : 0;
-
-      document.getElementById('kpi-total').textContent = totalToday;
-      document.getElementById('kpi-success').textContent = successRate + '%';
-      document.getElementById('kpi-errors').textContent = errorsToday;
-
-      const now = new Date();
-      document.getElementById('kpi-time').textContent = now.toLocaleTimeString('fr-FR', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-
-      // Update agents grid
-      updateAgentsGrid(agents);
-
-      // Update activity log
-      allEvents = feed.events || [];
-      renderActivityLog();
+    } else {
+      const noIssue = document.createElement('div');
+      noIssue.className = 'issue';
+      noIssue.textContent = 'Pas de problèmes détectés';
+      issuesContainer.appendChild(noIssue);
     }
+  }
+}
 
-    // ── UPDATE AGENTS GRID ──
-    function updateAgentsGrid(agents) {
-      const grid = document.getElementById('agents-grid');
-      grid.innerHTML = '';
-
-      agents.forEach(agent => {
-        const lastType = agent.last_type || 'info';
-        const statusClass = agent.errors_today > 0 ? 'error' : (lastType === 'success' ? 'success' : 'warning');
-        const statusDot = statusClass === 'success' ? 'dot-success' : (statusClass === 'error' ? 'dot-error' : 'dot-warning');
-
-        const card = document.createElement('div');
-        card.className = 'glass-card rounded-lg p-6';
-
-        card.innerHTML = `
-          <div class="flex items-center gap-3 mb-4">
-            <div class="${statusDot}"></div>
-            <div>
-              <div class="font-headline font-bold text-on-surface">${agent.agent}</div>
-              <div class="text-xs text-on-surface-variant">${formatTimeAgo(agent.last_ts)} ago</div>
-            </div>
-          </div>
-
-          <div class="space-y-2 text-xs">
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Tâches:</span>
-              <span class="font-semibold text-primary">${agent.total_today || 0}</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Succès:</span>
-              <span class="font-semibold text-green-400">${agent.successes_today || 0}</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Erreurs:</span>
-              <span class="font-semibold text-red-400">${agent.errors_today || 0}</span>
-            </div>
-          </div>
-        `;
-
-        grid.appendChild(card);
-      });
+// Load COO Status
+async function loadCOOStatus() {
+  const feed = await fetchJSON('data/activity_feed.json');
+  if (feed) {
+    const coo = feed.agents?.find(a => a.agent === 'Orchestrateur');
+    if (coo) {
+      document.getElementById('coo-time').textContent = timeAgo(coo.last_ts);
+      document.getElementById('coo-tasks').textContent = coo.total_today || 0;
+      const total = (coo.successes_today || 0) + (coo.errors_today || 0);
+      const rate = total > 0 ? Math.round(((coo.successes_today || 0) / total) * 100) : 0;
+      document.getElementById('coo-success').textContent = `${rate}%`;
+      document.getElementById('coo-errors').textContent = coo.errors_today || 0;
     }
+  }
+}
 
-    // ── RENDER ACTIVITY LOG ──
-    function renderActivityLog() {
-      const logDiv = document.getElementById('activity-log');
-      logDiv.innerHTML = '';
+// Load Activity Feed
+async function loadActivityFeed() {
+  const data = await fetchJSON('data/activity_feed.json');
+  if (data && data.events) {
+    allLogs = data.events.map(event => ({
+      time: event.ts ? new Date(event.ts).toLocaleTimeString('fr-FR') : '--:--:--',
+      agent: event.agent || 'UNKNOWN',
+      message: event.message || 'No message',
+      type: event.type || 'info',
+      category: categorizeAgent(event.agent || '')
+    }));
+    renderActivityFeed();
+  }
+}
 
-      const display = allEvents.slice(0, 50).reverse();
+// Categorize agent to branch
+function categorizeAgent(agent) {
+  const lower = agent.toLowerCase();
+  if (lower.includes('newsletter') || lower.includes('redacteur') || lower.includes('analyste') || lower.includes('growth')) return 'newsletter';
+  if (lower.includes('trader') || lower.includes('investissement')) return 'trader';
+  if (lower.includes('arena') || lower.includes('combat')) return 'arena';
+  if (lower.includes('orchestrateur') || lower.includes('adjoint') || lower.includes('coo')) return 'coo';
+  return 'all';
+}
 
-      display.forEach(event => {
-        const entry = document.createElement('div');
-        const type = event.type || 'info';
-        entry.className = `log-entry ${type}`;
+// Render Activity Feed with Filter
+function renderActivityFeed() {
+  const logsDiv = document.getElementById('terminal-logs');
+  logsDiv.innerHTML = '';
+  const filtered = currentFilter === 'all' ? allLogs : allLogs.filter(log => log.category === currentFilter);
+  filtered.slice(-50).reverse().forEach(log => {
+    const entry = document.createElement('div');
+    entry.className = `log-entry ${log.type}`;
+    entry.innerHTML = `<div class="log-time">${log.time}</div><div class="log-agent">${log.agent}</div><div class="log-message">${log.message}</div>`;
+    logsDiv.appendChild(entry);
+  });
+}
 
-        const ts = new Date(event.ts);
-        const timeStr = ts.toLocaleTimeString('fr-FR', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit'
-        });
+// Load Arena Data
+async function loadArenaData() {
+  const data = await fetchJSON('data/arena_content.json');
+  if (data && data.combat) {
+    document.getElementById('arena-bull-perf').textContent = (data.combat.bull_perf || 0).toFixed(1) + '%';
+    document.getElementById('arena-bear-perf').textContent = (data.combat.bear_perf || 0).toFixed(1) + '%';
+    document.getElementById('arena-bull-status').textContent = data.combat.bull_status || 'Actif';
+    document.getElementById('arena-bear-status').textContent = data.combat.bear_status || 'Actif';
+    document.getElementById('arena-winner').textContent = data.combat.winner || '—';
+  }
+}
 
-        entry.innerHTML = `
-          <span class="log-time">${timeStr}</span>
-          <span class="log-agent">${(event.agent || 'Agent').substring(0, 12)}</span>
-          <span class="log-message">${(event.message || 'N/A').substring(0, 100)}</span>
-        `;
+// Load Branch Data
+async function loadBranchData() {
+  const feed = await fetchJSON('data/activity_feed.json');
+  if (feed && feed.agents) {
+    // Newsletter Branch
+    const newsletterAgents = feed.agents.filter(a => ['Agent Rédacteur', 'Agent Analyste', 'Agent Growth'].includes(a.agent));
+    updateBranchAgents('branch-newsletter', newsletterAgents);
 
-        logDiv.appendChild(entry);
-      });
-    }
+    // Trader Branch
+    const traderAgents = feed.agents.filter(a => ['Robot Trader', 'Agent Investissement'].includes(a.agent));
+    updateBranchAgents('branch-trader', traderAgents);
 
-    // ── INIT & AUTO-REFRESH ──
-    loadDashboard();
-    setInterval(loadDashboard, REFRESH_INTERVAL);
-  </script>
+    // Arena Branch
+    const arenaAgents = feed.agents.filter(a => a.agent && (a.agent.includes('Arena') || a.agent.includes('Combat')));
+    updateBranchAgents('branch-arena', arenaAgents);
+  }
+}
+
+// Update Branch Agents
+function updateBranchAgents(branchId, agents) {
+  const container = document.getElementById(branchId);
+  container.innerHTML = '';
+  if (agents.length === 0) {
+    container.innerHTML = '<div class="agent-item"><div class="agent-dot warning"></div><div class="agent-name">Pas d\'activité</div></div>';
+    return;
+  }
+  agents.forEach(agent => {
+    const item = document.createElement('div');
+    item.className = 'agent-item';
+    const statusClass = agent.errors_today > 0 ? 'error' : (agent.last_type === 'success' ? 'success' : 'warning');
+    item.innerHTML = `
+      <div class="agent-dot ${statusClass}"></div>
+      <div class="agent-name">${agent.agent}</div>
+      <div class="agent-time">${timeAgo(agent.last_ts)}</div>
+    `;
+    container.appendChild(item);
+  });
+}
+
+// Filter Button Handlers
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderActivityFeed();
+  });
+});
+
+// Initial Load
+async function loadDashboard() {
+  await Promise.all([
+    loadGlobalScore(),
+    loadRealityCheck(),
+    loadCOOStatus(),
+    loadActivityFeed(),
+    loadArenaData(),
+    loadBranchData()
+  ]);
+}
+
+// Load on init
+loadDashboard();
+
+// Auto-refresh
+setInterval(loadDashboard, REFRESH_INTERVAL);
+
+// Live indicator animation
+setInterval(() => {
+  const indicator = document.getElementById('live-indicator');
+  indicator.style.opacity = indicator.style.opacity === '0.5' ? '1' : '0.5';
+}, 1000);
+</script>
 
 </body>
 </html>

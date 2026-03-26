@@ -1,640 +1,2797 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arena — AlphaBot Weekly</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface": "#0e0e0e",
-            "surface-low": "#131313",
-            "surface-container": "#1a1919",
-            "surface-high": "#201f1f",
-            "surface-highest": "#262626",
-            "primary": "#ff906d",
-            "primary-container": "#ff784d",
-            "secondary": "#ff725e",
-            "on-surface": "#ffffff",
-            "on-surface-variant": "#adaaaa",
-            "outline-variant": "#484847",
-          },
-          fontFamily: {
-            "headline": ["Space Grotesk", "sans-serif"],
-            "body": ["Manrope", "sans-serif"],
-            "label": ["Inter", "sans-serif"]
-          },
-        },
-      },
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""></noscript>
-
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>L'Arène des Investisseurs — AlphaBot Weekly | Classement en direct</title>
+<meta name="description" content="Affrontez les robots traders et les autres investisseurs dans l'Arène AlphaBot. Classement en direct, importez votre portefeuille et comparez vos performances.">
+<meta property="og:title" content="L'Arène des Investisseurs — AlphaBot Weekly">
+<meta property="og:description" content="Classement en direct : 3 robots traders IA s'affrontent. Comparez vos performances aux robots.">
+<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AlphaBot_Weekly">
+<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/arena.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { @apply antialiased; }
-    html, body { background: #0e0e0e; }
-
-    /* Neural mesh background */
-    .neural-mesh {
-      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
-      background-size: 40px 40px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Glassmorphism */
-    .glass-card {
-      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
+    :root {
+      --bg: #04091a;
+      --bg2: #060d1f;
+      --bg3: #0d1425;
+      --cyan: #22d3ee;
+      --gold: #f5c842;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --red: #ef4444;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --border: rgba(255, 255, 255, 0.08);
+      --transition: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Glow effects */
-    .glow-primary {
-      box-shadow: 0 0 20px rgba(255, 144, 109, 0.15);
+    html {
+      scroll-behavior: smooth;
     }
 
-    .glow-secondary {
-      box-shadow: 0 0 16px rgba(255, 114, 94, 0.1);
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    /* Smooth reveal on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
+    /* ANIMATED BACKGROUND ORBS */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: float 20s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -30%;
+      right: -5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245, 200, 66, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: float 25s ease-in-out infinite reverse;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* Animated dot */
-    .status-dot {
-      @apply w-2 h-2 rounded-full bg-green-500;
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, 30px); }
+    }
+
+    /* GRID BACKGROUND */
+    body::before {
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 35px,
+          rgba(51, 65, 85, 0.1) 35px,
+          rgba(51, 65, 85, 0.1) 70px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 35px,
+          rgba(51, 65, 85, 0.1) 35px,
+          rgba(51, 65, 85, 0.1) 70px
+        );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* SCAN LINE ANIMATION */
+    .arena-scan-line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      z-index: 100;
+      animation: scan 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scan {
+      0%, 100% { top: 0; }
+      50% { top: 50vh; }
+    }
+
+    /* MAIN CONTENT */
+    .arena-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
+    .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
+    .nav-center{display:flex;gap:28px;align-items:center;}
+    .nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
+    .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
+    .nav-center a:hover{color:#fff;}
+    .nav-center a:hover::after{width:100%;}
+    .nav-center a.active{color:#22d3ee;}
+    .nav-center a.active::after{width:100%;}
+    .nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
+    .nav-cta::after{display:none!important;}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+    .nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
+
+    /* HERO SECTION */
+    .arena-hero {
+      padding-top: 140px;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+
+    .arena-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 8vw, 72px);
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .arena-hero-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .arena-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 50px;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+      flex-wrap: wrap;
+    }
+
+    .arena-stat {
+      text-align: center;
+    }
+
+    .arena-stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 5px;
+    }
+
+    .arena-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .arena-cta-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 30px;
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+      flex-wrap: wrap;
+    }
+
+    .arena-button {
+      padding: 16px 40px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .arena-button-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: var(--bg);
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+    }
+
+    .arena-button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(34, 211, 238, 0.5);
+    }
+
+    .arena-button-secondary {
+      background: transparent;
+      color: var(--cyan);
+      border: 2px solid var(--cyan);
+    }
+
+    .arena-button-secondary:hover {
+      background: rgba(34, 211, 238, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .arena-badge {
+      display: inline-block;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      color: var(--cyan);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .arena-badge::before {
+      content: '●';
+      display: inline-block;
+      margin-right: 6px;
+      color: var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
     }
 
     @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.3); }
+      50% { box-shadow: 0 0 0 10px transparent; }
+    }
+
+    @keyframes pulse-dot {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
 
-    /* Ticker colors */
-    .tick-ch.up { @apply text-green-400; }
-    .tick-ch.down { @apply text-red-400; }
-
-    /* Challenge performance colors */
-    .challenge-perf.up { @apply text-green-400 font-semibold; }
-    .challenge-perf.down { @apply text-red-400 font-semibold; }
-    .challenge-perf.flat { @apply text-gray-400; }
-
-    /* Leaderboard */
-    .lb-perf.up { @apply text-green-400 font-semibold; }
-    .lb-perf.down { @apply text-red-400 font-semibold; }
-
-    /* Primary button */
-    .btn-primary {
-      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg hover:glow-primary;
+    /* LEADERBOARD SECTION */
+    .arena-section {
+      margin-bottom: 100px;
+      animation: fadeIn 0.8s ease-out;
     }
 
-    /* Secondary button */
-    .btn-secondary {
-      @apply px-6 py-3 rounded-md font-semibold bg-[#262626] border border-[#ff906d]/40 text-primary transition hover:border-primary hover:bg-[#2a2a2a];
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    /* Input field */
-    .input-field {
-      @apply w-full px-4 py-2.5 rounded-lg bg-[#1a1919] border border-white/10 text-white placeholder-gray-500 transition focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30;
+    .arena-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: var(--text);
     }
 
-    /* Mobile menu */
-    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    #nav-menu.mobile-open { max-height: 300px; }
-
-    /* Podium card special styles */
-    .podium-medal {
-      @apply w-16 h-16 rounded-full flex items-center justify-center text-3xl font-bold;
+    .arena-leaderboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .podium-medal.gold { @apply bg-gradient-to-br from-yellow-400 to-yellow-600 text-white; }
-    .podium-medal.silver { @apply bg-gradient-to-br from-gray-300 to-gray-500 text-white; }
-    .podium-medal.bronze { @apply bg-gradient-to-br from-orange-400 to-orange-600 text-white; }
-
-    /* Robot card hover */
-    .robot-card {
-      @apply group relative overflow-hidden rounded-xl glass-card p-6 transition;
+    .arena-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .robot-card::before {
-      @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition;
+    .arena-filter-btn {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-filter-btn:hover,
+    .arena-filter-btn.active {
+      background: rgba(34, 211, 238, 0.2);
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .arena-live-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .arena-live-badge::before {
+      content: '●';
+      font-size: 10px;
+      animation: pulse-dot 1s ease-in-out infinite;
+    }
+
+    .arena-leaderboard-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(6, 13, 31, 0.6);
+      backdrop-filter: blur(12px);
+    }
+
+    .arena-leaderboard {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .arena-leaderboard thead {
+      background: rgba(13, 20, 37, 0.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-leaderboard th {
+      padding: 16px 20px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .arena-leaderboard th:hover {
+      color: var(--cyan);
+    }
+
+    .arena-leaderboard tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-leaderboard tbody tr:hover {
+      background: rgba(34, 211, 238, 0.08);
+    }
+
+    .arena-leaderboard td {
+      padding: 16px 20px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .arena-rank {
+      font-weight: 700;
+      font-size: 16px;
+      width: 40px;
+    }
+
+    .arena-rank.medal-1 {
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .arena-rank.medal-2 {
+      color: #c0c0c0;
+      font-size: 20px;
+    }
+
+    .arena-rank.medal-3 {
+      color: #cd7f32;
+      font-size: 20px;
+    }
+
+    .arena-investor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+    }
+
+    .arena-investor-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--bg);
+      font-size: 12px;
+    }
+
+    .arena-investor-robot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .arena-investor-name {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .arena-robot-badge {
+      display: inline-block;
+      background: rgba(245, 200, 66, 0.2);
+      border: 1px solid rgba(245, 200, 66, 0.5);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .arena-return {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .arena-return.positive {
+      color: var(--green);
+    }
+
+    .arena-return.negative {
+      color: var(--red);
+    }
+
+    .arena-value {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .arena-positions {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .arena-change {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .arena-change.up {
+      color: var(--green);
+    }
+
+    .arena-change.down {
+      color: var(--red);
+    }
+
+    /* PODIUM SECTION */
+    .arena-podium-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 80px;
+      height: 400px;
+      perspective: 1000px;
+      flex-wrap: wrap;
+    }
+
+    .arena-podium {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s var(--transition);
+    }
+
+    .arena-podium:hover {
+      transform: translateY(-10px);
+    }
+
+    .arena-podium-rank-2 .arena-podium-box {
+      height: 150px;
+      background: linear-gradient(135deg, #c0c0c0, #a0a0a0);
+    }
+
+    .arena-podium-rank-1 {
+      order: 2;
+    }
+
+    .arena-podium-rank-1 .arena-podium-box {
+      height: 200px;
+      background: linear-gradient(135deg, var(--gold), #f5a623);
+      box-shadow: 0 0 50px rgba(245, 200, 66, 0.4);
+      position: relative;
+    }
+
+    .arena-podium-rank-1 .arena-podium-box::before {
+      content: '👑';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-15px); }
+    }
+
+    .arena-podium-rank-3 {
+      order: 3;
+    }
+
+    .arena-podium-rank-3 .arena-podium-box {
+      height: 120px;
+      background: linear-gradient(135deg, #cd7f32, #b8860b);
+    }
+
+    .arena-podium-box {
+      width: 140px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .arena-podium-info {
+      text-align: center;
+    }
+
+    .arena-podium-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--bg);
+      font-size: 20px;
+      margin: 0 auto 12px;
+    }
+
+    .arena-podium-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .arena-podium-return {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .arena-podium-value {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* AWARDS SECTION */
+    .arena-awards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+
+    .arena-award-card {
+      background: rgba(6, 13, 31, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-award-card:hover {
+      border-color: var(--cyan);
+      background: rgba(6, 13, 31, 0.8);
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+    }
+
+    .arena-award-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .arena-award-title {
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .arena-award-winner {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .arena-award-stat {
+      font-size: 16px;
+      color: var(--cyan);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ROBOTS SECTION */
+    .arena-robots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .arena-robot-card {
+      background: rgba(6, 13, 31, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.3s var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arena-robot-card::before {
       content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+      transition: left 0.5s var(--transition);
     }
 
-    .robot-card-content {
-      @apply relative z-10;
+    .arena-robot-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
     }
 
-    /* Award card */
-    .award-card {
-      @apply glass-card p-4 rounded-lg text-center transition hover:glow-primary;
+    .arena-robot-card:hover::before {
+      left: 100%;
     }
 
-    /* Leaderboard table */
-    .lb-table {
-      @apply w-full;
+    .arena-robot-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
-    .lb-table thead {
-      @apply border-b border-white/10;
+    .arena-robot-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
     }
 
-    .lb-table th {
-      @apply px-4 py-3 text-left text-xs font-semibold text-primary uppercase tracking-wider;
+    .arena-robot-prudent .arena-robot-icon {
+      background: linear-gradient(135deg, var(--blue), #0284c7);
     }
 
-    .lb-table td {
-      @apply px-4 py-3 text-sm text-on-surface border-b border-white/5;
+    .arena-robot-modere .arena-robot-icon {
+      background: linear-gradient(135deg, var(--cyan), #06b6d4);
     }
 
-    .lb-table tbody tr:hover {
-      @apply bg-white/3 transition;
+    .arena-robot-agressif .arena-robot-icon {
+      background: linear-gradient(135deg, var(--gold), #f97316);
     }
+
+    .arena-robot-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .arena-robot-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .arena-robot-description {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .arena-robot-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-robot-stat:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .arena-robot-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .arena-robot-stat-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .arena-robot-stat-value.positive {
+      color: var(--green);
+    }
+
+    .arena-risk-meter {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .arena-risk-bar {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .arena-risk-bar.active {
+      background: linear-gradient(90deg, var(--green), var(--red));
+    }
+
+    /* MY PORTFOLIO SECTION */
+    .arena-my-portfolio {
+      background: rgba(6, 13, 31, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 80px;
+    }
+
+    .arena-portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .arena-portfolio-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .arena-portfolio-item {
+      background: rgba(13, 20, 37, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .arena-portfolio-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .arena-portfolio-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+
+    .arena-portfolio-change {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .arena-portfolio-change.negative {
+      color: var(--red);
+    }
+
+    /* ADD POSITION FORM */
+    .arena-add-position-form {
+      background: rgba(13, 20, 37, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      align-items: flex-end;
+    }
+
+    .arena-form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .arena-form-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .arena-form-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-form-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.2);
+    }
+
+    .arena-form-input::placeholder {
+      color: var(--muted);
+    }
+
+    .arena-form-select {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .arena-form-add-btn {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--green), #16a34a);
+      color: var(--bg);
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      white-space: nowrap;
+    }
+
+    .arena-form-add-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    /* POSITIONS TABLE */
+    .arena-positions-wrapper {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(13, 20, 37, 0.3);
+    }
+
+    .arena-positions-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .arena-positions-table thead {
+      background: rgba(13, 20, 37, 0.5);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-positions-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .arena-positions-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s var(--transition);
+    }
+
+    .arena-positions-table tbody tr:hover {
+      background: rgba(34, 211, 238, 0.05);
+    }
+
+    .arena-positions-table td {
+      padding: 12px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text);
+    }
+
+    .arena-position-ticker {
+      font-weight: 700;
+      color: var(--cyan);
+    }
+
+    .arena-position-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .arena-delete-btn {
+      padding: 4px 8px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: var(--red);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-delete-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: var(--red);
+    }
+
+    .arena-pnl-positive {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .arena-pnl-negative {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .arena-ranking {
+      padding: 20px;
+      background: rgba(13, 20, 37, 0.5);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .arena-ranking-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .arena-ranking-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* AUTH MODAL */
+    .arena-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .arena-modal-overlay.show {
+      display: flex;
+    }
+
+    .arena-modal {
+      background: linear-gradient(135deg, rgba(6, 13, 31, 0.95), rgba(13, 20, 37, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 400px;
+      width: 90%;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 50px rgba(34, 211, 238, 0.2);
+      animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .arena-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.3s var(--transition);
+    }
+
+    .arena-modal-close:hover {
+      color: var(--cyan);
+    }
+
+    .arena-modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .arena-auth-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-auth-tab {
+      flex: 1;
+      padding: 12px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-auth-tab.active {
+      color: var(--cyan);
+      border-bottom-color: var(--cyan);
+    }
+
+    .arena-auth-form {
+      display: none;
+    }
+
+    .arena-auth-form.active {
+      display: block;
+    }
+
+    .arena-google-btn {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-google-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .arena-modal-input {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .arena-modal-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1);
+    }
+
+    .arena-modal-input::placeholder {
+      color: var(--muted);
+    }
+
+    .arena-modal-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .arena-modal-checkbox input {
+      cursor: pointer;
+    }
+
+    .arena-modal-submit {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-modal-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    .arena-modal-divider {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 40px;
+      background: rgba(6, 13, 31, 0.6);
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      margin-bottom: 12px;
+      transition: color 0.3s var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-credit {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .arena-hero h1 {
+        font-size: 48px;
+      }
+
+      .arena-leaderboard {
+        font-size: 12px;
+      }
+
+      .arena-leaderboard td,
+      .arena-leaderboard th {
+        padding: 12px 12px;
+      }
+
+      .arena-robot-card {
+        padding: 20px;
+      }
+
+      .arena-my-portfolio {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav{padding:12px 4%;}
+      .nav-center{display:none;gap:0;width:100%;}
+      .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
+      .nav-hamburger{display:flex;}
+
+      .arena-hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+
+      .arena-hero h1 {
+        font-size: 36px;
+      }
+
+      .arena-hero-subtitle {
+        font-size: 16px;
+      }
+
+      .arena-stats {
+        gap: 30px;
+      }
+
+      .arena-section-title {
+        font-size: 32px;
+      }
+
+      .arena-leaderboard {
+        font-size: 11px;
+      }
+
+      .arena-leaderboard th,
+      .arena-leaderboard td {
+        padding: 10px 8px;
+      }
+
+      .arena-podium-container {
+        height: 300px;
+        gap: 15px;
+      }
+
+      .arena-podium-box {
+        width: 100px;
+      }
+
+      .arena-robot-card {
+        padding: 20px;
+      }
+
+      .arena-awards {
+        grid-template-columns: 1fr;
+      }
+
+      .arena-modal {
+        padding: 30px 20px;
+      }
+
+      .arena-add-position-form {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 40px 20px;
+      }
+
+      .footer-content {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .arena-container {
+        padding: 0 15px;
+      }
+
+      .arena-hero h1 {
+        font-size: 28px;
+      }
+
+      .arena-hero-subtitle {
+        font-size: 14px;
+      }
+
+      .arena-stats {
+        gap: 15px;
+      }
+
+      .arena-cta-group {
+        flex-direction: column;
+      }
+
+      .arena-button {
+        width: 100%;
+      }
+
+      .arena-section-title {
+        font-size: 24px;
+      }
+
+      .arena-leaderboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .arena-filters {
+        width: 100%;
+      }
+
+      .arena-filter-btn {
+        flex: 1;
+      }
+
+      .arena-podium-container {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+      }
+
+      .arena-podium {
+        order: unset !important;
+      }
+
+      .arena-robot-card {
+        padding: 20px;
+      }
+
+      .arena-modal {
+        padding: 20px;
+        width: 95%;
+      }
+
+      .arena-portfolio-summary {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LOADING & ANIMATIONS */
+    .arena-loading {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: pulse-dot 1s ease-in-out infinite;
+      margin-left: 4px;
+    }
+
+    .arena-hidden {
+      display: none;
+    }
+
+    /* INTERSECTION OBSERVER ANIMATIONS */
+    .arena-fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    /* ==================== PORTFOLIO IMPORT SYSTEM ==================== */
+    .arena-import-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--gold), #fbbf24);
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(245, 200, 66, 0.4);
+    }
+
+    /* Import Modal */
+    .arena-import-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .arena-import-modal-overlay.show {
+      display: flex;
+    }
+
+    .arena-import-modal {
+      background: linear-gradient(135deg, rgba(6, 13, 31, 0.95), rgba(13, 20, 37, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 50px rgba(34, 211, 238, 0.2);
+      animation: slideUp 0.3s ease-out;
+      position: relative;
+    }
+
+    .arena-import-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.3s var(--transition);
+    }
+
+    .arena-import-modal-close:hover {
+      color: var(--cyan);
+    }
+
+    .arena-import-modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text);
+    }
+
+    .arena-import-steps {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-import-step {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .arena-import-step.active {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+    }
+
+    .arena-import-step-content {
+      display: none;
+    }
+
+    .arena-import-step-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Upload Zone */
+    .arena-upload-zone {
+      border: 2px dashed var(--cyan);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      background: rgba(34, 211, 238, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .arena-upload-zone:hover,
+    .arena-upload-zone.dragover {
+      background: rgba(34, 211, 238, 0.15);
+      border-color: var(--gold);
+      box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+    }
+
+    .arena-upload-zone-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .arena-upload-zone-text {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .arena-upload-zone-subtext {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    #arena-import-file {
+      display: none;
+    }
+
+    /* Broker Logo Grid */
+    .arena-broker-logos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .arena-broker-logo {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+      background: rgba(255, 255, 255, 0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .arena-broker-logo:hover {
+      border-color: var(--cyan);
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--cyan);
+    }
+
+    .arena-broker-logo-icon {
+      font-size: 28px;
+    }
+
+    /* Preview Table */
+    .arena-import-preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .arena-import-preview-table thead {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .arena-import-preview-table th {
+      padding: 12px;
+      text-align: left;
+      color: var(--cyan);
+      font-weight: 600;
+      background: rgba(34, 211, 238, 0.05);
+    }
+
+    .arena-import-preview-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .arena-import-preview-row {
+      transition: background 0.3s var(--transition);
+    }
+
+    .arena-import-preview-row:hover {
+      background: rgba(34, 211, 238, 0.05);
+    }
+
+    .arena-import-preview-row.unchecked {
+      opacity: 0.5;
+    }
+
+    .arena-import-checkbox {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .arena-import-summary {
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid var(--cyan);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+
+    .arena-import-summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .arena-import-summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .arena-import-summary-label {
+      color: var(--muted);
+    }
+
+    .arena-import-summary-value {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* Broker Help */
+    .arena-broker-help {
+      margin-top: 30px;
+    }
+
+    .arena-broker-help-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      transition: color 0.3s var(--transition);
+    }
+
+    .arena-broker-help-title:hover {
+      color: var(--cyan);
+    }
+
+    .arena-broker-help-content {
+      display: none;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 2px solid var(--cyan);
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    .arena-broker-help-content.open {
+      display: block;
+    }
+
+    .arena-broker-help-item {
+      margin-bottom: 16px;
+    }
+
+    .arena-broker-help-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .arena-broker-help-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .arena-broker-help-steps {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Success Message */
+    .arena-import-success {
+      text-align: center;
+    }
+
+    .arena-import-success-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+      animation: pulse-scale 1s ease-out;
+    }
+
+    .arena-import-success-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .arena-import-success-subtext {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    @keyframes pulse-scale {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Import Action Buttons */
+    .arena-import-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .arena-import-btn-secondary {
+      flex: 1;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--cyan);
+    }
+
+    .arena-import-btn-primary {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: var(--bg);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s var(--transition);
+    }
+
+    .arena-import-btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    .arena-import-btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Error Message */
+    .arena-import-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--red);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--red);
+      display: none;
+    }
+
+    .arena-import-error.show {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .arena-import-modal {
+        padding: 20px;
+      }
+
+      .arena-broker-logos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .arena-import-actions {
+        flex-direction: column;
+      }
+    }
+
+    /* FOCUS STATES */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .skip-link:focus { top: 0; }
   </style>
+
+  <!-- VISUAL-UPGRADE-2026-03-24 -->
+  <style>
+  /* ═══ ARENA VISUAL UPGRADE ═══ */
+
+  /* Animated dot grid */
+  body::before {
+    background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px)!important;
+    background-size: 40px 40px!important;
+    animation: gridPulse 4s ease-in-out infinite alternate;
+    filter:none!important;
+  }
+  @keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
+
+  /* Arena hero — bigger glow */
+  .arena-hero h1 {
+    filter: drop-shadow(0 0 40px rgba(34,211,238,.25)) drop-shadow(0 0 80px rgba(245,200,66,.15));
+  }
+
+  /* Stats — glow effect */
+  .arena-stat-value {
+    text-shadow: 0 0 30px currentColor;
+  }
+  .arena-stat {
+    position:relative;
+    transition: transform .3s ease;
+  }
+  .arena-stat:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Animated gradient border keyframe */
+  @keyframes borderGlow {
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+  }
+
+  /* Leaderboard rows glow on hover */
+  .leaderboard-row:hover, .arena-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 30px rgba(34,211,238,.08)!important;
+    border-color: rgba(34,211,238,.3)!important;
+    transform: translateY(-4px)!important;
+  }
+
+  /* Podium — glowing borders */
+  .podium-card, .arena-card {
+    position:relative; z-index:1;
+  }
+  .podium-card::after, .arena-card::after {
+    content:''; position:absolute; inset:-1px; border-radius:inherit; z-index:-1;
+    background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(245,200,66,.15),rgba(34,211,238,.3));
+    background-size:300% 300%; animation:borderGlow 6s ease infinite;
+    opacity:.3; transition:opacity .4s;
+  }
+  .podium-card:hover::after, .arena-card:hover::after { opacity:1; }
+
+  /* Import card CTA — glow */
+  .import-card, .arena-cta-group .btn, .arena-cta-group a {
+    transition: all .3s ease;
+  }
+  .import-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 40px rgba(34,211,238,.1);
+  }
+
+  /* CTA button glow */
+  .arena-cta-group .btn:first-child, .arena-cta-group a:first-child {
+    box-shadow: 0 4px 24px rgba(34,211,238,.3);
+  }
+  .arena-cta-group .btn:first-child:hover, .arena-cta-group a:first-child:hover {
+    box-shadow: 0 12px 40px rgba(34,211,238,.5)!important;
+    transform: translateY(-3px);
+  }
+  </style>
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </head>
-<body class="bg-surface text-on-surface font-body dark">
+<body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
+  <!-- SCAN LINE -->
+  <div class="arena-scan-line"></div>
 
-  <!-- ═══════════════════════════════════════════════════
-       NAV (Fixed Glassmorphism)
-       ═══════════════════════════════════════════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
-
-      <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
-        <a href="newsletter.html" class="text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
-        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
-        <a href="arena.html" class="text-sm text-primary font-semibold transition">Arena</a>
-        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
-        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
-      </div>
-
-      <!-- Mobile menu button -->
-      <button class="md:hidden" onclick="toggleMenu()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+  <!-- NAVIGATION -->
+  <nav aria-label="Navigation principale">
+    <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
+    <div class="nav-center" id="nav-menu">
+      <a href="index.html">Accueil</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="investissement.html">Robot Trader</a>
+      <a href="arena.html" class="active">Arena</a>
+      <a href="dashboard-agents.html">Agents IA</a>
+      <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
     </div>
-
-    <!-- Mobile nav -->
-    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
-      <div class="px-4 py-4 space-y-3">
-        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
-        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
-        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
-        <a href="arena.html" class="block text-sm text-primary font-semibold transition">Arena</a>
-        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
-        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
-      </div>
-    </div>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ═══════════════════════════════════════════════════
-       MAIN CONTENT (pt-24 for nav offset)
-       ═══════════════════════════════════════════════════ -->
-  <main class="pt-24">
+  <!-- MAIN CONTENT -->
+  <div class="arena-container" id="main-content">
+    <!-- HERO SECTION -->
+    <section class="arena-hero">
+      <h1>L'Arène des Investisseurs</h1>
+      <p class="arena-hero-subtitle">
+        Affrontez les meilleurs investisseurs et nos 3 robots traders IA. Montrez votre stratégie. Grimpez le classement.
+      </p>
 
-    <!-- ════════════════════════════════════════════════════
-         HERO SECTION — L'Arène des Performances
-         ════════════════════════════════════════════════════ -->
-    <section class="relative px-4 sm:px-6 py-20 neural-mesh">
-      <div class="max-w-4xl mx-auto text-center reveal">
-        <h1 class="text-5xl sm:text-6xl font-headline font-black mb-6 text-white">
-          L'Arène des <span class="text-primary">Performances</span>
-        </h1>
-        <p class="text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
-          3 robots IA s'affrontent dans un classement transparent. Chaque trade est public et vérifié. Suivez leurs performances en temps réel.
-        </p>
+      <div class="arena-stats">
+        <div class="arena-stat">
+          <div class="arena-stat-value" data-count="5">0</div>
+          <div class="arena-stat-label">Participants</div>
+        </div>
+        <div class="arena-stat">
+          <div class="arena-stat-value" data-count="5">0</div>
+          <div class="arena-stat-label">Portefeuilles</div>
+        </div>
+        <div class="arena-stat">
+          <div class="arena-stat-value" data-count="1.6">0</div>
+          <div class="arena-stat-label">% Rendement moyen</div>
+        </div>
+      </div>
 
-        <!-- Quick Stats -->
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <div class="glass-card p-6 rounded-lg">
-            <p class="text-sm text-on-surface-variant mb-2">Capital total géré</p>
-            <p class="text-3xl font-headline font-bold text-primary" id="hero-capital">30,000 €</p>
+      <div class="arena-cta-group">
+        <button class="arena-button arena-button-primary" onclick="arenaOpenImportModal()" style="font-size:16px;padding:14px 32px;">
+          📁 Importer mon portefeuille
+        </button>
+        <button class="arena-button arena-button-primary" onclick="arenaOpenAuthModal('signup')">
+          Créer mon portefeuille
+        </button>
+        <button class="arena-button arena-button-secondary" onclick="document.querySelector('#leaderboard-section').scrollIntoView({ behavior: 'smooth' })">
+          Voir le classement
+        </button>
+      </div>
+
+      <div class="arena-badge">BÊTA PUBLIQUE</div>
+    </section>
+
+    <!-- LEADERBOARD SECTION -->
+    <section class="arena-section" id="leaderboard-section">
+      <div class="arena-leaderboard-header">
+        <h2 class="arena-section-title">Classement en direct</h2>
+        <div class="arena-live-badge">EN DIRECT</div>
+      </div>
+
+      <div style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; justify-content: space-between;">
+        <div class="arena-filters">
+          <button class="arena-filter-btn active" data-filter="all">Tous</button>
+          <button class="arena-filter-btn" data-filter="humans">Humains</button>
+          <button class="arena-filter-btn" data-filter="robots">Robots</button>
+          <button class="arena-filter-btn" data-filter="top10">Top 10</button>
+          <button class="arena-filter-btn" data-filter="month">Ce mois</button>
+        </div>
+      </div>
+
+      <div class="arena-leaderboard-wrapper">
+        <table class="arena-leaderboard">
+          <thead>
+            <tr>
+              <th>Rang</th>
+              <th>Investisseur</th>
+              <th>Rendement %</th>
+              <th>Valeur totale</th>
+              <th>Positions</th>
+              <th>Évolution 7j</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- POPULATED BY JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PODIUM SECTION — rempli dynamiquement -->
+    <section class="arena-section">
+      <h2 class="arena-section-title">Podium</h2>
+      <div class="arena-podium-container">
+        <div class="arena-podium arena-podium-rank-2">
+          <div class="arena-podium-box">2</div>
+          <div class="arena-podium-info">
+            <div class="arena-podium-avatar" id="podium-2-avatar">-</div>
+            <div class="arena-podium-name" id="podium-2-name">--</div>
+            <div class="arena-podium-return" id="podium-2-return">--</div>
+            <div class="arena-podium-value" id="podium-2-value">--</div>
           </div>
-          <div class="glass-card p-6 rounded-lg">
-            <p class="text-sm text-on-surface-variant mb-2">Nombre de trades</p>
-            <p class="text-3xl font-headline font-bold text-primary" id="hero-trades">0</p>
+        </div>
+        <div class="arena-podium arena-podium-rank-1">
+          <div class="arena-podium-box">1</div>
+          <div class="arena-podium-info">
+            <div class="arena-podium-avatar" id="podium-1-avatar">-</div>
+            <div class="arena-podium-name" id="podium-1-name">--</div>
+            <div class="arena-podium-return" id="podium-1-return" style="color: var(--gold);">--</div>
+            <div class="arena-podium-value" id="podium-1-value" style="color: var(--gold);">--</div>
           </div>
-          <div class="glass-card p-6 rounded-lg">
-            <p class="text-sm text-on-surface-variant mb-2">Meilleur robot</p>
-            <p class="text-3xl font-headline font-bold text-green-400" id="hero-best">+0.00%</p>
+        </div>
+        <div class="arena-podium arena-podium-rank-3">
+          <div class="arena-podium-box">3</div>
+          <div class="arena-podium-info">
+            <div class="arena-podium-avatar" id="podium-3-avatar">-</div>
+            <div class="arena-podium-name" id="podium-3-name">--</div>
+            <div class="arena-podium-return" id="podium-3-return">--</div>
+            <div class="arena-podium-value" id="podium-3-value">--</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════════
-         PODIUM SECTION
-         ════════════════════════════════════════════════════ -->
-    <section class="px-4 sm:px-6 py-20 bg-gradient-to-b from-transparent to-surface-low">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-headline font-bold text-center mb-16 text-white">
-          Podium <span class="text-primary">du Mois</span>
-        </h2>
+    <!-- MONTHLY AWARDS SECTION -->
+    <section class="arena-section">
+      <h2 class="arena-section-title">Prix du mois</h2>
+      <div class="arena-awards">
+        <div class="arena-award-card">
+          <div class="arena-award-icon">🏆</div>
+          <div class="arena-award-title">Meilleur rendement</div>
+          <div class="arena-award-winner" id="award-1-winner">--</div>
+          <div class="arena-award-stat" id="award-1-stat">--</div>
+        </div>
 
-        <div class="grid md:grid-cols-3 gap-8 items-end">
-          <!-- Rank 1 (Gold) -->
-          <div class="reveal">
-            <div class="glass-card p-8 rounded-xl text-center h-full flex flex-col justify-between">
-              <div>
-                <div class="podium-medal gold mx-auto mb-4">🥇</div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2" id="podium-1-name">--</h3>
-                <p class="text-sm text-on-surface-variant mb-4">Performance</p>
-                <p class="text-3xl font-bold text-green-400 mb-2" id="podium-1-return">+0.00%</p>
-                <p class="text-lg text-primary font-semibold" id="podium-1-value">0 €</p>
-              </div>
-            </div>
-          </div>
+        <div class="arena-award-card">
+          <div class="arena-award-icon">📈</div>
+          <div class="arena-award-title">Plus forte hausse</div>
+          <div class="arena-award-winner" id="award-2-winner">--</div>
+          <div class="arena-award-stat" id="award-2-stat">--</div>
+        </div>
 
-          <!-- Rank 2 (Silver) -->
-          <div class="reveal" style="animation-delay: 0.1s">
-            <div class="glass-card p-8 rounded-xl text-center h-full flex flex-col justify-between">
-              <div>
-                <div class="podium-medal silver mx-auto mb-4">🥈</div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2" id="podium-2-name">--</h3>
-                <p class="text-sm text-on-surface-variant mb-4">Performance</p>
-                <p class="text-3xl font-bold text-blue-400 mb-2" id="podium-2-return">+0.00%</p>
-                <p class="text-lg text-primary font-semibold" id="podium-2-value">0 €</p>
-              </div>
-            </div>
-          </div>
+        <div class="arena-award-card">
+          <div class="arena-award-icon">🎯</div>
+          <div class="arena-award-title">Diversification</div>
+          <div class="arena-award-winner" id="award-3-winner">--</div>
+          <div class="arena-award-stat" id="award-3-stat">--</div>
+        </div>
 
-          <!-- Rank 3 (Bronze) -->
-          <div class="reveal" style="animation-delay: 0.2s">
-            <div class="glass-card p-8 rounded-xl text-center h-full flex flex-col justify-between">
-              <div>
-                <div class="podium-medal bronze mx-auto mb-4">🥉</div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2" id="podium-3-name">--</h3>
-                <p class="text-sm text-on-surface-variant mb-4">Performance</p>
-                <p class="text-3xl font-bold text-orange-400 mb-2" id="podium-3-return">+0.00%</p>
-                <p class="text-lg text-primary font-semibold" id="podium-3-value">0 €</p>
-              </div>
-            </div>
-          </div>
+        <div class="arena-award-card">
+          <div class="arena-award-icon">🤖</div>
+          <div class="arena-award-title">Meilleur robot</div>
+          <div class="arena-award-winner" id="award-4-winner">--</div>
+          <div class="arena-award-stat" id="award-4-stat">--</div>
+        </div>
+
+        <div class="arena-award-card">
+          <div class="arena-award-icon">🔥</div>
+          <div class="arena-award-title">Stabilité</div>
+          <div class="arena-award-winner" id="award-5-winner">--</div>
+          <div class="arena-award-stat" id="award-5-stat">--</div>
+        </div>
+
+        <div class="arena-award-card">
+          <div class="arena-award-icon">💡</div>
+          <div class="arena-award-title">Équilibre</div>
+          <div class="arena-award-winner" id="award-6-winner">--</div>
+          <div class="arena-award-stat" id="award-6-stat">--</div>
         </div>
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════════
-         ROBOT CARDS SECTION
-         ════════════════════════════════════════════════════ -->
-    <section class="px-4 sm:px-6 py-20">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-headline font-bold mb-16 text-white">
-          Fiches des <span class="text-primary">3 Robots</span>
-        </h2>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Robot Prudent -->
-          <div class="robot-card reveal">
-            <div class="robot-card-content">
-              <div class="flex items-center gap-3 mb-6">
-                <span class="text-4xl">🛡️</span>
-                <div>
-                  <h3 class="text-xl font-headline font-bold text-white">Prudent</h3>
-                  <p class="text-xs text-on-surface-variant">Capital 10 000 €</p>
-                </div>
-              </div>
-              <p class="text-sm text-on-surface-variant mb-6">Stratégie défensive : obligations, ETF défensifs, faible volatilité.</p>
-
-              <div class="space-y-4">
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Performance</p>
-                  <p class="text-2xl font-bold" id="arena-prudent-perf">+0.00%</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Capital actuel</p>
-                  <p class="text-xl font-bold text-primary" id="arena-prudent-capital">10 000 €</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Trades effectués</p>
-                  <p class="text-xl font-bold" id="arena-prudent-trades">0</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Positions actives</p>
-                  <p class="text-sm font-semibold text-primary" id="arena-prudent-positions">Aucune</p>
-                </div>
-              </div>
+    <!-- ROBOT TRADERS SECTION — données chargées depuis portfolio_public.json -->
+    <section class="arena-section">
+      <h2 class="arena-section-title">Nos 3 robots traders</h2>
+      <div class="arena-robots">
+        <!-- PRUDENT -->
+        <div class="arena-robot-card arena-robot-prudent">
+          <div class="arena-robot-header">
+            <div class="arena-robot-icon">🛡️</div>
+            <div>
+              <div class="arena-robot-name">Robot Trader Prudent</div>
+              <div class="arena-robot-subtitle">Conservative</div>
             </div>
           </div>
-
-          <!-- Robot Modéré -->
-          <div class="robot-card reveal" style="animation-delay: 0.1s">
-            <div class="robot-card-content">
-              <div class="flex items-center gap-3 mb-6">
-                <span class="text-4xl">⚖️</span>
-                <div>
-                  <h3 class="text-xl font-headline font-bold text-white">Modéré</h3>
-                  <p class="text-xs text-on-surface-variant">Capital 10 000 €</p>
-                </div>
-              </div>
-              <p class="text-sm text-on-surface-variant mb-6">Stratégie équilibrée : mix actions/ETF, rendement modéré et régulier.</p>
-
-              <div class="space-y-4">
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Performance</p>
-                  <p class="text-2xl font-bold" id="arena-modere-perf">+0.00%</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Capital actuel</p>
-                  <p class="text-xl font-bold text-primary" id="arena-modere-capital">10 000 €</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Trades effectués</p>
-                  <p class="text-xl font-bold" id="arena-modere-trades">0</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Positions actives</p>
-                  <p class="text-sm font-semibold text-primary" id="arena-modere-positions">Aucune</p>
-                </div>
-              </div>
+          <p class="arena-robot-description">
+            Stratégie défensive, diversification maximale, gestion des risques. Idéal pour les investisseurs patients.
+          </p>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Rendement</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-perf">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-capital">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-trades">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Risque</span>
+            <div class="arena-risk-meter">
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar"></div>
+              <div class="arena-risk-bar"></div>
+              <div class="arena-risk-bar"></div>
+              <div class="arena-risk-bar"></div>
             </div>
           </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Top positions</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-prudent-positions">--</span>
+          </div>
+        </div>
 
-          <!-- Robot Agressif -->
-          <div class="robot-card reveal" style="animation-delay: 0.2s">
-            <div class="robot-card-content">
-              <div class="flex items-center gap-3 mb-6">
-                <span class="text-4xl">⚡</span>
-                <div>
-                  <h3 class="text-xl font-headline font-bold text-white">Agressif</h3>
-                  <p class="text-xs text-on-surface-variant">Capital 10 000 €</p>
-                </div>
-              </div>
-              <p class="text-sm text-on-surface-variant mb-6">Stratégie dynamique : actions croissance, volatilité élevée, haute exposition.</p>
-
-              <div class="space-y-4">
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Performance</p>
-                  <p class="text-2xl font-bold" id="arena-agressif-perf">+0.00%</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Capital actuel</p>
-                  <p class="text-xl font-bold text-primary" id="arena-agressif-capital">10 000 €</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Trades effectués</p>
-                  <p class="text-xl font-bold" id="arena-agressif-trades">0</p>
-                </div>
-                <div class="bg-white/5 p-3 rounded-lg">
-                  <p class="text-xs text-on-surface-variant mb-1">Positions actives</p>
-                  <p class="text-sm font-semibold text-primary" id="arena-agressif-positions">Aucune</p>
-                </div>
-              </div>
+        <!-- MODÉRÉ -->
+        <div class="arena-robot-card arena-robot-modere">
+          <div class="arena-robot-header">
+            <div class="arena-robot-icon">⚖️</div>
+            <div>
+              <div class="arena-robot-name">Robot Trader Modéré</div>
+              <div class="arena-robot-subtitle">Balanced</div>
             </div>
+          </div>
+          <p class="arena-robot-description">
+            Équilibre croissance/sécurité. Mix actions, ETF et matières premières. Le choix de la majorité.
+          </p>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Rendement</span>
+            <span class="arena-robot-stat-value" id="arena-modere-perf">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-modere-capital">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-modere-trades">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Risque</span>
+            <div class="arena-risk-meter">
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar"></div>
+              <div class="arena-risk-bar"></div>
+            </div>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Top positions</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-modere-positions">--</span>
+          </div>
+        </div>
+
+        <!-- AGRESSIF -->
+        <div class="arena-robot-card arena-robot-agressif">
+          <div class="arena-robot-header">
+            <div class="arena-robot-icon">🔥</div>
+            <div>
+              <div class="arena-robot-name">Robot Trader Agressif</div>
+              <div class="arena-robot-subtitle">Aggressive</div>
+            </div>
+          </div>
+          <p class="arena-robot-description">
+            Croissance maximale, positions concentrées, momentum. Pour les investisseurs audacieux. Haut risque, haut rendement.
+          </p>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Rendement</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-perf">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-capital">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-trades">--</span>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Risque</span>
+            <div class="arena-risk-meter">
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+              <div class="arena-risk-bar active"></div>
+            </div>
+          </div>
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Top positions</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-agressif-positions">--</span>
           </div>
         </div>
       </div>
+
+      <p style="text-align: center; margin-top: 40px; font-size: 14px; color: var(--muted);">
+        À terme, confiez votre capital à l'un de nos robots. Automatisez votre investissement.
+      </p>
     </section>
 
-    <!-- ════════════════════════════════════════════════════
-         AWARDS SECTION
-         ════════════════════════════════════════════════════ -->
-    <section class="px-4 sm:px-6 py-20 bg-gradient-to-b from-surface-low to-transparent">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-headline font-bold mb-16 text-white text-center">
-          Awards du <span class="text-primary">Mois</span>
-        </h2>
+    <!-- MY PORTFOLIO SECTION (HIDDEN IF NOT LOGGED IN) -->
+    <section class="arena-section arena-hidden" id="my-portfolio-section">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;">
+        <h2 class="arena-section-title">Mon portefeuille</h2>
+        <button class="arena-import-btn" onclick="arenaOpenImportModal()">📥 Importer mon portefeuille</button>
+      </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <!-- Award 1: Best Return -->
-          <div class="award-card reveal">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">🏆 Meilleur rendement</p>
-            <p class="text-2xl font-headline font-bold text-primary mb-1" id="award-1-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-1-stat">--</p>
+      <div class="arena-my-portfolio">
+        <!-- PORTFOLIO SUMMARY -->
+        <div class="arena-portfolio-summary">
+          <div class="arena-portfolio-item">
+            <div class="arena-portfolio-label">Valeur totale</div>
+            <div class="arena-portfolio-value" id="portfolio-total-value">€10,000</div>
+            <div class="arena-portfolio-change" id="portfolio-daily-change">+2.3% aujourd'hui</div>
           </div>
 
-          <!-- Award 2: Biggest Gain -->
-          <div class="award-card reveal" style="animation-delay: 0.05s">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">📈 Plus forte hausse</p>
-            <p class="text-2xl font-headline font-bold text-green-400 mb-1" id="award-2-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-2-stat">--</p>
+          <div class="arena-portfolio-item">
+            <div class="arena-portfolio-label">Rendement total</div>
+            <div class="arena-portfolio-value" id="portfolio-return">+12.5%</div>
+            <div class="arena-portfolio-change" id="portfolio-return-change">depuis l'ouverture</div>
           </div>
 
-          <!-- Award 3: Diversification -->
-          <div class="award-card reveal" style="animation-delay: 0.1s">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">🎯 Diversification</p>
-            <p class="text-2xl font-headline font-bold text-blue-400 mb-1" id="award-3-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-3-stat">--</p>
+          <div class="arena-portfolio-item">
+            <div class="arena-portfolio-label">Mon classement</div>
+            <div class="arena-portfolio-value" id="portfolio-ranking">#--</div>
+            <div class="arena-portfolio-change" id="portfolio-participants">sur -- participants</div>
           </div>
 
-          <!-- Award 4: Best Robot -->
-          <div class="award-card reveal" style="animation-delay: 0.15s">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">🤖 Meilleur robot</p>
-            <p class="text-2xl font-headline font-bold text-primary mb-1" id="award-4-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-4-stat">--</p>
-          </div>
-
-          <!-- Award 5: Stability -->
-          <div class="award-card reveal" style="animation-delay: 0.2s">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">🛡️ Stabilité</p>
-            <p class="text-2xl font-headline font-bold text-yellow-400 mb-1" id="award-5-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-5-stat">--</p>
-          </div>
-
-          <!-- Award 6: Balance -->
-          <div class="award-card reveal" style="animation-delay: 0.25s">
-            <p class="text-xs text-on-surface-variant mb-2 uppercase tracking-wider">⚖️ Équilibre</p>
-            <p class="text-2xl font-headline font-bold text-cyan-400 mb-1" id="award-6-winner">--</p>
-            <p class="text-sm text-on-surface-variant" id="award-6-stat">--</p>
+          <div class="arena-portfolio-item">
+            <div class="arena-portfolio-label">Capital initial</div>
+            <div class="arena-portfolio-value" id="portfolio-initial">€10,000</div>
+            <div class="arena-portfolio-change">Votre mise</div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ════════════════════════════════════════════════════
-         LEADERBOARD SECTION
-         ════════════════════════════════════════════════════ -->
-    <section class="px-4 sm:px-6 py-20">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-headline font-bold mb-16 text-white">
-          Classement <span class="text-primary">Complet</span>
-        </h2>
-
-        <div class="glass-card rounded-xl overflow-hidden reveal">
-          <div class="overflow-x-auto">
-            <table class="lb-table">
-              <thead>
-                <tr>
-                  <th class="w-12">Rang</th>
-                  <th>Investisseur</th>
-                  <th>Performance</th>
-                  <th>Valeur</th>
-                  <th>Positions</th>
-                  <th>Variation</th>
-                </tr>
-              </thead>
-              <tbody id="leaderboard-body">
-                <tr>
-                  <td colspan="6" class="text-center py-8 text-on-surface-variant">Chargement des données...</td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- ADD POSITION FORM -->
+        <form class="arena-add-position-form" onsubmit="arenaAddPosition(event)">
+          <div class="arena-form-group">
+            <label class="arena-form-label">Ticker</label>
+            <input type="text" class="arena-form-input" id="position-ticker" placeholder="AAPL" required>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ════════════════════════════════════════════════════
-         CTA SECTION — Rejoindre l'Arène
-         ════════════════════════════════════════════════════ -->
-    <section class="px-4 sm:px-6 py-20 bg-gradient-to-b from-transparent to-surface-low">
-      <div class="max-w-2xl mx-auto text-center reveal">
-        <h2 class="text-4xl font-headline font-bold mb-6 text-white">
-          Prêt à <span class="text-primary">rejoindre l'Arène</span> ?
-        </h2>
-        <p class="text-lg text-on-surface-variant mb-12">
-          Abonnez-vous à la newsletter et suivez les performances des 3 robots en temps réel.
-        </p>
+          <div class="arena-form-group">
+            <label class="arena-form-label">Type</label>
+            <select class="arena-form-select" id="position-type">
+              <option value="stock">Stock</option>
+              <option value="crypto">Crypto</option>
+              <option value="etf">ETF</option>
+            </select>
+          </div>
 
-        <form action="https://formspree.io/f/xyzpqwab" method="POST" class="flex flex-col sm:flex-row gap-3">
-          <input
-            type="email"
-            name="email"
-            placeholder="votre@email.com"
-            required
-            class="input-field flex-1"
-          />
-          <button type="submit" class="btn-primary whitespace-nowrap">
-            S'abonner gratuitement
-          </button>
+          <div class="arena-form-group">
+            <label class="arena-form-label">Quantité</label>
+            <input type="number" class="arena-form-input" id="position-quantity" placeholder="10" step="0.01" required>
+          </div>
+
+          <div class="arena-form-group">
+            <label class="arena-form-label">Prix d'achat</label>
+            <input type="number" class="arena-form-input" id="position-price" placeholder="178.50" step="0.01" required>
+          </div>
+
+          <button type="submit" class="arena-form-add-btn">+ Ajouter</button>
         </form>
-        <p class="text-xs text-on-surface-variant mt-4">
-          Pas de spam. Désinscription facile.
-        </p>
+
+        <!-- POSITIONS TABLE -->
+        <div class="arena-positions-wrapper">
+          <table class="arena-positions-table">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Quantité</th>
+                <th>Prix d'achat</th>
+                <th>Prix actuel</th>
+                <th>P&L</th>
+                <th>%</th>
+                <th>Poids</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="positions-body">
+              <!-- POPULATED BY JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- RANKING -->
+        <div class="arena-ranking">
+          <div class="arena-ranking-label">Classement personnel</div>
+          <div class="arena-ranking-value" id="ranking-badge">#1 / 2847</div>
+        </div>
       </div>
     </section>
+  </div>
 
-  </main>
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="arena-container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>AlphaBot</h3>
+          <a href="index.html">Accueil</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="investissement.html">Robot Trader</a>
+          <a href="arena.html">Arena</a>
+        </div>
 
-  <!-- ═══════════════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════════════ -->
-  <footer class="border-t border-white/5 bg-surface-low py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <h4 class="font-headline font-bold text-primary mb-4">AlphaBot Weekly</h4>
-          <p class="text-sm text-on-surface-variant">Newsletter IA pour investisseurs francophones.</p>
+        <div class="footer-col">
+          <h3>Ressources</h3>
+          <a href="newsletters.html">Archives</a>
+          <a href="dashboard-agents.html">Agents IA</a>
+          <a href="mailto:antoine.metout@gmail.com">Contact</a>
         </div>
-        <div>
-          <h4 class="font-headline font-bold mb-4">Navigation</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="newsletter.html" class="text-on-surface-variant hover:text-primary transition">Newsletter</a></li>
-            <li><a href="investissement.html" class="text-on-surface-variant hover:text-primary transition">Investissement</a></li>
-            <li><a href="arena.html" class="text-on-surface-variant hover:text-primary transition">Arena</a></li>
-            <li><a href="dashboard-agents.html" class="text-on-surface-variant hover:text-primary transition">Agents</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-headline font-bold mb-4">Informations</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="mailto:antoine.metout@gmail.com" class="text-on-surface-variant hover:text-primary transition">Contact</a></li>
-            <li><p class="text-on-surface-variant">© 2026 AlphaBot Weekly</p></li>
-          </ul>
+
+        <div class="footer-col">
+          <h3>Communauté</h3>
+          <a href="https://twitter.com/AlphaBot_Weekly" target="_blank" rel="noopener">Twitter</a>
+          <a href="https://github.com/antoinemetout-AlphaBot/alphabot-weekly" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 text-center text-xs text-on-surface-variant">
-        <p>Built with ❤️ by Antoine Metout</p>
+
+      <div class="footer-bottom">
+        <div class="footer-credit">
+          © 2026 AlphaBot Weekly. Tous droits réservés.
+        </div>
+        <div class="footer-badge">
+          Propulsé par l'IA 🚀
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════════════════
-       JAVASCRIPT
-       ═══════════════════════════════════════════════════ -->
-  <script>
-    function toggleMenu() {
-      const n = document.getElementById('nav-menu');
-      n.classList.toggle('mobile-open');
-    }
+  <!-- AUTH MODAL -->
+  <div class="arena-modal-overlay" id="auth-modal">
+    <button class="arena-modal-close" onclick="arenaCloseAuthModal()">✕</button>
+    <div class="arena-modal">
+      <h2 class="arena-modal-title">Bienvenue à l'Arène</h2>
 
-    // ── SCROLL REVEAL ──
-    document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
-        });
-      }, {threshold: 0.08});
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      <!-- AUTH TABS -->
+      <div class="arena-auth-tabs">
+        <button class="arena-auth-tab active" data-tab="login" onclick="arenaAuthTab('login')">Se connecter</button>
+        <button class="arena-auth-tab" data-tab="signup" onclick="arenaAuthTab('signup')">Créer un compte</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form class="arena-auth-form active" id="login-form" onsubmit="arenaLogin(event)">
+        <button type="button" class="arena-google-btn" onclick="arenaGoogleAuth()">
+          🔐 Continuer avec Google
+        </button>
+
+        <div class="arena-modal-divider">OU</div>
+
+        <input type="email" class="arena-modal-input" placeholder="Email" required>
+        <input type="password" class="arena-modal-input" placeholder="Mot de passe" required>
+
+        <label class="arena-modal-checkbox">
+          <input type="checkbox" required>
+          <span>Se souvenir de moi</span>
+        </label>
+
+        <button type="submit" class="arena-modal-submit">Se connecter</button>
+
+        <div style="text-align: center; font-size: 12px; color: var(--muted);">
+          <a href="#" style="color: var(--cyan); text-decoration: none;">Mot de passe oublié?</a>
+        </div>
+      </form>
+
+      <!-- SIGNUP FORM -->
+      <form class="arena-auth-form" id="signup-form" onsubmit="arenaSignup(event)">
+        <button type="button" class="arena-google-btn" onclick="arenaGoogleAuth()">
+          🔐 Continuer avec Google
+        </button>
+
+        <div class="arena-modal-divider">OU</div>
+
+        <input type="text" class="arena-modal-input" placeholder="Prénom et nom" required>
+        <input type="email" class="arena-modal-input" placeholder="Email" required>
+        <input type="password" class="arena-modal-input" placeholder="Mot de passe" required>
+        <input type="password" class="arena-modal-input" placeholder="Confirmer" required>
+
+        <label class="arena-modal-checkbox">
+          <input type="checkbox" required>
+          <span>J'accepte les <a href="#" style="color: var(--cyan); text-decoration: none;">conditions d'utilisation</a></span>
+        </label>
+
+        <button type="submit" class="arena-modal-submit">Créer mon compte</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO IMPORT MODAL -->
+  <div class="arena-import-modal-overlay" id="import-modal">
+    <button class="arena-import-modal-close" onclick="arenaCloseImportModal()">✕</button>
+    <div class="arena-import-modal">
+      <h2 class="arena-import-modal-title">Importer mon portefeuille</h2>
+
+      <!-- STEP INDICATORS -->
+      <div class="arena-import-steps">
+        <div class="arena-import-step active" onclick="arenaGoToStep(1)">1. Fichier</div>
+        <div class="arena-import-step" onclick="arenaGoToStep(2)">2. Aperçu</div>
+        <div class="arena-import-step" onclick="arenaGoToStep(3)">3. Confirmation</div>
+      </div>
+
+      <!-- ERROR MESSAGE -->
+      <div class="arena-import-error" id="import-error"></div>
+
+      <!-- STEP 1: UPLOAD -->
+      <div class="arena-import-step-content active" id="import-step-1">
+        <div class="arena-upload-zone" id="upload-zone" ondrop="arenaDragDrop(event)" ondragover="arenaDragOver(event)" ondragleave="arenaDragLeave(event)" onclick="document.getElementById('arena-import-file').click();">
+          <div class="arena-upload-zone-icon">📁</div>
+          <div class="arena-upload-zone-text">Déposez votre fichier CSV ici</div>
+          <div class="arena-upload-zone-subtext">ou cliquez pour sélectionner</div>
+          <input type="file" id="arena-import-file" accept=".csv,.xlsx,.xls" onchange="arenaHandleFileSelect(event)">
+        </div>
+
+        <div style="text-align: center; margin-bottom: 20px; font-size: 12px; color: var(--muted);">
+          Exportez votre portefeuille depuis votre broker et déposez le fichier ici. On détecte automatiquement le format.
+        </div>
+
+        <!-- BROKER LOGOS (Official Apple App Store icons) -->
+        <div style="margin-bottom: 30px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 16px;">Brokers supportés:</div>
+          <div class="arena-broker-logos">
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/b1/08/05b10852-1827-9b45-65ac-6dcd53caa4b9/ComposedAppIcon-0-0-1x_U007ephone-0-1-P3-85-220.png/128x128bb.jpg" alt="Trade Republic" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Trade Republic</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/50/f5/1f50f517-60ce-657b-098a-cc5a0471a37d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/128x128bb.jpg" alt="eToro" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>eToro</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/b8/bf/d9b8bfe6-f84b-0b37-ea45-cb122b11a366/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/128x128bb.jpg" alt="Boursorama" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Boursorama</div>
+            </div>
+            <div class="arena-broker-logo">
+              <div class="arena-broker-logo-icon"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/e7/c0/05e7c056-2ee5-fd86-4c76-809c4c7a7aa7/Fortuneo_AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.jpg" alt="Fortuneo" style="width:44px;height:44px;border-radius:12px;"></div>
+              <div>Fortuneo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BROKER HELP -->
+        <div class="arena-broker-help">
+          <div class="arena-broker-help-title" onclick="arenaToggleBrokerHelp()">ℹ️ Comment exporter depuis mon broker?</div>
+          <div class="arena-broker-help-content" id="broker-help-content">
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/b1/08/05b10852-1827-9b45-65ac-6dcd53caa4b9/ComposedAppIcon-0-0-1x_U007ephone-0-1-P3-85-220.png/128x128bb.jpg" alt="TR" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Trade Republic</div>
+              <div class="arena-broker-help-steps">Profil → Documents → Relevé de portefeuille → Télécharger CSV</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/50/f5/1f50f517-60ce-657b-098a-cc5a0471a37d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/128x128bb.jpg" alt="eToro" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> eToro</div>
+              <div class="arena-broker-help-steps">Portfolio → Historique → Exporter vers Excel</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/b8/bf/d9b8bfe6-f84b-0b37-ea45-cb122b11a366/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/128x128bb.jpg" alt="Boursorama" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Boursorama</div>
+              <div class="arena-broker-help-steps">Mon portefeuille → Exporter → CSV</div>
+            </div>
+            <div class="arena-broker-help-item">
+              <div class="arena-broker-help-name"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/e7/c0/05e7c056-2ee5-fd86-4c76-809c4c7a7aa7/Fortuneo_AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128bb.jpg" alt="Fortuneo" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:8px;"> Fortuneo</div>
+              <div class="arena-broker-help-steps">Portefeuille → Actions → Exporter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: PREVIEW -->
+      <div class="arena-import-step-content" id="import-step-2">
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 12px;">
+            <span id="detected-broker" style="font-weight: 600; color: var(--cyan);">--</span> positions détectées
+          </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-bottom: 20px;">
+          <table class="arena-import-preview-table">
+            <thead>
+              <tr>
+                <th style="width: 30px;">✓</th>
+                <th>Ticker</th>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Prix d'achat</th>
+              </tr>
+            </thead>
+            <tbody id="import-preview-body">
+              <!-- POPULATED BY JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="arena-import-summary" id="import-summary">
+          <div class="arena-import-summary-item">
+            <span class="arena-import-summary-label">Positions à importer:</span>
+            <span class="arena-import-summary-value" id="summary-count">0</span>
+          </div>
+          <div class="arena-import-summary-item">
+            <span class="arena-import-summary-label">Valeur totale (à 0€):</span>
+            <span class="arena-import-summary-value" id="summary-value">€0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: CONFIRMATION -->
+      <div class="arena-import-step-content" id="import-step-3">
+        <div class="arena-import-success">
+          <div class="arena-import-success-icon">✨</div>
+          <div class="arena-import-success-text">Portefeuille importé avec succès!</div>
+          <div class="arena-import-success-subtext">
+            <span id="success-count">0</span> positions ajoutées à votre portefeuille.
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="arena-import-actions">
+        <button class="arena-import-btn-secondary" onclick="arenaCloseImportModal()" id="cancel-btn">Annuler</button>
+        <button class="arena-import-btn-primary" id="next-btn" onclick="arenaNextStep()">Suivant →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ==================== TOGGLE MENU ====================
+    function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
+
+    // ==================== FIREBASE CONFIG ====================
+    const firebaseConfig = {
+      apiKey: "AIzaSyB-qHIr4T0JPnQ7ejCMntYF4uCe-OmJLg4",
+      authDomain: "alphabot-arena.firebaseapp.com",
+      projectId: "alphabot-arena",
+      storageBucket: "alphabot-arena.firebasestorage.app",
+      messagingSenderId: "1025692003332",
+      appId: "1:1025692003332:web:e1fff6653e9ad5423dd951"
+    };
+
+    // Check if Firebase is properly configured (demo mode if not)
+    const isFirebaseConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+
+    // ==================== DEMO DATA ====================
+    const DEMO_PORTFOLIOS = [
+      // Les robots traders — données synchronisées depuis portfolio_public.json
+      // (les vrais résultats sont chargés dynamiquement dans loadLeaderboard)
+      {
+        id: 'robot-prudent',
+        displayName: '🤖 Robot Trader Prudent',
+        isRobot: true,
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
+      },
+      {
+        id: 'robot-modere',
+        displayName: '🤖 Robot Trader Modéré',
+        isRobot: true,
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
+      },
+      {
+        id: 'robot-agressif',
+        displayName: '🤖 Robot Trader Agressif',
+        isRobot: true,
+        positions: [],
+        return: 0  // Mis à jour dynamiquement
+      },
+      // Pas de participants humains pour l'instant — fonctionnalité à venir
+      // Les faux profils ont été retirés pour ne montrer que des données réelles
+    ];
+
+    // ==================== STATE ====================
+    let currentUser = null;
+    let userPortfolio = null;
+    let allPortfolios = [];
+    let currentFilter = 'all';
+
+    // ==================== INITIALIZATION ====================
+    document.addEventListener('DOMContentLoaded', async function() {
+      initializeApp();
+      setupEventListeners();
+      animateCounters();
+      await syncRobotData();  // Sync real robot performance before rendering
+      loadLeaderboard();
+      updateArenaRobotCards();  // Remplir les cartes robots + podium + awards avec données réelles
     });
 
-    // ── LOAD HERO KPIs ──
-    async function loadHeroKPIs() {
-      try {
-        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
-        if (!resp.ok) return;
+    function initializeApp() {
+      // Load demo data
+      allPortfolios = [...DEMO_PORTFOLIOS];
 
-        const data = await resp.json();
-        const robots = data.robots || {};
-
-        let totalCapital = 0, totalTrades = 0, bestPerf = -Infinity, bestName = '';
-
-        for (const [key, rb] of Object.entries(robots)) {
-          totalCapital += rb.capital_actuel || 10000;
-          totalTrades += rb.nb_trades || 0;
-          const perf = rb.performance_pct || 0;
-          if (perf > bestPerf) { bestPerf = perf; bestName = rb.nom || key; }
-        }
-
-        const capEl = document.getElementById('hero-capital');
-        if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr') + ' €';
-
-        const trEl = document.getElementById('hero-trades');
-        if (trEl) trEl.textContent = totalTrades;
-
-        const bestEl = document.getElementById('hero-best');
-        if (bestEl) {
-          const perfStr = (bestPerf >= 0 ? '+' : '') + bestPerf.toFixed(2) + '%';
-          bestEl.textContent = perfStr;
-          bestEl.style.color = bestPerf >= 0 ? '#22c55e' : '#ef4444';
-        }
-      } catch(e) {
-        console.log('Hero KPIs: erreur chargement');
+      // Check localStorage for "logged in" state (demo)
+      const savedUser = localStorage.getItem('arena_user');
+      if (savedUser) {
+        currentUser = JSON.parse(savedUser);
+        showUserPortfolio();
       }
     }
 
-    // ── SYNC ROBOT DATA (Podium + Robot Cards) ──
+    function setupEventListeners() {
+      // Filter buttons
+      document.querySelectorAll('.arena-filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.arena-filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.dataset.filter;
+          loadLeaderboard();
+        });
+      });
+
+      // Intersection observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('arena-fade-in');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.arena-section, .arena-robot-card, .arena-award-card').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // ==================== SYNC ROBOT DATA FROM PORTFOLIO ====================
     async function syncRobotData() {
       try {
         const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
         if (!resp.ok) return;
+        const data = await resp.json();
+        const robots = data.robots || {};
+        const mapping = {
+          'robot-prudent': 'prudent',
+          'robot-modere': 'modere',
+          'robot-agressif': 'agressif'
+        };
+        allPortfolios.forEach(p => {
+          if (p.isRobot && mapping[p.id]) {
+            const r = robots[mapping[p.id]];
+            if (r) {
+              p.return = r.performance_pct || 0;
+              p.positions = (r.positions || []).map(pos => ({
+                ticker: pos.ticker,
+                type: pos.ticker && pos.ticker.includes('BTC') ? 'crypto' : 'stock',
+                quantity: pos.nb_actions || 0,
+                avgPrice: pos.prix_entree || 0
+              }));
+            }
+          }
+        });
+      } catch(e) { /* silent fail — use demo data */ }
+    }
 
+    // ==================== UPDATE ROBOT CARDS + PODIUM + AWARDS ====================
+    async function updateArenaRobotCards() {
+      try {
+        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!resp.ok) return;
         const data = await resp.json();
         const robots = data.robots || {};
 
-        // Update robot cards (prudent, modéré, agressif)
-        const robotMap = {
-          prudent: 'prudent',
-          modere: 'modere',
-          agressif: 'agressif'
-        };
-
+        // Remplir les cartes robots
+        const robotMap = {prudent: 'prudent', modere: 'modere', agressif: 'agressif'};
         for (const [key, id] of Object.entries(robotMap)) {
           const r = robots[key];
           if (!r) continue;
-
           const perf = r.performance_pct || 0;
           const capital = r.capital_actuel || 10000;
           const trades = r.nb_trades || 0;
@@ -647,154 +2804,957 @@
 
           if (perfEl) {
             perfEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
-            perfEl.style.color = perf >= 0 ? '#22c55e' : '#ef4444';
+            perfEl.className = 'arena-robot-stat-value ' + (perf >= 0 ? 'positive' : 'negative');
           }
-          if (capEl) capEl.textContent = Math.round(capital).toLocaleString('fr') + ' €';
-          if (trEl) trEl.textContent = trades;
+          if (capEl) capEl.textContent = capital.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + ' \u20ac';
+          if (trEl) trEl.textContent = trades + ' trade' + (trades > 1 ? 's' : '');
           if (posEl) posEl.textContent = positions;
         }
 
-        // ── PODIUM (Top 3) ──
+        // Remplir le podium (classement par performance)
         const sorted = Object.entries(robots).map(([k, v]) => ({
-          id: k,
-          nom: v.nom || k,
-          perf: v.performance_pct || 0,
+          id: k, nom: v.nom || k, perf: v.performance_pct || 0,
           capital: v.capital_actuel || 10000,
-          positions: v.positions || []
+          avatar: k === 'prudent' ? 'P' : k === 'modere' ? 'M' : 'A'
         })).sort((a, b) => b.perf - a.perf);
 
-        for (let i = 0; i < Math.min(3, sorted.length); i++) {
+        sorted.forEach((bot, i) => {
           const rank = i + 1;
           const nameEl = document.getElementById('podium-' + rank + '-name');
           const retEl = document.getElementById('podium-' + rank + '-return');
           const valEl = document.getElementById('podium-' + rank + '-value');
-
-          if (nameEl) nameEl.textContent = sorted[i].nom;
-          if (retEl) {
-            const perfStr = (sorted[i].perf >= 0 ? '+' : '') + sorted[i].perf.toFixed(2) + '%';
-            retEl.textContent = perfStr;
-            retEl.style.color = sorted[i].perf >= 0 ? '#22c55e' : '#ef4444';
-          }
-          if (valEl) valEl.textContent = Math.round(sorted[i].capital).toLocaleString('fr') + ' €';
-        }
-
-        // ── AWARDS ──
-        const best = sorted[0];
-        const stable = sorted.reduce((a, b) => Math.abs(a.perf) < Math.abs(b.perf) ? a : b);
-        const balanced = sorted.find(s => s.id === 'modere') || sorted[1];
-        const mostDiv = sorted.reduce((a, b) => (b.positions.length > a.positions.length) ? b : a);
-
-        // Award 1: Best return
-        const award1WEl = document.getElementById('award-1-winner');
-        const award1SEl = document.getElementById('award-1-stat');
-        if (award1WEl) award1WEl.textContent = best.nom;
-        if (award1SEl) award1SEl.textContent = '+' + best.perf.toFixed(2) + '%';
-
-        // Award 2: Biggest gain (same as award 1 for now)
-        const award2WEl = document.getElementById('award-2-winner');
-        const award2SEl = document.getElementById('award-2-stat');
-        if (award2WEl) award2WEl.textContent = best.nom;
-        if (award2SEl) award2SEl.textContent = '+' + best.perf.toFixed(2) + '%';
-
-        // Award 3: Diversification (most positions)
-        const award3WEl = document.getElementById('award-3-winner');
-        const award3SEl = document.getElementById('award-3-stat');
-        if (award3WEl) award3WEl.textContent = mostDiv.nom;
-        if (award3SEl) award3SEl.textContent = mostDiv.positions.length + ' positions';
-
-        // Award 4: Best robot
-        const award4WEl = document.getElementById('award-4-winner');
-        const award4SEl = document.getElementById('award-4-stat');
-        if (award4WEl) award4WEl.textContent = best.nom;
-        if (award4SEl) award4SEl.textContent = '+' + best.perf.toFixed(2) + '%';
-
-        // Award 5: Stability (lowest volatility)
-        const award5WEl = document.getElementById('award-5-winner');
-        const award5SEl = document.getElementById('award-5-stat');
-        if (award5WEl) award5WEl.textContent = stable.nom;
-        if (award5SEl) award5SEl.textContent = 'Volatilité stable';
-
-        // Award 6: Balance
-        const award6WEl = document.getElementById('award-6-winner');
-        const award6SEl = document.getElementById('award-6-stat');
-        if (award6WEl) award6WEl.textContent = balanced.nom;
-        if (award6SEl) award6SEl.textContent = 'Équilibre optimal';
-
-      } catch(e) {
-        console.log('Sync robot data: erreur');
-      }
-    }
-
-    // ── LOAD LEADERBOARD ──
-    async function loadLeaderboard() {
-      try {
-        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
-        if (!resp.ok) return;
-
-        const data = await resp.json();
-        const robots = data.robots || {};
-
-        const list = Object.entries(robots).map(([k, v]) => ({
-          id: k,
-          nom: v.nom || k,
-          perf: v.performance_pct || 0,
-          capital: v.capital_actuel || 10000,
-          trades: v.nb_trades || 0,
-          positions: (v.positions || []).map(p => p.ticker).slice(0, 3).join(', ') || 'Aucune'
-        })).sort((a, b) => b.perf - a.perf);
-
-        const tbody = document.getElementById('leaderboard-body');
-        if (!tbody) return;
-        tbody.innerHTML = '';
-
-        // Only add the 3 robots, no fake users
-        list.forEach((r, idx) => {
-          const tr = document.createElement('tr');
-          const perfColor = r.perf >= 0 ? '#22c55e' : '#ef4444';
-          const perfStr = (r.perf >= 0 ? '+' : '') + r.perf.toFixed(2) + '%';
-
-          tr.innerHTML =
-            '<td class="font-semibold">#' + (idx + 1) + '</td>' +
-            '<td>' + r.nom + '</td>' +
-            '<td class="lb-perf" style="color:' + perfColor + '">' + perfStr + '</td>' +
-            '<td>' + Math.round(r.capital).toLocaleString('fr') + ' €</td>' +
-            '<td class="text-xs">' + r.positions + '</td>' +
-            '<td style="color:' + perfColor + '">📊</td>';
-
-          tbody.appendChild(tr);
+          const avEl = document.getElementById('podium-' + rank + '-avatar');
+          if (nameEl) nameEl.textContent = bot.nom;
+          if (retEl) retEl.textContent = (bot.perf >= 0 ? '+' : '') + bot.perf.toFixed(2) + '%';
+          if (valEl) valEl.textContent = '\u20ac' + bot.capital.toLocaleString('fr-FR', {maximumFractionDigits: 0});
+          if (avEl) avEl.textContent = bot.avatar;
         });
 
-        // Add "Vous" placeholder row
-        const youTr = document.createElement('tr');
-        youTr.style.opacity = '0.6';
-        youTr.innerHTML =
-          '<td class="font-semibold">-</td>' +
-          '<td class="italic">Vous</td>' +
-          '<td class="text-on-surface-variant">--</td>' +
-          '<td class="text-on-surface-variant">--</td>' +
-          '<td class="text-on-surface-variant">--</td>' +
-          '<td class="text-on-surface-variant">--</td>';
-        tbody.appendChild(youTr);
+        // Remplir les awards avec données réelles
+        if (sorted.length >= 3) {
+          const best = sorted[0];
+          const worst = sorted[sorted.length - 1];
+          const stable = sorted.reduce((a, b) => Math.abs(a.perf) < Math.abs(b.perf) ? a : b);
+          const balanced = sorted.find(s => s.id === 'modere') || sorted[1];
+          const prudent = sorted.find(s => s.id === 'prudent') || sorted[2];
 
-      } catch(e) {
-        console.log('Leaderboard: erreur chargement');
+          const setAward = (id, winner, stat) => {
+            const w = document.getElementById('award-' + id + '-winner');
+            const s = document.getElementById('award-' + id + '-stat');
+            if (w) w.textContent = winner;
+            if (s) s.textContent = stat;
+          };
+          setAward(1, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(2, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(3, balanced.nom, balanced.capital.toLocaleString('fr') + ' €');
+          setAward(4, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(5, prudent.nom, Math.abs(prudent.perf).toFixed(2) + '% écart');
+          setAward(6, balanced.nom, (balanced.perf >= 0 ? '+' : '') + balanced.perf.toFixed(2) + '%');
+        }
+
+      } catch(e) { console.warn('Arena cards update failed:', e); }
+    }
+
+    // ==================== LEADERBOARD ====================
+    function loadLeaderboard() {
+      let portfolios = [...allPortfolios];
+
+      // Apply filters
+      if (currentFilter === 'humans') {
+        portfolios = portfolios.filter(p => !p.isRobot);
+      } else if (currentFilter === 'robots') {
+        portfolios = portfolios.filter(p => p.isRobot);
+      } else if (currentFilter === 'top10') {
+        portfolios = portfolios.slice(0, 10);
+      }
+
+      // Sort by return
+      portfolios.sort((a, b) => b.return - a.return);
+
+      // Render leaderboard
+      const tbody = document.getElementById('leaderboard-body');
+      tbody.innerHTML = portfolios.map((p, i) => {
+        const rank = i + 1;
+        const medalClass = rank === 1 ? 'medal-1' : rank === 2 ? 'medal-2' : rank === 3 ? 'medal-3' : '';
+        const medalSymbol = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+
+        let totalValue = p.positions.reduce((sum, pos) => sum + (pos.quantity * pos.avgPrice), 0);
+        const returnClass = p.return >= 0 ? 'positive' : 'negative';
+
+        return `
+          <tr>
+            <td class="arena-rank ${medalClass}">${medalSymbol}</td>
+            <td>
+              <div class="arena-investor">
+                <div class="${p.isRobot ? 'arena-investor-robot' : 'arena-investor-avatar'}" style="${p.isRobot ? 'background: linear-gradient(135deg, var(--gold), #f97316);' : ''}">
+                  ${p.displayName.charAt(0)}
+                </div>
+                <div class="arena-investor-name">
+                  ${p.displayName}
+                  ${p.isRobot ? '<span class="arena-robot-badge">Robot Trader IA</span>' : ''}
+                </div>
+              </div>
+            </td>
+            <td><span class="arena-return ${returnClass}">${p.return > 0 ? '+' : ''}${p.return.toFixed(1)}%</span></td>
+            <td class="arena-value">€${totalValue.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}</td>
+            <td class="arena-positions">${p.positions.length}</td>
+            <td class="arena-change ${p.return >= 0 ? 'up' : 'down'}">
+              ${p.return >= 0 ? '↑' : '↓'} ${Math.abs(p.return).toFixed(1)}%
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // ==================== PORTFOLIO MANAGEMENT ====================
+    function arenaAddPosition(e) {
+      e.preventDefault();
+
+      const ticker = document.getElementById('position-ticker').value.toUpperCase();
+      const type = document.getElementById('position-type').value;
+      const quantity = parseFloat(document.getElementById('position-quantity').value);
+      const price = parseFloat(document.getElementById('position-price').value);
+
+      if (!userPortfolio) {
+        userPortfolio = {
+          id: currentUser.id,
+          displayName: currentUser.displayName,
+          isRobot: false,
+          positions: [],
+          return: 0
+        };
+      }
+
+      userPortfolio.positions.push({ ticker, type, quantity, avgPrice: price });
+
+      // Save to localStorage
+      localStorage.setItem('arena_portfolio_' + currentUser.id, JSON.stringify(userPortfolio));
+
+      // Reset form
+      e.target.reset();
+
+      // Refresh display
+      renderUserPortfolio();
+      loadLeaderboard();
+    }
+
+    function arenaDeletePosition(ticker) {
+      if (userPortfolio) {
+        userPortfolio.positions = userPortfolio.positions.filter(p => p.ticker !== ticker);
+        localStorage.setItem('arena_portfolio_' + currentUser.id, JSON.stringify(userPortfolio));
+        renderUserPortfolio();
+        loadLeaderboard();
       }
     }
 
-    // ── INIT ON LOAD ──
-    document.addEventListener('DOMContentLoaded', function() {
-      loadHeroKPIs();
-      syncRobotData();
-      loadLeaderboard();
+    // ==================== AUTHENTICATION ====================
+    function arenaOpenAuthModal(tab = 'login') {
+      const modal = document.getElementById('auth-modal');
+      modal.classList.add('show');
+      if (tab === 'signup') {
+        arenaAuthTab('signup');
+      }
+    }
 
-      // Refresh every 60 seconds
-      setInterval(() => {
-        loadHeroKPIs();
-        syncRobotData();
-        loadLeaderboard();
-      }, 60000);
+    function arenaCloseAuthModal() {
+      document.getElementById('auth-modal').classList.remove('show');
+    }
+
+    function arenaAuthTab(tab) {
+      document.querySelectorAll('.arena-auth-form').forEach(f => f.classList.remove('active'));
+      document.querySelectorAll('.arena-auth-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(tab + '-form').classList.add('active');
+      document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    }
+
+    function arenaLogin(e) {
+      e.preventDefault();
+      const email = e.target.querySelector('input[type="email"]').value;
+      const displayName = email.split('@')[0];
+
+      currentUser = {
+        id: 'user-' + Date.now(),
+        email: email,
+        displayName: displayName
+      };
+
+      localStorage.setItem('arena_user', JSON.stringify(currentUser));
+      arenaCloseAuthModal();
+      showUserPortfolio();
+    }
+
+    function arenaSignup(e) {
+      e.preventDefault();
+      const name = e.target.querySelector('input[type="text"]').value;
+      const email = e.target.querySelector('input[type="email"]').value;
+
+      currentUser = {
+        id: 'user-' + Date.now(),
+        email: email,
+        displayName: name
+      };
+
+      // Create initial portfolio
+      userPortfolio = {
+        id: currentUser.id,
+        displayName: name,
+        isRobot: false,
+        positions: [],
+        return: 0
+      };
+
+      localStorage.setItem('arena_user', JSON.stringify(currentUser));
+      localStorage.setItem('arena_portfolio_' + currentUser.id, JSON.stringify(userPortfolio));
+
+      arenaCloseAuthModal();
+      showUserPortfolio();
+    }
+
+    function arenaGoogleAuth() {
+      // Demo: simulate Google login
+      const names = ['Thomas Leclerc', 'Marine Lefebvre', 'David Martin'];
+      const name = names[Math.floor(Math.random() * names.length)];
+
+      currentUser = {
+        id: 'google-' + Date.now(),
+        email: name.toLowerCase().replace(' ', '.') + '@gmail.com',
+        displayName: name
+      };
+
+      userPortfolio = {
+        id: currentUser.id,
+        displayName: name,
+        isRobot: false,
+        positions: [],
+        return: 0
+      };
+
+      localStorage.setItem('arena_user', JSON.stringify(currentUser));
+      localStorage.setItem('arena_portfolio_' + currentUser.id, JSON.stringify(userPortfolio));
+
+      arenaCloseAuthModal();
+      showUserPortfolio();
+    }
+
+    // ==================== USER PORTFOLIO DISPLAY ====================
+    function showUserPortfolio() {
+      // Load user portfolio from localStorage
+      if (currentUser) {
+        userPortfolio = JSON.parse(localStorage.getItem('arena_portfolio_' + currentUser.id)) || {
+          id: currentUser.id,
+          displayName: currentUser.displayName,
+          isRobot: false,
+          positions: [],
+          return: 0
+        };
+
+        // Add user portfolio to leaderboard
+        const existingIndex = allPortfolios.findIndex(p => p.id === currentUser.id);
+        if (existingIndex === -1) {
+          allPortfolios.push(userPortfolio);
+        } else {
+          allPortfolios[existingIndex] = userPortfolio;
+        }
+
+        document.getElementById('my-portfolio-section').classList.remove('arena-hidden');
+        renderUserPortfolio();
+      }
+    }
+
+    function renderUserPortfolio() {
+      if (!userPortfolio) return;
+
+      // Calculate totals
+      let totalValue = userPortfolio.positions.reduce((sum, pos) => sum + (pos.quantity * pos.avgPrice), 0) || 10000;
+      let dailyChange = totalValue * 0.023; // Mock daily change
+      let returnPercent = ((totalValue - 10000) / 10000) * 100;
+
+      // Update summary
+      document.getElementById('portfolio-total-value').textContent = '€' + totalValue.toLocaleString('fr-FR', { maximumFractionDigits: 0 });
+      document.getElementById('portfolio-return').textContent = (returnPercent > 0 ? '+' : '') + returnPercent.toFixed(1) + '%';
+      document.getElementById('portfolio-daily-change').textContent = (dailyChange > 0 ? '+' : '') + dailyChange.toFixed(2) + '€ aujourd\'hui';
+
+      // Update ranking
+      allPortfolios.sort((a, b) => {
+        let aVal = a.positions.reduce((sum, pos) => sum + (pos.quantity * pos.avgPrice), 0) || 10000;
+        let bVal = b.positions.reduce((sum, pos) => sum + (pos.quantity * pos.avgPrice), 0) || 10000;
+        return bVal - aVal;
+      });
+
+      const ranking = allPortfolios.findIndex(p => p.id === currentUser.id) + 1;
+      document.getElementById('portfolio-ranking').textContent = '#' + ranking;
+      document.getElementById('portfolio-participants').textContent = 'sur ' + allPortfolios.length + ' participants';
+      document.getElementById('ranking-badge').textContent = '#' + ranking + ' / ' + allPortfolios.length;
+
+      // Render positions
+      const tbody = document.getElementById('positions-body');
+      if (userPortfolio.positions.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="10" style="text-align: center; padding: 30px; color: var(--muted);">Aucune position. Ajoutez une position pour commencer!</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = userPortfolio.positions.map((pos, i) => {
+        const posValue = pos.quantity * pos.avgPrice;
+        const weight = ((posValue / totalValue) * 100).toFixed(1);
+
+        // Mock current price (±random)
+        const currentPrice = pos.avgPrice * (1 + (Math.random() - 0.5) * 0.2);
+        const pnl = (currentPrice - pos.avgPrice) * pos.quantity;
+        const pnlPercent = ((currentPrice - pos.avgPrice) / pos.avgPrice) * 100;
+
+        return `
+          <tr>
+            <td class="arena-position-ticker">${pos.ticker}</td>
+            <td>${pos.ticker}</td>
+            <td>${pos.type}</td>
+            <td>${pos.quantity.toFixed(2)}</td>
+            <td>€${pos.avgPrice.toFixed(2)}</td>
+            <td>€${currentPrice.toFixed(2)}</td>
+            <td class="${pnl >= 0 ? 'arena-pnl-positive' : 'arena-pnl-negative'}">
+              ${pnl > 0 ? '+' : ''}€${pnl.toFixed(2)}
+            </td>
+            <td class="${pnlPercent >= 0 ? 'arena-pnl-positive' : 'arena-pnl-negative'}">
+              ${pnlPercent > 0 ? '+' : ''}${pnlPercent.toFixed(1)}%
+            </td>
+            <td>${weight}%</td>
+            <td class="arena-position-actions">
+              <button class="arena-delete-btn" onclick="arenaDeletePosition('${pos.ticker}')">Supprimer</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // ==================== ANIMATIONS ====================
+    function animateCounters() {
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const target = parseFloat(el.dataset.count);
+        const isDecimal = target.toString().includes('.');
+        const duration = 2000;
+        const start = Date.now();
+
+        function update() {
+          const progress = Math.min((Date.now() - start) / duration, 1);
+          const value = target * progress;
+          el.textContent = isDecimal ? value.toFixed(1) : Math.floor(value).toLocaleString('fr-FR');
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        update();
+      });
+    }
+
+    // ==================== PORTFOLIO IMPORT ====================
+
+    let importData = {
+      csvText: null,
+      broker: null,
+      positions: [],
+      selectedPositions: []
+    };
+
+    let currentImportStep = 1;
+
+    function arenaOpenImportModal() {
+      document.getElementById('import-modal').classList.add('show');
+      importData = { csvText: null, broker: null, positions: [], selectedPositions: [] };
+      currentImportStep = 1;
+      arenaGoToStep(1);
+    }
+
+    function arenaCloseImportModal() {
+      document.getElementById('import-modal').classList.remove('show');
+      importData = { csvText: null, broker: null, positions: [], selectedPositions: [] };
+    }
+
+    function arenaDragOver(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.add('dragover');
+    }
+
+    function arenaDragLeave(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.remove('dragover');
+    }
+
+    function arenaDragDrop(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('upload-zone').classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        processImportFile(file);
+      }
+    }
+
+    function arenaHandleFileSelect(e) {
+      const file = e.target.files[0];
+      if (file) {
+        processImportFile(file);
+      }
+    }
+
+    function processImportFile(file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          importData.csvText = e.target.result;
+          const parsed = parsePortfolioCSV(importData.csvText, file.name);
+          importData.broker = parsed.broker;
+          importData.positions = parsed.positions;
+          importData.selectedPositions = parsed.positions.map((_, i) => i);
+          arenaShowError('');
+          arenaGoToStep(2);
+        } catch (error) {
+          arenaShowError('Erreur: ' + error.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function arenaGoToStep(step) {
+      if (step === 2 && importData.positions.length === 0) {
+        arenaShowError('Veuillez d\'abord sélectionner un fichier CSV');
+        return;
+      }
+
+      currentImportStep = step;
+
+      // Update step indicators
+      document.querySelectorAll('.arena-import-step').forEach((el, i) => {
+        if (i + 1 <= step) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update step content
+      document.querySelectorAll('.arena-import-step-content').forEach((el, i) => {
+        if (i + 1 === step) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+
+      // Update button labels
+      const nextBtn = document.getElementById('next-btn');
+      const cancelBtn = document.getElementById('cancel-btn');
+
+      if (step === 1) {
+        nextBtn.textContent = 'Suivant →';
+        nextBtn.disabled = false;
+        cancelBtn.style.display = 'block';
+      } else if (step === 2) {
+        nextBtn.textContent = 'Importer →';
+        nextBtn.disabled = false;
+        cancelBtn.style.display = 'block';
+      } else if (step === 3) {
+        nextBtn.textContent = 'Fermer';
+        nextBtn.onclick = arenaCloseImportModal;
+        cancelBtn.style.display = 'none';
+      }
+
+      // Populate preview if step 2
+      if (step === 2) {
+        populateImportPreview();
+      }
+    }
+
+    function arenaNextStep() {
+      if (currentImportStep === 1) {
+        if (importData.positions.length === 0) {
+          arenaShowError('Veuillez sélectionner un fichier CSV');
+          return;
+        }
+        arenaGoToStep(2);
+      } else if (currentImportStep === 2) {
+        if (importData.selectedPositions.length === 0) {
+          arenaShowError('Veuillez sélectionner au moins une position');
+          return;
+        }
+        arenaImportPositions();
+      }
+    }
+
+    function populateImportPreview() {
+      const tbody = document.getElementById('import-preview-body');
+      let selectedCount = 0;
+      let totalValue = 0;
+
+      tbody.innerHTML = importData.positions.map((pos, idx) => {
+        const isSelected = importData.selectedPositions.includes(idx);
+        const posValue = (pos.quantity || 0) * (pos.avgPrice || 0);
+        if (isSelected) {
+          selectedCount++;
+          totalValue += posValue;
+        }
+
+        return `
+          <tr class="arena-import-preview-row ${!isSelected ? 'unchecked' : ''}">
+            <td>
+              <input type="checkbox" class="arena-import-checkbox" ${isSelected ? 'checked' : ''}
+                onchange="arenaToggleImportPosition(${idx})">
+            </td>
+            <td><strong>${pos.ticker || '--'}</strong></td>
+            <td>${pos.name || '--'}</td>
+            <td>${(pos.quantity || 0).toLocaleString('fr-FR')}</td>
+            <td>€${(pos.avgPrice || 0).toFixed(2)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('summary-count').textContent = selectedCount;
+      document.getElementById('summary-value').textContent = '€' + totalValue.toLocaleString('fr-FR', { minimumFractionDigits: 2 });
+      document.getElementById('detected-broker').textContent = importData.broker || 'CSV générique';
+    }
+
+    function arenaToggleImportPosition(idx) {
+      const checkbox = document.querySelectorAll('.arena-import-checkbox')[idx];
+      if (checkbox.checked) {
+        if (!importData.selectedPositions.includes(idx)) {
+          importData.selectedPositions.push(idx);
+        }
+      } else {
+        importData.selectedPositions = importData.selectedPositions.filter(i => i !== idx);
+      }
+      populateImportPreview();
+    }
+
+    function arenaImportPositions() {
+      const positionsToImport = importData.selectedPositions.map(idx => importData.positions[idx]);
+
+      if (window.currentUser && isFirebaseConfigured) {
+        // Firebase mode
+        const db = firebase.firestore();
+        const batch = db.batch();
+        const positionsRef = db.collection('portfolios').doc(window.currentUser.uid).collection('positions');
+
+        positionsToImport.forEach(pos => {
+          const docRef = positionsRef.doc(pos.ticker);
+          batch.set(docRef, {
+            ticker: pos.ticker,
+            name: pos.name,
+            type: pos.type || 'stock',
+            quantity: pos.quantity,
+            avgPrice: pos.avgPrice,
+            addedAt: new Date()
+          }, { merge: true });
+        });
+
+        batch.commit().then(() => {
+          arenaGoToStep(3);
+          document.getElementById('success-count').textContent = positionsToImport.length;
+          setTimeout(() => {
+            arenaCloseImportModal();
+            arenaRefreshPortfolio();
+          }, 2000);
+        }).catch(error => {
+          arenaShowError('Erreur lors de l\'importation: ' + error.message);
+        });
+      } else {
+        // Demo mode
+        if (!window.demoUserPortfolio) {
+          window.demoUserPortfolio = { positions: [] };
+        }
+
+        positionsToImport.forEach(pos => {
+          const existingIdx = window.demoUserPortfolio.positions.findIndex(p => p.ticker === pos.ticker);
+          if (existingIdx >= 0) {
+            window.demoUserPortfolio.positions[existingIdx] = {
+              ...window.demoUserPortfolio.positions[existingIdx],
+              quantity: pos.quantity,
+              avgPrice: pos.avgPrice
+            };
+          } else {
+            window.demoUserPortfolio.positions.push({
+              ticker: pos.ticker,
+              name: pos.name,
+              type: pos.type || 'stock',
+              quantity: pos.quantity,
+              avgPrice: pos.avgPrice,
+              addedAt: new Date()
+            });
+          }
+        });
+
+        arenaGoToStep(3);
+        document.getElementById('success-count').textContent = positionsToImport.length;
+        setTimeout(() => {
+          arenaCloseImportModal();
+          arenaRefreshPortfolio();
+        }, 2000);
+      }
+    }
+
+    function arenaShowError(message) {
+      const errorEl = document.getElementById('import-error');
+      if (message) {
+        errorEl.textContent = message;
+        errorEl.classList.add('show');
+      } else {
+        errorEl.classList.remove('show');
+      }
+    }
+
+    function arenaToggleBrokerHelp() {
+      const content = document.getElementById('broker-help-content');
+      content.classList.toggle('open');
+    }
+
+    function arenaRefreshPortfolio() {
+      if (window.demoUserPortfolio) {
+        arenaRenderPositionsTable();
+        arenaUpdatePortfolioSummary();
+      }
+    }
+
+    // ==================== CSV PARSER ====================
+
+    function parsePortfolioCSV(csvText, filename) {
+      csvText = cleanBOM(csvText);
+      const separator = detectSeparator(csvText);
+      const broker = detectBroker(csvText, filename);
+
+      switch (broker) {
+        case 'Trade Republic':
+          return { broker, positions: parseTradeRepublic(csvText, separator) };
+        case 'eToro':
+          return { broker, positions: parseEToro(csvText, separator) };
+        case 'Trading 212':
+          return { broker, positions: parseTrading212(csvText, separator) };
+        case 'Boursorama':
+          return { broker, positions: parseBoursorama(csvText, separator) };
+        case 'Fortuneo':
+          return { broker, positions: parseFortunevo(csvText, separator) };
+        case 'Bourse Direct':
+          return { broker, positions: parseBourseDirect(csvText, separator) };
+        default:
+          return { broker: 'CSV générique', positions: parseGenericCSV(csvText, separator) };
+      }
+    }
+
+    function cleanBOM(text) {
+      if (text.charCodeAt(0) === 0xFEFF) {
+        return text.slice(1);
+      }
+      return text;
+    }
+
+    function detectSeparator(csvText) {
+      const lines = csvText.split('\n').slice(0, 3);
+      let commaCount = 0, semicolonCount = 0;
+
+      lines.forEach(line => {
+        commaCount += (line.match(/,/g) || []).length;
+        semicolonCount += (line.match(/;/g) || []).length;
+      });
+
+      return semicolonCount > commaCount ? ';' : ',';
+    }
+
+    function detectBroker(csvText, filename) {
+      const lower = csvText.toLowerCase();
+      const headers = csvText.split('\n')[0].toLowerCase();
+
+      if (headers.includes('isin') && headers.includes('shares')) {
+        return 'Trade Republic';
+      }
+      if (headers.includes('instrument') && headers.includes('units')) {
+        return 'eToro';
+      }
+      if (headers.includes('ticker') && headers.includes('current price')) {
+        return 'Trading 212';
+      }
+      if (headers.includes('libellé') || headers.includes('pru')) {
+        return 'Boursorama';
+      }
+      if (headers.includes('valeur') && headers.includes('qté')) {
+        return 'Fortuneo';
+      }
+      if (headers.includes('libellé valeur') || headers.includes('prix de revient')) {
+        return 'Bourse Direct';
+      }
+      if (filename.includes('trade') || filename.includes('republic')) return 'Trade Republic';
+      if (filename.includes('etoro')) return 'eToro';
+      if (filename.includes('trading212')) return 'Trading 212';
+      if (filename.includes('bourso')) return 'Boursorama';
+      if (filename.includes('fortuneo')) return 'Fortuneo';
+      if (filename.includes('bourse')) return 'Bourse Direct';
+
+      return null;
+    }
+
+    function parseTradeRepublic(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const isinIdx = header.findIndex(h => h.toLowerCase().includes('isin'));
+      const nameIdx = header.findIndex(h => h.toLowerCase().includes('name'));
+      const sharesIdx = header.findIndex(h => h.toLowerCase().includes('shares'));
+      const costIdx = header.findIndex(h => h.toLowerCase().includes('average') || h.toLowerCase().includes('cost'));
+      const priceIdx = header.findIndex(h => h.toLowerCase().includes('price'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[isinIdx] || parts[0]),
+          name: parts[nameIdx] || parts[1],
+          quantity: normalizeNumber(parts[sharesIdx] || 0),
+          avgPrice: normalizeNumber(parts[costIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseEToro(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const instrumentIdx = header.findIndex(h => h.toLowerCase().includes('instrument'));
+      const unitsIdx = header.findIndex(h => h.toLowerCase().includes('units'));
+      const openIdx = header.findIndex(h => h.toLowerCase().includes('open rate'));
+      const closeIdx = header.findIndex(h => h.toLowerCase().includes('close rate'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: parts[instrumentIdx] || parts[0],
+          name: parts[instrumentIdx] || parts[0],
+          quantity: normalizeNumber(parts[unitsIdx] || 0),
+          avgPrice: normalizeNumber(parts[openIdx] || parts[closeIdx] || 0),
+          type: parts[instrumentIdx]?.toLowerCase().includes('crypto') ? 'crypto' : 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseTrading212(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const tickerIdx = header.findIndex(h => h.toLowerCase().includes('ticker'));
+      const nameIdx = header.findIndex(h => h.toLowerCase().includes('name'));
+      const sharesIdx = header.findIndex(h => h.toLowerCase().includes('shares'));
+      const avgIdx = header.findIndex(h => h.toLowerCase().includes('avg'));
+      const priceIdx = header.findIndex(h => h.toLowerCase().includes('current'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: parts[tickerIdx] || parts[0],
+          name: parts[nameIdx] || parts[1],
+          quantity: normalizeNumber(parts[sharesIdx] || 0),
+          avgPrice: normalizeNumber(parts[avgIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseBoursorama(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const libelleIdx = header.findIndex(h => h.toLowerCase().includes('libellé'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('quantité') || h.toLowerCase().includes('qté'));
+      const pruIdx = header.findIndex(h => h.toLowerCase().includes('pru'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[libelleIdx] || parts[0]),
+          name: parts[libelleIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[pruIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseFortunevo(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const valeurIdx = header.findIndex(h => h.toLowerCase().includes('valeur'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('qté'));
+      const pruIdx = header.findIndex(h => h.toLowerCase().includes('pru'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[valeurIdx] || parts[0]),
+          name: parts[valeurIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[pruIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseBourseDirect(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      const header = lines[0].split(sep);
+
+      const libelleIdx = header.findIndex(h => h.toLowerCase().includes('libellé'));
+      const qtyIdx = header.findIndex(h => h.toLowerCase().includes('quantité'));
+      const prixIdx = header.findIndex(h => h.toLowerCase().includes('prix'));
+      const coursIdx = header.findIndex(h => h.toLowerCase().includes('cours'));
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[libelleIdx] || parts[0]),
+          name: parts[libelleIdx] || parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[prixIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseGenericCSV(csvText, sep) {
+      const lines = csvText.split('\n').filter(l => l.trim());
+      if (lines.length < 2) return [];
+
+      const header = lines[0].split(sep).map(h => h.trim().toLowerCase());
+
+      const tickerIdx = header.findIndex(h => h.includes('ticker') || h.includes('isin') || h === 'symbol');
+      const nameIdx = header.findIndex(h => h.includes('name'));
+      const qtyIdx = header.findIndex(h => h.includes('quantity') || h.includes('shares') || h.includes('qté'));
+      const priceIdx = header.findIndex(h => h.includes('price') || h.includes('pru') || h.includes('cost'));
+
+      if (tickerIdx < 0 || qtyIdx < 0 || priceIdx < 0) {
+        throw new Error('Format de CSV non reconnu. Veuillez vérifier les en-têtes de colonnes.');
+      }
+
+      return lines.slice(1).map(line => {
+        const parts = parseCsvLine(line, sep);
+        if (parts.length < 2) return null;
+
+        return {
+          ticker: extractTicker(parts[tickerIdx] || parts[0]),
+          name: nameIdx >= 0 ? parts[nameIdx] : parts[0],
+          quantity: normalizeNumber(parts[qtyIdx] || 0),
+          avgPrice: normalizeNumber(parts[priceIdx] || 0),
+          type: 'stock'
+        };
+      }).filter(p => p && p.ticker);
+    }
+
+    function parseCsvLine(line, sep) {
+      const insideQuotes = (str, index) => {
+        let count = 0;
+        for (let i = 0; i < index; i++) {
+          if (str[i] === '"') count++;
+        }
+        return count % 2 === 1;
+      };
+
+      const parts = [];
+      let current = '';
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        if (char === '"') {
+          current += char;
+        } else if (char === sep && !insideQuotes(line, i)) {
+          parts.push(current.trim().replace(/^"|"$/g, ''));
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      parts.push(current.trim().replace(/^"|"$/g, ''));
+      return parts;
+    }
+
+    function normalizeNumber(str) {
+      if (!str) return 0;
+      str = String(str).trim();
+
+      // Replace common decimal separators
+      if (str.includes(',') && !str.includes('.')) {
+        str = str.replace(',', '.');
+      } else if (str.includes('.') && str.includes(',')) {
+        // Has both, need to determine which is decimal
+        const lastComma = str.lastIndexOf(',');
+        const lastDot = str.lastIndexOf('.');
+        if (lastComma > lastDot) {
+          // European format: 1.234,56
+          str = str.replace(/\./g, '').replace(',', '.');
+        } else {
+          // US format: 1,234.56
+          str = str.replace(/,/g, '');
+        }
+      }
+
+      return parseFloat(str) || 0;
+    }
+
+    function extractTicker(text) {
+      if (!text) return null;
+      text = String(text).trim();
+
+      // Extract from common formats
+      const isinMatch = text.match(/[A-Z]{2}[A-Z0-9]{9}[0-9]/);
+      if (isinMatch) {
+        // Try to find a known ticker in the text
+        const words = text.split(/[\s\-()]/);
+        for (let word of words) {
+          if (word.length >= 1 && word.length <= 5 && /^[A-Z0-9]+$/.test(word)) {
+            return word;
+          }
+        }
+        // ISIN doesn't have obvious ticker, return first word
+        return text.split(/[\s\-()]/)[0];
+      }
+
+      // Extract first word if it looks like a ticker
+      const words = text.split(/[\s\-()]/);
+      for (let word of words) {
+        word = word.trim();
+        if (word.length >= 1 && word.length <= 5 && /^[A-Z0-9]+$/.test(word)) {
+          return word;
+        }
+      }
+
+      return text.split(/[\s\-()]/)[0];
+    }
+
+    // ==================== UTILITY ====================
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('auth-modal');
+      const importModal = document.getElementById('import-modal');
+      if (e.target === modal) {
+        arenaCloseAuthModal();
+      }
+      if (e.target === importModal) {
+        arenaCloseImportModal();
+      }
+    });
+
+    // Load on page load
+    window.addEventListener('load', function() {
+      loadLeaderboard();
     });
   </script>
-
+  <script src="assets/gate_subscriber.js"></script>
 </body>
 </html>
