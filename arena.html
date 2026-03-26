@@ -2115,40 +2115,35 @@
       </div>
     </section>
 
-    <!-- PODIUM SECTION -->
+    <!-- PODIUM SECTION — rempli dynamiquement -->
     <section class="arena-section">
       <h2 class="arena-section-title">Podium</h2>
       <div class="arena-podium-container">
-        <!-- RANK 2 -->
         <div class="arena-podium arena-podium-rank-2">
           <div class="arena-podium-box">2</div>
           <div class="arena-podium-info">
-            <div class="arena-podium-avatar">R</div>
-            <div class="arena-podium-name">🤖 Robot Trader Modéré</div>
-            <div class="arena-podium-return">+1.07%</div>
-            <div class="arena-podium-value">€10,107</div>
+            <div class="arena-podium-avatar" id="podium-2-avatar">-</div>
+            <div class="arena-podium-name" id="podium-2-name">--</div>
+            <div class="arena-podium-return" id="podium-2-return">--</div>
+            <div class="arena-podium-value" id="podium-2-value">--</div>
           </div>
         </div>
-
-        <!-- RANK 1 -->
         <div class="arena-podium arena-podium-rank-1">
           <div class="arena-podium-box">1</div>
           <div class="arena-podium-info">
-            <div class="arena-podium-avatar">A</div>
-            <div class="arena-podium-name">🤖 Robot Trader Agressif</div>
-            <div class="arena-podium-return" style="color: var(--gold);">+3.26%</div>
-            <div class="arena-podium-value" style="color: var(--gold);">€10,326</div>
+            <div class="arena-podium-avatar" id="podium-1-avatar">-</div>
+            <div class="arena-podium-name" id="podium-1-name">--</div>
+            <div class="arena-podium-return" id="podium-1-return" style="color: var(--gold);">--</div>
+            <div class="arena-podium-value" id="podium-1-value" style="color: var(--gold);">--</div>
           </div>
         </div>
-
-        <!-- RANK 3 -->
         <div class="arena-podium arena-podium-rank-3">
           <div class="arena-podium-box">3</div>
           <div class="arena-podium-info">
-            <div class="arena-podium-avatar">P</div>
-            <div class="arena-podium-name">🤖 Robot Trader Prudent</div>
-            <div class="arena-podium-return">+0.43%</div>
-            <div class="arena-podium-value">€10,043</div>
+            <div class="arena-podium-avatar" id="podium-3-avatar">-</div>
+            <div class="arena-podium-name" id="podium-3-name">--</div>
+            <div class="arena-podium-return" id="podium-3-return">--</div>
+            <div class="arena-podium-value" id="podium-3-value">--</div>
           </div>
         </div>
       </div>
@@ -2202,33 +2197,34 @@
       </div>
     </section>
 
-    <!-- ROBOT TRADERS SECTION -->
+    <!-- ROBOT TRADERS SECTION — données chargées depuis portfolio_public.json -->
     <section class="arena-section">
       <h2 class="arena-section-title">Nos 3 robots traders</h2>
       <div class="arena-robots">
         <!-- PRUDENT -->
         <div class="arena-robot-card arena-robot-prudent">
           <div class="arena-robot-header">
-            <div class="arena-robot-icon">🤖</div>
+            <div class="arena-robot-icon">🛡️</div>
             <div>
-              <div class="arena-robot-name">🤖 Robot Trader Prudent</div>
+              <div class="arena-robot-name">Robot Trader Prudent</div>
               <div class="arena-robot-subtitle">Conservative</div>
             </div>
           </div>
           <p class="arena-robot-description">
             Stratégie défensive, diversification maximale, gestion des risques. Idéal pour les investisseurs patients.
           </p>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Rendement</span>
-            <span class="arena-robot-stat-value positive">+0.43%</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-perf">--</span>
           </div>
-
           <div class="arena-robot-stat">
-            <span class="arena-robot-stat-label">Volatilité</span>
-            <span class="arena-robot-stat-value">Faible</span>
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-capital">--</span>
           </div>
-
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-prudent-trades">--</span>
+          </div>
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Risque</span>
             <div class="arena-risk-meter">
@@ -2239,36 +2235,36 @@
               <div class="arena-risk-bar"></div>
             </div>
           </div>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Top positions</span>
-            <span style="font-size: 12px; color: var(--muted);">MSFT, Gold, EUR</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-prudent-positions">--</span>
           </div>
         </div>
 
         <!-- MODÉRÉ -->
         <div class="arena-robot-card arena-robot-modere">
           <div class="arena-robot-header">
-            <div class="arena-robot-icon">🤖</div>
+            <div class="arena-robot-icon">⚖️</div>
             <div>
-              <div class="arena-robot-name">🤖 Robot Trader Modéré</div>
+              <div class="arena-robot-name">Robot Trader Modéré</div>
               <div class="arena-robot-subtitle">Balanced</div>
             </div>
           </div>
           <p class="arena-robot-description">
-            Équilibre croissance/sécurité. Mix actions, crypto et matières premières. Le choix de la majorité.
+            Équilibre croissance/sécurité. Mix actions, ETF et matières premières. Le choix de la majorité.
           </p>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Rendement</span>
-            <span class="arena-robot-stat-value positive">+1.07%</span>
+            <span class="arena-robot-stat-value" id="arena-modere-perf">--</span>
           </div>
-
           <div class="arena-robot-stat">
-            <span class="arena-robot-stat-label">Volatilité</span>
-            <span class="arena-robot-stat-value">Modérée</span>
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-modere-capital">--</span>
           </div>
-
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-modere-trades">--</span>
+          </div>
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Risque</span>
             <div class="arena-risk-meter">
@@ -2279,36 +2275,36 @@
               <div class="arena-risk-bar"></div>
             </div>
           </div>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Top positions</span>
-            <span style="font-size: 12px; color: var(--muted);">AAPL, BTC, ETH</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-modere-positions">--</span>
           </div>
         </div>
 
         <!-- AGRESSIF -->
         <div class="arena-robot-card arena-robot-agressif">
           <div class="arena-robot-header">
-            <div class="arena-robot-icon">🤖</div>
+            <div class="arena-robot-icon">🔥</div>
             <div>
-              <div class="arena-robot-name">🤖 Robot Trader Agressif</div>
+              <div class="arena-robot-name">Robot Trader Agressif</div>
               <div class="arena-robot-subtitle">Aggressive</div>
             </div>
           </div>
           <p class="arena-robot-description">
-            Croissance maximale, leverage trading, altcoins. Pour les investisseurs audacieux. Haut risque, haut rendement.
+            Croissance maximale, positions concentrées, momentum. Pour les investisseurs audacieux. Haut risque, haut rendement.
           </p>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Rendement</span>
-            <span class="arena-robot-stat-value positive">+3.26%</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-perf">--</span>
           </div>
-
           <div class="arena-robot-stat">
-            <span class="arena-robot-stat-label">Volatilité</span>
-            <span class="arena-robot-stat-value">Élevée</span>
+            <span class="arena-robot-stat-label">Capital</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-capital">--</span>
           </div>
-
+          <div class="arena-robot-stat">
+            <span class="arena-robot-stat-label">Trades</span>
+            <span class="arena-robot-stat-value" id="arena-agressif-trades">--</span>
+          </div>
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Risque</span>
             <div class="arena-risk-meter">
@@ -2319,10 +2315,9 @@
               <div class="arena-risk-bar active"></div>
             </div>
           </div>
-
           <div class="arena-robot-stat">
             <span class="arena-robot-stat-label">Top positions</span>
-            <span style="font-size: 12px; color: var(--muted);">SOL, DOGE, NVDA</span>
+            <span style="font-size: 12px; color: var(--muted);" id="arena-agressif-positions">--</span>
           </div>
         </div>
       </div>
@@ -2783,6 +2778,7 @@
       animateCounters();
       await syncRobotData();  // Sync real robot performance before rendering
       loadLeaderboard();
+      updateArenaRobotCards();  // Remplir les cartes robots + podium + awards avec données réelles
     });
 
     function initializeApp() {
@@ -2849,6 +2845,78 @@
           }
         });
       } catch(e) { /* silent fail — use demo data */ }
+    }
+
+    // ==================== UPDATE ROBOT CARDS + PODIUM + AWARDS ====================
+    async function updateArenaRobotCards() {
+      try {
+        const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!resp.ok) return;
+        const data = await resp.json();
+        const robots = data.robots || {};
+
+        // Remplir les cartes robots
+        const robotMap = {prudent: 'prudent', modere: 'modere', agressif: 'agressif'};
+        for (const [key, id] of Object.entries(robotMap)) {
+          const r = robots[key];
+          if (!r) continue;
+          const perf = r.performance_pct || 0;
+          const capital = r.capital_actuel || 10000;
+          const trades = r.nb_trades || 0;
+          const positions = (r.positions || []).map(p => p.ticker).slice(0, 3).join(', ') || 'Aucune';
+
+          const perfEl = document.getElementById('arena-' + id + '-perf');
+          const capEl = document.getElementById('arena-' + id + '-capital');
+          const trEl = document.getElementById('arena-' + id + '-trades');
+          const posEl = document.getElementById('arena-' + id + '-positions');
+
+          if (perfEl) {
+            perfEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
+            perfEl.className = 'arena-robot-stat-value ' + (perf >= 0 ? 'positive' : 'negative');
+          }
+          if (capEl) capEl.textContent = capital.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + ' \u20ac';
+          if (trEl) trEl.textContent = trades + ' trade' + (trades > 1 ? 's' : '');
+          if (posEl) posEl.textContent = positions;
+        }
+
+        // Remplir le podium (classement par performance)
+        const sorted = Object.entries(robots).map(([k, v]) => ({
+          id: k, nom: v.nom || k, perf: v.performance_pct || 0,
+          capital: v.capital_actuel || 10000,
+          avatar: k === 'prudent' ? 'P' : k === 'modere' ? 'M' : 'A'
+        })).sort((a, b) => b.perf - a.perf);
+
+        sorted.forEach((bot, i) => {
+          const rank = i + 1;
+          const nameEl = document.getElementById('podium-' + rank + '-name');
+          const retEl = document.getElementById('podium-' + rank + '-return');
+          const valEl = document.getElementById('podium-' + rank + '-value');
+          const avEl = document.getElementById('podium-' + rank + '-avatar');
+          if (nameEl) nameEl.textContent = bot.nom;
+          if (retEl) retEl.textContent = (bot.perf >= 0 ? '+' : '') + bot.perf.toFixed(2) + '%';
+          if (valEl) valEl.textContent = '\u20ac' + bot.capital.toLocaleString('fr-FR', {maximumFractionDigits: 0});
+          if (avEl) avEl.textContent = bot.avatar;
+        });
+
+        // Remplir les awards
+        if (sorted.length >= 3) {
+          const best = sorted[0];
+          const stable = sorted.reduce((a, b) => Math.abs(a.perf) < Math.abs(b.perf) ? a : b);
+          const balanced = sorted.find(s => s.id === 'modere') || sorted[1];
+
+          const setAward = (id, winner, stat) => {
+            const w = document.getElementById('award-' + id + '-winner');
+            const s = document.getElementById('award-' + id + '-stat');
+            if (w) w.textContent = winner;
+            if (s) s.textContent = stat;
+          };
+          setAward(1, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(2, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(4, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(6, balanced.nom, (balanced.perf >= 0 ? '+' : '') + balanced.perf.toFixed(2) + '%');
+        }
+
+      } catch(e) { console.warn('Arena cards update failed:', e); }
     }
 
     // ==================== LEADERBOARD ====================

@@ -1,7 +1,466 @@
 {
-  "generated_at": "2026-03-26T21:59:25.852088",
+  "generated_at": "2026-03-26T22:09:55.098612",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-26T22:09:55.080177",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:09:52.604564",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Génération du rapport CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:09:52.601455",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "Exécution terminée — 5 succès, 1 erreur(s)",
+      "data": {
+        "ok": 5,
+        "errors": 1
+      }
+    },
+    {
+      "ts": "2026-03-26T22:09:28.395494",
+      "agent": "Agent Growth Booster",
+      "type": "success",
+      "message": "Stratégie générée : Rédiger et publier le post Reddit sur r/finance_france avec le lien du site et l",
+      "data": {
+        "objectif": "Atteindre 10 abonnés humains d'ici le 2 avril 2026 en combinant 2 posts Reddit, 1 soumission annuaire et activation du lead magnet PDF sur le site."
+      }
+    },
+    {
+      "ts": "2026-03-26T22:09:04.940942",
+      "agent": "Agent Growth Booster",
+      "type": "progress",
+      "message": "Génération des stratégies de croissance avec Claude IA...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:09:04.936945",
+      "agent": "Agent Growth Booster",
+      "type": "start",
+      "message": "Cycle Growth Booster démarré (simulation=non)",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:09:04.595713",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Exécution de 6 action(s) en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:09:04.589885",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Plan d'action généré — 6 action(s)",
+      "data": {
+        "nb_actions": 6
+      }
+    },
+    {
+      "ts": "2026-03-26T22:08:47.105112",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:47.102111",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-26T22:08:47.094112",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:47.092118",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 24 agents | 2 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:46.823224",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:46.821220",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 26/03/2026 à 22:08",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:46.587329",
+      "agent": "Agent Monitoring",
+      "type": "success",
+      "message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-03-26T22:08:46.554337",
+        "date": "2026-03-26",
+        "health_score": 70,
+        "status": "STABLE",
+        "issues": [
+          {
+            "severity": "WARNING",
+            "message": "36 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 25,
+          "errors_today": 0,
+          "erreurs_critiques": 0,
+          "erreurs_par_agent": {},
+          "top_errors": []
+        },
+        "taches": {
+          "attendues": 38,
+          "executees": 2,
+          "manquantes": 36,
+          "doublons": 0,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            }
+          ],
+          "detail_doublons": []
+        },
+        "fichiers": {
+          "ok": 7,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 55.7,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-26T22:08:46.554337",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:08:40.379940",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (3 pages améliorées)",
+      "data": {
+        "date": "2026-03-26 22:06",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 70,
+            "problemes": 3
+          },
+          "corrections": {
+            "ok": true,
+            "pages_corrigees": 1,
+            "details": {
+              "index.html": [
+                "aucune correction nécessaire"
+              ],
+              "investissement.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletter.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletters.html": [
+                "nav injectée",
+                "CSS nav ajouté",
+                "script nav ajouté",
+                "footer injecté",
+                "CSS footer ajouté"
+              ],
+              "espace-pilotage.html": [
+                "aucune correction nécessaire"
+              ]
+            }
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 2
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-26.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 32
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 26
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 31
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-26T22:07:26.651085",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-26.html"
+      }
+    },
+    {
+      "ts": "2026-03-26T22:07:26.642090",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:48.642311",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:06:48.398121",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10018.75,
+          "perf": 0.19
+        },
+        "modere": {
+          "capital": 10045.83,
+          "perf": 0.46
+        },
+        "agressif": {
+          "capital": 9831.56,
+          "perf": -1.68
+        }
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:48.378104",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Agressif: attendre None",
+      "data": {
+        "profil": "agressif",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": 0,
+        "raison_courte": "Marché sous pression, positions existantes à surveiller étroitement",
+        "raison_complete": "Le contexte macro est clairement détérioré ce soir : le Nasdaq 100 chute de -2.38% sur la séance, le VIX bondit à 27.44 (+8.33% sur la journée), signalant une peur institutionnelle réelle. Le pétrole WTI est à 93.74 USD (+3.79%) — niveau qui comprime les marges des entreprises tech et ravive l'inflation, ce qui repousse toute perspective de baisse des taux Fed. Le Dollar Index repasse au-dessus de 99.93, ce qui pèse sur les actifs risqués et les crypto. Nos trois positions TQQQ (-7.49%), SOXL (-4.24%) et BTC (-0.53%) sont sous stress. TQQQ est dangereusement proche du stop-loss à -12%. Déployer du cash supplémentaire dans cet environnement serait ajouter du levier sur un marché en détresse — c'est une erreur classique de timing. La priorité est de protéger le capital restant (4276€ de cash) et de surveiller les stop-loss automatiques sur TQQQ et SOXL.",
+        "catalyseur": "VIX +8.33% intraday + pétrole WTI à 93.74$ (+3.79%) : double pression inflation/volatilité qui écrase les positions leveragées tech",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Un rebond violent overnight (gap up) pourrait nous faire manquer une opportunité d'achat. Surveiller les niveaux de TQQQ : si clôture sous 40.50$, stop-loss à -12% est activé automatiquement."
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:34.394447",
+      "agent": "Agent Investissement",
+      "type": "vente",
+      "message": "Robot Modéré: Vente GLD @ 400.64 | P&L: -6.80€",
+      "data": {
+        "profil": "modere",
+        "ticker": "GLD",
+        "pl_euros": -6.8,
+        "pl_pct": -0.84
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:34.121283",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Modéré: vendre GLD",
+      "data": {
+        "profil": "modere",
+        "action": "vendre",
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares",
+        "allocation_pct": 0,
+        "raison_courte": "L'or chute de -3.93% : retournement brutal, stop-loss préventif.",
+        "raison_complete": "L'or (GC=F) a subi une correction violente de -3.93% sur la séance, passant de 4424$ à 4371$ et continuant de peser sur notre position GLD (-0.84% déjà). Ce mouvement n'est pas anodin : il coïncide avec un rebond du Dollar Index à 99.93 (+0.33%), qui exerce une pression mécanique inverse sur les métaux précieux libellés en USD. Simultanément, la hausse du pétrole WTI à 93.74$ (+3.79%) suggère un repositionnement des flux vers les matières premières énergétiques plutôt que les valeurs refuges. Le VIX monte à 27.44 (+8.33%), signe de stress croissant qui aurait dû soutenir l'or — or la corrélation s'est inversée, indiquant des ventes forcées ou une liquidation de positions longues institutionnelles. Avec notre entrée à 404.04$ et un actuel à 400.64$, nous sommes proches du seuil de stop-loss à -8%. Vendre maintenant pour préserver le capital et conserver la poudre sèche pour un point d'entrée plus bas.",
+        "catalyseur": "Rebond brutal du Dollar Index à ~100 + liquidation institutionnelle de l'or après le record de 4424$",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "L'or pourrait rebondir si le dollar rechute ou si une escalade géopolitique majeure survient — mais le momentum à court terme est clairement négatif."
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:20.420343",
+      "agent": "Agent Investissement",
+      "type": "decision_ia",
+      "message": "Robot Prudent: attendre None",
+      "data": {
+        "profil": "prudent",
+        "action": "attendre",
+        "ticker": null,
+        "nom": null,
+        "allocation_pct": null,
+        "raison_courte": "Volatilité élevée, cash abondant — patience stratégique requise",
+        "raison_complete": "Le VIX à 27.44 (+8.33% sur la journée) signale une nervosité marquée des marchés, incompatible avec un nouveau déploiement de capital dans un profil prudent. Le S&P 500 perd -1.74% et le Nasdaq -2.38% sur la seule séance du 26 mars, tandis que l'or recule de -3.93% — un mouvement inhabituel qui suggère des liquidations forcées ou un repositionnement tactique de grands acteurs. Le pétrole WTI bondit à 93.74$ (+3.79%), probablement alimenté par des tensions géopolitiques au Moyen-Orient ou des données de stocks US inférieures aux attentes, ce qui constitue un facteur inflationniste défavorable aux obligations longues. Nos trois positions existantes sont globalement stables : EXH7.DE progresse de +1.81%, VGOV.L et IUSV.DE sont quasi à l'équilibre. Avec 6 711€ de cash (67% du capital), nous disposons d'une excellente capacité de déploiement — mais le contexte actuel ne justifie pas de précipitation. Mieux vaut attendre la stabilisation du VIX sous 22 et un signal clair sur la direction des taux avant d'augmenter l'exposition.",
+        "catalyseur": "VIX à 27.44 et liquidations simultanées sur actions, or et obligations — signal de stress systémique à surveiller",
+        "horizon": "court terme (jours)",
+        "niveau_conviction": 8,
+        "risques": "Le risque principal est de manquer un rebond rapide si le stress est temporaire. Cependant, dans un profil prudent, préserver le capital prime sur la performance à court terme."
+      }
+    },
+    {
+      "ts": "2026-03-26T22:06:01.738540",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Notification quotidienne → 2 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:05:59.279735",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Newsletter envoyée — 2 succès, 0 erreurs (3s)",
+      "data": {
+        "envoyes": 2,
+        "erreurs": 0
+      }
+    },
+    {
+      "ts": "2026-03-26T22:05:55.663880",
+      "agent": "Agent Growth",
+      "type": "start",
+      "message": "Envoi newsletter démarré — sujet auto",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:05:55.658879",
+      "agent": "Agent Rédacteur",
+      "type": "info",
+      "message": "Archive newsletters.html mise à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:05:55.638880",
+      "agent": "Agent Rédacteur",
+      "type": "success",
+      "message": "Newsletter générée : alphabot_newsletter_2026-03-26.html",
+      "data": {
+        "fichier": "alphabot_newsletter_2026-03-26.html",
+        "taille_kb": 59.2
+      }
+    },
+    {
+      "ts": "2026-03-26T22:05:55.632880",
+      "agent": "Agent Rédacteur",
+      "type": "start",
+      "message": "Génération de la newsletter en cours...",
+      "data": {}
+    },
     {
       "ts": "2026-03-26T21:59:25.837151",
       "agent": "Orchestrateur",
@@ -1061,333 +1520,82 @@
       "data": {
         "branch": "support"
       }
-    },
-    {
-      "ts": "2026-03-25T18:00:27.915259",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1800"
-      }
-    },
-    {
-      "ts": "2026-03-25T18:00:27.911258",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:00:24.367444",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:00:24.356453",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 18h",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:59:19.348210",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1800"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:59:19.341206",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:59:15.514974",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:59:15.502064",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 18h",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:31:10.444732",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_17h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:31:10.438600",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (17.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:31:10.434607",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (17.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:31:10.428497",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Clôture EU 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:30:05.414327",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_17h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:30:05.408316",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (17.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:30:05.403991",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (17.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:30:05.397391",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Clôture EU 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:29:00.379910",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_17h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:29:00.371658",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (17.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:29:00.366657",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (17.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:29:00.353592",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Clôture EU 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:01:25.306622",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "directeur_arene_match"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:01:25.298478",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Match Arène terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:01:25.289472",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Lancement match Arène quotidien...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:01:25.277456",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Arène — Match Quotidien 🏆",
-      "data": {
-        "branch": "arena"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:00:20.263499",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "directeur_arene_match"
-      }
-    },
-    {
-      "ts": "2026-03-25T17:00:20.254502",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Match Arène terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:00:20.250504",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Lancement match Arène quotidien...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T17:00:20.245504",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Arène — Match Quotidien 🏆",
-      "data": {
-        "branch": "arena"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:59:15.229805",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "directeur_arene_match"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:59:15.224276",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Match Arène terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:59:15.220118",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Lancement match Arène quotidien...",
-      "data": {}
     }
   ],
   "agents": [
     {
-      "agent": "Orchestrateur",
+      "agent": "Directeur Adjoint",
       "last_event": {
-        "ts": "2026-03-26T21:59:25.837151",
-        "agent": "Orchestrateur",
+        "ts": "2026-03-26T22:09:55.080177",
+        "agent": "Directeur Adjoint",
         "type": "success",
-        "message": "Session Trader (22.0h) terminée",
+        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
         "data": {}
       },
-      "last_ts": "2026-03-26T21:59:25.837151",
+      "last_ts": "2026-03-26T22:09:55.080177",
       "last_type": "success",
-      "last_message": "Session Trader (22.0h) terminée",
-      "total_today": 8,
+      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+      "total_today": 11,
       "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 1
     },
     {
-      "agent": "Sync Abonnés",
+      "agent": "Agent Growth Booster",
       "last_event": {
-        "ts": "2026-03-26T08:32:05.051702",
-        "agent": "Sync Abonnés",
-        "type": "info",
-        "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
-        "data": {}
+        "ts": "2026-03-26T22:09:28.395494",
+        "agent": "Agent Growth Booster",
+        "type": "success",
+        "message": "Stratégie générée : Rédiger et publier le post Reddit sur r/finance_france avec le lien du site et l",
+        "data": {
+          "objectif": "Atteindre 10 abonnés humains d'ici le 2 avril 2026 en combinant 2 posts Reddit, 1 soumission annuaire et activation du lead magnet PDF sur le site."
+        }
       },
-      "last_ts": "2026-03-26T08:32:05.051702",
-      "last_type": "info",
-      "last_message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
-      "total_today": 1,
+      "last_ts": "2026-03-26T22:09:28.395494",
+      "last_type": "success",
+      "last_message": "Stratégie générée : Rédiger et publier le post Reddit sur r/finance_france avec le lien du site et l",
+      "total_today": 3,
       "errors_today": 0,
-      "successes_today": 0
+      "successes_today": 1
     },
     {
       "agent": "Agent Monitoring",
       "last_event": {
-        "ts": "2026-03-25T22:46:08.955293",
+        "ts": "2026-03-26T22:08:46.587329",
         "agent": "Agent Monitoring",
-        "type": "warning",
-        "message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
+        "type": "success",
+        "message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
         "data": {
-          "timestamp": "2026-03-25T22:46:08.831109",
-          "date": "2026-03-25",
-          "health_score": 67,
-          "status": "DÉGRADÉ",
+          "timestamp": "2026-03-26T22:08:46.554337",
+          "date": "2026-03-26",
+          "health_score": 70,
+          "status": "STABLE",
           "issues": [
             {
               "severity": "WARNING",
-              "message": "39 tâche(s) manquante(s) aujourd'hui",
+              "message": "36 tâche(s) manquante(s) aujourd'hui",
               "source": "planning",
               "penalty": -25
             },
             {
               "severity": "WARNING",
-              "message": "1 tâche(s) en doublon détectée(s)",
-              "source": "planning",
-              "penalty": -3
-            },
-            {
-              "severity": "WARNING",
-              "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+              "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
               "source": "data/dernier_rapport_veille.json",
               "penalty": -5
             }
           ],
           "auto_fixes": [],
           "logs": {
-            "events_today": 26,
+            "events_today": 25,
             "errors_today": 0,
             "erreurs_critiques": 0,
             "erreurs_par_agent": {},
             "top_errors": []
           },
           "taches": {
-            "attendues": 39,
-            "executees": 0,
-            "manquantes": 39,
-            "doublons": 1,
+            "attendues": 38,
+            "executees": 2,
+            "manquantes": 36,
+            "doublons": 0,
             "detail_manquantes": [
               {
                 "id": "dir_newsletter_pipeline",
@@ -1440,14 +1648,7 @@
                 "heure_prevue": "15:45"
               }
             ],
-            "detail_doublons": [
-              {
-                "agent": "Agent LinkedIn",
-                "message": "Génération des 7 posts LinkedIn de la semaine",
-                "interval_seconds": 327,
-                "count": 2
-              }
-            ]
+            "detail_doublons": []
           },
           "fichiers": {
             "ok": 7,
@@ -1457,17 +1658,193 @@
             "detail_problemes": [
               {
                 "fichier": "data/dernier_rapport_veille.json",
-                "age_heures": 32.3,
+                "age_heures": 55.7,
                 "limite_heures": 6
               }
             ]
           }
         }
       },
-      "last_ts": "2026-03-25T22:46:08.955293",
-      "last_type": "warning",
-      "last_message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
-      "total_today": 0,
+      "last_ts": "2026-03-26T22:08:46.587329",
+      "last_type": "success",
+      "last_message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "total_today": 2,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Agent DA Site",
+      "last_event": {
+        "ts": "2026-03-26T22:08:40.379940",
+        "agent": "Agent DA Site",
+        "type": "success",
+        "message": "Mission DA terminée (3 pages améliorées)",
+        "data": {
+          "date": "2026-03-26 22:06",
+          "etapes": {
+            "audit": {
+              "ok": true,
+              "score": 70,
+              "problemes": 3
+            },
+            "corrections": {
+              "ok": true,
+              "pages_corrigees": 1,
+              "details": {
+                "index.html": [
+                  "aucune correction nécessaire"
+                ],
+                "investissement.html": [
+                  "aucune correction nécessaire"
+                ],
+                "newsletter.html": [
+                  "aucune correction nécessaire"
+                ],
+                "newsletters.html": [
+                  "nav injectée",
+                  "CSS nav ajouté",
+                  "script nav ajouté",
+                  "footer injecté",
+                  "CSS footer ajouté"
+                ],
+                "espace-pilotage.html": [
+                  "aucune correction nécessaire"
+                ]
+              }
+            },
+            "navigation": {
+              "ok": true,
+              "pages_mises_a_jour": 2
+            },
+            "insights": {
+              "ok": true,
+              "count": 5,
+              "injected_in_index": false,
+              "html_path": "outputs\\section_da_2026-03-26.html"
+            },
+            "visuels": {
+              "ok": true,
+              "details": [
+                {
+                  "page": "index.html",
+                  "status": "improved",
+                  "css_rules": 32
+                },
+                {
+                  "page": "investissement.html",
+                  "status": "improved",
+                  "css_rules": 26
+                },
+                {
+                  "page": "newsletter.html",
+                  "status": "improved",
+                  "css_rules": 31
+                }
+              ]
+            }
+          },
+          "success": true,
+          "pages_ameliorees": 3,
+          "insights_count": 5
+        }
+      },
+      "last_ts": "2026-03-26T22:08:40.379940",
+      "last_type": "success",
+      "last_message": "Mission DA terminée (3 pages améliorées)",
+      "total_today": 4,
+      "errors_today": 0,
+      "successes_today": 3
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-26T22:06:48.398121",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "Cycle robot trader complété",
+        "data": {
+          "prudent": {
+            "capital": 10018.75,
+            "perf": 0.19
+          },
+          "modere": {
+            "capital": 10045.83,
+            "perf": 0.46
+          },
+          "agressif": {
+            "capital": 9831.56,
+            "perf": -1.68
+          }
+        }
+      },
+      "last_ts": "2026-03-26T22:06:48.398121",
+      "last_type": "success",
+      "last_message": "Cycle robot trader complété",
+      "total_today": 5,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Agent Growth",
+      "last_event": {
+        "ts": "2026-03-26T22:06:01.738540",
+        "agent": "Agent Growth",
+        "type": "success",
+        "message": "Notification quotidienne → 2 abonnés",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T22:06:01.738540",
+      "last_type": "success",
+      "last_message": "Notification quotidienne → 2 abonnés",
+      "total_today": 3,
+      "errors_today": 0,
+      "successes_today": 2
+    },
+    {
+      "agent": "Agent Rédacteur",
+      "last_event": {
+        "ts": "2026-03-26T22:05:55.658879",
+        "agent": "Agent Rédacteur",
+        "type": "info",
+        "message": "Archive newsletters.html mise à jour",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T22:05:55.658879",
+      "last_type": "info",
+      "last_message": "Archive newsletters.html mise à jour",
+      "total_today": 3,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Orchestrateur",
+      "last_event": {
+        "ts": "2026-03-26T21:59:25.837151",
+        "agent": "Orchestrateur",
+        "type": "success",
+        "message": "Session Trader (22.0h) terminée",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T21:59:25.837151",
+      "last_type": "success",
+      "last_message": "Session Trader (22.0h) terminée",
+      "total_today": 8,
+      "errors_today": 0,
+      "successes_today": 2
+    },
+    {
+      "agent": "Sync Abonnés",
+      "last_event": {
+        "ts": "2026-03-26T08:32:05.051702",
+        "agent": "Sync Abonnés",
+        "type": "info",
+        "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T08:32:05.051702",
+      "last_type": "info",
+      "last_message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
+      "total_today": 1,
       "errors_today": 0,
       "successes_today": 0
     }

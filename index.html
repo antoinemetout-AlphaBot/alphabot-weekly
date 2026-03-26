@@ -1541,56 +1541,39 @@ nav {
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🔄 LES 3 PILIERS — Comprendre → Investir → Se comparer -->
+<!-- 🧰 VOS 3 OUTILS — Newsletter + Robots + Arène -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
 <section class="section" id="pillars" style="padding-top:40px;">
   <div class="section-center">
-    <div class="section-tag cyan">La boucle AlphaBot</div>
-    <h2>Comprendre. Investir. Se comparer.</h2>
-    <p class="section-sub">3 piliers connectés qui forment un cycle vertueux. Chaque jour, la boucle recommence.</p>
+    <div class="section-tag cyan">Vos outils</div>
+    <h2>3 outils. 1 avantage décisif.</h2>
+    <p class="section-sub">Chaque outil fonctionne seul. Ensemble, ils vous donnent une longueur d'avance sur les marchés.</p>
   </div>
 
   <div class="pillars-grid reveal">
     <div class="pillar pillar-newsletter">
-      <div class="pillar-num">1</div>
       <div class="pillar-icon">📰</div>
-      <div class="pillar-label">Comprendre</div>
+      <div class="pillar-label">Analyser</div>
       <h3>Newsletter IA quotidienne</h3>
       <p>L'IA analyse +1 200 données et vous résume l'essentiel en 5 minutes. Marchés, crypto, géopolitique — zéro jargon.</p>
-      <a href="newsletter.html" class="pillar-cta">Recevoir l'analyse IA →</a>
+      <a href="newsletter.html" class="pillar-cta">Lire l'analyse du jour →</a>
     </div>
-
-    <div class="pillar-arrow reveal">→</div>
 
     <div class="pillar pillar-robots">
-      <div class="pillar-num">2</div>
       <div class="pillar-icon">🤖</div>
-      <div class="pillar-label">Investir</div>
-      <h3>3 robots investissent pour vous</h3>
-      <p>Safe, Modéré, Risqué — choisissez votre stratégie. Chaque trade est public, justifié, daté. 30 000€ investis sous vos yeux.</p>
-      <a href="investissement.html" class="pillar-cta gold">Tester les robots →</a>
+      <div class="pillar-label">Observer</div>
+      <h3>3 robots tradent en direct</h3>
+      <p>Prudent, Modéré, Agressif — 3 stratégies, 30 000€ en jeu. Chaque trade est public, justifié et daté. Suivez leurs décisions en temps réel.</p>
+      <a href="investissement.html" class="pillar-cta gold">Voir les robots →</a>
     </div>
-
-    <div class="pillar-arrow reveal">→</div>
 
     <div class="pillar pillar-arena">
-      <div class="pillar-num">3</div>
       <div class="pillar-icon">🏆</div>
-      <div class="pillar-label">Se comparer</div>
-      <h3>Classement des portefeuilles</h3>
-      <p>Humains VS robots IA. Connectez votre portefeuille, comparez vos performances et grimpez dans le classement.</p>
-      <a href="arena.html" class="pillar-cta red">Rejoindre l'arène →</a>
+      <div class="pillar-label">Se mesurer</div>
+      <h3>L'arène des performances</h3>
+      <p>Les 3 robots s'affrontent dans un classement transparent. Bientôt : importez votre portefeuille et mesurez-vous aux machines.</p>
+      <a href="arena.html" class="pillar-cta red">Voir le classement →</a>
     </div>
-  </div>
-
-  <!-- Boucle visuelle -->
-  <div class="loop-bar reveal">
-    <div class="loop-step">📰 Comprendre</div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">🤖 Investir</div>
-    <div class="loop-arrow">→</div>
-    <div class="loop-step">🏆 Se comparer</div>
-    <div class="loop-arrow loop-return">↻</div>
   </div>
 </section>
 
@@ -1615,21 +1598,21 @@ nav {
     </div>
     <div class="lb-row lb-gold" id="lb-row-1">
       <span class="lb-rank">🥇</span>
-      <span class="lb-name">Bot Risqué</span>
+      <span class="lb-name" id="lb-name-1">---</span>
       <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf up" id="lb-perf-1">+2.41%</span>
+      <span class="lb-perf" id="lb-perf-1">--</span>
     </div>
     <div class="lb-row lb-silver" id="lb-row-2">
       <span class="lb-rank">🥈</span>
-      <span class="lb-name">Bot Modéré</span>
+      <span class="lb-name" id="lb-name-2">---</span>
       <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf up" id="lb-perf-2">+1.58%</span>
+      <span class="lb-perf" id="lb-perf-2">--</span>
     </div>
     <div class="lb-row lb-bronze" id="lb-row-3">
       <span class="lb-rank">🥉</span>
-      <span class="lb-name">Bot Safe</span>
+      <span class="lb-name" id="lb-name-3">---</span>
       <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf up" id="lb-perf-3">+0.42%</span>
+      <span class="lb-perf" id="lb-perf-3">--</span>
     </div>
     <div class="lb-row lb-you">
       <span class="lb-rank">?</span>
@@ -2185,9 +2168,33 @@ function playAudioResume() {
   }
 }
 
+// ── LEADERBOARD DYNAMIQUE ──
+async function loadLeaderboard(){
+  try{
+    const r=await fetch('data/portfolio_public.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    const robots=d.robots||{};
+    const list=Object.entries(robots).map(([k,v])=>({
+      id:k,nom:v.nom||k,perf:v.performance_pct||0
+    }));
+    list.sort((a,b)=>b.perf-a.perf);
+    list.forEach((bot,i)=>{
+      const nameEl=document.getElementById('lb-name-'+(i+1));
+      const perfEl=document.getElementById('lb-perf-'+(i+1));
+      if(nameEl)nameEl.textContent=bot.nom;
+      if(perfEl){
+        perfEl.textContent=(bot.perf>=0?'+':'')+bot.perf.toFixed(2)+'%';
+        perfEl.className='lb-perf '+(bot.perf>=0?'up':'down');
+      }
+    });
+  }catch(e){}
+}
+
 // ── INIT ──
 loadMarketData();
 loadChallengeData();
+loadLeaderboard();
 loadScoreGlobal();
 loadPortfolioLive();
 loadRealityCheck();
@@ -2196,6 +2203,7 @@ loadRealityCheck();
 setInterval(()=>{
   loadMarketData();
   loadChallengeData();
+  loadLeaderboard();
   loadPortfolioLive();
 }, 120000);
 </script>
