@@ -2156,43 +2156,43 @@
         <div class="arena-award-card">
           <div class="arena-award-icon">🏆</div>
           <div class="arena-award-title">Meilleur rendement</div>
-          <div class="arena-award-winner" id="award-1-winner">🤖 Robot Trader Agressif</div>
-          <div class="arena-award-stat" id="award-1-stat">+3.26%</div>
+          <div class="arena-award-winner" id="award-1-winner">--</div>
+          <div class="arena-award-stat" id="award-1-stat">--</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">📈</div>
           <div class="arena-award-title">Plus forte hausse</div>
-          <div class="arena-award-winner" id="award-2-winner">🤖 Robot Trader Agressif</div>
-          <div class="arena-award-stat" id="award-2-stat">+3.26%</div>
+          <div class="arena-award-winner" id="award-2-winner">--</div>
+          <div class="arena-award-stat" id="award-2-stat">--</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🎯</div>
           <div class="arena-award-title">Diversification</div>
-          <div class="arena-award-winner" id="award-3-winner">🤖 Robot Trader Modéré</div>
-          <div class="arena-award-stat" id="award-3-stat">Mixed positions</div>
+          <div class="arena-award-winner" id="award-3-winner">--</div>
+          <div class="arena-award-stat" id="award-3-stat">--</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🤖</div>
           <div class="arena-award-title">Meilleur robot</div>
-          <div class="arena-award-winner" id="award-4-winner">🤖 Robot Trader Agressif</div>
-          <div class="arena-award-stat" id="award-4-stat">+3.26%</div>
+          <div class="arena-award-winner" id="award-4-winner">--</div>
+          <div class="arena-award-stat" id="award-4-stat">--</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">🔥</div>
           <div class="arena-award-title">Stabilité</div>
-          <div class="arena-award-winner" id="award-5-winner">🤖 Robot Trader Prudent</div>
-          <div class="arena-award-stat" id="award-5-stat">Volatilité minimale</div>
+          <div class="arena-award-winner" id="award-5-winner">--</div>
+          <div class="arena-award-stat" id="award-5-stat">--</div>
         </div>
 
         <div class="arena-award-card">
           <div class="arena-award-icon">💡</div>
           <div class="arena-award-title">Équilibre</div>
-          <div class="arena-award-winner" id="award-6-winner">🤖 Robot Trader Modéré</div>
-          <div class="arena-award-stat" id="award-6-stat">+1.07%</div>
+          <div class="arena-award-winner" id="award-6-winner">--</div>
+          <div class="arena-award-stat" id="award-6-stat">--</div>
         </div>
       </div>
     </section>
@@ -2693,76 +2693,8 @@
         positions: [],
         return: 0  // Mis à jour dynamiquement
       },
-      // Participants communautaires (pseudos)
-      {
-        id: 'user-1',
-        displayName: 'CryptoJean_75',
-        isRobot: false,
-        positions: [
-          { ticker: 'AAPL', type: 'stock', quantity: 50, avgPrice: 150 },
-          { ticker: 'MSFT', type: 'stock', quantity: 25, avgPrice: 380 }
-        ],
-        return: 2.3
-      },
-      {
-        id: 'user-2',
-        displayName: 'SophTrader',
-        isRobot: false,
-        positions: [
-          { ticker: 'BTC', type: 'crypto', quantity: 1, avgPrice: 50000 },
-          { ticker: 'ETH', type: 'crypto', quantity: 10, avgPrice: 3000 }
-        ],
-        return: -0.8
-      },
-      {
-        id: 'user-3',
-        displayName: 'MarketSurfer_33',
-        isRobot: false,
-        positions: [
-          { ticker: 'GOOGL', type: 'stock', quantity: 30, avgPrice: 140 },
-          { ticker: 'META', type: 'stock', quantity: 40, avgPrice: 380 }
-        ],
-        return: 1.5
-      },
-      {
-        id: 'user-4',
-        displayName: 'LisaInvest',
-        isRobot: false,
-        positions: [
-          { ticker: 'AAPL', type: 'stock', quantity: 15, avgPrice: 150 },
-          { ticker: 'MSFT', type: 'stock', quantity: 10, avgPrice: 380 },
-          { ticker: 'GOOGL', type: 'stock', quantity: 20, avgPrice: 140 }
-        ],
-        return: 0.5
-      },
-      {
-        id: 'user-5',
-        displayName: 'Xav_Invest',
-        isRobot: false,
-        positions: [
-          { ticker: 'XRP', type: 'crypto', quantity: 5000, avgPrice: 0.60 }
-        ],
-        return: -1.2
-      },
-      {
-        id: 'user-6',
-        displayName: 'Emma_Fin',
-        isRobot: false,
-        positions: [
-          { ticker: 'NVDA', type: 'stock', quantity: 5, avgPrice: 400 },
-          { ticker: 'TSLA', type: 'stock', quantity: 10, avgPrice: 250 }
-        ],
-        return: 3.8
-      },
-      {
-        id: 'user-7',
-        displayName: 'TomTrading',
-        isRobot: false,
-        positions: [
-          { ticker: 'AAPL', type: 'stock', quantity: 25, avgPrice: 150 }
-        ],
-        return: 0.2
-      }
+      // Pas de participants humains pour l'instant — fonctionnalité à venir
+      // Les faux profils ont été retirés pour ne montrer que des données réelles
     ];
 
     // ==================== STATE ====================
@@ -2898,11 +2830,13 @@
           if (avEl) avEl.textContent = bot.avatar;
         });
 
-        // Remplir les awards
+        // Remplir les awards avec données réelles
         if (sorted.length >= 3) {
           const best = sorted[0];
+          const worst = sorted[sorted.length - 1];
           const stable = sorted.reduce((a, b) => Math.abs(a.perf) < Math.abs(b.perf) ? a : b);
           const balanced = sorted.find(s => s.id === 'modere') || sorted[1];
+          const prudent = sorted.find(s => s.id === 'prudent') || sorted[2];
 
           const setAward = (id, winner, stat) => {
             const w = document.getElementById('award-' + id + '-winner');
@@ -2912,7 +2846,9 @@
           };
           setAward(1, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
           setAward(2, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(3, balanced.nom, balanced.capital.toLocaleString('fr') + ' €');
           setAward(4, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
+          setAward(5, prudent.nom, Math.abs(prudent.perf).toFixed(2) + '% écart');
           setAward(6, balanced.nom, (balanced.perf >= 0 ? '+' : '') + balanced.perf.toFixed(2) + '%');
         }
 

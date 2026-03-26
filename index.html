@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>AlphaBot Weekly — Newsletter IA Bourse & Crypto + 3 Robots Traders</title>
-<meta name="description" content="Chaque semaine, l'IA décrypte la bourse, la crypto et la géopolitique pour vous. 3 robots traders IA investissent 10 000€ chacun sous vos yeux. 100% gratuit.">
+<meta name="description" content="Newsletter IA quotidienne sur la bourse, la crypto et la géopolitique. 3 robots traders IA gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
 <meta property="og:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
-<meta property="og:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent 30 000€ sous vos yeux. Gratuit.">
+<meta property="og:description" content="L'IA surveille les marchés et vous livre l'essentiel en 5 minutes. 3 robots traders gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
 <meta property="og:locale" content="fr_FR">
@@ -246,6 +246,59 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-radius: 4px;
 }
 .skip-link:focus { top: 0; }
+
+/* ═══════════════════════════════════════════════════ */
+/*  📡 ACTIVITÉ EN DIRECT                             */
+/* ═══════════════════════════════════════════════════ */
+.activity-summary {
+  display:flex; justify-content:center; gap:32px;
+  max-width:700px; margin:0 auto 32px;
+  background:rgba(255,255,255,.03); border:1px solid var(--border);
+  border-radius:18px; padding:24px 32px;
+}
+.activity-stat { text-align:center; }
+.activity-stat-val {
+  font:800 28px/1 'Space Grotesk',sans-serif; color:#fff;
+  display:block; margin-bottom:6px;
+}
+.activity-stat-lbl { font:500 11px/1 'Inter',sans-serif; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+
+.activity-feed {
+  max-width:700px; margin:0 auto;
+  background:rgba(255,255,255,.025); border:1px solid var(--border);
+  border-radius:18px; overflow:hidden;
+}
+.activity-feed-header {
+  display:flex; align-items:center; gap:10px;
+  padding:16px 20px; font:700 12px/1 'JetBrains Mono',monospace;
+  color:var(--cyan); letter-spacing:1px; text-transform:uppercase;
+  background:rgba(255,255,255,.03); border-bottom:1px solid var(--border);
+}
+.activity-event {
+  display:flex; align-items:flex-start; gap:12px;
+  padding:14px 20px; border-bottom:1px solid var(--border);
+  font:400 13px/1.5 'Inter',sans-serif; color:var(--text);
+  transition:background .2s;
+}
+.activity-event:last-child { border-bottom:none; }
+.activity-event:hover { background:rgba(34,211,238,.03); }
+.activity-event-icon { font-size:16px; flex-shrink:0; margin-top:2px; }
+.activity-event-body { flex:1; }
+.activity-event-agent { font:600 12px/1 'JetBrains Mono',monospace; color:var(--cyan); margin-bottom:4px; }
+.activity-event-msg { color:var(--text); }
+.activity-event-time { font:500 11px/1 'JetBrains Mono',monospace; color:var(--muted); flex-shrink:0; margin-top:2px; }
+.activity-feed-cta {
+  display:block; text-align:center; padding:14px 20px;
+  font:600 13px/1 'Inter',sans-serif; color:var(--cyan);
+  text-decoration:none; background:rgba(34,211,238,.04);
+  transition:background .2s;
+}
+.activity-feed-cta:hover { background:rgba(34,211,238,.08); }
+
+@media(max-width:768px){
+  .activity-summary { flex-wrap:wrap; gap:20px; padding:20px; }
+  .activity-stat { min-width:120px; }
+}
 </style>
 
 <!-- Analytics -->
@@ -1507,7 +1560,7 @@ nav {
       <div class="h1-gradient">Progressez.</div>
     </h1>
     <p class="hero-sub">
-      Analyse des marchés, robots d'investissement et classement en temps réel. <strong>3 robots</strong> investissent 30 000€ sous vos yeux. <strong>Entrez dans l'arène</strong> et comparez-vous aux meilleurs.
+      Newsletter IA quotidienne, 3 robots traders et classement en temps réel. <strong>3 robots</strong> gèrent chacun un portefeuille fictif de 10 000€. Tous les trades sont publics et justifiés.
     </p>
 
     <div class="hero-cta-row">
@@ -1517,6 +1570,26 @@ nav {
           <button class="btn-sub" onclick="handleSubscribe()">Rejoindre l'arène gratuitement</button>
         </div>
         <div id="sub-status"></div>
+      </div>
+    </div>
+
+    <!-- KPIs RÉELS — chargés dynamiquement depuis portfolio_public.json + newsletters.json -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val cyan" id="hero-capital">--</div>
+        <div class="hero-stat-lbl">Capital total géré</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val gold" id="hero-trades">--</div>
+        <div class="hero-stat-lbl">Trades exécutés</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val green" id="hero-newsletters">--</div>
+        <div class="hero-stat-lbl">Newsletters publiées</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="hero-best" style="color:var(--green)">--</div>
+        <div class="hero-stat-lbl">Meilleur robot</div>
       </div>
     </div>
 
@@ -1563,7 +1636,7 @@ nav {
       <div class="pillar-icon">🤖</div>
       <div class="pillar-label">Observer</div>
       <h3>3 robots tradent en direct</h3>
-      <p>Prudent, Modéré, Agressif — 3 stratégies, 30 000€ en jeu. Chaque trade est public, justifié et daté. Suivez leurs décisions en temps réel.</p>
+      <p>Prudent, Modéré, Agressif — 3 stratégies, 3 portefeuilles fictifs de 10 000€. Chaque trade est public, justifié et daté.</p>
       <a href="investissement.html" class="pillar-cta gold">Voir les robots →</a>
     </div>
 
@@ -1676,82 +1749,45 @@ nav {
 <div class="divider"></div>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- SCORE IA LIVE + DUEL DU JOUR (résumé compact) -->
+<!-- 📡 ACTIVITÉ EN DIRECT — Données réelles depuis activity_feed.json -->
 <!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section" id="live-dashboard" style="padding-top:40px;padding-bottom:40px;">
+<section class="section" id="live-activity" style="padding-top:40px;padding-bottom:40px;">
+  <div class="section-center">
+    <div class="section-tag green">En direct</div>
+    <h2>Les agents travaillent en ce moment</h2>
+    <p class="section-sub">Activité réelle de nos agents IA — mise à jour automatiquement.</p>
+  </div>
 
-  <div class="live-score-box reveal">
-    <div class="live-score-inner">
-      <div class="live-score-left">
-        <div class="live-score-tag"><span class="live-dot"></span> SCORE ALPHABOT EN DIRECT</div>
-        <div class="live-score-number" id="score-global">--</div>
-        <div class="live-score-sub">/100</div>
-      </div>
-      <div class="live-score-details">
-        <div class="live-score-item">
-          <span class="live-score-label">📰 Newsletter</span>
-          <span class="live-score-val" id="score-newsletter" style="color:var(--cyan);">--</span>
-        </div>
-        <div class="live-score-item">
-          <span class="live-score-label">📈 Trader</span>
-          <span class="live-score-val" id="score-trader" style="color:var(--gold);">--</span>
-        </div>
-        <div class="live-score-item">
-          <span class="live-score-label">⚔️ Arène</span>
-          <span class="live-score-val" id="score-arena" style="color:var(--green);">--</span>
-        </div>
-        <div class="live-score-trend" id="score-trend"></div>
-      </div>
+  <!-- Résumé rapide -->
+  <div class="activity-summary reveal">
+    <div class="activity-stat">
+      <span class="activity-stat-val" id="activity-total">--</span>
+      <span class="activity-stat-lbl">Tâches aujourd'hui</span>
+    </div>
+    <div class="activity-stat">
+      <span class="activity-stat-val" style="color:var(--green)" id="activity-success">--</span>
+      <span class="activity-stat-lbl">Réussites</span>
+    </div>
+    <div class="activity-stat">
+      <span class="activity-stat-val" style="color:var(--red)" id="activity-errors">--</span>
+      <span class="activity-stat-lbl">Erreurs</span>
+    </div>
+    <div class="activity-stat">
+      <span class="activity-stat-val" style="color:var(--cyan)" id="activity-last-time">--</span>
+      <span class="activity-stat-lbl">Dernière action</span>
     </div>
   </div>
 
-  <!-- DUEL DU JOUR (compact) -->
-  <div class="live-grid reveal">
-    <div class="live-card live-card-duel">
-      <div class="live-card-header">⚔️ DUEL IA DU JOUR</div>
-      <div class="duel-actif" id="duel-actif">Chargement...</div>
-      <div class="duel-versus">
-        <div class="duel-camp bull">
-          <div class="duel-camp-label">🟢 BULL</div>
-          <div class="duel-score" id="duel-score-bull">--</div>
-        </div>
-        <div class="duel-vs">VS</div>
-        <div class="duel-camp bear">
-          <div class="duel-camp-label">🔴 BEAR</div>
-          <div class="duel-score" id="duel-score-bear">--</div>
-        </div>
-      </div>
-      <div class="duel-verdict" id="duel-verdict">En attente du verdict...</div>
-      <a href="arena.html" class="live-card-cta">Voir le combat complet →</a>
+  <!-- 5 derniers événements -->
+  <div class="activity-feed reveal" id="activity-feed">
+    <div class="activity-feed-header">
+      <span class="live-dot"></span> Dernières actions des agents
     </div>
-
-    <div class="live-card live-card-portfolio">
-      <div class="live-card-header">📈 PORTEFEUILLE IA</div>
-      <div class="portfolio-perf" id="portfolio-perf">+0.0%</div>
-      <div class="portfolio-label">depuis le lancement</div>
-      <div class="portfolio-robots"></div>
-      <a href="investissement.html" class="live-card-cta" style="color:var(--gold);">Suivre les robots →</a>
+    <div id="activity-events">
+      <div class="activity-event">Chargement...</div>
     </div>
-
-    <div class="live-card live-card-reality">
-      <div class="live-card-header">🧪 REALITY CHECK</div>
-      <div class="reality-quote" id="reality-quote">"L'IA analyse, le Reality Check challenge."</div>
-      <div class="reality-score" id="reality-score">--/100</div>
-      <div class="reality-verdict" id="reality-verdict">En attente du prochain check...</div>
-    </div>
+    <a href="dashboard-agents.html" class="activity-feed-cta">Voir tout le dashboard agents →</a>
   </div>
-
-  <!-- Audio -->
-  <div class="audio-bar reveal">
-    <div class="audio-inner">
-      <button class="audio-btn" id="audio-btn" onclick="playAudioResume()">
-        <span class="audio-icon">🎧</span>
-        <span class="audio-text">Écouter le résumé IA (30 sec)</span>
-      </button>
-      <div class="audio-status" id="audio-status"></div>
-    </div>
-  </div>
-
 </section>
 
 <div class="divider"></div>
@@ -1763,37 +1799,37 @@ nav {
   <div class="section-center">
     <div class="section-tag cyan">Le système</div>
     <h2>Comment fonctionne AlphaBot ?</h2>
-    <p class="section-sub">4 couches d'intelligence artificielle travaillent ensemble, chaque jour, sans interruption.</p>
+    <p class="section-sub">Des agents IA autonomes travaillent chaque jour de 7h30 à 22h30, sans intervention humaine.</p>
   </div>
 
   <div class="how-grid">
     <div class="how-step">
       <div class="how-num">1</div>
       <div class="how-icon">🔍</div>
-      <h3>L'IA analyse</h3>
-      <p>+1 200 données par jour. Cours, volumes, devises, matières premières, news. L'IA repère ce qui compte et ignore le bruit.</p>
+      <h3>L'IA collecte</h3>
+      <p>3 fois par jour, l'agent Veille récupère les cours de 17 actifs : indices, crypto, devises, matières premières. Données fraîches à chaque édition.</p>
       <div class="how-agents">Agents : Veille · Analyste</div>
     </div>
     <div class="how-step">
       <div class="how-num">2</div>
-      <div class="how-icon">⚔️</div>
-      <h3>L'IA débat</h3>
-      <p>Chaque jour, un actif passe dans l'Arène. Un camp Bull, un camp Bear, un juge impartial. Le meilleur argument gagne.</p>
-      <div class="how-agents">Agents : Compétiteur · Juge · Vérificateur</div>
+      <div class="how-icon">📰</div>
+      <h3>L'IA rédige</h3>
+      <p>L'agent Analyste et le Rédacteur transforment les données brutes en newsletter lisible. Chaque section commence par un fait chiffré, jamais de blabla.</p>
+      <div class="how-agents">Agents : Analyste · Rédacteur · DA Site</div>
     </div>
     <div class="how-step">
       <div class="how-num">3</div>
       <div class="how-icon">📈</div>
       <h3>L'IA investit</h3>
-      <p>3 robots placent de l'argent réel avec 3 stratégies différentes. Chaque trade est public, justifié, daté. Transparence totale.</p>
-      <div class="how-agents">Agents : Stratégie · Risk Manager · Exécution · Audit</div>
+      <p>3 robots gèrent chacun un portefeuille fictif de 10 000€ avec 3 stratégies différentes. Chaque trade est public, justifié et daté.</p>
+      <div class="how-agents">Agents : Investissement (3 profils)</div>
     </div>
     <div class="how-step">
       <div class="how-num">4</div>
-      <div class="how-icon">🧪</div>
-      <h3>L'IA vérifie</h3>
-      <p>Le Reality Check challenge tout. Il détecte le bullshit, remet en question les analyses et score la fiabilité du système.</p>
-      <div class="how-agents">Agents : Reality Check · COO · Directeur Adjoint</div>
+      <div class="how-icon">👁️</div>
+      <h3>L'IA supervise</h3>
+      <p>Le Directeur Adjoint scanne tout le système chaque soir : erreurs, retards, KPIs. Il envoie un rapport au CEO avec un plan d'action.</p>
+      <div class="how-agents">Agents : Directeur Adjoint · Analytics</div>
     </div>
   </div>
 </section>
@@ -1982,190 +2018,114 @@ const observer=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 // ═══════════════════════════════════════════════════
-//  LIVE DASHBOARD — Score Global, Duel, Portfolio, Reality Check, Audio
+//  HERO KPIs — Données réelles depuis portfolio_public.json + newsletters.json
 // ═══════════════════════════════════════════════════
-
-async function loadScoreGlobal() {
+async function loadHeroKPIs() {
   try {
-    const r = await fetch('data/score_global.json');
-    if (!r.ok) return;
-    const d = await r.json();
+    const [pRes, nRes] = await Promise.all([
+      fetch('data/portfolio_public.json?t='+Date.now()),
+      fetch('data/newsletters.json?t='+Date.now())
+    ]);
 
-    // Score principal
-    const score = d.score_global || d.score || 0;
-    const el = document.getElementById('score-global');
-    if (el) el.textContent = Math.round(score);
+    if (pRes.ok) {
+      const pd = await pRes.json();
+      const robots = pd.robots || {};
+      let totalCapital = 0, totalTrades = 0, bestPerf = -Infinity, bestName = '';
 
-    // Sous-scores
-    const scores = d.scores || d.details || {};
-    const nlScore = scores.newsletter || scores.newsletter_score || 0;
-    const trScore = scores.trader || scores.trader_score || 0;
-    const arScore = scores.arena || scores.arena_score || 0;
-
-    const nlEl = document.getElementById('score-newsletter');
-    const trEl = document.getElementById('score-trader');
-    const arEl = document.getElementById('score-arena');
-    if (nlEl) nlEl.textContent = Math.round(nlScore) + '/100';
-    if (trEl) trEl.textContent = Math.round(trScore) + '/100';
-    if (arEl) arEl.textContent = Math.round(arScore) + '/100';
-
-    // Effet addiction : tendance hier vs aujourd'hui
-    const trendEl = document.getElementById('score-trend');
-    if (trendEl) {
-      const prev = d.score_precedent || d.previous_score || null;
-      if (prev !== null && prev > 0) {
-        const diff = score - prev;
-        const arrow = diff > 0 ? '↑' : diff < 0 ? '↓' : '→';
-        const cls = diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat';
-        trendEl.className = 'live-score-trend ' + cls;
-        trendEl.textContent = arrow + ' ' + (diff > 0 ? '+' : '') + diff.toFixed(1) + ' vs hier';
-      } else {
-        trendEl.textContent = '📊 Premier jour de scoring';
-        trendEl.className = 'live-score-trend flat';
-      }
-    }
-  } catch(e) { console.log('Score global non disponible'); }
-}
-
-async function loadDuelDuJour() {
-  try {
-    const r = await fetch('data/arena_content.json');
-    if (!r.ok) return;
-    const d = await r.json();
-
-    // Dernier combat
-    const combat = d.dernier_combat || d.last_combat || d;
-    const actif = combat.actif || combat.asset || '—';
-    const verdict = combat.verdict || {};
-
-    document.getElementById('duel-actif').textContent = actif;
-    document.getElementById('duel-score-bull').textContent = (verdict.score_bull || '--') + '/100';
-    document.getElementById('duel-score-bear').textContent = (verdict.score_bear || '--') + '/100';
-
-    const verdictText = verdict.analyse || combat.resume || combat.titre || 'Verdict en cours...';
-    document.getElementById('duel-verdict').textContent = verdictText;
-  } catch(e) { console.log('Duel non disponible'); }
-}
-
-async function loadPortfolioLive() {
-  try {
-    const r = await fetch('data/trader_storytelling.json');
-    if (!r.ok) {
-      // Fallback sur portfolio_public.json
-      const r2 = await fetch('data/portfolio_public.json');
-      if (!r2.ok) return;
-      const d2 = await r2.json();
-      const robots = d2.robots || {};
-      let totalCapital = 0, totalInitial = 0;
       for (const [key, rb] of Object.entries(robots)) {
         totalCapital += rb.capital_actuel || 10000;
-        totalInitial += 10000;
+        totalTrades += rb.nb_trades || 0;
+        const perf = rb.performance_pct || 0;
+        if (perf > bestPerf) { bestPerf = perf; bestName = rb.nom || key; }
       }
-      const perf = ((totalCapital - totalInitial) / totalInitial * 100);
-      updatePortfolioUI(perf, robots);
-      return;
+
+      const capEl = document.getElementById('hero-capital');
+      if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr') + ' €';
+
+      const trEl = document.getElementById('hero-trades');
+      if (trEl) trEl.textContent = totalTrades;
+
+      const bestEl = document.getElementById('hero-best');
+      if (bestEl) {
+        const perfStr = (bestPerf >= 0 ? '+' : '') + bestPerf.toFixed(2) + '%';
+        bestEl.textContent = perfStr;
+        bestEl.style.color = bestPerf >= 0 ? 'var(--green)' : 'var(--red)';
+      }
     }
-    const d = await r.json();
-    const perf = d.performance_pct || d.performance || 0;
-    updatePortfolioUI(perf, d.robots || {});
-  } catch(e) { console.log('Portfolio live non disponible'); }
+
+    if (nRes.ok) {
+      const nd = await nRes.json();
+      const nlEl = document.getElementById('hero-newsletters');
+      if (nlEl) nlEl.textContent = nd.count || (nd.editions || []).length || 0;
+    }
+  } catch(e) { console.log('Hero KPIs: erreur chargement'); }
 }
 
-function updatePortfolioUI(perf, robots) {
-  const perfEl = document.getElementById('portfolio-perf');
-  if (perfEl) {
-    perfEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
-    perfEl.className = 'portfolio-perf ' + (perf > 0 ? 'up' : perf < 0 ? 'down' : 'flat');
-  }
-
-  // Robots individuels
-  const robotNames = {'prudent':'🛡️ Prudent','modere':'⚖️ Modéré','agressif':'🔥 Agressif'};
-  const container = document.querySelector('.portfolio-robots');
-  if (container && Object.keys(robots).length > 0) {
-    container.innerHTML = '';
-    for (const [key, label] of Object.entries(robotNames)) {
-      const rb = robots[key];
-      if (!rb) continue;
-      const rPerf = rb.performance_pct || 0;
-      const div = document.createElement('div');
-      div.className = 'portfolio-robot';
-      div.innerHTML = '<span>' + label + '</span><span class="portfolio-robot-perf ' +
-        (rPerf > 0 ? 'up' : rPerf < 0 ? 'down' : '') + '">' +
-        (rPerf >= 0 ? '+' : '') + rPerf.toFixed(2) + '%</span>';
-      container.appendChild(div);
-    }
-  }
-}
-
-async function loadRealityCheck() {
+// ═══════════════════════════════════════════════════
+//  ACTIVITÉ AGENTS EN DIRECT — Données réelles depuis activity_feed.json
+// ═══════════════════════════════════════════════════
+async function loadActivityFeed() {
   try {
-    const r = await fetch('data/reality_checks.json');
+    const r = await fetch('data/activity_feed.json?t='+Date.now());
     if (!r.ok) return;
     const d = await r.json();
 
-    const checks = d.checks || d.results || [];
-    const last = Array.isArray(checks) ? checks[checks.length - 1] : d;
+    // Résumé stats
+    const events = d.events || [];
+    const agents = d.agents || [];
 
-    const quote = last.citation || last.quote || last.analyse || last.verdict ||
-                  '"L\'IA analyse. Le Reality Check challenge."';
-    const score = last.score_realite || last.score || 0;
-    const verdict = last.verdict_court || last.summary || '';
+    let totalToday = 0, successToday = 0, errorsToday = 0;
+    agents.forEach(a => {
+      totalToday += a.total_today || 0;
+      successToday += a.successes_today || 0;
+      errorsToday += a.errors_today || 0;
+    });
 
-    const quoteEl = document.getElementById('reality-quote');
-    const scoreEl = document.getElementById('reality-score');
-    const verdictEl = document.getElementById('reality-verdict');
+    const totalEl = document.getElementById('activity-total');
+    const successEl = document.getElementById('activity-success');
+    const errorsEl = document.getElementById('activity-errors');
+    const lastTimeEl = document.getElementById('activity-last-time');
 
-    if (quoteEl) quoteEl.textContent = quote;
-    if (scoreEl) scoreEl.textContent = '🎯 Score réalité : ' + Math.round(score) + '/100';
-    if (verdictEl) verdictEl.textContent = verdict || 'Prochain check en cours...';
-  } catch(e) { console.log('Reality check non disponible'); }
-}
+    if (totalEl) totalEl.textContent = totalToday;
+    if (successEl) successEl.textContent = successToday;
+    if (errorsEl) errorsEl.textContent = errorsToday;
 
-// 🎧 Audio TTS — Utilise Web Speech API (natif navigateur)
-function playAudioResume() {
-  const btn = document.getElementById('audio-btn');
-  const status = document.getElementById('audio-status');
-
-  if ('speechSynthesis' in window) {
-    // Arrêter si déjà en cours
-    if (speechSynthesis.speaking) {
-      speechSynthesis.cancel();
-      if (status) status.textContent = 'Arrêté';
-      return;
+    // Dernière action — heure locale
+    if (lastTimeEl && events.length > 0) {
+      const lastTs = events[0].ts || '';
+      if (lastTs) {
+        const d2 = new Date(lastTs);
+        lastTimeEl.textContent = d2.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+      }
     }
 
-    // Construire le texte du résumé depuis les données affichées
-    const score = document.getElementById('score-global')?.textContent || '--';
-    const duel = document.getElementById('duel-actif')?.textContent || '';
-    const duelVerdict = document.getElementById('duel-verdict')?.textContent || '';
-    const perf = document.getElementById('portfolio-perf')?.textContent || '';
+    // 5 derniers événements
+    const container = document.getElementById('activity-events');
+    if (!container) return;
+    container.innerHTML = '';
 
-    const texte = "Bonjour, voici votre résumé AlphaBot du jour. " +
-      "Le score global AlphaBot est de " + score + " sur 100. " +
-      (duel ? "Le duel du jour porte sur " + duel + ". " + duelVerdict + ". " : "") +
-      (perf ? "Le portefeuille IA affiche une performance de " + perf + " depuis le lancement. " : "") +
-      "Bonne journée et bons investissements !";
+    const typeIcons = {
+      'success': '✅', 'error': '❌', 'warning': '⚠️',
+      'start': '🚀', 'progress': '⏳', 'info': 'ℹ️', 'milestone': '🏆'
+    };
 
-    const utterance = new SpeechSynthesisUtterance(texte);
-    utterance.lang = 'fr-FR';
-    utterance.rate = 1.05;
-    utterance.pitch = 1;
-
-    // Essayer de trouver une voix française
-    const voices = speechSynthesis.getVoices();
-    const frVoice = voices.find(v => v.lang.startsWith('fr'));
-    if (frVoice) utterance.voice = frVoice;
-
-    utterance.onstart = () => { if (status) status.textContent = '🔊 Lecture en cours...'; };
-    utterance.onend = () => { if (status) status.textContent = '✅ Terminé'; };
-    utterance.onerror = () => { if (status) status.textContent = '❌ Erreur audio'; };
-
-    speechSynthesis.speak(utterance);
-    if (status) status.textContent = '🔊 Préparation...';
-  } else {
-    if (document.getElementById('audio-status'))
-      document.getElementById('audio-status').textContent = '❌ Audio non supporté par votre navigateur';
-  }
+    const display = events.slice(0, 6);
+    display.forEach(ev => {
+      const icon = typeIcons[ev.type] || '📌';
+      const ts = new Date(ev.ts);
+      const timeStr = ts.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+      const div = document.createElement('div');
+      div.className = 'activity-event';
+      div.innerHTML =
+        '<span class="activity-event-icon">' + icon + '</span>' +
+        '<div class="activity-event-body">' +
+          '<div class="activity-event-agent">' + (ev.agent || 'Agent') + '</div>' +
+          '<div class="activity-event-msg">' + (ev.message || '').substring(0, 120) + '</div>' +
+        '</div>' +
+        '<span class="activity-event-time">' + timeStr + '</span>';
+      container.appendChild(div);
+    });
+  } catch(e) { console.log('Activity feed non disponible'); }
 }
 
 // ── LEADERBOARD DYNAMIQUE ──
@@ -2195,16 +2155,16 @@ async function loadLeaderboard(){
 loadMarketData();
 loadChallengeData();
 loadLeaderboard();
-loadScoreGlobal();
-loadPortfolioLive();
-loadRealityCheck();
+loadHeroKPIs();
+loadActivityFeed();
 
 // Refresh toutes les 2 minutes
 setInterval(()=>{
   loadMarketData();
   loadChallengeData();
   loadLeaderboard();
-  loadPortfolioLive();
+  loadHeroKPIs();
+  loadActivityFeed();
 }, 120000);
 </script>
 </body>
