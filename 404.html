@@ -1,167 +1,144 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 — Page non trouvée | AlphaBot Weekly</title>
-    <meta name="description" content="Cette page n'existe pas. Retournez à l'accueil d'AlphaBot Weekly, votre newsletter IA bourse et crypto.">
-    <meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@AlphaBot_Weekly">
-    <link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/404.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --bg: #04091a; --bg2: #060d1f; --cyan: #22d3ee; --blue: #3b82f6;
-            --text: #e2e8f0; --muted: #64748b; --border: rgba(255, 255, 255, 0.08);
-        }
-        html { scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
-
-        /* BG */
-        .bg-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-        .bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px); background-size: 60px 60px; }
-        .orb { position: absolute; border-radius: 50%; filter: blur(90px); }
-        .o1 { width: 800px; height: 800px; background: radial-gradient(circle, rgba(59, 130, 246, 0.09), transparent 65%); top: -300px; left: -250px; animation: of 9s ease-in-out infinite alternate; }
-        .o2 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(34, 211, 238, 0.08), transparent 65%); bottom: -200px; right: -200px; animation: of 11s ease-in-out infinite alternate-reverse; }
-        @keyframes of { from { transform: translate(0, 0) scale(1); } to { transform: translate(25px, 20px) scale(1.06); } }
-
-        /* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
-        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-        .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-        .nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-        .nav-center{display:flex;gap:28px;align-items:center;}
-        .nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-        .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-        .nav-center a:hover{color:#fff;}
-        .nav-center a:hover::after{width:100%;}
-        .nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-        .nav-cta::after{display:none!important;}
-        .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-        .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-        .nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
-
-        /* CONTENT */
-        .container { position: relative; z-index: 10; text-align: center; padding: 40px 20px; max-width: 600px; margin: auto; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .error-code { font-family: 'Space Grotesk', sans-serif; font-size: clamp(80px, 15vw, 160px); font-weight: 700; background: linear-gradient(135deg, var(--cyan), var(--blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0; line-height: 1; margin-bottom: 20px; }
-        .error-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); margin: 0 0 16px 0; }
-        .error-message { font-size: 16px; color: var(--muted); margin: 0 0 32px 0; line-height: 1.6; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--blue), var(--cyan)); color: white; text-decoration: none; padding: 14px 32px; border-radius: 12px; font-weight: 600; font-size: 15px; transition: all 0.3s ease; border: 1px solid rgba(34, 211, 238, 0.3); }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3); border-color: rgba(34, 211, 238, 0.6); }
-
-        /* FOOTER */
-        footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative;z-index:1;}
-        .footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:16px;}
-        .footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-        .footer-links{display:flex;gap:20px;}
-        .footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s;}
-        .footer-links a:hover{color:white;}
-        .footer-copy{color:var(--muted);font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);}
-
-        /* RESPONSIVE */
-        @media(max-width:768px){
-          nav{padding:12px 4%;}
-          .nav-center{display:none;gap:0;width:100%;}
-          .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-          .nav-hamburger{display:flex;}
-          .error-code{font-size:clamp(60px,12vw,100px);}
-          .error-title{font-size:24px;}
-          .footer-inner{flex-direction:column;text-align:center;}
-        }
-
-        /* FOCUS STATES */
-        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-          outline: 2px solid var(--cyan);
-          outline-offset: 2px;
-          border-radius: 4px;
-        }
-        .skip-link:focus { top: 0; }
-
-        /* ═══ VISUAL UPGRADE ═══ */
-        @keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
-        .bg-wrap::after {
-          content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-          background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px);
-          background-size: 40px 40px;
-          animation: gridPulse 4s ease-in-out infinite alternate;
-        }
-        nav {
-          background: rgba(4,9,26,.72)!important;
-          backdrop-filter: blur(24px) saturate(180%);
-          -webkit-backdrop-filter: blur(24px) saturate(180%);
-        }
-        .error-code {
-          filter: drop-shadow(0 0 40px rgba(34,211,238,.3));
-        }
-        .cta-button {
-          box-shadow: 0 4px 24px rgba(34,211,238,.3);
-          transition: all .3s ease;
-        }
-        .cta-button:hover {
-          box-shadow: 0 16px 48px rgba(34,211,238,.45)!important;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page non trouvée | AlphaBot Weekly</title>
+  <meta name="description" content="Cette page n'existe pas. Retournez à l'accueil d'AlphaBot Weekly.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0e0e0e",
+            "surface-low": "#131313",
+            "surface-container": "#1a1919",
+            "surface-high": "#201f1f",
+            "surface-highest": "#262626",
+            "primary": "#ff906d",
+            "primary-container": "#ff784d",
+            "secondary": "#ff725e",
+            "on-surface": "#ffffff",
+            "on-surface-variant": "#adaaaa",
+            "outline-variant": "#484847",
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { background: #0e0e0e; }
+    .neural-mesh {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+    .glass-card {
+      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
+    }
+    .btn-primary {
+      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg;
+    }
+    .btn-secondary {
+      @apply px-5 py-2.5 rounded-md font-semibold bg-[#262626] border border-[#ff906d]/30 text-primary transition hover:border-primary hover:bg-[#2a2a2a];
+    }
+    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #nav-menu.mobile-open { max-height: 300px; }
+    .glow-404 {
+      text-shadow: 0 0 60px rgba(255, 144, 109, 0.3), 0 0 120px rgba(255, 144, 109, 0.1);
+    }
+  </style>
 </head>
-<body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
-    <div class="bg-wrap">
-        <div class="bg-grid"></div>
-        <div class="orb o1"></div>
-        <div class="orb o2"></div>
-    </div>
+<body class="bg-surface text-on-surface font-body dark min-h-screen flex flex-col">
 
-    <!-- NAV -->
-    <nav aria-label="Navigation principale">
-      <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-      <div class="nav-center" id="nav-menu">
-        <a href="index.html">Accueil</a>
-        <a href="newsletter.html">Newsletter</a>
-        <a href="investissement.html">Robot Trader</a>
-        <a href="arena.html">Arena</a>
-        <a href="dashboard-agents.html">Agents IA</a>
-        <a href="index.html#subscribe" class="nav-cta">S'abonner gratuitement</a>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
       </div>
-      <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
       </button>
-    </nav>
-
-    <div class="container" id="main-content">
-        <h1 class="error-code">404</h1>
-        <h2 class="error-title">Page non trouvée</h2>
-        <p class="error-message">Cette page n'existe pas ou a été déplacée.<br>Pas de panique, les marchés sont toujours surveillés.</p>
-        <a href="index.html" class="cta-button">Retour à l'accueil</a>
-        <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <a href="newsletter.html" style="color:#22d3ee;text-decoration:none;font-size:14px;padding:8px 16px;border:1px solid rgba(34,211,238,.2);border-radius:8px;transition:all .2s;">Newsletter</a>
-          <a href="investissement.html" style="color:#f5c842;text-decoration:none;font-size:14px;padding:8px 16px;border:1px solid rgba(245,200,66,.2);border-radius:8px;transition:all .2s;">Robot Trader</a>
-          <a href="arena.html" style="color:#22c55e;text-decoration:none;font-size:14px;padding:8px 16px;border:1px solid rgba(34,197,94,.2);border-radius:8px;transition:all .2s;">Arena</a>
-        </div>
     </div>
+    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
+      </div>
+    </div>
+  </nav>
 
-    <footer role="contentinfo">
-      <div class="footer-inner">
-        <div class="footer-brand">AlphaBot Weekly</div>
-        <div class="footer-links">
-          <a href="index.html">Accueil</a>
-          <a href="newsletter.html">Newsletter</a>
-          <a href="investissement.html">Robot Trader</a>
-          <a href="arena.html">Arena</a>
-          <a href="dashboard-agents.html">Agents IA</a>
+  <!-- MAIN -->
+  <main class="flex-1 flex items-center justify-center pt-20 neural-mesh">
+    <div class="max-w-lg mx-auto px-4 text-center py-24">
+      <h1 class="font-headline text-[8rem] sm:text-[10rem] font-bold leading-none bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent glow-404">404</h1>
+      <h2 class="font-headline text-2xl sm:text-3xl font-bold mt-4 mb-4">Page non trouvée</h2>
+      <p class="text-on-surface-variant text-base leading-relaxed mb-10">Cette page n'existe pas ou a été déplacée. Pas de panique, les marchés sont toujours surveillés.</p>
+      <a href="index.html" class="btn-primary inline-block text-base">Retour à l'accueil</a>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <a href="newsletter.html" class="btn-secondary text-sm">Newsletter</a>
+        <a href="investissement.html" class="btn-secondary text-sm">Investissement</a>
+        <a href="arena.html" class="btn-secondary text-sm">Arena</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 bg-surface-low py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-headline font-bold text-primary mb-4">AlphaBot Weekly</h4>
+          <p class="text-sm text-on-surface-variant">Newsletter IA pour investisseurs francophones.</p>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="newsletter.html" class="text-on-surface-variant hover:text-primary transition">Newsletter</a></li>
+            <li><a href="investissement.html" class="text-on-surface-variant hover:text-primary transition">Investissement</a></li>
+            <li><a href="arena.html" class="text-on-surface-variant hover:text-primary transition">Arena</a></li>
+            <li><a href="dashboard-agents.html" class="text-on-surface-variant hover:text-primary transition">Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Informations</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:antoine.metout@gmail.com" class="text-on-surface-variant hover:text-primary transition">Contact</a></li>
+            <li><p class="text-on-surface-variant">© 2026 AlphaBot Weekly</p></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-copy">
-        © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-        Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-xs text-outline-variant text-center">
+          Les portefeuilles AlphaBot sont fictifs à titre éducatif. Ce ne sont pas des recommandations d'investissement.
+        </p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-    function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
-    </script>
+  <script>
+    function toggleMenu() { document.getElementById('nav-menu').classList.toggle('mobile-open'); }
+  </script>
 </body>
 </html>

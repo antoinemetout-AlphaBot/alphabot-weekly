@@ -1,1071 +1,329 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Newsletter — AlphaBot Weekly</title>
-<meta name="description" content="Accédez à votre newsletter financière IA. Chaque édition décrypte la bourse, la crypto et la géopolitique en 5 minutes. Réservé aux abonnés AlphaBot Weekly.">
-<meta property="og:title" content="Newsletter — AlphaBot Weekly">
-<meta property="og:description" content="L'essentiel des marchés en 5 minutes, décrypté par l'IA. Bourse, crypto, géopolitique — chaque semaine.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/newsletter.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#04091a;--bg2:#060d1f;--bg3:#0d1425;--cyan:#22d3ee;--gold:#f5c842;
-  --blue:#3b82f6;--green:#22c55e;--red:#ef4444;
-  --text:#e2e8f0;--muted:#64748b;--border:rgba(255,255,255,.08);
-  --border-light:rgba(255,255,255,.04);--transition:cubic-bezier(.4,0,.2,1);
-}
-
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
-
-/* BACKGROUND */
-.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;}
-.bg-grid{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%, rgba(34,211,238,.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245,200,66,.06) 0%, transparent 50%);animation:drift 20s ease-in-out infinite;}
-@keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:3px;}
-
-/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-.nav-center{display:flex;gap:28px;align-items:center;}
-.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-.nav-center a:hover{color:#fff;}
-.nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:#22d3ee;}
-.nav-center a.active::after{width:100%;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-.nav-cta::after{display:none!important;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
-
-/* PAGE */
-.page{min-height:100vh;padding:120px 5% 80px;position:relative;z-index:1;max-width:1600px;margin:0 auto;}
-
-.page-header{text-align:center;margin-bottom:56px;animation:fadeInUp .7s var(--transition);}
-.page-tag{display:inline-flex;align-items:center;gap:8px;justify-content:center;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);color:var(--cyan);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:18px;box-shadow:0 0 0 rgba(34,211,238,0);transition:box-shadow .3s,transform .3s;}
-.page-tag:hover{box-shadow:0 0 16px rgba(34,211,238,.15);transform:translateY(-1px);}
-.page-tag svg{width:14px;height:14px;flex-shrink:0;}
-
-.page-header h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;color:white;margin-bottom:14px;line-height:1.15;letter-spacing:-.5px;}
-.page-header p{color:var(--muted);font-size:15px;max-width:580px;margin:0 auto;line-height:1.6;}
-
-/* GATE */
-#gate{max-width:500px;margin:0 auto;position:relative;z-index:10;}
-.gate-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;padding:48px 44px;text-align:center;backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);animation:fadeInUp .65s var(--transition) .15s both;transition:all .4s var(--transition);position:relative;z-index:10;}
-.gate-card:hover{border-color:var(--cyan);background:rgba(34,211,238,.04);box-shadow:0 12px 48px rgba(34,211,238,.15),inset 0 1px 0 rgba(255,255,255,.06);}
-
-.gate-icon{display:flex;align-items:center;justify-content:center;margin-bottom:24px;width:56px;height:56px;margin-left:auto;margin-right:auto;}
-.gate-icon svg{width:52px;height:52px;stroke:var(--cyan);stroke-width:1.5;}
-
-.gate-card h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;color:white;margin-bottom:12px;letter-spacing:-.3px;}
-.gate-card p{color:var(--muted);font-size:15px;margin-bottom:28px;line-height:1.6;}
-
-.gate-input{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:13px 16px;color:white;font-size:14px;font-family:inherit;outline:none;transition:.3s var(--transition);margin-bottom:14px;letter-spacing:.2px;}
-.gate-input:focus{border-color:var(--cyan);background:rgba(34,211,238,.06);box-shadow:0 0 0 3px rgba(34,211,238,.12);}
-.gate-input::placeholder{color:var(--muted);}
-
-.gate-btn{width:100%;background:linear-gradient(135deg,#3b82f6,var(--cyan));color:white;border:none;border-radius:10px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:.3s var(--transition);letter-spacing:.3px;}
-.gate-btn:hover{box-shadow:0 12px 32px rgba(34,211,238,.3);}
-.gate-btn:active{transform:scale(.98);}
-
-#gate-error{color:#ef4444;font-size:13px;margin-top:10px;display:none;}
-.gate-note{margin-top:18px;font-size:13px;color:var(--muted);}
-.gate-note a{color:var(--cyan);text-decoration:none;font-weight:500;transition:.2s;}
-.gate-note a:hover{color:var(--gold);}
-
-/* CONTENT */
-#content{display:none;}
-
-/* WELCOME BAR */
-.welcome-bar{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:16px 24px;display:flex;align-items:center;gap:12px;margin-bottom:28px;box-shadow:0 4px 16px rgba(34,197,94,.08);backdrop-filter:blur(12px);transition:all .3s var(--transition);animation:fadeInUp .5s var(--transition);}
-.welcome-bar:hover{box-shadow:0 4px 24px rgba(34,197,94,.12);}
-.welcome-bar span{display:flex;align-items:center;gap:10px;font-size:14px;color:#22c55e;font-weight:500;}
-.welcome-bar svg{width:18px;height:18px;flex-shrink:0;}
-.welcome-name{font-weight:700;color:white;}
-.logout-btn{margin-left:auto;font-size:13px;color:var(--muted);cursor:pointer;background:none;border:none;font-family:inherit;transition:.2s;font-weight:500;padding:6px 12px;border-radius:8px;}
-.logout-btn:hover{color:#ef4444;background:rgba(239,68,68,.1);}
-
-/* TOOLBAR */
-.toolbar{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:18px 24px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;backdrop-filter:blur(16px);box-shadow:0 4px 16px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.06);animation:fadeInUp .55s var(--transition) .1s both;}
-
-.toolbar-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.toolbar-label{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);font-weight:500;white-space:nowrap;}
-.toolbar-label svg{width:18px;height:18px;flex-shrink:0;}
-
-.date-select{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:9px 14px;color:white;font-size:14px;font-family:inherit;outline:none;cursor:pointer;transition:.2s var(--transition);font-weight:500;min-width:240px;}
-.date-select:focus{border-color:var(--cyan);background:rgba(34,211,238,.06);box-shadow:0 0 0 3px rgba(34,211,238,.12);}
-.date-select option{background:#0d1117;color:white;}
-
-.toolbar-right{display:flex;align-items:center;gap:12px;}
-.tb-btn{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:9px 16px;color:var(--muted);font-size:13px;cursor:pointer;transition:.2s var(--transition);font-family:inherit;text-decoration:none;font-weight:500;white-space:nowrap;}
-.tb-btn svg{width:18px;height:18px;flex-shrink:0;}
-.tb-btn:hover{color:white;border-color:rgba(255,255,255,.15);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.25);}
-.tb-btn.active{color:var(--cyan);border-color:rgba(34,211,238,.25);background:rgba(34,211,238,.05);box-shadow:0 0 12px rgba(34,211,238,.15);}
-
-/* NEWSLETTER FRAME */
-.newsletter-container{width:100%;margin-bottom:40px;}
-#newsletter-frame{width:100%;border:1px solid var(--border);border-radius:12px;background:#04091a;min-height:800px;display:block;box-shadow:0 8px 32px rgba(0,0,0,.3),0 1px 0 rgba(255,255,255,.06) inset;animation:fadeInUp .6s var(--transition) .2s both;transition:box-shadow .4s;}
-
-.loading-state{text-align:center;padding:120px 32px;color:var(--muted);}
-.loading-state .spinner{width:44px;height:44px;border:3px solid rgba(255,255,255,.1);border-top-color:var(--cyan);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.loading-state p{font-size:15px;margin-top:12px;}
-
-/* ERROR STATE */
-.error-state{text-align:center;padding:80px 40px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:16px;margin-top:0;}
-.error-state h3{display:flex;align-items:center;justify-content:center;gap:10px;color:white;margin-bottom:12px;font-size:18px;font-weight:600;}
-.error-state h3 svg{width:22px;height:22px;color:var(--muted);}
-.error-state p{color:var(--muted);font-size:15px;line-height:1.6;}
-
-/* ANIMATIONS */
-@keyframes fadeInUp{
-  from{opacity:0;transform:translateY(16px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;position:relative;z-index:1;}
-
-.footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-.footer-links{display:flex;gap:24px;}
-.footer-links a{color:var(--muted);font-size:13px;text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:white;}
-.footer-copy{color:var(--muted);font-size:12px;margin-left:auto;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:12px 4%;}
-  .nav-center{display:none;gap:0;width:100%;}
-  .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-  .nav-hamburger{display:flex;}
-
-  .page{padding:100px 3% 60px;}
-  .toolbar{flex-direction:column;align-items:stretch;}
-  .toolbar-left{width:100%;}
-  .toolbar-right{width:100%;}
-  .date-select{min-width:100%;width:100%;}
-  .tb-btn{flex:1;justify-content:center;}
-  .footer-brand{margin-bottom:8px;}
-  .footer-copy{width:100%;margin-left:0;text-align:center;}
-  .page-header h1{font-size:clamp(28px,7vw,36px);}
-}
-
-@media(max-width:480px){
-  .page{padding:100px 2% 60px;}
-  .gate-card{padding:36px 24px;}
-  .toolbar{padding:14px 16px;}
-  .page-header h1{font-size:clamp(24px,6vw,32px);}
-}
-
-/* FOCUS STATES */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.skip-link:focus { top: 0; }
-</style>
-
-<!-- GOOGLE ANALYTICS — Remplacer G-XXXXXXXXXX par votre ID GA4 -->
-<!-- Créer un compte sur https://analytics.google.com puis décommenter -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
-</script>
--->
-
-<!-- Analytics simple (fonctionne immédiatement) -->
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-
-<!-- DA-AMELIORATIONS-2026-03-24 -->
-<style>
-/* ── TYPOGRAPHY ENHANCEMENTS ── */
-.page-header h1 {
-  background: linear-gradient(135deg, #fff 30%, #22d3ee 60%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px rgba(34,211,238,.18));
-  letter-spacing: -.8px;
-  line-height: 1.1;
-}
-
-.page-header p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: #94a3b8;
-  letter-spacing: .01em;
-}
-
-/* ── PAGE TAG PULSE ── */
-.page-tag {
-  animation: tagPulse 3s ease-in-out infinite;
-  background: linear-gradient(135deg, rgba(34,211,238,.1), rgba(59,130,246,.08));
-}
-
-@keyframes tagPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34,211,238,.2); }
-  50%       { box-shadow: 0 0 18px 4px rgba(34,211,238,.12); }
-}
-
-/* ── GATE CARD ── */
-.gate-card {
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border: 1px solid rgba(34,211,238,.15);
-  box-shadow:
-    0 24px 64px rgba(0,0,0,.5),
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 1px 0 rgba(255,255,255,.1) inset;
-  transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s cubic-bezier(.4,0,.2,1), border-color .4s;
-}
-
-.gate-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(34,211,238,.35);
-  box-shadow:
-    0 32px 80px rgba(0,0,0,.55),
-    0 0 48px rgba(34,211,238,.12),
-    0 1px 0 rgba(255,255,255,.12) inset;
-}
-
-/* ── GATE ICON GLOW ── */
-.gate-icon {
-  background: radial-gradient(circle, rgba(34,211,238,.15) 0%, transparent 70%);
-  border-radius: 50%;
-  width: 72px;
-  height: 72px;
-  animation: iconFloat 4s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 8px rgba(34,211,238,.4)); }
-  50%       { transform: translateY(-6px); filter: drop-shadow(0 0 20px rgba(34,211,238,.7)); }
-}
-
-/* ── INPUT FIELDS ── */
-.gate-input {
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 14.5px;
-  letter-spacing: .02em;
-  transition: border-color .3s, box-shadow .3s, background .3s, transform .2s;
-}
-
-.gate-input:focus {
-  transform: translateY(-1px);
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 4px rgba(34,211,238,.14), 0 4px 16px rgba(34,211,238,.1);
-}
-
-/* ── CTA BUTTON ── */
-.gate-btn {
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 15px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 60%, #22c55e 100%);
-  background-size: 200% 200%;
-  animation: gradShift 4s ease infinite;
-  transition: transform .25s, box-shadow .25s, filter .25s;
-  position: relative;
-  overflow: hidden;
-}
-
-.gate-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity .3s;
-}
-
-.gate-btn:hover::after { opacity: 1; }
-.gate-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(34,211,238,.4), 0 4px 12px rgba(59,130,246,.3);
-  filter: brightness(1.08);
-}
-
-@keyframes gradShift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-
-/* ── TOOLBAR ── */
-.toolbar {
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
-  border: 1px solid rgba(255,255,255,.07);
-  box-shadow: 0 8px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.07);
-  transition: box-shadow .3s;
-}
-
-.toolbar:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.09);
-}
-
-/* ── WELCOME BAR ── */
-.welcome-bar {
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(34,197,94,.07), rgba(34,211,238,.04));
-  border: 1px solid rgba(34,197,94,.25);
-  box-shadow: 0 4px 24px rgba(34,197,94,.1), inset 0 1px 0 rgba(255,255,255,.06);
-}
-
-.welcome-name {
-  background: linear-gradient(90deg, #fff, #22c55e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ── LOGOUT BUTTON ── */
-.logout-btn {
-  border: 1px solid transparent;
-  transition: color .25s, background .25s, border-color .25s, transform .2s;
-}
-
-.logout-btn:hover {
-  transform: translateY(-1px);
-  border-color: rgba(239,68,68,.25);
-}
-
-/* ── NAV ENHANCEMENT ── */
-nav {
-  backdrop-filter: blur(24px) saturate(1.6);
-  background: rgba(4,9,26,.85) !important;
-  box-shadow: 0 1px 0 rgba(34,211,238,.08), 0 8px 40px rgba(0,0,0,.6);
-}
-
-.nav-cta {
-  border-radius: 10px;
-  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
-  letter-spacing: .3px;
-  box-shadow: 0 4px 20px rgba(34,211,238,.25);
-}
-
-/* ═══ VISUAL UPGRADE ═══ */
-@keyframes borderGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-
-/* Animated dot grid */
-.bg-wrap::after {
-  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridPulse 4s ease-in-out infinite alternate;
-}
-@keyframes gridPulse { from{opacity:.3;} to{opacity:.7;} }
-
-/* Nav glassmorphism */
-nav {
-  background: rgba(4,9,26,.72)!important;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-}
-
-/* Reader container — glow border */
-.reader-wrap, .nl-reader, .newsletter-frame {
-  position:relative; z-index:1;
-}
-
-/* Dropdown select — enhanced */
-select, .edition-select {
-  transition: all .3s ease;
-}
-select:hover, .edition-select:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,.3), 0 0 20px rgba(34,211,238,.08);
-  border-color: rgba(34,211,238,.3)!important;
-}
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-25 -->
-<style>
-/* ═══════════════════════════════════════════
-   ALPHABOT WEEKLY — NEWSLETTER PAGE ENHANCEMENTS
-   DA Senior · Visual Impact Layer
-═══════════════════════════════════════════ */
-
-/* KEYFRAMES ADDITIONNELS */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(34,211,238,.15), 0 8px 32px rgba(0,0,0,.3); }
-  50% { box-shadow: 0 0 40px rgba(34,211,238,.3), 0 12px 48px rgba(0,0,0,.4); }
-}
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-@keyframes borderRotate {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* BACKGROUND UPGRADÉ */
-.bg-grid {
-  background-image:
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(34,211,238,.09) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(245,200,66,.07) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 40% at 55% 20%, rgba(59,130,246,.06) 0%, transparent 50%);
-}
-
-/* PAGE HEADER — TYPOGRAPHIE RENFORCÉE */
-.page-header h1 {
-  line-height: 1.1;
-  letter-spacing: -.8px;
-  background: linear-gradient(135deg, #ffffff 30%, #22d3ee 65%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: shimmer 6s linear infinite;
-}
-
-.page-header p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: rgba(148,163,184,.85);
-  letter-spacing: .01em;
-}
-
-/* PAGE TAG — GLOW AMÉLIORÉ */
-.page-tag {
-  background: rgba(34,211,238,.1);
-  border: 1px solid rgba(34,211,238,.28);
-  letter-spacing: 2.5px;
-  font-size: 10.5px;
-  transition: all .4s cubic-bezier(.4,0,.2,1);
-}
-.page-tag:hover {
-  background: rgba(34,211,238,.16);
-  box-shadow: 0 0 24px rgba(34,211,238,.25), 0 0 48px rgba(34,211,238,.1);
-  transform: translateY(-2px);
-  letter-spacing: 3px;
-}
-
-/* GATE CARD — GLASSMORPHISM PREMIUM */
-.gate-card {
-  background: rgba(13,20,37,.7);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 20px;
-  padding: 52px 48px;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.04) inset,
-    0 24px 64px rgba(0,0,0,.5),
-    0 0 80px rgba(34,211,238,.05);
-  animation: fadeInUp .65s cubic-bezier(.4,0,.2,1) .15s both, pulseGlow 4s ease-in-out 1s infinite;
-  position: relative;
-  overflow: hidden;
-}
-
-/* GRADIENT BORDER TOP */
-.gate-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(34,211,238,.6), rgba(59,130,246,.4), transparent);
-  border-radius: 0 0 50% 50%;
-}
-
-/* GATE CARD HOVER UPGRADE */
-.gate-card:hover {
-  border-color: rgba(34,211,238,.25);
-  background: rgba(13,20,37,.8);
-  box-shadow:
-    0 0 0 1px rgba(34,211,238,.08) inset,
-    0 32px 80px rgba(0,0,0,.55),
-    0 0 100px rgba(34,211,238,.12);
-  transform: translateY(-4px);
-}
-
-/* GATE ICON — ANIMATION FLOAT */
-.gate-icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px rgba(34,211,238,.4));
-  width: 64px;
-  height: 64px;
-  background: rgba(34,211,238,.07);
-  border-radius: 16px;
-  border: 1px solid rgba(34,211,238,.15);
-}
-
-.gate-card h2 {
-  font-size: 26px;
-  letter-spacing: -.5px;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #ffffff 50%, rgba(34,211,238,.9));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gate-card > p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: rgba(100,116,139,.9);
-}
-
-/* INPUT — UPGRADE INTERACTION */
-.gate-input {
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 14.5px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  transition: all .35s cubic-bezier(.4,0,.2,1);
-  letter-spacing: .02em;
-}
-.gate-input:focus {
-  border-color: rgba(34,211,238,.5);
-  background: rgba(34,211,238,.05);
-  box-shadow: 0 0 0 3px rgba(34,211,238,.1), 0 4px 16px rgba(34,211,238,.08);
-  transform: translateY(-1px);
-}
-
-/* CTA BUTTON — EFFET PREMIUM */
-.gate-btn {
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
-  background-size: 200% 200%;
-  position: relative;
-  overflow: hidden;
-  transition: all .35s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 4px 24px rgba(34,211,238,.2), 0 1px 0 rgba(255,255,255,.15) inset;
-}
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-26 -->
-<style>
-/* ═══════════════════════════════════════════════
-   ALPHABOT WEEKLY — Newsletter Enhancement CSS
-   Director: Senior Art Director Pass
-═══════════════════════════════════════════════ */
-
-/* ANIMATIONS ENRICHIES */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(34,211,238,.15), 0 0 0 rgba(34,211,238,0); }
-  50%       { box-shadow: 0 0 40px rgba(34,211,238,.3),  0 0 80px rgba(34,211,238,.08); }
-}
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-@keyframes borderRotate {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50%       { transform: translateY(-6px) scale(1.04); }
-}
-
-/* TYPOGRAPHIE GLOBALE */
-body {
-  font-optical-sizing: auto;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* PAGE HEADER — IMPACT MAXIMAL */
-.page-header h1 {
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #22d3ee 65%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.1;
-  letter-spacing: -.8px;
-  filter: drop-shadow(0 0 32px rgba(34,211,238,.2));
-}
-
-.page-header p {
-  font-size: 16px;
-  color: #94a3b8;
-  line-height: 1.75;
-  letter-spacing: .01em;
-}
-
-.page-tag {
-  font-size: 10px;
-  letter-spacing: 3px;
-  animation: pulseGlow 3s ease-in-out infinite;
-}
-
-/* GATE CARD — GLASSMORPHISM PREMIUM */
-.gate-card {
-  background: linear-gradient(135deg,
-    rgba(255,255,255,.045) 0%,
-    rgba(34,211,238,.025) 50%,
-    rgba(255,255,255,.02) 100%);
-  border: 1px solid rgba(34,211,238,.18);
-  border-radius: 24px;
-  padding: 52px 48px;
-  backdrop-filter: blur(24px) saturate(1.4);
-  box-shadow:
-    0 24px 64px rgba(0,0,0,.45),
-    0  4px 16px rgba(0,0,0,.3),
-    inset 0 1px 0 rgba(255,255,255,.09),
-    inset 0 -1px 0 rgba(34,211,238,.06);
-  position: relative;
-  overflow: hidden;
-}
-
-.gate-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% -20%, rgba(34,211,238,.12) 0%, transparent 65%);
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-.gate-card::after {
-  content: '';
-  position: absolute;
-  top: -1px; left: -1px; right: -1px; bottom: -1px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(34,211,238,.35), rgba(59,130,246,.2), rgba(245,200,66,.2), rgba(34,211,238,.35));
-  background-size: 300% 300%;
-  animation: borderRotate 6s ease infinite;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity .4s;
-}
-
-.gate-card:hover::after { opacity: 1; }
-
-.gate-card:hover {
-  transform: translateY(-4px) scale(1.005);
-  box-shadow:
-    0 32px 80px rgba(0,0,0,.5),
-    0 8px 32px rgba(34,211,238,.15),
-    inset 0 1px 0 rgba(255,255,255,.12);
-}
-
-/* ICÔNE GATE — ANIMATION FLOTTANTE */
-.gate-icon {
-  width: 72px;
-  height: 72px;
-  background: radial-gradient(circle, rgba(34,211,238,.12) 0%, rgba(34,211,238,.04) 70%);
-  border: 1px solid rgba(34,211,238,.25);
-  border-radius: 20px;
-  animation: floatIcon 4s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(34,211,238,.15), inset 0 1px 0 rgba(255,255,255,.08);
-}
-
-.gate-icon svg {
-  filter: drop-shadow(0 0 8px rgba(34,211,238,.5));
-}
-
-/* TYPOGRAPHIE CARD */
-.gate-card h2 {
-  font-size: 26px;
-  letter-spacing: -.5px;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #fff 60%, #22d3ee);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gate-card > p {
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: #94a3b8;
-  margin-bottom: 32px;
-}
-
-/* INPUT — PREMIUM */
-.gate-input {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-size: 14.5px;
-  letter-spacing: .02em;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
-}
-
-.gate-input:focus {
-  border-color: rgba(34,211,238,.6);
-  background: rgba(34,211,238,.05);
-  box-shadow: 0 0 0 4px rgba(34,211,238,.1), 0 4px 16px rgba(34,211,238,.08);
-  transform: translateY(-1px);
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter — AlphaBot Weekly | L'IA qui décrypte les marchés</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0e0e0e",
+            "surface-low": "#131313",
+            "surface-container": "#1a1919",
+            "surface-high": "#201f1f",
+            "surface-highest": "#262626",
+            "primary": "#ff906d",
+            "primary-container": "#ff784d",
+            "secondary": "#ff725e",
+            "on-surface": "#ffffff",
+            "on-surface-variant": "#adaaaa",
+            "outline-variant": "#484847",
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { @apply antialiased; }
+    html, body { background: #0e0e0e; }
+
+    /* Neural mesh background */
+    .neural-mesh {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    /* Glassmorphism */
+    .glass-card {
+      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
+    }
+
+    /* Glow effects */
+    .glow-primary {
+      box-shadow: 0 0 20px rgba(255, 144, 109, 0.15);
+    }
+
+    /* Status messages */
+    .status-msg {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .status-msg.success {
+      display: block;
+      color: #22c55e;
+    }
+
+    .status-msg.error {
+      display: block;
+      color: #ef4444;
+    }
+
+    /* Input field */
+    .input-field {
+      @apply w-full px-4 py-2.5 rounded-lg bg-[#1a1919] border border-white/10 text-white placeholder-gray-500 transition focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30;
+    }
+
+    /* Primary button */
+    .btn-primary {
+      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg hover:glow-primary;
+    }
+
+    /* Mobile menu */
+    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #nav-menu.mobile-open { max-height: 300px; }
+
+    /* Newsletter embed */
+    .newsletter-frame {
+      @apply w-full border border-white/10 rounded-lg bg-surface-low;
+      min-height: 800px;
+    }
+  </style>
 </head>
-<body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
+<body class="bg-surface text-on-surface font-body dark">
 
-<div class="bg-wrap"><div class="bg-grid"></div></div>
+  <!-- ═══════════════════════════════════════════════════
+       NAV (Fixed Glassmorphism)
+       ═══════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
 
-<!-- NAV -->
-<nav aria-label="Navigation principale">
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center" id="nav-menu">
-    <a href="index.html">Accueil</a>
-    <a href="newsletter.html" class="active">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
-  </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="text-sm text-primary font-semibold">Newsletter</a>
+        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
+      </div>
 
-</nav>
-
-<div class="page" id="main-content">
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="page-tag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-      </svg>
-      Espace Abonnés
-    </div>
-    <h1>Votre Newsletter</h1>
-    <p>Accédez à l'édition du jour et consultez l'historique complet de toutes les éditions quotidiennes.</p>
-  </div>
-
-  <!-- GATE (login) -->
-  <div id="gate">
-    <div class="gate-card">
-      <div class="gate-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      <!-- Mobile menu button -->
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
-      </div>
-      <h2>Votre espace abonné</h2>
-      <p>Entrez l'email utilisé lors de votre inscription pour accéder à toutes les éditions.</p>
-      <input class="gate-input" type="email" id="gate-email" placeholder="votre@email.com" autocomplete="email">
-      <button class="gate-btn" onclick="verifyAccess()">Accéder à ma newsletter</button>
-      <div id="gate-error">Email non reconnu. <a href="index.html" style="color:var(--cyan)">S'abonner gratuitement</a></div>
-      <div class="gate-note">Pas encore abonné ? <a href="index.html">C'est gratuit</a></div>
-    </div>
-  </div>
-
-  <!-- CONTENT (shown after login) -->
-  <div id="content">
-    <!-- WELCOME BAR -->
-    <div class="welcome-bar">
-      <span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-        Bonjour <span class="welcome-name" id="welcome-name">—</span> · Accès abonné actif
-      </span>
-      <button class="logout-btn" onclick="logout()">Se déconnecter</button>
+      </button>
     </div>
 
-    <!-- TOOLBAR -->
-    <div class="toolbar">
-      <div class="toolbar-left">
-        <span class="toolbar-label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          Édition du
-        </span>
-        <select class="date-select" id="edition-select" onchange="loadEdition(this.value)">
-          <option value="">Chargement...</option>
-        </select>
-      </div>
-      <div class="toolbar-right">
-        <a href="newsletters.html" class="tb-btn" style="text-decoration:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
-          Toutes les éditions
-        </a>
+    <!-- Mobile nav -->
+    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="block text-sm text-primary font-semibold">Newsletter</a>
+        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
       </div>
     </div>
+  </nav>
 
-    <!-- NEWSLETTER CONTAINER -->
-    <div class="newsletter-container">
-      <div id="loading" class="loading-state">
-        <div class="spinner"></div>
-        <p>Chargement de la newsletter...</p>
-      </div>
-      <iframe id="newsletter-frame" style="display:none;" loading="lazy" onload="frameLoaded()"></iframe>
-      <div id="newsletter-content" style="display:none;background:#04091a;color:#e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);"></div>
-      <div id="no-edition" class="error-state" style="display:none;">
-        <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
-            <line x1="9" y1="9" x2="15" y2="9"></line>
-            <line x1="9" y1="15" x2="15" y2="15"></line>
-          </svg>
-          Aucune édition disponible
-        </h3>
-        <p>La newsletter de cette date n'est pas encore disponible. Revenez bientôt !</p>
-      </div>
-    </div>
+  <!-- Main content -->
+  <main class="pt-20">
 
-    <footer role="contentinfo">
-      <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-        <div class="footer-brand" style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;">AlphaBot Weekly</div>
-        <div class="footer-links" style="display:flex;gap:20px;">
-          <a href="index.html" style="color:#64748b;font-size:12px;text-decoration:none;">Accueil</a>
-          <a href="newsletter.html" style="color:#64748b;font-size:12px;text-decoration:none;">Newsletter</a>
-          <a href="investissement.html" style="color:#64748b;font-size:12px;text-decoration:none;">Robot Trader</a>
-          <a href="arena.html" style="color:#64748b;font-size:12px;text-decoration:none;">Arena</a>
-          <a href="dashboard-agents.html" style="color:#64748b;font-size:12px;text-decoration:none;">Agents IA</a>
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden py-24 sm:py-32 neural-mesh">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl opacity-20"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <!-- Hero title -->
+        <h1 class="text-5xl sm:text-6xl font-headline font-black text-center leading-tight mb-6">
+          Newsletter IA
+          <span class="block bg-gradient-to-r from-primary via-[#ff906d] to-secondary bg-clip-text text-transparent">
+            Quotidienne
+          </span>
+        </h1>
+
+        <!-- Hero subtitle -->
+        <p class="text-center text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+          Chaque jour, une analyse complète des marchés: crypto, bourse, géopolitique et macro-économie. Inspirée par Aktionnaire.
+        </p>
+
+        <!-- Newsletter signup form -->
+        <div class="glass-card rounded-xl p-8 max-w-md mx-auto mb-16">
+          <h3 class="text-lg font-headline font-bold mb-4">Recevez l'édition quotidienne</h3>
+          <form onsubmit="event.preventDefault(); handleSubscribe();" class="space-y-3">
+            <input type="email" id="email-input" placeholder="Votre email" class="input-field" required>
+            <button type="submit" class="btn-primary w-full">S'inscrire</button>
+          </form>
+          <div id="sub-status" class="status-msg"></div>
+          <p class="text-xs text-on-surface-variant mt-4 text-center">Pas de spam. Désinscription en 1 clic.</p>
         </div>
       </div>
-      <div class="footer-copy" style="color:#64748b;font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);">
-        © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-        Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         NEWSLETTER EDITION SELECTOR & DISPLAY
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Edition selector -->
+        <div class="mb-12">
+          <label class="block text-sm font-semibold text-on-surface mb-3">Choisir une édition</label>
+          <select id="edition-select" class="input-field max-w-sm" onchange="loadEdition()">
+            <option value="">-- Chargement des éditions --</option>
+          </select>
+        </div>
+
+        <!-- Newsletter display -->
+        <div class="glass-card rounded-xl overflow-hidden">
+          <iframe
+            id="newsletter-frame"
+            class="newsletter-frame"
+            frameborder="0"
+            scrolling="auto"
+            style="display:none;">
+          </iframe>
+        </div>
+
+        <!-- Loading state -->
+        <div id="loading-state" class="text-center py-12">
+          <p class="text-on-surface-variant">Sélectionnez une édition pour l'afficher</p>
+        </div>
+
+        <!-- Error state -->
+        <div id="error-state" class="text-center py-12 text-red-400" style="display:none;">
+          <p>Erreur lors du chargement de la newsletter. Veuillez réessayer.</p>
+        </div>
       </div>
-    </footer>
-  </div>
-</div>
+    </section>
 
-<script>
-// ── Config ──
-const BASE_URL = 'outputs/';
-const NEWSLETTER_PREFIX = 'alphabot_newsletter_';
+  </main>
 
-// ── Subscriber list (loaded from JSON) ──
-let subscriberEmails = [];
-
-async function loadSubscribers(){
-  try{
-    const r = await fetch('data/subscribers.json?t='+Date.now());
-    const d = await r.json();
-    subscriberEmails = d.emails || [];
-  }catch(e){
-    // Fallback: accepter tout email si le fichier n'existe pas encore
-    subscriberEmails = null;
-  }
-}
-
-// ── Authentication ──
-async function verifyAccess(){
-  const email = document.getElementById('gate-email').value.trim().toLowerCase();
-  const errEl = document.getElementById('gate-error');
-  if(!email || !email.includes('@')){errEl.style.display='block';errEl.textContent='Entrez un email valide.';return;}
-
-  await loadSubscribers();
-
-  // Si le fichier JSON n'existe pas encore, on accepte tout email valide (mode développement)
-  const isSubscribed = subscriberEmails === null || subscriberEmails.map(e=>e.toLowerCase()).includes(email);
-
-  if(isSubscribed){
-    sessionStorage.setItem('ab_user', email);
-    showContent(email);
-  } else {
-    errEl.style.display='block';
-    errEl.innerHTML='Email non reconnu. <a href="index.html" style="color:var(--cyan)">S\'abonner gratuitement</a>';
-  }
-}
-
-function showContent(email){
-  document.getElementById('gate').style.display='none';
-  document.getElementById('content').style.display='block';
-  document.getElementById('welcome-name').textContent = email.split('@')[0];
-  loadAvailableEditions();
-}
-
-function logout(){
-  sessionStorage.removeItem('ab_user');
-  document.getElementById('gate').style.display='block';
-  document.getElementById('content').style.display='none';
-  document.getElementById('gate-email').value='';
-}
-
-// ── Check session ──
-window.addEventListener('DOMContentLoaded', async ()=>{
-  const saved = sessionStorage.getItem('ab_user');
-  if(saved) showContent(saved);
-});
-
-// ── Load available editions ──
-async function loadAvailableEditions(){
-  const select = document.getElementById('edition-select');
-  select.innerHTML = '<option value="">Chargement...</option>';
-
-  // Try to load from newsletters.json
-  let editions = [];
-  try{
-    const r = await fetch('data/newsletters.json?t='+Date.now());
-    const d = await r.json();
-    editions = d.editions || [];
-  }catch(e){
-    // Fallback: try last 30 days
-    const today = new Date();
-    for(let i=0;i<30;i++){
-      const d = new Date(today);
-      d.setDate(d.getDate()-i);
-      editions.push({date:formatDate(d), label:formatLabel(d)});
-    }
-  }
-
-  select.innerHTML = '';
-  let loaded = false;
-
-  for(const ed of editions){
-    const opt = document.createElement('option');
-    opt.value = ed.date;
-    opt.textContent = ed.label;
-    select.appendChild(opt);
-    if(!loaded){loadEdition(ed.date);loaded=true;}
-  }
-
-  if(editions.length===0){
-    select.innerHTML='<option>Aucune édition disponible</option>';
-    document.getElementById('loading').style.display='none';
-    document.getElementById('no-edition').style.display='block';
-  }
-}
-
-// ── Load a specific edition via fetch (plus fiable que iframe) ──
-async function loadEdition(date){
-  if(!date) return;
-  const frame = document.getElementById('newsletter-frame');
-  const contentDiv = document.getElementById('newsletter-content');
-  const loading = document.getElementById('loading');
-  const noEd = document.getElementById('no-edition');
-
-  frame.style.display='none';
-  contentDiv.style.display='none';
-  loading.style.display='block';
-  noEd.style.display='none';
-
-  const url = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
-
-  try {
-    const response = await fetch(url + '?t=' + Date.now());
-    if(!response.ok) throw new Error('HTTP ' + response.status);
-    const html = await response.text();
-
-    if(html.length < 200 || html.includes('Page non trouvée')){
-      loading.style.display='none';
-      noEd.style.display='block';
-      return;
+  <script>
+    // ── MENU TOGGLE ──
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('mobile-open');
     }
 
-    // Injecter le HTML directement dans la div
-    contentDiv.innerHTML = html;
-    loading.style.display='none';
-    contentDiv.style.display='block';
+    // ── LOAD NEWSLETTER EDITIONS ──
+    async function loadEditions() {
+      try {
+        const res = await fetch('data/newsletters.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Erreur chargement');
 
-  } catch(e) {
-    console.error('Erreur chargement newsletter:', e);
-    // Fallback: essayer avec iframe
-    frame.src = url;
-    loading.style.display='none';
-    frame.style.display='block';
-    frame.style.height='800px';
-  }
-}
+        const data = await res.json();
+        const editions = data.editions || [];
 
-// Fallback iframe onload (si fetch échoue)
-function frameLoaded(){
-  const frame = document.getElementById('newsletter-frame');
-  const loading = document.getElementById('loading');
-  try{
-    const h = frame.contentDocument.body;
-    if(h && h.innerHTML.length > 100){
-      loading.style.display='none';
-      frame.style.display='block';
-      frame.style.height = Math.max(frame.contentDocument.body.scrollHeight+40, 600)+'px';
-    } else {
-      loading.style.display='none';
-      document.getElementById('no-edition').style.display='block';
+        if (editions.length === 0) {
+          document.getElementById('edition-select').innerHTML =
+            '<option value="">Aucune édition disponible</option>';
+          return;
+        }
+
+        // Sort editions by date (newest first)
+        editions.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        let html = '<option value="">-- Sélectionnez une édition --</option>';
+        editions.forEach(ed => {
+          const dateObj = new Date(ed.date);
+          const dateStr = dateObj.toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+          html += `<option value="${ed.file}">${dateStr}</option>`;
+        });
+
+        document.getElementById('edition-select').innerHTML = html;
+      } catch (e) {
+        console.error('Erreur chargement éditions:', e);
+        document.getElementById('edition-select').innerHTML =
+          '<option value="">Erreur chargement</option>';
+      }
     }
-  }catch(e){
-    loading.style.display='none';
-    frame.style.display='block';
-    frame.style.height='800px';
-  }
-}
 
-function openFullscreen(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value) window.open(BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html','_blank');
-}
+    // ── LOAD SELECTED EDITION ──
+    async function loadEdition() {
+      const select = document.getElementById('edition-select');
+      const file = select.value;
 
-function downloadEdition(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value){
-    const a = document.createElement('a');
-    a.href = BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html';
-    a.download = 'AlphaBot_Weekly_'+sel.value+'.html';
-    a.click();
-  }
-}
+      if (!file) {
+        document.getElementById('newsletter-frame').style.display = 'none';
+        document.getElementById('loading-state').style.display = 'block';
+        document.getElementById('error-state').style.display = 'none';
+        return;
+      }
 
-function formatDate(d){
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-}
+      document.getElementById('loading-state').style.display = 'none';
+      document.getElementById('error-state').style.display = 'none';
+      document.getElementById('newsletter-frame').style.display = 'block';
 
-function formatLabel(d){
-  return d.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-}
+      try {
+        const iframe = document.getElementById('newsletter-frame');
+        iframe.src = file + '?t=' + Date.now();
+      } catch (e) {
+        console.error('Erreur affichage newsletter:', e);
+        document.getElementById('error-state').style.display = 'block';
+        document.getElementById('newsletter-frame').style.display = 'none';
+      }
+    }
 
-// ── Mobile menu toggle ──
-function toggleMenu(){
-  const navCenter = document.querySelector('.nav-center');
-  navCenter.classList.toggle('mobile-open');
-}
+    // ── SUBSCRIBE HANDLER ──
+    async function handleSubscribe() {
+      const emailInput = document.getElementById('email-input');
+      const statusMsg = document.getElementById('sub-status');
+      const email = emailInput.value.trim();
 
-// ── Enter key on gate ──
-document.addEventListener('DOMContentLoaded',()=>{
-  const inp = document.getElementById('gate-email');
-  if(inp) inp.addEventListener('keydown',e=>{if(e.key==='Enter')verifyAccess();});
-});
-</script>
-<script src="assets/gate_subscriber.js"></script>
+      if (!email) {
+        statusMsg.textContent = 'Veuillez entrer votre email';
+        statusMsg.className = 'status-msg error';
+        return;
+      }
+
+      try {
+        // Submit to Formspree
+        const res = await fetch('https://formspree.io/f/xzzbqwaa', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+
+        if (res.ok) {
+          statusMsg.textContent = '✓ Inscription réussie! Vérifiez votre email.';
+          statusMsg.className = 'status-msg success';
+          emailInput.value = '';
+          setTimeout(() => {
+            statusMsg.textContent = '';
+            statusMsg.className = 'status-msg';
+          }, 5000);
+        } else {
+          throw new Error('Erreur inscription');
+        }
+      } catch (e) {
+        statusMsg.textContent = 'Erreur lors de l\'inscription. Veuillez réessayer.';
+        statusMsg.className = 'status-msg error';
+      }
+    }
+
+    // ── INIT ──
+    document.addEventListener('DOMContentLoaded', () => {
+      loadEditions();
+    });
+  </script>
+
 </body>
 </html>

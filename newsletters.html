@@ -1,165 +1,207 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AlphaBot Weekly — Toutes les newsletters</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:#04091a;color:#e2e8f0;font-family:'Inter',sans-serif;min-height:100vh;padding:32px 16px 60px;}
-.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(59,130,246,.025)1px,transparent 1px),
-  linear-gradient(90deg,rgba(59,130,246,.025)1px,transparent 1px);
-  background-size:60px 60px;}
-.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;}
-header{text-align:center;margin-bottom:40px;padding:36px 24px;
-  background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(245,200,66,.06));
-  border:1px solid rgba(59,130,246,.2);border-radius:20px;}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:900;
-  background:linear-gradient(135deg,#fff,#63b3ed,#f5c842);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  margin-bottom:8px;}
-.sub{color:#64748b;font-size:14px;margin-bottom:16px;}
-.badge{display:inline-block;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
-  color:#22c55e;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
-.card{display:block;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:20px;text-decoration:none;
-  transition:transform .2s,border-color .2s;}
-.card:hover{transform:translateY(-3px);border-color:rgba(99,179,237,.35);}
-.card-date{font-size:11px;color:#64748b;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-.card-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:6px;}
-.card-meta{font-size:12px;color:#475569;margin-bottom:12px;}
-.card-cta{font-size:13px;font-weight:600;color:#63b3ed;}
-.back{display:inline-block;color:#64748b;font-size:13px;text-decoration:none;margin-bottom:28px;}
-.back:hover{color:#93c5fd;}
-.update{text-align:center;color:#334155;font-size:11px;margin-top:32px;}
-</style>
-<style>
-/* ═══ NAV (injecté par Agent DA) ═══ */
-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-    padding:14px 40px;background:rgba(4,9,26,.85);backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;
-           text-decoration:none;display:flex;align-items:center;gap:6px;}
-.nav-brand-sub{font-weight:400;font-size:14px;color:#64748b;}
-.nav-center{display:flex;align-items:center;gap:24px;}
-.nav-center a{color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-.nav-center a:hover,.nav-center a.active{color:white;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:white!important;
-         padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px;}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:white;margin:5px 0;transition:.3s;}
-@media(max-width:768px){
-  .nav-center{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;
-              background:rgba(4,9,26,.95);backdrop-filter:blur(20px);padding:20px;gap:16px;
-              border-bottom:1px solid rgba(255,255,255,.08);}
-  .nav-center.mobile-open{display:flex;}
-  .nav-hamburger{display:block;}
-}
-</style>
-<style>
-/* ═══ FOOTER (injecté par Agent DA) ═══ */
-footer{margin-top:60px;padding:40px;border-top:1px solid rgba(255,255,255,.06);
-       text-align:center;}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;
-              max-width:900px;margin:0 auto 20px;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
-.footer-links a{color:#64748b;text-decoration:none;font-size:13px;transition:color .2s;}
-.footer-links a:hover{color:#e2e8f0;}
-.footer-copy{font-size:12px;color:#334155;line-height:1.8;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archives — Toutes les newsletters | AlphaBot Weekly</title>
+  <meta name="description" content="Retrouvez toutes les éditions d'AlphaBot Weekly, la newsletter IA bourse et crypto.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0e0e0e",
+            "surface-low": "#131313",
+            "surface-container": "#1a1919",
+            "surface-high": "#201f1f",
+            "surface-highest": "#262626",
+            "primary": "#ff906d",
+            "primary-container": "#ff784d",
+            "secondary": "#ff725e",
+            "on-surface": "#ffffff",
+            "on-surface-variant": "#adaaaa",
+            "outline-variant": "#484847",
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { background: #0e0e0e; }
+    .neural-mesh {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+    .glass-card {
+      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
+    }
+    .btn-primary {
+      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg;
+    }
+    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #nav-menu.mobile-open { max-height: 300px; }
+    .edition-card {
+      @apply relative overflow-hidden rounded-xl bg-surface-highest/60 border border-white/5 p-6 transition hover:border-primary/30;
+    }
+    .edition-card:hover {
+      box-shadow: 0 0 20px rgba(255, 144, 109, 0.08);
+    }
+    .edition-card::before {
+      content: '';
+      @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition;
+    }
+    .edition-card:hover::before {
+      opacity: 1;
+    }
+  </style>
 </head>
-<body>
-<nav>
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center" id="nav-menu">
-    <a href="index.html">Accueil</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
-  </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<body class="bg-surface text-on-surface font-body dark min-h-screen flex flex-col">
 
-<div class="bg"></div>
-<div class="wrap">
-  <a href="index.html" class="back">← Retour à l'accueil</a>
-  <header>
-    <div class="logo">🤖 AlphaBot Weekly</div>
-    <div class="sub">L'essentiel des marchés bourse &amp; crypto — par l'IA</div>
-    <div class="badge">📚 7 édition(s) disponible(s)</div>
-  </header>
-  <div class="grid">
-    
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-26.html" target="_blank" class="card">
-          <div class="card-date">Jeudi 26 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">64.2 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-25.html" target="_blank" class="card">
-          <div class="card-date">Mercredi 25 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">63.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-24.html" target="_blank" class="card">
-          <div class="card-date">Mardi 24 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">64.1 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-23.html" target="_blank" class="card">
-          <div class="card-date">Lundi 23 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">65.7 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-22.html" target="_blank" class="card">
-          <div class="card-date">Dimanche 22 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">59.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-21.html" target="_blank" class="card">
-          <div class="card-date">Samedi 21 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">48.4 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-20.html" target="_blank" class="card">
-          <div class="card-date">Vendredi 20 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">49.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-  </div>
-  <div class="update">Mis à jour automatiquement · 26/03/2026 à 22:05</div>
-</div>
-<script>
-function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
-</script>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">🤖 AlphaBot Weekly</div>
-    <div class="footer-links">
-      <a href="newsletter.html">Newsletter</a>
-      <a href="investissement.html">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-      <a href="dashboard-agents.html">Agents IA</a>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="text-sm text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
+      </div>
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
-  </div>
-  <div class="footer-copy">
-    © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-    ⚠️ Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
-  </div>
-</footer>
+    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex-1 pt-24 pb-16 neural-mesh">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <a href="index.html" class="inline-block text-sm text-on-surface-variant hover:text-primary transition mb-6">&larr; Retour à l'accueil</a>
+        <h1 class="font-headline text-3xl sm:text-4xl font-bold mb-3">Archives des newsletters</h1>
+        <p class="text-on-surface-variant max-w-lg mx-auto">Retrouvez toutes les éditions d'AlphaBot Weekly, générées quotidiennement par l'IA.</p>
+        <div class="mt-4">
+          <span id="edition-count" class="inline-block text-xs font-label font-semibold text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1 rounded-full">Chargement...</span>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div id="editions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Filled dynamically -->
+      </div>
+
+      <p id="no-editions" class="hidden text-center text-on-surface-variant mt-12">Aucune édition disponible pour le moment.</p>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 bg-surface-low py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-headline font-bold text-primary mb-4">AlphaBot Weekly</h4>
+          <p class="text-sm text-on-surface-variant">Newsletter IA pour investisseurs francophones.</p>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="newsletter.html" class="text-on-surface-variant hover:text-primary transition">Newsletter</a></li>
+            <li><a href="investissement.html" class="text-on-surface-variant hover:text-primary transition">Investissement</a></li>
+            <li><a href="arena.html" class="text-on-surface-variant hover:text-primary transition">Arena</a></li>
+            <li><a href="dashboard-agents.html" class="text-on-surface-variant hover:text-primary transition">Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Informations</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:antoine.metout@gmail.com" class="text-on-surface-variant hover:text-primary transition">Contact</a></li>
+            <li><p class="text-on-surface-variant">© 2026 AlphaBot Weekly</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-xs text-outline-variant text-center">
+          Les portefeuilles AlphaBot sont fictifs à titre éducatif. Ce ne sont pas des recommandations d'investissement.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('nav-menu').classList.toggle('mobile-open'); }
+
+    const DAYS_FR = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+    const MONTHS_FR = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+    function formatDateFR(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return `${DAYS_FR[d.getDay()]} ${d.getDate()} ${MONTHS_FR[d.getMonth()]} ${d.getFullYear()}`;
+    }
+
+    async function loadEditions() {
+      const grid = document.getElementById('editions-grid');
+      const countEl = document.getElementById('edition-count');
+      const noEl = document.getElementById('no-editions');
+
+      try {
+        const resp = await fetch('data/newsletters.json');
+        const data = await resp.json();
+        const editions = data.editions || [];
+
+        if (editions.length === 0) {
+          noEl.classList.remove('hidden');
+          countEl.textContent = '0 édition';
+          return;
+        }
+
+        countEl.textContent = `${editions.length} édition${editions.length > 1 ? 's' : ''} disponible${editions.length > 1 ? 's' : ''}`;
+
+        grid.innerHTML = editions.map((ed, i) => `
+          <a href="outputs/${ed.file}" target="_blank" class="edition-card block group relative z-10">
+            <div class="flex items-center gap-2 mb-3">
+              ${i === 0 ? '<span class="text-xs font-label font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded">Dernière</span>' : ''}
+              <span class="text-xs font-label text-outline-variant uppercase tracking-wider">${formatDateFR(ed.date)}</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg mb-2">AlphaBot Weekly</h3>
+            <p class="text-sm text-on-surface-variant mb-4">Édition du ${ed.date}</p>
+            <span class="text-sm font-semibold text-primary group-hover:underline">Lire l'édition &rarr;</span>
+          </a>
+        `).join('');
+
+      } catch (err) {
+        console.error('Erreur chargement newsletters.json:', err);
+        noEl.classList.remove('hidden');
+        countEl.textContent = 'Erreur de chargement';
+      }
+    }
+
+    loadEditions();
+  </script>
 </body>
 </html>

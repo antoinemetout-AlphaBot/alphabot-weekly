@@ -1,2171 +1,891 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>AlphaBot Weekly — Newsletter IA Bourse & Crypto + 3 Robots Traders</title>
-<meta name="description" content="Newsletter IA quotidienne sur la bourse, la crypto et la géopolitique. 3 robots traders IA gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
-<meta property="og:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
-<meta property="og:description" content="L'IA surveille les marchés et vous livre l'essentiel en 5 minutes. 3 robots traders gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@AlphaBot_Weekly">
-<meta name="twitter:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
-<meta name="twitter:description" content="L'IA surveille les marchés 24/7 et vous livre l'essentiel en 5 minutes. 3 robots traders investissent sous vos yeux.">
-<meta name="twitter:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#04091a;--bg2:#060d1f;--cyan:#22d3ee;--gold:#f5c842;
-  --blue:#3b82f6;--green:#22c55e;--red:#ef4444;
-  --text:#e2e8f0;--muted:#64748b;--border:rgba(255,255,255,.08);
-  --transition:cubic-bezier(.4,0,.2,1);
-}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.65;}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),var(--gold));border-radius:10px;}
-
-/* BG */
-.bg-wrap{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);}
-.orb1{width:800px;height:800px;background:radial-gradient(circle,rgba(34,211,238,.1),transparent 65%);top:-300px;left:-200px;animation:orbf 10s ease-in-out infinite alternate;}
-.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(245,200,66,.07),transparent 65%);bottom:-200px;right:-100px;animation:orbf 12s ease-in-out infinite alternate-reverse;}
-.orb3{width:500px;height:500px;background:radial-gradient(circle,rgba(59,130,246,.06),transparent 65%);top:50%;left:60%;animation:orbf 8s ease-in-out infinite alternate;}
-@keyframes orbf{from{transform:translate(0,0)scale(1);}to{transform:translate(30px,25px)scale(1.06);}}
-.scan{position:fixed;top:0;left:0;right:0;height:2px;z-index:999;pointer-events:none;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);animation:scanline 8s ease-in-out infinite;opacity:.3;}
-@keyframes scanline{0%{top:0;opacity:0;}5%{opacity:.35;}95%{opacity:.35;}100%{top:100%;opacity:0;}}
-
-/* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-.nav-center{display:flex;gap:28px;align-items:center;}
-.nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-.nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-.nav-center a:hover{color:#fff;}
-.nav-center a:hover::after{width:100%;}
-.nav-center a.active{color:#22d3ee;}
-.nav-center a.active::after{width:100%;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-.nav-cta::after{display:none!important;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-.nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 60px;position:relative;z-index:1;text-align:center;}
-.hero-inner{max-width:920px;}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.22);border-radius:50px;padding:8px 20px;font-size:10px;font-weight:700;color:var(--green);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;animation:fadeDown .8s var(--transition);}
-.hero-tag .live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5.5vw,62px);font-weight:800;line-height:1.06;letter-spacing:-1.5px;margin-bottom:24px;animation:fadeDown .9s .1s var(--transition) both;}
-.h1-white{color:white;}
-.h1-gradient{background:linear-gradient(135deg,var(--gold) 0%,#fbbf24 40%,var(--cyan) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 30px rgba(245,200,66,.2));}
-.hero-sub{font-size:clamp(15px,1.8vw,18px);color:#94a3b8;line-height:1.75;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;animation:fadeDown .9s .2s var(--transition) both;}
-.hero-sub strong{color:white;}
-
-/* HERO STATS */
-.hero-stats{display:flex;justify-content:center;gap:32px;margin-bottom:36px;animation:fadeUp .8s .3s var(--transition) both;}
-.hero-stat{text-align:center;}
-.hero-stat-val{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:white;}
-.hero-stat-val.cyan{color:var(--cyan);}
-.hero-stat-val.gold{color:var(--gold);}
-.hero-stat-val.green{color:var(--green);}
-.hero-stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
-
-/* FORM */
-.form-wrap{animation:fadeUp .8s .4s var(--transition) both;}
-.form-group{display:flex;gap:8px;max-width:480px;margin:0 auto 16px;}
-.form-group input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:15px 18px;color:white;font-size:14px;outline:none;transition:.3s;font-family:inherit;}
-.form-group input:focus{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.05);box-shadow:0 0 0 3px rgba(34,211,238,.12);}
-.form-group input::placeholder{color:var(--muted);}
-.btn-sub{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;border:none;border-radius:14px;padding:15px 30px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;white-space:nowrap;font-family:inherit;box-shadow:0 4px 24px rgba(34,211,238,.25);}
-.btn-sub:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(34,211,238,.4);}
-#sub-status{display:none;font-size:13px;text-align:center;margin-top:8px;color:var(--cyan);}
-#sub-status.error{color:var(--red);}
-#sub-status.success{color:var(--green);}
-.hero-trust{display:flex;align-items:center;justify-content:center;gap:8px;animation:fadeUp .8s .5s var(--transition) both;}
-.trust-item{font-size:12px;font-weight:600;color:var(--green);}
-.trust-sep{color:var(--muted);font-size:10px;}
-
-/* TICKER BAR */
-.ticker-bar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:40px;animation:fadeUp .8s .55s var(--transition) both;}
-.tick{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.035);border:1px solid var(--border);border-radius:14px;padding:12px 16px;transition:all .3s;cursor:default;}
-.tick:hover{background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.2);transform:translateY(-3px);}
-.tick-name{font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.tick-val{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:white;}
-.tick-ch{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;}
-.tick-ch.up{color:var(--green);}.tick-ch.down{color:var(--red);}
-
-/* SECTIONS */
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;position:relative;z-index:1;}
-.section{padding:80px 5%;position:relative;z-index:1;}
-.section-center{text-align:center;max-width:700px;margin:0 auto 50px;}
-.section-tag{display:inline-block;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);color:var(--cyan);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:16px;}
-.section-tag.gold{background:rgba(245,200,66,.08);border-color:rgba(245,200,66,.2);color:var(--gold);}
-.section-tag.red{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2);color:var(--red);}
-.section-tag.green{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--green);}
-h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:800;line-height:1.12;margin-bottom:16px;color:white;letter-spacing:-.5px;}
-.section-sub{font-size:16px;color:var(--muted);line-height:1.7;}
-
-/* CHALLENGE SECTION */
-.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
-.challenge-card{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:20px;padding:32px 28px;text-align:center;transition:all .4s var(--transition);position:relative;overflow:hidden;}
-.challenge-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
-.challenge-card.prudent::before{background:linear-gradient(90deg,var(--blue),var(--cyan));}
-.challenge-card.modere::before{background:linear-gradient(90deg,var(--gold),#f59e0b);}
-.challenge-card.agressif::before{background:linear-gradient(90deg,var(--red),#f97316);}
-.challenge-card:hover{border-color:rgba(34,211,238,.2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
-.challenge-emoji{font-size:44px;margin-bottom:12px;}
-.challenge-name{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;margin-bottom:4px;}
-.challenge-style{font-size:12px;color:var(--muted);margin-bottom:20px;}
-.challenge-capital{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;margin-bottom:4px;}
-.challenge-capital.blue{color:var(--cyan);}
-.challenge-capital.gold{color:var(--gold);}
-.challenge-capital.red{color:#f97316;}
-.challenge-objectif{font-size:12px;color:var(--muted);margin-bottom:20px;}
-.challenge-perf{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;padding:8px 16px;border-radius:10px;display:inline-block;margin-bottom:16px;}
-.challenge-perf.up{color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);}
-.challenge-perf.down{color:var(--red);background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);}
-.challenge-perf.flat{color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--border);}
-.challenge-trades{font-size:12px;color:var(--muted);}
-.challenge-cta{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--cyan);text-decoration:none;padding:8px 16px;border:1px solid rgba(34,211,238,.2);border-radius:8px;transition:all .2s;}
-.challenge-cta:hover{background:rgba(34,211,238,.08);transform:translateX(4px);}
-
-/* PRODUCTS GRID */
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
-.product{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:20px;padding:36px 28px;transition:all .4s var(--transition);position:relative;overflow:hidden;}
-.product::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:20px 20px 0 0;}
-.product:nth-child(1)::before{background:linear-gradient(90deg,var(--cyan),var(--blue));}
-.product:nth-child(2)::before{background:linear-gradient(90deg,var(--gold),#f59e0b);}
-.product:nth-child(3)::before{background:linear-gradient(90deg,var(--red),#f97316);}
-.product:hover{border-color:rgba(34,211,238,.2);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
-.product-icon{font-size:36px;margin-bottom:14px;}
-.product-badge{display:inline-block;font-size:10px;font-weight:700;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
-.product-badge.cyan{background:rgba(34,211,238,.1);color:var(--cyan);}
-.product-badge.gold{background:rgba(245,200,66,.1);color:var(--gold);}
-.product-badge.red{background:rgba(239,68,68,.1);color:var(--red);}
-.product h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:white;margin-bottom:10px;line-height:1.3;}
-.product p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px;}
-.product-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
-.product-features li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text);line-height:1.5;}
-.product-features li::before{content:'→';flex-shrink:0;color:var(--cyan);font-weight:700;}
-.product-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-decoration:none;color:var(--cyan);padding:10px 16px;border-radius:8px;background:rgba(34,211,238,.08);transition:all .2s;}
-.product-cta:hover{transform:translateX(4px);background:rgba(34,211,238,.12);}
-.product-cta.gold{color:var(--gold);background:rgba(245,200,66,.08);}
-.product-cta.gold:hover{background:rgba(245,200,66,.12);}
-.product-cta.red{color:#f97316;background:rgba(239,68,68,.08);}
-.product-cta.red:hover{background:rgba(239,68,68,.12);}
-
-/* KPIs */
-.kpis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto;}
-.kpi{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:28px 20px;text-align:center;transition:all .3s;}
-.kpi:hover{border-color:var(--cyan);background:rgba(34,211,238,.04);transform:translateY(-2px);}
-.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;margin-bottom:6px;}
-.kpi-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;}
-
-/* STEPS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
-.step{text-align:center;padding:32px 24px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:18px;transition:all .3s;position:relative;}
-.step:hover{border-color:var(--cyan);transform:translateY(-4px);background:rgba(34,211,238,.04);}
-.step-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:800;color:rgba(34,211,238,.12);position:absolute;top:12px;right:16px;line-height:1;}
-.step-icon{font-size:32px;margin-bottom:14px;display:block;}
-.step h3{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:8px;}
-.step p{font-size:13px;color:var(--muted);line-height:1.65;}
-
-/* FOUNDER */
-.founder{display:flex;align-items:center;gap:24px;max-width:700px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;padding:32px;transition:all .3s;}
-.founder:hover{border-color:rgba(245,200,66,.2);}
-.founder-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--bg);font-family:'Space Grotesk',sans-serif;flex-shrink:0;}
-.founder-info h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
-.founder-info .founder-role{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:8px;}
-.founder-info p{font-size:14px;color:var(--muted);line-height:1.65;}
-
-/* CTA BOX */
-.cta-section{padding:80px 5%;position:relative;z-index:1;}
-.cta-box{background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(245,200,66,.06));border:1px solid rgba(34,211,238,.15);border-radius:22px;padding:60px 40px;text-align:center;max-width:700px;margin:0 auto;}
-.cta-box h2{margin-bottom:12px;}
-.cta-box p{color:var(--muted);margin-bottom:28px;font-size:16px;line-height:1.7;}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative;z-index:1;}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;}
-.footer-links{display:flex;gap:20px;}
-.footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:white;}
-.footer-copy{color:var(--muted);font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid var(--border);}
-
-/* ANIMATIONS */
-@keyframes fadeDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{padding:12px 4%;}
-  .nav-center{display:none;gap:0;width:100%;}
-  .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-  .nav-hamburger{display:flex;}
-  .hero{padding:100px 16px 50px;}
-  .hero-stats{gap:20px;}
-  .hero-stat-val{font-size:22px;}
-  .form-group{flex-direction:column;}
-  .ticker-bar{gap:6px;}
-  .challenge-grid,.products,.steps{grid-template-columns:1fr;}
-  .kpis-grid{grid-template-columns:1fr 1fr;}
-  .section{padding:60px 4%;}
-  .founder{flex-direction:column;text-align:center;}
-  .footer-inner{flex-direction:column;text-align:center;}
-}
-@media(max-width:480px){
-  h1{font-size:clamp(28px,7vw,42px);}
-  h2{font-size:clamp(22px,5vw,32px);}
-  .kpis-grid{grid-template-columns:1fr;}
-  .cta-box{padding:40px 20px;}
-}
-
-/* FOCUS STATES */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.skip-link:focus { top: 0; }
-
-/* ═══════════════════════════════════════════════════ */
-/*  📡 ACTIVITÉ EN DIRECT                             */
-/* ═══════════════════════════════════════════════════ */
-.activity-summary {
-  display:flex; justify-content:center; gap:32px;
-  max-width:700px; margin:0 auto 32px;
-  background:rgba(255,255,255,.03); border:1px solid var(--border);
-  border-radius:18px; padding:24px 32px;
-}
-.activity-stat { text-align:center; }
-.activity-stat-val {
-  font:800 28px/1 'Space Grotesk',sans-serif; color:#fff;
-  display:block; margin-bottom:6px;
-}
-.activity-stat-lbl { font:500 11px/1 'Inter',sans-serif; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
-
-.activity-feed {
-  max-width:700px; margin:0 auto;
-  background:rgba(255,255,255,.025); border:1px solid var(--border);
-  border-radius:18px; overflow:hidden;
-}
-.activity-feed-header {
-  display:flex; align-items:center; gap:10px;
-  padding:16px 20px; font:700 12px/1 'JetBrains Mono',monospace;
-  color:var(--cyan); letter-spacing:1px; text-transform:uppercase;
-  background:rgba(255,255,255,.03); border-bottom:1px solid var(--border);
-}
-.activity-event {
-  display:flex; align-items:flex-start; gap:12px;
-  padding:14px 20px; border-bottom:1px solid var(--border);
-  font:400 13px/1.5 'Inter',sans-serif; color:var(--text);
-  transition:background .2s;
-}
-.activity-event:last-child { border-bottom:none; }
-.activity-event:hover { background:rgba(34,211,238,.03); }
-.activity-event-icon { font-size:16px; flex-shrink:0; margin-top:2px; }
-.activity-event-body { flex:1; }
-.activity-event-agent { font:600 12px/1 'JetBrains Mono',monospace; color:var(--cyan); margin-bottom:4px; }
-.activity-event-msg { color:var(--text); }
-.activity-event-time { font:500 11px/1 'JetBrains Mono',monospace; color:var(--muted); flex-shrink:0; margin-top:2px; }
-.activity-feed-cta {
-  display:block; text-align:center; padding:14px 20px;
-  font:600 13px/1 'Inter',sans-serif; color:var(--cyan);
-  text-decoration:none; background:rgba(34,211,238,.04);
-  transition:background .2s;
-}
-.activity-feed-cta:hover { background:rgba(34,211,238,.08); }
-
-@media(max-width:768px){
-  .activity-summary { flex-wrap:wrap; gap:20px; padding:20px; }
-  .activity-stat { min-width:120px; }
-}
-</style>
-
-<!-- Analytics -->
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-
-<!-- VISUAL-UPGRADE-2026-03-24 -->
-<style>
-/* ═══════════════════════════════════════════
-   ALPHABOT WEEKLY — MAJOR VISUAL UPGRADE
-   Dramatic visual improvements — v3
-═══════════════════════════════════════════ */
-
-/* GLOBAL */
-body { -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-
-/* VISIBLE ANIMATED DOT GRID */
-.bg-wrap::after {
-  content:'';
-  position:fixed; inset:0; z-index:0; pointer-events:none;
-  background-image: radial-gradient(circle, rgba(34,211,238,.07) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridPulse 4s ease-in-out infinite alternate;
-}
-@keyframes gridPulse { from{opacity:.4;} to{opacity:.8;} }
-
-/* BIGGER ORBS — MORE VISIBLE */
-.orb1 { width:1000px!important; height:1000px!important; background:radial-gradient(circle,rgba(34,211,238,.14),transparent 60%)!important; }
-.orb2 { width:800px!important; height:800px!important; background:radial-gradient(circle,rgba(245,200,66,.11),transparent 60%)!important; }
-.orb3 { width:700px!important; height:700px!important; background:radial-gradient(circle,rgba(59,130,246,.1),transparent 60%)!important; }
-
-/* SCAN LINE — MORE VISIBLE */
-.scan { height:3px!important; opacity:.5!important; background:linear-gradient(90deg,transparent 5%,var(--cyan) 30%,var(--gold) 50%,var(--cyan) 70%,transparent 95%)!important; }
-
-/* NAV — GLASSMORPHISM */
-nav {
-  background: rgba(4,9,26,.72)!important;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(34,211,238,.18)!important;
-  box-shadow: 0 2px 0 rgba(34,211,238,.06), 0 8px 48px rgba(0,0,0,.65)!important;
-}
-.nav-brand { filter: drop-shadow(0 0 18px rgba(34,211,238,.3)); }
-.nav-brand:hover { filter: drop-shadow(0 0 30px rgba(34,211,238,.6)); }
-
-/* HERO GRADIENT TEXT — BIGGER GLOW */
-.h1-gradient {
-  filter: drop-shadow(0 0 40px rgba(245,200,66,.3)) drop-shadow(0 0 80px rgba(34,211,238,.15))!important;
-}
-
-/* HERO STATS — GLOW */
-.hero-stat-val {
-  font-size:34px!important; text-shadow: 0 0 40px currentColor;
-  transition: transform .3s, text-shadow .3s;
-}
-.hero-stat-val:hover { transform:scale(1.08); text-shadow: 0 0 60px currentColor, 0 0 100px currentColor; }
-.hero-stat { position:relative; }
-.hero-stat::after {
-  content:''; position:absolute; bottom:-8px; left:50%; transform:translateX(-50%);
-  width:40px; height:2px; border-radius:2px;
-  background:linear-gradient(90deg,transparent,currentColor,transparent); opacity:.3;
-}
-
-/* FORM — GLOW EFFECT */
-.form-group input {
-  background: rgba(255,255,255,.04)!important;
-  border: 1px solid rgba(255,255,255,.12)!important;
-  border-radius:16px!important; padding:16px 20px!important;
-  backdrop-filter:blur(8px);
-  transition:all .35s ease!important;
-}
-.form-group input:focus {
-  border-color:rgba(34,211,238,.6)!important;
-  background:rgba(34,211,238,.06)!important;
-  box-shadow:0 0 0 4px rgba(34,211,238,.12), 0 0 40px rgba(34,211,238,.15)!important;
-}
-.btn-sub {
-  position:relative; overflow:hidden;
-  box-shadow:0 4px 24px rgba(34,211,238,.3), 0 0 60px rgba(34,211,238,.08)!important;
-}
-.btn-sub:hover {
-  transform:translateY(-4px) scale(1.03)!important;
-  box-shadow:0 16px 48px rgba(34,211,238,.45), 0 0 80px rgba(34,211,238,.15)!important;
-}
-
-/* ═══ ANIMATED GRADIENT BORDERS ON ALL CARDS ═══ */
-@keyframes borderGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-
-/* CHALLENGE CARDS — ANIMATED GRADIENT BORDER */
-.challenge-card {
-  background: rgba(255,255,255,.03)!important;
-  border: none!important;
-  position:relative!important;
-  overflow:visible!important;
-  z-index:1;
-}
-.challenge-card::after {
-  content:''; position:absolute; inset:-1px; border-radius:21px; z-index:-1;
-  background: linear-gradient(135deg, rgba(34,211,238,.3), rgba(59,130,246,.15), rgba(245,200,66,.15), rgba(34,211,238,.3));
-  background-size:300% 300%;
-  animation: borderGlow 6s ease infinite;
-  opacity:.4; transition:opacity .4s;
-}
-.challenge-card:hover::after { opacity:1; }
-.challenge-card:hover {
-  transform:translateY(-10px)!important;
-  box-shadow:0 30px 80px rgba(0,0,0,.4), 0 0 40px rgba(34,211,238,.08)!important;
-}
-.challenge-card.prudent:hover::after { background:linear-gradient(135deg,rgba(34,211,238,.6),rgba(59,130,246,.4),rgba(34,211,238,.2),rgba(59,130,246,.6)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-.challenge-card.modere:hover::after { background:linear-gradient(135deg,rgba(245,200,66,.6),rgba(249,115,22,.4),rgba(245,200,66,.2),rgba(249,115,22,.6)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-.challenge-card.agressif:hover::after { background:linear-gradient(135deg,rgba(239,68,68,.6),rgba(249,115,22,.4),rgba(239,68,68,.2),rgba(249,115,22,.6)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-
-/* ROBOT EMOJI — FLOATING ANIMATION */
-.challenge-emoji {
-  font-size:52px!important;
-  animation: float 3s ease-in-out infinite;
-  display:inline-block;
-}
-.challenge-card:nth-child(1) .challenge-emoji { animation-delay:0s; }
-.challenge-card:nth-child(2) .challenge-emoji { animation-delay:.5s; }
-.challenge-card:nth-child(3) .challenge-emoji { animation-delay:1s; }
-@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
-
-/* PRODUCT CARDS — SAME GLOW TREATMENT */
-.product {
-  border:none!important; position:relative!important; z-index:1; overflow:visible!important;
-  background:rgba(255,255,255,.03)!important;
-}
-.product::after {
-  content:''; position:absolute; inset:-1px; border-radius:21px; z-index:-1;
-  background:linear-gradient(135deg,rgba(34,211,238,.25),rgba(59,130,246,.1),rgba(245,200,66,.1),rgba(34,211,238,.25));
-  background-size:300% 300%; animation:borderGlow 8s ease infinite;
-  opacity:.3; transition:opacity .4s;
-}
-.product:hover::after { opacity:1; }
-.product:hover {
-  transform:translateY(-10px)!important;
-  box-shadow:0 30px 80px rgba(0,0,0,.4), 0 0 40px rgba(34,211,238,.1)!important;
-}
-.product:nth-child(1):hover::after { background:linear-gradient(135deg,rgba(34,211,238,.5),rgba(59,130,246,.3),rgba(34,211,238,.5)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-.product:nth-child(2):hover::after { background:linear-gradient(135deg,rgba(245,200,66,.5),rgba(249,115,22,.3),rgba(245,200,66,.5)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-.product:nth-child(3):hover::after { background:linear-gradient(135deg,rgba(239,68,68,.5),rgba(249,115,22,.3),rgba(239,68,68,.5)); background-size:300% 300%; animation:borderGlow 4s ease infinite; }
-
-/* TOP ACCENT LINE ON CARDS — MORE VISIBLE */
-.challenge-card::before, .product::before {
-  height:4px!important; z-index:2;
-  box-shadow: 0 0 20px currentColor;
-}
-.challenge-card.prudent::before { box-shadow:0 2px 20px rgba(34,211,238,.4); }
-.challenge-card.modere::before { box-shadow:0 2px 20px rgba(245,200,66,.4); }
-.challenge-card.agressif::before { box-shadow:0 2px 20px rgba(239,68,68,.4); }
-
-/* KPI CARDS — GLOW BORDER + ANIMATED VALUE */
-.kpi {
-  border:1px solid rgba(34,211,238,.12)!important;
-  background:rgba(34,211,238,.03)!important;
-  position:relative; overflow:hidden;
-  transition:all .4s ease!important;
-}
-.kpi::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:2px;
-  background:linear-gradient(90deg,var(--cyan),var(--gold));
-  opacity:.5; transition:opacity .3s;
-}
-.kpi:hover::before { opacity:1; }
-.kpi:hover {
-  border-color:rgba(34,211,238,.35)!important;
-  transform:translateY(-6px) scale(1.02)!important;
-  box-shadow:0 20px 60px rgba(0,0,0,.3), 0 0 30px rgba(34,211,238,.08)!important;
-}
-.kpi-val {
-  font-size:38px!important;
-  text-shadow:0 0 30px currentColor;
-}
-
-/* STEP CARDS — ENHANCED */
-.step {
-  border:1px solid rgba(34,211,238,.1)!important;
-  transition:all .4s ease!important;
-}
-.step:hover {
-  border-color:rgba(34,211,238,.3)!important;
-  transform:translateY(-8px)!important;
-  box-shadow:0 20px 60px rgba(0,0,0,.3), 0 0 40px rgba(34,211,238,.06)!important;
-  background:rgba(34,211,238,.05)!important;
-}
-.step-num { font-size:56px!important; color:rgba(34,211,238,.18)!important; }
-.step-icon { font-size:40px!important; }
-
-/* SECTION DIVIDERS — GLOWING */
-.divider {
-  height:2px!important;
-  background:linear-gradient(90deg,transparent 5%,rgba(34,211,238,.2) 30%,rgba(245,200,66,.15) 50%,rgba(34,211,238,.2) 70%,transparent 95%)!important;
-  box-shadow:0 0 20px rgba(34,211,238,.1), 0 0 40px rgba(34,211,238,.05);
-}
-
-/* SECTION TAGS — MORE VISIBLE */
-.section-tag {
-  font-size:11px!important; padding:8px 22px!important;
-  box-shadow:0 0 20px rgba(34,211,238,.08);
-}
-
-/* TICKER — BETTER STYLING */
-.tick {
-  border-radius:16px!important; padding:14px 18px!important;
-  border:1px solid rgba(255,255,255,.08)!important;
-  backdrop-filter:blur(12px);
-  transition:all .35s ease!important;
-}
-.tick:hover {
-  background:rgba(34,211,238,.08)!important;
-  border-color:rgba(34,211,238,.3)!important;
-  transform:translateY(-5px) scale(1.03)!important;
-  box-shadow:0 12px 40px rgba(34,211,238,.12)!important;
-}
-
-/* CTA BOX — GLOW UPGRADE */
-.cta-box {
-  border:1px solid rgba(34,211,238,.25)!important;
-  box-shadow:0 0 60px rgba(34,211,238,.06), 0 0 120px rgba(245,200,66,.03);
-  position:relative;
-}
-.cta-box::before {
-  content:''; position:absolute; inset:-1px; border-radius:23px; z-index:-1;
-  background:linear-gradient(135deg,rgba(34,211,238,.3),rgba(245,200,66,.15),rgba(34,211,238,.3));
-  background-size:300% 300%; animation:borderGlow 6s ease infinite;
-  opacity:.5;
-}
-
-/* FOUNDER — AVATAR GLOW */
-.founder-avatar {
-  box-shadow:0 0 30px rgba(245,200,66,.3), 0 0 60px rgba(34,211,238,.15);
-}
-.founder:hover .founder-avatar {
-  box-shadow:0 0 40px rgba(245,200,66,.5), 0 0 80px rgba(34,211,238,.25);
-}
-
-/* SCROLL REVEAL — SMOOTHER */
-.reveal { transition:opacity .8s ease, transform .8s ease!important; }
-
-/* HERO TAG — GLOW */
-.hero-tag {
-  box-shadow:0 0 20px rgba(34,197,94,.1), inset 0 1px 0 rgba(255,255,255,.06);
-  backdrop-filter:blur(8px);
-}
-
-/* TRUST ITEMS — SLIGHT GLOW */
-.trust-item { text-shadow:0 0 20px rgba(34,197,94,.3); }
-
-/* ═══════════════════════════════════════════════════ */
-/*  🔄 3 PILIERS — Comprendre / Investir / Se comparer */
-/* ═══════════════════════════════════════════════════ */
-.pillars-grid {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 0;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.pillar {
-  flex: 1;
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 36px 28px;
-  position: relative;
-  overflow: hidden;
-  transition: all .4s var(--transition);
-  text-align: center;
-}
-.pillar::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  border-radius: 20px 20px 0 0;
-}
-.pillar-newsletter::before { background: linear-gradient(90deg, var(--cyan), var(--blue)); }
-.pillar-robots::before { background: linear-gradient(90deg, var(--gold), #f59e0b); }
-.pillar-arena::before { background: linear-gradient(90deg, var(--red), #f97316); }
-.pillar:hover {
-  transform: translateY(-8px);
-  border-color: rgba(34,211,238,.3);
-  box-shadow: 0 20px 60px rgba(0,0,0,.3), 0 0 40px rgba(34,211,238,.06);
-}
-.pillar-num {
-  position: absolute;
-  top: 14px; right: 18px;
-  font: 800 52px/1 'Space Grotesk', sans-serif;
-  color: rgba(34,211,238,.06);
-}
-.pillar-icon { font-size: 44px; margin-bottom: 14px; }
-.pillar-label {
-  font: 800 11px/1 'JetBrains Mono', monospace;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.pillar-newsletter .pillar-label { color: var(--cyan); }
-.pillar-robots .pillar-label { color: var(--gold); }
-.pillar-arena .pillar-label { color: var(--red); }
-.pillar h3 {
-  font: 700 18px/1.3 'Space Grotesk', sans-serif;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.pillar p {
-  font: 400 14px/1.65 'Inter', sans-serif;
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-.pillar-cta {
-  display: inline-block;
-  font: 600 13px/1 'Inter', sans-serif;
-  color: var(--cyan);
-  text-decoration: none;
-  padding: 10px 18px;
-  border: 1px solid rgba(34,211,238,.2);
-  border-radius: 10px;
-  transition: all .3s;
-}
-.pillar-cta:hover { background: rgba(34,211,238,.08); transform: translateX(4px); }
-.pillar-cta.gold { color: var(--gold); border-color: rgba(245,200,66,.2); }
-.pillar-cta.gold:hover { background: rgba(245,200,66,.08); }
-.pillar-cta.red { color: #f97316; border-color: rgba(239,68,68,.2); }
-.pillar-cta.red:hover { background: rgba(239,68,68,.08); }
-
-.pillar-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: 800 28px/1 'Space Grotesk', sans-serif;
-  color: rgba(34,211,238,.3);
-  min-width: 40px;
-  flex-shrink: 0;
-}
-
-/* Boucle visuelle */
-.loop-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 32px;
-  padding: 16px 28px;
-  background: rgba(34,211,238,.04);
-  border: 1px solid rgba(34,211,238,.12);
-  border-radius: 50px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.loop-step {
-  font: 600 13px/1 'Inter', sans-serif;
-  color: var(--text);
-  white-space: nowrap;
-}
-.loop-arrow {
-  font: 700 16px/1 'Space Grotesk', sans-serif;
-  color: var(--cyan);
-  opacity: .6;
-}
-.loop-return {
-  font-size: 22px;
-  color: var(--gold);
-  animation: loopSpin 3s ease-in-out infinite;
-}
-@keyframes loopSpin {
-  0%,100% { transform: rotate(0deg); }
-  50% { transform: rotate(360deg); }
-}
-
-/* ═══════════════════════════════════════════════════ */
-/*  🏆 LEADERBOARD ARÈNE                             */
-/* ═══════════════════════════════════════════════════ */
-.leaderboard {
-  max-width: 680px;
-  margin: 0 auto;
-  background: rgba(255,255,255,.025);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  overflow: hidden;
-}
-.lb-header {
-  display: grid;
-  grid-template-columns: 50px 1fr 120px 100px;
-  padding: 14px 20px;
-  font: 700 11px/1 'JetBrains Mono', monospace;
-  color: var(--muted);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background: rgba(255,255,255,.03);
-  border-bottom: 1px solid var(--border);
-}
-.lb-row {
-  display: grid;
-  grid-template-columns: 50px 1fr 120px 100px;
-  padding: 16px 20px;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-  transition: all .3s;
-}
-.lb-row:last-child { border-bottom: none; }
-.lb-row:hover { background: rgba(34,211,238,.04); }
-.lb-gold { background: rgba(245,200,66,.03); }
-.lb-rank { font: 700 18px/1 'Space Grotesk', sans-serif; text-align: center; }
-.lb-name { font: 600 15px/1 'Inter', sans-serif; color: #fff; }
-.lb-type { font: 500 11px/1 'JetBrains Mono', monospace; }
-.lb-type-bot { color: var(--cyan); }
-.lb-type-human { color: var(--gold); }
-.lb-perf {
-  font: 700 15px/1 'JetBrains Mono', monospace;
-  text-align: right;
-}
-.lb-perf.up { color: var(--green); }
-.lb-perf.down { color: var(--red); }
-.lb-you {
-  background: linear-gradient(135deg, rgba(245,200,66,.06), rgba(34,211,238,.04));
-  border: 1px dashed rgba(245,200,66,.3);
-}
-.lb-you .lb-rank { color: var(--gold); font-size: 22px; }
-.lb-you .lb-name { color: var(--gold); }
-.lb-you .lb-perf { color: var(--gold); cursor: pointer; }
-
-.btn-arena {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--gold), #f59e0b);
-  color: var(--bg);
-  font: 700 15px/1 'Inter', sans-serif;
-  padding: 14px 32px;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: all .3s;
-  box-shadow: 0 4px 24px rgba(245,200,66,.25);
-}
-.btn-arena:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(245,200,66,.4);
-}
-
-/* ═══════════════════════════════════════════════════ */
-/*  LIVE DASHBOARD — Score, Duel, Portfolio, Audio    */
-/* ═══════════════════════════════════════════════════ */
-
-/* Score AlphaBot box */
-.live-score-box {
-  background: linear-gradient(135deg, rgba(34,211,238,.08) 0%, rgba(59,130,246,.06) 100%);
-  border: 1px solid rgba(34,211,238,.25);
-  border-radius: 20px;
-  padding: 32px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 32px;
-  position: relative;
-  overflow: hidden;
-}
-.live-score-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(34,211,238,.06) 0%, transparent 60%);
-  pointer-events: none;
-}
-.live-score-inner {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex: 1;
-}
-.live-score-left { display: flex; align-items: center; gap: 20px; }
-.live-score-tag {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font: 600 11px/1 'JetBrains Mono', monospace;
-  color: var(--cyan);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.live-dot {
-  width: 8px; height: 8px;
-  background: var(--cyan);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--cyan);
-  animation: livePulse 2s infinite;
-}
-@keyframes livePulse {
-  0%,100% { opacity: 1; box-shadow: 0 0 10px var(--cyan); }
-  50% { opacity: .5; box-shadow: 0 0 20px var(--cyan); }
-}
-.live-score-number {
-  font: 800 56px/1 'Space Grotesk', sans-serif;
-  color: #fff;
-  text-shadow: 0 0 30px rgba(34,211,238,.4);
-}
-.live-score-sub {
-  font: 600 20px/1 'Inter', sans-serif;
-  color: var(--muted);
-  margin-top: 8px;
-}
-.live-score-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-  max-width: 280px;
-}
-.live-score-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font: 500 14px/1.4 'Inter', sans-serif;
-  padding: 4px 0;
-}
-.live-score-label { color: var(--muted); }
-.live-score-val { font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 15px; }
-.live-score-trend {
-  font: 600 14px/1 'JetBrains Mono', monospace;
-  margin-top: 4px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  text-align: center;
-}
-.live-score-trend.up { color: var(--green); background: rgba(34,197,94,.1); }
-.live-score-trend.down { color: var(--red); background: rgba(239,68,68,.1); }
-.live-score-trend.flat { color: var(--muted); background: rgba(100,116,139,.1); }
-
-/* 3-card grid */
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
-}
-.live-card {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px;
-  transition: all .4s var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-.live-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(34,211,238,.3);
-  box-shadow: 0 12px 40px rgba(34,211,238,.08);
-}
-.live-card-header {
-  font: 700 13px/1 'JetBrains Mono', monospace;
-  color: var(--cyan);
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-.live-card-cta {
-  display: inline-block;
-  margin-top: 16px;
-  font: 600 13px/1 'Inter', sans-serif;
-  color: var(--cyan);
-  text-decoration: none;
-  transition: opacity .3s;
-}
-.live-card-cta:hover { opacity: .7; }
-
-/* Duel Bull vs Bear card */
-.duel-actif {
-  font: 700 20px/1.2 'Space Grotesk', sans-serif;
-  color: #fff;
-  margin-bottom: 16px;
-}
-.duel-versus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-.duel-camp {
-  flex: 1;
-  text-align: center;
-  padding: 12px;
-  border-radius: 12px;
-}
-.duel-camp.bull { background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.2); }
-.duel-camp.bear { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2); }
-.duel-camp-label {
-  font: 700 11px/1 'JetBrains Mono', monospace;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-.duel-camp.bull .duel-camp-label { color: var(--green); }
-.duel-camp.bear .duel-camp-label { color: var(--red); }
-.duel-score {
-  font: 800 28px/1 'Space Grotesk', sans-serif;
-  color: #fff;
-}
-.duel-vs {
-  font: 800 16px/1 'Space Grotesk', sans-serif;
-  color: var(--muted);
-  flex-shrink: 0;
-}
-.duel-verdict {
-  font: 500 13px/1.6 'Inter', sans-serif;
-  color: var(--text);
-  padding: 10px 14px;
-  background: rgba(255,255,255,.03);
-  border-radius: 10px;
-  border-left: 3px solid var(--cyan);
-}
-
-/* Portfolio card */
-.live-card-portfolio { border-color: rgba(245,200,66,.15); }
-.live-card-portfolio:hover { border-color: rgba(245,200,66,.3); box-shadow: 0 12px 40px rgba(245,200,66,.08); }
-.portfolio-perf {
-  font: 800 36px/1 'Space Grotesk', sans-serif;
-  margin-bottom: 6px;
-}
-.portfolio-perf.up { color: var(--green); }
-.portfolio-perf.down { color: var(--red); }
-.portfolio-perf.flat { color: var(--muted); }
-.portfolio-label {
-  font: 500 13px/1 'Inter', sans-serif;
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-.portfolio-robots {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.portfolio-robot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font: 500 13px/1 'Inter', sans-serif;
-  color: var(--text);
-  padding: 6px 0;
-  border-bottom: 1px solid var(--border);
-}
-.portfolio-robot:last-child { border-bottom: none; }
-.portfolio-robot-perf { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
-.portfolio-robot-perf.up { color: var(--green); }
-.portfolio-robot-perf.down { color: var(--red); }
-
-/* Reality Check card */
-.live-card-reality { border-color: rgba(168,85,247,.15); }
-.live-card-reality:hover { border-color: rgba(168,85,247,.3); box-shadow: 0 12px 40px rgba(168,85,247,.08); }
-.live-card-reality .live-card-header { color: #a855f7; }
-.reality-quote {
-  font: 500 15px/1.6 'Inter', sans-serif;
-  color: var(--text);
-  font-style: italic;
-  padding: 14px 18px;
-  background: rgba(168,85,247,.06);
-  border-left: 3px solid #a855f7;
-  border-radius: 0 10px 10px 0;
-  margin-bottom: 12px;
-}
-.reality-score {
-  font: 700 13px/1 'JetBrains Mono', monospace;
-  color: #a855f7;
-  margin-bottom: 4px;
-}
-.reality-verdict {
-  font: 400 12px/1.4 'Inter', sans-serif;
-  color: var(--muted);
-}
-
-/* Audio bar */
-.audio-bar {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px 24px;
-}
-.audio-inner {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.audio-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, var(--cyan), var(--blue));
-  border: none;
-  border-radius: 10px;
-  padding: 12px 24px;
-  cursor: pointer;
-  transition: all .3s var(--transition);
-}
-.audio-btn:hover { transform: scale(1.03); box-shadow: 0 4px 20px rgba(34,211,238,.3); }
-.audio-icon { font-size: 20px; }
-.audio-text {
-  font: 600 14px/1 'Inter', sans-serif;
-  color: #04091a;
-}
-.audio-status {
-  font: 500 13px/1 'Inter', sans-serif;
-  color: var(--muted);
-}
-
-/* ── Responsive piliers + leaderboard + live dashboard ── */
-@media(max-width:900px) {
-  .pillars-grid { flex-direction: column; gap: 16px; }
-  .pillar-arrow { transform: rotate(90deg); min-width: auto; padding: 8px 0; }
-  .loop-bar { flex-wrap: wrap; gap: 8px; border-radius: 16px; }
-  .lb-header, .lb-row { grid-template-columns: 40px 1fr 90px 80px; font-size: 12px; padding: 12px 14px; }
-  .live-score-box { flex-direction: column; padding: 24px; text-align: center; }
-  .live-score-inner { flex-direction: column; }
-  .live-score-left { flex-direction: column; }
-  .live-score-details { max-width: 100%; }
-  .live-grid { grid-template-columns: 1fr; }
-  .live-score-number { font-size: 42px; }
-  .duel-versus { flex-direction: column; }
-  .duel-vs { transform: none; }
-}
-
-/* ═══════════════════════════════════════════════════ */
-/*  🧠 COMMENT FONCTIONNE ALPHABOT — 4 étapes IA    */
-/* ═══════════════════════════════════════════════════ */
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 16px;
-}
-.how-step {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 24px;
-  position: relative;
-  transition: all .4s var(--transition);
-  overflow: hidden;
-}
-.how-step::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--cyan), var(--blue));
-  opacity: 0;
-  transition: opacity .4s;
-}
-.how-step:hover {
-  transform: translateY(-6px);
-  border-color: rgba(34,211,238,.3);
-  box-shadow: 0 16px 48px rgba(34,211,238,.1);
-}
-.how-step:hover::before { opacity: 1; }
-.how-num {
-  position: absolute;
-  top: 16px; right: 20px;
-  font: 800 48px/1 'Space Grotesk', sans-serif;
-  color: rgba(34,211,238,.08);
-}
-.how-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-.how-step h3 {
-  font: 700 18px/1.3 'Space Grotesk', sans-serif;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.how-step p {
-  font: 400 14px/1.6 'Inter', sans-serif;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-.how-agents {
-  font: 500 11px/1 'JetBrains Mono', monospace;
-  color: var(--cyan);
-  opacity: .6;
-  letter-spacing: .5px;
-}
-@media(max-width:900px) {
-  .how-grid { grid-template-columns: 1fr 1fr; }
-}
-@media(max-width:600px) {
-  .how-grid { grid-template-columns: 1fr; }
-}
-
-/* ═══════════════════════════════════════════════════ */
-/*  📰 EXTRAIT NEWSLETTER — Preuve produit           */
-/* ═══════════════════════════════════════════════════ */
-.newsletter-preview {
-  max-width: 720px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(34,211,238,.03) 100%);
-  border: 1px solid rgba(34,211,238,.2);
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
-.nl-preview-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  background: rgba(34,211,238,.06);
-  border-bottom: 1px solid rgba(34,211,238,.1);
-}
-.nl-preview-tag {
-  font: 700 12px/1 'JetBrains Mono', monospace;
-  color: var(--cyan);
-  letter-spacing: 1px;
-}
-.nl-preview-date {
-  font: 500 12px/1 'JetBrains Mono', monospace;
-  color: var(--muted);
-}
-.nl-preview-content {
-  padding: 28px 24px 48px;
-  max-height: 220px;
-  overflow: hidden;
-  position: relative;
-}
-.nl-preview-title {
-  font: 700 20px/1.3 'Space Grotesk', sans-serif;
-  color: #fff;
-  margin-bottom: 12px;
-}
-.nl-preview-text {
-  font: 400 14px/1.7 'Inter', sans-serif;
-  color: var(--text);
-}
-.nl-preview-fade {
-  position: absolute;
-  bottom: 60px;
-  left: 0; right: 0;
-  height: 80px;
-  background: linear-gradient(transparent, rgba(4,9,26,.95));
-  pointer-events: none;
-}
-.nl-preview-cta {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  font: 600 14px/1 'Inter', sans-serif;
-  color: var(--cyan);
-  text-decoration: none;
-  border-top: 1px solid var(--border);
-  transition: all .3s;
-}
-.nl-preview-cta:hover {
-  background: rgba(34,211,238,.06);
-  color: #fff;
-}
-
-/* ═══════════════════════════════════════════════════ */
-/*  HIÉRARCHIE VISUELLE — Améliorations globales     */
-/* ═══════════════════════════════════════════════════ */
-
-/* Section titles plus gros */
-.section h2 {
-  font-size: clamp(28px, 4vw, 42px) !important;
-  letter-spacing: -0.5px;
-}
-
-/* Section tags plus visibles */
-.section-tag {
-  font-size: 13px !important;
-  letter-spacing: 2px !important;
-  padding: 6px 16px !important;
-}
-
-/* Animated counter for score */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.score-animated {
-  animation: countUp .6s ease-out forwards;
-}
-
-/* Hero stat vals bigger and more impactful */
-.hero-stat-val {
-  font-size: clamp(28px, 5vw, 40px) !important;
-}
-
-/* Glow pulse on score */
-@keyframes scoreGlow {
-  0%,100% { text-shadow: 0 0 20px rgba(34,211,238,.3); }
-  50% { text-shadow: 0 0 40px rgba(34,211,238,.6), 0 0 80px rgba(34,211,238,.2); }
-}
-.live-score-number {
-  animation: scoreGlow 3s ease-in-out infinite;
-}
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-25 -->
-<style>
-/* ═══════════════════════════════════════════
-   ALPHABOT WEEKLY — VISUAL ENHANCEMENT LAYER
-   Senior Art Direction by AlphaBot DA Studio
-═══════════════════════════════════════════ */
-
-/* TYPOGRAPHIE RENFORCÉE */
-body {
-  line-height: 1.72;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-h1 {
-  letter-spacing: -2px;
-  line-height: 1.03;
-}
-
-h2, h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.8px;
-  line-height: 1.15;
-}
-
-/* NAV — GLASS UPGRADE */
-nav {
-  background: rgba(4, 9, 26, 0.82) !important;
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border-bottom: 1px solid rgba(34, 211, 238, 0.13) !important;
-  box-shadow: 0 1px 0 rgba(34, 211, 238, 0.07), 0 8px 40px rgba(0, 0, 0, 0.6) !important;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.nav-brand {
-  filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.35));
-  transition: filter 0.3s ease;
-}
-.nav-brand:hover {
-  filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.6));
-}
-
-.nav-cta {
-  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
-  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.25), inset 0 1px 0 rgba(255,255,255,0.15) !important;
-  letter-spacing: 0.2px;
-  position: relative;
-  overflow: hidden;
-}
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.nav-cta:hover::before { opacity: 1; }
-.nav-cta:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 16px 40px rgba(34, 211, 238, 0.45) !important;
-}
-
-/* HERO — PROFONDEUR & ENTRÉE */
-.hero-tag {
-  box-shadow: 0 0 24px rgba(34, 197, 94, 0.12), inset 0 1px 0 rgba(34,197,94,0.15);
-  font-size: 10.5px;
-  letter-spacing: 1.8px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.hero-tag:hover {
-  box-shadow: 0 0 36px rgba(34, 197, 94, 0.22);
-  transform: translateY(-1px);
-}
-
-.h1-gradient {
-  filter: drop-shadow(0 0 40px rgba(245, 200, 66, 0.3));
-  background: linear-gradient(135deg, #f5c842 0%, #fbbf24 30%, #38bdf8 70%, #22d3ee 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.hero-sub {
-  color: #8fa8c8;
-  font-size: clamp(15px, 1.85vw, 18.5px);
-  line-height: 1.8;
-}
-
-/* HERO STATS — CARDS GLOW */
-.hero-stats {
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.hero-stat {
-  position: relative;
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  backdrop-filter: blur(8px);
-}
-.hero-stat:hover {
-  transform: translateY(-4px) scale(1.03);
-  border-color: rgba(34, 211, 238, 0.25);
-  box-shadow: 0 12px 40px rgba(34, 211, 238, 0.1), 0 0 0 1px rgba(34,211,238,0.1);
-}
-.hero-stat-val {
-  font-size: 32px;
-  letter-spacing: -1px;
-  filter: drop-shadow(0 0 16px currentColor);
-}
-.hero-stat-lbl {
-  font-size: 10.5px;
-  letter-spacing: 0.8px;
-  margin-top: 6px;
-}
-
-/* FORM — FOCUS & BUTTON */
-.form-group input {
-  border-radius: 14px !important;
-  font-size: 14.5px;
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s !important;
-}
-.form-group input:focus {
-  box-shadow: 0 0 0 3px rgba(34,211,238,0.15), 0 4px 20px rgba(34,211,238,0.08) !important;
-}
-
-.btn-sub {
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  letter-spacing: 0.3px;
-  font-weight: 700;
-}
-.btn-sub::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: -75%;
-  width: 50%; height: 200%;
-  background: rgba(255, 255, 255, 0.18);
-  transform: skewX(-20deg);
-  transition: left 0.5s ease;
-}
-.btn-sub:hover::after { left: 130%; }
-.btn-sub:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(34, 211, 238, 0.5), inset 0 1px 0 rgba(255,255,255,0.2);
-}
-.btn-sub:active { transform: translateY(0) scale(0.98); }
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-26 -->
-<style>
-/* ═══════════════════════════════════════════
-   ALPHABOT WEEKLY — VISUAL ENHANCEMENTS v2
-═══════════════════════════════════════════ */
-
-/* TYPOGRAPHY REFINEMENTS */
-body {
-  line-height: 1.72;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 {
-  letter-spacing: -2px;
-  line-height: 1.04;
-}
-
-/* HERO TAG — glow + shimmer */
-.hero-tag {
-  box-shadow: 0 0 24px rgba(34, 197, 94, 0.15), inset 0 1px 0 rgba(34,197,94,0.1);
-  backdrop-filter: blur(8px);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.hero-tag:hover {
-  box-shadow: 0 0 40px rgba(34, 197, 94, 0.28);
-  transform: translateY(-1px);
-}
-
-/* HERO STATS — card lift */
-.hero-stat {
-  padding: 16px 24px;
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.hero-stat:hover {
-  transform: translateY(-4px) scale(1.03);
-  border-color: rgba(34, 211, 238, 0.25);
-  box-shadow: 0 12px 40px rgba(34, 211, 238, 0.12);
-}
-.hero-stat-val {
-  font-size: 32px;
-  letter-spacing: -1px;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-/* FORM INPUT — glow refinement */
-.form-group input {
-  border-radius: 16px;
-  padding: 16px 20px;
-  font-size: 14.5px;
-  letter-spacing: 0.01em;
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
-}
-.form-group input:focus {
-  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14), 0 4px 20px rgba(34,211,238,0.08);
-}
-
-/* CTA BUTTON — premium pulse */
-.btn-sub {
-  border-radius: 16px;
-  padding: 16px 32px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  font-size: 14.5px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.3s ease;
-  box-shadow: 0 4px 24px rgba(59,130,246,0.3), 0 0 0 0 rgba(34,211,238,0);
-}
-.btn-sub::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.btn-sub:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(34,211,238,0.4), 0 4px 16px rgba(59,130,246,0.3);
-}
-.btn-sub:hover::before { opacity: 1; }
-.btn-sub:active { transform: translateY(0) scale(0.98); }
-
-/* NAV — glassmorphism upgrade */
-nav {
-  background: rgba(4, 9, 26, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(34, 211, 238, 0.12) !important;
-  transition: box-shadow 0.3s ease;
-}
-.nav-cta {
-  border-radius: 14px;
-  padding: 10px 24px;
-  letter-spacing: 0.02em;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6, #22d3ee);
-  position: relative;
-  overflow: hidden;
-}
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent 55%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.nav-cta:hover::before { opacity: 1; }
-
-/* NAV LINKS — refined underline */
-.nav-center a {
-  letter-spacing: 0.01em;
-  font-size: 13.5px;
-}
-.nav-center a::after {
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--cyan), var(--gold));
-  bottom: -8px;
-}
-
-/* H1 GRADIENT — animated shimmer */
-.h1-gradient {
-  background: linear-gradient(135deg, #f5c842 0%, #fbbf24 30%, #22d3ee 70%, #38bdf8 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmerGrad 4s linear infinite;
-  filter: drop-shadow(0 0 40px rgba(245,200,66,0.25));
-}
-@keyframes shimmerGrad {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-/* HERO SUB — better readability */
-.hero-sub {
-  font-size: clamp(15.5px, 1.9vw, 18.5px);
-  line-height: 1.82;
-  color: #a0aec0;
-  letter-spacing: 0.01em;
-}
-
-/* LIVE DOT — stronger pulse */
-.live-dot {
-  width: 8px;
-  height: 8px;
-  box-shadow: 0 0 8px rgba(34,197,94,0.8);
-}
-@keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); box-shadow: 0 0 4px rgba(34,197,94,0.6); }
-  50%      { opacity: 0.7; transform: scale(1.4); box-shadow: 0 0 14px rgba(34,197,94,0.9); }
-}
-
-/* ORBS — richer gradients */
-.orb1 { background: radial-gradient(circle, rgba(34,211,238,0.14), transparent 65%); }
-.orb2 { background: radial-gradient(circle, rgba(245,200,66,0.11), transparent 65%); }
-.orb3 { background: radial-gradient(circle, rgba(59,130,246,0.10), transparent 65%); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlphaBot Weekly — L'IA qui décrypte les marchés</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0e0e0e",
+            "surface-low": "#131313",
+            "surface-container": "#1a1919",
+            "surface-high": "#201f1f",
+            "surface-highest": "#262626",
+            "primary": "#ff906d",
+            "primary-container": "#ff784d",
+            "secondary": "#ff725e",
+            "on-surface": "#ffffff",
+            "on-surface-variant": "#adaaaa",
+            "outline-variant": "#484847",
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""></noscript>
+
+  <style>
+    * { @apply antialiased; }
+    html, body { background: #0e0e0e; }
+
+    /* Neural mesh background */
+    .neural-mesh {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    /* Glassmorphism */
+    .glass-card {
+      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
+    }
+
+    /* Glow effects */
+    .glow-primary {
+      box-shadow: 0 0 20px rgba(255, 144, 109, 0.15);
+    }
+
+    .glow-secondary {
+      box-shadow: 0 0 16px rgba(255, 114, 94, 0.1);
+    }
+
+    /* Smooth reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animated dot */
+    .status-dot {
+      @apply w-2 h-2 rounded-full bg-green-500;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Ticker colors */
+    .tick-ch.up { @apply text-green-400; }
+    .tick-ch.down { @apply text-red-400; }
+
+    /* Challenge performance colors */
+    .challenge-perf.up { @apply text-green-400 font-semibold; }
+    .challenge-perf.down { @apply text-red-400 font-semibold; }
+    .challenge-perf.flat { @apply text-gray-400; }
+
+    /* Leaderboard */
+    .lb-perf.up { @apply text-green-400 font-semibold; }
+    .lb-perf.down { @apply text-red-400 font-semibold; }
+
+    /* Activity feed */
+    .activity-event {
+      @apply flex items-start gap-3 p-3 rounded-lg border border-white/5 hover:bg-white/3 transition;
+    }
+
+    .activity-event-icon { @apply text-lg; }
+    .activity-event-agent { @apply text-xs font-semibold text-primary; }
+    .activity-event-msg { @apply text-xs text-on-surface-variant line-clamp-2 mt-1; }
+    .activity-event-time { @apply text-xs text-outline-variant whitespace-nowrap; }
+
+    /* Primary button */
+    .btn-primary {
+      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg hover:glow-primary;
+    }
+
+    /* Secondary button */
+    .btn-secondary {
+      @apply px-6 py-3 rounded-md font-semibold bg-[#262626] border border-[#ff906d]/40 text-primary transition hover:border-primary hover:bg-[#2a2a2a];
+    }
+
+    /* Input field */
+    .input-field {
+      @apply w-full px-4 py-2.5 rounded-lg bg-[#1a1919] border border-white/10 text-white placeholder-gray-500 transition focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30;
+    }
+
+    /* Status messages */
+    .status-msg {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .status-msg.success {
+      display: block;
+      color: #22c55e;
+    }
+
+    .status-msg.error {
+      display: block;
+      color: #ef4444;
+    }
+
+    /* Mobile menu */
+    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #nav-menu.mobile-open { max-height: 300px; }
+
+    /* Bento card hover */
+    .bento-card {
+      @apply group relative overflow-hidden rounded-xl glass-card p-8 transition;
+    }
+
+    .bento-card::before {
+      @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition;
+      content: '';
+    }
+
+    .bento-card-content {
+      @apply relative z-10;
+    }
+  </style>
 </head>
-<body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
+<body class="bg-surface text-on-surface font-body dark">
 
-<div class="scan"></div>
-<div class="bg-wrap">
-  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
-</div>
+  <!-- ═══════════════════════════════════════════════════
+       NAV (Fixed Glassmorphism)
+       ═══════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
 
-<!-- NAV -->
-<nav aria-label="Navigation principale">
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center" id="nav-menu">
-    <a href="index.html" class="active">Accueil</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta">Rejoindre l'arène</a>
-  </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
+      </div>
 
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- HERO — Vision produit claire -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="hero" id="main-content">
-  <div class="hero-inner">
-    <div class="hero-tag"><span class="live-dot"></span> Système IA actif en ce moment</div>
-    <h1>
-      <div class="h1-white">Investissez avec l'IA.</div>
-      <div class="h1-white">Comparez vos performances.</div>
-      <div class="h1-gradient">Progressez.</div>
-    </h1>
-    <p class="hero-sub">
-      Newsletter IA quotidienne, 3 robots traders et classement en temps réel. <strong>3 robots</strong> gèrent chacun un portefeuille fictif de 10 000€. Tous les trades sont publics et justifiés.
-    </p>
+      <!-- Mobile menu button -->
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
 
-    <div class="hero-cta-row">
-      <div class="form-wrap" id="subscribe">
-        <div class="form-group">
-          <input type="email" id="email-input" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')handleSubscribe()" aria-label="Adresse email">
-          <button class="btn-sub" onclick="handleSubscribe()">Rejoindre l'arène gratuitement</button>
+    <!-- Mobile nav -->
+    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Investissement</a>
+        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="pt-20">
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden py-24 sm:py-32 neural-mesh">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl opacity-20"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <!-- Status tag -->
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <span class="status-dot"></span>
+          <span class="text-xs font-semibold text-primary">Système IA actif en ce moment</span>
         </div>
-        <div id="sub-status"></div>
+
+        <!-- Hero title -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-headline font-black text-center leading-tight mb-6">
+          L'IA qui
+          <span class="block bg-gradient-to-r from-primary via-[#ff906d] to-secondary bg-clip-text text-transparent">
+            décrypte les marchés
+          </span>
+          pour vous.
+        </h1>
+
+        <!-- Hero subtitle -->
+        <p class="text-center text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+          Trois robots traders analysent les marchés en continu. Newsletter quotidienne, portefeuilles fictifs, alertes en temps réel. Inspiré par les meilleures sources d'investissement.
+        </p>
+
+        <!-- Hero KPIs -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div class="glass-card p-4 rounded-lg text-center">
+            <div class="text-2xl sm:text-3xl font-headline font-black text-primary" id="hero-capital">--</div>
+            <div class="text-xs text-on-surface-variant mt-1">Capital géré</div>
+          </div>
+          <div class="glass-card p-4 rounded-lg text-center">
+            <div class="text-2xl sm:text-3xl font-headline font-black text-primary" id="hero-trades">--</div>
+            <div class="text-xs text-on-surface-variant mt-1">Trades exécutés</div>
+          </div>
+          <div class="glass-card p-4 rounded-lg text-center">
+            <div class="text-2xl sm:text-3xl font-headline font-black text-primary" id="hero-newsletters">--</div>
+            <div class="text-xs text-on-surface-variant mt-1">Newsletters publiées</div>
+          </div>
+          <div class="glass-card p-4 rounded-lg text-center">
+            <div class="text-2xl sm:text-3xl font-headline font-black challenge-perf flat" id="hero-best">--</div>
+            <div class="text-xs text-on-surface-variant mt-1">Meilleure perf</div>
+          </div>
+        </div>
+
+        <!-- Market ticker -->
+        <div class="glass-card rounded-xl p-6 mb-12 overflow-x-auto">
+          <div class="flex gap-8 min-w-min text-sm font-label">
+            <div class="text-center">
+              <div class="font-semibold text-on-surface">Bitcoin</div>
+              <div class="text-lg font-headline text-primary mt-1" id="btc-price">--</div>
+              <div class="tick-ch mt-1" id="btc-change">--</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="font-semibold text-on-surface">S&P 500</div>
+              <div class="text-lg font-headline text-primary mt-1" id="sp-price">--</div>
+              <div class="tick-ch mt-1" id="sp-change">--</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="font-semibold text-on-surface">CAC 40</div>
+              <div class="text-lg font-headline text-primary mt-1" id="cac-price">--</div>
+              <div class="tick-ch mt-1" id="cac-change">--</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="font-semibold text-on-surface">Or</div>
+              <div class="text-lg font-headline text-primary mt-1" id="gold-price">--</div>
+              <div class="tick-ch mt-1" id="gold-change">--</div>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div class="text-center">
+              <div class="font-semibold text-on-surface">EUR/USD</div>
+              <div class="text-lg font-headline text-primary mt-1" id="eur-price">--</div>
+              <div class="tick-ch mt-1" id="eur-change">--</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter signup -->
+        <div class="glass-card rounded-xl p-8 max-w-md mx-auto">
+          <h3 class="text-lg font-headline font-bold mb-4">Recevez l'édition quotidienne</h3>
+          <form onsubmit="event.preventDefault(); handleSubscribe();" class="space-y-3">
+            <input type="email" id="email-input" placeholder="Votre email" class="input-field" required>
+            <button type="submit" class="btn-primary w-full">S'inscrire</button>
+          </form>
+          <div id="sub-status" class="status-msg"></div>
+          <p class="text-xs text-on-surface-variant mt-4 text-center">Pas de spam. Désinscription en 1 clic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         3 OUTILS (BENTO GRID)
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-headline font-black mb-4 reveal">Trois outils puissants</h2>
+          <p class="text-on-surface-variant text-lg reveal">Analyser les marchés, observer les robots, se mesurer à la communauté</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal">
+          <!-- Newsletter -->
+          <a href="newsletter.html" class="bento-card hover:glow-primary">
+            <div class="bento-card-content">
+              <div class="text-3xl mb-3">📰</div>
+              <h3 class="text-2xl font-headline font-bold mb-2">Newsletter IA</h3>
+              <p class="text-on-surface-variant text-sm mb-4">Décryptage quotidien des marchés, crypto, géopolitique et bourse.</p>
+              <div class="text-xs font-semibold text-primary">Analyser →</div>
+            </div>
+          </a>
+
+          <!-- Robots traders -->
+          <a href="investissement.html" class="bento-card hover:glow-primary">
+            <div class="bento-card-content">
+              <div class="text-3xl mb-3">🤖</div>
+              <h3 class="text-2xl font-headline font-bold mb-2">3 Robots Traders</h3>
+              <p class="text-on-surface-variant text-sm mb-4">Prudent, Modéré, Agressif. Portefeuilles fictifs de 10k€ chacun.</p>
+              <div class="text-xs font-semibold text-primary">Observer →</div>
+            </div>
+          </a>
+
+          <!-- Arena -->
+          <a href="arena.html" class="bento-card hover:glow-primary">
+            <div class="bento-card-content">
+              <div class="text-3xl mb-3">🏆</div>
+              <h3 class="text-2xl font-headline font-bold mb-2">L'Arène</h3>
+              <p class="text-on-surface-variant text-sm mb-4">Compétition. Suivez les robots, défiez-les, construisez votre propre robot.</p>
+              <div class="text-xs font-semibold text-primary">Se mesurer →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         LEADERBOARD
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 bg-surface-low neural-mesh">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl sm:text-5xl font-headline font-black mb-4 reveal">Classement en direct</h2>
+          <p class="text-on-surface-variant reveal">Les trois robots traders et leur performance</p>
+        </div>
+
+        <div class="glass-card rounded-xl overflow-hidden reveal">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/10">
+                  <th class="px-6 py-4 text-left font-semibold text-on-surface-variant">#</th>
+                  <th class="px-6 py-4 text-left font-semibold text-on-surface-variant">Robot</th>
+                  <th class="px-6 py-4 text-right font-semibold text-on-surface-variant">Performance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-white/10 hover:bg-white/5 transition">
+                  <td class="px-6 py-4 text-primary font-bold">1</td>
+                  <td class="px-6 py-4" id="lb-name-1">--</td>
+                  <td class="px-6 py-4 text-right lb-perf flat" id="lb-perf-1">--</td>
+                </tr>
+                <tr class="border-b border-white/10 hover:bg-white/5 transition">
+                  <td class="px-6 py-4 text-primary font-bold">2</td>
+                  <td class="px-6 py-4" id="lb-name-2">--</td>
+                  <td class="px-6 py-4 text-right lb-perf flat" id="lb-perf-2">--</td>
+                </tr>
+                <tr class="hover:bg-white/5 transition">
+                  <td class="px-6 py-4 text-primary font-bold">3</td>
+                  <td class="px-6 py-4" id="lb-name-3">--</td>
+                  <td class="px-6 py-4 text-right lb-perf flat" id="lb-perf-3">--</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="text-center mt-8 text-xs text-on-surface-variant">
+          💡 <strong>Note :</strong> Les portefeuilles sont entièrement fictifs. À titre éducatif uniquement.
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         3 ROBOTS (CHALLENGE CARDS)
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-headline font-black mb-4 reveal">Choisissez votre stratégie</h2>
+          <p class="text-on-surface-variant text-lg reveal">Trois profils de robots traders, trois façons d'investir</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 reveal">
+          <!-- Robot Prudent -->
+          <div class="glass-card rounded-xl p-8 hover:glow-primary transition">
+            <div class="text-5xl mb-4">🛡️</div>
+            <h3 class="text-2xl font-headline font-bold mb-2">Robot Prudent</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Capital sécurisé. ETF défensifs, obligations. Risque minimal.</p>
+            <div class="space-y-2 text-sm mb-6 font-label">
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Capital</span>
+                <span class="font-semibold" id="robot-p-capital">-- €</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Performance</span>
+                <span class="challenge-perf flat" id="robot-p-perf">--</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Trades</span>
+                <span class="font-semibold" id="robot-p-trades">--</span>
+              </div>
+            </div>
+            <a href="investissement.html" class="text-sm font-semibold text-primary hover:underline">Voir le détail →</a>
+          </div>
+
+          <!-- Robot Modéré -->
+          <div class="glass-card rounded-xl p-8 hover:glow-primary transition border border-primary/30">
+            <div class="text-5xl mb-4">⚖️</div>
+            <h3 class="text-2xl font-headline font-bold mb-2">Robot Modéré</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Équilibre. Mix actions / ETF. Risque modéré.</p>
+            <div class="space-y-2 text-sm mb-6 font-label">
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Capital</span>
+                <span class="font-semibold" id="robot-m-capital">-- €</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Performance</span>
+                <span class="challenge-perf flat" id="robot-m-perf">--</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Trades</span>
+                <span class="font-semibold" id="robot-m-trades">--</span>
+              </div>
+            </div>
+            <a href="investissement.html" class="text-sm font-semibold text-primary hover:underline">Voir le détail →</a>
+          </div>
+
+          <!-- Robot Agressif -->
+          <div class="glass-card rounded-xl p-8 hover:glow-primary transition">
+            <div class="text-5xl mb-4">🔥</div>
+            <h3 class="text-2xl font-headline font-bold mb-2">Robot Agressif</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Haute performance. Actions, crypto, dérivés. Risque élevé.</p>
+            <div class="space-y-2 text-sm mb-6 font-label">
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Capital</span>
+                <span class="font-semibold" id="robot-a-capital">-- €</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Performance</span>
+                <span class="challenge-perf flat" id="robot-a-perf">--</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Trades</span>
+                <span class="font-semibold" id="robot-a-trades">--</span>
+              </div>
+            </div>
+            <a href="investissement.html" class="text-sm font-semibold text-primary hover:underline">Voir le détail →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ACTIVITÉ AGENTS EN DIRECT
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 bg-surface-low neural-mesh">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl sm:text-5xl font-headline font-black mb-4 reveal">Activité agents en direct</h2>
+          <p class="text-on-surface-variant reveal">L'équipe IA d'AlphaBot travaille 7h30-22h30 chaque jour</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-12 reveal">
+          <div class="glass-card rounded-lg p-4 text-center">
+            <div class="text-3xl font-headline font-black text-primary" id="activity-total">--</div>
+            <div class="text-xs text-on-surface-variant mt-2">Tâches aujourd'hui</div>
+          </div>
+          <div class="glass-card rounded-lg p-4 text-center">
+            <div class="text-3xl font-headline font-black text-green-400" id="activity-success">--</div>
+            <div class="text-xs text-on-surface-variant mt-2">Réussies</div>
+          </div>
+          <div class="glass-card rounded-lg p-4 text-center">
+            <div class="text-3xl font-headline font-black text-red-400" id="activity-errors">--</div>
+            <div class="text-xs text-on-surface-variant mt-2">Erreurs</div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-xl p-6 mb-6 reveal">
+          <div class="text-sm font-semibold text-primary mb-4">
+            Dernière action : <span id="activity-last-time" class="text-on-surface">--</span>
+          </div>
+          <div id="activity-events" class="space-y-3">
+            <div class="text-on-surface-variant text-sm">Chargement...</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="dashboard-agents.html" class="btn-secondary reveal">Voir le dashboard complet →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         COMMENT FONCTIONNE ALPHABOT (4 STEPS)
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl font-headline font-black mb-4 reveal">Comment fonctionne AlphaBot</h2>
+          <p class="text-on-surface-variant text-lg reveal">Un système IA complet qui analyse, rédige, investit et rapporte</p>
+        </div>
+
+        <div class="space-y-8 reveal">
+          <!-- Step 1 -->
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-headline font-bold text-primary">1</div>
+            <div>
+              <h3 class="text-xl font-headline font-bold mb-2">L'IA collecte</h3>
+              <p class="text-on-surface-variant">3 fois par jour, nos agents collectent les données de 17 actifs financiers (Bitcoin, S&P 500, indices, commodités, devises). Source : yfinance, CoinGecko.</p>
+              <p class="text-xs text-outline-variant mt-2">Agents : <span class="text-primary">Veille</span> · <span class="text-primary">Analyste</span></p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-headline font-bold text-primary">2</div>
+            <div>
+              <h3 class="text-xl font-headline font-bold mb-2">L'IA rédige</h3>
+              <p class="text-on-surface-variant">Chaque jour, une newsletter complète avec analyse macro, géopolitique, bourse et crypto. Design premium inspiré d'Aktionnaire.com. Chaque section commence par un fait avec un chiffre.</p>
+              <p class="text-xs text-outline-variant mt-2">Agents : <span class="text-primary">Analyste</span> · <span class="text-primary">Rédacteur</span> · <span class="text-primary">DA Site</span></p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-headline font-bold text-primary">3</div>
+            <div>
+              <h3 class="text-xl font-headline font-bold mb-2">L'IA investit</h3>
+              <p class="text-on-surface-variant">Trois robots traders gèrent des portefeuilles fictifs de 10 000€ chacun. Prudent, Modéré, Agressif. Chacun exécute 10 sessions de trading par jour (lundi-vendredi).</p>
+              <p class="text-xs text-outline-variant mt-2">Agents : <span class="text-primary">Investissement</span> · <span class="text-primary">Trader</span></p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-headline font-bold text-primary">4</div>
+            <div>
+              <h3 class="text-xl font-headline font-bold mb-2">L'IA supervise</h3>
+              <p class="text-on-surface-variant">Chaque soir à 22h15, le Directeur Adjoint génère un rapport complet pour Antoine (CEO). État des agents, KPIs, alertes, recommandations.</p>
+              <p class="text-xs text-outline-variant mt-2">Agents : <span class="text-primary">Directeur Adjoint</span> · <span class="text-primary">Analytics</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FONDATEUR
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 bg-surface-low neural-mesh">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-headline font-bold mb-8 reveal">Le fondateur</h2>
+
+        <div class="glass-card rounded-xl p-12 reveal">
+          <h3 class="text-2xl font-headline font-bold mb-2">Antoine Metout</h3>
+          <p class="text-on-surface-variant mb-6">Paris</p>
+
+          <p class="text-on-surface-variant leading-relaxed mb-6">
+            CEO fondateur d'AlphaBot Weekly. Il croit que l'IA peut démocratiser l'investissement financier pour les francophones. Son obsession : créer une newsletter qui rivalise avec les meilleures sources d'analyse (Aktionnaire, Les Échos, Challenges) mais en mieux — avec une IA qui travaille 24/7.
+          </p>
+
+          <p class="text-on-surface-variant leading-relaxed">
+            <strong>Vision :</strong> 5 000 abonnés en 2026, puis monétisation par sponsors et publicités ciblées. AlphaBot doit devenir la référence IA pour les investisseurs débutants francophones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CTA FINAL
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl sm:text-5xl font-headline font-black mb-6 reveal">Prêt à commencer ?</h2>
+        <p class="text-on-surface-variant text-lg mb-12 reveal">Recevez chaque jour le décryptage des marchés par l'IA, directement dans votre inbox.</p>
+
+        <div class="glass-card rounded-xl p-8 max-w-md mx-auto reveal">
+          <form onsubmit="event.preventDefault(); handleSubscribe2();" class="space-y-3">
+            <input type="email" id="email-input2" placeholder="Votre email" class="input-field" required>
+            <button type="submit" class="btn-primary w-full">S'inscrire gratuitement</button>
+          </form>
+          <div id="sub-status2" class="status-msg"></div>
+          <p class="text-xs text-on-surface-variant mt-4">Pas de spam, pas d'engagement, désinscription en 1 clic.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════ -->
+  <footer class="border-t border-white/5 bg-surface-low py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-headline font-bold text-primary mb-4">AlphaBot Weekly</h4>
+          <p class="text-sm text-on-surface-variant">Newsletter IA pour investisseurs francophones.</p>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="newsletter.html" class="text-on-surface-variant hover:text-primary transition">Newsletter</a></li>
+            <li><a href="investissement.html" class="text-on-surface-variant hover:text-primary transition">Investissement</a></li>
+            <li><a href="arena.html" class="text-on-surface-variant hover:text-primary transition">Arena</a></li>
+            <li><a href="dashboard-agents.html" class="text-on-surface-variant hover:text-primary transition">Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Informations</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:antoine.metout@gmail.com" class="text-on-surface-variant hover:text-primary transition">Contact</a></li>
+            <li><p class="text-on-surface-variant">© 2026 AlphaBot Weekly</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-xs text-outline-variant text-center">
+          ⚠️ <strong>Disclaimer légal :</strong> Les portefeuilles AlphaBot sont entièrement fictifs à titre éducatif. Ce ne sont pas des recommandations d'investissement. Consultez un professionnel avant d'investir.
+        </p>
       </div>
     </div>
+  </footer>
 
-    <!-- KPIs RÉELS — chargés dynamiquement depuis portfolio_public.json + newsletters.json -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-val cyan" id="hero-capital">--</div>
-        <div class="hero-stat-lbl">Capital total géré</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val gold" id="hero-trades">--</div>
-        <div class="hero-stat-lbl">Trades exécutés</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val green" id="hero-newsletters">--</div>
-        <div class="hero-stat-lbl">Newsletters publiées</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-val" id="hero-best" style="color:var(--green)">--</div>
-        <div class="hero-stat-lbl">Meilleur robot</div>
-      </div>
-    </div>
+  <!-- ═══════════════════════════════════════════════════
+       JAVASCRIPT
+       ═══════════════════════════════════════════════════ -->
+  <script>
+    function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
 
-    <div class="hero-trust">
-      <span class="trust-item">100% gratuit</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">Classement en temps réel</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">3 robots IA actifs</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">Newsletter quotidienne</span>
-    </div>
+    // ── SUBSCRIBE ──
+    function handleSubscribe(){subscribe('email-input','sub-status');}
+    function handleSubscribe2(){subscribe('email-input2','sub-status2');}
 
-    <div class="ticker-bar">
-      <div class="tick"><span class="tick-name">BTC</span><span class="tick-val" id="btc-price">---</span><span class="tick-ch up" id="btc-change">--</span></div>
-      <div class="tick"><span class="tick-name">S&P 500</span><span class="tick-val" id="sp-price">---</span><span class="tick-ch up" id="sp-change">--</span></div>
-      <div class="tick"><span class="tick-name">Or</span><span class="tick-val" id="gold-price">---</span><span class="tick-ch up" id="gold-change">--</span></div>
-      <div class="tick"><span class="tick-name">EUR/USD</span><span class="tick-val" id="eur-price">---</span><span class="tick-ch up" id="eur-change">--</span></div>
-      <div class="tick"><span class="tick-name">CAC 40</span><span class="tick-val" id="cac-price">---</span><span class="tick-ch up" id="cac-change">--</span></div>
-    </div>
-  </div>
-</section>
+    function subscribe(inputId,statusId){
+      const email=document.getElementById(inputId).value.trim();
+      const status=document.getElementById(statusId);
+      status.style.display='block';
+      if(!email||!email.includes('@')){status.className='error';status.textContent='Entrez un email valide';return;}
+      status.className='';status.textContent='Inscription en cours...';
 
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🧰 VOS 3 OUTILS — Newsletter + Robots + Arène -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section" id="pillars" style="padding-top:40px;">
-  <div class="section-center">
-    <div class="section-tag cyan">Vos outils</div>
-    <h2>3 outils. 1 avantage décisif.</h2>
-    <p class="section-sub">Chaque outil fonctionne seul. Ensemble, ils vous donnent une longueur d'avance sur les marchés.</p>
-  </div>
-
-  <div class="pillars-grid reveal">
-    <div class="pillar pillar-newsletter">
-      <div class="pillar-icon">📰</div>
-      <div class="pillar-label">Analyser</div>
-      <h3>Newsletter IA quotidienne</h3>
-      <p>L'IA analyse +1 200 données et vous résume l'essentiel en 5 minutes. Marchés, crypto, géopolitique — zéro jargon.</p>
-      <a href="newsletter.html" class="pillar-cta">Lire l'analyse du jour →</a>
-    </div>
-
-    <div class="pillar pillar-robots">
-      <div class="pillar-icon">🤖</div>
-      <div class="pillar-label">Observer</div>
-      <h3>3 robots tradent en direct</h3>
-      <p>Prudent, Modéré, Agressif — 3 stratégies, 3 portefeuilles fictifs de 10 000€. Chaque trade est public, justifié et daté.</p>
-      <a href="investissement.html" class="pillar-cta gold">Voir les robots →</a>
-    </div>
-
-    <div class="pillar pillar-arena">
-      <div class="pillar-icon">🏆</div>
-      <div class="pillar-label">Se mesurer</div>
-      <h3>L'arène des performances</h3>
-      <p>Les 3 robots s'affrontent dans un classement transparent. Bientôt : importez votre portefeuille et mesurez-vous aux machines.</p>
-      <a href="arena.html" class="pillar-cta red">Voir le classement →</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🏆 LEADERBOARD ARÈNE — Classement en direct -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal" id="leaderboard">
-  <div class="section-center">
-    <div class="section-tag gold">En direct</div>
-    <h2>L'Arène — Classement des performances</h2>
-    <p class="section-sub">Qui performe le mieux ? Robots IA et investisseurs humains s'affrontent dans un classement transparent.</p>
-  </div>
-
-  <div class="leaderboard">
-    <div class="lb-header">
-      <span class="lb-col-rank">#</span>
-      <span class="lb-col-name">Investisseur</span>
-      <span class="lb-col-type">Type</span>
-      <span class="lb-col-perf">Performance</span>
-    </div>
-    <div class="lb-row lb-gold" id="lb-row-1">
-      <span class="lb-rank">🥇</span>
-      <span class="lb-name" id="lb-name-1">---</span>
-      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf" id="lb-perf-1">--</span>
-    </div>
-    <div class="lb-row lb-silver" id="lb-row-2">
-      <span class="lb-rank">🥈</span>
-      <span class="lb-name" id="lb-name-2">---</span>
-      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf" id="lb-perf-2">--</span>
-    </div>
-    <div class="lb-row lb-bronze" id="lb-row-3">
-      <span class="lb-rank">🥉</span>
-      <span class="lb-name" id="lb-name-3">---</span>
-      <span class="lb-type lb-type-bot">🤖 Robot IA</span>
-      <span class="lb-perf" id="lb-perf-3">--</span>
-    </div>
-    <div class="lb-row lb-you">
-      <span class="lb-rank">?</span>
-      <span class="lb-name">Vous</span>
-      <span class="lb-type lb-type-human">👤 Humain</span>
-      <span class="lb-perf">Rejoindre →</span>
-    </div>
-  </div>
-
-  <div style="text-align:center;margin-top:24px;">
-    <a href="arena.html" class="btn-arena">Rejoindre l'arène et se classer</a>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🤖 CHOISISSEZ VOTRE STRATÉGIE — 3 Robots -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag green">3 stratégies</div>
-    <h2>Choisissez votre robot</h2>
-    <p class="section-sub">Chaque robot part avec 10 000€ et une stratégie unique. Suivez leurs performances en temps réel.</p>
-  </div>
-
-  <div class="challenge-grid">
-    <div class="challenge-card prudent">
-      <div class="challenge-emoji">🛡️</div>
-      <div class="challenge-name">Robot Safe</div>
-      <div class="challenge-style">Faible risque · Obligations · ETF défensifs</div>
-      <div class="challenge-capital blue" id="robot-p-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€</div>
-      <div class="challenge-perf flat" id="robot-p-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-p-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
-    </div>
-    <div class="challenge-card modere">
-      <div class="challenge-emoji">⚖️</div>
-      <div class="challenge-name">Robot Modéré</div>
-      <div class="challenge-style">Équilibre · Actions + ETF · Moyen terme</div>
-      <div class="challenge-capital gold" id="robot-m-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€</div>
-      <div class="challenge-perf flat" id="robot-m-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-m-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
-    </div>
-    <div class="challenge-card agressif">
-      <div class="challenge-emoji">🔥</div>
-      <div class="challenge-name">Robot Risqué</div>
-      <div class="challenge-style">Performance max · Levier · Haut risque</div>
-      <div class="challenge-capital red" id="robot-a-capital">10 000€</div>
-      <div class="challenge-objectif">Objectif : 100 000€</div>
-      <div class="challenge-perf flat" id="robot-a-perf">+0.00%</div>
-      <div class="challenge-trades" id="robot-a-trades">0 trades</div>
-      <a href="investissement.html" class="challenge-cta">Suivre ce robot →</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 📡 ACTIVITÉ EN DIRECT — Données réelles depuis activity_feed.json -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section" id="live-activity" style="padding-top:40px;padding-bottom:40px;">
-  <div class="section-center">
-    <div class="section-tag green">En direct</div>
-    <h2>Les agents travaillent en ce moment</h2>
-    <p class="section-sub">Activité réelle de nos agents IA — mise à jour automatiquement.</p>
-  </div>
-
-  <!-- Résumé rapide -->
-  <div class="activity-summary reveal">
-    <div class="activity-stat">
-      <span class="activity-stat-val" id="activity-total">--</span>
-      <span class="activity-stat-lbl">Tâches aujourd'hui</span>
-    </div>
-    <div class="activity-stat">
-      <span class="activity-stat-val" style="color:var(--green)" id="activity-success">--</span>
-      <span class="activity-stat-lbl">Réussites</span>
-    </div>
-    <div class="activity-stat">
-      <span class="activity-stat-val" style="color:var(--red)" id="activity-errors">--</span>
-      <span class="activity-stat-lbl">Erreurs</span>
-    </div>
-    <div class="activity-stat">
-      <span class="activity-stat-val" style="color:var(--cyan)" id="activity-last-time">--</span>
-      <span class="activity-stat-lbl">Dernière action</span>
-    </div>
-  </div>
-
-  <!-- 5 derniers événements -->
-  <div class="activity-feed reveal" id="activity-feed">
-    <div class="activity-feed-header">
-      <span class="live-dot"></span> Dernières actions des agents
-    </div>
-    <div id="activity-events">
-      <div class="activity-event">Chargement...</div>
-    </div>
-    <a href="dashboard-agents.html" class="activity-feed-cta">Voir tout le dashboard agents →</a>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 🧠 COMMENT FONCTIONNE ALPHABOT — 4 étapes IA -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag cyan">Le système</div>
-    <h2>Comment fonctionne AlphaBot ?</h2>
-    <p class="section-sub">Des agents IA autonomes travaillent chaque jour de 7h30 à 22h30, sans intervention humaine.</p>
-  </div>
-
-  <div class="how-grid">
-    <div class="how-step">
-      <div class="how-num">1</div>
-      <div class="how-icon">🔍</div>
-      <h3>L'IA collecte</h3>
-      <p>3 fois par jour, l'agent Veille récupère les cours de 17 actifs : indices, crypto, devises, matières premières. Données fraîches à chaque édition.</p>
-      <div class="how-agents">Agents : Veille · Analyste</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">2</div>
-      <div class="how-icon">📰</div>
-      <h3>L'IA rédige</h3>
-      <p>L'agent Analyste et le Rédacteur transforment les données brutes en newsletter lisible. Chaque section commence par un fait chiffré, jamais de blabla.</p>
-      <div class="how-agents">Agents : Analyste · Rédacteur · DA Site</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">3</div>
-      <div class="how-icon">📈</div>
-      <h3>L'IA investit</h3>
-      <p>3 robots gèrent chacun un portefeuille fictif de 10 000€ avec 3 stratégies différentes. Chaque trade est public, justifié et daté.</p>
-      <div class="how-agents">Agents : Investissement (3 profils)</div>
-    </div>
-    <div class="how-step">
-      <div class="how-num">4</div>
-      <div class="how-icon">👁️</div>
-      <h3>L'IA supervise</h3>
-      <p>Le Directeur Adjoint scanne tout le système chaque soir : erreurs, retards, KPIs. Il envoie un rapport au CEO avec un plan d'action.</p>
-      <div class="how-agents">Agents : Directeur Adjoint · Analytics</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- 📰 EXTRAIT DE LA NEWSLETTER — Preuve produit -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag gold">Extrait réel</div>
-    <h2>Voici ce que vous recevez chaque matin</h2>
-    <p class="section-sub">Un extrait de la dernière newsletter, générée 100% par l'IA.</p>
-  </div>
-
-  <div class="newsletter-preview">
-    <div class="nl-preview-header">
-      <span class="nl-preview-tag">📰 NEWSLETTER DU JOUR</span>
-      <span class="nl-preview-date" id="nl-preview-date">--</span>
-    </div>
-    <div class="nl-preview-content" id="nl-preview-content">
-      <h3 class="nl-preview-title" id="nl-preview-title">Chargement de la dernière newsletter...</h3>
-      <p class="nl-preview-text" id="nl-preview-text">L'IA prépare votre briefing...</p>
-    </div>
-    <div class="nl-preview-fade"></div>
-    <a href="newsletter.html" class="nl-preview-cta">Lire la newsletter complète →</a>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- FONDATEUR -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="section reveal">
-  <div class="section-center">
-    <div class="section-tag">Un vrai humain derrière le projet</div>
-    <h2>Qui est derrière AlphaBot ?</h2>
-  </div>
-
-  <div class="founder">
-    <div class="founder-avatar">AM</div>
-    <div class="founder-info">
-      <h3>Antoine Metout</h3>
-      <div class="founder-role">Fondateur — Paris, France</div>
-      <p>J'ai créé AlphaBot parce que quand j'ai commencé à m'intéresser à la bourse, je ne comprenais rien. Les sites financiers parlaient un langage incompréhensible. Alors j'ai construit 13 agents IA qui analysent les marchés à ma place et écrivent un résumé clair. Aujourd'hui, je partage ça gratuitement.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<!-- CTA FINAL -->
-<!-- ═══════════════════════════════════════════════════════════════════════════ -->
-<section class="cta-section reveal">
-  <div class="cta-box">
-    <div class="section-tag">C'est gratuit. Pour de vrai.</div>
-    <h2>Prêt à entrer dans l'arène ?</h2>
-    <p>Newsletter IA quotidienne + 3 robots traders + classement en direct. Tout est gratuit. Inscrivez-vous en 10 secondes.</p>
-    <div class="form-group" style="max-width:480px;margin:0 auto;">
-      <input type="email" id="email-input2" placeholder="votre@email.com" onkeydown="if(event.key==='Enter')handleSubscribe2()" aria-label="Adresse email pour s'abonner">
-      <button class="btn-sub" onclick="handleSubscribe2()">Rejoindre l'arène gratuitement</button>
-    </div>
-    <div id="sub-status2" style="display:none;font-size:13px;text-align:center;margin-top:8px;"></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-brand">AlphaBot Weekly</div>
-    <div class="footer-links">
-      <a href="index.html">Accueil</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="investissement.html">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-      <a href="dashboard-agents.html">Agents IA</a>
-    </div>
-  </div>
-  <div class="footer-copy">
-    © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-    Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
-  </div>
-</footer>
-
-<script>
-// ── NAV TOGGLE ──
-function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
-
-// ── SUBSCRIBE ──
-function handleSubscribe(){subscribe('email-input','sub-status');}
-function handleSubscribe2(){subscribe('email-input2','sub-status2');}
-
-function subscribe(inputId,statusId){
-  const email=document.getElementById(inputId).value.trim();
-  const status=document.getElementById(statusId);
-  status.style.display='block';
-  if(!email||!email.includes('@')){status.className='error';status.textContent='Entrez un email valide';return;}
-  status.className='';status.textContent='Inscription en cours...';
-
-  fetch('https://formspree.io/f/xzzbqwaa',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email:email,source:'homepage',date:new Date().toISOString()})
-  }).then(r=>{
-    if(r.ok){status.className='success';status.textContent='Bienvenue ! Votre première newsletter arrive bientôt.';document.getElementById(inputId).value='';}
-    else{status.className='error';status.textContent='Erreur — réessayez.';}
-  }).catch(()=>{status.className='error';status.textContent='Erreur réseau — réessayez.';});
-}
-
-// ── LOAD LIVE DATA ──
-async function loadMarketData(){
-  try{
-    const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
-    if(!r.ok)return;
-    const d=await r.json();
-    const c=d.crypto||{};const b=d.bourse||{};const m=d.commodities||{};
-    if(c.BTC){
-      document.getElementById('btc-price').textContent='$'+Number(c.BTC.prix_usd||0).toLocaleString('en');
-      const v=c.BTC.variation_24h||0;
-      const el=document.getElementById('btc-change');
-      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(1)+'%';
-      el.className='tick-ch '+(v>=0?'up':'down');
-    }
-    const indices=b.indices||{};
-    if(indices['S&P 500']){
-      document.getElementById('sp-price').textContent=Number(indices['S&P 500'].valeur||0).toLocaleString('en',{maximumFractionDigits:0})+' pts';
-      const v=indices['S&P 500'].variation_24h||0;
-      const el=document.getElementById('sp-change');
-      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
-      el.className='tick-ch '+(v>=0?'up':'down');
-    }
-    if(indices['CAC 40']){
-      document.getElementById('cac-price').textContent=Number(indices['CAC 40'].valeur||0).toLocaleString('fr',{maximumFractionDigits:0})+' pts';
-      const v=indices['CAC 40'].variation_24h||0;
-      const el=document.getElementById('cac-change');
-      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
-      el.className='tick-ch '+(v>=0?'up':'down');
-    }
-    if(m['Or (XAU/USD)']){
-      document.getElementById('gold-price').textContent='$'+Number(m['Or (XAU/USD)'].valeur||0).toLocaleString('en',{maximumFractionDigits:0});
-      const v=m['Or (XAU/USD)'].variation_24h||0;
-      const el=document.getElementById('gold-change');
-      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
-      el.className='tick-ch '+(v>=0?'up':'down');
-    }
-    if(m['EUR/USD']){
-      document.getElementById('eur-price').textContent=Number(m['EUR/USD'].valeur||0).toFixed(4);
-      const v=m['EUR/USD'].variation_24h||0;
-      const el=document.getElementById('eur-change');
-      el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
-      el.className='tick-ch '+(v>=0?'up':'down');
-    }
-  }catch(e){}
-}
-
-// ── LOAD ROBOT CHALLENGE DATA ──
-async function loadChallengeData(){
-  try{
-    const r=await fetch('data/portfolio_public.json?t='+Date.now());
-    if(!r.ok)return;
-    const d=await r.json();
-    const robots=d.robots||{};
-    const map={prudent:{cap:'robot-p-capital',perf:'robot-p-perf',trades:'robot-p-trades'},modere:{cap:'robot-m-capital',perf:'robot-m-perf',trades:'robot-m-trades'},agressif:{cap:'robot-a-capital',perf:'robot-a-perf',trades:'robot-a-trades'}};
-    for(const[key,ids]of Object.entries(map)){
-      const rb=robots[key];
-      if(!rb)continue;
-      const capital=rb.capital_actuel||10000;
-      const perf=rb.performance_pct||0;
-      const trades=rb.nb_trades||0;
-      document.getElementById(ids.cap).textContent=capital.toLocaleString('fr')+' €';
-      const perfEl=document.getElementById(ids.perf);
-      perfEl.textContent=(perf>=0?'+':'')+perf.toFixed(2)+'%';
-      perfEl.className='challenge-perf '+(perf>0?'up':perf<0?'down':'flat');
-      document.getElementById(ids.trades).textContent=trades+' trade'+(trades>1?'s':'');
-    }
-  }catch(e){}
-}
-
-// ── SCROLL REVEAL ──
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// ═══════════════════════════════════════════════════
-//  HERO KPIs — Données réelles depuis portfolio_public.json + newsletters.json
-// ═══════════════════════════════════════════════════
-async function loadHeroKPIs() {
-  try {
-    const [pRes, nRes] = await Promise.all([
-      fetch('data/portfolio_public.json?t='+Date.now()),
-      fetch('data/newsletters.json?t='+Date.now())
-    ]);
-
-    if (pRes.ok) {
-      const pd = await pRes.json();
-      const robots = pd.robots || {};
-      let totalCapital = 0, totalTrades = 0, bestPerf = -Infinity, bestName = '';
-
-      for (const [key, rb] of Object.entries(robots)) {
-        totalCapital += rb.capital_actuel || 10000;
-        totalTrades += rb.nb_trades || 0;
-        const perf = rb.performance_pct || 0;
-        if (perf > bestPerf) { bestPerf = perf; bestName = rb.nom || key; }
-      }
-
-      const capEl = document.getElementById('hero-capital');
-      if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr') + ' €';
-
-      const trEl = document.getElementById('hero-trades');
-      if (trEl) trEl.textContent = totalTrades;
-
-      const bestEl = document.getElementById('hero-best');
-      if (bestEl) {
-        const perfStr = (bestPerf >= 0 ? '+' : '') + bestPerf.toFixed(2) + '%';
-        bestEl.textContent = perfStr;
-        bestEl.style.color = bestPerf >= 0 ? 'var(--green)' : 'var(--red)';
-      }
+      fetch('https://formspree.io/f/xzzbqwaa',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:email,source:'homepage',date:new Date().toISOString()})
+      }).then(r=>{
+        if(r.ok){status.className='success';status.textContent='Bienvenue ! Votre première newsletter arrive bientôt.';document.getElementById(inputId).value='';}
+        else{status.className='error';status.textContent='Erreur — réessayez.';}
+      }).catch(()=>{status.className='error';status.textContent='Erreur réseau — réessayez.';});
     }
 
-    if (nRes.ok) {
-      const nd = await nRes.json();
-      const nlEl = document.getElementById('hero-newsletters');
-      if (nlEl) nlEl.textContent = nd.count || (nd.editions || []).length || 0;
+    // ── LOAD LIVE DATA ──
+    async function loadMarketData(){
+      try{
+        const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
+        if(!r.ok)return;
+        const d=await r.json();
+        const c=d.crypto||{};const b=d.bourse||{};const m=d.commodities||{};
+        if(c.BTC){
+          document.getElementById('btc-price').textContent='$'+Number(c.BTC.prix_usd||0).toLocaleString('en');
+          const v=c.BTC.variation_24h||0;
+          const el=document.getElementById('btc-change');
+          el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(1)+'%';
+          el.className='tick-ch '+(v>=0?'up':'down');
+        }
+        const indices=b.indices||{};
+        if(indices['S&P 500']){
+          document.getElementById('sp-price').textContent=Number(indices['S&P 500'].valeur||0).toLocaleString('en',{maximumFractionDigits:0})+' pts';
+          const v=indices['S&P 500'].variation_24h||0;
+          const el=document.getElementById('sp-change');
+          el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+          el.className='tick-ch '+(v>=0?'up':'down');
+        }
+        if(indices['CAC 40']){
+          document.getElementById('cac-price').textContent=Number(indices['CAC 40'].valeur||0).toLocaleString('fr',{maximumFractionDigits:0})+' pts';
+          const v=indices['CAC 40'].variation_24h||0;
+          const el=document.getElementById('cac-change');
+          el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+          el.className='tick-ch '+(v>=0?'up':'down');
+        }
+        if(m['Or (XAU/USD)']){
+          document.getElementById('gold-price').textContent='$'+Number(m['Or (XAU/USD)'].valeur||0).toLocaleString('en',{maximumFractionDigits:0});
+          const v=m['Or (XAU/USD)'].variation_24h||0;
+          const el=document.getElementById('gold-change');
+          el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+          el.className='tick-ch '+(v>=0?'up':'down');
+        }
+        if(m['EUR/USD']){
+          document.getElementById('eur-price').textContent=Number(m['EUR/USD'].valeur||0).toFixed(4);
+          const v=m['EUR/USD'].variation_24h||0;
+          const el=document.getElementById('eur-change');
+          el.textContent=(v>=0?'▲ +':'▼ ')+Math.abs(v).toFixed(2)+'%';
+          el.className='tick-ch '+(v>=0?'up':'down');
+        }
+      }catch(e){}
     }
-  } catch(e) { console.log('Hero KPIs: erreur chargement'); }
-}
 
-// ═══════════════════════════════════════════════════
-//  ACTIVITÉ AGENTS EN DIRECT — Données réelles depuis activity_feed.json
-// ═══════════════════════════════════════════════════
-async function loadActivityFeed() {
-  try {
-    const r = await fetch('data/activity_feed.json?t='+Date.now());
-    if (!r.ok) return;
-    const d = await r.json();
-
-    // Résumé stats
-    const events = d.events || [];
-    const agents = d.agents || [];
-
-    let totalToday = 0, successToday = 0, errorsToday = 0;
-    agents.forEach(a => {
-      totalToday += a.total_today || 0;
-      successToday += a.successes_today || 0;
-      errorsToday += a.errors_today || 0;
-    });
-
-    const totalEl = document.getElementById('activity-total');
-    const successEl = document.getElementById('activity-success');
-    const errorsEl = document.getElementById('activity-errors');
-    const lastTimeEl = document.getElementById('activity-last-time');
-
-    if (totalEl) totalEl.textContent = totalToday;
-    if (successEl) successEl.textContent = successToday;
-    if (errorsEl) errorsEl.textContent = errorsToday;
-
-    // Dernière action — heure locale
-    if (lastTimeEl && events.length > 0) {
-      const lastTs = events[0].ts || '';
-      if (lastTs) {
-        const d2 = new Date(lastTs);
-        lastTimeEl.textContent = d2.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
-      }
+    // ── LOAD ROBOT CHALLENGE DATA ──
+    async function loadChallengeData(){
+      try{
+        const r=await fetch('data/portfolio_public.json?t='+Date.now());
+        if(!r.ok)return;
+        const d=await r.json();
+        const robots=d.robots||{};
+        const map={prudent:{cap:'robot-p-capital',perf:'robot-p-perf',trades:'robot-p-trades'},modere:{cap:'robot-m-capital',perf:'robot-m-perf',trades:'robot-m-trades'},agressif:{cap:'robot-a-capital',perf:'robot-a-perf',trades:'robot-a-trades'}};
+        for(const[key,ids]of Object.entries(map)){
+          const rb=robots[key];
+          if(!rb)continue;
+          const capital=rb.capital_actuel||10000;
+          const perf=rb.performance_pct||0;
+          const trades=rb.nb_trades||0;
+          document.getElementById(ids.cap).textContent=capital.toLocaleString('fr')+' €';
+          const perfEl=document.getElementById(ids.perf);
+          perfEl.textContent=(perf>=0?'+':'')+perf.toFixed(2)+'%';
+          perfEl.className='challenge-perf '+(perf>0?'up':perf<0?'down':'flat');
+          document.getElementById(ids.trades).textContent=trades+' trade'+(trades>1?'s':'');
+        }
+      }catch(e){}
     }
 
-    // 5 derniers événements
-    const container = document.getElementById('activity-events');
-    if (!container) return;
-    container.innerHTML = '';
+    // ── SCROLL REVEAL ──
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+    },{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-    const typeIcons = {
-      'success': '✅', 'error': '❌', 'warning': '⚠️',
-      'start': '🚀', 'progress': '⏳', 'info': 'ℹ️', 'milestone': '🏆'
-    };
+    // ── HERO KPIs ──
+    async function loadHeroKPIs() {
+      try {
+        const [pRes, nRes] = await Promise.all([
+          fetch('data/portfolio_public.json?t='+Date.now()),
+          fetch('data/newsletters.json?t='+Date.now())
+        ]);
 
-    const display = events.slice(0, 6);
-    display.forEach(ev => {
-      const icon = typeIcons[ev.type] || '📌';
-      const ts = new Date(ev.ts);
-      const timeStr = ts.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
-      const div = document.createElement('div');
-      div.className = 'activity-event';
-      div.innerHTML =
-        '<span class="activity-event-icon">' + icon + '</span>' +
-        '<div class="activity-event-body">' +
-          '<div class="activity-event-agent">' + (ev.agent || 'Agent') + '</div>' +
-          '<div class="activity-event-msg">' + (ev.message || '').substring(0, 120) + '</div>' +
-        '</div>' +
-        '<span class="activity-event-time">' + timeStr + '</span>';
-      container.appendChild(div);
-    });
-  } catch(e) { console.log('Activity feed non disponible'); }
-}
+        if (pRes.ok) {
+          const pd = await pRes.json();
+          const robots = pd.robots || {};
+          let totalCapital = 0, totalTrades = 0, bestPerf = -Infinity, bestName = '';
 
-// ── LEADERBOARD DYNAMIQUE ──
-async function loadLeaderboard(){
-  try{
-    const r=await fetch('data/portfolio_public.json?t='+Date.now());
-    if(!r.ok)return;
-    const d=await r.json();
-    const robots=d.robots||{};
-    const list=Object.entries(robots).map(([k,v])=>({
-      id:k,nom:v.nom||k,perf:v.performance_pct||0
-    }));
-    list.sort((a,b)=>b.perf-a.perf);
-    list.forEach((bot,i)=>{
-      const nameEl=document.getElementById('lb-name-'+(i+1));
-      const perfEl=document.getElementById('lb-perf-'+(i+1));
-      if(nameEl)nameEl.textContent=bot.nom;
-      if(perfEl){
-        perfEl.textContent=(bot.perf>=0?'+':'')+bot.perf.toFixed(2)+'%';
-        perfEl.className='lb-perf '+(bot.perf>=0?'up':'down');
-      }
-    });
-  }catch(e){}
-}
+          for (const [key, rb] of Object.entries(robots)) {
+            totalCapital += rb.capital_actuel || 10000;
+            totalTrades += rb.nb_trades || 0;
+            const perf = rb.performance_pct || 0;
+            if (perf > bestPerf) { bestPerf = perf; bestName = rb.nom || key; }
+          }
 
-// ── INIT ──
-loadMarketData();
-loadChallengeData();
-loadLeaderboard();
-loadHeroKPIs();
-loadActivityFeed();
+          const capEl = document.getElementById('hero-capital');
+          if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr') + ' €';
 
-// Refresh toutes les 2 minutes
-setInterval(()=>{
-  loadMarketData();
-  loadChallengeData();
-  loadLeaderboard();
-  loadHeroKPIs();
-  loadActivityFeed();
-}, 120000);
-</script>
+          const trEl = document.getElementById('hero-trades');
+          if (trEl) trEl.textContent = totalTrades;
+
+          const bestEl = document.getElementById('hero-best');
+          if (bestEl) {
+            const perfStr = (bestPerf >= 0 ? '+' : '') + bestPerf.toFixed(2) + '%';
+            bestEl.textContent = perfStr;
+            bestEl.style.color = bestPerf >= 0 ? '#22c55e' : '#ef4444';
+          }
+        }
+
+        if (nRes.ok) {
+          const nd = await nRes.json();
+          const nlEl = document.getElementById('hero-newsletters');
+          if (nlEl) nlEl.textContent = nd.count || (nd.editions || []).length || 0;
+        }
+      } catch(e) { console.log('Hero KPIs: erreur chargement'); }
+    }
+
+    // ── ACTIVITY FEED ──
+    async function loadActivityFeed() {
+      try {
+        const r = await fetch('data/activity_feed.json?t='+Date.now());
+        if (!r.ok) return;
+        const d = await r.json();
+
+        const events = d.events || [];
+        const agents = d.agents || [];
+
+        let totalToday = 0, successToday = 0, errorsToday = 0;
+        agents.forEach(a => {
+          totalToday += a.total_today || 0;
+          successToday += a.successes_today || 0;
+          errorsToday += a.errors_today || 0;
+        });
+
+        const totalEl = document.getElementById('activity-total');
+        const successEl = document.getElementById('activity-success');
+        const errorsEl = document.getElementById('activity-errors');
+        const lastTimeEl = document.getElementById('activity-last-time');
+
+        if (totalEl) totalEl.textContent = totalToday;
+        if (successEl) successEl.textContent = successToday;
+        if (errorsEl) errorsEl.textContent = errorsToday;
+
+        if (lastTimeEl && events.length > 0) {
+          const lastTs = events[0].ts || '';
+          if (lastTs) {
+            const d2 = new Date(lastTs);
+            lastTimeEl.textContent = d2.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+          }
+        }
+
+        const container = document.getElementById('activity-events');
+        if (!container) return;
+        container.innerHTML = '';
+
+        const typeIcons = {
+          'success': '✅', 'error': '❌', 'warning': '⚠️',
+          'start': '🚀', 'progress': '⏳', 'info': 'ℹ️', 'milestone': '🏆'
+        };
+
+        const display = events.slice(0, 6);
+        display.forEach(ev => {
+          const icon = typeIcons[ev.type] || '📌';
+          const ts = new Date(ev.ts);
+          const timeStr = ts.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+          const div = document.createElement('div');
+          div.className = 'activity-event';
+          div.innerHTML =
+            '<span class="activity-event-icon">' + icon + '</span>' +
+            '<div class="activity-event-body">' +
+              '<div class="activity-event-agent">' + (ev.agent || 'Agent') + '</div>' +
+              '<div class="activity-event-msg">' + (ev.message || '').substring(0, 120) + '</div>' +
+            '</div>' +
+            '<span class="activity-event-time">' + timeStr + '</span>';
+          container.appendChild(div);
+        });
+      } catch(e) { console.log('Activity feed non disponible'); }
+    }
+
+    // ── LEADERBOARD ──
+    async function loadLeaderboard(){
+      try{
+        const r=await fetch('data/portfolio_public.json?t='+Date.now());
+        if(!r.ok)return;
+        const d=await r.json();
+        const robots=d.robots||{};
+        const list=Object.entries(robots).map(([k,v])=>({
+          id:k,nom:v.nom||k,perf:v.performance_pct||0
+        }));
+        list.sort((a,b)=>b.perf-a.perf);
+        list.forEach((bot,i)=>{
+          const nameEl=document.getElementById('lb-name-'+(i+1));
+          const perfEl=document.getElementById('lb-perf-'+(i+1));
+          if(nameEl)nameEl.textContent=bot.nom;
+          if(perfEl){
+            perfEl.textContent=(bot.perf>=0?'+':'')+bot.perf.toFixed(2)+'%';
+            perfEl.className='lb-perf '+(bot.perf>=0?'up':'down');
+          }
+        });
+      }catch(e){}
+    }
+
+    // ── INIT ──
+    loadMarketData();
+    loadChallengeData();
+    loadLeaderboard();
+    loadHeroKPIs();
+    loadActivityFeed();
+
+    // Refresh toutes les 2 minutes
+    setInterval(()=>{
+      loadMarketData();
+      loadChallengeData();
+      loadLeaderboard();
+      loadHeroKPIs();
+      loadActivityFeed();
+    }, 120000);
+  </script>
 </body>
 </html>

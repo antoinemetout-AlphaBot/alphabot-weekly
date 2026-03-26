@@ -1,2654 +1,654 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Robot Trader — AlphaBot Weekly | 3 Robots IA investissent en direct</title>
-<meta name="description" content="Suivez 3 robots traders IA qui investissent 10 000€ chacun en temps réel. Stratégies prudente, modérée et agressive. Tous les trades justifiés et publics.">
-<meta property="og:title" content="Robot Trader IA — 3 Robots investissent 30 000€ en direct">
-<meta property="og:description" content="Suivez 3 robots traders IA qui investissent 10 000€ chacun en temps réel. Tous les trades justifiés et publics.">
-<meta property="og:image" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/assets/alphabot_twitter_pp.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@AlphaBot_Weekly">
-<link rel="canonical" href="https://antoinemetout-alphabot.github.io/alphabot-weekly/investissement.html">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Investissement — 3 Robots Traders | AlphaBot Weekly</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0e0e0e",
+            "surface-low": "#131313",
+            "surface-container": "#1a1919",
+            "surface-high": "#201f1f",
+            "surface-highest": "#262626",
+            "primary": "#ff906d",
+            "primary-container": "#ff784d",
+            "secondary": "#ff725e",
+            "on-surface": "#ffffff",
+            "on-surface-variant": "#adaaaa",
+            "outline-variant": "#484847",
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Inter", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""></noscript>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    * { @apply antialiased; }
+    html, body { background: #0e0e0e; }
+
+    /* Neural mesh background */
+    .neural-mesh {
+      background-image: radial-gradient(circle at 2px 2px, rgba(255, 144, 109, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
     }
 
-    :root {
-      --bg: #04091a;
-      --bg2: #060d1f;
-      --cyan: #22d3ee;
-      --gold: #f5c842;
-      --blue: #3b82f6;
-      --green: #22c55e;
-      --red: #ef4444;
-      --amber: #f59e0b;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --border: rgba(255,255,255,.08);
-      --transition: cubic-bezier(.4,0,.2,1);
+    /* Glassmorphism */
+    .glass-card {
+      @apply bg-neutral-950/80 backdrop-blur-xl border border-white/5;
     }
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
+    /* Glow effects */
+    .glow-primary {
+      box-shadow: 0 0 20px rgba(255, 144, 109, 0.15);
     }
 
-    /* NAV — BLOC IDENTIQUE SUR TOUTES LES PAGES (couleurs en dur) */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#04091a;border-bottom:1px solid rgba(34,211,238,.1);box-shadow:0 4px 32px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:space-between;padding:14px 5%;height:64px;}
-    .nav-brand{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:-.6px;background:linear-gradient(135deg,#fff 40%,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-    .nav-brand-sub{font-size:10px;font-weight:500;color:#64748b;-webkit-text-fill-color:#64748b;}
-    .nav-center{display:flex;gap:28px;align-items:center;}
-    .nav-center a{color:#64748b;text-decoration:none;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;transition:color .2s;position:relative;}
-    .nav-center a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:#22d3ee;transition:width .3s;}
-    .nav-center a:hover{color:#fff;}
-    .nav-center a:hover::after{width:100%;}
-    .nav-center a.active{color:#22d3ee;}
-    .nav-center a.active::after{width:100%;}
-    .nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff!important;padding:9px 22px;border-radius:12px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(34,211,238,.2);}
-    .nav-cta::after{display:none!important;}
-.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(34,211,238,.35);}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
-    .nav-hamburger span{width:20px;height:2px;background:#64748b;transition:.3s;}
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      padding: 120px 2rem 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .glow-secondary {
+      box-shadow: 0 0 16px rgba(255, 114, 94, 0.1);
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: float 20s ease-in-out infinite;
+    /* Smooth reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(30px); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 8vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--cyan), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .live-badge {
-      display: inline-block;
-      background: var(--red);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      animation: pulse 2s ease-in-out infinite;
+    /* Animated dot */
+    .status-dot {
+      @apply w-2 h-2 rounded-full bg-green-500;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-      50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
-    /* ===== ROBOT CARDS TAB SYSTEM ===== */
-    .robots-container {
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
+    /* Performance colors */
+    .perf-positive { @apply text-green-400 font-semibold; }
+    .perf-negative { @apply text-red-400 font-semibold; }
+    .perf-flat { @apply text-gray-400; }
+
+    /* Primary button */
+    .btn-primary {
+      @apply px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[#ff906d] to-[#ff784d] text-slate-900 transition hover:shadow-lg hover:glow-primary;
     }
 
-    .robots-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+    /* Secondary button */
+    .btn-secondary {
+      @apply px-6 py-3 rounded-md font-semibold bg-[#262626] border border-[#ff906d]/40 text-primary transition hover:border-primary hover:bg-[#2a2a2a];
     }
 
-    .robot-card {
-      background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.05) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+    /* Input field */
+    .input-field {
+      @apply w-full px-4 py-2.5 rounded-lg bg-[#1a1919] border border-white/10 text-white placeholder-gray-500 transition focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30;
     }
 
-    .robot-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-color), transparent);
+    /* Status messages */
+    .status-msg {
+      display: none;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
     }
 
-    .robot-card.prudent { --accent-color: var(--green); }
-    .robot-card.modere { --accent-color: var(--amber); }
-    .robot-card.agressif { --accent-color: var(--red); }
-
-    .robot-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(34, 211, 238, 0.4);
-      box-shadow: 0 20px 50px rgba(34, 211, 238, 0.1);
+    .status-msg.success {
+      display: block;
+      color: #22c55e;
     }
 
-    .robot-card.active {
-      border-color: var(--accent-color);
-      background: linear-gradient(135deg, rgba(34, 211, 238, 0.15) 0%, var(--bg2) 100%);
+    .status-msg.error {
+      display: block;
+      color: #ef4444;
     }
 
-    .robot-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+    /* Mobile menu */
+    #nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #nav-menu.mobile-open { max-height: 300px; }
+
+    /* Position & Trade Cards */
+    .position-card, .trade-card {
+      @apply glass-card rounded-lg p-6 transition hover:border-white/15;
     }
 
-    .robot-emoji {
-      font-size: 1.75rem;
+    .position-card:hover, .trade-card:hover {
+      @apply glow-primary;
     }
 
-    .robot-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
+    /* Robot Profile Card */
+    .robot-profile {
+      @apply glass-card rounded-xl p-8 transition hover:glow-primary;
     }
 
-    .robot-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .robot-header-section {
+      @apply mb-8 pb-8 border-b border-white/5;
     }
 
-    .stat-item {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+    .robot-name {
+      @apply text-3xl font-headline font-black text-primary mb-2;
+    }
+
+    .robot-description {
+      @apply text-on-surface-variant text-sm;
+    }
+
+    .stats-grid {
+      @apply grid grid-cols-3 gap-4 mb-6;
+    }
+
+    .stat-box {
+      @apply bg-white/5 rounded-lg p-4 text-center;
     }
 
     .stat-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.25rem;
+      @apply text-xs text-on-surface-variant font-semibold uppercase tracking-wider;
     }
 
     .stat-value {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.25rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, var(--cyan), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      @apply text-2xl font-headline font-black text-primary mt-2;
     }
 
-    .robot-performance {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
+    .active-positions {
+      @apply mb-8;
     }
 
-    .performance-positive {
-      color: var(--green);
+    .active-positions-title {
+      @apply text-xl font-headline font-bold mb-4;
     }
 
-    .performance-negative {
-      color: var(--red);
+    .position-item {
+      @apply bg-white/3 rounded-lg p-4 mb-3 flex justify-between items-start;
     }
 
-    .progress-bar {
-      background: rgba(34, 211, 238, 0.1);
-      height: 6px;
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 1rem;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--cyan), var(--gold));
-      transition: width 0.8s ease;
-    }
-
-    .objective-text {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    /* ===== POSITIONS SECTION ===== */
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: var(--text);
-    }
-
-    .positions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 3rem;
-    }
-
-    .position-card {
-      background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.03) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .position-card:hover {
-      border-color: rgba(34, 211, 238, 0.4);
-      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.08);
-    }
-
-    .position-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 1rem;
+    .position-left {
+      @apply flex-1;
     }
 
     .position-ticker {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--cyan);
+      @apply font-bold text-primary text-sm;
     }
 
     .position-company {
-      font-size: 0.875rem;
-      color: var(--muted);
+      @apply text-xs text-on-surface-variant mt-1;
+    }
+
+    .position-right {
+      @apply text-right;
     }
 
     .position-pnl {
-      text-align: right;
-    }
-
-    .position-pnl-percent {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .pnl-positive {
-      color: var(--green);
-    }
-
-    .pnl-negative {
-      color: var(--red);
-    }
-
-    .position-pnl-eur {
-      font-size: 0.875rem;
-      color: var(--muted);
+      @apply font-bold text-lg;
     }
 
     .position-prices {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
+      @apply text-xs text-on-surface-variant mt-1 space-y-1;
     }
 
-    .price-item {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+    .trades-history {
+      @apply border-t border-white/5 pt-8;
     }
 
-    .price-label {
-      color: var(--muted);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    .price-value {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-    }
-
-    .position-reason {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--text);
-      border-left: 3px solid var(--cyan);
-    }
-
-    .position-reason-title {
-      color: var(--muted);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .expand-btn {
-      background: none;
-      border: none;
-      color: var(--cyan);
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0;
-      text-decoration: underline;
-      margin-top: 0.5rem;
-    }
-
-    .expand-btn:hover {
-      color: var(--gold);
-    }
-
-    .expanded-content {
-      display: none;
-      margin-top: 0.75rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(34, 211, 238, 0.2);
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .expanded-content.show {
-      display: block;
-    }
-
-    .position-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    .position-date {
-      color: var(--muted);
-    }
-
-    .conviction-bar {
-      flex: 1;
-      min-width: 150px;
-      background: rgba(34, 211, 238, 0.1);
-      height: 4px;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .conviction-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--cyan), var(--gold));
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(34, 211, 238, 0.2);
-      color: var(--cyan);
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .badge-horizon {
-      background: rgba(245, 158, 11, 0.2);
-      color: var(--amber);
-    }
-
-    .sl-tp {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-    }
-
-    .sl-tp-item {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-    }
-
-    .sl-tp-label {
-      color: var(--muted);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-
-    .sl-tp-value {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-    }
-
-    /* ===== TRADES HISTORY ===== */
-    .trades-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .trade-card {
-      background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.03) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
-
-    .trade-card:hover {
-      border-color: rgba(34, 211, 238, 0.4);
-      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.08);
-    }
-
-    .trade-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      margin-bottom: 1rem;
-    }
-
-    .trade-type-badge {
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-    }
-
-    .trade-type-buy {
-      background: rgba(16, 185, 129, 0.2);
-      color: var(--green);
-    }
-
-    .trade-type-sell {
-      background: rgba(239, 68, 68, 0.2);
-      color: var(--red);
-    }
-
-    .trade-ticker {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--cyan);
-    }
-
-    .trade-company {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .trade-pnl {
-      text-align: right;
-    }
-
-    .trade-main {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
+    .trades-title {
+      @apply text-xl font-headline font-bold mb-4;
     }
 
     .trade-item {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 0.75rem;
-      border-radius: 0.5rem;
+      @apply bg-white/3 rounded-lg p-4 mb-3;
     }
 
-    .trade-item-label {
-      color: var(--muted);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
+    .trade-type-badge {
+      @apply inline-block px-2 py-1 rounded text-xs font-bold mb-2;
     }
 
-    .trade-item-value {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-      font-size: 1.1rem;
+    .trade-type-buy {
+      @apply bg-green-500/20 text-green-400;
     }
 
-    .trade-reason {
-      background: rgba(34, 211, 238, 0.05);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-      border-left: 3px solid var(--cyan);
+    .trade-type-sell {
+      @apply bg-red-500/20 text-red-400;
     }
 
-    .trade-reason-title {
-      color: var(--muted);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
+    /* Global Summary Stats */
+    .global-summary {
+      @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-12;
     }
 
-    .trade-reason-short {
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 0.5rem;
+    .summary-card {
+      @apply glass-card rounded-lg p-6 text-center;
     }
 
-    .trade-meta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--muted);
+    .summary-label {
+      @apply text-on-surface-variant text-sm font-semibold uppercase tracking-wider mb-2;
     }
 
-    .catalyseur-tag {
-      display: inline-block;
-      background: rgba(245, 158, 11, 0.2);
-      color: var(--amber);
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-weight: 600;
-      font-size: 0.7rem;
-      text-transform: uppercase;
+    .summary-value {
+      @apply text-4xl font-headline font-black text-primary;
     }
 
-    /* ===== CHART SECTION ===== */
-    .chart-container {
-      background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.03) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-    .chart-container canvas { width: 100% !important; max-height: 350px; }
-    .chart-legend {
-      display: flex; gap: 1.5rem; justify-content: center;
-      margin-top: 1rem; flex-wrap: wrap;
-    }
-    .chart-legend-item {
-      display: flex; align-items: center; gap: .4rem;
-      color: var(--text); font-size: .85rem; font-family: 'Inter', sans-serif;
-    }
-    .chart-legend-dot {
-      width: 10px; height: 10px; border-radius: 50%; display: inline-block;
-    }
-    .chart-timeframe {
-      display: flex; gap: .5rem; justify-content: flex-end; margin-bottom: 1rem;
-    }
-    .chart-timeframe button {
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-      color: var(--muted); padding: .3rem .8rem; border-radius: .5rem;
-      cursor: pointer; font-size: .8rem; transition: all .2s;
-    }
-    .chart-timeframe button.active, .chart-timeframe button:hover {
-      background: rgba(34, 211, 238, 0.15); color: var(--cyan); border-color: var(--cyan);
+    /* Bento card hover */
+    .bento-card {
+      @apply group relative overflow-hidden rounded-xl glass-card p-8 transition;
     }
 
-    /* ===== FEATURES SECTION ===== */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
+    .bento-card::before {
+      @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition;
+      content: '';
     }
 
-    .feature-card {
-      background: linear-gradient(135deg, var(--bg2) 0%, rgba(34, 211, 238, 0.03) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
+    .bento-card-content {
+      @apply relative z-10;
     }
-
-    .feature-card:hover {
-      border-color: rgba(34, 211, 238, 0.4);
-      transform: translateY(-8px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .feature-desc {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: linear-gradient(135deg, rgba(34, 211, 238, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
-      border: 1px solid rgba(34, 211, 238, 0.2);
-      border-radius: 1rem;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .cta-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--cyan), var(--gold));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .cta-form {
-      display: flex;
-      gap: 0.5rem;
-      max-width: 500px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .cta-input {
-      flex: 1;
-      min-width: 200px;
-      padding: 0.875rem 1.25rem;
-      background: var(--bg2);
-      border: 1px solid rgba(34, 211, 238, 0.3);
-      border-radius: 0.5rem;
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .cta-input:focus {
-      outline: none;
-      border-color: var(--cyan);
-      box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
-    }
-
-    .cta-input::placeholder {
-      color: var(--muted);
-    }
-
-    .cta-button {
-      padding: 0.875rem 2rem;
-      background: var(--gold);
-      color: var(--bg);
-      border: none;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem;
-    }
-
-    .cta-button:hover {
-      background: #fcd34d;
-      transform: translateY(-2px);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--bg2);
-      border-top: 1px solid rgba(34, 211, 238, 0.1);
-      padding: 3rem 2rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section h4 {
-      color: var(--text);
-      margin-bottom: 1rem;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .footer-section a {
-      display: block;
-      color: var(--muted);
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: var(--cyan);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(34, 211, 238, 0.1);
-      padding-top: 2rem;
-      text-align: center;
-    }
-
-    /* ===== LOADING STATE ===== */
-    .loading-message {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(34, 211, 238, 0.05) 100%);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      border-radius: 1rem;
-      padding: 3rem 2rem;
-      text-align: center;
-      color: var(--text);
-      font-size: 1.25rem;
-      margin: 3rem 2rem;
-    }
-
-    .loading-message strong {
-      color: var(--green);
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .position-card,
-    .trade-card {
-      animation: slideIn 0.5s ease forwards;
-    }
-
-    .position-card:nth-child(1) { animation-delay: 0.1s; }
-    .position-card:nth-child(2) { animation-delay: 0.2s; }
-    .position-card:nth-child(3) { animation-delay: 0.3s; }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      nav{padding:12px 4%;}
-      .nav-center{display:none;gap:0;width:100%;}
-      .nav-center.mobile-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:12px 0;}
-      .nav-hamburger{display:flex;}
-
-      .robots-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .positions-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .cta-form {
-        flex-direction: column;
-      }
-
-      .cta-input,
-      .cta-button {
-        width: 100%;
-      }
-
-      .trade-main {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  /* FOCUS STATES */
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-    outline: 2px solid var(--cyan);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-  .skip-link:focus { top: 0; }
   </style>
-
-<!-- DA-AMELIORATIONS-2026-03-23 -->
-<style>
-  /* (nav styles unified — no overrides needed) */
-
-  /* ===== ENHANCED HERO ===== */
-  .hero {
-    padding: 5rem 2rem 4rem;
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34, 211, 238, 0.07) 0%, transparent 70%);
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.2), transparent);
-  }
-
-  .hero h1 {
-    letter-spacing: -1.5px;
-    line-height: 1.1;
-    filter: drop-shadow(0 0 40px rgba(34, 211, 238, 0.25));
-    animation: heroEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
-  }
-
-  @keyframes heroEntrance {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.75;
-    color: #94a3b8;
-    letter-spacing: 0.2px;
-    animation: heroEntrance 0.8s 0.15s cubic-bezier(0.4, 0, 0.2, 1) both;
-  }
-
-  .live-badge {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    padding: 0.5rem 1.25rem;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .live-badge.market-closed {
-    background: linear-gradient(135deg, #64748b, #475569);
-    box-shadow: 0 4px 16px rgba(100, 116, 139, 0.3);
-    border: 1px solid rgba(100, 116, 139, 0.3);
-  }
-
-  .live-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #fff;
-    animation: livePulse 1.5s ease-in-out infinite;
-  }
-
-  @keyframes livePulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
-    50% { opacity: 0.4; box-shadow: 0 0 8px 4px rgba(255,255,255,0.3); }
-  }
-
-  .live-badge.refreshing .live-dot {
-    animation: liveRefreshSpin 0.6s linear infinite;
-    background: var(--cyan);
-  }
-
-  @keyframes liveRefreshSpin {
-    0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.8); }
-    50% { box-shadow: 0 0 12px 6px rgba(34,211,238,0.4); }
-    100% { box-shadow: 0 0 0 0 rgba(34,211,238,0.8); }
-  }
-
-  .price-flash {
-    animation: priceFlash 1.2s ease-out;
-  }
-
-  @keyframes priceFlash {
-    0% { background: rgba(34,211,238,0.3); }
-    100% { background: transparent; }
-  }
-
-  .price-flash-up {
-    animation: priceFlashUp 1.2s ease-out;
-  }
-
-  @keyframes priceFlashUp {
-    0% { color: #22c55e; text-shadow: 0 0 8px rgba(34,197,94,0.5); }
-    100% { color: inherit; text-shadow: none; }
-  }
-
-  .price-flash-down {
-    animation: priceFlashDown 1.2s ease-out;
-  }
-
-  @keyframes priceFlashDown {
-    0% { color: #ef4444; text-shadow: 0 0 8px rgba(239,68,68,0.5); }
-    100% { color: inherit; text-shadow: none; }
-  }
-
-  /* ── Badge LIVE sur chaque prix ── */
-  .price-live-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 10px;
-    vertical-align: middle;
-  }
-
-  .price-live-badge.is-live {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
-    border: 1px solid rgba(34, 197, 94, 0.3);
-  }
-
-  .price-live-badge.is-closed {
-    background: rgba(100, 116, 139, 0.15);
-    color: #94a3b8;
-    border: 1px solid rgba(100, 116, 139, 0.2);
-  }
-
-  .price-live-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #22c55e;
-    animation: livePulse 1.5s ease-in-out infinite;
-  }
-
-  .price-live-value {
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-
-  .price-source-info {
-    font-size: 0.65rem;
-    color: var(--muted);
-    opacity: 0.7;
-    padding: 0 0.25rem;
-    margin-top: -0.25rem;
-    margin-bottom: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  /* ===== ENHANCED ROBOT CARDS ===== */
-  .robots-grid {
-    gap: 2rem;
-  }
-
-  .robot-card {
-    border-radius: 1.25rem;
-    padding: 2rem;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.4s ease,
-                border-color 0.3s ease;
-    background: linear-gradient(145deg, rgba(6, 13, 31, 0.95) 0%, rgba(34, 211, 238, 0.04) 100%);
-  }
-
-  .robot-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, rgba(34, 211, 238, 0.06), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .robot-card:hover::after {
-    opacity: 1;
-  }
-
-  .robot-card:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(34, 211, 238, 0.25),
-                0 0 40px rgba(34, 211, 238, 0.08);
-  }
-
-  .robot-card.prudent:hover  { box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(16, 185, 129, 0.12); }
-  .robot-card.modere:hover   { box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(245, 158, 11, 0.12); }
-  .robot-card.agressif:hover { box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(239,  68, 68, 0.12); }
-
-  .robot-card.active {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-                0 0 0 1px var(--accent-color),
-                0 0 30px rgba(34, 211, 238, 0.1);
-  }
-
-  .robot-emoji {
-    font-size: 2rem;
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5));
-  }
-
-  .robot-title {
-    font-size: 1.3rem;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-  }
-
-  /* ===== ENHANCED STATS ===== */
-  .stat-item {
-    background: rgba(34, 211, 238, 0.06);
-    border: 1px solid rgba(34, 211, 238, 0.1);
-    border-radius: 0.75rem;
-    padding: 1rem;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-
-<!-- DA-AMELIORATIONS-2026-03-24 -->
-<style>
-/* ============================================================
-   ALPHABOT WEEKLY — investissement.html — DA Enhancement Layer
-   ============================================================ */
-
-/* ── Root enhancements ── */
-:root {
-  --glow-cyan: 0 0 24px rgba(34,211,238,.35), 0 0 48px rgba(34,211,238,.15);
-  --glow-gold: 0 0 24px rgba(245,200,66,.35), 0 0 48px rgba(245,200,66,.12);
-  --glow-green: 0 0 20px rgba(34,197,94,.3);
-  --card-bg: linear-gradient(145deg, rgba(6,13,31,.95) 0%, rgba(10,20,45,.9) 100%);
-  --glass: rgba(255,255,255,.03);
-  --amber: #f59e0b;
-}
-
-/* ── Body & background ── */
-body {
-  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34,211,238,.06) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 40% at 90% 80%, rgba(59,130,246,.05) 0%, transparent 60%),
-              var(--bg);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── Hero section ── */
-.hero {
-  padding: calc(64px + 3rem) 2rem 5rem;
-  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(34,211,238,.08) 0%, transparent 70%);
-  border-bottom: 1px solid rgba(34,211,238,.08);
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 8vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-  filter: drop-shadow(0 0 32px rgba(34,211,238,.25));
-  animation: heroIn .8s var(--transition) both;
-}
-
-@keyframes heroIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: #94a3b8;
-  animation: heroIn .8s .15s var(--transition) both;
-}
-
-/* ── Live badge ── */
-.live-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .8rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #ef4444, #f97316);
-  box-shadow: 0 4px 20px rgba(239,68,68,.4);
-  padding: .5rem 1.25rem;
-  animation: heroIn .8s .3s var(--transition) both, pulse 2s 1.1s ease-in-out infinite;
-}
-
-/* ── Robot cards ── */
-.robot-card {
-  background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,.07);
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  transition: transform .35s var(--transition),
-              box-shadow .35s var(--transition),
-              border-color .35s var(--transition);
-  backdrop-filter: blur(12px);
-  position: relative;
-  overflow: hidden;
-}
-
-.robot-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(34,211,238,.06), transparent);
-  opacity: 0;
-  transition: opacity .35s;
-  pointer-events: none;
-}
-
-.robot-card:hover::after { opacity: 1; }
-
-.robot-card:hover {
-  transform: translateY(-10px) scale(1.015);
-  border-color: rgba(34,211,238,.35);
-  box-shadow: 0 24px 60px rgba(0,0,0,.5), var(--glow-cyan);
-}
-
-.robot-card.active {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 1px var(--accent-color), 0 20px 50px rgba(0,0,0,.4);
-}
-
-.robot-card.active::before {
-  height: 4px;
-  filter: brightness(1.4);
-}
-
-/* ── Robot title ── */
-.robot-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -.4px;
-  line-height: 1.2;
-}
-
-.robot-emoji {
-  font-size: 2rem;
-  filter: drop-shadow(0 0 8px rgba(34,211,238,.4));
-}
-
-/* ── Stat items ── */
-.stat-item {
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: .75rem;
-  padding: 1rem;
-  transition: background .25s, border-color .25s;
-}
-
-.stat-item:hover {
-  background: rgba(34,211,238,.06);
-  border-color: rgba(34,211,238,.2);
-}
-
-.stat-label {
-  font-size: .7rem;
-  letter-spacing: 1.8px;
-  font-weight: 600;
-  color: #475569;
-}
-
-.stat-value {
-  font-size: 1.35rem;
-  font-weight: 700;
-  filter: drop-shadow(0 0 8px rgba(34,211,238,.3));
-  line-height: 1.2;
-  margin-top: .2rem;
-}
-
-/* ── Progress bar ── */
-.progress-bar {
-  height: 7px;
-  border-radius: 4px;
-  background: rgba(255,255,255,.05);
-  overflow: visible;
-  position: relative;
-}
-
-.progress-fill {
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--cyan), var(--gold));
-  box-shadow: 0 0 12px rgba(34,211,238,.5);
-  position: relative;
-}
-
-.progress-fill::after {
-  content: '';
-  position: absolute;
-  right: -1px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 10px var(--gold);
-}
-
-/* ── Section titles ── */
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -.6px;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #fff 50%, #22d3ee);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-bottom: .75rem;
-  border-bottom: 1px solid rgba(34,211,238,.1);
-  margin-bottom: 2rem;
-}
-
-/* ═══ ANIMATED GRADIENT BORDERS ═══ */
-@keyframes borderGlow {
-  0% { background-position:0% 50%; }
-  50% { background-position:100% 50%; }
-  100% { background-position:0% 50%; }
-}
-
-/* Dot grid background */
-body::before {
-  background-image: radial-gradient(circle, rgba(34,211,238,.06) 1px, transparent 1px)!important;
-  background-size: 40px 40px!important;
-  animation: gridPulse 4s ease-in-out infinite alternate;
-  filter:none!important;
-}
-@keyframes gridPulse { from{opacity:.4;} to{opacity:.7;} }
-
-/* Robot cards — animated border */
-.robot-card {
-  border:none!important;
-  z-index:1;
-}
-.robot-card::before {
-  content:''; position:absolute; inset:-2px; border-radius:1.35rem; z-index:-1;
-  background: linear-gradient(135deg, rgba(34,211,238,.4), rgba(59,130,246,.2), rgba(245,200,66,.2), rgba(34,211,238,.4));
-  background-size:300% 300%;
-  animation:borderGlow 6s ease infinite;
-  opacity:.3; transition:opacity .4s;
-}
-.robot-card:hover::before { opacity:1; }
-.robot-card.prudent:hover::before {
-  background:linear-gradient(135deg,rgba(34,197,94,.6),rgba(16,185,129,.3),rgba(34,197,94,.6));
-  background-size:300% 300%; animation:borderGlow 4s ease infinite;
-}
-.robot-card.modere:hover::before {
-  background:linear-gradient(135deg,rgba(245,158,11,.6),rgba(245,200,66,.3),rgba(245,158,11,.6));
-  background-size:300% 300%; animation:borderGlow 4s ease infinite;
-}
-.robot-card.agressif:hover::before {
-  background:linear-gradient(135deg,rgba(239,68,68,.6),rgba(249,115,22,.3),rgba(239,68,68,.6));
-  background-size:300% 300%; animation:borderGlow 4s ease infinite;
-}
-
-/* Robot emoji float */
-.robot-emoji {
-  display:inline-block;
-  animation: robotFloat 3s ease-in-out infinite;
-}
-@keyframes robotFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
-
-/* Stat values glow */
-.stat-value {
-  text-shadow:0 0 20px rgba(34,211,238,.3);
-}
-
-/* Glowing progress bar */
-.progress-fill {
-  box-shadow:0 0 16px rgba(34,211,238,.6), 0 0 40px rgba(34,211,238,.2)!important;
-}
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-25 -->
-<style>
-/* ============================================================
-   ALPHABOT WEEKLY — investissement.html — DA Senior Enhancements
-   ============================================================ */
-
-/* GLOBAL REFINEMENTS */
-:root {
-  --glow-cyan: 0 0 30px rgba(34,211,238,.25), 0 0 60px rgba(34,211,238,.1);
-  --glow-gold: 0 0 30px rgba(245,200,66,.25), 0 0 60px rgba(245,200,66,.1);
-  --glow-green: 0 0 20px rgba(34,197,94,.3);
-  --card-bg: linear-gradient(145deg, rgba(6,13,31,.95) 0%, rgba(4,9,26,.98) 100%);
-  --border-glow: rgba(34,211,238,.15);
-}
-
-body {
-  background: radial-gradient(ellipse at 20% 50%, rgba(34,211,238,.04) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(59,130,246,.04) 0%, transparent 60%),
-              var(--bg);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* HERO ENHANCEMENTS */
-.hero {
-  padding: 130px 2rem 5rem;
-  background: radial-gradient(ellipse at 50% 0%, rgba(34,211,238,.08) 0%, transparent 65%);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(59,130,246,.08) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 25s ease-in-out infinite reverse;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 9vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-  filter: drop-shadow(0 0 40px rgba(34,211,238,.3));
-  animation: heroFadeIn .8s var(--transition) both;
-}
-
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  letter-spacing: .01em;
-  color: #94a3b8;
-  animation: heroFadeIn .8s .15s var(--transition) both;
-}
-
-.live-badge {
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: .45rem 1.1rem;
-  border-radius: 2rem;
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  box-shadow: 0 4px 20px rgba(239,68,68,.4), 0 0 0 0 rgba(239,68,68,.5);
-  animation: livePulse 2s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-  0%,100% { box-shadow: 0 4px 20px rgba(239,68,68,.4), 0 0 0 0 rgba(239,68,68,.5); }
-  50%      { box-shadow: 0 4px 30px rgba(239,68,68,.5), 0 0 0 12px rgba(239,68,68,0); }
-}
-
-/* ROBOT CARDS */
-.robot-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-glow);
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  transition: transform .35s var(--transition),
-              box-shadow .35s var(--transition),
-              border-color .35s var(--transition);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.robot-card::before {
-  height: 2px;
-  opacity: .85;
-  transition: opacity .3s;
-}
-
-.robot-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  border-color: rgba(34,211,238,.45);
-  box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 8px 32px rgba(34,211,238,.12),
-              inset 0 1px 0 rgba(255,255,255,.06);
-}
-
-.robot-card:hover::before { opacity: 1; }
-
-.robot-card.active {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 1px var(--accent-color), var(--glow-cyan);
-  background: linear-gradient(145deg, rgba(34,211,238,.07) 0%, rgba(6,13,31,.97) 100%);
-}
-
-.robot-card.prudent:hover  { box-shadow: 0 24px 60px rgba(0,0,0,.5), var(--glow-green); }
-.robot-card.agressif:hover { box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(239,68,68,.2); }
-.robot-card.modere:hover   { box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px rgba(245,158,11,.2); }
-
-/* ROBOT HEADER */
-.robot-emoji {
-  font-size: 2rem;
-  filter: drop-shadow(0 0 8px rgba(34,211,238,.4));
-  transition: transform .3s;
-}
-
-.robot-card:hover .robot-emoji { transform: scale(1.15) rotate(-5deg); }
-
-.robot-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -.4px;
-}
-
-/* STAT ITEMS */
-.stat-item {
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: .75rem;
-  padding: .9rem 1rem;
-  transition: background .3s, border-color .3s;
-}
-
-.robot-card:hover .stat-item {
-  background: rgba(34,211,238,.06);
-  border-color: rgba(34,211,238,.12);
-}
-
-.stat-label {
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: #475569;
-  margin-bottom: .35rem;
-}
-
-.stat-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: -.5px;
-  background: linear-gradient(135deg, #22d3ee 0%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 8px rgba(34,211,238,.2));
-}
-
-/* ROBOTS GRID */
-.robots-grid {
-  gap: 1.75rem;
-}
-</style>
-
-<!-- DA-AMELIORATIONS-2026-03-26 -->
-<style>
-/* ============================================
-   INVESTISSEMENT.HTML — VISUAL ENHANCEMENTS
-   AlphaBot Weekly — Senior Art Director Layer
-   ============================================ */
-
-/* === ENHANCED CSS VARIABLES === */
-:root {
-  --glow-cyan: 0 0 30px rgba(34,211,238,0.25), 0 0 60px rgba(34,211,238,0.1);
-  --glow-gold: 0 0 30px rgba(245,200,66,0.25), 0 0 60px rgba(245,200,66,0.1);
-  --glow-green: 0 0 20px rgba(34,197,94,0.3);
-  --glow-red: 0 0 20px rgba(239,68,68,0.3);
-  --card-bg: rgba(6,13,31,0.8);
-  --glass: rgba(255,255,255,0.03);
-}
-
-/* === BODY — ANIMATED MESH BACKGROUND === */
-body {
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(34,211,238,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(59,130,246,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(245,200,66,0.03) 0%, transparent 70%);
-  background-attachment: fixed;
-}
-
-/* === HERO ENHANCEMENTS === */
-.hero {
-  padding: 130px 2rem 5rem;
-  background: radial-gradient(ellipse 100% 80% at 50% -10%, rgba(34,211,238,0.08) 0%, transparent 70%);
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 7vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-  background: linear-gradient(135deg, #fff 20%, #22d3ee 55%, #f5c842 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px rgba(34,211,238,0.3));
-  animation: heroFadeIn 0.8s var(--transition) both;
-}
-
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(24px); filter: blur(8px); }
-  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
-}
-
-.hero-subtitle {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: #94a3b8;
-  letter-spacing: 0.01em;
-  animation: heroFadeIn 0.8s 0.15s var(--transition) both;
-}
-
-/* === LIVE BADGE — ENHANCED === */
-.live-badge {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  padding: 0.5rem 1.25rem;
-  border-radius: 2rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(239,68,68,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
-  animation: heroFadeIn 0.8s 0.05s both, livePulse 2.5s ease-in-out 1s infinite;
-}
-
-@keyframes livePulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(239,68,68,0.4), 0 0 0 0 rgba(239,68,68,0.5); }
-  50%       { box-shadow: 0 4px 20px rgba(239,68,68,0.4), 0 0 0 12px rgba(239,68,68,0); }
-}
-
-/* === ROBOT CARDS — MAJOR UPGRADE === */
-.robot-card {
-  background: linear-gradient(145deg, rgba(6,13,31,0.95) 0%, rgba(10,18,40,0.9) 100%);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
-  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.35s ease, border-color 0.3s ease;
-  animation: cardReveal 0.6s var(--transition) both;
-}
-
-@keyframes cardReveal {
-  from { opacity: 0; transform: translateY(32px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.robots-grid .robot-card:nth-child(1) { animation-delay: 0.1s; }
-.robots-grid .robot-card:nth-child(2) { animation-delay: 0.2s; }
-.robots-grid .robot-card:nth-child(3) { animation-delay: 0.3s; }
-
-.robot-card::before {
-  height: 2px;
-  border-radius: 2px 2px 0 0;
-  background: linear-gradient(90deg, var(--accent-color), transparent 80%);
-  opacity: 0.9;
-  transition: opacity 0.3s;
-}
-
-.robot-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 1.25rem;
-  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(255,255,255,0.04) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.robot-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  border-color: rgba(34,211,238,0.35);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(34,211,238,0.08), inset 0 1px 0 rgba(255,255,255,0.08);
-}
-
-.robot-card:hover::before { opacity: 1; }
-
-.robot-card.prudent:hover  { box-shadow: 0 24px 60px rgba(0,0,0,0.5), var(--glow-green); }
-.robot-card.modere:hover   { box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(245,158,11,0.2); }
-.robot-card.agressif:hover { box-shadow: 0 24px 60px rgba(0,0,0,0.5), var(--glow-red); }
-</style>
 </head>
-<body>
-<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
-  <!-- NAVIGATION -->
-  <nav aria-label="Navigation principale">
-    <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-    <div class="nav-center" id="nav-menu">
-      <a href="index.html">Accueil</a>
-      <a href="newsletter.html">Newsletter</a>
-      <a href="investissement.html" class="active">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-      <a href="dashboard-agents.html">Agents IA</a>
-      <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
+<body class="bg-surface text-on-surface font-body dark">
+
+  <!-- ═══════════════════════════════════════════════════
+       NAV (Fixed Glassmorphism)
+       ═══════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-headline font-black text-primary italic">AlphaBot Weekly</a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="text-sm text-primary font-semibold transition">Investissement</a>
+        <a href="arena.html" class="text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="btn-primary ml-4">S'abonner gratuitement</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
-    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+
+    <!-- Mobile nav -->
+    <div id="nav-menu" class="md:hidden border-t border-white/5 bg-surface-container/50 backdrop-blur">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Accueil</a>
+        <a href="newsletter.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Newsletter</a>
+        <a href="investissement.html" class="block text-sm text-primary font-semibold transition">Investissement</a>
+        <a href="arena.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Arena</a>
+        <a href="dashboard-agents.html" class="block text-sm text-on-surface-variant hover:text-primary transition">Agents</a>
+        <a href="newsletter.html" class="block btn-primary text-center mt-4">S'abonner</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- GATE ABONNÉS -->
-  <div id="ab-gate" style="position:relative;z-index:10;"></div>
+  <!-- Main content -->
+  <main class="pt-20">
 
-  <!-- CONTENU RÉSERVÉ AUX ABONNÉS -->
-  <div id="ab-content" style="display:none">
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="main-content">
-    <div class="hero-content">
-      <div class="live-badge" id="live-badge">
-        <span class="live-dot" id="live-dot"></span> LIVE — Prix en temps réel
-        <span id="live-timestamp" style="font-size:10px;opacity:.7;margin-left:8px;"></span>
-        <span id="live-source" style="font-size:9px;opacity:.5;margin-left:4px;"></span>
-      </div>
-      <h1>Le Challenge : 10k€ → 100k€</h1>
-      <p class="hero-subtitle">
-        3 robots traders IA partent chacun avec <strong>10 000€</strong>. Même objectif : atteindre <strong>100 000€</strong>. Trois stratégies radicalement différentes. Qui y arrivera en premier ?
-      </p>
-      <div style="display:flex;justify-content:center;gap:20px;margin-top:20px;flex-wrap:wrap;">
-        <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:12px;padding:12px 20px;text-align:center;">
-          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Prudent</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#10b981;">🛡️ Sécurité</div>
-        </div>
-        <div style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:12px 20px;text-align:center;">
-          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Modéré</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#f59e0b;">⚖️ Équilibre</div>
-        </div>
-        <div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:12px 20px;text-align:center;">
-          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Agressif</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#ef4444;">🔥 Performance</div>
-        </div>
-      </div>
-      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:16px;">
-        100% transparent — chaque trade est réel, argumenté et vérifiable. Zéro manipulation.
-      </p>
-    </div>
-  </section>
-
-  <!-- ROBOT CARDS TABS -->
-  <section class="robots-container">
-    <div class="robots-grid">
-      <!-- Robot Prudent -->
-      <div class="robot-card prudent active" data-robot="prudent">
-        <div class="robot-header">
-          <span class="robot-emoji">🛡️</span>
-          <div>
-            <div class="robot-title">Robot Prudent</div>
-            <div style="font-size: 0.75rem; color: var(--muted);">Dividendes & Blue Chips</div>
-          </div>
-        </div>
-        <div class="robot-stats">
-          <div class="stat-item">
-            <div class="stat-label">Capital</div>
-            <div class="stat-value" id="capital-prudent">10 000€</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Perf.</div>
-            <div class="stat-value" id="perf-prudent">+0.00%</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Trades</div>
-            <div class="stat-value" id="trades-prudent">0</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Win Rate</div>
-            <div class="stat-value" id="winrate-prudent">0%</div>
-          </div>
-        </div>
-        <div class="robot-performance">
-          <span>Objectif: 100 000€ (+900%)</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-prudent" style="width: 0%"></div>
-        </div>
-        <div class="objective-text">Croissance stable, horizon moyen terme</div>
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden py-24 sm:py-32 neural-mesh">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl opacity-20"></div>
       </div>
 
-      <!-- Robot Modéré -->
-      <div class="robot-card modere" data-robot="modere">
-        <div class="robot-header">
-          <span class="robot-emoji">⚖️</span>
-          <div>
-            <div class="robot-title">Robot Modéré</div>
-            <div style="font-size: 0.75rem; color: var(--muted);">Croissance & Valeur</div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <!-- Status tag -->
+        <div class="flex items-center justify-center gap-2 mb-8">
+          <span class="status-dot"></span>
+          <span class="text-xs font-semibold text-primary">Portefeuilles fictifs en live</span>
+        </div>
+
+        <!-- Hero title -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-headline font-black text-center leading-tight mb-6">
+          3 Robots,
+          <span class="block bg-gradient-to-r from-primary via-[#ff906d] to-secondary bg-clip-text text-transparent">
+            3 Stratégies
+          </span>
+          1 Objectif
+        </h1>
+
+        <!-- Hero subtitle -->
+        <p class="text-center text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
+          Chaque robot gère un portefeuille fictif de 10 000€ avec une stratégie différente. Tous les trades sont publics et justifiés.
+        </p>
+
+        <!-- Global Summary -->
+        <div class="global-summary mb-12 reveal">
+          <div class="summary-card">
+            <div class="summary-label">Capital géré</div>
+            <div class="summary-value" id="total-capital">--</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Nombre de trades</div>
+            <div class="summary-value" id="total-trades">--</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Perf moyenne</div>
+            <div class="summary-value perf-flat" id="avg-perf">--</div>
           </div>
         </div>
-        <div class="robot-stats">
-          <div class="stat-item">
-            <div class="stat-label">Capital</div>
-            <div class="stat-value" id="capital-modere">10 000€</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Perf.</div>
-            <div class="stat-value" id="perf-modere">+0.00%</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Trades</div>
-            <div class="stat-value" id="trades-modere">0</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Win Rate</div>
-            <div class="stat-value" id="winrate-modere">0%</div>
-          </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         3 ROBOT PROFILES (Tabbed)
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto">
+
+        <!-- Robot Selection Buttons -->
+        <div class="flex flex-wrap gap-4 justify-center mb-12 reveal">
+          <button onclick="switchRobot('prudent')" class="robot-tab px-8 py-3 rounded-lg font-semibold transition" id="tab-prudent" style="background: rgba(16, 185, 129, 0.2); border: 2px solid #10b981; color: #10b981;">
+            🛡️ Prudent
+          </button>
+          <button onclick="switchRobot('modere')" class="robot-tab px-8 py-3 rounded-lg font-semibold transition" id="tab-modere" style="background: rgba(245, 158, 11, 0.2); border: 2px solid #f59e0b; color: #f59e0b;">
+            ⚖️ Modéré
+          </button>
+          <button onclick="switchRobot('agressif')" class="robot-tab px-8 py-3 rounded-lg font-semibold transition" id="tab-agressif" style="background: rgba(239, 68, 68, 0.2); border: 2px solid #ef4444; color: #ef4444;">
+            🔥 Agressif
+          </button>
         </div>
-        <div class="robot-performance">
-          <span>Objectif: 100 000€ (+900%)</span>
+
+        <!-- Robot Profile Content -->
+        <div id="robot-content" class="robot-profile reveal">
+          <!-- Content loaded by JS -->
         </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-modere" style="width: 0%"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CTA SECTION
+         ═══════════════════════════════════════════════════ -->
+    <section class="py-24 sm:py-32 px-4 sm:px-6 bg-surface-low neural-mesh">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <h2 class="text-4xl sm:text-5xl font-headline font-black mb-6">Prêt à suivre les robots ?</h2>
+        <p class="text-on-surface-variant text-lg mb-12">Recevez chaque jour les analyses et trades des 3 robots traders IA.</p>
+
+        <div class="glass-card rounded-xl p-8 reveal">
+          <form onsubmit="event.preventDefault(); handleSubscribe();" class="space-y-3">
+            <input type="email" id="email-input" placeholder="Votre email" class="input-field" required>
+            <button type="submit" class="btn-primary w-full">S'inscrire gratuitement</button>
+          </form>
+          <div id="sub-status" class="status-msg"></div>
+          <p class="text-xs text-on-surface-variant mt-4">Pas de spam, pas d'engagement, désinscription en 1 clic.</p>
         </div>
-        <div class="objective-text">Équilibre risque/rendement</div>
+
+        <!-- Disclaimer -->
+        <div class="mt-12 p-6 bg-white/5 rounded-lg border border-white/10">
+          <p class="text-xs text-on-surface-variant">
+            ⚠️ <strong>Disclamer :</strong> Les portefeuilles AlphaBot sont entièrement fictifs à titre éducatif. Ce ne sont pas des recommandations d'investissement. Consultez un professionnel avant d'investir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════ -->
+  <footer class="border-t border-white/5 bg-surface-low py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-headline font-bold text-primary mb-4">AlphaBot Weekly</h4>
+          <p class="text-sm text-on-surface-variant">Newsletter IA pour investisseurs francophones.</p>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="newsletter.html" class="text-on-surface-variant hover:text-primary transition">Newsletter</a></li>
+            <li><a href="investissement.html" class="text-on-surface-variant hover:text-primary transition">Investissement</a></li>
+            <li><a href="arena.html" class="text-on-surface-variant hover:text-primary transition">Arena</a></li>
+            <li><a href="dashboard-agents.html" class="text-on-surface-variant hover:text-primary transition">Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold mb-4">Informations</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="mailto:antoine.metout@gmail.com" class="text-on-surface-variant hover:text-primary transition">Contact</a></li>
+            <li><p class="text-on-surface-variant">© 2026 AlphaBot Weekly</p></li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Robot Agressif -->
-      <div class="robot-card agressif" data-robot="agressif">
-        <div class="robot-header">
-          <span class="robot-emoji">🔥</span>
-          <div>
-            <div class="robot-title">Robot Agressif</div>
-            <div style="font-size: 0.75rem; color: var(--muted);">Tech & Crypto</div>
-          </div>
-        </div>
-        <div class="robot-stats">
-          <div class="stat-item">
-            <div class="stat-label">Capital</div>
-            <div class="stat-value" id="capital-agressif">10 000€</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Perf.</div>
-            <div class="stat-value" id="perf-agressif">+0.00%</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Trades</div>
-            <div class="stat-value" id="trades-agressif">0</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-label">Win Rate</div>
-            <div class="stat-value" id="winrate-agressif">0%</div>
-          </div>
-        </div>
-        <div class="robot-performance">
-          <span>Objectif: 100 000€ (+900%)</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progress-agressif" style="width: 0%"></div>
-        </div>
-        <div class="objective-text">Rendement maximal, volatilité élevée</div>
+      <div class="border-t border-white/10 pt-8">
+        <p class="text-xs text-outline-variant text-center">
+          ⚠️ <strong>Disclaimer légal :</strong> Les portefeuilles AlphaBot sont entièrement fictifs à titre éducatif. Ce ne sont pas des recommandations d'investissement. Consultez un professionnel avant d'investir.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <!-- POSITIONS SECTION -->
-  <section class="section">
-    <h2 class="section-title">📊 Positions Ouvertes</h2>
-    <div id="positions-container" class="positions-grid">
-      <!-- Dynamically populated -->
-    </div>
-  </section>
-
-  <!-- TRADES HISTORY SECTION -->
-  <section class="section">
-    <h2 class="section-title">📈 Historique des Trades</h2>
-    <div id="trades-container" class="trades-list">
-      <!-- Dynamically populated -->
-    </div>
-  </section>
-
-  <!-- CHART SECTION -->
-  <section class="section">
-    <h2 class="section-title">📈 Évolution des 3 Robots</h2>
-    <div class="chart-container">
-      <div class="chart-timeframe">
-        <button data-range="all">Tout</button>
-        <button data-range="7">7J</button>
-        <button data-range="30">30J</button>
-        <button data-range="90">90J</button>
-      </div>
-      <canvas id="robotChart" height="300"></canvas>
-      <div class="chart-legend">
-        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#22c55e"></span> 🛡️ Prudent</span>
-        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#f59e0b"></span> ⚖️ Modéré</span>
-        <span class="chart-legend-item"><span class="chart-legend-dot" style="background:#ef4444"></span> 🔥 Agressif</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES SECTION -->
-  <section class="section">
-    <h2 class="section-title">Pourquoi Nos Robots?</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">✅</div>
-        <div class="feature-title">Décisions Justifiées</div>
-        <div class="feature-desc">Chaque trade contient sa raison complète. Pas de boîte noire, pas de magie — juste de la logique argumentée.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-title">Vrais Prix Marché</div>
-        <div class="feature-desc">Données réelles, portefeuille réel, investissement réel. Aucune simulation, aucun backtesting trop optimiste.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🛡️⚖️🔥</div>
-        <div class="feature-title">3 Profils Différents</div>
-        <div class="feature-desc">Prudent pour les conservateurs, Modéré pour l'équilibre, Agressif pour les amateurs de défi. À vous de choisir.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👁️</div>
-        <div class="feature-title">Transparence Totale</div>
-        <div class="feature-desc">Historique complet public. Wins et losses visibles. C'est comme ça qu'on gagne la confiance.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION — masqué si déjà connecté -->
-  <section class="section" id="cta-subscribe-section">
-    <div class="cta-section">
-      <h2 class="cta-title">Suivez les Trades en Temps Réel</h2>
-      <p style="color: var(--muted); margin-bottom: 2rem;">Recevez une alerte email dès qu'un robot ouvre ou ferme une position</p>
-      <form class="cta-form" onsubmit="handleSubscribe(event)">
-        <input type="email" class="cta-input" placeholder="votre@email.fr" required>
-        <button type="submit" class="cta-button">S'abonner</button>
-      </form>
-    </div>
-  </section>
-  <script>
-    // Toggle mobile menu
-    function toggleMenu(){const n=document.getElementById('nav-menu');n.classList.toggle('mobile-open');}
-    // Masquer le CTA si déjà abonné
-    if (sessionStorage.getItem('ab_user')) {
-      const ctaSec = document.getElementById('cta-subscribe-section');
-      if (ctaSec) ctaSec.style.display = 'none';
-    }
-  </script>
-
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>AlphaBot Weekly</h4>
-        <a href="index.html">Accueil</a>
-        <a href="newsletter.html">Newsletter</a>
-        <a href="investissement.html">Robot Trader</a>
-        <a href="dashboard-agents.html">Agents IA</a>
-      </div>
-      <div class="footer-section">
-        <h4>Produit</h4>
-        <a href="newsletter.html">Newsletter gratuite</a>
-        <a href="investissement.html">Robot Trader</a>
-        <a href="dashboard-agents.html">Agents IA</a>
-      </div>
-      <div class="footer-section">
-        <h4>Légal</h4>
-        <p style="color:var(--muted);font-size:12px;line-height:1.5;margin:0;">Les performances passées ne préjugent pas des performances futures. Ceci n'est pas un conseil en investissement.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <a href="mailto:antoine.metout@gmail.com">Email</a>
-        <a href="https://twitter.com/AlphaBot_Weekly" target="_blank">Twitter</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 AlphaBot Weekly. Tous droits réservés. | Données de marché en temps réel</p>
     </div>
   </footer>
 
-  </div><!-- /ab-content -->
-
+  <!-- ═══════════════════════════════════════════════════
+       JAVASCRIPT
+       ═══════════════════════════════════════════════════ -->
   <script>
-    let currentRobot = 'modere';
+    let currentRobot = 'prudent';
     let portfolioData = null;
 
-    async function fetchPortfolioData() {
-      try {
-        const response = await fetch('data/portfolio_public.json?t=' + Date.now());
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        portfolioData = await response.json();
-        console.log('[AlphaBot] Portfolio chargé:', JSON.stringify(Object.keys(portfolioData.robots || {})));
-        renderDashboard();
-      } catch (error) {
-        console.error('[AlphaBot] Erreur chargement portfolio:', error);
-        showLoadingMessage();
-      }
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('mobile-open');
     }
 
-    function showLoadingMessage() {
-      const posContainer = document.getElementById('positions-container');
-      const tradesContainer = document.getElementById('trades-container');
+    // ── SUBSCRIBE ──
+    function handleSubscribe() {
+      const email = document.getElementById('email-input').value.trim();
+      const status = document.getElementById('sub-status');
+      status.style.display = 'block';
 
-      posContainer.innerHTML = '<div class="loading-message" style="grid-column: 1/-1; margin: 0;"><strong>🚀 Les robots démarrent lundi</strong><br>Portfolio en cours de configuration. Revenez le 24 mars pour les premiers trades!</div>';
-      tradesContainer.innerHTML = '<div class="loading-message" style="margin: 0;"><strong>🚀 Les robots démarrent lundi</strong><br>Portfolio en cours de configuration. Revenez le 24 mars pour les premiers trades!</div>';
-    }
-
-    function renderDashboard() {
-      if (!portfolioData || !portfolioData.robots) {
-        showLoadingMessage();
-        return;
-      }
-      updateRobotStats();
-      renderPositions();
-      renderTrades();
-    }
-
-    function updateRobotStats() {
-      ['prudent', 'modere', 'agressif'].forEach(robotType => {
-        try {
-          const robot = portfolioData.robots[robotType];
-          if (!robot) { console.warn('[AlphaBot] Robot introuvable:', robotType); return; }
-
-          const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
-          const perfStr = perf.toFixed(2);
-          const objective = robot.objectif || 100000;
-          const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
-          const progress = Math.min((currentVal / objective) * 100, 100);
-          const nbTrades = robot.nb_trades !== undefined ? robot.nb_trades : (robot.trades_recent || robot.trades || []).length;
-          const winRate = robot.winrate || 0;
-
-          // Capital
-          const capEl = document.getElementById(`capital-${robotType}`);
-          if (capEl) capEl.textContent = currentVal.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + '€';
-
-          // Perf
-          const perfEl = document.getElementById(`perf-${robotType}`);
-          if (perfEl) {
-            perfEl.textContent = `${perf > 0 ? '+' : ''}${perfStr}%`;
-            perfEl.style.color = perf > 0 ? 'var(--green)' : perf < 0 ? 'var(--red)' : '';
-          }
-
-          // Trades & Win Rate
-          const tradesEl = document.getElementById(`trades-${robotType}`);
-          if (tradesEl) tradesEl.textContent = nbTrades;
-          const wrEl = document.getElementById(`winrate-${robotType}`);
-          if (wrEl) wrEl.textContent = `${winRate}%`;
-
-          // Progress bar
-          const progEl = document.getElementById(`progress-${robotType}`);
-          if (progEl) progEl.style.width = `${progress}%`;
-
-          console.log(`[AlphaBot] ${robotType}: capital=${currentVal}, perf=${perfStr}%, trades=${nbTrades}`);
-        } catch (err) {
-          console.error(`[AlphaBot] Erreur updateRobotStats ${robotType}:`, err);
-        }
-      });
-    }
-
-    function renderPositions() {
-      const robot = portfolioData.robots[currentRobot];
-      const posContainer = document.getElementById('positions-container');
-
-      if (!robot || !robot.positions || robot.positions.length === 0) {
-        posContainer.innerHTML = '<div class="loading-message" style="grid-column: 1/-1; text-align: center;">Pas de positions ouvertes pour le moment</div>';
+      if (!email || !email.includes('@')) {
+        status.className = 'error';
+        status.textContent = 'Entrez un email valide';
         return;
       }
 
-      posContainer.innerHTML = robot.positions.map((pos) => {
-        const entryPrice = pos.prix_entree || pos.entry_price || 0;
-        const currentPrice = pos.prix_actuel || pos.current_price || entryPrice;
-        const qty = pos.nb_actions || pos.quantity || 0;
-        const convictionLevel = pos.niveau_conviction || pos.conviction_level || 5;
-        const companyName = pos.nom || pos.company_name || pos.ticker;
-        const entryDate = pos.date_achat || pos.entry_date || '';
-        const pnlPercent = pos.pl_pct !== undefined ? pos.pl_pct.toFixed(2) : ((currentPrice - entryPrice) / entryPrice * 100).toFixed(2);
-        const pnlEur = pos.pl_euros !== undefined ? pos.pl_euros.toFixed(2) : (qty * (currentPrice - entryPrice)).toFixed(2);
-        const conviction = Math.round((convictionLevel / 10) * 100);
-        const devise = pos.devise === 'USD' ? '$' : '€';
-        const source = _lastSourceUsed[pos.ticker] || '';
-        const isCrypto = !!CRYPTO_MAP[pos.ticker];
-        const market = getMarketStatus();
-        const tickerIsUS = !pos.ticker.includes('.') && !pos.ticker.includes('-');
-        const tickerIsEU = pos.ticker.includes('.DE') || pos.ticker.includes('.PA');
-        const isLive = isCrypto || (tickerIsUS && market.usOpen) || (tickerIsEU && market.euOpen);
-        const liveLabel = isLive ? '<span class="price-live-dot"></span> LIVE' : 'Clôture';
+      status.className = '';
+      status.textContent = 'Inscription en cours...';
 
-        return `<div class="position-card" data-ticker="${pos.ticker}">
-          <div class="position-header">
-            <div>
-              <div class="position-ticker">${pos.ticker}</div>
-              <div class="position-company">${companyName}</div>
-            </div>
-            <div class="position-pnl">
-              <div class="position-pnl-percent ${pnlPercent > 0 ? 'pnl-positive' : 'pnl-negative'}">${pnlPercent > 0 ? '+' : ''}${pnlPercent}%</div>
-              <div class="position-pnl-eur">${pnlEur > 0 ? '+' : ''}${pnlEur}${devise}</div>
-            </div>
-          </div>
-          <div class="position-prices">
-            <div class="price-item"><div class="price-label">Entrée</div><div class="price-value">${entryPrice.toFixed(2)}${devise}</div></div>
-            <div class="price-item"><div class="price-label"><span class="price-live-badge ${isLive ? 'is-live' : 'is-closed'}">${liveLabel}</span></div><div class="price-value price-live-value" id="live-price-${pos.ticker}">${currentPrice.toFixed(2)}${devise}</div></div>
-          </div>
-          <div class="price-source-info">${source ? 'via ' + source : ''}${isLive ? ' — rafraîchi toutes les 15s' : ' — marché fermé'}</div>
-          <div class="position-reason">
-            <div class="position-reason-title">Raison</div>
-            <div class="position-reason-short">${pos.raison_courte || ''}</div>
-            ${pos.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Voir justification complète →</button><div class="expanded-content">${pos.raison_complete}</div>` : ''}
-          </div>
-          <div style="margin-bottom: 1rem;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Conviction</span>
-              <span style="font-family: 'JetBrains Mono'; font-weight: 600;">${convictionLevel}/10</span>
-            </div>
-            <div class="conviction-bar"><div class="conviction-fill" style="width: ${conviction}%"></div></div>
-          </div>
-          <div class="position-meta">
-            <span class="position-date">${entryDate ? new Date(entryDate).toLocaleString('fr-FR') : ''}</span>
-            <span class="badge badge-horizon">${pos.horizon || ''}</span>
-          </div>
-          <div class="sl-tp">
-            <div class="sl-tp-item"><div class="sl-tp-label">Stop Loss</div><div class="sl-tp-value">${(pos.stop_loss||0).toFixed(2)}${devise}</div></div>
-            <div class="sl-tp-item"><div class="sl-tp-label">Take Profit</div><div class="sl-tp-value">${(pos.take_profit||0).toFixed(2)}${devise}</div></div>
-          </div>
-        </div>`;
-      }).join('');
-    }
-
-    function renderTrades() {
-      const robot = portfolioData.robots[currentRobot];
-      const tradesContainer = document.getElementById('trades-container');
-
-      const trades = robot.trades_recent || robot.trades || [];
-      if (!robot || trades.length === 0) {
-        tradesContainer.innerHTML = '<div class="loading-message">Aucun trade enregistré pour le moment</div>';
-        return;
-      }
-
-      const sortedTrades = [...trades].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-      tradesContainer.innerHTML = sortedTrades.map(trade => {
-        const tradeType = (trade.type||'').toLowerCase();
-        const isBuy = tradeType === 'achat';
-        const pnlPct = trade.pnl_percent || trade.pl_pct || 0;
-        const displayPnl = !isBuy && pnlPct ? `${pnlPct > 0 ? '+' : ''}${pnlPct}%` : 'N/A';
-        const displayDuration = trade.duration || trade.duree || 'Ouvert';
-        const tradePrice = trade.prix || trade.price || 0;
-        const tradeQty = trade.nb_actions || trade.quantity || 0;
-        const tradeMontant = trade.montant || (tradePrice * tradeQty);
-        const companyName = trade.nom || trade.company_name || trade.ticker;
-        const devise = (trade.ticker||'').includes('USD') || (trade.ticker||'').includes('BTC') ? '$' : '€';
-
-        return `<div class="trade-card">
-          <div class="trade-header">
-            <div>
-              <span class="trade-type-badge ${isBuy ? 'trade-type-buy' : 'trade-type-sell'}">${isBuy ? '↓ ACHAT' : '↑ VENTE'}</span>
-              <div style="margin-top: 0.75rem;">
-                <div class="trade-ticker">${trade.ticker}</div>
-                <div class="trade-company">${companyName}</div>
-              </div>
-            </div>
-            ${!isBuy ? `<div class="trade-pnl"><div style="font-family: 'JetBrains Mono'; font-size: 1.25rem; font-weight: 700; ${pnlPct > 0 ? 'color: var(--green)' : 'color: var(--red)'};">${displayPnl}</div><div style="color: var(--muted); font-size: 0.85rem;">${displayDuration}</div></div>` : ''}
-          </div>
-          <div class="trade-main">
-            <div class="trade-item"><div class="trade-item-label">Prix</div><div class="trade-item-value">${tradePrice.toFixed(2)}${devise}</div></div>
-            <div class="trade-item"><div class="trade-item-label">Quantité</div><div class="trade-item-value">${tradeQty}</div></div>
-            <div class="trade-item"><div class="trade-item-label">Montant</div><div class="trade-item-value">${tradeMontant.toFixed(0)}${devise}</div></div>
-          </div>
-          <div class="trade-reason">
-            <div class="trade-reason-title">Justification</div>
-            <div class="trade-reason-short">${trade.raison_courte || ''}</div>
-            ${trade.raison_complete ? `<button class="expand-btn" onclick="toggleExpand(event)">Lire la justification complète →</button><div class="expanded-content">${trade.raison_complete}</div>` : ''}
-          </div>
-          <div class="trade-meta">
-            <span>${trade.date ? new Date(trade.date).toLocaleString('fr-FR') : ''}</span>
-            ${trade.catalyseur ? `<span class="catalyseur-tag">${trade.catalyseur}</span>` : ''}
-          </div>
-        </div>`;
-      }).join('');
-    }
-
-    function toggleExpand(event) {
-      event.preventDefault();
-      const expanded = event.target.nextElementSibling;
-      expanded.classList.toggle('show');
-      event.target.textContent = expanded.classList.contains('show') ? 'Masquer ←' : 'Voir justification complète →';
-    }
-
-    function handleSubscribe(event) {
-      event.preventDefault();
-      const email = event.target.querySelector('.cta-input').value;
-      alert(`Merci! Nous avons reçu votre email: ${email}\nVérifiez votre boîte de réception (y compris spam) pour confirmer.`);
-      event.target.reset();
-    }
-
-    document.querySelectorAll('.robot-card').forEach(card => {
-      card.addEventListener('click', function() {
-        document.querySelectorAll('.robot-card').forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        currentRobot = this.dataset.robot;
-        renderPositions();
-        renderTrades();
-      });
-    });
-
-    fetchPortfolioData();
-    setInterval(fetchPortfolioData, 60000);
-
-    // ══════════════════════════════════════════════════════════════
-    // PRIX EN TEMPS RÉEL — Mise à jour automatique toutes les 15s
-    // Sources multiples : Yahoo, CoinGecko, Google Finance
-    // ══════════════════════════════════════════════════════════════
-
-    const CRYPTO_MAP = {
-      'BTC-USD': 'bitcoin', 'ETH-USD': 'ethereum', 'SOL-USD': 'solana',
-      'BNB-USD': 'binancecoin', 'XRP-USD': 'ripple', 'ADA-USD': 'cardano',
-      'DOGE-USD': 'dogecoin', 'AVAX-USD': 'avalanche-2', 'DOT-USD': 'polkadot',
-      'LINK-USD': 'chainlink'
-    };
-
-    let _lastPrices = {};     // Mémorise le dernier prix connu par ticker
-    let _refreshCount = 0;    // Compteur de refresh cycles
-    let _lastSourceUsed = {}; // Quelle source a fourni le dernier prix
-
-    // ── Indicateur visuel du badge LIVE ──
-    function setLiveStatus(status, detail) {
-      const badge = document.getElementById('live-badge');
-      const dot = document.getElementById('live-dot');
-      const tsEl = document.getElementById('live-timestamp');
-      const srcEl = document.getElementById('live-source');
-      if (!badge) return;
-
-      badge.classList.remove('refreshing', 'market-closed');
-
-      if (status === 'refreshing') {
-        badge.classList.add('refreshing');
-        badge.querySelector('.live-dot + span')?.remove(); // cleanup old text nodes
-      } else if (status === 'market-closed') {
-        badge.classList.add('market-closed');
-      }
-
-      if (tsEl && detail?.time) tsEl.textContent = detail.time;
-      if (srcEl && detail?.source) srcEl.textContent = `(${detail.source})`;
-    }
-
-    // ── Détection horaires marchés (heure de Paris CET/CEST) ──
-    function getMarketStatus() {
-      const now = new Date();
-      const day = now.getDay(); // 0=dim, 6=sam
-
-      // Heure de Paris (gère automatiquement CET/CEST)
-      const parisStr = now.toLocaleString('en-US', {timeZone: 'Europe/Paris', hour12: false});
-      const parts = parisStr.split(', ')[1]?.split(':') || [];
-      const h = parseInt(parts[0]) || 0;
-      const m = parseInt(parts[1]) || 0;
-      const hDecimal = h + m / 60;
-
-      // Weekend = marchés fermés (sauf crypto)
-      if (day === 0 || day === 6) return { usOpen: false, euOpen: false, weekend: true, parisHour: h };
-
-      // Marchés EU (Xetra/Euronext) : 9h00 - 17h30 Paris
-      const euOpen = (hDecimal >= 9.0 && hDecimal < 17.5);
-      // Marchés US (NYSE/NASDAQ) : 15h30 - 22h00 Paris
-      const usOpen = (hDecimal >= 15.5 && hDecimal < 22.0);
-
-      return { usOpen, euOpen, weekend: false, parisHour: h };
-    }
-
-    function isTickerUS(ticker) {
-      // ETFs US classiques (pas de .DE, .PA, etc.)
-      return !ticker.includes('.') || ticker.endsWith('-USD');
-    }
-
-    function isTickerCrypto(ticker) {
-      return !!CRYPTO_MAP[ticker];
-    }
-
-    // ── Fetch avec timeout ──
-    async function _fetchWithTimeout(url, ms = 6000) {
-      const ctrl = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), ms);
-      try {
-        const r = await fetch(url, { signal: ctrl.signal });
-        clearTimeout(timer);
-        return r;
-      } catch(e) { clearTimeout(timer); throw e; }
-    }
-
-    // ── Source 1 : CoinGecko (crypto uniquement, pas de proxy nécessaire) ──
-    async function fetchCryptoPrice(ticker) {
-      const coinId = CRYPTO_MAP[ticker];
-      if (!coinId) return null;
-      try {
-        const r = await _fetchWithTimeout(`https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd`, 8000);
-        if (!r.ok) return null;
-        const d = await r.json();
-        const price = d[coinId]?.usd;
-        if (price && price > 0) {
-          console.log(`[Prix] ${ticker} via CoinGecko: $${price}`);
-          _lastSourceUsed[ticker] = 'CoinGecko';
-          return price;
-        }
-      } catch(e) { console.warn(`[Prix] CoinGecko fail pour ${ticker}:`, e.message); }
-      return null;
-    }
-
-    // ── Source 2 : Yahoo Finance v8 (via corsproxy.io) ──
-    async function _yahooPrice(ticker) {
-      try {
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
-        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 8000);
-        if (!r.ok) return null;
-        const d = await r.json();
-        const price = d?.chart?.result?.[0]?.meta?.regularMarketPrice;
-        if (price && price > 0) {
-          console.log(`[Prix] ${ticker} via Yahoo v8: ${price}`);
-          _lastSourceUsed[ticker] = 'Yahoo';
-          return price;
-        }
-      } catch(e) { console.warn(`[Prix] Yahoo v8 fail pour ${ticker}:`, e.message); }
-      return null;
-    }
-
-    // ── Source 3 : Yahoo Finance v6 (endpoint alternatif) ──
-    async function _yahooV6Price(ticker) {
-      try {
-        const url = `https://query2.finance.yahoo.com/v6/finance/quote?symbols=${encodeURIComponent(ticker)}`;
-        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 8000);
-        if (!r.ok) return null;
-        const d = await r.json();
-        const price = d?.quoteResponse?.result?.[0]?.regularMarketPrice;
-        if (price && price > 0) {
-          console.log(`[Prix] ${ticker} via Yahoo v6: ${price}`);
-          _lastSourceUsed[ticker] = 'Yahoo v6';
-          return price;
-        }
-      } catch(e) { console.warn(`[Prix] Yahoo v6 fail pour ${ticker}:`, e.message); }
-      return null;
-    }
-
-    // ── Source 4 : Google Finance (scrape via proxy) ──
-    async function _googleFinancePrice(ticker) {
-      try {
-        const EXCHANGE_MAP = {'.DE':':ETR', '.PA':':EPA', '.L':':LON', '.AS':':AMS'};
-        let gTicker = ticker;
-        for (const [yExt, gExt] of Object.entries(EXCHANGE_MAP)) {
-          if (ticker.endsWith(yExt)) { gTicker = ticker.replace(yExt, gExt); break; }
-        }
-        // Crypto → skip Google
-        if (ticker.includes('-USD')) return null;
-        // US stocks/ETFs sans extension → essayer NYSE puis NYSEARCA
-        if (!gTicker.includes(':')) {
-          // Essayer d'abord NYSEARCA (ETFs), puis NYSE
-          for (const exchange of [':NYSEARCA', ':NYSE', ':NASDAQ']) {
-            try {
-              const url = `https://www.google.com/finance/quote/${gTicker}${exchange}`;
-              const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
-              if (r.ok) {
-                const html = await r.text();
-                const m = html.match(/data-last-price="([0-9.,]+)"/);
-                if (m) {
-                  const price = parseFloat(m[1].replace(',', ''));
-                  if (price > 0) {
-                    console.log(`[Prix] ${ticker} via Google Finance (${exchange}): ${price}`);
-                    _lastSourceUsed[ticker] = `Google${exchange}`;
-                    return price;
-                  }
-                }
-              }
-            } catch(e) {}
-          }
-          return null;
-        }
-
-        const url = `https://www.google.com/finance/quote/${gTicker}`;
-        const r = await _fetchWithTimeout(`https://corsproxy.io/?url=${encodeURIComponent(url)}`, 6000);
+      fetch('https://formspree.io/f/xzzbqwaa', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'investissement', date: new Date().toISOString() })
+      }).then(r => {
         if (r.ok) {
-          const html = await r.text();
-          const m = html.match(/data-last-price="([0-9.,]+)"/);
-          if (m) {
-            const price = parseFloat(m[1].replace(',', ''));
-            if (price > 0) {
-              console.log(`[Prix] ${ticker} via Google Finance: ${price}`);
-              _lastSourceUsed[ticker] = 'Google';
-              return price;
-            }
-          }
-        }
-      } catch(e) { console.warn(`[Prix] Google Finance fail pour ${ticker}:`, e.message); }
-      return null;
-    }
-
-    // ── Fetch prix multi-sources (course en parallèle) ──
-    async function fetchStockPrice(ticker) {
-      const sources = [_yahooPrice(ticker), _yahooV6Price(ticker), _googleFinancePrice(ticker)];
-      const results = await Promise.allSettled(sources);
-
-      for (const r of results) {
-        if (r.status === 'fulfilled' && r.value && r.value > 0) return r.value;
-      }
-      console.warn(`[Prix] Aucune source n'a répondu pour ${ticker}`);
-      return null;
-    }
-
-    // ── Refresh principal : met à jour tous les prix live ──
-    async function refreshLivePrices() {
-      if (!portfolioData?.robots) return;
-
-      _refreshCount++;
-      setLiveStatus('refreshing');
-      console.log(`[AlphaBot LIVE] ─── Refresh #${_refreshCount} @ ${new Date().toLocaleTimeString('fr-FR')} ───`);
-
-      const marketStatus = getMarketStatus();
-      let updated = false;
-      let sourcesUsed = new Set();
-      let tickersUpdated = 0;
-      let tickersTotal = 0;
-
-      for (const [robotType, robot] of Object.entries(portfolioData.robots)) {
-        if (!robot.positions) continue;
-
-        for (const pos of robot.positions) {
-          tickersTotal++;
-          const oldPrice = pos.prix_actuel || pos.current_price || 0;
-          let livePrice = null;
-
-          // Crypto → toujours actif 24/7
-          if (isTickerCrypto(pos.ticker)) {
-            livePrice = await fetchCryptoPrice(pos.ticker);
-          }
-          // Stock/ETF → fetch même hors marché (retourne le dernier close)
-          else {
-            livePrice = await fetchStockPrice(pos.ticker);
-          }
-
-          if (livePrice && livePrice > 0) {
-            tickersUpdated++;
-            sourcesUsed.add(_lastSourceUsed[pos.ticker] || '?');
-
-            pos.prix_actuel = livePrice;
-            pos.current_price = livePrice;
-
-            const entryPrice = pos.prix_entree || pos.entry_price || 0;
-            const qty = pos.nb_actions || pos.quantity || 0;
-            if (entryPrice > 0) {
-              pos.pl_pct = ((livePrice - entryPrice) / entryPrice * 100);
-              pos.pl_euros = qty * (livePrice - entryPrice);
-            }
-
-            // Recalcul capital du robot
-            const totalPL = robot.positions.reduce((sum, p) => sum + (p.pl_euros || 0), 0);
-            robot.capital_actuel = robot.capital_initial + totalPL;
-            robot.performance_pct = (totalPL / robot.capital_initial) * 100;
-            robot.performance_eur = totalPL;
-            updated = true;
-
-            // Log le changement
-            const priceDiff = livePrice - oldPrice;
-            const arrow = priceDiff > 0 ? '↑' : priceDiff < 0 ? '↓' : '=';
-            console.log(`[AlphaBot LIVE] ${pos.ticker}: ${livePrice.toFixed(2)} ${arrow} (P&L: ${pos.pl_pct >= 0 ? '+' : ''}${pos.pl_pct.toFixed(2)}%) via ${_lastSourceUsed[pos.ticker]}`);
-
-            // Mémorise pour détecter les changements
-            _lastPrices[pos.ticker] = livePrice;
-          }
-        }
-      }
-
-      // Mettre à jour l'affichage
-      const now = new Date().toLocaleTimeString('fr-FR');
-      const sourceStr = [...sourcesUsed].join(', ') || 'aucune';
-
-      // Construire le message de statut des marchés
-      let marketLabel = '';
-      if (marketStatus.euOpen && marketStatus.usOpen) marketLabel = 'EU + US ouverts';
-      else if (marketStatus.euOpen) marketLabel = 'EU ouvert | US ouvre à 15h30';
-      else if (marketStatus.usOpen) marketLabel = 'EU fermé | US ouvert jusqu\'à 22h';
-      else if (!marketStatus.weekend) marketLabel = 'Marchés fermés | Crypto 24/7';
-
-      if (updated) {
-        renderDashboard();
-        setLiveStatus('live', {
-          time: `MAJ: ${now} — ${tickersUpdated}/${tickersTotal} tickers${marketLabel ? ' | ' + marketLabel : ''}`,
-          source: sourceStr
-        });
-      } else {
-        if (marketStatus.weekend) {
-          setLiveStatus('market-closed', {
-            time: `Weekend — marchés fermés. Crypto 24/7. MAJ: ${now}`,
-            source: tickersUpdated > 0 ? sourceStr : 'en attente'
-          });
-        } else if (!marketStatus.euOpen && !marketStatus.usOpen) {
-          // Hors séance — message adapté selon l'heure
-          const h = marketStatus.parisHour || 0;
-          let nextOpen = h < 9 ? 'EU ouvre à 9h' : h >= 22 ? 'Reprise demain 9h' : 'US ouvre à 15h30';
-          setLiveStatus('market-closed', {
-            time: `Hors séance — ${nextOpen}. MAJ: ${now}`,
-            source: tickersUpdated > 0 ? sourceStr : 'derniers cours de clôture'
-          });
+          status.className = 'success';
+          status.textContent = 'Bienvenue ! Votre première newsletter arrive bientôt.';
+          document.getElementById('email-input').value = '';
         } else {
-          setLiveStatus('live', {
-            time: `MAJ: ${now} — ${marketLabel}${tickersUpdated > 0 ? ' | ' + tickersUpdated + ' OK' : ''}`,
-            source: tickersUpdated > 0 ? sourceStr : 'retry dans 15s'
-          });
+          status.className = 'error';
+          status.textContent = 'Erreur — réessayez.';
         }
-      }
-
-      console.log(`[AlphaBot LIVE] ─── Fin refresh #${_refreshCount}: ${tickersUpdated}/${tickersTotal} OK via ${sourceStr} ───`);
+      }).catch(() => {
+        status.className = 'error';
+        status.textContent = 'Erreur réseau — réessayez.';
+      });
     }
 
-    // ══════════════════════════════════════════════════════════════
-    // GRAPHIQUE CHART.JS — Évolution des 3 robots
-    // ══════════════════════════════════════════════════════════════
-    window.robotChart = null;
+    // ── LOAD PORTFOLIO DATA ──
+    async function loadPortfolioData() {
+      try {
+        const r = await fetch('data/portfolio_public.json?t=' + Date.now());
+        if (!r.ok) return;
+        portfolioData = await r.json();
+        updateGlobalSummary();
+        switchRobot('prudent');
+      } catch (e) {
+        console.log('Erreur chargement portfolio:', e);
+      }
+    }
 
-    function buildChartData() {
-      if (!portfolioData?.robots) return null;
+    // ── UPDATE GLOBAL SUMMARY ──
+    function updateGlobalSummary() {
+      if (!portfolioData || !portfolioData.robots) return;
 
-      // Construire l'historique : point de départ (10k) + trades + valeur actuelle
       const robots = portfolioData.robots;
-      const allDates = new Set();
-      const robotColors = { prudent: '#22c55e', modere: '#f59e0b', agressif: '#ef4444' };
-      const robotFills = {
-        prudent: 'rgba(34,197,94,0.08)',
-        modere: 'rgba(245,158,11,0.08)',
-        agressif: 'rgba(239,68,68,0.08)'
+      let totalCapital = 0, totalTrades = 0, perfValues = [];
+
+      for (const [key, robot] of Object.entries(robots)) {
+        totalCapital += robot.capital_actuel || 10000;
+        totalTrades += robot.nb_trades || 0;
+        perfValues.push(robot.performance_pct || 0);
+      }
+
+      const avgPerf = perfValues.length > 0 ? perfValues.reduce((a, b) => a + b) / perfValues.length : 0;
+
+      document.getElementById('total-capital').textContent = Math.round(totalCapital).toLocaleString('fr') + ' €';
+      document.getElementById('total-trades').textContent = totalTrades;
+
+      const perfEl = document.getElementById('avg-perf');
+      perfEl.textContent = (avgPerf >= 0 ? '+' : '') + avgPerf.toFixed(2) + '%';
+      perfEl.className = 'summary-value ' + (avgPerf > 0 ? 'perf-positive' : avgPerf < 0 ? 'perf-negative' : 'perf-flat');
+    }
+
+    // ── SWITCH ROBOT ──
+    function switchRobot(robotKey) {
+      currentRobot = robotKey;
+
+      // Update tabs
+      document.querySelectorAll('.robot-tab').forEach(btn => {
+        btn.style.opacity = '0.5';
+      });
+      document.getElementById('tab-' + robotKey).style.opacity = '1';
+
+      // Render robot content
+      renderRobotProfile(robotKey);
+    }
+
+    // ── RENDER ROBOT PROFILE ──
+    function renderRobotProfile(robotKey) {
+      if (!portfolioData || !portfolioData.robots || !portfolioData.robots[robotKey]) {
+        document.getElementById('robot-content').innerHTML = '<p>Chargement...</p>';
+        return;
+      }
+
+      const robot = portfolioData.robots[robotKey];
+      const emojis = { prudent: '🛡️', modere: '⚖️', agressif: '🔥' };
+      const descriptions = {
+        prudent: 'Capital sécurisé. ETF défensifs, obligations. Risque minimal.',
+        modere: 'Équilibre. Mix actions / ETF. Risque modéré.',
+        agressif: 'Haute performance. Actions, crypto, dérivés. Risque élevé.'
       };
 
-      // Collecter toutes les dates de trades
-      for (const [type, robot] of Object.entries(robots)) {
-        if (robot.trades_recent) {
-          for (const t of robot.trades_recent) {
-            const d = t.date?.split(' ')[0];
-            if (d) allDates.add(d);
-          }
-        }
-      }
+      const perfClass = robot.performance_pct >= 0 ? 'perf-positive' : robot.performance_pct < 0 ? 'perf-negative' : 'perf-flat';
+      const perfStr = (robot.performance_pct >= 0 ? '+' : '') + robot.performance_pct.toFixed(2) + '%';
 
-      // Date de lancement (veille du 1er trade ou J-1)
-      const today = new Date().toISOString().split('T')[0];
-      allDates.add(today);
-      const sortedDates = [...allDates].sort();
-      const launchDate = new Date(sortedDates[0]);
-      launchDate.setDate(launchDate.getDate() - 1);
-      const launchStr = launchDate.toISOString().split('T')[0];
+      let html = `
+        <div class="robot-header-section">
+          <div class="text-5xl mb-3">${emojis[robotKey]}</div>
+          <h2 class="robot-name">${robot.nom || 'Robot ' + robotKey.charAt(0).toUpperCase() + robotKey.slice(1)}</h2>
+          <p class="robot-description">${descriptions[robotKey]}</p>
+        </div>
 
-      // Labels = dates formatées
-      const labels = [launchStr, ...sortedDates].map(d => {
-        const parts = d.split('-');
-        return `${parts[2]}/${parts[1]}`;
-      });
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">Capital actuel</div>
+            <div class="stat-value">${(robot.capital_actuel || 10000).toLocaleString('fr')} €</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Performance</div>
+            <div class="stat-value ${perfClass}">${perfStr}</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Nombre de trades</div>
+            <div class="stat-value">${robot.nb_trades || 0}</div>
+          </div>
+        </div>
+      `;
 
-      // Datasets
-      const datasets = [];
-      for (const [type, robot] of Object.entries(robots)) {
-        const data = new Array(labels.length).fill(null);
-        data[0] = robot.capital_initial || 10000; // Jour 0 = capital initial
-        data[data.length - 1] = robot.capital_actuel || robot.capital_initial; // Dernier point = capital actuel
-        // Remplir les points intermédiaires
-        for (let i = 1; i < data.length - 1; i++) { data[i] = data[i] || data[0]; }
+      // Positions actives
+      if (robot.positions && robot.positions.length > 0) {
+        html += `<div class="active-positions">
+          <h3 class="active-positions-title">Positions actives</h3>`;
 
-        datasets.push({
-          label: `${robot.emoji || ''} ${robot.nom || type}`,
-          data: data,
-          borderColor: robotColors[type] || '#22d3ee',
-          backgroundColor: robotFills[type] || 'rgba(34,211,238,0.08)',
-          fill: true,
-          tension: 0.3,
-          pointRadius: 5,
-          pointHoverRadius: 8,
-          pointBackgroundColor: robotColors[type] || '#22d3ee',
-          pointBorderColor: '#fff',
-          pointBorderWidth: 2,
-          borderWidth: 3
+        robot.positions.forEach(pos => {
+          const pnlClass = pos.pnl_pct >= 0 ? 'perf-positive' : 'perf-negative';
+          const pnlStr = (pos.pnl_pct >= 0 ? '+' : '') + pos.pnl_pct.toFixed(2) + '%';
+
+          html += `<div class="position-item">
+            <div class="position-left">
+              <div class="position-ticker">${pos.ticker}</div>
+              <div class="position-company">${pos.company || ''}</div>
+            </div>
+            <div class="position-right">
+              <div class="position-pnl ${pnlClass}">${pnlStr}</div>
+              <div class="position-prices">
+                <div>Entrée: $${Number(pos.prix_entree || 0).toFixed(2)}</div>
+                <div>Actuel: $${Number(pos.prix_actuel || 0).toFixed(2)}</div>
+                <div>${new Date(pos.date_achat).toLocaleDateString('fr')}</div>
+              </div>
+            </div>
+          </div>`;
         });
+
+        html += `</div>`;
       }
 
-      return { labels, datasets };
+      // Trades history
+      if (robot.trades && robot.trades.length > 0) {
+        html += `<div class="trades-history">
+          <h3 class="trades-title">Historique des trades</h3>`;
+
+        robot.trades.slice(0, 5).forEach(trade => {
+          const typeClass = trade.type === 'BUY' ? 'trade-type-buy' : 'trade-type-sell';
+          const typeLabel = trade.type === 'BUY' ? 'ACHAT' : 'VENTE';
+
+          html += `<div class="trade-item">
+            <div class="trade-type-badge ${typeClass}">${typeLabel}</div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <div>
+                <div class="position-ticker">${trade.ticker}</div>
+                <div class="position-company">${trade.company || ''}</div>
+              </div>
+              <div style="text-align: right;">
+                <div class="position-pnl">${trade.quantite}x $${Number(trade.prix).toFixed(2)}</div>
+                <div style="font-size: 0.75rem; color: #adaaaa; margin-top: 0.25rem;">${new Date(trade.date).toLocaleDateString('fr')}</div>
+              </div>
+            </div>
+            ${trade.raison ? `<div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #64748b;">${trade.raison}</div>` : ''}
+          </div>`;
+        });
+
+        html += `</div>`;
+      }
+
+      document.getElementById('robot-content').innerHTML = html;
     }
 
-    function renderChart() {
-      const canvas = document.getElementById('robotChart');
-      if (!canvas || typeof Chart === 'undefined') return;
-
-      const chartData = buildChartData();
-      if (!chartData) return;
-
-      if (window.robotChart) window.robotChart.destroy();
-
-      window.robotChart = new Chart(canvas, {
-        type: 'line',
-        data: chartData,
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { intersect: false, mode: 'index' },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: 'rgba(4,9,26,0.95)',
-              borderColor: 'rgba(34,211,238,0.3)',
-              borderWidth: 1,
-              titleFont: { family: 'Inter', size: 13 },
-              bodyFont: { family: 'JetBrains Mono', size: 12 },
-              padding: 12,
-              callbacks: {
-                label: ctx => {
-                  const val = ctx.parsed.y;
-                  const diff = val - 10000;
-                  const pct = (diff / 10000 * 100).toFixed(2);
-                  const sign = diff >= 0 ? '+' : '';
-                  return `${ctx.dataset.label}: ${val.toLocaleString('fr-FR', {minimumFractionDigits:0})}€ (${sign}${pct}%)`;
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: { color: 'rgba(255,255,255,0.04)' },
-              ticks: { color: '#64748b', font: { family: 'Inter', size: 11 } }
-            },
-            y: {
-              grid: { color: 'rgba(255,255,255,0.04)' },
-              ticks: {
-                color: '#64748b',
-                font: { family: 'JetBrains Mono', size: 11 },
-                callback: v => v.toLocaleString('fr-FR') + '€'
-              },
-              suggestedMin: 9800,
-              suggestedMax: 10500
-            }
-          }
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
         }
       });
-      console.log('[AlphaBot] Graphique rendu avec', chartData.labels.length, 'points');
-    }
+    }, { threshold: 0.08 });
 
-    // Mettre à jour le graphique quand les prix live changent
-    const _origRenderDashboard = renderDashboard;
-    renderDashboard = function() {
-      _origRenderDashboard();
-      if (window.robotChart && portfolioData?.robots) {
-        for (let i = 0; i < window.robotChart.data.datasets.length; i++) {
-          const robotType = Object.keys(portfolioData.robots)[i];
-          const robot = portfolioData.robots[robotType];
-          const lastIdx = window.robotChart.data.datasets[i].data.length - 1;
-          window.robotChart.data.datasets[i].data[lastIdx] = robot.capital_actuel;
-        }
-        window.robotChart.update('none');
-      }
-    };
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Boutons timeframe (7J / 30J / 90J / Tout)
-    document.querySelectorAll('.chart-timeframe button').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.chart-timeframe button').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        // Pour l'instant avec peu de données, tous les filtres affichent tout
-        // Quand il y aura plus d'historique, on filtrera ici
-        renderChart();
-      });
-    });
-
-    // Lancer le refresh live DÈS que les données sont chargées
-    let _liveInterval = null;
-    function startLiveRefresh() {
-      if (portfolioData?.robots) {
-        console.log('[AlphaBot] Données chargées → lancement refresh live + graphique');
-        renderChart();
-        // Premier refresh immédiat
-        refreshLivePrices();
-        // Puis toutes les 15 secondes
-        if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 15000);
-        // Re-fetch le JSON serveur toutes les 2 minutes (au cas où update_prices.py tourne)
-      } else {
-        setTimeout(startLiveRefresh, 500);
-      }
-    }
-    startLiveRefresh();
-
-    // Afficher le statut initial dès le chargement
-    const _initMarket = getMarketStatus();
-    if (_initMarket.weekend) {
-      setLiveStatus('market-closed', { time: 'Weekend — chargement...', source: '' });
-    } else {
-      setLiveStatus('refreshing', { time: 'Chargement des prix...', source: '' });
-    }
+    // ── INIT ──
+    loadPortfolioData();
   </script>
-  <script src="assets/gate_subscriber.js"></script>
 </body>
 </html>
