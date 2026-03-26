@@ -1,7 +1,747 @@
 {
-  "generated_at": "2026-03-25T20:31:34.541494",
+  "generated_at": "2026-03-26T21:59:25.852088",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-26T21:59:25.837151",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (22.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T21:59:25.831149",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (22.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T21:59:25.825129",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Clôture US 🔔📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-26T21:58:25.817739",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Orchestrateur démarré",
+      "data": {
+        "mode": "production"
+      }
+    },
+    {
+      "ts": "2026-03-26T21:44:26.631541",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T21:44:14.183596",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T21:44:14.166596",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 21h45",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-26T08:32:05.051702",
+      "agent": "Sync Abonnés",
+      "type": "info",
+      "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T08:31:14.510975",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Orchestrateur démarré",
+      "data": {
+        "mode": "production"
+      }
+    },
+    {
+      "ts": "2026-03-25T22:46:08.955293",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-03-25T22:46:08.831109",
+        "date": "2026-03-25",
+        "health_score": 67,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "WARNING",
+            "message": "39 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 26,
+          "errors_today": 0,
+          "erreurs_critiques": 0,
+          "erreurs_par_agent": {},
+          "top_errors": []
+        },
+        "taches": {
+          "attendues": 39,
+          "executees": 0,
+          "manquantes": 39,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent LinkedIn",
+              "message": "Génération des 7 posts LinkedIn de la semaine",
+              "interval_seconds": 327,
+              "count": 2
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 7,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 32.3,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-25T22:46:08.831389",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:45:52.535523",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 57/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 6/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-03-25T22:45:52.443535",
+        "date": "2026-03-25",
+        "health_score": 57,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "WARNING",
+            "message": "39 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier quasi-vide: data/orchestrateur_schedule.json",
+            "source": "data/orchestrateur_schedule.json",
+            "penalty": -10
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 17,
+          "errors_today": 0,
+          "erreurs_critiques": 0,
+          "erreurs_par_agent": {},
+          "top_errors": []
+        },
+        "taches": {
+          "attendues": 39,
+          "executees": 0,
+          "manquantes": 39,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent LinkedIn",
+              "message": "Génération des 7 posts LinkedIn de la semaine",
+              "interval_seconds": 327,
+              "count": 2
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 6,
+          "manquants": 0,
+          "invalides": 1,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/orchestrateur_schedule.json",
+              "erreur": "Fichier vide ou quasi-vide"
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 32.3,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-25T22:45:52.443758",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:44:52.669829",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 57/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/36 | Fichiers OK: 6/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-03-25T22:44:52.510578",
+        "date": "2026-03-25",
+        "health_score": 57,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "WARNING",
+            "message": "36 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier quasi-vide: data/newsletters.json",
+            "source": "data/newsletters.json",
+            "penalty": -10
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 15,
+          "errors_today": 0,
+          "erreurs_critiques": 0,
+          "erreurs_par_agent": {},
+          "top_errors": []
+        },
+        "taches": {
+          "attendues": 36,
+          "executees": 0,
+          "manquantes": 36,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent LinkedIn",
+              "message": "Génération des 7 posts LinkedIn de la semaine",
+              "interval_seconds": 327,
+              "count": 2
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 6,
+          "manquants": 0,
+          "invalides": 1,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/newsletters.json",
+              "erreur": "Fichier vide ou quasi-vide"
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 32.3,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-25T22:44:52.511158",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:43:39.747087",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "🔴 Diagnostic terminé — Score: 0/100 (URGENCE) | Erreurs: 0 | Tâches OK: 0/36 | Fichiers OK: 2/8 | Auto-fixes: 2",
+      "data": {
+        "timestamp": "2026-03-25T22:43:39.595376",
+        "date": "2026-03-25",
+        "health_score": 0,
+        "status": "URGENCE",
+        "issues": [
+          {
+            "severity": "WARNING",
+            "message": "36 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "CRITICAL",
+            "message": "JSON invalide: data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -15
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          },
+          {
+            "severity": "CRITICAL",
+            "message": "JSON invalide: data/activity_feed.json",
+            "source": "data/activity_feed.json",
+            "penalty": -15
+          },
+          {
+            "severity": "CRITICAL",
+            "message": "JSON invalide: data/newsletters.json",
+            "source": "data/newsletters.json",
+            "penalty": -15
+          },
+          {
+            "severity": "CRITICAL",
+            "message": "JSON invalide: data/contenu_da.json",
+            "source": "data/contenu_da.json",
+            "penalty": -15
+          },
+          {
+            "severity": "CRITICAL",
+            "message": "JSON invalide: data/orchestrateur_schedule.json",
+            "source": "data/orchestrateur_schedule.json",
+            "penalty": -15
+          }
+        ],
+        "auto_fixes": [
+          "orchestrateur_schedule.json: fichier corrompu — reset",
+          "activity_feed.json: régénéré (était périmé)"
+        ],
+        "logs": {
+          "events_today": 8,
+          "errors_today": 0,
+          "erreurs_critiques": 0,
+          "erreurs_par_agent": {},
+          "top_errors": []
+        },
+        "taches": {
+          "attendues": 36,
+          "executees": 0,
+          "manquantes": 36,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent LinkedIn",
+              "message": "Génération des 7 posts LinkedIn de la semaine",
+              "interval_seconds": 327,
+              "count": 2
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 2,
+          "manquants": 0,
+          "invalides": 5,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/portfolio_public.json",
+              "erreur": "Extra data: line 451 column 2 (char 40431)"
+            },
+            {
+              "fichier": "data/activity_feed.json",
+              "erreur": "Extra data: line 820 column 2 (char 20357)"
+            },
+            {
+              "fichier": "data/newsletters.json",
+              "erreur": "Expecting value: line 29 column 14 (char 694)"
+            },
+            {
+              "fichier": "data/contenu_da.json",
+              "erreur": "Extra data: line 95 column 2 (char 6658)"
+            },
+            {
+              "fichier": "data/orchestrateur_schedule.json",
+              "erreur": "Unterminated string starting at: line 4 column 18 (char 86)"
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 32.3,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-25T22:43:39.595666",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:14:02.352038",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "COO rapport soir terminé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:14:02.340639",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "COO rapport soir + email CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T22:14:02.325629",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: COO IA — Rapport Soir + CEO 🤖",
+      "data": {
+        "branch": "supervision"
+      }
+    },
+    {
+      "ts": "2026-03-25T21:59:27.262811",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (22.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:59:27.254800",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (22.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:59:27.243773",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Clôture US 🔔📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-25T21:44:22.206729",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:44:18.451923",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:44:18.433737",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 21h45",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-25T21:14:13.369279",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:14:09.610605",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-25T21:14:09.600597",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 21h15",
+      "data": {
+        "branch": "support"
+      }
+    },
     {
       "ts": "2026-03-25T20:31:34.533674",
       "agent": "Orchestrateur",
@@ -568,259 +1308,168 @@
       "type": "progress",
       "message": "Lancement match Arène quotidien...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:59:15.207631",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Arène — Match Quotidien 🏆",
-      "data": {
-        "branch": "arena"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:31:40.150567",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_16h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:31:40.144115",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (16.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:31:40.140112",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (16.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:31:40.134814",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Overlap EU/US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:30:35.118872",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_16h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:30:35.110408",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (16.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:30:35.104907",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (16.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:30:35.094880",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Overlap EU/US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:29:30.076574",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_16h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:29:30.061829",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (16.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:29:30.052391",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (16.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:29:29.937925",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Overlap EU/US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:01:24.847640",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1600"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:01:24.843643",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:01:21.370074",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:01:21.362702",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 16h",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:00:16.352185",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1600"
-      }
-    },
-    {
-      "ts": "2026-03-25T16:00:16.346187",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:00:12.647549",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T16:00:12.638552",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 16h",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T15:45:07.601716",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_15h45"
-      }
-    },
-    {
-      "ts": "2026-03-25T15:45:07.594718",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (15.8h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T15:45:07.589363",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (15.8h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T15:45:07.580660",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Ouverture US ⚡📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T15:30:32.542646",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1530"
-      }
-    },
-    {
-      "ts": "2026-03-25T15:30:32.527637",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T15:30:28.906366",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T15:30:28.896011",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 15h30",
-      "data": {
-        "branch": "support"
-      }
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-25T20:31:34.533674",
+        "ts": "2026-03-26T21:59:25.837151",
         "agent": "Orchestrateur",
-        "type": "error",
-        "message": "Erreur exécution tâche: 'derniers_ids'",
+        "type": "success",
+        "message": "Session Trader (22.0h) terminée",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T21:59:25.837151",
+      "last_type": "success",
+      "last_message": "Session Trader (22.0h) terminée",
+      "total_today": 8,
+      "errors_today": 0,
+      "successes_today": 2
+    },
+    {
+      "agent": "Sync Abonnés",
+      "last_event": {
+        "ts": "2026-03-26T08:32:05.051702",
+        "agent": "Sync Abonnés",
+        "type": "info",
+        "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
+        "data": {}
+      },
+      "last_ts": "2026-03-26T08:32:05.051702",
+      "last_type": "info",
+      "last_message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Monitoring",
+      "last_event": {
+        "ts": "2026-03-25T22:46:08.955293",
+        "agent": "Agent Monitoring",
+        "type": "warning",
+        "message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
         "data": {
-          "task": "trader_20h30"
+          "timestamp": "2026-03-25T22:46:08.831109",
+          "date": "2026-03-25",
+          "health_score": 67,
+          "status": "DÉGRADÉ",
+          "issues": [
+            {
+              "severity": "WARNING",
+              "message": "39 tâche(s) manquante(s) aujourd'hui",
+              "source": "planning",
+              "penalty": -25
+            },
+            {
+              "severity": "WARNING",
+              "message": "1 tâche(s) en doublon détectée(s)",
+              "source": "planning",
+              "penalty": -3
+            },
+            {
+              "severity": "WARNING",
+              "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
+              "source": "data/dernier_rapport_veille.json",
+              "penalty": -5
+            }
+          ],
+          "auto_fixes": [],
+          "logs": {
+            "events_today": 26,
+            "errors_today": 0,
+            "erreurs_critiques": 0,
+            "erreurs_par_agent": {},
+            "top_errors": []
+          },
+          "taches": {
+            "attendues": 39,
+            "executees": 0,
+            "manquantes": 39,
+            "doublons": 1,
+            "detail_manquantes": [
+              {
+                "id": "dir_newsletter_pipeline",
+                "nom": "Directeur Newsletter 📰",
+                "heure_prevue": "07:30"
+              },
+              {
+                "id": "coo_rapport_matin",
+                "nom": "COO IA — Rapport Matin 🤖",
+                "heure_prevue": "08:00"
+              },
+              {
+                "id": "veille_matin",
+                "nom": "Agent Veille — Matin 🔍",
+                "heure_prevue": "08:30"
+              },
+              {
+                "id": "email_ceo_matin",
+                "nom": "Email CEO 📧",
+                "heure_prevue": "08:50"
+              },
+              {
+                "id": "da_site",
+                "nom": "Agent DA Site 🎨",
+                "heure_prevue": "09:30"
+              },
+              {
+                "id": "trader_09h",
+                "nom": "Directeur Trader — Ouverture EU 📈",
+                "heure_prevue": "09:00"
+              },
+              {
+                "id": "trader_10h30",
+                "nom": "Directeur Trader — Matinée EU 📈",
+                "heure_prevue": "10:30"
+              },
+              {
+                "id": "trader_12h",
+                "nom": "Directeur Trader — Midi EU 📈",
+                "heure_prevue": "12:00"
+              },
+              {
+                "id": "trader_14h",
+                "nom": "Directeur Trader — Pré-ouverture US 📈",
+                "heure_prevue": "14:00"
+              },
+              {
+                "id": "trader_15h45",
+                "nom": "Directeur Trader — Ouverture US ⚡📈",
+                "heure_prevue": "15:45"
+              }
+            ],
+            "detail_doublons": [
+              {
+                "agent": "Agent LinkedIn",
+                "message": "Génération des 7 posts LinkedIn de la semaine",
+                "interval_seconds": 327,
+                "count": 2
+              }
+            ]
+          },
+          "fichiers": {
+            "ok": 7,
+            "manquants": 0,
+            "invalides": 0,
+            "perimes": 1,
+            "detail_problemes": [
+              {
+                "fichier": "data/dernier_rapport_veille.json",
+                "age_heures": 32.3,
+                "limite_heures": 6
+              }
+            ]
+          }
         }
       },
-      "last_ts": "2026-03-25T20:31:34.533674",
-      "last_type": "error",
-      "last_message": "Erreur exécution tâche: 'derniers_ids'",
-      "total_today": 100,
-      "errors_today": 25,
-      "successes_today": 25
+      "last_ts": "2026-03-25T22:46:08.955293",
+      "last_type": "warning",
+      "last_message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
     }
   ]
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+}

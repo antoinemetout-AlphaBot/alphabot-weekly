@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-03-26T22:08:46.554337",
+  "date": "2026-03-26",
+  "health_score": 70,
+  "status": "STABLE",
+  "issues": [
+    {
+      "severity": "WARNING",
+      "message": "36 tâche(s) manquante(s) aujourd'hui",
+      "source": "planning",
+      "penalty": -25
+    },
+    {
+      "severity": "WARNING",
+      "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
+      "source": "data/dernier_rapport_veille.json",
+      "penalty": -5
+    }
+  ],
+  "auto_fixes": [],
+  "logs": {
+    "events_today": 25,
+    "errors_today": 0,
+    "erreurs_critiques": 0,
+    "erreurs_par_agent": {},
+    "top_errors": []
+  },
+  "taches": {
+    "attendues": 38,
+    "executees": 2,
+    "manquantes": 36,
+    "doublons": 0,
+    "detail_manquantes": [
+      {
+        "id": "dir_newsletter_pipeline",
+        "nom": "Directeur Newsletter 📰",
+        "heure_prevue": "07:30"
+      },
+      {
+        "id": "coo_rapport_matin",
+        "nom": "COO IA — Rapport Matin 🤖",
+        "heure_prevue": "08:00"
+      },
+      {
+        "id": "veille_matin",
+        "nom": "Agent Veille — Matin 🔍",
+        "heure_prevue": "08:30"
+      },
+      {
+        "id": "email_ceo_matin",
+        "nom": "Email CEO 📧",
+        "heure_prevue": "08:50"
+      },
+      {
+        "id": "da_site",
+        "nom": "Agent DA Site 🎨",
+        "heure_prevue": "09:30"
+      },
+      {
+        "id": "trader_09h",
+        "nom": "Directeur Trader — Ouverture EU 📈",
+        "heure_prevue": "09:00"
+      },
+      {
+        "id": "trader_10h30",
+        "nom": "Directeur Trader — Matinée EU 📈",
+        "heure_prevue": "10:30"
+      },
+      {
+        "id": "trader_12h",
+        "nom": "Directeur Trader — Midi EU 📈",
+        "heure_prevue": "12:00"
+      },
+      {
+        "id": "trader_14h",
+        "nom": "Directeur Trader — Pré-ouverture US 📈",
+        "heure_prevue": "14:00"
+      },
+      {
+        "id": "trader_15h45",
+        "nom": "Directeur Trader — Ouverture US ⚡📈",
+        "heure_prevue": "15:45"
+      }
+    ],
+    "detail_doublons": []
+  },
+  "fichiers": {
+    "ok": 7,
+    "manquants": 0,
+    "invalides": 0,
+    "perimes": 1,
+    "detail_problemes": [
+      {
+        "fichier": "data/dernier_rapport_veille.json",
+        "age_heures": 55.7,
+        "limite_heures": 6
+      }
+    ]
+  }
+}

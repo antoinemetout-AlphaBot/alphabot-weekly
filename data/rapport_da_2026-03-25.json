@@ -1,14 +1,14 @@
 {
-  "date": "2026-03-25 08:24",
+  "date": "2026-03-25 09:30",
   "etapes": {
     "audit": {
       "ok": true,
-      "score": 70,
-      "problemes": 3
+      "score": 100,
+      "problemes": 0
     },
     "corrections": {
       "ok": true,
-      "pages_corrigees": 1,
+      "pages_corrigees": 0,
       "details": {
         "index.html": [
           "aucune correction nécessaire"
@@ -20,11 +20,7 @@
           "aucune correction nécessaire"
         ],
         "newsletters.html": [
-          "nav injectée",
-          "CSS nav ajouté",
-          "script nav ajouté",
-          "footer injecté",
-          "CSS footer ajouté"
+          "aucune correction nécessaire"
         ],
         "espace-pilotage.html": [
           "aucune correction nécessaire"
@@ -46,23 +42,20 @@
       "details": [
         {
           "page": "index.html",
-          "status": "improved",
-          "css_rules": 26
+          "status": "already_done"
         },
         {
           "page": "investissement.html",
-          "status": "improved",
-          "css_rules": 29
+          "status": "already_done"
         },
         {
           "page": "newsletter.html",
-          "status": "improved",
-          "css_rules": 27
+          "status": "already_done"
         }
       ]
     }
   },
   "success": true,
-  "pages_ameliorees": 3,
+  "pages_ameliorees": 0,
   "insights_count": 5
 }
