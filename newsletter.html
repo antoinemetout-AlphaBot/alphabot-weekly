@@ -1063,4 +1063,129 @@ async function verifyAccess(){
 
 function showContent(email){
   document.getElementById('gate').style.display='none';
-  document.getElementById('c
+  document.getElementById('content').style.display='block';
+  document.getElementById('welcome-name').textContent = email.split('@')[0];
+  loadAvailableEditions();
+}
+
+function logout(){
+  sessionStorage.removeItem('ab_user');
+  document.getElementById('gate').style.display='block';
+  document.getElementById('content').style.display='none';
+  document.getElementById('gate-email').value='';
+}
+
+// ── Check session ──
+window.addEventListener('DOMContentLoaded', async ()=>{
+  const saved = sessionStorage.getItem('ab_user');
+  if(saved) showContent(saved);
+});
+
+// ── Load available editions ──
+async function loadAvailableEditions(){
+  const select = document.getElementById('edition-select');
+  select.innerHTML = '<option value="">Chargement...</option>';
+
+  let editions = [];
+  try{
+    const r = await fetch('data/newsletters.json?t='+Date.now());
+    const d = await r.json();
+    editions = d.editions || [];
+  }catch(e){
+    const today = new Date();
+    for(let i=0;i<30;i++){
+      const d = new Date(today);
+      d.setDate(d.getDate()-i);
+      editions.push({date:formatDate(d), label:formatLabel(d)});
+    }
+  }
+
+  select.innerHTML = '';
+  let loaded = false;
+
+  for(const ed of editions){
+    const opt = document.createElement('option');
+    opt.value = ed.date;
+    opt.textContent = ed.label;
+    select.appendChild(opt);
+    if(!loaded){loadEdition(ed.date);loaded=true;}
+  }
+
+  if(editions.length===0){
+    select.innerHTML='<option>Aucune édition disponible</option>';
+    document.getElementById('loading').style.display='none';
+    document.getElementById('no-edition').style.display='block';
+  }
+}
+
+// ── Load a specific edition ──
+function loadEdition(date){
+  if(!date) return;
+  const frame = document.getElementById('newsletter-frame');
+  const loading = document.getElementById('loading');
+  const noEd = document.getElementById('no-edition');
+
+  frame.style.display='none';
+  loading.style.display='block';
+  noEd.style.display='none';
+
+  frame.src = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
+}
+
+function frameLoaded(){
+  const frame = document.getElementById('newsletter-frame');
+  const loading = document.getElementById('loading');
+  try{
+    const h = frame.contentDocument.body;
+    if(h && h.innerHTML.length > 100){
+      loading.style.display='none';
+      frame.style.display='block';
+      frame.style.height = Math.max(frame.contentDocument.body.scrollHeight+40, 600)+'px';
+    } else {
+      loading.style.display='none';
+      document.getElementById('no-edition').style.display='block';
+    }
+  }catch(e){
+    loading.style.display='none';
+    frame.style.display='block';
+    frame.style.height='800px';
+  }
+}
+
+function openFullscreen(){
+  const sel = document.getElementById('edition-select');
+  if(sel.value) window.open(BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html','_blank');
+}
+
+function downloadEdition(){
+  const sel = document.getElementById('edition-select');
+  if(sel.value){
+    const a = document.createElement('a');
+    a.href = BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html';
+    a.download = 'AlphaBot_Weekly_'+sel.value+'.html';
+    a.click();
+  }
+}
+
+function formatDate(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function formatLabel(d){
+  return d.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+}
+
+// ── Mobile menu toggle ──
+function toggleMenu(){
+  const navCenter = document.querySelector('.nav-center');
+  navCenter.classList.toggle('mobile-open');
+}
+
+// ── Enter key on gate ──
+document.addEventListener('DOMContentLoaded',()=>{
+  const inp = document.getElementById('gate-email');
+  if(inp) inp.addEventListener('keydown',e=>{if(e.key==='Enter')verifyAccess();});
+});
+</script>
+</body>
+</html>

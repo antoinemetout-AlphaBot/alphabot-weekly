@@ -2686,4 +2686,76 @@ body::before {
         const data = new Array(labels.length).fill(null);
         data[0] = robot.capital_initial || 10000; // Jour 0 = capital initial
         data[data.length - 1] = robot.capital_actuel || robot.capital_initial; // Dernier point = capital actuel
-        // Remplir les points 
+        // Remplir les points intermédiaires
+        for (let i = 1; i < data.length - 1; i++) { data[i] = data[i] || data[0]; }
+
+        datasets.push({
+          label: `${robot.emoji || ''} ${robot.nom || type}`,
+          data: data,
+          borderColor: robotColors[type] || '#22d3ee',
+          backgroundColor: robotFills[type] || 'rgba(34,211,238,0.08)',
+          fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 8,
+          pointBackgroundColor: robotColors[type] || '#22d3ee',
+          pointBorderColor: '#fff', pointBorderWidth: 2, borderWidth: 3
+        });
+      }
+      return { labels, datasets };
+    }
+
+    function renderChart() {
+      const canvas = document.getElementById('robotChart');
+      if (!canvas || typeof Chart === 'undefined') return;
+      const chartData = buildChartData();
+      if (!chartData) return;
+      if (window.robotChart) window.robotChart.destroy();
+      window.robotChart = new Chart(canvas, {
+        type: 'line', data: chartData,
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          interaction: { intersect: false, mode: 'index' },
+          plugins: { legend: { display: false }, tooltip: {
+            backgroundColor: 'rgba(4,9,26,0.95)', borderColor: 'rgba(34,211,238,0.3)', borderWidth: 1,
+            callbacks: { label: ctx => {
+              const val=ctx.parsed.y, diff=val-10000, pct=(diff/10000*100).toFixed(2), sign=diff>=0?'+':'';
+              return `${ctx.dataset.label}: ${val.toLocaleString('fr-FR')}€ (${sign}${pct}%)`;
+            }}
+          }},
+          scales: {
+            x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b' } },
+            y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#64748b', callback: v=>v.toLocaleString('fr-FR')+'€' }, suggestedMin: 9800, suggestedMax: 10500 }
+          }
+        }
+      });
+    }
+
+    const _origRenderDashboard = renderDashboard;
+    renderDashboard = function() {
+      _origRenderDashboard();
+      if (window.robotChart && portfolioData?.robots) {
+        for (let i = 0; i < window.robotChart.data.datasets.length; i++) {
+          const robotType = Object.keys(portfolioData.robots)[i];
+          const robot = portfolioData.robots[robotType];
+          const lastIdx = window.robotChart.data.datasets[i].data.length - 1;
+          window.robotChart.data.datasets[i].data[lastIdx] = robot.capital_actuel;
+        }
+        window.robotChart.update('none');
+      }
+    };
+
+    document.querySelectorAll('.chart-timeframe button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.chart-timeframe button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderChart();
+      });
+    });
+
+    let _liveInterval = null;
+    function startLiveRefresh() {
+      if (portfolioData?.robots) { renderChart(); refreshLivePrices(); if (!_liveInterval) _liveInterval = setInterval(refreshLivePrices, 15000); }
+      else { setTimeout(startLiveRefresh, 500); }
+    }
+    startLiveRefresh();
+  </script>
+</body>
+</html>

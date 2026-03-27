@@ -2178,4 +2178,145 @@ async function loadHeroKPIs() {
         totalCapital += rb.capital_actuel || 10000;
         totalTrades += rb.nb_trades || 0;
         const perf = rb.performance_pct || 0;
-        if (perf > bestPerf) { bestPerf = perf; b
+        if (perf > bestPerf) { bestPerf = perf; bestName = key; }
+      }
+
+      const capEl = document.querySelector('.hero-stat-val.cyan');
+      const tradeEl = document.querySelector('.hero-stat-val.gold');
+      const bestEl = document.querySelector('.hero-stat-val.green');
+      if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr-FR') + '€';
+      if (tradeEl) tradeEl.textContent = totalTrades;
+      if (bestEl) {
+        const names = {prudent:'Prudent', modere:'Modéré', agressif:'Agressif'};
+        bestEl.textContent = (names[bestName] || bestName) + ' +' + bestPerf.toFixed(2) + '%';
+      }
+    }
+
+    if (nRes.ok) {
+      const nd = await nRes.json();
+      const nlEl = document.querySelectorAll('.hero-stat-val')[2];
+      if (nlEl && nd.length) nlEl.textContent = nd.length;
+    }
+  } catch(e) { console.log('Hero KPIs:', e); }
+}
+loadHeroKPIs();
+
+// ── ACTIVITY FEED ──
+async function loadActivityFeed(){
+  try{
+    const r=await fetch('data/activity_feed.json?t='+Date.now());
+    if(!r.ok) return;
+    const d=await r.json();
+    const events=d.events||[];
+    const feed=document.getElementById('activity-feed');
+    if(!feed) return;
+
+    const today=events.filter(e=>e.ts&&e.ts.startsWith(new Date().toISOString().slice(0,10)));
+    const successes=today.filter(e=>e.type==='success').length;
+    const errors=today.filter(e=>e.type==='error').length;
+
+    const summaryEl=document.querySelector('.activity-summary');
+    if(summaryEl){
+      const stats=summaryEl.querySelectorAll('.stat-val');
+      if(stats[0]) stats[0].textContent=today.length;
+      if(stats[1]) stats[1].textContent=successes;
+      if(stats[2]) stats[2].textContent=errors;
+      if(stats[3]&&events.length) stats[3].textContent=events[0].ts?events[0].ts.slice(11,16):'--:--';
+    }
+
+    const recent=events.slice(0,8);
+    feed.innerHTML=recent.map(e=>{
+      const icon=e.type==='success'?'✅':e.type==='error'?'❌':e.type==='warning'?'⚠️':'ℹ️';
+      const time=e.ts?e.ts.slice(11,16):'';
+      return `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);">
+        <span style="font-size:14px;">${icon}</span>
+        <span style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace;min-width:40px;">${time}</span>
+        <span style="color:var(--text);font-size:13px;flex:1;">${e.message||''}</span>
+        <span style="color:var(--muted);font-size:11px;">${e.agent||''}</span>
+      </div>`;
+    }).join('');
+  }catch(e){console.log('Feed:',e);}
+}
+loadActivityFeed();
+
+// ── MARKET TICKER ──
+async function loadMarketData(){
+  try{
+    const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    const tickers=document.querySelectorAll('.ticker-item');
+    if(!tickers.length)return;
+    const crypto=d.crypto||[];
+    const commo=d.commodities||{};
+    const bourse=d.bourse||{};
+    const indices=bourse.indices||{};
+    const mapping=[
+      {label:'BTC',val:crypto[0]?.prix},
+      {label:'S&P 500',val:indices['S&P 500']?.prix},
+      {label:'OR',val:commo['Or (XAU/USD)']?.prix},
+      {label:'EUR/USD',val:commo['EUR/USD']?.prix},
+      {label:'CAC 40',val:indices['CAC 40']?.prix}
+    ];
+    tickers.forEach((el,i)=>{
+      if(mapping[i]&&mapping[i].val){
+        const valEl=el.querySelector('.ticker-val');
+        if(valEl) valEl.textContent=typeof mapping[i].val==='number'?mapping[i].val.toLocaleString('fr-FR',{maximumFractionDigits:2}):mapping[i].val;
+      }
+    });
+  }catch(e){console.log('Market:',e);}
+}
+loadMarketData();
+
+// ── NEWSLETTER PREVIEW ──
+async function loadNewsletterPreview(){
+  try{
+    const r=await fetch('data/newsletters.json?t='+Date.now());
+    if(!r.ok)return;
+    const nl=await r.json();
+    if(!nl.length)return;
+    const latest=nl[nl.length-1];
+    const titleEl=document.getElementById('nl-preview-title');
+    if(titleEl) titleEl.textContent='Newsletter du '+latest.date;
+  }catch(e){}
+}
+loadNewsletterPreview();
+
+// ── NAV CTA — SESSION ──
+(function(){
+  const SESSION_KEY = 'ab_user';
+
+  function updateNavCTA(email){
+    const navCtaBtn = document.getElementById('nav-cta-btn');
+    if(!navCtaBtn) return;
+    const prenom = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
+    navCtaBtn.textContent = prenom;
+    navCtaBtn.href = '#';
+    navCtaBtn.style.background = 'linear-gradient(135deg, var(--gold), #f59e0b)';
+    navCtaBtn.style.color = '#04091a';
+  }
+
+  window._abToggleUserMenu = function(e){
+    e.stopPropagation();
+    const menu = document.getElementById('ab-user-menu');
+    if(menu) menu.style.display = menu.style.display==='none' ? 'block' : 'none';
+  };
+
+  document.addEventListener('click', function(){
+    const menu = document.getElementById('ab-user-menu');
+    if(menu) menu.style.display='none';
+  });
+
+  window._abLogout = function(){
+    sessionStorage.removeItem(SESSION_KEY);
+    location.reload();
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    const saved = sessionStorage.getItem(SESSION_KEY);
+    if(saved) updateNavCTA(saved);
+  });
+})();
+</script>
+</body>
+</html>
