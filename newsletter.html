@@ -735,6 +735,157 @@ body {
   transform: translateY(-1px);
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-27 -->
+<style>
+/* ── AlphaBot Weekly · Newsletter — DA Enhancement Layer ── */
+
+/* TYPOGRAPHIE GLOBALE */
+body {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* BACKGROUND AMÉLIORÉ */
+.bg-grid {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(34,211,238,.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(245,200,66,.07) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 55% 10%, rgba(59,130,246,.06) 0%, transparent 50%);
+  animation: drift 22s ease-in-out infinite;
+}
+
+/* NOISE TEXTURE OVERLAY */
+.bg-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: .4;
+  pointer-events: none;
+}
+
+/* NAV AMÉLIORÉE */
+nav {
+  background: rgba(4,9,26,.85) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(34,211,238,.12) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 8px 40px rgba(0,0,0,.6) !important;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+
+.nav-brand {
+  background: linear-gradient(135deg, #fff 30%, #22d3ee 70%, #f5c842) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  filter: drop-shadow(0 0 12px rgba(34,211,238,.25));
+  letter-spacing: -.8px !important;
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%) !important;
+  box-shadow: 0 4px 20px rgba(34,211,238,.25), inset 0 1px 0 rgba(255,255,255,.15) !important;
+  letter-spacing: .3px !important;
+  position: relative;
+  overflow: hidden;
+}
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.nav-cta:hover::before { opacity: 1; }
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 16px 40px rgba(34,211,238,.40), inset 0 1px 0 rgba(255,255,255,.15) !important;
+}
+
+/* PAGE HEADER */
+.page-header {
+  animation: fadeInUp .8s cubic-bezier(.4,0,.2,1) both;
+}
+
+.page-header h1 {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1 !important;
+  letter-spacing: -.8px !important;
+  filter: drop-shadow(0 0 30px rgba(34,211,238,.15));
+}
+
+.page-header p {
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  color: #94a3b8 !important;
+  letter-spacing: .1px;
+}
+
+.page-tag {
+  font-size: 10px !important;
+  letter-spacing: 2.5px !important;
+  background: rgba(34,211,238,.06) !important;
+  border: 1px solid rgba(34,211,238,.25) !important;
+  box-shadow: 0 0 20px rgba(34,211,238,.08), inset 0 1px 0 rgba(255,255,255,.06);
+  transition: all .35s cubic-bezier(.4,0,.2,1) !important;
+}
+.page-tag:hover {
+  box-shadow: 0 0 28px rgba(34,211,238,.22), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  transform: translateY(-2px) !important;
+  background: rgba(34,211,238,.10) !important;
+}
+
+/* GATE CARD — pièce maîtresse */
+.gate-card {
+  background: rgba(255,255,255,.025) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 24px !important;
+  padding: 56px 52px !important;
+  box-shadow:
+    0 0 0 1px rgba(34,211,238,.04),
+    0 8px 32px rgba(0,0,0,.4),
+    0 32px 80px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -1px 0 rgba(0,0,0,.2) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient border animé */
+.gate-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34,211,238,.3), rgba(59,130,246,.15), rgba(245,200,66,.1), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: .6;
+  transition: opacity .4s;
+}
+.gate-card:hover::before { opacity: 1; }
+
+/* Glow interne */
+.gate-card::after {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(34,211,238,.08) 0%, transparent 70%);
+  pointer-events: none;
+  transition: opacity .4s;
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
@@ -912,160 +1063,4 @@ async function verifyAccess(){
 
 function showContent(email){
   document.getElementById('gate').style.display='none';
-  document.getElementById('content').style.display='block';
-  document.getElementById('welcome-name').textContent = email.split('@')[0];
-  loadAvailableEditions();
-}
-
-function logout(){
-  sessionStorage.removeItem('ab_user');
-  document.getElementById('gate').style.display='block';
-  document.getElementById('content').style.display='none';
-  document.getElementById('gate-email').value='';
-}
-
-// ── Check session ──
-window.addEventListener('DOMContentLoaded', async ()=>{
-  const saved = sessionStorage.getItem('ab_user');
-  if(saved) showContent(saved);
-});
-
-// ── Load available editions ──
-async function loadAvailableEditions(){
-  const select = document.getElementById('edition-select');
-  select.innerHTML = '<option value="">Chargement...</option>';
-
-  // Try to load from newsletters.json
-  let editions = [];
-  try{
-    const r = await fetch('data/newsletters.json?t='+Date.now());
-    const d = await r.json();
-    editions = d.editions || [];
-  }catch(e){
-    // Fallback: try last 30 days
-    const today = new Date();
-    for(let i=0;i<30;i++){
-      const d = new Date(today);
-      d.setDate(d.getDate()-i);
-      editions.push({date:formatDate(d), label:formatLabel(d)});
-    }
-  }
-
-  select.innerHTML = '';
-  let loaded = false;
-
-  for(const ed of editions){
-    const opt = document.createElement('option');
-    opt.value = ed.date;
-    opt.textContent = ed.label;
-    select.appendChild(opt);
-    if(!loaded){loadEdition(ed.date);loaded=true;}
-  }
-
-  if(editions.length===0){
-    select.innerHTML='<option>Aucune édition disponible</option>';
-    document.getElementById('loading').style.display='none';
-    document.getElementById('no-edition').style.display='block';
-  }
-}
-
-// ── Load a specific edition via fetch (plus fiable que iframe) ──
-async function loadEdition(date){
-  if(!date) return;
-  const frame = document.getElementById('newsletter-frame');
-  const contentDiv = document.getElementById('newsletter-content');
-  const loading = document.getElementById('loading');
-  const noEd = document.getElementById('no-edition');
-
-  frame.style.display='none';
-  contentDiv.style.display='none';
-  loading.style.display='block';
-  noEd.style.display='none';
-
-  const url = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
-
-  try {
-    const response = await fetch(url + '?t=' + Date.now());
-    if(!response.ok) throw new Error('HTTP ' + response.status);
-    const html = await response.text();
-
-    if(html.length < 200 || html.includes('Page non trouvée')){
-      loading.style.display='none';
-      noEd.style.display='block';
-      return;
-    }
-
-    // Injecter le HTML directement dans la div
-    contentDiv.innerHTML = html;
-    loading.style.display='none';
-    contentDiv.style.display='block';
-
-  } catch(e) {
-    console.error('Erreur chargement newsletter:', e);
-    // Fallback: essayer avec iframe
-    frame.src = url;
-    loading.style.display='none';
-    frame.style.display='block';
-    frame.style.height='800px';
-  }
-}
-
-// Fallback iframe onload (si fetch échoue)
-function frameLoaded(){
-  const frame = document.getElementById('newsletter-frame');
-  const loading = document.getElementById('loading');
-  try{
-    const h = frame.contentDocument.body;
-    if(h && h.innerHTML.length > 100){
-      loading.style.display='none';
-      frame.style.display='block';
-      frame.style.height = Math.max(frame.contentDocument.body.scrollHeight+40, 600)+'px';
-    } else {
-      loading.style.display='none';
-      document.getElementById('no-edition').style.display='block';
-    }
-  }catch(e){
-    loading.style.display='none';
-    frame.style.display='block';
-    frame.style.height='800px';
-  }
-}
-
-function openFullscreen(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value) window.open(BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html','_blank');
-}
-
-function downloadEdition(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value){
-    const a = document.createElement('a');
-    a.href = BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html';
-    a.download = 'AlphaBot_Weekly_'+sel.value+'.html';
-    a.click();
-  }
-}
-
-function formatDate(d){
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-}
-
-function formatLabel(d){
-  return d.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-}
-
-// ── Mobile menu toggle ──
-function toggleMenu(){
-  const navCenter = document.querySelector('.nav-center');
-  navCenter.classList.toggle('mobile-open');
-}
-
-// ── Enter key on gate ──
-document.addEventListener('DOMContentLoaded',()=>{
-  const inp = document.getElementById('gate-email');
-  if(inp) inp.addEventListener('keydown',e=>{if(e.key==='Enter')verifyAccess();});
-});
-</script>
-<script src="assets/gate_subscriber.js"></script>
-</body>
-</html>
+  document.getElementById('c

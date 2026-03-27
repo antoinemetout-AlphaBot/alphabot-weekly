@@ -1,7 +1,1233 @@
 {
-  "generated_at": "2026-03-26T22:09:55.098612",
+  "generated_at": "2026-03-27T19:51:56.233727",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-27T19:51:56.220241",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (19.9h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:56.215230",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (19.9h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:56.192605",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.549498",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.549498",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Match Arène terminé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.547484",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement match Arène quotidien...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.540237",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Monitoring terminé — Score: 47/100 (CRITIQUE) | 5 problème(s), 0 auto-fix(es)",
+      "data": {
+        "health_score": 47,
+        "status": "CRITIQUE"
+      }
+    },
+    {
+      "ts": "2026-03-27T19:51:54.534190",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "🔴 Diagnostic terminé — Score: 47/100 (CRITIQUE) | Erreurs: 3 | Tâches OK: 20/32 | Fichiers OK: 6/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-03-27T19:51:54.505542",
+        "date": "2026-03-27",
+        "health_score": 47,
+        "status": "CRITIQUE",
+        "issues": [
+          {
+            "severity": "ERROR",
+            "message": "3 erreur(s) critique(s) détectée(s) aujourd'hui",
+            "source": "logs",
+            "penalty": -15
+          },
+          {
+            "severity": "WARNING",
+            "message": "12 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (3.9h): data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (77.4h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 81,
+          "errors_today": 3,
+          "erreurs_critiques": 3,
+          "erreurs_par_agent": {
+            "Agent Analyste": 1,
+            "Agent DA Site": 1,
+            "Orchestrateur": 1
+          },
+          "top_errors": [
+            {
+              "ts": "2026-03-27T09:52:54.687395",
+              "agent": "Agent Analyste",
+              "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+              "pattern": "ERROR"
+            },
+            {
+              "ts": "2026-03-27T09:54:09.645951",
+              "agent": "Agent DA Site",
+              "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+              "pattern": "ERROR"
+            },
+            {
+              "ts": "2026-03-27T19:49:49.584059",
+              "agent": "Orchestrateur",
+              "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+              "pattern": "ERREUR"
+            }
+          ]
+        },
+        "taches": {
+          "attendues": 32,
+          "executees": 20,
+          "manquantes": 12,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_16h30",
+              "nom": "Directeur Trader — Overlap EU/US 📈",
+              "heure_prevue": "16:30"
+            },
+            {
+              "id": "trader_17h30",
+              "nom": "Directeur Trader — Clôture EU 📈",
+              "heure_prevue": "17:30"
+            },
+            {
+              "id": "trader_19h",
+              "nom": "Directeur Trader — Soirée US 📈",
+              "heure_prevue": "19:00"
+            },
+            {
+              "id": "directeur_arene_match",
+              "nom": "Directeur Arène — Match Quotidien 🏆",
+              "heure_prevue": "17:00"
+            },
+            {
+              "id": "prix_0915",
+              "nom": "📊 Prix Live — 9h15",
+              "heure_prevue": "09:15"
+            },
+            {
+              "id": "prix_0945",
+              "nom": "📊 Prix Live — 9h45",
+              "heure_prevue": "09:45"
+            },
+            {
+              "id": "prix_1630",
+              "nom": "📊 Prix Live — 16h30",
+              "heure_prevue": "16:30"
+            },
+            {
+              "id": "prix_1700",
+              "nom": "📊 Prix Live — 17h",
+              "heure_prevue": "17:00"
+            },
+            {
+              "id": "prix_1800",
+              "nom": "📊 Prix Live — 18h",
+              "heure_prevue": "18:00"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent Monitoring",
+              "message": "Diagnostic système en cours...",
+              "interval_seconds": 139,
+              "count": 3
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 6,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 2,
+          "detail_problemes": [
+            {
+              "fichier": "data/portfolio_public.json",
+              "age_heures": 3.9,
+              "limite_heures": 2
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 77.4,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-27T19:51:54.505954",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.501470",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement diagnostic système...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:54.493112",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Collecte marchés complète",
+      "data": {
+        "actifs": 0
+      }
+    },
+    {
+      "ts": "2026-03-27T19:51:48.807783",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent Veille — collecte données...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:48.801224",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Insights géopolitiques et améliorations visuelles terminées",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:51:48.790443",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (3 pages améliorées)",
+      "data": {
+        "date": "2026-03-27 19:49",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 100,
+            "problemes": 0
+          },
+          "corrections": {
+            "ok": true,
+            "pages_corrigees": 0,
+            "details": {
+              "index.html": [
+                "aucune correction nécessaire"
+              ],
+              "investissement.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletter.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletters.html": [
+                "aucune correction nécessaire"
+              ],
+              "espace-pilotage.html": [
+                "aucune correction nécessaire"
+              ]
+            }
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 2
+          },
+          "insights": {
+            "ok": true,
+            "count": 5,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-27.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "improved",
+                "css_rules": 22
+              },
+              {
+                "page": "investissement.html",
+                "status": "improved",
+                "css_rules": 22
+              },
+              {
+                "page": "newsletter.html",
+                "status": "improved",
+                "css_rules": 18
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 3,
+        "insights_count": 5
+      }
+    },
+    {
+      "ts": "2026-03-27T19:50:33.236472",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-27.html"
+      }
+    },
+    {
+      "ts": "2026-03-27T19:50:33.225716",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Générés 5 insights géopolitiques",
+      "data": {
+        "count": 5
+      }
+    },
+    {
+      "ts": "2026-03-27T19:49:54.955176",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:49.600173",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent DA Site — insights géopolitiques...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:49.584059",
+      "agent": "Orchestrateur",
+      "type": "error",
+      "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+      "data": {
+        "error": "'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'"
+      }
+    },
+    {
+      "ts": "2026-03-27T19:49:49.409477",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Envoi email quotidien CEO...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:49.393400",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Collecte marchés complète",
+      "data": {
+        "actifs": 0
+      }
+    },
+    {
+      "ts": "2026-03-27T19:49:35.438187",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent Veille — collecte données...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.434263",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Monitoring terminé — Score: 55/100 (DÉGRADÉ) | 4 problème(s), 1 auto-fix(es)",
+      "data": {
+        "health_score": 55,
+        "status": "DÉGRADÉ"
+      }
+    },
+    {
+      "ts": "2026-03-27T19:49:35.428135",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 55/100 (DÉGRADÉ) | Erreurs: 2 | Tâches OK: 15/32 | Fichiers OK: 6/8 | Auto-fixes: 1",
+      "data": {
+        "timestamp": "2026-03-27T19:49:35.355264",
+        "date": "2026-03-27",
+        "health_score": 55,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "ERROR",
+            "message": "2 erreur(s) critique(s) détectée(s) aujourd'hui",
+            "source": "logs",
+            "penalty": -10
+          },
+          {
+            "severity": "WARNING",
+            "message": "17 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (3.8h): data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (77.4h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [
+          "activity_feed.json: régénéré (était périmé)"
+        ],
+        "logs": {
+          "events_today": 65,
+          "errors_today": 2,
+          "erreurs_critiques": 2,
+          "erreurs_par_agent": {
+            "Agent Analyste": 1,
+            "Agent DA Site": 1
+          },
+          "top_errors": [
+            {
+              "ts": "2026-03-27T09:52:54.687395",
+              "agent": "Agent Analyste",
+              "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+              "pattern": "ERROR"
+            },
+            {
+              "ts": "2026-03-27T09:54:09.645951",
+              "agent": "Agent DA Site",
+              "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+              "pattern": "ERROR"
+            }
+          ]
+        },
+        "taches": {
+          "attendues": 32,
+          "executees": 15,
+          "manquantes": 17,
+          "doublons": 0,
+          "detail_manquantes": [
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_16h30",
+              "nom": "Directeur Trader — Overlap EU/US 📈",
+              "heure_prevue": "16:30"
+            },
+            {
+              "id": "trader_17h30",
+              "nom": "Directeur Trader — Clôture EU 📈",
+              "heure_prevue": "17:30"
+            },
+            {
+              "id": "trader_19h",
+              "nom": "Directeur Trader — Soirée US 📈",
+              "heure_prevue": "19:00"
+            },
+            {
+              "id": "directeur_arene_match",
+              "nom": "Directeur Arène — Match Quotidien 🏆",
+              "heure_prevue": "17:00"
+            },
+            {
+              "id": "veille_midi",
+              "nom": "Agent Veille — Midi 🔍",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "prix_0915",
+              "nom": "📊 Prix Live — 9h15",
+              "heure_prevue": "09:15"
+            }
+          ],
+          "detail_doublons": []
+        },
+        "fichiers": {
+          "ok": 6,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 2,
+          "detail_problemes": [
+            {
+              "fichier": "data/portfolio_public.json",
+              "age_heures": 3.8,
+              "limite_heures": 2
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 77.4,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-27T19:49:35.355264",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.338798",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement diagnostic système...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.331854",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "COO rapport matin terminé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.328649",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "COO rapport matin...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.325793",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Pipeline Newsletter terminé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T19:49:35.320251",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement pipeline Newsletter complet...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T16:00:13.446507",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T16:00:11.619219",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T16:00:11.614696",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 16h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T15:45:06.573927",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (15.8h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:45:06.571927",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (15.8h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:45:06.562979",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Ouverture US ⚡📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-27T15:30:31.527904",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:30:29.509552",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:30:29.502026",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 15h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T15:00:24.425089",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:00:22.279868",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T15:00:22.262568",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 15h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T14:30:17.197952",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Collecte marchés complète",
+      "data": {
+        "actifs": 0
+      }
+    },
+    {
+      "ts": "2026-03-27T14:30:09.857072",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent Veille — collecte données...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T14:30:09.845574",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Agent Veille — Après-midi 🔍",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T14:00:04.787065",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (14.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T14:00:04.783205",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (14.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T14:00:04.770885",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Pré-ouverture US 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-27T13:30:29.665567",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T13:30:27.832987",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T13:30:27.827978",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 13h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T13:00:22.756228",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T13:00:20.902318",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T13:00:20.893707",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 13h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T12:00:15.776575",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (12.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T12:00:15.766576",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (12.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T12:00:15.751061",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Midi EU 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-27T11:30:10.661138",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T11:30:08.763190",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T11:30:08.744851",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 11h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T11:00:03.663256",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T11:00:01.697885",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T11:00:01.688103",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 11h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T10:30:26.622811",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (10.5h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T10:30:26.615117",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (10.5h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T10:30:26.607587",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Matinée EU 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-27T10:15:21.568545",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T10:15:15.182164",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T10:15:15.166204",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 10h15",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-27T09:59:15.126202",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Orchestrateur démarré",
+      "data": {
+        "mode": "production"
+      }
+    },
+    {
+      "ts": "2026-03-27T09:55:06.284206",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Analyse du projet avec Claude IA en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:55:06.284206",
+      "agent": "Directeur Adjoint",
+      "type": "warning",
+      "message": "1 agent(s) en retard sur leurs objectifs",
+      "data": {
+        "agents": [
+          "Agent CFO 💰"
+        ]
+      }
+    },
+    {
+      "ts": "2026-03-27T09:55:06.271929",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Supervision de l'équipe en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:55:06.262571",
+      "agent": "Directeur Adjoint",
+      "type": "info",
+      "message": "Scan terminé — 24 agents | 2 abonnés",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:55:06.038370",
+      "agent": "Directeur Adjoint",
+      "type": "progress",
+      "message": "Scan du projet en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:55:06.036894",
+      "agent": "Directeur Adjoint",
+      "type": "start",
+      "message": "Cycle quotidien démarré — 27/03/2026 à 09:55",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:55:05.818103",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 60/100 (DÉGRADÉ) | Erreurs: 2 | Tâches OK: 0/9 | Fichiers OK: 7/8 | Auto-fixes: 1",
+      "data": {
+        "timestamp": "2026-03-27T09:55:05.780554",
+        "date": "2026-03-27",
+        "health_score": 60,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "ERROR",
+            "message": "2 erreur(s) critique(s) détectée(s) aujourd'hui",
+            "source": "logs",
+            "penalty": -10
+          },
+          {
+            "severity": "WARNING",
+            "message": "9 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (67.5h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [
+          "activity_feed.json: régénéré (était périmé)"
+        ],
+        "logs": {
+          "events_today": 12,
+          "errors_today": 2,
+          "erreurs_critiques": 2,
+          "erreurs_par_agent": {
+            "Agent Analyste": 1,
+            "Agent DA Site": 1
+          },
+          "top_errors": [
+            {
+              "ts": "2026-03-27T09:52:54.687395",
+              "agent": "Agent Analyste",
+              "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+              "pattern": "ERROR"
+            },
+            {
+              "ts": "2026-03-27T09:54:09.645951",
+              "agent": "Agent DA Site",
+              "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+              "pattern": "ERROR"
+            }
+          ]
+        },
+        "taches": {
+          "attendues": 9,
+          "executees": 0,
+          "manquantes": 9,
+          "doublons": 0,
+          "detail_manquantes": [
+            {
+              "id": "dir_newsletter_pipeline",
+              "nom": "Directeur Newsletter 📰",
+              "heure_prevue": "07:30"
+            },
+            {
+              "id": "coo_rapport_matin",
+              "nom": "COO IA — Rapport Matin 🤖",
+              "heure_prevue": "08:00"
+            },
+            {
+              "id": "veille_matin",
+              "nom": "Agent Veille — Matin 🔍",
+              "heure_prevue": "08:30"
+            },
+            {
+              "id": "email_ceo_matin",
+              "nom": "Email CEO 📧",
+              "heure_prevue": "08:50"
+            },
+            {
+              "id": "da_site",
+              "nom": "Agent DA Site 🎨",
+              "heure_prevue": "09:30"
+            },
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "prix_0915",
+              "nom": "📊 Prix Live — 9h15",
+              "heure_prevue": "09:15"
+            },
+            {
+              "id": "prix_0945",
+              "nom": "📊 Prix Live — 9h45",
+              "heure_prevue": "09:45"
+            },
+            {
+              "id": "monitoring_matin",
+              "nom": "🩺 Monitoring — Matin",
+              "heure_prevue": "08:15"
+            }
+          ],
+          "detail_doublons": []
+        },
+        "fichiers": {
+          "ok": 7,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 67.5,
+              "limite_heures": 6
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-03-27T09:55:05.780554",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:54:58.862416",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA terminée (0 pages améliorées)",
+      "data": {
+        "date": "2026-03-27 09:53",
+        "etapes": {
+          "audit": {
+            "ok": true,
+            "score": 100,
+            "problemes": 0
+          },
+          "corrections": {
+            "ok": true,
+            "pages_corrigees": 0,
+            "details": {
+              "index.html": [
+                "aucune correction nécessaire"
+              ],
+              "investissement.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletter.html": [
+                "aucune correction nécessaire"
+              ],
+              "newsletters.html": [
+                "aucune correction nécessaire"
+              ],
+              "espace-pilotage.html": [
+                "aucune correction nécessaire"
+              ]
+            }
+          },
+          "navigation": {
+            "ok": true,
+            "pages_mises_a_jour": 2
+          },
+          "insights": {
+            "ok": true,
+            "count": 3,
+            "injected_in_index": false,
+            "html_path": "outputs\\section_da_2026-03-27.html"
+          },
+          "visuels": {
+            "ok": true,
+            "details": [
+              {
+                "page": "index.html",
+                "status": "no_improvements"
+              },
+              {
+                "page": "investissement.html",
+                "status": "no_improvements"
+              },
+              {
+                "page": "newsletter.html",
+                "status": "no_improvements"
+              }
+            ]
+          }
+        },
+        "success": true,
+        "pages_ameliorees": 0,
+        "insights_count": 3
+      }
+    },
+    {
+      "ts": "2026-03-27T09:54:09.656671",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Contenu sauvegardé",
+      "data": {
+        "insights_file": "data\\contenu_da.json",
+        "html_file": "outputs\\section_da_2026-03-27.html"
+      }
+    },
+    {
+      "ts": "2026-03-27T09:54:09.645951",
+      "agent": "Agent DA Site",
+      "type": "error",
+      "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:53:52.358009",
+      "agent": "Agent DA Site",
+      "type": "start",
+      "message": "Mission DA complète démarrée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:53:52.106455",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "Cycle robot trader complété",
+      "data": {
+        "prudent": {
+          "capital": 10005.59,
+          "perf": 0.06
+        },
+        "modere": {
+          "capital": 10045.83,
+          "perf": 0.46
+        },
+        "agressif": {
+          "capital": 9793.3,
+          "perf": -2.07
+        }
+      }
+    },
+    {
+      "ts": "2026-03-27T09:52:54.687395",
+      "agent": "Agent Analyste",
+      "type": "error",
+      "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:52:29.194082",
+      "agent": "Agent Analyste",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, . Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:52:08.883382",
+      "agent": "Agent Analyste",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, . Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:51:50.527352",
+      "agent": "Agent Analyste",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, . Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:51:09.453366",
+      "agent": "Agent Analyste",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, . Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-27T09:50:51.850598",
+      "agent": "Agent Analyste",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, . Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-26T22:49:50.506854",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Orchestrateur démarré",
+      "data": {
+        "mode": "production"
+      }
+    },
     {
       "ts": "2026-03-26T22:09:55.080177",
       "agent": "Directeur Adjoint",
@@ -82,1462 +1308,287 @@
           "Agent CFO 💰"
         ]
       }
-    },
-    {
-      "ts": "2026-03-26T22:08:47.094112",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Supervision de l'équipe en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:08:47.092118",
-      "agent": "Directeur Adjoint",
-      "type": "info",
-      "message": "Scan terminé — 24 agents | 2 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:08:46.823224",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Scan du projet en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:08:46.821220",
-      "agent": "Directeur Adjoint",
-      "type": "start",
-      "message": "Cycle quotidien démarré — 26/03/2026 à 22:08",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:08:46.587329",
-      "agent": "Agent Monitoring",
-      "type": "success",
-      "message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
-      "data": {
-        "timestamp": "2026-03-26T22:08:46.554337",
-        "date": "2026-03-26",
-        "health_score": 70,
-        "status": "STABLE",
-        "issues": [
-          {
-            "severity": "WARNING",
-            "message": "36 tâche(s) manquante(s) aujourd'hui",
-            "source": "planning",
-            "penalty": -25
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
-            "source": "data/dernier_rapport_veille.json",
-            "penalty": -5
-          }
-        ],
-        "auto_fixes": [],
-        "logs": {
-          "events_today": 25,
-          "errors_today": 0,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {},
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 38,
-          "executees": 2,
-          "manquantes": 36,
-          "doublons": 0,
-          "detail_manquantes": [
-            {
-              "id": "dir_newsletter_pipeline",
-              "nom": "Directeur Newsletter 📰",
-              "heure_prevue": "07:30"
-            },
-            {
-              "id": "coo_rapport_matin",
-              "nom": "COO IA — Rapport Matin 🤖",
-              "heure_prevue": "08:00"
-            },
-            {
-              "id": "veille_matin",
-              "nom": "Agent Veille — Matin 🔍",
-              "heure_prevue": "08:30"
-            },
-            {
-              "id": "email_ceo_matin",
-              "nom": "Email CEO 📧",
-              "heure_prevue": "08:50"
-            },
-            {
-              "id": "da_site",
-              "nom": "Agent DA Site 🎨",
-              "heure_prevue": "09:30"
-            },
-            {
-              "id": "trader_09h",
-              "nom": "Directeur Trader — Ouverture EU 📈",
-              "heure_prevue": "09:00"
-            },
-            {
-              "id": "trader_10h30",
-              "nom": "Directeur Trader — Matinée EU 📈",
-              "heure_prevue": "10:30"
-            },
-            {
-              "id": "trader_12h",
-              "nom": "Directeur Trader — Midi EU 📈",
-              "heure_prevue": "12:00"
-            },
-            {
-              "id": "trader_14h",
-              "nom": "Directeur Trader — Pré-ouverture US 📈",
-              "heure_prevue": "14:00"
-            },
-            {
-              "id": "trader_15h45",
-              "nom": "Directeur Trader — Ouverture US ⚡📈",
-              "heure_prevue": "15:45"
-            }
-          ],
-          "detail_doublons": []
-        },
-        "fichiers": {
-          "ok": 7,
-          "manquants": 0,
-          "invalides": 0,
-          "perimes": 1,
-          "detail_problemes": [
-            {
-              "fichier": "data/dernier_rapport_veille.json",
-              "age_heures": 55.7,
-              "limite_heures": 6
-            }
-          ]
-        }
-      }
-    },
-    {
-      "ts": "2026-03-26T22:08:46.554337",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:08:40.379940",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (3 pages améliorées)",
-      "data": {
-        "date": "2026-03-26 22:06",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 70,
-            "problemes": 3
-          },
-          "corrections": {
-            "ok": true,
-            "pages_corrigees": 1,
-            "details": {
-              "index.html": [
-                "aucune correction nécessaire"
-              ],
-              "investissement.html": [
-                "aucune correction nécessaire"
-              ],
-              "newsletter.html": [
-                "aucune correction nécessaire"
-              ],
-              "newsletters.html": [
-                "nav injectée",
-                "CSS nav ajouté",
-                "script nav ajouté",
-                "footer injecté",
-                "CSS footer ajouté"
-              ],
-              "espace-pilotage.html": [
-                "aucune correction nécessaire"
-              ]
-            }
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": false,
-            "html_path": "outputs\\section_da_2026-03-26.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "improved",
-                "css_rules": 32
-              },
-              {
-                "page": "investissement.html",
-                "status": "improved",
-                "css_rules": 26
-              },
-              {
-                "page": "newsletter.html",
-                "status": "improved",
-                "css_rules": 31
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 3,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-26T22:07:26.651085",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-26.html"
-      }
-    },
-    {
-      "ts": "2026-03-26T22:07:26.642090",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:48.642311",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:06:48.398121",
-      "agent": "Agent Investissement",
-      "type": "success",
-      "message": "Cycle robot trader complété",
-      "data": {
-        "prudent": {
-          "capital": 10018.75,
-          "perf": 0.19
-        },
-        "modere": {
-          "capital": 10045.83,
-          "perf": 0.46
-        },
-        "agressif": {
-          "capital": 9831.56,
-          "perf": -1.68
-        }
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:48.378104",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Agressif: attendre None",
-      "data": {
-        "profil": "agressif",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": 0,
-        "raison_courte": "Marché sous pression, positions existantes à surveiller étroitement",
-        "raison_complete": "Le contexte macro est clairement détérioré ce soir : le Nasdaq 100 chute de -2.38% sur la séance, le VIX bondit à 27.44 (+8.33% sur la journée), signalant une peur institutionnelle réelle. Le pétrole WTI est à 93.74 USD (+3.79%) — niveau qui comprime les marges des entreprises tech et ravive l'inflation, ce qui repousse toute perspective de baisse des taux Fed. Le Dollar Index repasse au-dessus de 99.93, ce qui pèse sur les actifs risqués et les crypto. Nos trois positions TQQQ (-7.49%), SOXL (-4.24%) et BTC (-0.53%) sont sous stress. TQQQ est dangereusement proche du stop-loss à -12%. Déployer du cash supplémentaire dans cet environnement serait ajouter du levier sur un marché en détresse — c'est une erreur classique de timing. La priorité est de protéger le capital restant (4276€ de cash) et de surveiller les stop-loss automatiques sur TQQQ et SOXL.",
-        "catalyseur": "VIX +8.33% intraday + pétrole WTI à 93.74$ (+3.79%) : double pression inflation/volatilité qui écrase les positions leveragées tech",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Un rebond violent overnight (gap up) pourrait nous faire manquer une opportunité d'achat. Surveiller les niveaux de TQQQ : si clôture sous 40.50$, stop-loss à -12% est activé automatiquement."
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:34.394447",
-      "agent": "Agent Investissement",
-      "type": "vente",
-      "message": "Robot Modéré: Vente GLD @ 400.64 | P&L: -6.80€",
-      "data": {
-        "profil": "modere",
-        "ticker": "GLD",
-        "pl_euros": -6.8,
-        "pl_pct": -0.84
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:34.121283",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Modéré: vendre GLD",
-      "data": {
-        "profil": "modere",
-        "action": "vendre",
-        "ticker": "GLD",
-        "nom": "SPDR Gold Shares",
-        "allocation_pct": 0,
-        "raison_courte": "L'or chute de -3.93% : retournement brutal, stop-loss préventif.",
-        "raison_complete": "L'or (GC=F) a subi une correction violente de -3.93% sur la séance, passant de 4424$ à 4371$ et continuant de peser sur notre position GLD (-0.84% déjà). Ce mouvement n'est pas anodin : il coïncide avec un rebond du Dollar Index à 99.93 (+0.33%), qui exerce une pression mécanique inverse sur les métaux précieux libellés en USD. Simultanément, la hausse du pétrole WTI à 93.74$ (+3.79%) suggère un repositionnement des flux vers les matières premières énergétiques plutôt que les valeurs refuges. Le VIX monte à 27.44 (+8.33%), signe de stress croissant qui aurait dû soutenir l'or — or la corrélation s'est inversée, indiquant des ventes forcées ou une liquidation de positions longues institutionnelles. Avec notre entrée à 404.04$ et un actuel à 400.64$, nous sommes proches du seuil de stop-loss à -8%. Vendre maintenant pour préserver le capital et conserver la poudre sèche pour un point d'entrée plus bas.",
-        "catalyseur": "Rebond brutal du Dollar Index à ~100 + liquidation institutionnelle de l'or après le record de 4424$",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "L'or pourrait rebondir si le dollar rechute ou si une escalade géopolitique majeure survient — mais le momentum à court terme est clairement négatif."
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:20.420343",
-      "agent": "Agent Investissement",
-      "type": "decision_ia",
-      "message": "Robot Prudent: attendre None",
-      "data": {
-        "profil": "prudent",
-        "action": "attendre",
-        "ticker": null,
-        "nom": null,
-        "allocation_pct": null,
-        "raison_courte": "Volatilité élevée, cash abondant — patience stratégique requise",
-        "raison_complete": "Le VIX à 27.44 (+8.33% sur la journée) signale une nervosité marquée des marchés, incompatible avec un nouveau déploiement de capital dans un profil prudent. Le S&P 500 perd -1.74% et le Nasdaq -2.38% sur la seule séance du 26 mars, tandis que l'or recule de -3.93% — un mouvement inhabituel qui suggère des liquidations forcées ou un repositionnement tactique de grands acteurs. Le pétrole WTI bondit à 93.74$ (+3.79%), probablement alimenté par des tensions géopolitiques au Moyen-Orient ou des données de stocks US inférieures aux attentes, ce qui constitue un facteur inflationniste défavorable aux obligations longues. Nos trois positions existantes sont globalement stables : EXH7.DE progresse de +1.81%, VGOV.L et IUSV.DE sont quasi à l'équilibre. Avec 6 711€ de cash (67% du capital), nous disposons d'une excellente capacité de déploiement — mais le contexte actuel ne justifie pas de précipitation. Mieux vaut attendre la stabilisation du VIX sous 22 et un signal clair sur la direction des taux avant d'augmenter l'exposition.",
-        "catalyseur": "VIX à 27.44 et liquidations simultanées sur actions, or et obligations — signal de stress systémique à surveiller",
-        "horizon": "court terme (jours)",
-        "niveau_conviction": 8,
-        "risques": "Le risque principal est de manquer un rebond rapide si le stress est temporaire. Cependant, dans un profil prudent, préserver le capital prime sur la performance à court terme."
-      }
-    },
-    {
-      "ts": "2026-03-26T22:06:01.738540",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Notification quotidienne → 2 abonnés",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:05:59.279735",
-      "agent": "Agent Growth",
-      "type": "success",
-      "message": "Newsletter envoyée — 2 succès, 0 erreurs (3s)",
-      "data": {
-        "envoyes": 2,
-        "erreurs": 0
-      }
-    },
-    {
-      "ts": "2026-03-26T22:05:55.663880",
-      "agent": "Agent Growth",
-      "type": "start",
-      "message": "Envoi newsletter démarré — sujet auto",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:05:55.658879",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T22:05:55.638880",
-      "agent": "Agent Rédacteur",
-      "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-26.html",
-      "data": {
-        "fichier": "alphabot_newsletter_2026-03-26.html",
-        "taille_kb": 59.2
-      }
-    },
-    {
-      "ts": "2026-03-26T22:05:55.632880",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T21:59:25.837151",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (22.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T21:59:25.831149",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (22.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T21:59:25.825129",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Clôture US 🔔📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-26T21:58:25.817739",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Orchestrateur démarré",
-      "data": {
-        "mode": "production"
-      }
-    },
-    {
-      "ts": "2026-03-26T21:44:26.631541",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T21:44:14.183596",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T21:44:14.166596",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 21h45",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-26T08:32:05.051702",
-      "agent": "Sync Abonnés",
-      "type": "info",
-      "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-26T08:31:14.510975",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Orchestrateur démarré",
-      "data": {
-        "mode": "production"
-      }
-    },
-    {
-      "ts": "2026-03-25T22:46:08.955293",
-      "agent": "Agent Monitoring",
-      "type": "warning",
-      "message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
-      "data": {
-        "timestamp": "2026-03-25T22:46:08.831109",
-        "date": "2026-03-25",
-        "health_score": 67,
-        "status": "DÉGRADÉ",
-        "issues": [
-          {
-            "severity": "WARNING",
-            "message": "39 tâche(s) manquante(s) aujourd'hui",
-            "source": "planning",
-            "penalty": -25
-          },
-          {
-            "severity": "WARNING",
-            "message": "1 tâche(s) en doublon détectée(s)",
-            "source": "planning",
-            "penalty": -3
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
-            "source": "data/dernier_rapport_veille.json",
-            "penalty": -5
-          }
-        ],
-        "auto_fixes": [],
-        "logs": {
-          "events_today": 26,
-          "errors_today": 0,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {},
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 39,
-          "executees": 0,
-          "manquantes": 39,
-          "doublons": 1,
-          "detail_manquantes": [
-            {
-              "id": "dir_newsletter_pipeline",
-              "nom": "Directeur Newsletter 📰",
-              "heure_prevue": "07:30"
-            },
-            {
-              "id": "coo_rapport_matin",
-              "nom": "COO IA — Rapport Matin 🤖",
-              "heure_prevue": "08:00"
-            },
-            {
-              "id": "veille_matin",
-              "nom": "Agent Veille — Matin 🔍",
-              "heure_prevue": "08:30"
-            },
-            {
-              "id": "email_ceo_matin",
-              "nom": "Email CEO 📧",
-              "heure_prevue": "08:50"
-            },
-            {
-              "id": "da_site",
-              "nom": "Agent DA Site 🎨",
-              "heure_prevue": "09:30"
-            },
-            {
-              "id": "trader_09h",
-              "nom": "Directeur Trader — Ouverture EU 📈",
-              "heure_prevue": "09:00"
-            },
-            {
-              "id": "trader_10h30",
-              "nom": "Directeur Trader — Matinée EU 📈",
-              "heure_prevue": "10:30"
-            },
-            {
-              "id": "trader_12h",
-              "nom": "Directeur Trader — Midi EU 📈",
-              "heure_prevue": "12:00"
-            },
-            {
-              "id": "trader_14h",
-              "nom": "Directeur Trader — Pré-ouverture US 📈",
-              "heure_prevue": "14:00"
-            },
-            {
-              "id": "trader_15h45",
-              "nom": "Directeur Trader — Ouverture US ⚡📈",
-              "heure_prevue": "15:45"
-            }
-          ],
-          "detail_doublons": [
-            {
-              "agent": "Agent LinkedIn",
-              "message": "Génération des 7 posts LinkedIn de la semaine",
-              "interval_seconds": 327,
-              "count": 2
-            }
-          ]
-        },
-        "fichiers": {
-          "ok": 7,
-          "manquants": 0,
-          "invalides": 0,
-          "perimes": 1,
-          "detail_problemes": [
-            {
-              "fichier": "data/dernier_rapport_veille.json",
-              "age_heures": 32.3,
-              "limite_heures": 6
-            }
-          ]
-        }
-      }
-    },
-    {
-      "ts": "2026-03-25T22:46:08.831389",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:45:52.535523",
-      "agent": "Agent Monitoring",
-      "type": "warning",
-      "message": "⚠️ Diagnostic terminé — Score: 57/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/39 | Fichiers OK: 6/8 | Auto-fixes: 0",
-      "data": {
-        "timestamp": "2026-03-25T22:45:52.443535",
-        "date": "2026-03-25",
-        "health_score": 57,
-        "status": "DÉGRADÉ",
-        "issues": [
-          {
-            "severity": "WARNING",
-            "message": "39 tâche(s) manquante(s) aujourd'hui",
-            "source": "planning",
-            "penalty": -25
-          },
-          {
-            "severity": "WARNING",
-            "message": "1 tâche(s) en doublon détectée(s)",
-            "source": "planning",
-            "penalty": -3
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
-            "source": "data/dernier_rapport_veille.json",
-            "penalty": -5
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier quasi-vide: data/orchestrateur_schedule.json",
-            "source": "data/orchestrateur_schedule.json",
-            "penalty": -10
-          }
-        ],
-        "auto_fixes": [],
-        "logs": {
-          "events_today": 17,
-          "errors_today": 0,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {},
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 39,
-          "executees": 0,
-          "manquantes": 39,
-          "doublons": 1,
-          "detail_manquantes": [
-            {
-              "id": "dir_newsletter_pipeline",
-              "nom": "Directeur Newsletter 📰",
-              "heure_prevue": "07:30"
-            },
-            {
-              "id": "coo_rapport_matin",
-              "nom": "COO IA — Rapport Matin 🤖",
-              "heure_prevue": "08:00"
-            },
-            {
-              "id": "veille_matin",
-              "nom": "Agent Veille — Matin 🔍",
-              "heure_prevue": "08:30"
-            },
-            {
-              "id": "email_ceo_matin",
-              "nom": "Email CEO 📧",
-              "heure_prevue": "08:50"
-            },
-            {
-              "id": "da_site",
-              "nom": "Agent DA Site 🎨",
-              "heure_prevue": "09:30"
-            },
-            {
-              "id": "trader_09h",
-              "nom": "Directeur Trader — Ouverture EU 📈",
-              "heure_prevue": "09:00"
-            },
-            {
-              "id": "trader_10h30",
-              "nom": "Directeur Trader — Matinée EU 📈",
-              "heure_prevue": "10:30"
-            },
-            {
-              "id": "trader_12h",
-              "nom": "Directeur Trader — Midi EU 📈",
-              "heure_prevue": "12:00"
-            },
-            {
-              "id": "trader_14h",
-              "nom": "Directeur Trader — Pré-ouverture US 📈",
-              "heure_prevue": "14:00"
-            },
-            {
-              "id": "trader_15h45",
-              "nom": "Directeur Trader — Ouverture US ⚡📈",
-              "heure_prevue": "15:45"
-            }
-          ],
-          "detail_doublons": [
-            {
-              "agent": "Agent LinkedIn",
-              "message": "Génération des 7 posts LinkedIn de la semaine",
-              "interval_seconds": 327,
-              "count": 2
-            }
-          ]
-        },
-        "fichiers": {
-          "ok": 6,
-          "manquants": 0,
-          "invalides": 1,
-          "perimes": 1,
-          "detail_problemes": [
-            {
-              "fichier": "data/orchestrateur_schedule.json",
-              "erreur": "Fichier vide ou quasi-vide"
-            },
-            {
-              "fichier": "data/dernier_rapport_veille.json",
-              "age_heures": 32.3,
-              "limite_heures": 6
-            }
-          ]
-        }
-      }
-    },
-    {
-      "ts": "2026-03-25T22:45:52.443758",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:44:52.669829",
-      "agent": "Agent Monitoring",
-      "type": "warning",
-      "message": "⚠️ Diagnostic terminé — Score: 57/100 (DÉGRADÉ) | Erreurs: 0 | Tâches OK: 0/36 | Fichiers OK: 6/8 | Auto-fixes: 0",
-      "data": {
-        "timestamp": "2026-03-25T22:44:52.510578",
-        "date": "2026-03-25",
-        "health_score": 57,
-        "status": "DÉGRADÉ",
-        "issues": [
-          {
-            "severity": "WARNING",
-            "message": "36 tâche(s) manquante(s) aujourd'hui",
-            "source": "planning",
-            "penalty": -25
-          },
-          {
-            "severity": "WARNING",
-            "message": "1 tâche(s) en doublon détectée(s)",
-            "source": "planning",
-            "penalty": -3
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
-            "source": "data/dernier_rapport_veille.json",
-            "penalty": -5
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier quasi-vide: data/newsletters.json",
-            "source": "data/newsletters.json",
-            "penalty": -10
-          }
-        ],
-        "auto_fixes": [],
-        "logs": {
-          "events_today": 15,
-          "errors_today": 0,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {},
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 36,
-          "executees": 0,
-          "manquantes": 36,
-          "doublons": 1,
-          "detail_manquantes": [
-            {
-              "id": "dir_newsletter_pipeline",
-              "nom": "Directeur Newsletter 📰",
-              "heure_prevue": "07:30"
-            },
-            {
-              "id": "coo_rapport_matin",
-              "nom": "COO IA — Rapport Matin 🤖",
-              "heure_prevue": "08:00"
-            },
-            {
-              "id": "veille_matin",
-              "nom": "Agent Veille — Matin 🔍",
-              "heure_prevue": "08:30"
-            },
-            {
-              "id": "email_ceo_matin",
-              "nom": "Email CEO 📧",
-              "heure_prevue": "08:50"
-            },
-            {
-              "id": "da_site",
-              "nom": "Agent DA Site 🎨",
-              "heure_prevue": "09:30"
-            },
-            {
-              "id": "trader_09h",
-              "nom": "Directeur Trader — Ouverture EU 📈",
-              "heure_prevue": "09:00"
-            },
-            {
-              "id": "trader_10h30",
-              "nom": "Directeur Trader — Matinée EU 📈",
-              "heure_prevue": "10:30"
-            },
-            {
-              "id": "trader_12h",
-              "nom": "Directeur Trader — Midi EU 📈",
-              "heure_prevue": "12:00"
-            },
-            {
-              "id": "trader_14h",
-              "nom": "Directeur Trader — Pré-ouverture US 📈",
-              "heure_prevue": "14:00"
-            },
-            {
-              "id": "trader_15h45",
-              "nom": "Directeur Trader — Ouverture US ⚡📈",
-              "heure_prevue": "15:45"
-            }
-          ],
-          "detail_doublons": [
-            {
-              "agent": "Agent LinkedIn",
-              "message": "Génération des 7 posts LinkedIn de la semaine",
-              "interval_seconds": 327,
-              "count": 2
-            }
-          ]
-        },
-        "fichiers": {
-          "ok": 6,
-          "manquants": 0,
-          "invalides": 1,
-          "perimes": 1,
-          "detail_problemes": [
-            {
-              "fichier": "data/newsletters.json",
-              "erreur": "Fichier vide ou quasi-vide"
-            },
-            {
-              "fichier": "data/dernier_rapport_veille.json",
-              "age_heures": 32.3,
-              "limite_heures": 6
-            }
-          ]
-        }
-      }
-    },
-    {
-      "ts": "2026-03-25T22:44:52.511158",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:43:39.747087",
-      "agent": "Agent Monitoring",
-      "type": "warning",
-      "message": "🔴 Diagnostic terminé — Score: 0/100 (URGENCE) | Erreurs: 0 | Tâches OK: 0/36 | Fichiers OK: 2/8 | Auto-fixes: 2",
-      "data": {
-        "timestamp": "2026-03-25T22:43:39.595376",
-        "date": "2026-03-25",
-        "health_score": 0,
-        "status": "URGENCE",
-        "issues": [
-          {
-            "severity": "WARNING",
-            "message": "36 tâche(s) manquante(s) aujourd'hui",
-            "source": "planning",
-            "penalty": -25
-          },
-          {
-            "severity": "WARNING",
-            "message": "1 tâche(s) en doublon détectée(s)",
-            "source": "planning",
-            "penalty": -3
-          },
-          {
-            "severity": "CRITICAL",
-            "message": "JSON invalide: data/portfolio_public.json",
-            "source": "data/portfolio_public.json",
-            "penalty": -15
-          },
-          {
-            "severity": "WARNING",
-            "message": "Fichier périmé (32.3h): data/dernier_rapport_veille.json",
-            "source": "data/dernier_rapport_veille.json",
-            "penalty": -5
-          },
-          {
-            "severity": "CRITICAL",
-            "message": "JSON invalide: data/activity_feed.json",
-            "source": "data/activity_feed.json",
-            "penalty": -15
-          },
-          {
-            "severity": "CRITICAL",
-            "message": "JSON invalide: data/newsletters.json",
-            "source": "data/newsletters.json",
-            "penalty": -15
-          },
-          {
-            "severity": "CRITICAL",
-            "message": "JSON invalide: data/contenu_da.json",
-            "source": "data/contenu_da.json",
-            "penalty": -15
-          },
-          {
-            "severity": "CRITICAL",
-            "message": "JSON invalide: data/orchestrateur_schedule.json",
-            "source": "data/orchestrateur_schedule.json",
-            "penalty": -15
-          }
-        ],
-        "auto_fixes": [
-          "orchestrateur_schedule.json: fichier corrompu — reset",
-          "activity_feed.json: régénéré (était périmé)"
-        ],
-        "logs": {
-          "events_today": 8,
-          "errors_today": 0,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {},
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 36,
-          "executees": 0,
-          "manquantes": 36,
-          "doublons": 1,
-          "detail_manquantes": [
-            {
-              "id": "dir_newsletter_pipeline",
-              "nom": "Directeur Newsletter 📰",
-              "heure_prevue": "07:30"
-            },
-            {
-              "id": "coo_rapport_matin",
-              "nom": "COO IA — Rapport Matin 🤖",
-              "heure_prevue": "08:00"
-            },
-            {
-              "id": "veille_matin",
-              "nom": "Agent Veille — Matin 🔍",
-              "heure_prevue": "08:30"
-            },
-            {
-              "id": "email_ceo_matin",
-              "nom": "Email CEO 📧",
-              "heure_prevue": "08:50"
-            },
-            {
-              "id": "da_site",
-              "nom": "Agent DA Site 🎨",
-              "heure_prevue": "09:30"
-            },
-            {
-              "id": "trader_09h",
-              "nom": "Directeur Trader — Ouverture EU 📈",
-              "heure_prevue": "09:00"
-            },
-            {
-              "id": "trader_10h30",
-              "nom": "Directeur Trader — Matinée EU 📈",
-              "heure_prevue": "10:30"
-            },
-            {
-              "id": "trader_12h",
-              "nom": "Directeur Trader — Midi EU 📈",
-              "heure_prevue": "12:00"
-            },
-            {
-              "id": "trader_14h",
-              "nom": "Directeur Trader — Pré-ouverture US 📈",
-              "heure_prevue": "14:00"
-            },
-            {
-              "id": "trader_15h45",
-              "nom": "Directeur Trader — Ouverture US ⚡📈",
-              "heure_prevue": "15:45"
-            }
-          ],
-          "detail_doublons": [
-            {
-              "agent": "Agent LinkedIn",
-              "message": "Génération des 7 posts LinkedIn de la semaine",
-              "interval_seconds": 327,
-              "count": 2
-            }
-          ]
-        },
-        "fichiers": {
-          "ok": 2,
-          "manquants": 0,
-          "invalides": 5,
-          "perimes": 1,
-          "detail_problemes": [
-            {
-              "fichier": "data/portfolio_public.json",
-              "erreur": "Extra data: line 451 column 2 (char 40431)"
-            },
-            {
-              "fichier": "data/activity_feed.json",
-              "erreur": "Extra data: line 820 column 2 (char 20357)"
-            },
-            {
-              "fichier": "data/newsletters.json",
-              "erreur": "Expecting value: line 29 column 14 (char 694)"
-            },
-            {
-              "fichier": "data/contenu_da.json",
-              "erreur": "Extra data: line 95 column 2 (char 6658)"
-            },
-            {
-              "fichier": "data/orchestrateur_schedule.json",
-              "erreur": "Unterminated string starting at: line 4 column 18 (char 86)"
-            },
-            {
-              "fichier": "data/dernier_rapport_veille.json",
-              "age_heures": 32.3,
-              "limite_heures": 6
-            }
-          ]
-        }
-      }
-    },
-    {
-      "ts": "2026-03-25T22:43:39.595666",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:14:02.352038",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "COO rapport soir terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:14:02.340639",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "COO rapport soir + email CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T22:14:02.325629",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: COO IA — Rapport Soir + CEO 🤖",
-      "data": {
-        "branch": "supervision"
-      }
-    },
-    {
-      "ts": "2026-03-25T21:59:27.262811",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (22.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:59:27.254800",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (22.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:59:27.243773",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Clôture US 🔔📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T21:44:22.206729",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:44:18.451923",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:44:18.433737",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 21h45",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T21:14:13.369279",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:14:09.610605",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T21:14:09.600597",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 21h15",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:31:34.533674",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_20h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:31:34.524823",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (20.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:31:34.516710",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (20.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:31:34.508127",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Pré-clôture US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:30:29.493450",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_20h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:30:29.485041",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (20.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:30:29.474023",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (20.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:30:29.466308",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Pré-clôture US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:29:24.444082",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_20h30"
-      }
-    },
-    {
-      "ts": "2026-03-25T20:29:24.429656",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (20.5h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:29:24.420657",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (20.5h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T20:29:24.403636",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Pré-clôture US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:31:49.275175",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1930"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:31:49.256177",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:31:45.455964",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:31:45.443970",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 19h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:30:40.405551",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1930"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:30:40.401552",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:30:36.595975",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:30:36.580988",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 19h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:29:31.558262",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1930"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:29:31.549267",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:29:27.227237",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:29:27.220237",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 19h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:01:22.154411",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_19h"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:01:22.147414",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (19.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:01:22.139409",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (19.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:01:22.129374",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Soirée US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:00:17.115747",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_19h"
-      }
-    },
-    {
-      "ts": "2026-03-25T19:00:17.106017",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (19.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:00:17.092016",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (19.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T19:00:17.077021",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Soirée US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T18:59:11.978487",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "trader_19h"
-      }
-    },
-    {
-      "ts": "2026-03-25T18:59:11.907316",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (19.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:59:11.851926",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (19.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:59:11.704489",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Soirée US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-25T18:01:36.544527",
-      "agent": "Orchestrateur",
-      "type": "error",
-      "message": "Erreur exécution tâche: 'derniers_ids'",
-      "data": {
-        "task": "prix_1800"
-      }
-    },
-    {
-      "ts": "2026-03-25T18:01:36.537528",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:01:32.937546",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-25T18:01:32.925469",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 18h",
-      "data": {
-        "branch": "support"
-      }
     }
   ],
   "agents": [
     {
-      "agent": "Directeur Adjoint",
+      "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-26T22:09:55.080177",
-        "agent": "Directeur Adjoint",
+        "ts": "2026-03-27T19:51:56.220241",
+        "agent": "Orchestrateur",
         "type": "success",
-        "message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
+        "message": "Session Trader (19.9h) terminée",
         "data": {}
       },
-      "last_ts": "2026-03-26T22:09:55.080177",
+      "last_ts": "2026-03-27T19:51:56.220241",
       "last_type": "success",
-      "last_message": "Rapport quotidien envoyé à antoine.metout@gmail.com",
-      "total_today": 11,
+      "last_message": "Session Trader (19.9h) terminée",
+      "total_today": 58,
+      "errors_today": 1,
+      "successes_today": 19
+    },
+    {
+      "agent": "Agent Monitoring",
+      "last_event": {
+        "ts": "2026-03-27T19:51:54.534190",
+        "agent": "Agent Monitoring",
+        "type": "warning",
+        "message": "🔴 Diagnostic terminé — Score: 47/100 (CRITIQUE) | Erreurs: 3 | Tâches OK: 20/32 | Fichiers OK: 6/8 | Auto-fixes: 0",
+        "data": {
+          "timestamp": "2026-03-27T19:51:54.505542",
+          "date": "2026-03-27",
+          "health_score": 47,
+          "status": "CRITIQUE",
+          "issues": [
+            {
+              "severity": "ERROR",
+              "message": "3 erreur(s) critique(s) détectée(s) aujourd'hui",
+              "source": "logs",
+              "penalty": -15
+            },
+            {
+              "severity": "WARNING",
+              "message": "12 tâche(s) manquante(s) aujourd'hui",
+              "source": "planning",
+              "penalty": -25
+            },
+            {
+              "severity": "WARNING",
+              "message": "1 tâche(s) en doublon détectée(s)",
+              "source": "planning",
+              "penalty": -3
+            },
+            {
+              "severity": "WARNING",
+              "message": "Fichier périmé (3.9h): data/portfolio_public.json",
+              "source": "data/portfolio_public.json",
+              "penalty": -5
+            },
+            {
+              "severity": "WARNING",
+              "message": "Fichier périmé (77.4h): data/dernier_rapport_veille.json",
+              "source": "data/dernier_rapport_veille.json",
+              "penalty": -5
+            }
+          ],
+          "auto_fixes": [],
+          "logs": {
+            "events_today": 81,
+            "errors_today": 3,
+            "erreurs_critiques": 3,
+            "erreurs_par_agent": {
+              "Agent Analyste": 1,
+              "Agent DA Site": 1,
+              "Orchestrateur": 1
+            },
+            "top_errors": [
+              {
+                "ts": "2026-03-27T09:52:54.687395",
+                "agent": "Agent Analyste",
+                "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+                "pattern": "ERROR"
+              },
+              {
+                "ts": "2026-03-27T09:54:09.645951",
+                "agent": "Agent DA Site",
+                "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+                "pattern": "ERROR"
+              },
+              {
+                "ts": "2026-03-27T19:49:49.584059",
+                "agent": "Orchestrateur",
+                "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+                "pattern": "ERREUR"
+              }
+            ]
+          },
+          "taches": {
+            "attendues": 32,
+            "executees": 20,
+            "manquantes": 12,
+            "doublons": 1,
+            "detail_manquantes": [
+              {
+                "id": "trader_09h",
+                "nom": "Directeur Trader — Ouverture EU 📈",
+                "heure_prevue": "09:00"
+              },
+              {
+                "id": "trader_16h30",
+                "nom": "Directeur Trader — Overlap EU/US 📈",
+                "heure_prevue": "16:30"
+              },
+              {
+                "id": "trader_17h30",
+                "nom": "Directeur Trader — Clôture EU 📈",
+                "heure_prevue": "17:30"
+              },
+              {
+                "id": "trader_19h",
+                "nom": "Directeur Trader — Soirée US 📈",
+                "heure_prevue": "19:00"
+              },
+              {
+                "id": "directeur_arene_match",
+                "nom": "Directeur Arène — Match Quotidien 🏆",
+                "heure_prevue": "17:00"
+              },
+              {
+                "id": "prix_0915",
+                "nom": "📊 Prix Live — 9h15",
+                "heure_prevue": "09:15"
+              },
+              {
+                "id": "prix_0945",
+                "nom": "📊 Prix Live — 9h45",
+                "heure_prevue": "09:45"
+              },
+              {
+                "id": "prix_1630",
+                "nom": "📊 Prix Live — 16h30",
+                "heure_prevue": "16:30"
+              },
+              {
+                "id": "prix_1700",
+                "nom": "📊 Prix Live — 17h",
+                "heure_prevue": "17:00"
+              },
+              {
+                "id": "prix_1800",
+                "nom": "📊 Prix Live — 18h",
+                "heure_prevue": "18:00"
+              }
+            ],
+            "detail_doublons": [
+              {
+                "agent": "Agent Monitoring",
+                "message": "Diagnostic système en cours...",
+                "interval_seconds": 139,
+                "count": 3
+              }
+            ]
+          },
+          "fichiers": {
+            "ok": 6,
+            "manquants": 0,
+            "invalides": 0,
+            "perimes": 2,
+            "detail_problemes": [
+              {
+                "fichier": "data/portfolio_public.json",
+                "age_heures": 3.9,
+                "limite_heures": 2
+              },
+              {
+                "fichier": "data/dernier_rapport_veille.json",
+                "age_heures": 77.4,
+                "limite_heures": 6
+              }
+            ]
+          }
+        }
+      },
+      "last_ts": "2026-03-27T19:51:54.534190",
+      "last_type": "warning",
+      "last_message": "🔴 Diagnostic terminé — Score: 47/100 (CRITIQUE) | Erreurs: 3 | Tâches OK: 20/32 | Fichiers OK: 6/8 | Auto-fixes: 0",
+      "total_today": 6,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Veille",
+      "last_event": {
+        "ts": "2026-03-27T19:51:54.493112",
+        "agent": "Agent Veille",
+        "type": "success",
+        "message": "Collecte marchés complète",
+        "data": {
+          "actifs": 0
+        }
+      },
+      "last_ts": "2026-03-27T19:51:54.493112",
+      "last_type": "success",
+      "last_message": "Collecte marchés complète",
+      "total_today": 3,
+      "errors_today": 0,
+      "successes_today": 3
+    },
+    {
+      "agent": "Agent DA Site",
+      "last_event": {
+        "ts": "2026-03-27T19:51:48.801224",
+        "agent": "Agent DA Site",
+        "type": "success",
+        "message": "Insights géopolitiques et améliorations visuelles terminées",
+        "data": {}
+      },
+      "last_ts": "2026-03-27T19:51:48.801224",
+      "last_type": "success",
+      "last_message": "Insights géopolitiques et améliorations visuelles terminées",
+      "total_today": 9,
+      "errors_today": 1,
+      "successes_today": 6
+    },
+    {
+      "agent": "Directeur Adjoint",
+      "last_event": {
+        "ts": "2026-03-27T09:55:06.284206",
+        "agent": "Directeur Adjoint",
+        "type": "progress",
+        "message": "Analyse du projet avec Claude IA en cours...",
+        "data": {}
+      },
+      "last_ts": "2026-03-27T09:55:06.284206",
+      "last_type": "progress",
+      "last_message": "Analyse du projet avec Claude IA en cours...",
+      "total_today": 6,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-27T09:53:52.106455",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "Cycle robot trader complété",
+        "data": {
+          "prudent": {
+            "capital": 10005.59,
+            "perf": 0.06
+          },
+          "modere": {
+            "capital": 10045.83,
+            "perf": 0.46
+          },
+          "agressif": {
+            "capital": 9793.3,
+            "perf": -2.07
+          }
+        }
+      },
+      "last_ts": "2026-03-27T09:53:52.106455",
+      "last_type": "success",
+      "last_message": "Cycle robot trader complété",
+      "total_today": 1,
       "errors_today": 0,
       "successes_today": 1
+    },
+    {
+      "agent": "Agent Analyste",
+      "last_event": {
+        "ts": "2026-03-27T09:52:54.687395",
+        "agent": "Agent Analyste",
+        "type": "error",
+        "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+        "data": {}
+      },
+      "last_ts": "2026-03-27T09:52:54.687395",
+      "last_type": "error",
+      "last_message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+      "total_today": 6,
+      "errors_today": 1,
+      "successes_today": 0
     },
     {
       "agent": "Agent Growth Booster",
@@ -1553,300 +1604,9 @@
       "last_ts": "2026-03-26T22:09:28.395494",
       "last_type": "success",
       "last_message": "Stratégie générée : Rédiger et publier le post Reddit sur r/finance_france avec le lien du site et l",
-      "total_today": 3,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Agent Monitoring",
-      "last_event": {
-        "ts": "2026-03-26T22:08:46.587329",
-        "agent": "Agent Monitoring",
-        "type": "success",
-        "message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
-        "data": {
-          "timestamp": "2026-03-26T22:08:46.554337",
-          "date": "2026-03-26",
-          "health_score": 70,
-          "status": "STABLE",
-          "issues": [
-            {
-              "severity": "WARNING",
-              "message": "36 tâche(s) manquante(s) aujourd'hui",
-              "source": "planning",
-              "penalty": -25
-            },
-            {
-              "severity": "WARNING",
-              "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
-              "source": "data/dernier_rapport_veille.json",
-              "penalty": -5
-            }
-          ],
-          "auto_fixes": [],
-          "logs": {
-            "events_today": 25,
-            "errors_today": 0,
-            "erreurs_critiques": 0,
-            "erreurs_par_agent": {},
-            "top_errors": []
-          },
-          "taches": {
-            "attendues": 38,
-            "executees": 2,
-            "manquantes": 36,
-            "doublons": 0,
-            "detail_manquantes": [
-              {
-                "id": "dir_newsletter_pipeline",
-                "nom": "Directeur Newsletter 📰",
-                "heure_prevue": "07:30"
-              },
-              {
-                "id": "coo_rapport_matin",
-                "nom": "COO IA — Rapport Matin 🤖",
-                "heure_prevue": "08:00"
-              },
-              {
-                "id": "veille_matin",
-                "nom": "Agent Veille — Matin 🔍",
-                "heure_prevue": "08:30"
-              },
-              {
-                "id": "email_ceo_matin",
-                "nom": "Email CEO 📧",
-                "heure_prevue": "08:50"
-              },
-              {
-                "id": "da_site",
-                "nom": "Agent DA Site 🎨",
-                "heure_prevue": "09:30"
-              },
-              {
-                "id": "trader_09h",
-                "nom": "Directeur Trader — Ouverture EU 📈",
-                "heure_prevue": "09:00"
-              },
-              {
-                "id": "trader_10h30",
-                "nom": "Directeur Trader — Matinée EU 📈",
-                "heure_prevue": "10:30"
-              },
-              {
-                "id": "trader_12h",
-                "nom": "Directeur Trader — Midi EU 📈",
-                "heure_prevue": "12:00"
-              },
-              {
-                "id": "trader_14h",
-                "nom": "Directeur Trader — Pré-ouverture US 📈",
-                "heure_prevue": "14:00"
-              },
-              {
-                "id": "trader_15h45",
-                "nom": "Directeur Trader — Ouverture US ⚡📈",
-                "heure_prevue": "15:45"
-              }
-            ],
-            "detail_doublons": []
-          },
-          "fichiers": {
-            "ok": 7,
-            "manquants": 0,
-            "invalides": 0,
-            "perimes": 1,
-            "detail_problemes": [
-              {
-                "fichier": "data/dernier_rapport_veille.json",
-                "age_heures": 55.7,
-                "limite_heures": 6
-              }
-            ]
-          }
-        }
-      },
-      "last_ts": "2026-03-26T22:08:46.587329",
-      "last_type": "success",
-      "last_message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 0 | Tâches OK: 2/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
-      "total_today": 2,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Agent DA Site",
-      "last_event": {
-        "ts": "2026-03-26T22:08:40.379940",
-        "agent": "Agent DA Site",
-        "type": "success",
-        "message": "Mission DA terminée (3 pages améliorées)",
-        "data": {
-          "date": "2026-03-26 22:06",
-          "etapes": {
-            "audit": {
-              "ok": true,
-              "score": 70,
-              "problemes": 3
-            },
-            "corrections": {
-              "ok": true,
-              "pages_corrigees": 1,
-              "details": {
-                "index.html": [
-                  "aucune correction nécessaire"
-                ],
-                "investissement.html": [
-                  "aucune correction nécessaire"
-                ],
-                "newsletter.html": [
-                  "aucune correction nécessaire"
-                ],
-                "newsletters.html": [
-                  "nav injectée",
-                  "CSS nav ajouté",
-                  "script nav ajouté",
-                  "footer injecté",
-                  "CSS footer ajouté"
-                ],
-                "espace-pilotage.html": [
-                  "aucune correction nécessaire"
-                ]
-              }
-            },
-            "navigation": {
-              "ok": true,
-              "pages_mises_a_jour": 2
-            },
-            "insights": {
-              "ok": true,
-              "count": 5,
-              "injected_in_index": false,
-              "html_path": "outputs\\section_da_2026-03-26.html"
-            },
-            "visuels": {
-              "ok": true,
-              "details": [
-                {
-                  "page": "index.html",
-                  "status": "improved",
-                  "css_rules": 32
-                },
-                {
-                  "page": "investissement.html",
-                  "status": "improved",
-                  "css_rules": 26
-                },
-                {
-                  "page": "newsletter.html",
-                  "status": "improved",
-                  "css_rules": 31
-                }
-              ]
-            }
-          },
-          "success": true,
-          "pages_ameliorees": 3,
-          "insights_count": 5
-        }
-      },
-      "last_ts": "2026-03-26T22:08:40.379940",
-      "last_type": "success",
-      "last_message": "Mission DA terminée (3 pages améliorées)",
-      "total_today": 4,
-      "errors_today": 0,
-      "successes_today": 3
-    },
-    {
-      "agent": "Agent Investissement",
-      "last_event": {
-        "ts": "2026-03-26T22:06:48.398121",
-        "agent": "Agent Investissement",
-        "type": "success",
-        "message": "Cycle robot trader complété",
-        "data": {
-          "prudent": {
-            "capital": 10018.75,
-            "perf": 0.19
-          },
-          "modere": {
-            "capital": 10045.83,
-            "perf": 0.46
-          },
-          "agressif": {
-            "capital": 9831.56,
-            "perf": -1.68
-          }
-        }
-      },
-      "last_ts": "2026-03-26T22:06:48.398121",
-      "last_type": "success",
-      "last_message": "Cycle robot trader complété",
-      "total_today": 5,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Agent Growth",
-      "last_event": {
-        "ts": "2026-03-26T22:06:01.738540",
-        "agent": "Agent Growth",
-        "type": "success",
-        "message": "Notification quotidienne → 2 abonnés",
-        "data": {}
-      },
-      "last_ts": "2026-03-26T22:06:01.738540",
-      "last_type": "success",
-      "last_message": "Notification quotidienne → 2 abonnés",
-      "total_today": 3,
-      "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Agent Rédacteur",
-      "last_event": {
-        "ts": "2026-03-26T22:05:55.658879",
-        "agent": "Agent Rédacteur",
-        "type": "info",
-        "message": "Archive newsletters.html mise à jour",
-        "data": {}
-      },
-      "last_ts": "2026-03-26T22:05:55.658879",
-      "last_type": "info",
-      "last_message": "Archive newsletters.html mise à jour",
-      "total_today": 3,
-      "errors_today": 0,
-      "successes_today": 1
-    },
-    {
-      "agent": "Orchestrateur",
-      "last_event": {
-        "ts": "2026-03-26T21:59:25.837151",
-        "agent": "Orchestrateur",
-        "type": "success",
-        "message": "Session Trader (22.0h) terminée",
-        "data": {}
-      },
-      "last_ts": "2026-03-26T21:59:25.837151",
-      "last_type": "success",
-      "last_message": "Session Trader (22.0h) terminée",
-      "total_today": 8,
-      "errors_today": 0,
-      "successes_today": 2
-    },
-    {
-      "agent": "Sync Abonnés",
-      "last_event": {
-        "ts": "2026-03-26T08:32:05.051702",
-        "agent": "Sync Abonnés",
-        "type": "info",
-        "message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
-        "data": {}
-      },
-      "last_ts": "2026-03-26T08:32:05.051702",
-      "last_type": "info",
-      "last_message": "Sync auto: script Netlify obsolète (site sur GitHub Pages + Formspree). Pas de nouveaux abonnés détectés automatiquement. 2 abonné(s) existants. Vérification manuelle Formspree recommandée.",
-      "total_today": 1,
+      "total_today": 0,
       "errors_today": 0,
       "successes_today": 0
     }
   ]
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

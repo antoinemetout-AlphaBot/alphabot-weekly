@@ -1,100 +1,81 @@
 {
-  "timestamp": "2026-03-26T22:08:46.554337",
-  "date": "2026-03-26",
-  "health_score": 70,
-  "status": "STABLE",
+  "timestamp": "2026-03-27T19:51:54.505542",
+  "date": "2026-03-27",
+  "health_score": 47,
+  "status": "CRITIQUE",
   "issues": [
     {
+      "severity": "ERROR",
+      "message": "3 erreur(s) critique(s) détectée(s) aujourd'hui",
+      "source": "logs",
+      "penalty": -15
+    },
+    {
       "severity": "WARNING",
-      "message": "36 tâche(s) manquante(s) aujourd'hui",
+      "message": "12 tâche(s) manquante(s) aujourd'hui",
       "source": "planning",
       "penalty": -25
     },
     {
       "severity": "WARNING",
-      "message": "Fichier périmé (55.7h): data/dernier_rapport_veille.json",
+      "message": "1 tâche(s) en doublon détectée(s)",
+      "source": "planning",
+      "penalty": -3
+    },
+    {
+      "severity": "WARNING",
+      "message": "Fichier périmé (3.9h): data/portfolio_public.json",
+      "source": "data/portfolio_public.json",
+      "penalty": -5
+    },
+    {
+      "severity": "WARNING",
+      "message": "Fichier périmé (77.4h): data/dernier_rapport_veille.json",
       "source": "data/dernier_rapport_veille.json",
       "penalty": -5
     }
   ],
   "auto_fixes": [],
   "logs": {
-    "events_today": 25,
-    "errors_today": 0,
-    "erreurs_critiques": 0,
-    "erreurs_par_agent": {},
-    "top_errors": []
+    "events_today": 81,
+    "errors_today": 3,
+    "erreurs_critiques": 3,
+    "erreurs_par_agent": {
+      "Agent Analyste": 1,
+      "Agent DA Site": 1,
+      "Orchestrateur": 1
+    },
+    "top_errors": [
+      {
+        "ts": "2026-03-27T09:52:54.687395",
+        "agent": "Agent Analyste",
+        "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
+        "pattern": "ERROR"
+      },
+      {
+        "ts": "2026-03-27T09:54:09.645951",
+        "agent": "Agent DA Site",
+        "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
+        "pattern": "ERROR"
+      },
+      {
+        "ts": "2026-03-27T19:49:49.584059",
+        "agent": "Orchestrateur",
+        "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+        "pattern": "ERREUR"
+      }
+    ]
   },
   "taches": {
-    "attendues": 38,
-    "executees": 2,
-    "manquantes": 36,
-    "doublons": 0,
+    "attendues": 32,
+    "executees": 20,
+    "manquantes": 12,
+    "doublons": 1,
     "detail_manquantes": [
-      {
-        "id": "dir_newsletter_pipeline",
-        "nom": "Directeur Newsletter 📰",
-        "heure_prevue": "07:30"
-      },
-      {
-        "id": "coo_rapport_matin",
-        "nom": "COO IA — Rapport Matin 🤖",
-        "heure_prevue": "08:00"
-      },
-      {
-        "id": "veille_matin",
-        "nom": "Agent Veille — Matin 🔍",
-        "heure_prevue": "08:30"
-      },
-      {
-        "id": "email_ceo_matin",
-        "nom": "Email CEO 📧",
-        "heure_prevue": "08:50"
-      },
-      {
-        "id": "da_site",
-        "nom": "Agent DA Site 🎨",
-        "heure_prevue": "09:30"
-      },
       {
         "id": "trader_09h",
         "nom": "Directeur Trader — Ouverture EU 📈",
         "heure_prevue": "09:00"
       },
       {
-        "id": "trader_10h30",
-        "nom": "Directeur Trader — Matinée EU 📈",
-        "heure_prevue": "10:30"
-      },
-      {
-        "id": "trader_12h",
-        "nom": "Directeur Trader — Midi EU 📈",
-        "heure_prevue": "12:00"
-      },
-      {
-        "id": "trader_14h",
-        "nom": "Directeur Trader — Pré-ouverture US 📈",
-        "heure_prevue": "14:00"
-      },
-      {
-        "id": "trader_15h45",
-        "nom": "Directeur Trader — Ouverture US ⚡📈",
-        "heure_prevue": "15:45"
-      }
-    ],
-    "detail_doublons": []
-  },
-  "fichiers": {
-    "ok": 7,
-    "manquants": 0,
-    "invalides": 0,
-    "perimes": 1,
-    "detail_problemes": [
-      {
-        "fichier": "data/dernier_rapport_veille.json",
-        "age_heures": 55.7,
-        "limite_heures": 6
-      }
-    ]
-  }
-}
+        "id": "
