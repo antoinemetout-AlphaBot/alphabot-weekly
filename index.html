@@ -214,9 +214,10 @@ footer{border-top:1px solid var(--border);padding:40px 5% 24px;position:relative
 @keyframes fadeDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
+/* SCROLL REVEAL — visible par défaut, animation uniquement si JS ajoute .js-ready au body */
+.reveal{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease;}
+.js-ready .reveal:not(.visible){opacity:0;transform:translateY(30px);}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -543,8 +544,8 @@ nav {
   box-shadow:0 0 40px rgba(245,200,66,.5), 0 0 80px rgba(34,211,238,.25);
 }
 
-/* SCROLL REVEAL — SMOOTHER */
-.reveal { transition:opacity .8s ease, transform .8s ease!important; }
+/* SCROLL REVEAL — transitions */
+.js-ready .reveal { transition:opacity .8s ease, transform .8s ease!important; }
 
 /* HERO TAG — GLOW */
 .hero-tag {
@@ -1899,15 +1900,17 @@ async function loadMarketData(){
   }catch(e){}
 }
 
-// ── REVEAL ANIMATIONS (IntersectionObserver) ──
+// ── REVEAL ANIMATIONS ──
+// Étape 1: signaler au CSS que le JS est prêt (sinon tout reste visible = safe)
+document.body.classList.add('js-ready');
+// Étape 2: observer les éléments .reveal
 const revealEls=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
   revealEls.forEach(el=>obs.observe(el));
 }else{
-  // Fallback: tout rendre visible immédiatement
   revealEls.forEach(el=>el.classList.add('visible'));
 }
 
