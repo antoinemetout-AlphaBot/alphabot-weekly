@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-03-27T19:51:54.505542",
-  "date": "2026-03-27",
-  "health_score": 47,
-  "status": "CRITIQUE",
+  "timestamp": "2026-03-29T20:59:18.070067",
+  "date": "2026-03-29",
+  "health_score": 57,
+  "status": "DÉGRADÉ",
   "issues": [
     {
       "severity": "ERROR",
-      "message": "3 erreur(s) critique(s) détectée(s) aujourd'hui",
+      "message": "1 erreur(s) critique(s) détectée(s) aujourd'hui",
       "source": "logs",
-      "penalty": -15
+      "penalty": -5
     },
     {
       "severity": "WARNING",
-      "message": "12 tâche(s) manquante(s) aujourd'hui",
+      "message": "11 tâche(s) manquante(s) aujourd'hui",
       "source": "planning",
       "penalty": -25
     },
@@ -24,42 +24,28 @@
     },
     {
       "severity": "WARNING",
-      "message": "Fichier périmé (3.9h): data/portfolio_public.json",
+      "message": "Fichier périmé (48.3h): data/portfolio_public.json",
       "source": "data/portfolio_public.json",
       "penalty": -5
     },
     {
       "severity": "WARNING",
-      "message": "Fichier périmé (77.4h): data/dernier_rapport_veille.json",
-      "source": "data/dernier_rapport_veille.json",
+      "message": "Fichier périmé (70.9h): data/newsletters.json",
+      "source": "data/newsletters.json",
       "penalty": -5
     }
   ],
   "auto_fixes": [],
   "logs": {
-    "events_today": 81,
-    "errors_today": 3,
-    "erreurs_critiques": 3,
+    "events_today": 63,
+    "errors_today": 1,
+    "erreurs_critiques": 1,
     "erreurs_par_agent": {
-      "Agent Analyste": 1,
-      "Agent DA Site": 1,
       "Orchestrateur": 1
     },
     "top_errors": [
       {
-        "ts": "2026-03-27T09:52:54.687395",
-        "agent": "Agent Analyste",
-        "message": "Échec après 3 tentatives: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJSesdmvN5Jr1w7jQ7z'}",
-        "pattern": "ERROR"
-      },
-      {
-        "ts": "2026-03-27T09:54:09.645951",
-        "agent": "Agent DA Site",
-        "message": "Erreur génération insights: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CZTJYELReSkktXVvTfduN'}",
-        "pattern": "ERROR"
-      },
-      {
-        "ts": "2026-03-27T19:49:49.584059",
+        "ts": "2026-03-29T20:55:20.878721",
         "agent": "Orchestrateur",
         "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
         "pattern": "ERREUR"
@@ -67,15 +53,42 @@
     ]
   },
   "taches": {
-    "attendues": 32,
-    "executees": 20,
-    "manquantes": 12,
+    "attendues": 11,
+    "executees": 0,
+    "manquantes": 11,
     "doublons": 1,
     "detail_manquantes": [
       {
-        "id": "trader_09h",
-        "nom": "Directeur Trader — Ouverture EU 📈",
-        "heure_prevue": "09:00"
+        "id": "dir_newsletter_pipeline",
+        "nom": "Directeur Newsletter 📰",
+        "heure_prevue": "07:30"
       },
       {
-        "id": "
+        "id": "coo_rapport_matin",
+        "nom": "COO IA — Rapport Matin 🤖",
+        "heure_prevue": "08:00"
+      },
+      {
+        "id": "veille_matin",
+        "nom": "Agent Veille — Matin 🔍",
+        "heure_prevue": "08:30"
+      },
+      {
+        "id": "email_ceo_matin",
+        "nom": "Email CEO 📧",
+        "heure_prevue": "08:50"
+      },
+      {
+        "id": "da_site",
+        "nom": "Agent DA Site 🎨",
+        "heure_prevue": "09:30"
+      },
+      {
+        "id": "directeur_arene_match",
+        "nom": "Directeur Arène — Match Quotidien 🏆",
+        "heure_prevue": "17:00"
+      },
+      {
+        "id": "veille_midi",
+        "nom": "Agent Veille — Midi 🔍",
+        "he

@@ -889,6 +889,297 @@ nav {
   transition: opacity .4s;
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-29 -->
+<style>
+/* ═══════════════════════════════════════════════
+   ALPHABOT WEEKLY — Newsletter Page Enhancement
+   Director: Visual Impact Layer v2
+═══════════════════════════════════════════════ */
+
+/* ── Root enhancements ── */
+:root {
+  --glow-cyan: 0 0 40px rgba(34,211,238,.18), 0 0 80px rgba(34,211,238,.08);
+  --glow-gold: 0 0 40px rgba(245,200,66,.18), 0 0 80px rgba(245,200,66,.08);
+  --glow-blue: 0 0 40px rgba(59,130,246,.18);
+  --card-bg: rgba(13,20,37,.7);
+  --gradient-border: linear-gradient(135deg, rgba(34,211,238,.4), rgba(59,130,246,.25), rgba(245,200,66,.2));
+}
+
+/* ── Background ambient upgrade ── */
+.bg-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(59,130,246,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 85% 10%, rgba(34,211,238,.06) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 30% at 50% 90%, rgba(245,200,66,.05) 0%, transparent 50%);
+  animation: drift 28s ease-in-out infinite reverse;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(34,211,238,.35); }
+  70%  { box-shadow: 0 0 0 12px rgba(34,211,238,.0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,211,238,.0); }
+}
+@keyframes floatIcon {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-6px) rotate(3deg); }
+}
+@keyframes borderGlow {
+  0%,100% { border-color: rgba(34,211,238,.25); }
+  50%      { border-color: rgba(59,130,246,.45); }
+}
+
+/* ── Page header upgrade ── */
+.page-header h1 {
+  background: linear-gradient(135deg, #fff 30%, #22d3ee 65%, #f5c842 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+  line-height: 1.1;
+  letter-spacing: -.8px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #94a3b8;
+  letter-spacing: .1px;
+  line-height: 1.75;
+}
+
+.page-tag {
+  background: linear-gradient(135deg, rgba(34,211,238,.1), rgba(59,130,246,.08));
+  border: 1px solid rgba(34,211,238,.28);
+  animation: pulse-ring 2.5s ease-out infinite;
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+}
+
+/* ── Gate card — glassmorphism upgrade ── */
+.gate-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(34,211,238,.14);
+  border-radius: 20px;
+  padding: 52px 48px;
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 1px 0 rgba(255,255,255,.07) inset,
+    0 24px 64px rgba(0,0,0,.45),
+    0 4px 20px rgba(34,211,238,.06);
+  animation: fadeInUp .65s cubic-bezier(.4,0,.2,1) .15s both;
+  position: relative;
+  overflow: hidden;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+.gate-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(34,211,238,.5), rgba(59,130,246,.4), transparent);
+}
+
+.gate-card::after {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(34,211,238,.06) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* ── Gate icon animation ── */
+.gate-icon {
+  animation: floatIcon 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(34,211,238,.35));
+}
+
+/* ── Gate card typography ── */
+.gate-card h2 {
+  font-size: 26px;
+  letter-spacing: -.5px;
+  line-height: 1.25;
+  background: linear-gradient(135deg, #fff 50%, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.gate-card p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #7c8fa8;
+  margin-bottom: 32px;
+}
+
+/* ── Input field upgrade ── */
+.gate-input {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14.5px;
+  letter-spacing: .2px;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+
+.gate-input:focus {
+  border-color: var(--cyan);
+  background: rgba(34,211,238,.05);
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.12),
+    0 4px 16px rgba(34,211,238,.08);
+  transform: translateY(-1px);
+}
+
+/* ── CTA Button — premium upgrade ── */
+.gate-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 40%, #22d3ee 100%);
+  background-size: 200% auto;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: 13.5px;
+  transition: all .35s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(34,211,238,.2), 0 1px 0 rgba(255,255,255,.15) inset;
+}
+
+.gate-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.12), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.gate-btn:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 48px rgba(34,211,238,.3),
+    0 4px 16px rgba(59,130,246,.2),
+    0 1px 0 rgba(255,255,255,.15) inset;
+}
+
+.gate-btn:hover::before { opacity: 1; }
+
+.gate-btn:active {
+  transform: scale(.97) translateY(0);
+  box-shadow: 0 4px 16px rgba(34,211,238,.2);
+}
+
+/* ── Welcome bar upgrade ── */
+.welcome-bar {
+  background: linear-gradient(135deg, rgba(34,197,94,.07), rgba(34,197,94,.03));
+  border: 1px solid rgba(34,197,94,.25);
+  border-radius: 14px;
+  padding: 16px 22px;
+  box-shadow: 0 4px 24px rgba(34,197,94,.1), 0 1px 0 rgba(34,197,94,.1) inset;
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-bar::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #22c55e, #4ade80);
+  border-radius: 3px 0 0 3px;
+}
+
+/* ── Nav subtle enhancements ── */
+nav {
+  background: rgba(4,9,26,.88) !important;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid rgba(34,211,238,.1) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.03), 0 8px 32px rgba(0,0,0,.4) !important;
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #2563eb, #22d3ee) !important;
+  box-shadow: 0 4px 20px rgba(34,211,238,.2), 0 1px 0 rgba(255,255,255,.15) inset !important;
+  letter-spacing: .2px;
+}
+
+/* ── Error state styling ── */
+#gate-error {
+  background: rgba(239,68,68,.08);
+  border: 1px solid rgba(239,68,68,.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  letter-spacing: .1px;
+  margin-top: 12px;
+  border-left: 3px solid #ef4444;
+}
+
+/* ── Gate note ── */
+.gate-note {
+  margin-top: 20px;
+  font-size: 12.5px;
+  color: #475569;
+  letter-spacing: .1px;
+}
+
+.gate-note a {
+  color: #38bdf8;
+  font-weight: 600;
+  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgba(56,189,248,.3);
+  transition: all .2s;
+}
+
+.gate-note a:hover {
+  color: var(--gold);
+  text-decoration-color: rgba(245,200,66,.4);
+}
+
+/* ── Scrollbar premium ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #3b82f6, #f5c842);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(34,211,238,.3);
+}
+
+/* ── Page padding tweak ── */
+.page {
+  padding-top: 110px;
+  padding-bottom: 100px;
+}
+
+.page-header {
+  margin-bottom: 48px;
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
@@ -976,219 +1267,4 @@ nav {
       </div>
       <div class="toolbar-right">
         <a href="newsletters.html" class="tb-btn" style="text-decoration:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          </svg>
-          Toutes les éditions
-        </a>
-      </div>
-    </div>
-
-    <!-- NEWSLETTER CONTAINER -->
-    <div class="newsletter-container">
-      <div id="loading" class="loading-state">
-        <div class="spinner"></div>
-        <p>Chargement de la newsletter...</p>
-      </div>
-      <iframe id="newsletter-frame" style="display:none;" loading="lazy" onload="frameLoaded()"></iframe>
-      <div id="newsletter-content" style="display:none;background:#04091a;color:#e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);"></div>
-      <div id="no-edition" class="error-state" style="display:none;">
-        <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
-            <line x1="9" y1="9" x2="15" y2="9"></line>
-            <line x1="9" y1="15" x2="15" y2="15"></line>
-          </svg>
-          Aucune édition disponible
-        </h3>
-        <p>La newsletter de cette date n'est pas encore disponible. Revenez bientôt !</p>
-      </div>
-    </div>
-
-    <footer role="contentinfo">
-      <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-        <div class="footer-brand" style="font-family:'Space Grotesk',sans-serif;font-weight:800;color:white;font-size:14px;">AlphaBot Weekly</div>
-        <div class="footer-links" style="display:flex;gap:20px;">
-          <a href="index.html" style="color:#64748b;font-size:12px;text-decoration:none;">Accueil</a>
-          <a href="newsletter.html" style="color:#64748b;font-size:12px;text-decoration:none;">Newsletter</a>
-          <a href="investissement.html" style="color:#64748b;font-size:12px;text-decoration:none;">Robot Trader</a>
-          <a href="arena.html" style="color:#64748b;font-size:12px;text-decoration:none;">Arena</a>
-          <a href="dashboard-agents.html" style="color:#64748b;font-size:12px;text-decoration:none;">Agents IA</a>
-        </div>
-      </div>
-      <div class="footer-copy" style="color:#64748b;font-size:11px;text-align:center;max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);">
-        © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-        Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
-      </div>
-    </footer>
-  </div>
-</div>
-
-<script>
-// ── Config ──
-const BASE_URL = 'outputs/';
-const NEWSLETTER_PREFIX = 'alphabot_newsletter_';
-
-// ── Subscriber list (loaded from JSON) ──
-let subscriberEmails = [];
-
-async function loadSubscribers(){
-  try{
-    const r = await fetch('data/subscribers.json?t='+Date.now());
-    const d = await r.json();
-    subscriberEmails = d.emails || [];
-  }catch(e){
-    // Fallback: accepter tout email si le fichier n'existe pas encore
-    subscriberEmails = null;
-  }
-}
-
-// ── Authentication ──
-async function verifyAccess(){
-  const email = document.getElementById('gate-email').value.trim().toLowerCase();
-  const errEl = document.getElementById('gate-error');
-  if(!email || !email.includes('@')){errEl.style.display='block';errEl.textContent='Entrez un email valide.';return;}
-
-  await loadSubscribers();
-
-  // Si le fichier JSON n'existe pas encore, on accepte tout email valide (mode développement)
-  const isSubscribed = subscriberEmails === null || subscriberEmails.map(e=>e.toLowerCase()).includes(email);
-
-  if(isSubscribed){
-    sessionStorage.setItem('ab_user', email);
-    showContent(email);
-  } else {
-    errEl.style.display='block';
-    errEl.innerHTML='Email non reconnu. <a href="index.html" style="color:var(--cyan)">S\'abonner gratuitement</a>';
-  }
-}
-
-function showContent(email){
-  document.getElementById('gate').style.display='none';
-  document.getElementById('content').style.display='block';
-  document.getElementById('welcome-name').textContent = email.split('@')[0];
-  loadAvailableEditions();
-}
-
-function logout(){
-  sessionStorage.removeItem('ab_user');
-  document.getElementById('gate').style.display='block';
-  document.getElementById('content').style.display='none';
-  document.getElementById('gate-email').value='';
-}
-
-// ── Check session ──
-window.addEventListener('DOMContentLoaded', async ()=>{
-  const saved = sessionStorage.getItem('ab_user');
-  if(saved) showContent(saved);
-});
-
-// ── Load available editions ──
-async function loadAvailableEditions(){
-  const select = document.getElementById('edition-select');
-  select.innerHTML = '<option value="">Chargement...</option>';
-
-  let editions = [];
-  try{
-    const r = await fetch('data/newsletters.json?t='+Date.now());
-    const d = await r.json();
-    editions = d.editions || [];
-  }catch(e){
-    const today = new Date();
-    for(let i=0;i<30;i++){
-      const d = new Date(today);
-      d.setDate(d.getDate()-i);
-      editions.push({date:formatDate(d), label:formatLabel(d)});
-    }
-  }
-
-  select.innerHTML = '';
-  let loaded = false;
-
-  for(const ed of editions){
-    const opt = document.createElement('option');
-    opt.value = ed.date;
-    opt.textContent = ed.label;
-    select.appendChild(opt);
-    if(!loaded){loadEdition(ed.date);loaded=true;}
-  }
-
-  if(editions.length===0){
-    select.innerHTML='<option>Aucune édition disponible</option>';
-    document.getElementById('loading').style.display='none';
-    document.getElementById('no-edition').style.display='block';
-  }
-}
-
-// ── Load a specific edition ──
-function loadEdition(date){
-  if(!date) return;
-  const frame = document.getElementById('newsletter-frame');
-  const loading = document.getElementById('loading');
-  const noEd = document.getElementById('no-edition');
-
-  frame.style.display='none';
-  loading.style.display='block';
-  noEd.style.display='none';
-
-  frame.src = BASE_URL + NEWSLETTER_PREFIX + date + '.html';
-}
-
-function frameLoaded(){
-  const frame = document.getElementById('newsletter-frame');
-  const loading = document.getElementById('loading');
-  try{
-    const h = frame.contentDocument.body;
-    if(h && h.innerHTML.length > 100){
-      loading.style.display='none';
-      frame.style.display='block';
-      frame.style.height = Math.max(frame.contentDocument.body.scrollHeight+40, 600)+'px';
-    } else {
-      loading.style.display='none';
-      document.getElementById('no-edition').style.display='block';
-    }
-  }catch(e){
-    loading.style.display='none';
-    frame.style.display='block';
-    frame.style.height='800px';
-  }
-}
-
-function openFullscreen(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value) window.open(BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html','_blank');
-}
-
-function downloadEdition(){
-  const sel = document.getElementById('edition-select');
-  if(sel.value){
-    const a = document.createElement('a');
-    a.href = BASE_URL + NEWSLETTER_PREFIX + sel.value + '.html';
-    a.download = 'AlphaBot_Weekly_'+sel.value+'.html';
-    a.click();
-  }
-}
-
-function formatDate(d){
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-}
-
-function formatLabel(d){
-  return d.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-}
-
-// ── Mobile menu toggle ──
-function toggleMenu(){
-  const navCenter = document.querySelector('.nav-center');
-  navCenter.classList.toggle('mobile-open');
-}
-
-// ── Enter key on gate ──
-document.addEventListener('DOMContentLoaded',()=>{
-  const inp = document.getElementById('gate-email');
-  if(inp) inp.addEventListener('keydown',e=>{if(e.key==='Enter')verifyAccess();});
-});
-</script>
-</body>
-</html>
+      

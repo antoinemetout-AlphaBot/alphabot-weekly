@@ -1,0 +1,64 @@
+{
+  "date": "2026-03-29 20:55",
+  "etapes": {
+    "audit": {
+      "ok": true,
+      "score": 100,
+      "problemes": 0
+    },
+    "corrections": {
+      "ok": true,
+      "pages_corrigees": 0,
+      "details": {
+        "index.html": [
+          "aucune correction nécessaire"
+        ],
+        "investissement.html": [
+          "aucune correction nécessaire"
+        ],
+        "newsletter.html": [
+          "aucune correction nécessaire"
+        ],
+        "newsletters.html": [
+          "aucune correction nécessaire"
+        ],
+        "espace-pilotage.html": [
+          "aucune correction nécessaire"
+        ]
+      }
+    },
+    "navigation": {
+      "ok": true,
+      "pages_mises_a_jour": 2
+    },
+    "insights": {
+      "ok": true,
+      "count": 5,
+      "injected_in_index": false,
+      "html_path": "outputs\\section_da_2026-03-29.html"
+    },
+    "visuels": {
+      "ok": true,
+      "details": [
+        {
+          "page": "index.html",
+          "status": "improved",
+          "css_rules": 51
+        },
+        {
+          "page": "investissement.html",
+          "status": "improved",
+          "css_rules": 41
+        },
+        {
+          "page": "newsletter.html",
+          "status": "improved",
+          "css_rules": 46
+        }
+      ]
+    }
+  },
+  "success": true,
+  "pages_ameliorees": 3,
+  "insights_count": 5
+}

@@ -1668,6 +1668,260 @@ h1 {
   transform: translateY(-1px);
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-29 -->
+<style>
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — VISUAL ENHANCEMENT LAYER
+   ═══════════════════════════════════════════ */
+
+/* TYPOGRAPHY REFINEMENTS */
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: -2px;
+  line-height: 1.04;
+}
+
+h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+/* HERO TAG — ENHANCED GLOW */
+.hero-tag {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 24px rgba(34,197,94,.12), inset 0 1px 0 rgba(255,255,255,.06);
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  font-size: 10.5px;
+}
+
+.hero-tag:hover {
+  background: rgba(34,197,94,.12);
+  box-shadow: 0 0 40px rgba(34,197,94,.22), inset 0 1px 0 rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+
+/* HERO STATS — CARD GLOW */
+.hero-stat {
+  padding: 16px 24px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all .35s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-stat:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(34,211,238,.2);
+  box-shadow: 0 16px 40px rgba(0,0,0,.4), 0 0 20px rgba(34,211,238,.08);
+}
+
+.hero-stat-val {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.hero-stat-lbl {
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* FORM — ENHANCED INPUTS */
+.form-group input {
+  border-radius: 16px;
+  padding: 16px 20px;
+  font-size: 14px;
+  letter-spacing: .01em;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.form-group input:focus {
+  border-color: rgba(34,211,238,.6);
+  background: rgba(34,211,238,.06);
+  box-shadow: 0 0 0 4px rgba(34,211,238,.1), 0 8px 32px rgba(0,0,0,.2);
+  transform: translateY(-1px);
+}
+
+/* NAV — GLASSMORPHISM UPGRADE */
+nav {
+  backdrop-filter: blur(24px) saturate(1.4);
+  background: rgba(4,9,26,.85) !important;
+  border-bottom: 1px solid rgba(34,211,238,.08) !important;
+  box-shadow: 0 1px 0 rgba(34,211,238,.05), 0 8px 40px rgba(0,0,0,.6) !important;
+  transition: all .3s ease;
+}
+
+.nav-center a {
+  font-size: 13px;
+  letter-spacing: .01em;
+  transition: color .25s ease, opacity .25s ease;
+}
+
+.nav-center a::after {
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  border-radius: 2px;
+  transition: width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* CTA BUTTON — PREMIUM */
+.nav-cta, button[type="submit"], .btn-primary, [class*="cta"] {
+  position: relative;
+  overflow: hidden;
+  transition: all .35s cubic-bezier(.4,0,.2,1) !important;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.nav-cta:hover::before {
+  opacity: 1;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 16px 40px rgba(34,211,238,.4) !important;
+  filter: brightness(1.08);
+}
+
+.nav-cta:active {
+  transform: translateY(0) scale(.98) !important;
+}
+
+/* CARDS — GLASSMORPHISM UPGRADE */
+[class*="card"], [class*="portfolio"], [class*="robot"] {
+  border-radius: 20px !important;
+  border: 1px solid rgba(255,255,255,.07) !important;
+  background: rgba(255,255,255,.03) !important;
+  backdrop-filter: blur(16px);
+  transition: all .4s cubic-bezier(.4,0,.2,1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+[class*="card"]:hover, [class*="portfolio"]:hover, [class*="robot"]:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(34,211,238,.18) !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 40px rgba(34,211,238,.06) !important;
+}
+
+/* GRADIENT BORDER EFFECT ON CARDS */
+[class*="card"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34,211,238,.15), transparent 50%, rgba(245,200,66,.08));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+[class*="card"]:hover::after {
+  opacity: 1;
+}
+
+/* SCAN LINE — ENHANCED */
+.scan {
+  background: linear-gradient(90deg, transparent 0%, rgba(34,211,238,.6) 40%, rgba(245,200,66,.8) 60%, transparent 100%);
+  height: 1px;
+  filter: blur(0.5px);
+}
+
+/* ORB ANIMATIONS — RICHER */
+.orb1 { animation: orbf 12s ease-in-out infinite alternate; }
+.orb2 { animation: orbf 15s ease-in-out infinite alternate-reverse; }
+.orb3 { animation: orbf2 9s ease-in-out infinite alternate; }
+
+@keyframes orbf2 {
+  from { transform: translate(0,0) scale(1) rotate(0deg); }
+  to   { transform: translate(-25px,20px) scale(1.08) rotate(5deg); }
+}
+
+/* LIVE DOT — PULSING RING */
+.live-dot {
+  box-shadow: 0 0 0 0 rgba(34,197,94,.5);
+  animation: pulse-ring 2s cubic-bezier(.4,0,.6,1) infinite !important;
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,.6); transform: scale(1); }
+  70%  { box-shadow: 0 0 0 6px rgba(34,197,94,0); transform: scale(1.15); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); transform: scale(1); }
+}
+
+/* SCROLLBAR — REFINED */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,.02); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--gold));
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(34,211,238,.3);
+}
+
+/* SELECTION COLOR */
+::selection {
+  background: rgba(34,211,238,.25);
+  color: #fff;
+}
+
+/* FADE ANIMATIONS — SMOOTHER */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* GLOW TEXT UTILITY */
+.h1-gradient {
+  filter: drop-shadow(0 0 40px rgba(245,200,66,.25)) drop-shadow(0 0 80px rgba(34,211,238,.15));
+}
+
+/* RESPONSIVE TOUCH */
+@media (max-width: 768px) {
+  .hero-stat { padding: 12px 16px; }
+  .hero-stat-val { font-size: 26px; }
+  [class*="card"]:hover { transform: translateY(-3px) !important; }
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
@@ -2147,179 +2401,4 @@ async function loadChallengeData(){
       const capital=rb.capital_actuel||10000;
       const perf=rb.performance_pct||0;
       const trades=rb.nb_trades||0;
-      document.getElementById(ids.cap).textContent=capital.toLocaleString('fr')+' €';
-      const perfEl=document.getElementById(ids.perf);
-      perfEl.textContent=(perf>=0?'+':'')+perf.toFixed(2)+'%';
-      perfEl.className='challenge-perf '+(perf>0?'up':perf<0?'down':'flat');
-      document.getElementById(ids.trades).textContent=trades+' trade'+(trades>1?'s':'');
-    }
-  }catch(e){}
-}
-
-// ── SCROLL REVEAL ──
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
-},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// ═══════════════════════════════════════════════════
-//  HERO KPIs — Données réelles depuis portfolio_public.json + newsletters.json
-// ═══════════════════════════════════════════════════
-async function loadHeroKPIs() {
-  try {
-    const [pRes, nRes] = await Promise.all([
-      fetch('data/portfolio_public.json?t='+Date.now()),
-      fetch('data/newsletters.json?t='+Date.now())
-    ]);
-
-    if (pRes.ok) {
-      const pd = await pRes.json();
-      const robots = pd.robots || {};
-      let totalCapital = 0, totalTrades = 0, bestPerf = -Infinity, bestName = '';
-
-      for (const [key, rb] of Object.entries(robots)) {
-        totalCapital += rb.capital_actuel || 10000;
-        totalTrades += rb.nb_trades || 0;
-        const perf = rb.performance_pct || 0;
-        if (perf > bestPerf) { bestPerf = perf; bestName = key; }
-      }
-
-      const capEl = document.querySelector('.hero-stat-val.cyan');
-      const tradeEl = document.querySelector('.hero-stat-val.gold');
-      const bestEl = document.querySelector('.hero-stat-val.green');
-      if (capEl) capEl.textContent = Math.round(totalCapital).toLocaleString('fr-FR') + '€';
-      if (tradeEl) tradeEl.textContent = totalTrades;
-      if (bestEl) {
-        const names = {prudent:'Prudent', modere:'Modéré', agressif:'Agressif'};
-        bestEl.textContent = (names[bestName] || bestName) + ' +' + bestPerf.toFixed(2) + '%';
-      }
-    }
-
-    if (nRes.ok) {
-      const nd = await nRes.json();
-      const nlEl = document.querySelectorAll('.hero-stat-val')[2];
-      if (nlEl && nd.length) nlEl.textContent = nd.length;
-    }
-  } catch(e) { console.log('Hero KPIs:', e); }
-}
-loadHeroKPIs();
-
-// ── ACTIVITY FEED ──
-async function loadActivityFeed(){
-  try{
-    const r=await fetch('data/activity_feed.json?t='+Date.now());
-    if(!r.ok) return;
-    const d=await r.json();
-    const events=d.events||[];
-    const feed=document.getElementById('activity-feed');
-    if(!feed) return;
-
-    const today=events.filter(e=>e.ts&&e.ts.startsWith(new Date().toISOString().slice(0,10)));
-    const successes=today.filter(e=>e.type==='success').length;
-    const errors=today.filter(e=>e.type==='error').length;
-
-    const summaryEl=document.querySelector('.activity-summary');
-    if(summaryEl){
-      const stats=summaryEl.querySelectorAll('.stat-val');
-      if(stats[0]) stats[0].textContent=today.length;
-      if(stats[1]) stats[1].textContent=successes;
-      if(stats[2]) stats[2].textContent=errors;
-      if(stats[3]&&events.length) stats[3].textContent=events[0].ts?events[0].ts.slice(11,16):'--:--';
-    }
-
-    const recent=events.slice(0,8);
-    feed.innerHTML=recent.map(e=>{
-      const icon=e.type==='success'?'✅':e.type==='error'?'❌':e.type==='warning'?'⚠️':'ℹ️';
-      const time=e.ts?e.ts.slice(11,16):'';
-      return `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);">
-        <span style="font-size:14px;">${icon}</span>
-        <span style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace;min-width:40px;">${time}</span>
-        <span style="color:var(--text);font-size:13px;flex:1;">${e.message||''}</span>
-        <span style="color:var(--muted);font-size:11px;">${e.agent||''}</span>
-      </div>`;
-    }).join('');
-  }catch(e){console.log('Feed:',e);}
-}
-loadActivityFeed();
-
-// ── MARKET TICKER ──
-async function loadMarketData(){
-  try{
-    const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
-    if(!r.ok)return;
-    const d=await r.json();
-    const tickers=document.querySelectorAll('.ticker-item');
-    if(!tickers.length)return;
-    const crypto=d.crypto||[];
-    const commo=d.commodities||{};
-    const bourse=d.bourse||{};
-    const indices=bourse.indices||{};
-    const mapping=[
-      {label:'BTC',val:crypto[0]?.prix},
-      {label:'S&P 500',val:indices['S&P 500']?.prix},
-      {label:'OR',val:commo['Or (XAU/USD)']?.prix},
-      {label:'EUR/USD',val:commo['EUR/USD']?.prix},
-      {label:'CAC 40',val:indices['CAC 40']?.prix}
-    ];
-    tickers.forEach((el,i)=>{
-      if(mapping[i]&&mapping[i].val){
-        const valEl=el.querySelector('.ticker-val');
-        if(valEl) valEl.textContent=typeof mapping[i].val==='number'?mapping[i].val.toLocaleString('fr-FR',{maximumFractionDigits:2}):mapping[i].val;
-      }
-    });
-  }catch(e){console.log('Market:',e);}
-}
-loadMarketData();
-
-// ── NEWSLETTER PREVIEW ──
-async function loadNewsletterPreview(){
-  try{
-    const r=await fetch('data/newsletters.json?t='+Date.now());
-    if(!r.ok)return;
-    const nl=await r.json();
-    if(!nl.length)return;
-    const latest=nl[nl.length-1];
-    const titleEl=document.getElementById('nl-preview-title');
-    if(titleEl) titleEl.textContent='Newsletter du '+latest.date;
-  }catch(e){}
-}
-loadNewsletterPreview();
-
-// ── NAV CTA — SESSION ──
-(function(){
-  const SESSION_KEY = 'ab_user';
-
-  function updateNavCTA(email){
-    const navCtaBtn = document.getElementById('nav-cta-btn');
-    if(!navCtaBtn) return;
-    const prenom = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
-    navCtaBtn.textContent = prenom;
-    navCtaBtn.href = '#';
-    navCtaBtn.style.background = 'linear-gradient(135deg, var(--gold), #f59e0b)';
-    navCtaBtn.style.color = '#04091a';
-  }
-
-  window._abToggleUserMenu = function(e){
-    e.stopPropagation();
-    const menu = document.getElementById('ab-user-menu');
-    if(menu) menu.style.display = menu.style.display==='none' ? 'block' : 'none';
-  };
-
-  document.addEventListener('click', function(){
-    const menu = document.getElementById('ab-user-menu');
-    if(menu) menu.style.display='none';
-  });
-
-  window._abLogout = function(){
-    sessionStorage.removeItem(SESSION_KEY);
-    location.reload();
-  };
-
-  document.addEventListener('DOMContentLoaded', function(){
-    const saved = sessionStorage.getItem(SESSION_KEY);
-    if(saved) updateNavCTA(saved);
-  });
-})();
-</script>
-</body>
-</html>
+      documen
