@@ -427,10 +427,24 @@ function timeAgo(dateString) {
 async function loadGlobalScore() {
   const data = await fetchJSON('data/score_global.json');
   if (data) {
-    document.getElementById('global-score').textContent = Math.round(data.global_score || 0);
-    document.getElementById('newsletter-score').textContent = Math.round(data.newsletter_score || 0);
-    document.getElementById('trader-perf').textContent = (data.trader_performance || 0).toFixed(1);
-    document.getElementById('arena-combats').textContent = data.arena_combats_today || 0;
+    // score_global.json utilise "score_global" (pas "global_score") et "scores.newsletter/trader/arena"
+    const globalScore = data.score_global || data.global_score || 0;
+    document.getElementById('global-score').textContent = Math.round(globalScore);
+
+    // Scores par branche
+    const scores = data.scores || {};
+    document.getElementById('newsletter-score').textContent = Math.round(scores.newsletter || data.newsletter_score || 0);
+    document.getElementById('trader-perf').textContent = (scores.trader || data.trader_performance || 0).toFixed(1);
+    document.getElementById('arena-combats').textContent = scores.arena || data.arena_combats_today || 0;
+
+    // Animer le cercle du score global (conic-gradient)
+    const circle = document.querySelector('.score-circle');
+    if (circle) {
+      const pct = Math.min(globalScore, 100);
+      // Gradient coloré jusqu'au score, puis gris après
+      circle.style.background = `conic-gradient(from 0deg, var(--green) 0%, var(--cyan) ${pct * 0.33}%, var(--gold) ${pct * 0.66}%, var(--red) ${pct}%, rgba(100,116,139,0.2) ${pct}%, rgba(100,116,139,0.2) 100%)`;
+    }
+    console.log('[Dashboard] Score global:', globalScore, '— Scores:', scores);
   }
 }
 
@@ -438,15 +452,18 @@ async function loadGlobalScore() {
 async function loadRealityCheck() {
   const data = await fetchJSON('data/reality_checks.json');
   if (data) {
-    const score = Math.round(data.score_realite || 75);
+    // reality_checks.json a une structure nested: { checks: [{ score_realite, verdict_court, ... }] }
+    const check = (data.checks && data.checks.length > 0) ? data.checks[data.checks.length - 1] : data;
+    const score = Math.round(check.score_realite || data.score_realite || 75);
     document.getElementById('reality-score').textContent = `${score}%`;
     document.getElementById('reality-bar').style.width = `${score}%`;
-    document.getElementById('reality-verdict').textContent = data.verdict || 'Système nominal.';
+    document.getElementById('reality-verdict').textContent = check.verdict_court || check.verdict || data.verdict || 'Système nominal.';
 
     const issuesContainer = document.getElementById('reality-issues');
     issuesContainer.innerHTML = '';
-    if (data.issues && data.issues.length > 0) {
-      data.issues.forEach(issue => {
+    const issues = check.issues || data.issues || [];
+    if (issues.length > 0) {
+      issues.forEach(issue => {
         const issueEl = document.createElement('div');
         issueEl.className = 'issue';
         issueEl.textContent = issue;
@@ -458,6 +475,7 @@ async function loadRealityCheck() {
       noIssue.textContent = 'Pas de problèmes détectés';
       issuesContainer.appendChild(noIssue);
     }
+    console.log('[Dashboard] Reality check:', score + '%', '—', check.verdict_court || 'OK');
   }
 }
 
@@ -518,12 +536,28 @@ function renderActivityFeed() {
 // Load Arena Data
 async function loadArenaData() {
   const data = await fetchJSON('data/arena_content.json');
-  if (data && data.combat) {
-    document.getElementById('arena-bull-perf').textContent = (data.combat.bull_perf || 0).toFixed(1) + '%';
-    document.getElementById('arena-bear-perf').textContent = (data.combat.bear_perf || 0).toFixed(1) + '%';
-    document.getElementById('arena-bull-status').textContent = data.combat.bull_status || 'Actif';
-    document.getElementById('arena-bear-status').textContent = data.combat.bear_status || 'Actif';
-    document.getElementById('arena-winner').textContent = data.combat.winner || '—';
+  if (data) {
+    // arena_content.json utilise "dernier_combat.verdict" (pas "combat")
+    const combat = data.combat || data.dernier_combat || {};
+    const verdict = combat.verdict || {};
+
+    const bullScore = verdict.score_bull || combat.bull_perf || 0;
+    const bearScore = verdict.score_bear || combat.bear_perf || 0;
+    const winner = verdict.gagnant || combat.winner || '—';
+    const actif = combat.actif || '';
+
+    document.getElementById('arena-bull-perf').textContent = bullScore + '%';
+    document.getElementById('arena-bear-perf').textContent = bearScore + '%';
+    document.getElementById('arena-bull-status').textContent = winner === 'bull' ? 'Gagnant' : 'Perdant';
+    document.getElementById('arena-bear-status').textContent = winner === 'bear' ? 'Gagnant' : 'Perdant';
+
+    // Mettre à jour la carte Arène avec le résultat du dernier combat
+    const arenaWinnerEl = document.getElementById('arena-winner');
+    if (arenaWinnerEl) {
+      arenaWinnerEl.textContent = actif ? `${winner.toUpperCase()} (${actif})` : (winner !== '—' ? winner.toUpperCase() : '—');
+    }
+
+    console.log('[Dashboard] Arena:', actif, '— Bull', bullScore, 'vs Bear', bearScore, '→', winner);
   }
 }
 
@@ -542,6 +576,32 @@ async function loadBranchData() {
     // Arena Branch
     const arenaAgents = feed.agents.filter(a => a.agent && (a.agent.includes('Arena') || a.agent.includes('Combat')));
     updateBranchAgents('branch-arena', arenaAgents);
+
+    // Remplir les métriques de performance des cartes depuis le portfolio
+    try {
+      const portfolio = await fetchJSON('data/portfolio_public.json');
+      if (portfolio) {
+        const robots = portfolio.robots || portfolio.profils || {};
+
+        // Newsletter card — nombre d'éditions publiées
+        const nlData = await fetchJSON('data/newsletters.json');
+        const nlPerfEl = document.getElementById('newsletter-perf');
+        if (nlPerfEl && nlData) {
+          const nbEditions = (nlData.editions || []).length;
+          nlPerfEl.textContent = nbEditions + ' éditions';
+        }
+
+        // Trader card — P&L du jour (moyenne des 3 robots)
+        const traderPnlEl = document.getElementById('trader-pnl');
+        if (traderPnlEl) {
+          const perfs = Object.values(robots).map(r => r.performance_pct || 0);
+          const avgPerf = perfs.length > 0 ? (perfs.reduce((s, p) => s + p, 0) / perfs.length) : 0;
+          const totalPositions = Object.values(robots).reduce((s, r) => s + (r.positions || []).length, 0);
+          traderPnlEl.textContent = (avgPerf >= 0 ? '+' : '') + avgPerf.toFixed(2) + '% (' + totalPositions + ' pos.)';
+          traderPnlEl.style.color = avgPerf >= 0 ? 'var(--green)' : 'var(--red)';
+        }
+      }
+    } catch(e) { console.warn('[Dashboard] Erreur chargement portfolio/newsletters:', e); }
   }
 }
 
