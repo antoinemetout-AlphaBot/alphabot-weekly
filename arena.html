@@ -2696,8 +2696,15 @@
         positions: [],
         return: 0  // Mis à jour dynamiquement
       },
-      // Pas de participants humains pour l'instant — fonctionnalité à venir
-      // Les faux profils ont été retirés pour ne montrer que des données réelles
+      // CEO & fondateur — portefeuille suivi manuellement
+      {
+        id: 'antoine-ceo',
+        displayName: 'Antoine Metout',
+        isRobot: false,
+        positions: [],
+        capital: 10000,
+        return: 0  // Mis à jour si Antoine ajoute des positions dans l'Arena
+      }
     ];
 
     // ==================== STATE ====================
@@ -2759,7 +2766,7 @@
         const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
         if (!resp.ok) return;
         const data = await resp.json();
-        const robots = data.robots || {};
+        const robots = data.robots || data.profils || {};
         const mapping = {
           'robot-prudent': 'prudent',
           'robot-modere': 'modere',
@@ -2770,16 +2777,36 @@
             const r = robots[mapping[p.id]];
             if (r) {
               p.return = r.performance_pct || 0;
+              p.capital = r.capital_actuel || 10000;
               p.positions = (r.positions || []).map(pos => ({
                 ticker: pos.ticker,
                 type: pos.ticker && pos.ticker.includes('BTC') ? 'crypto' : 'stock',
                 quantity: pos.nb_actions || 0,
-                avgPrice: pos.prix_entree || 0
+                avgPrice: pos.prix_entree || 0,
+                currentPrice: pos.prix_actuel || pos.prix_entree || 0
               }));
             }
           }
         });
-      } catch(e) { /* silent fail — use demo data */ }
+
+        // Mettre à jour les compteurs hero dynamiquement
+        const totalParticipants = allPortfolios.length;
+        const totalPortfolios = allPortfolios.filter(p => p.positions.length > 0 || p.isRobot).length;
+        const avgReturn = allPortfolios.length > 0
+          ? (allPortfolios.reduce((s, p) => s + p.return, 0) / allPortfolios.length).toFixed(1)
+          : '0.0';
+        const heroStats = document.querySelectorAll('.arena-stat-value[data-count]');
+        if (heroStats.length >= 3) {
+          heroStats[0].textContent = totalParticipants;
+          heroStats[0].dataset.count = totalParticipants;
+          heroStats[1].textContent = totalPortfolios;
+          heroStats[1].dataset.count = totalPortfolios;
+          heroStats[2].textContent = avgReturn;
+          heroStats[2].dataset.count = avgReturn;
+        }
+
+        console.log('[Arena] Robots synced:', Object.keys(robots));
+      } catch(e) { console.warn('[Arena] syncRobotData failed:', e); }
     }
 
     // ==================== UPDATE ROBOT CARDS + PODIUM + AWARDS ====================
@@ -2788,7 +2815,7 @@
         const resp = await fetch('data/portfolio_public.json?t=' + Date.now());
         if (!resp.ok) return;
         const data = await resp.json();
-        const robots = data.robots || {};
+        const robots = data.robots || data.profils || {};
 
         // Remplir les cartes robots
         const robotMap = {prudent: 'prudent', modere: 'modere', agressif: 'agressif'};
@@ -2798,27 +2825,34 @@
           const perf = r.performance_pct || 0;
           const capital = r.capital_actuel || 10000;
           const trades = r.nb_trades || 0;
-          const positions = (r.positions || []).map(p => p.ticker).slice(0, 3).join(', ') || 'Aucune';
+          const nbPositions = (r.positions || []).length;
+          const topTickers = (r.positions || []).map(p => p.ticker).slice(0, 3).join(', ') || 'Aucune';
+          const riskLevel = key === 'prudent' ? '▓░░░░ Faible' : key === 'modere' ? '▓▓▓░░ Modéré' : '▓▓▓▓▓ Élevé';
 
           const perfEl = document.getElementById('arena-' + id + '-perf');
           const capEl = document.getElementById('arena-' + id + '-capital');
           const trEl = document.getElementById('arena-' + id + '-trades');
           const posEl = document.getElementById('arena-' + id + '-positions');
+          const riskEl = document.getElementById('arena-' + id + '-risk');
 
           if (perfEl) {
             perfEl.textContent = (perf >= 0 ? '+' : '') + perf.toFixed(2) + '%';
             perfEl.className = 'arena-robot-stat-value ' + (perf >= 0 ? 'positive' : 'negative');
           }
-          if (capEl) capEl.textContent = capital.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + ' \u20ac';
+          if (capEl) capEl.textContent = capital.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + ' €';
           if (trEl) trEl.textContent = trades + ' trade' + (trades > 1 ? 's' : '');
-          if (posEl) posEl.textContent = positions;
+          if (posEl) posEl.textContent = nbPositions + ' pos. — ' + topTickers;
+          if (riskEl) riskEl.textContent = riskLevel;
         }
 
         // Remplir le podium (classement par performance)
         const sorted = Object.entries(robots).map(([k, v]) => ({
-          id: k, nom: v.nom || k, perf: v.performance_pct || 0,
+          id: k,
+          nom: v.nom || ('Robot ' + k.charAt(0).toUpperCase() + k.slice(1)),
+          perf: v.performance_pct || 0,
           capital: v.capital_actuel || 10000,
-          avatar: k === 'prudent' ? 'P' : k === 'modere' ? 'M' : 'A'
+          nbPositions: (v.positions || []).length,
+          avatar: k === 'prudent' ? '🛡️' : k === 'modere' ? '⚖️' : '🔥'
         })).sort((a, b) => b.perf - a.perf);
 
         sorted.forEach((bot, i) => {
@@ -2828,18 +2862,22 @@
           const valEl = document.getElementById('podium-' + rank + '-value');
           const avEl = document.getElementById('podium-' + rank + '-avatar');
           if (nameEl) nameEl.textContent = bot.nom;
-          if (retEl) retEl.textContent = (bot.perf >= 0 ? '+' : '') + bot.perf.toFixed(2) + '%';
-          if (valEl) valEl.textContent = '\u20ac' + bot.capital.toLocaleString('fr-FR', {maximumFractionDigits: 0});
+          if (retEl) {
+            retEl.textContent = (bot.perf >= 0 ? '+' : '') + bot.perf.toFixed(2) + '%';
+            retEl.style.color = bot.perf >= 0 ? 'var(--green)' : 'var(--red)';
+          }
+          if (valEl) valEl.textContent = bot.capital.toLocaleString('fr-FR', {maximumFractionDigits: 0}) + ' €';
           if (avEl) avEl.textContent = bot.avatar;
         });
 
-        // Remplir les awards avec données réelles
+        // Remplir les awards avec données réelles et pertinentes
         if (sorted.length >= 3) {
           const best = sorted[0];
           const worst = sorted[sorted.length - 1];
           const stable = sorted.reduce((a, b) => Math.abs(a.perf) < Math.abs(b.perf) ? a : b);
           const balanced = sorted.find(s => s.id === 'modere') || sorted[1];
           const prudent = sorted.find(s => s.id === 'prudent') || sorted[2];
+          const mostPositions = sorted.reduce((a, b) => a.nbPositions > b.nbPositions ? a : b);
 
           const setAward = (id, winner, stat) => {
             const w = document.getElementById('award-' + id + '-winner');
@@ -2847,15 +2885,22 @@
             if (w) w.textContent = winner;
             if (s) s.textContent = stat;
           };
+          // 🏆 Meilleur rendement
           setAward(1, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
-          setAward(2, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
-          setAward(3, balanced.nom, balanced.capital.toLocaleString('fr') + ' €');
+          // 📈 Plus forte hausse
+          setAward(2, best.nom, best.capital.toLocaleString('fr-FR') + ' €');
+          // 🎯 Diversification (celui avec le plus de positions)
+          setAward(3, mostPositions.nom, mostPositions.nbPositions + ' positions');
+          // 🤖 Meilleur robot
           setAward(4, best.nom, (best.perf >= 0 ? '+' : '') + best.perf.toFixed(2) + '%');
-          setAward(5, prudent.nom, Math.abs(prudent.perf).toFixed(2) + '% écart');
-          setAward(6, balanced.nom, (balanced.perf >= 0 ? '+' : '') + balanced.perf.toFixed(2) + '%');
+          // 🔥 Stabilité (celui avec la perf la plus proche de 0 = le plus stable)
+          setAward(5, stable.nom, Math.abs(stable.perf).toFixed(2) + '% volatilité');
+          // 💡 Équilibre
+          setAward(6, balanced.nom, balanced.nbPositions + ' pos. / ' + (balanced.perf >= 0 ? '+' : '') + balanced.perf.toFixed(2) + '%');
         }
 
-      } catch(e) { console.warn('Arena cards update failed:', e); }
+        console.log('[Arena] Cards, podium & awards updated:', Object.keys(robots));
+      } catch(e) { console.warn('[Arena] Cards update failed:', e); }
     }
 
     // ==================== LEADERBOARD ====================
@@ -2871,7 +2916,7 @@
         portfolios = portfolios.slice(0, 10);
       }
 
-      // Sort by return
+      // Sort by return (descending)
       portfolios.sort((a, b) => b.return - a.return);
 
       // Render leaderboard
@@ -2881,8 +2926,10 @@
         const medalClass = rank === 1 ? 'medal-1' : rank === 2 ? 'medal-2' : rank === 3 ? 'medal-3' : '';
         const medalSymbol = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
 
-        let totalValue = p.positions.reduce((sum, pos) => sum + (pos.quantity * pos.avgPrice), 0);
+        // Utiliser le capital réel si disponible, sinon calculer depuis positions
+        const totalValue = p.capital || p.positions.reduce((sum, pos) => sum + (pos.quantity * (pos.currentPrice || pos.avgPrice)), 0);
         const returnClass = p.return >= 0 ? 'positive' : 'negative';
+        const firstChar = p.isRobot ? '🤖' : p.displayName.charAt(0).toUpperCase();
 
         return `
           <tr>
@@ -2890,7 +2937,7 @@
             <td>
               <div class="arena-investor">
                 <div class="${p.isRobot ? 'arena-investor-robot' : 'arena-investor-avatar'}" style="${p.isRobot ? 'background: linear-gradient(135deg, var(--gold), #f97316);' : ''}">
-                  ${p.displayName.charAt(0)}
+                  ${firstChar}
                 </div>
                 <div class="arena-investor-name">
                   ${p.displayName}
@@ -2898,11 +2945,11 @@
                 </div>
               </div>
             </td>
-            <td><span class="arena-return ${returnClass}">${p.return > 0 ? '+' : ''}${p.return.toFixed(1)}%</span></td>
-            <td class="arena-value">€${totalValue.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}</td>
+            <td><span class="arena-return ${returnClass}">${p.return > 0 ? '+' : ''}${p.return.toFixed(2)}%</span></td>
+            <td class="arena-value">${totalValue.toLocaleString('fr-FR', { maximumFractionDigits: 0 })} €</td>
             <td class="arena-positions">${p.positions.length}</td>
             <td class="arena-change ${p.return >= 0 ? 'up' : 'down'}">
-              ${p.return >= 0 ? '↑' : '↓'} ${Math.abs(p.return).toFixed(1)}%
+              ${p.return >= 0 ? '↑' : '↓'} ${Math.abs(p.return).toFixed(2)}%
             </td>
           </tr>
         `;
