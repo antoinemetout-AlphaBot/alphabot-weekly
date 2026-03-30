@@ -1129,6 +1129,214 @@ nav {
   animation: heroFade .7s cubic-bezier(.4,0,.2,1) both;
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-30 -->
+<style>
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — INVESTISSEMENT.HTML
+   Senior Art Direction Enhancements
+═══════════════════════════════════════════ */
+
+/* ── CUSTOM PROPERTIES ── */
+:root {
+  --glow-cyan: 0 0 30px rgba(34,211,238,.25), 0 0 60px rgba(34,211,238,.1);
+  --glow-gold: 0 0 30px rgba(245,200,66,.25), 0 0 60px rgba(245,200,66,.1);
+  --glow-green: 0 0 20px rgba(34,197,94,.3);
+  --glow-red: 0 0 20px rgba(239,68,68,.3);
+  --card-bg: linear-gradient(145deg, rgba(6,13,31,.95) 0%, rgba(4,9,26,.98) 100%);
+  --glass: rgba(255,255,255,.03);
+}
+
+/* ── BODY AMBIENT ── */
+body {
+  background-image:
+    radial-gradient(ellipse 80% 40% at 10% 20%, rgba(34,211,238,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 80%, rgba(59,130,246,.04) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  padding-top: 130px;
+  padding-bottom: 5rem;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59,130,246,.07) 0%, transparent 65%);
+  border-radius: 50%;
+  animation: float 25s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, #fff 0%, var(--cyan) 40%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px rgba(34,211,238,.2));
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #8899b0;
+  letter-spacing: .2px;
+}
+
+/* ── LIVE BADGE ── */
+.live-badge {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  padding: .45rem 1.1rem;
+  border-radius: 2rem;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: var(--glow-red), inset 0 1px 0 rgba(255,255,255,.15);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,100% { box-shadow: var(--glow-red), 0 0 0 0 rgba(239,68,68,.5); }
+  50%      { box-shadow: var(--glow-red), 0 0 0 8px rgba(239,68,68,.0); }
+}
+
+/* ── ROBOT CARDS ── */
+.robot-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1),
+              box-shadow .35s ease,
+              border-color .35s ease;
+  will-change: transform;
+}
+
+.robot-card::before {
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(90deg, var(--accent-color) 0%, transparent 80%);
+  opacity: .9;
+}
+
+.robot-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(34,211,238,.06) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+
+.robot-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(34,211,238,.35);
+  box-shadow: var(--glow-cyan), 0 24px 60px rgba(0,0,0,.4);
+}
+
+.robot-card:hover::after { opacity: 1; }
+
+.robot-card.prudent:hover  { box-shadow: var(--glow-green), 0 24px 60px rgba(0,0,0,.4); border-color: rgba(34,197,94,.4); }
+.robot-card.agressif:hover { box-shadow: var(--glow-red),   0 24px 60px rgba(0,0,0,.4); border-color: rgba(239,68,68,.4); }
+
+.robot-card.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-color), 0 16px 48px rgba(0,0,0,.35);
+}
+
+/* ── ROBOT HEADER ── */
+.robot-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.4));
+  transition: transform .3s ease;
+}
+
+.robot-card:hover .robot-emoji { transform: scale(1.15) rotate(-5deg); }
+
+.robot-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -.4px;
+  line-height: 1.2;
+}
+
+/* ── STAT ITEMS ── */
+.stat-item {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: .75rem;
+  padding: .875rem;
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.stat-item:hover {
+  background: rgba(34,211,238,.06);
+  border-color: rgba(34,211,238,.15);
+}
+
+.stat-label {
+  font-size: .7rem;
+  font-weight: 600;
+  color: #4a5a72;
+  letter-spacing: 1.5px;
+  margin-bottom: .35rem;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  line-height: 1;
+}
+
+/* ── ROBOTS CONTAINER ── */
+.robots-container { padding: 2rem 2.5rem; }
+
+.robots-grid { gap: 1.75rem; }
+
+/* ── NAV HOVER REFINEMENT ── */
+.nav-center a {
+  font-size: 13px;
+  font-weight: 500;
+  transition: color .25s ease, opacity .25s ease;
+}
+
+.nav-center a:not(.nav-cta):not(.active):hover { color: #c8d8e8; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--blue));
+  border-radius: 3px;
+}
+
+/* ── SELECTION ── */
+::selection { background: rgba(34,211,238,.25); color: #fff; }
+
+/* ── FADE-IN ENTRANCE ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content  { animation: fadeUp .7s cubic-bezier(.22,1,.36,1) both; }
+.robots-grid   { animation: fadeUp .8s cubic-bezier(.22,1,.36,1) .15s both; }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
@@ -1342,8 +1550,8 @@ nav {
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎯</div>
-        <div class="feature-title">Vrais Prix Marché</div>
-        <div class="feature-desc">Données réelles, portefeuille réel, investissement réel. Aucune simulation, aucun backtesting trop optimiste.</div>
+        <div class="feature-title">Prix Réels, Simulation Transparente</div>
+        <div class="feature-desc">Les prix de marché sont réels. Les portefeuilles sont simulés (pas d'argent réel engagé). Chaque décision est justifiée et publique.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🛡️⚖️🔥</div>
@@ -1421,7 +1629,7 @@ nav {
         const response = await fetch('data/portfolio_public.json?t=' + Date.now());
         if (!response.ok) throw new Error('HTTP ' + response.status);
         portfolioData = await response.json();
-        console.log('[AlphaBot] Portfolio chargé:', JSON.stringify(Object.keys(portfolioData.robots || {})));
+        console.log('[AlphaBot] Portfolio chargé:', JSON.stringify(Object.keys((portfolioData.robots||portfolioData.profils) || {})));
         renderDashboard();
       } catch (error) {
         console.error('[AlphaBot] Erreur chargement portfolio:', error);
@@ -1433,12 +1641,12 @@ nav {
       const posContainer = document.getElementById('positions-container');
       const tradesContainer = document.getElementById('trades-container');
 
-      posContainer.innerHTML = '<div class="loading-message" style="grid-column: 1/-1; margin: 0;"><strong>🚀 Les robots démarrent lundi</strong><br>Portfolio en cours de configuration. Revenez le 24 mars pour les premiers trades!</div>';
-      tradesContainer.innerHTML = '<div class="loading-message" style="margin: 0;"><strong>🚀 Les robots démarrent lundi</strong><br>Portfolio en cours de configuration. Revenez le 24 mars pour les premiers trades!</div>';
+      posContainer.innerHTML = '<div class="loading-message" style="grid-column: 1/-1; margin: 0;"><strong>📊 Challenge en cours</strong><br>Les robots sont actifs avec 9 positions ouvertes. Les données se chargent...</div>';
+      tradesContainer.innerHTML = '<div class="loading-message" style="margin: 0;"><strong>📊 Challenge en cours</strong><br>Les robots sont actifs avec 9 positions ouvertes. Les données se chargent...</div>';
     }
 
     function renderDashboard() {
-      if (!portfolioData || !portfolioData.robots) {
+      if (!portfolioData || !(portfolioData.robots||portfolioData.profils)) {
         showLoadingMessage();
         return;
       }
@@ -1450,7 +1658,7 @@ nav {
     function updateRobotStats() {
       ['prudent', 'modere', 'agressif'].forEach(robotType => {
         try {
-          const robot = portfolioData.robots[robotType];
+          const robot = (portfolioData.robots||portfolioData.profils)[robotType];
           if (!robot) { console.warn('[AlphaBot] Robot introuvable:', robotType); return; }
 
           const perf = robot.performance_pct !== undefined ? robot.performance_pct : ((robot.capital_actuel - robot.capital_initial) / robot.capital_initial * 100);
@@ -1490,7 +1698,7 @@ nav {
     }
 
     function renderPositions() {
-      const robot = portfolioData.robots[currentRobot];
+      const robot = (portfolioData.robots||portfolioData.profils)[currentRobot];
       const posContainer = document.getElementById('positions-container');
 
       if (!robot || !robot.positions || robot.positions.length === 0) {
@@ -1558,7 +1766,7 @@ nav {
     }
 
     function renderTrades() {
-      const robot = portfolioData.robots[currentRobot];
+      const robot = (portfolioData.robots||portfolioData.profils)[currentRobot];
       const tradesContainer = document.getElementById('trades-container');
 
       const trades = robot.trades_recent || robot.trades || [];
@@ -1847,7 +2055,7 @@ nav {
       let tickersUpdated = 0;
       let tickersTotal = 0;
 
-      for (const [robotType, robot] of Object.entries(portfolioData.robots)) {
+      for (const [robotType, robot] of Object.entries((portfolioData.robots||portfolioData.profils))) {
         if (!robot.positions) continue;
 
         for (const pos of robot.positions) {

@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>AlphaBot Weekly — Newsletter IA Bourse & Crypto + 3 Robots Traders</title>
-<meta name="description" content="Newsletter IA quotidienne sur la bourse, la crypto et la géopolitique. 3 robots traders IA gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
+<meta name="description" content="Newsletter IA quotidienne sur la bourse, la crypto et la géopolitique. 3 robots traders IA gèrent des portefeuilles de simulation de 10 000€ chacun. Prix réels, décisions transparentes. 100% gratuit.">
 <meta property="og:title" content="AlphaBot Weekly — Newsletter IA Bourse & Crypto">
-<meta property="og:description" content="L'IA surveille les marchés et vous livre l'essentiel en 5 minutes. 3 robots traders gèrent des portefeuilles fictifs de 10 000€ chacun. 100% gratuit.">
+<meta property="og:description" content="L'IA surveille les marchés et vous livre l'essentiel en 5 minutes. 3 robots traders gèrent des portefeuilles de simulation de 10 000€ chacun. Prix réels, décisions transparentes. 100% gratuit.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://antoinemetout-alphabot.github.io/alphabot-weekly/">
 <meta property="og:locale" content="fr_FR">
@@ -1466,6 +1466,189 @@ nav {
   [class*="card"]:hover { transform: translateY(-3px) !important; }
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-03-30 -->
+<style>
+/* ═══════════════════════════════════════════
+   ALPHABOT WEEKLY — VISUAL ENHANCEMENTS v2
+   Non-destructive overlay CSS
+═══════════════════════════════════════════ */
+
+/* TYPOGRAPHY REFINEMENTS */
+body {
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  letter-spacing: -2px;
+  text-shadow: 0 0 80px rgba(245,200,66,.08);
+}
+
+/* HERO TAG — enhanced glow */
+.hero-tag {
+  box-shadow: 0 0 24px rgba(34,197,94,.12), inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
+  transition: box-shadow .4s ease, transform .3s ease;
+}
+.hero-tag:hover {
+  box-shadow: 0 0 36px rgba(34,197,94,.22);
+  transform: translateY(-1px);
+}
+
+/* LIVE DOT — stronger pulse */
+.live-dot {
+  box-shadow: 0 0 8px rgba(34,197,94,.8);
+}
+
+/* H1 GRADIENT — richer shimmer */
+.h1-gradient {
+  background: linear-gradient(135deg, #f5c842 0%, #fbbf24 30%, #22d3ee 70%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(245,200,66,.25));
+}
+
+/* HERO STATS — card treatment */
+.hero-stat {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 16px 28px;
+  backdrop-filter: blur(10px);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.hero-stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.04), transparent);
+  pointer-events: none;
+}
+.hero-stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34,211,238,.25);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35), 0 0 24px rgba(34,211,238,.08);
+}
+.hero-stat-val {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+/* NAV — glass morphism upgrade */
+nav {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(4,9,26,.85) !important;
+  border-bottom: 1px solid rgba(34,211,238,.12) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 8px 40px rgba(0,0,0,.6) !important;
+}
+
+/* NAV CTA — gradient border glow */
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  box-shadow: 0 4px 20px rgba(34,211,238,.25), inset 0 1px 0 rgba(255,255,255,.15) !important;
+  letter-spacing: .2px;
+}
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 12px 36px rgba(34,211,238,.4), 0 0 60px rgba(34,211,238,.15) !important;
+}
+
+/* FORM INPUT — premium feel */
+.form-group input {
+  background: rgba(255,255,255,.035) !important;
+  border: 1px solid rgba(255,255,255,.1) !important;
+  border-radius: 16px !important;
+  padding: 16px 20px !important;
+  font-size: 15px !important;
+  letter-spacing: .1px;
+  transition: all .35s cubic-bezier(.4,0,.2,1) !important;
+}
+.form-group input:focus {
+  border-color: rgba(34,211,238,.55) !important;
+  background: rgba(34,211,238,.04) !important;
+  box-shadow: 0 0 0 4px rgba(34,211,238,.1), 0 8px 32px rgba(34,211,238,.08) !important;
+}
+
+/* ORB — more vivid depth */
+.orb1 { background: radial-gradient(circle, rgba(34,211,238,.13), transparent 65%) !important; }
+.orb2 { background: radial-gradient(circle, rgba(245,200,66,.09), transparent 65%) !important; }
+.orb3 { background: radial-gradient(circle, rgba(59,130,246,.08), transparent 65%) !important; }
+
+/* SCAN LINE — cleaner */
+.scan {
+  height: 1px !important;
+  opacity: .2 !important;
+  background: linear-gradient(90deg, transparent 0%, var(--cyan) 40%, var(--gold) 60%, transparent 100%) !important;
+}
+
+/* SCROLLBAR — thinner, vivid */
+::-webkit-scrollbar { width: 4px !important; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,.02); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #f5c842, #3b82f6) !important;
+  border-radius: 10px !important;
+}
+
+/* CARD BASE — universal glassmorphism boost */
+[class*="card"], [class*="-card"] {
+  transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s ease, border-color .35s ease !important;
+}
+[class*="card"]:hover, [class*="-card"]:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45), 0 0 40px rgba(34,211,238,.07) !important;
+  border-color: rgba(34,211,238,.2) !important;
+}
+
+/* GRADIENT BORDER UTILITY — hero section ring */
+.hero-inner::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(34,211,238,.06), transparent 50%, rgba(245,200,66,.06));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* NAV BRAND — subtle shimmer on hover */
+.nav-brand {
+  transition: filter .3s ease;
+}
+.nav-brand:hover {
+  filter: drop-shadow(0 0 12px rgba(34,211,238,.5));
+}
+
+/* HERO SUB — better readability */
+.hero-sub {
+  color: #a0b3cc !important;
+  letter-spacing: .1px;
+  font-size: clamp(15px, 1.9vw, 18px) !important;
+}
+.hero-sub strong {
+  color: #e8f0f8 !important;
+  font-weight: 600;
+}
+
+/* ENTRANCE ANIMATIONS — smoother */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SELECTION COLOR */
+::selection {
+  background: rgba(34,211,238,.25);
+  color: #fff;
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
@@ -1498,12 +1681,12 @@ nav {
   <div class="hero-inner">
     <div class="hero-tag"><span class="live-dot"></span> Système IA actif en ce moment</div>
     <h1>
-      <div class="h1-white">Investissez avec l'IA.</div>
-      <div class="h1-white">Comparez vos performances.</div>
-      <div class="h1-gradient">Progressez.</div>
+      <div class="h1-white">Les marchés bougent chaque jour.</div>
+      <div class="h1-white">Restez informé en 5 minutes,</div>
+      <div class="h1-gradient">grâce à l'IA.</div>
     </h1>
     <p class="hero-sub">
-      Newsletter IA quotidienne, 3 robots traders et classement en temps réel. <strong>3 robots</strong> gèrent chacun un portefeuille fictif de 10 000€. Tous les trades sont publics et justifiés.
+      Newsletter IA quotidienne + <strong>3 robots traders</strong> qui investissent 30 000€ en simulation avec des prix réels. Chaque trade est public, justifié et daté. <strong>100% gratuit.</strong>
     </p>
 
     <div class="hero-cta-row">
@@ -1539,11 +1722,9 @@ nav {
     <div class="hero-trust">
       <span class="trust-item">100% gratuit</span>
       <span class="trust-sep">·</span>
-      <span class="trust-item">Classement en temps réel</span>
+      <span class="trust-item">Lancement en cours — soyez parmi les premiers</span>
       <span class="trust-sep">·</span>
-      <span class="trust-item">3 robots IA actifs</span>
-      <span class="trust-sep">·</span>
-      <span class="trust-item">Newsletter quotidienne</span>
+      <span class="trust-item" id="hero-subscribers">2 abonnés déjà inscrits</span>
     </div>
 
     <div class="ticker-bar">
@@ -1579,7 +1760,7 @@ nav {
       <div class="pillar-icon">🤖</div>
       <div class="pillar-label">Observer</div>
       <h3>3 robots tradent en direct</h3>
-      <p>Prudent, Modéré, Agressif — 3 stratégies, 3 portefeuilles fictifs de 10 000€. Chaque trade est public, justifié et daté.</p>
+      <p>Prudent, Modéré, Agressif — 3 stratégies, 3 portefeuilles de simulation de 10 000€. Chaque trade est public, justifié et daté.</p>
       <a href="investissement.html" class="pillar-cta gold">Voir les robots →</a>
     </div>
 
@@ -1764,7 +1945,7 @@ nav {
       <div class="how-num">3</div>
       <div class="how-icon">📈</div>
       <h3>L'IA investit</h3>
-      <p>3 robots gèrent chacun un portefeuille fictif de 10 000€ avec 3 stratégies différentes. Chaque trade est public, justifié et daté.</p>
+      <p>3 robots gèrent chacun un portefeuille de simulation de 10 000€ avec 3 stratégies différentes. Chaque trade est public, justifié et daté.</p>
       <div class="how-agents">Agents : Investissement (3 profils)</div>
     </div>
     <div class="how-step">
@@ -1885,25 +2066,144 @@ function subscribe(inputId,statusId){
   }).catch(()=>{status.className='error';status.textContent='Erreur réseau — réessayez.';});
 }
 
-// ── LOAD LIVE DATA ──
+// ── HELPERS ──
+function setText(id,txt){const el=document.getElementById(id);if(el)el.textContent=txt;}
+function fmtPrice(v,digits){return v?Number(v).toLocaleString('fr-FR',{minimumFractionDigits:digits||0,maximumFractionDigits:digits||0}):'--';}
+function fmtPct(v){if(v==null)return '--';const s=v>=0?'+':'';return s+Number(v).toFixed(2)+'%';}
+function setTickerChange(id,val){
+  const el=document.getElementById(id);if(!el||val==null)return;
+  el.textContent=fmtPct(val);
+  el.className='tick-ch '+(val>=0?'up':'down');
+}
+
+// ── LOAD TICKER + HERO KPIs ──
 async function loadMarketData(){
   try{
+    // Load market prices
     const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
+    if(r.ok){
+      const d=await r.json();
+      const btc=d.crypto&&d.crypto.bitcoin;
+      const idx=d.bourse&&d.bourse.indices||{};
+      const com=d.commodities||{};
+      // Ticker bar
+      if(btc){setText('btc-price','$'+fmtPrice(btc.prix_usd));setTickerChange('btc-change',btc.variation_24h);}
+      if(idx['S&P 500']){setText('sp-price',fmtPrice(idx['S&P 500'].valeur));setTickerChange('sp-change',idx['S&P 500'].variation_24h);}
+      if(com['Or (XAU/USD)']){setText('gold-price','$'+fmtPrice(com['Or (XAU/USD)'].valeur));setTickerChange('gold-change',com['Or (XAU/USD)'].variation_24h);}
+      if(com['EUR/USD']){setText('eur-price',Number(com['EUR/USD'].valeur).toFixed(4));setTickerChange('eur-change',com['EUR/USD'].variation_24h);}
+      if(idx['CAC 40']){setText('cac-price',fmtPrice(idx['CAC 40'].valeur));setTickerChange('cac-change',idx['CAC 40'].variation_24h);}
+    }
+    // Load newsletters count
+    const nr=await fetch('data/newsletters.json?t='+Date.now());
+    if(nr.ok){
+      const ndata=await nr.json();
+      setText('hero-newsletters',ndata.count||ndata.editions.length);
+    }
+  }catch(e){console.log('loadMarketData error:',e);}
+}
+
+// ── LOAD PORTFOLIO DATA (robots + hero KPIs) ──
+async function loadChallengeData(){
+  try{
+    const r=await fetch('data/portfolio_public.json?t='+Date.now());
     if(!r.ok)return;
     const d=await r.json();
-    const c=d.crypto||{};const b=d.bourse||{};const m=d.commodities||{};
-    if(c.BTC){
-      document.getElementById(ids.cap).textContent='€'+capital.toLocaleString('fr');
-      document.getElementById(ids.perf).textContent=(perf>=0?'▲ +':'▼ ')+perf.toFixed(2)+'%';
-      document.getElementById(ids.trades).textContent=trades;
+    const p=d.profils||{};
+    // Calculate totals
+    let totalCapital=0,totalTrades=0;
+    let bestName='--',bestPerf=-Infinity;
+    const profiles=[
+      {key:'prudent',prefix:'robot-p'},
+      {key:'modere',prefix:'robot-m'},
+      {key:'agressif',prefix:'robot-a'}
+    ];
+    profiles.forEach(({key,prefix})=>{
+      const prof=p[key];
+      if(!prof)return;
+      const cap=prof.capital_actuel||prof.capital_initial||10000;
+      const perf=prof.performance_pct||0;
+      const trades=prof.nb_trades||0;
+      const positions=prof.nb_positions||0;
+      totalCapital+=cap;
+      totalTrades+=trades;
+      if(perf>bestPerf){bestPerf=perf;bestName=prof.nom||key;}
+      // Update robot cards
+      setText(prefix+'-capital',fmtPrice(cap)+'€');
+      const perfEl=document.getElementById(prefix+'-perf');
+      if(perfEl){
+        perfEl.textContent=fmtPct(perf);
+        perfEl.className='challenge-perf '+(perf>0?'up':perf<0?'down':'flat');
+      }
+      setText(prefix+'-trades',positions+' positions ouvertes');
+    });
+    // Hero KPIs
+    setText('hero-capital',fmtPrice(totalCapital)+'€');
+    setText('hero-trades',totalTrades>0?totalTrades:'9 positions');
+    setText('hero-best',bestPerf>-Infinity?fmtPct(bestPerf):'En cours');
+    // Leaderboard
+    const sorted=profiles.map(({key})=>{
+      const prof=p[key];
+      return prof?{name:prof.nom,perf:prof.performance_pct||0}:{name:key,perf:0};
+    }).sort((a,b)=>b.perf-a.perf);
+    sorted.forEach((robot,i)=>{
+      setText('lb-name-'+(i+1),robot.name);
+      const perfEl=document.getElementById('lb-perf-'+(i+1));
+      if(perfEl){perfEl.textContent=fmtPct(robot.perf);perfEl.className='lb-perf '+(robot.perf>=0?'up':'down');}
+    });
+  }catch(e){console.log('loadChallengeData error:',e);}
+}
+
+// ── LOAD NEWSLETTER PREVIEW ──
+async function loadNewsletterPreview(){
+  try{
+    const r=await fetch('data/newsletters.json?t='+Date.now());
+    if(!r.ok)return;
+    const data=await r.json();
+    if(!data.editions||data.editions.length===0)return;
+    const latest=data.editions[0];
+    setText('nl-preview-date',latest.label);
+    // Try to load the actual newsletter HTML to extract content
+    const nr=await fetch('outputs/'+latest.file+'?t='+Date.now());
+    if(!nr.ok){
+      // Fallback: try root
+      const nr2=await fetch(latest.file+'?t='+Date.now());
+      if(nr2.ok) await extractPreview(nr2,latest);
+      return;
     }
-  }catch(e){}
+    await extractPreview(nr,latest);
+  }catch(e){
+    console.log('loadNewsletterPreview error:',e);
+    setText('nl-preview-title','Newsletter du jour disponible');
+    setText('nl-preview-text','Inscrivez-vous pour recevoir l\'analyse complète des marchés, de la crypto et de la géopolitique par notre IA.');
+  }
+}
+
+async function extractPreview(response,latest){
+  const html=await response.text();
+  const parser=new DOMParser();
+  const doc=parser.parseFromString(html,'text/html');
+  // Extract first h2 and first paragraphs
+  const h2s=doc.querySelectorAll('h2');
+  const ps=doc.querySelectorAll('p');
+  let title='';
+  for(let h of h2s){
+    const t=h.textContent.trim();
+    if(t.length>10&&!t.includes('AlphaBot')){title=t;break;}
+  }
+  let texts=[];
+  for(let p of ps){
+    const t=p.textContent.trim();
+    if(t.length>40&&!t.includes('AlphaBot')&&!t.includes('Se désabonner')){
+      texts.push(t);
+      if(texts.length>=2)break;
+    }
+  }
+  setText('nl-preview-title',title||'Newsletter du '+latest.label);
+  setText('nl-preview-text',texts.join(' ')||'Analyse complète des marchés, crypto et géopolitique disponible.');
 }
 
 // ── REVEAL ANIMATIONS ──
-// Étape 1: signaler au CSS que le JS est prêt (sinon tout reste visible = safe)
 document.body.classList.add('js-ready');
-// Étape 2: observer les éléments .reveal
 const revealEls=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
   const obs=new IntersectionObserver((entries)=>{
@@ -1914,11 +2214,9 @@ if('IntersectionObserver' in window){
   revealEls.forEach(el=>el.classList.add('visible'));
 }
 
-// On page load
-window.addEventListener('DOMContentLoaded',()=>{loadMarketData();loadChallengeData();});
-window.addEventListener('load',()=>{loadMarketData();loadChallengeData();});
-setInterval(loadMarketData,60000);
-setInterval(loadChallengeData,60000);
+// ── INIT ──
+window.addEventListener('DOMContentLoaded',()=>{loadMarketData();loadChallengeData();loadNewsletterPreview();});
+setInterval(()=>{loadMarketData();loadChallengeData();},120000);
 </script>
 </body>
 </html>

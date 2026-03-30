@@ -530,10 +530,26 @@ nav {
         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
       </svg>
-      Espace Abonnés
+      Newsletter IA
     </div>
     <h1>Votre Newsletter</h1>
-    <p>Accédez à l'édition du jour et consultez l'historique complet de toutes les éditions quotidiennes.</p>
+    <p>L'essentiel des marchés en 5 minutes, décrypté par l'IA. Bourse, crypto, géopolitique — chaque jour.</p>
+  </div>
+
+  <!-- PUBLIC PREVIEW — visible par tous, AVANT le gate -->
+  <div id="public-preview" style="max-width:700px;margin:0 auto 40px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+    <div style="padding:16px 24px;background:rgba(34,211,238,.05);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font:700 12px/1 'JetBrains Mono',monospace;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;">Aperçu de la dernière édition</span>
+      <span style="font:500 12px/1 'JetBrains Mono',monospace;color:var(--muted);" id="preview-date">--</span>
+    </div>
+    <div style="padding:28px 24px;" id="preview-body">
+      <h3 style="font:700 20px/1.3 'Space Grotesk',sans-serif;color:#fff;margin-bottom:12px;" id="preview-title">Chargement...</h3>
+      <p style="font:400 14px/1.7 'Inter',sans-serif;color:var(--muted);margin-bottom:16px;" id="preview-text">L'IA prépare votre aperçu...</p>
+    </div>
+    <div style="height:60px;background:linear-gradient(transparent,var(--bg));margin-top:-60px;position:relative;z-index:2;"></div>
+    <div style="text-align:center;padding:20px 24px;border-top:1px solid var(--border);">
+      <span style="font-size:14px;color:var(--muted);">Inscrivez-vous pour lire la suite et accéder à toutes les éditions</span>
+    </div>
   </div>
 
   <!-- GATE (login) -->
@@ -545,17 +561,17 @@ nav {
           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
         </svg>
       </div>
-      <h2>Votre espace abonné</h2>
-      <p>Entrez l'email utilisé lors de votre inscription pour accéder à toutes les éditions.</p>
-      <input class="gate-input" type="email" id="gate-email" placeholder="votre@email.com" autocomplete="email">
+      <h2>Accédez à toutes les éditions</h2>
+      <p>Entrez l'email utilisé lors de votre inscription pour accéder à l'historique complet.</p>
+      <input class="gate-input" type="email" id="gate-email" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter')verifyAccess()">
       <button class="gate-btn" onclick="verifyAccess()">Accéder à ma newsletter</button>
-      <div id="gate-error">Email non reconnu. <a href="index.html" style="color:var(--cyan)">S'abonner gratuitement</a></div>
-      <div class="gate-note">Pas encore abonné ? <a href="index.html">C'est gratuit</a></div>
+      <div id="gate-error">Email non reconnu. <a href="index.html#subscribe" style="color:var(--cyan)">S'abonner gratuitement</a></div>
+      <div class="gate-note">Pas encore abonné ? <a href="index.html#subscribe">Inscription gratuite en 10 secondes</a></div>
     </div>
   </div>
 
   <!-- CONTENT (shown after login) -->
-  <div id="content">
+  <div id="content" style="display:none">
     <!-- WELCOME BAR -->
     <div class="welcome-bar">
       <span>
@@ -594,30 +610,157 @@ nav {
       </div>
     </div>
 
-    <!-- GATE (login) -->
-    <div id="gate">
-      <div class="gate-card">
-        <div class="gate-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-        </div>
-        <h2>Votre espace abonné</h2>
-        <p>Entrez l'email utilisé lors de votre inscription pour accéder à toutes les éditions.</p>
-        <input class="gate-input" type="email" id="gate-email" placeholder="votre@email.com" autocomplete="email">
-        <button class="gate-btn" onclick="verifyAccess()">Accéder à ma newsletter</button>
-        <div id="gate-error">Email non reconnu. <a href="index.html" style="color:var(--cyan)">S'abonner gratuitement</a></div>
-        <div class="gate-note">Pas encore abonné ? <a href="index.html">C'est gratuit</a></div>
-      </div>
-    </div>
-
-    <!-- CONTENT (shown after login) -->
-    <div id="content" style="display:none">
-      <div id="newsletter-content"></div>
+    <!-- NEWSLETTER DISPLAY -->
+    <div class="newsletter-container">
+      <iframe id="newsletter-frame" title="Newsletter AlphaBot Weekly"></iframe>
     </div>
   </div>
 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">🤖 AlphaBot Weekly</div>
+    <div class="footer-links">
+      <a href="newsletter.html">Newsletter</a>
+      <a href="investissement.html">Robot Trader</a>
+      <a href="arena.html">Arena</a>
+      <a href="dashboard-agents.html">Agents IA</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
+    ⚠️ Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
+  </div>
+</footer>
+
+<script>
+// ── NAV ──
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
+
+// ── PUBLIC PREVIEW (visible to everyone) ──
+async function loadPublicPreview(){
+  try{
+    const r=await fetch('data/newsletters.json?t='+Date.now());
+    if(!r.ok)return;
+    const data=await r.json();
+    if(!data.editions||!data.editions.length)return;
+    const latest=data.editions[0];
+    const dateEl=document.getElementById('preview-date');
+    if(dateEl)dateEl.textContent=latest.label;
+    // Try to load actual newsletter content
+    let html='';
+    try{
+      const nr=await fetch('outputs/'+latest.file+'?t='+Date.now());
+      if(nr.ok)html=await nr.text();
+    }catch(e){}
+    if(!html){
+      try{
+        const nr2=await fetch(latest.file+'?t='+Date.now());
+        if(nr2.ok)html=await nr2.text();
+      }catch(e){}
+    }
+    if(html){
+      const parser=new DOMParser();
+      const doc=parser.parseFromString(html,'text/html');
+      const h2s=doc.querySelectorAll('h2');
+      const ps=doc.querySelectorAll('p');
+      let title='';
+      for(let h of h2s){const t=h.textContent.trim();if(t.length>10&&!t.includes('AlphaBot')){title=t;break;}}
+      let texts=[];
+      for(let p of ps){const t=p.textContent.trim();if(t.length>40&&!t.includes('AlphaBot')&&!t.includes('désabonner')){texts.push(t);if(texts.length>=3)break;}}
+      const titleEl=document.getElementById('preview-title');
+      const textEl=document.getElementById('preview-text');
+      if(titleEl)titleEl.textContent=title||'Newsletter du '+latest.label;
+      if(textEl)textEl.textContent=texts.join(' ').substring(0,300)+'...'||'Analyse complète disponible pour les abonnés.';
+    }else{
+      const titleEl=document.getElementById('preview-title');
+      const textEl=document.getElementById('preview-text');
+      if(titleEl)titleEl.textContent='Newsletter du '+latest.label;
+      if(textEl)textEl.textContent='Analyse des marchés, crypto et géopolitique par l\'IA. Inscrivez-vous pour accéder au contenu complet.';
+    }
+  }catch(e){console.log('preview error:',e);}
+}
+
+// ── GATE SYSTEM ──
+const SUBSCRIBERS_URL='data/subscribers.csv';
+let subscriberList=[];
+
+async function loadSubscribers(){
+  try{
+    const r=await fetch(SUBSCRIBERS_URL+'?t='+Date.now());
+    if(!r.ok)return;
+    const txt=await r.text();
+    subscriberList=txt.split('\\n').slice(1).map(l=>l.split(',')[0].trim().toLowerCase()).filter(e=>e&&e.includes('@'));
+  }catch(e){}
+}
+
+function verifyAccess(){
+  const email=(document.getElementById('gate-email').value||'').trim().toLowerCase();
+  const errEl=document.getElementById('gate-error');
+  if(!email||!email.includes('@')){errEl.style.display='block';errEl.textContent='Entrez un email valide.';return;}
+  // Accept if subscriber list empty (fallback) or email is in list
+  if(subscriberList.length===0||subscriberList.includes(email)){
+    sessionStorage.setItem('ab_user',email);
+    showLoggedIn(email);
+  }else{
+    errEl.style.display='block';
+    errEl.innerHTML='Email non reconnu. <a href="index.html#subscribe" style="color:var(--cyan)">S\\'abonner gratuitement</a>';
+  }
+}
+
+function showLoggedIn(email){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('public-preview').style.display='none';
+  document.getElementById('content').style.display='block';
+  const nameEl=document.getElementById('welcome-name');
+  if(nameEl)nameEl.textContent=email.split('@')[0];
+  loadEditions();
+}
+
+function logout(){
+  sessionStorage.removeItem('ab_user');
+  location.reload();
+}
+
+// ── EDITIONS ──
+let editions=[];
+async function loadEditions(){
+  try{
+    const r=await fetch('data/newsletters.json?t='+Date.now());
+    if(!r.ok)return;
+    const data=await r.json();
+    editions=data.editions||[];
+    const sel=document.getElementById('edition-select');
+    sel.innerHTML='';
+    editions.forEach((ed,i)=>{
+      const opt=document.createElement('option');
+      opt.value=i;
+      opt.textContent=ed.label;
+      sel.appendChild(opt);
+    });
+    if(editions.length>0)loadEdition(0);
+  }catch(e){}
+}
+
+function loadEdition(idx){
+  const ed=editions[idx];
+  if(!ed)return;
+  const frame=document.getElementById('newsletter-frame');
+  if(frame){
+    // Try outputs/ first, then root
+    frame.src='outputs/'+ed.file+'?t='+Date.now();
+    frame.onerror=()=>{frame.src=ed.file+'?t='+Date.now();};
+  }
+}
+
+// ── INIT ──
+window.addEventListener('DOMContentLoaded',async()=>{
+  await loadSubscribers();
+  loadPublicPreview();
+  // Check if already logged in
+  const saved=sessionStorage.getItem('ab_user');
+  if(saved){showLoggedIn(saved);}
+});
+</script>
 </body>
 </html>
       
