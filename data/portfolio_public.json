@@ -1,23 +1,12 @@
 {
-  "generated_at": "2026-03-27 20:26:54",
-  "robots": {
+  "last_update": "2026-03-30T21:48:14.748530",
+  "profils": {
     "prudent": {
       "nom": "Robot Prudent",
-      "emoji": "🛡️",
-      "description": "Investissement défensif — blue chips, ETF, dividendes, or",
-      "couleur": "#22c55e",
-      "couleur_bg": "rgba(34,197,94,.08)",
       "capital_initial": 10000,
-      "capital_actuel": 10008.61,
-      "objectif": 100000,
-      "cash_disponible": 6711.47,
-      "performance_pct": 0.06,
-      "performance_eur": 5.59,
-      "nb_trades": 3,
-      "winrate": 0,
-      "meilleur_trade": 0.0,
-      "pire_trade": 0.0,
-      "derniere_maj": "2026-03-27 20:30:27",
+      "capital_actuel": 10000,
+      "performance_pct": 0.09,
+      "nb_positions": 3,
       "positions": [
         {
           "ticker": "EXH7.DE",
@@ -33,7 +22,12 @@
           "take_profit": 97.09,
           "devise": "EUR",
           "secteur": "N/A",
-          "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences."
+          "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences.",
+          "raison_complete": "Le VIX à 25,67 (+14,75% sur 5 jours) signale une anxiété notable sur les marchés actions, avec le S&P500 en repli de -2,88% et le Nasdaq de -3,07% sur la semaine. Dans ce contexte, les obligations souveraines européennes offrent un port refuge classique. La BCE a entamé son cycle de baisse des taux depuis mi-2024, ce qui soutient mécaniquement la valorisation des obligations à duration intermédiaire (7-10 ans) : quand les taux baissent, les prix obligataires montent. L'EUR/USD à 1,16 reflète une euro solide, réduisant le risque de change pour un investisseur en euros. Le dollar index à 99,49 (dollar faible) confirme que les flux se dirigent vers les actifs non-américains. Avec un portefeuille vierge et un capital intégralement en cash, initier une première position défensive en obligations souveraines euro est conforme au profil 'Prudent' et permet de générer du rendement (rendement actuel ~3,2% sur les Bunds 10 ans) tout en limitant la volatilité.",
+          "catalyseur": "VIX +14,75% sur 5 jours et repli marqué des indices US justifient un positionnement défensif immédiat sur les obligations souveraines européennes.",
+          "horizon": "long terme (mois)",
+          "niveau_conviction": 7,
+          "risques": "Une reprise surprise de l'inflation en zone euro forcerait la BCE à interrompre son cycle baissier, pesant sur les prix obligataires. Une désescalade géopolitique rapide pourrait aussi provoquer une rotation vers les actions au détriment des obligations."
         },
         {
           "ticker": "VGOV.L",
@@ -49,7 +43,12 @@
           "take_profit": 17.16,
           "devise": "GBP",
           "secteur": "N/A",
-          "raison_courte": "Obligations souveraines comme bouclier face à la volatilité actuelle."
+          "raison_courte": "Obligations souveraines comme bouclier face à la volatilité actuelle.",
+          "raison_complete": "Le VIX à 25.88 (+3.15% sur 5 jours) signale une nervosité persistante des marchés malgré le rebond technique de ce mardi. Le S&P 500 et le DAX affichent respectivement -2.01% et -4.54% sur 5 jours, révélant une tendance baissière de fond. Dans ce contexte, les obligations souveraines constituent le refuge classique du gestionnaire prudent. Le Dollar Index à 99.16 et l'EUR/USD à 1.16 indiquent un dollar légèrement affaibli, ce qui rend les obligations libellées en sterling attractives pour un portefeuille euro cherchant une diversification devises. Par ailleurs, la Banque d'Angleterre maintient une politique monétaire plus prévisible que la Fed en ce moment, avec des anticipations de baisses de taux progressives en 2026 qui soutiendraient mécaniquement la valeur des gilts. L'or à 4422 USD (+0.42%) confirme l'appétit général pour les actifs de qualité et de préservation du capital.",
+          "catalyseur": "VIX à 25.88 et recul marqué des indices européens (-4.54% DAX sur 5j) confirmant un cycle de risk-off qui favorise les obligations souveraines.",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 7,
+          "risques": "Une accélération inattendue de l'inflation au Royaume-Uni pourrait contraindre la BoE à durcir sa politique et peser sur les gilts. Le risque de change EUR/GBP est également à surveiller si la livre se renforce."
         },
         {
           "ticker": "IUSV.DE",
@@ -65,53 +64,23 @@
           "take_profit": 3.11,
           "devise": "EUR",
           "secteur": "N/A",
-          "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
+          "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq.",
+          "raison_complete": "Le contexte macro actuel plaide fortement pour les valeurs européennes de type 'value'. Le DAX affiche +1.22% sur 5 jours et le CAC 40 +0.79%, surperformant nettement le S&P 500 (-2.01% sur 5j) et le Nasdaq (-2.39%), ce qui traduit une rotation sectorielle des capitaux vers l'Europe. L'EUR/USD à 1.16 (+0.63% sur 5j) reflète un regain de confiance dans la zone euro, soutenu par les plans de relance budgétaire allemands annoncés en 2025 (fonds d'infrastructure de 500 milliards d'euros). Le VIX à 26 signale une volatilité modérée mais persistante sur les marchés américains, rendant les ETF value européens particulièrement attractifs comme refuge relatif. Les valeurs 'value' européennes (secteurs énergie, finance, industrie) offrent typiquement des rendements en dividendes de 3 à 5%, constituant un coussin de sécurité conforme au profil Robot Prudent. L'exposition à l'Europe continentale complète harmonieusement nos positions existantes sur VGOV.L (obligations UK) et EXH7.DE (biens de consommation).",
+          "catalyseur": "Surperformance marquée des indices européens vs US sur 5 jours et rotation des capitaux vers les marchés value en contexte de VIX élevé à 26.",
+          "horizon": "long terme (mois)",
+          "niveau_conviction": 7,
+          "risques": "Un apaisement des tensions géopolitiques pourrait provoquer un retour des capitaux vers les valeurs de croissance américaines, pénalisant temporairement la value européenne. La hausse du pétrole WTI à 90.43 USD (+2.61%) pourrait peser sur les marges des entreprises industrielles européennes."
         }
       ],
-      "trades_historique": [
-        {
-          "ticker": "EXH7.DE",
-          "type": "achat",
-          "date": "2026-03-23 13:00:30",
-          "prix": 88.26,
-          "montant": 1235.64,
-          "raison_courte": "Obligations souveraines euro: refuge sûr en période de turbulences."
-        },
-        {
-          "ticker": "VGOV.L",
-          "type": "achat",
-          "date": "2026-03-24 08:32:52",
-          "prix": 15.6,
-          "montant": 1138.8,
-          "raison_courte": "Obligations souveraines comme bouclier face à la volatilité actuelle."
-        },
-        {
-          "ticker": "IUSV.DE",
-          "type": "achat",
-          "date": "2026-03-24 09:00:29",
-          "prix": 2.83,
-          "montant": 914.09,
-          "raison_courte": "Blue chips européennes value avec dividendes solides, décorrélées du Nasdaq."
-        }
-      ]
+      "nb_trades": 0,
+      "win_rate": 0
     },
     "modere": {
       "nom": "Robot Modéré",
-      "emoji": "⚖️",
-      "description": "Croissance & Valeur — actions, ETF sectoriels, mix équilibré",
-      "couleur": "#f59e0b",
-      "couleur_bg": "rgba(245,158,11,.08)",
       "capital_initial": 10000,
-      "capital_actuel": 10017.58,
-      "objectif": 100000,
-      "cash_disponible": 5947.71,
-      "performance_pct": 0.46,
-      "performance_eur": 45.83,
-      "nb_trades": 5,
-      "winrate": 0,
-      "meilleur_trade": 0.0,
-      "pire_trade": -0.84,
-      "derniere_maj": "2026-03-27 20:30:28",
+      "capital_actuel": 10000,
+      "performance_pct": 0.18,
+      "nb_positions": 3,
       "positions": [
         {
           "ticker": "EWG",
@@ -127,7 +96,12 @@
           "take_profit": 43.93,
           "devise": "USD",
           "secteur": "N/A",
-          "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe."
+          "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe.",
+          "raison_complete": "Le DAX affiche +1.62% aujourd'hui alors que le S&P 500 perd -1.51% : c'est un signal de rotation sectorielle et géographique fort. L'EUR/USD à 1.16 reflète une confiance croissante dans la zone euro, portée par le plan de relance budgétaire allemand voté début 2026 (500 milliards d'euros d'investissements sur 10 ans dans les infrastructures et la défense). L'Allemagne sort de sa récession technique avec un PMI manufacturier en redressement, et les commandes industrielles ont rebondi en janvier. Le pétrole à 91.54$ WTI est certes élevé mais l'Allemagne bénéficie de sa transition énergétique accélérée. Le VIX à 25.67 indique une volatilité élevée côté US, ce qui renforce la thèse du refuge européen à court-moyen terme. EWG offre une exposition diversifiée aux leaders allemands (Siemens, SAP, Allianz, Deutsche Telekom) avec une liquidité suffisante pour notre position.",
+          "catalyseur": "Plan de relance budgétaire allemand de 500Mds€ voté et rotation des capitaux US vers les marchés européens face à l'incertitude américaine.",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 7,
+          "risques": "Une escalade tarifaire US-UE ou un ralentissement plus marqué de l'économie mondiale pourrait peser sur les exportateurs allemands. La volatilité du change EUR/USD reste un facteur de risque secondaire pour cet ETF coté en USD."
         },
         {
           "ticker": "XLE",
@@ -143,7 +117,12 @@
           "take_profit": 68.57,
           "devise": "USD",
           "secteur": "N/A",
-          "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
+          "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques.",
+          "raison_complete": "Le WTI affiche +2.54% sur la séance et consolide au-dessus de 90$/baril, un niveau psychologique clé non vu depuis plusieurs mois. Ce rebours est soutenu par plusieurs facteurs simultanés : tensions géopolitiques persistantes au Moyen-Orient, discipline de production maintenue par l'OPEP+ avec des coupes reconduites, et une demande asiatique (Chine, Inde) qui reprend de la vigueur au T1 2026. Le Dollar Index, bien qu'en légère hausse à 99.16, reste historiquement bas ce qui soutient le prix nominal des matières premières. XLE est l'ETF sectoriel le plus liquide sur l'énergie US et regroupe ExxonMobil, Chevron, ConocoPhillips — des entreprises avec des free cash flows records à ces niveaux de prix. Le VIX à 25.88 indique une nervosité du marché qui favorise traditionnellement la rotation vers les secteurs défensifs/value comme l'énergie, perçus comme des couvertures contre l'inflation et les chocs géopolitiques. La corrélation entre XLE et le WTI est très forte (>0.85), offrant une exposition directe à la hausse du brut sans risque spécifique d'une seule entreprise.",
+          "catalyseur": "WTI au-dessus de 90$/baril (+2.54% sur la séance) avec maintien des coupes OPEP+ et tensions géopolitiques persistantes",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 7,
+          "risques": "Un retournement brutal du pétrole en cas de désescalade géopolitique soudaine ou d'annonce surprise de production OPEP+ pourrait peser sur XLE. La remontée du Dollar Index est aussi un facteur adverse à surveiller car un dollar fort comprime les prix des matières premières."
         },
         {
           "ticker": "UNH",
@@ -159,69 +138,23 @@
           "take_profit": 313.94,
           "devise": "USD",
           "secteur": "Healthcare",
-          "raison_courte": "Value défensive sur correction : UNH rebondit avec catalyseurs solides."
+          "raison_courte": "Value défensive sur correction : UNH rebondit avec catalyseurs solides.",
+          "raison_complete": "Le VIX à 26.31 (+4.86% sur 5 jours) signale une nervosité croissante sur les marchés, justifiant un rééquilibrage vers des valeurs défensives à fort ancrage fondamental. UnitedHealth Group est le leader incontesté de l'assurance santé américaine avec un chiffre d'affaires 2025 dépassant 420 milliards USD et un ratio P/E forward autour de 17x, sous sa moyenne historique de 22x suite à la correction liée aux incertitudes réglementaires de fin 2025. Avec le retour d'un dollar plus fort (DX +0.41%), les flux se réorientent vers les blue chips US défensifs. Le secteur santé affiche une corrélation très faible avec le pétrole et les tensions géopolitiques, ce qui diversifie efficacement notre portefeuille déjà exposé à l'énergie (XLE) et aux matières premières (GLD). Les résultats T1 2026 attendus fin avril constituent un catalyseur proche, avec des guidances conservatrices qui minimisent le risque de déception. Le Nasdaq sous-performant (-1.10% sur 5j) renforce l'attrait d'une valeur value/santé non-tech.",
+          "catalyseur": "Publication des résultats T1 2026 fin avril + rebond des flux vers le défensif américain avec VIX >26",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 7,
+          "risques": "Risque réglementaire persistant sur la réforme Medicare/Medicaid aux USA. Une accélération inattendue du risque sinistre médical post-pandémie pourrait peser sur les marges."
         }
       ],
-      "trades_historique": [
-        {
-          "ticker": "EWG",
-          "type": "achat",
-          "date": "2026-03-23 13:00:43",
-          "prix": 38.2,
-          "montant": 1795.4,
-          "raison_courte": "Le DAX surperforme nettement malgré la tempête US — rotation vers l'Europe."
-        },
-        {
-          "ticker": "XLE",
-          "type": "achat",
-          "date": "2026-03-24 08:33:07",
-          "prix": 59.63,
-          "montant": 1431.12,
-          "raison_courte": "Le pétrole WTI à 90$ relance les marges des majors énergétiques."
-        },
-        {
-          "ticker": "GLD",
-          "type": "achat",
-          "date": "2026-03-24 09:00:43",
-          "prix": 404.04,
-          "montant": 808.08,
-          "raison_courte": "L'or à 4424$ casse des records historiques sur fond de dollar faible."
-        },
-        {
-          "ticker": "UNH",
-          "type": "achat",
-          "date": "2026-03-24 16:25:58",
-          "prix": 272.99,
-          "montant": 818.97,
-          "raison_courte": "Value défensive sur correction : UNH rebondit avec catalyseurs solides."
-        },
-        {
-          "ticker": "GLD",
-          "type": "vente",
-          "date": "2026-03-26 22:06:34",
-          "prix": 400.64,
-          "montant": 801.28,
-          "raison_courte": "L'or chute de -3.93% : retournement brutal, stop-loss préventif."
-        }
-      ]
+      "nb_trades": 0,
+      "win_rate": 0
     },
     "agressif": {
       "nom": "Robot Agressif",
-      "emoji": "🔥",
-      "description": "Performance max — tech, crypto, levier, haut risque",
-      "couleur": "#ef4444",
-      "couleur_bg": "rgba(239,68,68,.08)",
       "capital_initial": 10000,
-      "capital_actuel": 9549.91,
-      "objectif": 100000,
-      "cash_disponible": 4276.0,
-      "performance_pct": -2.07,
-      "performance_eur": -206.7,
-      "nb_trades": 5,
-      "winrate": 0,
-      "meilleur_trade": 0.0,
-      "pire_trade": 0.0,
-      "derniere_maj": "2026-03-27 20:30:29",
+      "capital_actuel": 10000,
+      "performance_pct": -4.5,
+      "nb_positions": 3,
       "positions": [
         {
           "ticker": "BTC-USD",
@@ -237,7 +170,12 @@
           "take_profit": 85660.75,
           "devise": "USD",
           "secteur": "N/A",
-          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui."
+          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui.",
+          "raison_complete": "Le contexte macro est clairement risk-off : VIX à 30.33 en hausse de +35.58% sur 5 jours, S&P -2.88%, Nasdaq -3.07%, DAX en chute libre à -7.68% sur la semaine. Dans ce bain de sang généralisé, Bitcoin affiche une résistance remarquable : +0.97% sur la journée et seulement -2.02% sur 5 jours, démontrant une décorrélation croissante avec les marchés actions. L'or, habituellement valeur refuge, s'effondre de -6.60% aujourd'hui — probablement suite à des appels de marge massifs forçant les institutions à liquider leurs positions les plus liquides. Ce phénomène crée souvent un rebond violent de l'or quelques jours après, mais aussi un afflux vers le Bitcoin comme 'or numérique'. Le Dollar Index à 100.11 montre une légère force du USD, ce qui est normalement négatif pour BTC, mais la résistance du Bitcoin malgré ce vent contraire renforce la thèse haussière. Niveau clé : BTC doit tenir les 65 000$ pour invalider le scénario baissier. Entrée à 68 500$ avec conviction modérée.",
+          "catalyseur": "Bitcoin affiche une résistance exceptionnelle (+0.97%) alors que tous les marchés s'effondrent et que l'or chute de -6.60% — signal de rotation vers l'actif numérique comme refuge alternatif.",
+          "horizon": "moyen terme (semaines)",
+          "niveau_conviction": 6,
+          "risques": "Un VIX à 30+ peut déclencher des ventes forcées supplémentaires si la crise s'aggrave, entraînant BTC sous les 65 000$ (stop-loss activé). Une récession confirmée ou un choc réglementaire crypto pourraient amplifier la baisse."
         },
         {
           "ticker": "SOXL",
@@ -253,7 +191,12 @@
           "take_profit": 63.92,
           "devise": "USD",
           "secteur": "N/A",
-          "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier."
+          "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier.",
+          "raison_complete": "Le Nasdaq 100 a perdu -3.07% sur 5 jours et les semi-conducteurs ont été particulièrement malmenés dans cette correction. Le VIX à 25.67 montre une peur élevée mais en décrue (-4.14% aujourd'hui), signal classique d'épuisement vendeur. Le Dollar Index à 99.49 est faible (baisse de -0.16% sur 1 jour, tendance baissière), ce qui est historiquement favorable aux multinationales tech exportatrices comme NVIDIA, TSMC, Broadcom — les grands composants du SOX. NVIDIA présente son prochain roadmap GTC et les commandes data center IA restent structurellement en hausse : Meta, Microsoft et Google ont tous confirmé des capex IA 2026 en augmentation de +30% YoY. SOXL amplifie 3x les mouvements du Philadelphia Semiconductor Index — un rebond de 5% sur le SOX = +15% sur SOXL. Le timing est agressif mais cohérent avec notre profil : acheter la peur, pas la cupidité.",
+          "catalyseur": "VIX en décrue (-4.14%) + Dollar faible + capex IA en accélération : conditions réunies pour un rebond violent des semi-conducteurs.",
+          "horizon": "court terme (jours)",
+          "niveau_conviction": 7,
+          "risques": "Levier 3x = amplification des pertes si la correction continue ; un regain de tension géopolitique ou une donnée macro négative (PCE, emploi US) peut relancer la vague vendeuse. Stop-loss à -12% impératif."
         },
         {
           "ticker": "TQQQ",
@@ -269,51 +212,16 @@
           "take_profit": 55.71,
           "devise": "USD",
           "secteur": "N/A",
-          "raison_courte": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech."
+          "raison_courte": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech.",
+          "raison_complete": "Le Nasdaq 100 rebondit de +1.22% aujourd'hui après une correction de -2.39% sur 5 jours, signalant un retour d'acheteurs sur les niveaux de support. Le VIX reste élevé à 26.38 mais stagne, et la rotation haussière sur les indices US (S&P 500 +1.15%) suggère une journée de 'risk-on' convaincante. Le Dollar Index remonte légèrement à 99.30 sans peser sur les technos pour l'instant. Le contexte macro reste porteur pour la tech : les anticipations de baisses de taux Fed en 2026 maintiennent la demande sur les valeurs de croissance. TQQQ amplifiera par 3x tout mouvement journalier positif du NDX, offrant un rendement asymétrique si le rebond se confirme en séance. Niveau technique clé : le NDX à 24 188 cherche à reconquérir sa MM20 jours, ce qui peut déclencher des achats algorithmiques supplémentaires.",
+          "catalyseur": "Rebond technique du Nasdaq 100 après -2.39% sur 5j, VIX se stabilisant à 26.38 sans nouveau pic",
+          "horizon": "court terme (jours)",
+          "niveau_conviction": 7,
+          "risques": "VIX toujours élevé à 26.38 avec une hausse sur 5j de +5.14% — un regain de stress géopolitique ou une surprise macro négative pourrait retourner le rebond violemment contre TQQQ. La corrélation avec SOXL déjà en portefeuille crée un risque de concentration sur la tech."
         }
       ],
-      "trades_historique": [
-        {
-          "ticker": "BTC-USD",
-          "type": "achat",
-          "date": "2026-03-23 12:01:08",
-          "prix": 68528.6,
-          "montant": 2501.29,
-          "raison_courte": "Bitcoin résiste pendant la tempête — seul actif en vert aujourd'hui."
-        },
-        {
-          "ticker": "SOXL",
-          "type": "achat",
-          "date": "2026-03-23 13:01:01",
-          "prix": 51.14,
-          "montant": 1841.04,
-          "raison_courte": "Semi-conducteurs massacrés : rebond technique violent attendu sous 3x levier."
-        },
-        {
-          "ticker": "UVXY",
-          "type": "achat",
-          "date": "2026-03-24 08:33:22",
-          "prix": 49.88,
-          "montant": 1097.36,
-          "raison_courte": "VIX à 25.88 en hausse sur 5j : la volatilité n'est pas morte."
-        },
-        {
-          "ticker": "UVXY",
-          "type": "vente",
-          "date": "2026-03-24 09:00:58",
-          "prix": 49.88,
-          "montant": 1097.36,
-          "raison_courte": "VIX en recul, rebond marché global : UVXY se retourne contre nous."
-        },
-        {
-          "ticker": "TQQQ",
-          "type": "achat",
-          "date": "2026-03-24 09:41:12",
-          "prix": 44.57,
-          "montant": 1381.67,
-          "raison_courte": "Rebond Nasdaq +1.22% : levier 3x pour capter la reprise tech."
-        }
-      ]
+      "nb_trades": 0,
+      "win_rate": 0
     }
   }
 }

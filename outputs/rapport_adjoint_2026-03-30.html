@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rapport Adjoint — 2026-03-30</title>
+<style>
+body { background: #04091a; color: #e2e8f0; font-family: 'Inter', sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+h1 { color: #22d3ee; font-size: 24px; border-bottom: 2px solid #22d3ee33; padding-bottom: 12px; }
+h2 { color: #f5c842; font-size: 18px; margin-top: 24px; }
+.kpi { display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px 24px; margin: 8px; text-align: center; }
+.kpi-val { font-size: 28px; font-weight: 700; color: white; }
+.kpi-lbl { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+.status { padding: 6px 12px; border-radius: 6px; font-size: 13px; margin: 4px 0; }
+.ok { background: rgba(34,197,94,0.1); color: #22c55e; border-left: 3px solid #22c55e; }
+.warn { background: rgba(245,158,11,0.1); color: #f59e0b; border-left: 3px solid #f59e0b; }
+.err { background: rgba(239,68,68,0.1); color: #ef4444; border-left: 3px solid #ef4444; }
+.action { background: rgba(59,130,246,0.1); color: #3b82f6; padding: 8px 12px; border-radius: 6px; margin: 6px 0; border-left: 3px solid #3b82f6; }
+ul { list-style: none; padding: 0; }
+li { padding: 4px 0; }
+</style>
+</head>
+<body>
+<h1>📋 Rapport Directeur Adjoint — 2026-03-30</h1>
+<p style="color:#64748b;">Généré le 30/03/2026 à 22:02 — Rattrapage manuel</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;">
+  <div class="kpi"><div class="kpi-val">2</div><div class="kpi-lbl">Abonnés</div></div>
+  <div class="kpi"><div class="kpi-val">8</div><div class="kpi-lbl">Newsletters</div></div>
+  <div class="kpi"><div class="kpi-val">10</div><div class="kpi-lbl">Fear & Greed</div></div>
+  <div class="kpi"><div class="kpi-val">$66,528</div><div class="kpi-lbl">Bitcoin</div></div>
+  <div class="kpi"><div class="kpi-val">$101.37</div><div class="kpi-lbl">Pétrole WTI</div></div>
+</div>
+
+<h2>📊 État des agents aujourd'hui</h2>
+<div class="status ok">✅ Agent DA Site — Mission complète (5 insights, 2 pages améliorées)</div>
+<div class="status ok">✅ Traders — 4 sessions exécutées (9h, 10h30, 12h, 14h)</div>
+<div class="status ok">✅ Newsletter — Édition 30/03 générée (rattrapage)</div>
+<div class="status ok">✅ Veille marchés — Données web récupérées (rattrapage)</div>
+<div class="status ok">✅ LinkedIn — 7 posts semaine générés (rattrapage)</div>
+<div class="status ok">✅ Portfolio public — Mis à jour (rattrapage)</div>
+<div class="status warn">⚠️ Prix Live — 8 échecs (portfolio.json corrompu → RÉPARÉ)</div>
+<div class="status warn">⚠️ Traders après-midi — Non exécutés (15h45-22h)</div>
+<div class="status err">❌ Veille matin/midi/après-midi — Non exécutées par l'orchestrateur</div>
+<div class="status err">❌ Email CEO — Non envoyé</div>
+
+<h2>🔧 Problèmes détectés & résolus</h2>
+<div class="action">🔧 <strong>portfolio.json corrompu</strong> — 6 caractères parasites à la fin du fichier. Cause : écriture concurrente probable. RÉPARÉ manuellement.</div>
+<div class="action">⚠️ <strong>Orchestrateur</strong> — Plusieurs tâches non lancées (veille, email CEO, analytics). À investiguer : possible crash ou timeout entre les tâches.</div>
+<div class="action">⚠️ <strong>Traders manqués</strong> — Sessions 15h45 à 22h non exécutées. L'orchestrateur semble s'être arrêté après 15h30.</div>
+
+<h2>🎯 Actions prioritaires</h2>
+<ul>
+<li class="action">1. Vérifier le fichier orchestrateur.lock — peut-être bloqué</li>
+<li class="action">2. Relancer l'orchestrateur demain matin avec --reset</li>
+<li class="action">3. Ajouter une validation JSON dans update_prices.py avant écriture</li>
+<li class="action">4. Continuer la prospection abonnés — objectif 50 abonnés</li>
+</ul>
+
+<h2>📈 Marchés du jour — Contexte</h2>
+<p>Guerre Iran : pétrole à 101$, or record à 4 499$, Fear & Greed à 10 (Extreme Fear). S&P 500 -0,56%, Nasdaq -0,30%. Seul le Dow résiste (+0,50%). Rotation massive vers énergie/défense/or. Dollar en chute (DXY 100,47).</p>
+
+<p style="color:#64748b;margin-top:30px;font-size:12px;">— Directeur Adjoint AlphaBot · Rapport automatique · 30/03/2026 22:02</p>
+</body>
+</html>

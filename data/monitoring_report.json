@@ -91,4 +91,49 @@
       {
         "id": "veille_midi",
         "nom": "Agent Veille — Midi 🔍",
-        "he
+        "heure_prevue": "12:00"
+      },
+      {
+        "id": "veille_apm",
+        "nom": "Agent Veille — Après-midi 🔍",
+        "heure_prevue": "14:30"
+      },
+      {
+        "id": "monitoring_matin",
+        "nom": "🩺 Monitoring — Matin",
+        "heure_prevue": "08:15"
+      },
+      {
+        "id": "monitoring_midi",
+        "nom": "🩺 Monitoring — Midi",
+        "heure_prevue": "13:00"
+      }
+    ],
+    "detail_doublons": [
+      {
+        "agent": "Agent Monitoring",
+        "message": "Diagnostic système en cours...",
+        "interval_seconds": 239,
+        "count": 4
+      }
+    ]
+  },
+  "fichiers": {
+    "ok": 6,
+    "manquants": 0,
+    "invalides": 0,
+    "perimes": 2,
+    "detail_problemes": [
+      {
+        "fichier": "data/portfolio_public.json",
+        "age_heures": 48.3,
+        "limite_heures": 2
+      },
+      {
+        "fichier": "data/newsletters.json",
+        "age_heures": 70.9,
+        "limite_heures": 26
+      }
+    ]
+  }
+}
