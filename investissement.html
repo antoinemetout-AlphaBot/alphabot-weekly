@@ -1667,7 +1667,7 @@ body {
           const currentVal = robot.capital_actuel || robot.current_value || robot.capital_initial || 10000;
           const progress = Math.min((currentVal / objective) * 100, 100);
           const nbTrades = robot.nb_trades !== undefined ? robot.nb_trades : (robot.trades_recent || robot.trades || []).length;
-          const winRate = robot.winrate || 0;
+          const winRate = robot.winrate || robot.win_rate || 0;
 
           // Capital
           const capEl = document.getElementById(`capital-${robotType}`);
@@ -2043,7 +2043,7 @@ body {
 
     // ── Refresh principal : met à jour tous les prix live ──
     async function refreshLivePrices() {
-      if (!portfolioData?.robots) return;
+      if (!(portfolioData?.robots || portfolioData?.profils)) return;
 
       _refreshCount++;
       setLiveStatus('refreshing');
@@ -2123,12 +2123,13 @@ body {
         });
       }
     }
-  }, 30000);
+
+  setInterval(refreshLivePrices, 30000);
 
   // Initial load
   window.addEventListener('DOMContentLoaded', () => {
     renderDashboard();
-    updateLiveData();
+    refreshLivePrices();
   });
 </script>
 </body>
