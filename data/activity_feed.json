@@ -1,7 +1,99 @@
 {
-  "generated_at": "2026-03-31T14:30:32.542572",
+  "generated_at": "2026-03-31T16:00:23.011746",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-31T16:00:22.998739",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:00:22.987335",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:00:22.971206",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 16h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-31T15:45:17.915134",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (15.8h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:45:17.908136",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (15.8h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:45:17.890604",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Ouverture US ⚡📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-31T15:30:12.840675",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:30:12.829054",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:30:12.795659",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 15h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-31T15:00:07.661980",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:00:07.653545",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T15:00:07.629584",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 15h",
+      "data": {
+        "branch": "support"
+      }
+    },
     {
       "ts": "2026-03-31T14:30:32.518110",
       "agent": "Agent Veille",
@@ -672,93 +764,25 @@
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:25.669520",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.639229",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.613187",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.583500",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:15.546601",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:11.511598",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.483322",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.447472",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.405431",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:01.381340",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:57.353440",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.337930",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
     }
   ],
   "agents": [
+    {
+      "agent": "Orchestrateur",
+      "last_event": {
+        "ts": "2026-03-31T16:00:22.998739",
+        "agent": "Orchestrateur",
+        "type": "success",
+        "message": "Prix live mis à jour",
+        "data": {}
+      },
+      "last_ts": "2026-03-31T16:00:22.998739",
+      "last_type": "success",
+      "last_message": "Prix live mis à jour",
+      "total_today": 36,
+      "errors_today": 0,
+      "successes_today": 12
+    },
     {
       "agent": "Agent Veille",
       "last_event": {
@@ -776,22 +800,6 @@
       "total_today": 23,
       "errors_today": 4,
       "successes_today": 3
-    },
-    {
-      "agent": "Orchestrateur",
-      "last_event": {
-        "ts": "2026-03-31T14:30:23.277336",
-        "agent": "Orchestrateur",
-        "type": "progress",
-        "message": "Agent Veille — collecte données...",
-        "data": {}
-      },
-      "last_ts": "2026-03-31T14:30:23.277336",
-      "last_type": "progress",
-      "last_message": "Agent Veille — collecte données...",
-      "total_today": 24,
-      "errors_today": 0,
-      "successes_today": 8
     },
     {
       "agent": "Agent Monitoring",
@@ -853,4 +861,139 @@
         "ts": "2026-03-31T13:49:09.586",
         "agent": "Agent Growth",
         "type": "success",
-        "message": "Email CEO matin
+        "message": "Email CEO matin rattrapé (données veille disponibles)",
+        "data": {
+          "branch": "newsletter"
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Email CEO matin rattrapé (données veille disponibles)",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "COO IA",
+      "last_event": {
+        "ts": "2026-03-31T13:49:09.586",
+        "agent": "COO IA",
+        "type": "success",
+        "message": "Rapport matin rattrapé — status check effectué",
+        "data": {
+          "branch": "supervision"
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Rapport matin rattrapé — status check effectué",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Directeur Newsletter",
+      "last_event": {
+        "ts": "2026-03-31T13:49:09.586",
+        "agent": "Directeur Newsletter",
+        "type": "success",
+        "message": "Pipeline Newsletter rattrapé (stub — architecture à implémenter)",
+        "data": {
+          "branch": "newsletter"
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Pipeline Newsletter rattrapé (stub — architecture à implémenter)",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Directeur Adjoint",
+      "last_event": {
+        "ts": "2026-03-30T22:02:51.533612",
+        "agent": "Directeur Adjoint",
+        "type": "success",
+        "message": "Rapport CEO généré (rattrapage)",
+        "data": {
+          "fichier": "outputs/rapport_adjoint_2026-03-30.html"
+        }
+      },
+      "last_ts": "2026-03-30T22:02:51.533612",
+      "last_type": "success",
+      "last_message": "Rapport CEO généré (rattrapage)",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "portfolio_public.json mis à jour",
+        "data": {}
+      },
+      "last_ts": "2026-03-30T21:49:43.980570",
+      "last_type": "success",
+      "last_message": "portfolio_public.json mis à jour",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent LinkedIn",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent LinkedIn",
+        "type": "success",
+        "message": "7 posts LinkedIn semaine générés",
+        "data": {
+          "count": 7
+        }
+      },
+      "last_ts": "2026-03-30T21:49:43.980570",
+      "last_type": "success",
+      "last_message": "7 posts LinkedIn semaine générés",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Rédacteur",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent Rédacteur",
+        "type": "success",
+        "message": "Newsletter 30/03 générée (62.9 KB)",
+        "data": {
+          "fichier": "alphabot_newsletter_2026-03-30.html"
+        }
+      },
+      "last_ts": "2026-03-30T21:49:43.980570",
+      "last_type": "success",
+      "last_message": "Newsletter 30/03 générée (62.9 KB)",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Rattrapage Manuel",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Rattrapage Manuel",
+        "type": "milestone",
+        "message": "Rattrapage complet lancé — portfolio.json réparé",
+        "data": {}
+      },
+      "last_ts": "2026-03-30T21:49:43.980570",
+      "last_type": "milestone",
+      "last_message": "Rattrapage complet lancé — portfolio.json réparé",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    }
+  ]
+}

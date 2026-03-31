@@ -1349,7 +1349,7 @@ body {
       <a href="investissement.html" class="active">Robot Trader</a>
       <a href="arena.html">Arena</a>
       <a href="dashboard-agents.html">Agents IA</a>
-      <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">S'abonner gratuitement</a>
+      <a href="index.html#subscribe" class="nav-cta" id="nav-cta-btn">Rejoindre l'arène</a>
     </div>
     <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1595,12 +1595,14 @@ body {
         <a href="index.html">Accueil</a>
         <a href="newsletter.html">Newsletter</a>
         <a href="investissement.html">Robot Trader</a>
+        <a href="arena.html">Arena</a>
         <a href="dashboard-agents.html">Agents IA</a>
       </div>
       <div class="footer-section">
         <h4>Produit</h4>
         <a href="newsletter.html">Newsletter gratuite</a>
         <a href="investissement.html">Robot Trader</a>
+        <a href="arena.html">Arena</a>
         <a href="dashboard-agents.html">Agents IA</a>
       </div>
       <div class="footer-section">
@@ -1653,7 +1655,115 @@ body {
       updateRobotStats();
       renderPositions();
       renderTrades();
+      renderEquityChart();
     }
+
+    // ── GRAPHIQUE ÉVOLUTION DES 3 ROBOTS ──
+    let equityChart = null;
+    let chartRange = 'all';
+
+    function renderEquityChart(range) {
+      if (range) chartRange = range;
+      const robots = (portfolioData.robots||portfolioData.profils);
+      if (!robots) return;
+      const canvas = document.getElementById('robotChart');
+      if (!canvas) return;
+
+      const configs = [
+        {key:'prudent', color:'#22c55e', label:'🛡️ Le Gardien'},
+        {key:'modere', color:'#f59e0b', label:'⚖️ L\'Équilibriste'},
+        {key:'agressif', color:'#ef4444', label:'🔥 Le Prédateur'}
+      ];
+
+      // Build datasets
+      const datasets = [];
+      let allLabels = [];
+
+      configs.forEach(cfg => {
+        const robot = robots[cfg.key];
+        if (!robot || !robot.equity_curve || robot.equity_curve.length === 0) return;
+
+        let curve = robot.equity_curve;
+        // Apply range filter
+        if (chartRange !== 'all') {
+          const days = parseInt(chartRange);
+          curve = curve.slice(-days);
+        }
+
+        if (curve.length > allLabels.length) {
+          allLabels = curve.map(e => {
+            const d = new Date(e.date);
+            return d.toLocaleDateString('fr-FR', {day:'2-digit', month:'short'});
+          });
+        }
+
+        datasets.push({
+          label: cfg.label,
+          data: curve.map(e => e.capital),
+          borderColor: cfg.color,
+          backgroundColor: cfg.color + '15',
+          borderWidth: 2,
+          pointRadius: curve.length > 30 ? 0 : 3,
+          pointHoverRadius: 5,
+          tension: 0.3,
+          fill: true
+        });
+      });
+
+      if (datasets.length === 0) return;
+
+      // Destroy previous chart
+      if (equityChart) { equityChart.destroy(); equityChart = null; }
+
+      const ctx = canvas.getContext('2d');
+      equityChart = new Chart(ctx, {
+        type: 'line',
+        data: { labels: allLabels, datasets: datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(4,9,26,0.95)',
+              titleColor: '#e2e8f0',
+              bodyColor: '#e2e8f0',
+              borderColor: 'rgba(34,211,238,0.3)',
+              borderWidth: 1,
+              callbacks: {
+                label: function(ctx) {
+                  return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('fr-FR', {maximumFractionDigits:0}) + '€';
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: '#64748b', font: {size: 10} },
+              grid: { color: 'rgba(255,255,255,0.04)' }
+            },
+            y: {
+              ticks: {
+                color: '#64748b',
+                font: {size: 10},
+                callback: v => v.toLocaleString('fr-FR') + '€'
+              },
+              grid: { color: 'rgba(255,255,255,0.04)' }
+            }
+          }
+        }
+      });
+    }
+
+    // Timeframe buttons
+    document.querySelectorAll('.chart-timeframe button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.chart-timeframe button').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        renderEquityChart(this.dataset.range);
+      });
+    });
 
     function updateRobotStats() {
       ['prudent', 'modere', 'agressif'].forEach(robotType => {
