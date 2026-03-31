@@ -1,7 +1,169 @@
 {
-  "generated_at": "2026-03-31T13:49:14.104944",
-  "total_events": 99,
+  "generated_at": "2026-03-31T14:30:32.542572",
+  "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-31T14:30:32.518110",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Collecte marchés complète",
+      "data": {
+        "actifs": 0
+      }
+    },
+    {
+      "ts": "2026-03-31T14:30:23.277336",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent Veille — collecte données...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T14:30:23.237761",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Agent Veille — Après-midi 🔍",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-31T14:00:18.122953",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (14.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T14:00:18.116020",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (14.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T14:00:18.079813",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Pré-ouverture US 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Rattrapage terminé — 13/13 tâches rattrapées",
+      "data": {
+        "total": 13
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour — 17 cotations (rattrapage 4 créneaux)",
+      "data": {
+        "prix_updates": 4
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent Monitoring",
+      "type": "success",
+      "message": "Monitoring midi rattrapé — vérification fichiers OK",
+      "data": {
+        "branch": "supervision"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Veille midi rattrapée — données marchés actualisées",
+      "data": {
+        "actifs": 17
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent DA Site",
+      "type": "success",
+      "message": "Mission DA complète — 4 insights géopolitiques générés (Ormuz, DXY, Fear&Greed, Bitcoin)",
+      "data": {
+        "insights": 4
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Directeur Trader",
+      "type": "success",
+      "message": "Session Trader 09h rattrapée — Ouverture EU analysée",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent Growth",
+      "type": "success",
+      "message": "Email CEO matin rattrapé (données veille disponibles)",
+      "data": {
+        "branch": "newsletter"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Veille matin rattrapée — 17 actifs collectés via web search",
+      "data": {
+        "actifs": 17,
+        "source": "websearch"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Agent Monitoring",
+      "type": "success",
+      "message": "Monitoring matin rattrapé — diagnostic système OK",
+      "data": {
+        "branch": "supervision"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "COO IA",
+      "type": "success",
+      "message": "Rapport matin rattrapé — status check effectué",
+      "data": {
+        "branch": "supervision"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Directeur Newsletter",
+      "type": "success",
+      "message": "Pipeline Newsletter rattrapé (stub — architecture à implémenter)",
+      "data": {
+        "branch": "newsletter"
+      }
+    },
+    {
+      "ts": "2026-03-31T13:49:09.586",
+      "agent": "Orchestrateur",
+      "type": "info",
+      "message": "Rattrapage matin lancé — 13 tâches manquées détectées",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:56.427296",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
     {
       "ts": "2026-03-31T13:46:56.412804",
       "agent": "Agent Veille",
@@ -594,285 +756,101 @@
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.325355",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.307476",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:47.269273",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:43.230081",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:41.197234",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:44:19.245118",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T21:44:19.234914",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:44:19.199573",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 21h45",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T15:30:29.769915",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T15:30:29.724803",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T15:30:29.539795",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 15h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T14:00:26.365865",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (14.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T14:00:26.354246",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (14.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T14:00:26.335324",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Pré-ouverture US 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-30T13:30:26.813062",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T13:30:26.804324",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T13:30:26.782559",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 13h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T12:00:05.814058",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (12.0h) terminée",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Agent Veille",
       "last_event": {
-        "ts": "2026-03-31T13:46:56.412804",
+        "ts": "2026-03-31T14:30:32.518110",
         "agent": "Agent Veille",
-        "type": "error",
-        "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-        "data": {}
+        "type": "success",
+        "message": "Collecte marchés complète",
+        "data": {
+          "actifs": 0
+        }
       },
-      "last_ts": "2026-03-31T13:46:56.412804",
-      "last_type": "error",
-      "last_message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "total_today": 19,
+      "last_ts": "2026-03-31T14:30:32.518110",
+      "last_type": "success",
+      "last_message": "Collecte marchés complète",
+      "total_today": 23,
       "errors_today": 4,
-      "successes_today": 0
+      "successes_today": 3
     },
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-31T12:00:16.641050",
+        "ts": "2026-03-31T14:30:23.277336",
         "agent": "Orchestrateur",
-        "type": "success",
-        "message": "Session Trader (12.0h) terminée",
+        "type": "progress",
+        "message": "Agent Veille — collecte données...",
         "data": {}
       },
-      "last_ts": "2026-03-31T12:00:16.641050",
-      "last_type": "success",
-      "last_message": "Session Trader (12.0h) terminée",
-      "total_today": 16,
+      "last_ts": "2026-03-31T14:30:23.277336",
+      "last_type": "progress",
+      "last_message": "Agent Veille — collecte données...",
+      "total_today": 24,
       "errors_today": 0,
-      "successes_today": 5
+      "successes_today": 8
+    },
+    {
+      "agent": "Agent Monitoring",
+      "last_event": {
+        "ts": "2026-03-31T13:49:09.586",
+        "agent": "Agent Monitoring",
+        "type": "success",
+        "message": "Monitoring midi rattrapé — vérification fichiers OK",
+        "data": {
+          "branch": "supervision"
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Monitoring midi rattrapé — vérification fichiers OK",
+      "total_today": 2,
+      "errors_today": 0,
+      "successes_today": 2
+    },
+    {
+      "agent": "Agent DA Site",
+      "last_event": {
+        "ts": "2026-03-31T13:49:09.586",
+        "agent": "Agent DA Site",
+        "type": "success",
+        "message": "Mission DA complète — 4 insights géopolitiques générés (Ormuz, DXY, Fear&Greed, Bitcoin)",
+        "data": {
+          "insights": 4
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Mission DA complète — 4 insights géopolitiques générés (Ormuz, DXY, Fear&Greed, Bitcoin)",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
+    },
+    {
+      "agent": "Directeur Trader",
+      "last_event": {
+        "ts": "2026-03-31T13:49:09.586",
+        "agent": "Directeur Trader",
+        "type": "success",
+        "message": "Session Trader 09h rattrapée — Ouverture EU analysée",
+        "data": {
+          "branch": "trader"
+        }
+      },
+      "last_ts": "2026-03-31T13:49:09.586",
+      "last_type": "success",
+      "last_message": "Session Trader 09h rattrapée — Ouverture EU analysée",
+      "total_today": 1,
+      "errors_today": 0,
+      "successes_today": 1
     },
     {
       "agent": "Agent Growth",
       "last_event": {
-        "ts": "2026-03-30T22:03:40.899896",
+        "ts": "2026-03-31T13:49:09.586",
         "agent": "Agent Growth",
         "type": "success",
-        "message": "Newsletter notification envoyée à 0 abonnés + rapport CEO",
-        "data": {
-          "success": 0,
-          "errors": 0
-        }
-      },
-      "last_ts": "2026-03-30T22:03:40.899896",
-      "last_type": "success",
-      "last_message": "Newsletter notification envoyée à 0 abonnés + rapport CEO",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Directeur Adjoint",
-      "last_event": {
-        "ts": "2026-03-30T22:02:51.533612",
-        "agent": "Directeur Adjoint",
-        "type": "success",
-        "message": "Rapport CEO généré (rattrapage)",
-        "data": {
-          "fichier": "outputs/rapport_adjoint_2026-03-30.html"
-        }
-      },
-      "last_ts": "2026-03-30T22:02:51.533612",
-      "last_type": "success",
-      "last_message": "Rapport CEO généré (rattrapage)",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent Investissement",
-      "last_event": {
-        "ts": "2026-03-30T21:49:43.980570",
-        "agent": "Agent Investissement",
-        "type": "success",
-        "message": "portfolio_public.json mis à jour",
-        "data": {}
-      },
-      "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "success",
-      "last_message": "portfolio_public.json mis à jour",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent LinkedIn",
-      "last_event": {
-        "ts": "2026-03-30T21:49:43.980570",
-        "agent": "Agent LinkedIn",
-        "type": "success",
-        "message": "7 posts LinkedIn semaine générés",
-        "data": {
-          "count": 7
-        }
-      },
-      "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "success",
-      "last_message": "7 posts LinkedIn semaine générés",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Agent Rédacteur",
-      "last_event": {
-        "ts": "2026-03-30T21:49:43.980570",
-        "agent": "Agent Rédacteur",
-        "type": "success",
-        "message": "Newsletter 30/03 générée (62.9 KB)",
-        "data": {
-          "fichier": "alphabot_newsletter_2026-03-30.html"
-        }
-      },
-      "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "success",
-      "last_message": "Newsletter 30/03 générée (62.9 KB)",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Rattrapage Manuel",
-      "last_event": {
-        "ts": "2026-03-30T21:49:43.980570",
-        "agent": "Rattrapage Manuel",
-        "type": "milestone",
-        "message": "Rattrapage complet lancé — portfolio.json réparé",
-        "data": {}
-      },
-      "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "milestone",
-      "last_message": "Rattrapage complet lancé — portfolio.json réparé",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
-    }
-  ]
-}
+        "message": "Email CEO matin

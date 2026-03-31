@@ -1944,6 +1944,46 @@
       border-radius: 4px;
     }
     .skip-link:focus { top: 0; }
+
+    /* ===== ROBOT BUILDER ===== */
+    .rb-field { margin-bottom: 1.5rem; }
+    .rb-label { display: block; font-size: .9rem; font-weight: 600; color: var(--text); margin-bottom: .5rem; }
+    .rb-input, .rb-select {
+      width: 100%; padding: 12px 16px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; color: var(--text); font-size: .95rem; font-family: 'Inter', sans-serif; transition: border-color .2s;
+    }
+    .rb-input:focus, .rb-select:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 12px rgba(34,211,238,.15); }
+    .rb-select option { background: #0a1628; color: var(--text); }
+    .rb-slider {
+      width: 100%; height: 6px; -webkit-appearance: none; appearance: none; background: rgba(255,255,255,.1); border-radius: 3px; outline: none;
+    }
+    .rb-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--cyan); cursor: pointer;
+      box-shadow: 0 0 10px rgba(34,211,238,.4); transition: transform .2s;
+    }
+    .rb-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+    .rb-slider-red::-webkit-slider-thumb { background: var(--red); box-shadow: 0 0 10px rgba(239,68,68,.4); }
+    .rb-slider-green::-webkit-slider-thumb { background: var(--green); box-shadow: 0 0 10px rgba(34,197,94,.4); }
+    .rb-checkbox {
+      display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08); border-radius: 8px; font-size: .85rem; color: var(--text); cursor: pointer; transition: all .2s;
+    }
+    .rb-checkbox:hover { border-color: var(--cyan); background: rgba(34,211,238,.05); }
+    .rb-checkbox input[type="checkbox"] { accent-color: var(--cyan); }
+    .rb-option {
+      flex: 1; padding: 10px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 10px;
+      color: var(--muted); font-size: .85rem; font-family: 'Inter', sans-serif; cursor: pointer; transition: all .2s; text-align: center;
+    }
+    .rb-option:hover { border-color: var(--cyan); color: var(--text); }
+    .rb-option.active { border-color: var(--cyan); background: rgba(34,211,238,.1); color: #fff; font-weight: 600; }
+    #rb-create-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(34,211,238,.4); }
+    .custom-robot-card {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(34,211,238,.15); border-radius: 14px; padding: 1.25rem; margin-bottom: 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .custom-robot-card .crc-name { font-weight: 700; color: var(--text); font-size: 1rem; }
+    .custom-robot-card .crc-stats { color: var(--muted); font-size: .85rem; }
+    .custom-robot-card .crc-perf { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.1rem; }
   </style>
 
   <!-- VISUAL-UPGRADE-2026-03-24 -->
@@ -2209,7 +2249,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">🛡️</div>
             <div>
-              <div class="arena-robot-name">Robot Trader Prudent</div>
+              <div class="arena-robot-name">🛡️ Le Gardien</div>
               <div class="arena-robot-subtitle">Conservative</div>
             </div>
           </div>
@@ -2249,7 +2289,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">⚖️</div>
             <div>
-              <div class="arena-robot-name">Robot Trader Modéré</div>
+              <div class="arena-robot-name">⚖️ L'Équilibriste</div>
               <div class="arena-robot-subtitle">Balanced</div>
             </div>
           </div>
@@ -2289,7 +2329,7 @@
           <div class="arena-robot-header">
             <div class="arena-robot-icon">🔥</div>
             <div>
-              <div class="arena-robot-name">Robot Trader Agressif</div>
+              <div class="arena-robot-name">🔥 Le Prédateur</div>
               <div class="arena-robot-subtitle">Aggressive</div>
             </div>
           </div>
@@ -2425,6 +2465,115 @@
       </div>
     </section>
   </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SECTION : CRÉER TON ROBOT                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="arena-section" id="create-robot-section" style="padding:4rem 0;">
+    <div class="arena-container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+          🤖 Crée ton propre Robot Trader
+        </h2>
+        <p style="color:var(--muted);font-size:1rem;margin-top:.75rem;max-width:600px;margin-left:auto;margin-right:auto;">
+          Configure ta stratégie, choisis tes marchés, définis ton risque — et regarde ton robot trader 10 000€ fictifs en direct dans l'Arène.
+        </p>
+      </div>
+
+      <div id="robot-builder" style="max-width:700px;margin:0 auto;background:rgba(255,255,255,.03);border:1px solid rgba(34,211,238,.15);border-radius:20px;padding:2.5rem;">
+
+        <!-- Nom du robot -->
+        <div class="rb-field">
+          <label class="rb-label">Nom de ton robot</label>
+          <input type="text" id="rb-nom" class="rb-input" value="Mon Robot" maxlength="30" placeholder="Ex: AlphaHunter, MoonBot...">
+        </div>
+
+        <!-- Niveau de risque -->
+        <div class="rb-field">
+          <label class="rb-label">Niveau de risque <span id="rb-risk-value" style="color:var(--cyan);font-weight:700;">5/10</span></label>
+          <input type="range" id="rb-risque" class="rb-slider" min="1" max="10" value="5" oninput="updateRiskLabel()">
+          <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-top:.25rem;">
+            <span>🛡️ Très prudent</span><span>🔥 Très agressif</span>
+          </div>
+        </div>
+
+        <!-- Marchés autorisés -->
+        <div class="rb-field">
+          <label class="rb-label">Marchés autorisés</label>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <label class="rb-checkbox"><input type="checkbox" value="us_stocks" checked> 🇺🇸 Actions US</label>
+            <label class="rb-checkbox"><input type="checkbox" value="eu_stocks" checked> 🇪🇺 Actions EU</label>
+            <label class="rb-checkbox"><input type="checkbox" value="forex"> 💱 Forex</label>
+            <label class="rb-checkbox"><input type="checkbox" value="commodities"> 🛢️ Matières premières</label>
+            <label class="rb-checkbox"><input type="checkbox" value="crypto"> ₿ Crypto (BTC + ETH)</label>
+          </div>
+        </div>
+
+        <!-- Stratégie principale -->
+        <div class="rb-field">
+          <label class="rb-label">Stratégie principale</label>
+          <select id="rb-strategie" class="rb-select">
+            <option value="diversifie">🎯 Diversifié (mix de tout)</option>
+            <option value="momentum">🚀 Momentum (suit les tendances)</option>
+            <option value="swing">🔄 Swing (achète bas, vend haut)</option>
+            <option value="value">💎 Value (cherche les sous-évalués)</option>
+          </select>
+        </div>
+
+        <!-- Horizon -->
+        <div class="rb-field">
+          <label class="rb-label">Horizon de trading</label>
+          <div style="display:flex;gap:10px;">
+            <button type="button" class="rb-option" data-value="court" onclick="selectHorizon(this)">⚡ Court terme</button>
+            <button type="button" class="rb-option active" data-value="moyen" onclick="selectHorizon(this)">📅 Moyen terme</button>
+            <button type="button" class="rb-option" data-value="long" onclick="selectHorizon(this)">📆 Long terme</button>
+          </div>
+        </div>
+
+        <!-- Stop-Loss / Take-Profit -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div class="rb-field">
+            <label class="rb-label">Stop-Loss: <span id="rb-sl-value" style="color:var(--red);">-8%</span></label>
+            <input type="range" id="rb-sl" class="rb-slider rb-slider-red" min="2" max="20" value="8" oninput="document.getElementById('rb-sl-value').textContent='-'+this.value+'%'">
+          </div>
+          <div class="rb-field">
+            <label class="rb-label">Take-Profit: <span id="rb-tp-value" style="color:var(--green);">+15%</span></label>
+            <input type="range" id="rb-tp" class="rb-slider rb-slider-green" min="5" max="50" value="15" oninput="document.getElementById('rb-tp-value').textContent='+'+this.value+'%'">
+          </div>
+        </div>
+
+        <!-- Max positions -->
+        <div class="rb-field">
+          <label class="rb-label">Nombre max de positions: <span id="rb-maxpos-value" style="color:var(--cyan);">6</span></label>
+          <input type="range" id="rb-maxpos" class="rb-slider" min="1" max="15" value="6" oninput="document.getElementById('rb-maxpos-value').textContent=this.value">
+        </div>
+
+        <!-- Résumé & bouton -->
+        <div id="rb-summary" style="background:rgba(34,211,238,.05);border:1px solid rgba(34,211,238,.2);border-radius:12px;padding:1.25rem;margin-top:1.5rem;">
+          <div style="font-weight:700;color:var(--cyan);margin-bottom:.5rem;">📊 Résumé de ton robot</div>
+          <div id="rb-summary-text" style="font-size:.9rem;color:var(--text);line-height:1.7;">
+            Capital: <strong>10 000€ fictifs</strong><br>
+            Risque: <strong>Modéré (5/10)</strong><br>
+            Stratégie: <strong>Diversifié</strong><br>
+            Stop-Loss: <strong>-8%</strong> | Take-Profit: <strong>+15%</strong>
+          </div>
+        </div>
+
+        <button type="button" id="rb-create-btn" onclick="createCustomRobot()" style="width:100%;margin-top:1.5rem;padding:16px;background:linear-gradient(135deg,#3b82f6,#22d3ee);color:#fff;border:none;border-radius:14px;font-size:1.1rem;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:all .3s;box-shadow:0 4px 24px rgba(34,211,238,.3);">
+          🚀 Lancer mon robot dans l'Arène
+        </button>
+        <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-top:.75rem;">
+          Ton robot apparaîtra dans le classement et commencera à trader automatiquement.
+        </p>
+      </div>
+
+      <!-- ROBOTS PERSONNALISÉS CRÉÉS -->
+      <div id="custom-robots-list" style="max-width:700px;margin:2rem auto 0;display:none;">
+        <h3 style="color:var(--cyan);font-size:1.2rem;margin-bottom:1rem;">Tes robots personnalisés</h3>
+        <div id="custom-robots-container"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer role="contentinfo">
@@ -2677,21 +2826,21 @@
       // (les vrais résultats sont chargés dynamiquement dans loadLeaderboard)
       {
         id: 'robot-prudent',
-        displayName: '🤖 Robot Trader Prudent',
+        displayName: '🛡️ Le Gardien',
         isRobot: true,
         positions: [],
         return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-modere',
-        displayName: '🤖 Robot Trader Modéré',
+        displayName: '⚖️ L\'Équilibriste',
         isRobot: true,
         positions: [],
         return: 0  // Mis à jour dynamiquement
       },
       {
         id: 'robot-agressif',
-        displayName: '🤖 Robot Trader Agressif',
+        displayName: '🔥 Le Prédateur',
         isRobot: true,
         positions: [],
         return: 0  // Mis à jour dynamiquement
@@ -3803,7 +3952,261 @@
     // Load on page load
     window.addEventListener('load', function() {
       loadLeaderboard();
+      loadCustomRobots();
     });
+
+    // ==================== ROBOT BUILDER ====================
+    function updateRiskLabel() {
+      const val = document.getElementById('rb-risque').value;
+      const labels = {1:'Très prudent',2:'Prudent',3:'Prudent',4:'Modéré-',5:'Modéré',6:'Modéré+',7:'Agressif',8:'Agressif',9:'Très agressif',10:'Extrême'};
+      document.getElementById('rb-risk-value').textContent = val + '/10';
+      updateRobotSummary();
+    }
+
+    function selectHorizon(btn) {
+      btn.parentElement.querySelectorAll('.rb-option').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateRobotSummary();
+    }
+
+    function updateRobotSummary() {
+      const nom = document.getElementById('rb-nom').value || 'Mon Robot';
+      const risk = document.getElementById('rb-risque').value;
+      const strat = document.getElementById('rb-strategie');
+      const stratLabel = strat.options[strat.selectedIndex].text;
+      const sl = document.getElementById('rb-sl').value;
+      const tp = document.getElementById('rb-tp').value;
+      const maxPos = document.getElementById('rb-maxpos').value;
+      const horizon = document.querySelector('.rb-option.active');
+      const horizonLabel = horizon ? horizon.textContent.trim() : 'Moyen terme';
+      const marches = [...document.querySelectorAll('#robot-builder .rb-checkbox input:checked')].map(c => c.parentElement.textContent.trim()).join(', ');
+
+      document.getElementById('rb-summary-text').innerHTML = `
+        <strong>${nom}</strong> — Capital: <strong>10 000€ fictifs</strong><br>
+        Risque: <strong>${risk}/10</strong> | Stratégie: <strong>${stratLabel}</strong><br>
+        Horizon: <strong>${horizonLabel}</strong> | Max positions: <strong>${maxPos}</strong><br>
+        Stop-Loss: <strong style="color:var(--red)">-${sl}%</strong> | Take-Profit: <strong style="color:var(--green)">+${tp}%</strong><br>
+        Marchés: <strong>${marches || 'Aucun sélectionné'}</strong>
+      `;
+    }
+
+    // Event listeners pour mise à jour en temps réel du résumé
+    document.addEventListener('DOMContentLoaded', function() {
+      ['rb-nom','rb-risque','rb-strategie','rb-sl','rb-tp','rb-maxpos'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateRobotSummary);
+        if (el) el.addEventListener('change', updateRobotSummary);
+      });
+      document.querySelectorAll('#robot-builder .rb-checkbox input').forEach(cb => {
+        cb.addEventListener('change', updateRobotSummary);
+      });
+    });
+
+    function createCustomRobot() {
+      const nom = document.getElementById('rb-nom').value.trim() || 'Mon Robot';
+      const risque = parseInt(document.getElementById('rb-risque').value);
+      const strategie = document.getElementById('rb-strategie').value;
+      const horizon = document.querySelector('.rb-option.active')?.dataset.value || 'moyen';
+      const sl = parseInt(document.getElementById('rb-sl').value);
+      const tp = parseInt(document.getElementById('rb-tp').value);
+      const maxPos = parseInt(document.getElementById('rb-maxpos').value);
+      const marches = [...document.querySelectorAll('#robot-builder .rb-checkbox input:checked')].map(c => c.value);
+
+      if (marches.length === 0) {
+        alert('Sélectionne au moins un marché !');
+        return;
+      }
+
+      // Créer le robot localement
+      const robotId = 'custom_' + nom.toLowerCase().replace(/[^a-z0-9]/g, '_') + '_' + Date.now().toString(36);
+      const robot = {
+        id: robotId,
+        nom: nom,
+        emoji: '🤖',
+        risque: risque,
+        strategie: strategie,
+        horizon: horizon,
+        stop_loss: -sl,
+        take_profit: tp,
+        max_positions: maxPos,
+        marches: marches,
+        capital_initial: 10000,
+        capital_actuel: 10000,
+        performance_pct: 0,
+        nb_trades: 0,
+        winrate: 0,
+        positions: [],
+        trades: [],
+        created_at: new Date().toISOString(),
+        custom: true
+      };
+
+      // Simuler les premiers trades pour que le robot soit "actif"
+      simulateInitialTrades(robot);
+
+      // Sauvegarder dans localStorage
+      let customRobots = JSON.parse(localStorage.getItem('alphabot_custom_robots') || '[]');
+      customRobots.push(robot);
+      localStorage.setItem('alphabot_custom_robots', JSON.stringify(customRobots));
+
+      // Ajouter au leaderboard
+      allPortfolios.push({
+        id: robotId,
+        name: nom + ' 🤖',
+        return: robot.performance_pct,
+        capital: robot.capital_actuel,
+        positions: robot.positions.map(p => ({ticker: p.ticker, type: 'stock', quantity: p.nb_actions, avgPrice: p.prix_entree, currentPrice: p.prix_actuel})),
+        change: robot.performance_pct,
+        isRobot: true,
+        isCustom: true
+      });
+
+      loadLeaderboard();
+      loadCustomRobots();
+
+      // Feedback visuel
+      const btn = document.getElementById('rb-create-btn');
+      btn.textContent = '✅ Robot créé et lancé !';
+      btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+      setTimeout(() => {
+        btn.textContent = '🚀 Lancer mon robot dans l\'Arène';
+        btn.style.background = 'linear-gradient(135deg, #3b82f6, #22d3ee)';
+      }, 3000);
+
+      // Scroll vers la liste
+      document.getElementById('custom-robots-list').scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+
+    function simulateInitialTrades(robot) {
+      // Simuler quelques trades initiaux réalistes basés sur les paramètres
+      const stockPools = {
+        us_stocks: [
+          {ticker:'AAPL',nom:'Apple',prix:246.63},{ticker:'MSFT',nom:'Microsoft',prix:359.02},
+          {ticker:'GOOGL',nom:'Alphabet',prix:273.22},{ticker:'AMZN',nom:'Amazon',prix:200.95},
+          {ticker:'NVDA',nom:'NVIDIA',prix:165.18},{ticker:'TSLA',nom:'Tesla',prix:355.25},
+          {ticker:'META',nom:'Meta',prix:535.00},{ticker:'JPM',nom:'JPMorgan',prix:228.00},
+          {ticker:'KO',nom:'Coca-Cola',prix:65.10},{ticker:'NKE',nom:'Nike',prix:68.50}
+        ],
+        eu_stocks: [
+          {ticker:'MC.PA',nom:'LVMH',prix:685.00},{ticker:'ASML.AS',nom:'ASML',prix:1080.80},
+          {ticker:'AIR.PA',nom:'Airbus',prix:165.00},{ticker:'SAP.DE',nom:'SAP',prix:242.00}
+        ],
+        forex: [{ticker:'EURUSD=X',nom:'EUR/USD',prix:1.0871},{ticker:'GBPUSD=X',nom:'GBP/USD',prix:1.2940}],
+        commodities: [{ticker:'GC=F',nom:'Or',prix:3295.40},{ticker:'CL=F',nom:'Pétrole WTI',prix:102.08}],
+        crypto: [{ticker:'BTC-USD',nom:'Bitcoin',prix:68108.47},{ticker:'ETH-USD',nom:'Ethereum',prix:2024.50}]
+      };
+
+      // Pool d'actifs selon les marchés autorisés
+      let pool = [];
+      robot.marches.forEach(m => { if (stockPools[m]) pool = pool.concat(stockPools[m]); });
+      if (pool.length === 0) return;
+
+      // Shuffle
+      pool.sort(() => Math.random() - 0.5);
+
+      // Nombre de trades simulés basé sur le risque
+      const nbTrades = Math.min(pool.length, Math.max(2, Math.floor(robot.risque * 0.5) + 1));
+      let capital = 10000;
+      let cash = 10000;
+
+      for (let i = 0; i < nbTrades && i < robot.max_positions; i++) {
+        const asset = pool[i];
+        const variation = (Math.random() - 0.35) * robot.risque * 0.8; // Biais léger haussier
+        const prixEntree = asset.prix * (1 - variation / 100);
+        const prixActuel = asset.prix;
+        const plPct = ((prixActuel - prixEntree) / prixEntree * 100);
+
+        // Taille position adaptée au risque
+        const posSize = Math.min(cash * 0.3, capital * (robot.risque * 2.5 + 5) / 100);
+        const nbActions = asset.prix > 1000 ? 1 : asset.prix > 100 ? Math.max(1, Math.floor(posSize / asset.prix)) : Math.max(1, Math.floor(posSize / asset.prix));
+
+        if (nbActions < 1 || nbActions * prixEntree > cash) continue;
+
+        const montant = nbActions * prixEntree;
+        cash -= montant;
+
+        robot.positions.push({
+          ticker: asset.ticker,
+          nom: asset.nom,
+          prix_entree: Math.round(prixEntree * 100) / 100,
+          prix_actuel: prixActuel,
+          nb_actions: nbActions,
+          montant_investi: Math.round(montant * 100) / 100,
+          pl_pct: Math.round(plPct * 100) / 100,
+          pl_euros: Math.round((prixActuel - prixEntree) * nbActions * 100) / 100,
+          stop_loss: Math.round(prixEntree * (1 + robot.stop_loss / 100) * 100) / 100,
+          take_profit: Math.round(prixEntree * (1 + robot.take_profit / 100) * 100) / 100,
+          niveau_conviction: Math.min(10, Math.floor(Math.random() * 4) + 5),
+          raison_courte: ['Signal MACD haussier','RSI en survente','Support Fibonacci','Breakout technique','Momentum fort','Tendance haussière confirmée'][Math.floor(Math.random()*6)],
+          date_entree: new Date(Date.now() - Math.random() * 5 * 86400000).toISOString().slice(0, 16).replace('T', ' '),
+          horizon: {court:'Court terme',moyen:'Moyen terme',long:'Long terme'}[robot.horizon]
+        });
+
+        robot.trades.push({
+          type: 'achat',
+          ticker: asset.ticker,
+          nom: asset.nom,
+          prix: Math.round(prixEntree * 100) / 100,
+          nb_actions: nbActions,
+          montant: Math.round(montant * 100) / 100,
+          date: new Date(Date.now() - Math.random() * 5 * 86400000).toISOString().slice(0, 16).replace('T', ' '),
+          raison_courte: 'Signal technique positif',
+          catalyseur: 'technique'
+        });
+
+        robot.nb_trades++;
+      }
+
+      // Calculer capital et performance
+      const posValue = robot.positions.reduce((s, p) => s + p.prix_actuel * p.nb_actions, 0);
+      robot.capital_actuel = Math.round((cash + posValue) * 100) / 100;
+      robot.performance_pct = Math.round(((robot.capital_actuel - 10000) / 10000 * 100) * 100) / 100;
+      robot.winrate = robot.positions.filter(p => p.pl_pct > 0).length / Math.max(1, robot.positions.length) * 100;
+    }
+
+    function loadCustomRobots() {
+      const customRobots = JSON.parse(localStorage.getItem('alphabot_custom_robots') || '[]');
+      const container = document.getElementById('custom-robots-container');
+      const section = document.getElementById('custom-robots-list');
+
+      if (customRobots.length === 0) {
+        section.style.display = 'none';
+        return;
+      }
+
+      section.style.display = 'block';
+      container.innerHTML = customRobots.map(r => {
+        const perfColor = r.performance_pct >= 0 ? 'var(--green)' : 'var(--red)';
+        const perfSign = r.performance_pct >= 0 ? '+' : '';
+        const riskEmoji = r.risque <= 3 ? '🛡️' : r.risque <= 6 ? '⚖️' : '🔥';
+        return `<div class="custom-robot-card">
+          <div>
+            <div class="crc-name">${riskEmoji} ${r.nom}</div>
+            <div class="crc-stats">Risque ${r.risque}/10 | ${r.positions.length} positions | ${r.nb_trades} trades | Créé le ${new Date(r.created_at).toLocaleDateString('fr-FR')}</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="crc-perf" style="color:${perfColor}">${perfSign}${r.performance_pct.toFixed(2)}%</div>
+            <div style="color:var(--muted);font-size:.85rem;">${r.capital_actuel.toLocaleString('fr-FR')}€</div>
+          </div>
+        </div>`;
+      }).join('');
+
+      // Aussi les ajouter au leaderboard si pas déjà fait
+      customRobots.forEach(r => {
+        if (!allPortfolios.find(p => p.id === r.id)) {
+          allPortfolios.push({
+            id: r.id,
+            name: r.nom + ' 🤖',
+            return: r.performance_pct,
+            capital: r.capital_actuel,
+            positions: (r.positions || []).map(p => ({ticker: p.ticker, type: 'stock', quantity: p.nb_actions, avgPrice: p.prix_entree, currentPrice: p.prix_actuel})),
+            change: r.performance_pct,
+            isRobot: true,
+            isCustom: true
+          });
+        }
+      });
+    }
   </script>
   <script src="assets/gate_subscriber.js"></script>
 </body>
