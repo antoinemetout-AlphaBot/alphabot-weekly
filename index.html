@@ -2083,7 +2083,7 @@ async function loadMarketData(){
     const r=await fetch('data/dernier_rapport_veille.json?t='+Date.now());
     if(r.ok){
       const d=await r.json();
-      const btc=d.crypto&&d.crypto.bitcoin;
+      const btc=d.crypto&&(d.crypto.bitcoin||d.crypto.BTC);
       const idx=d.bourse&&d.bourse.indices||{};
       const com=d.commodities||{};
       // Ticker bar
@@ -2108,7 +2108,7 @@ async function loadChallengeData(){
     const r=await fetch('data/portfolio_public.json?t='+Date.now());
     if(!r.ok)return;
     const d=await r.json();
-    const p=d.profils||{};
+    const p=d.robots||d.profils||{};
     // Calculate totals
     let totalCapital=0,totalTrades=0;
     let bestName='--',bestPerf=-Infinity;
