@@ -2202,6 +2202,49 @@ async function extractPreview(response,latest){
   setText('nl-preview-text',texts.join(' ')||'Analyse complète des marchés, crypto et géopolitique disponible.');
 }
 
+// ── LOAD ACTIVITY FEED (section "En direct") ──
+async function loadActivityFeed(){
+  try{
+    const r=await fetch('data/activity_feed.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    const events=d.events||[];
+    // KPIs
+    const today=new Date().toISOString().slice(0,10);
+    const todayEvents=events.filter(e=>e.ts&&e.ts.startsWith(today));
+    const successes=todayEvents.filter(e=>e.type==='success').length;
+    const errors=todayEvents.filter(e=>e.type==='error').length;
+    setText('activity-total',todayEvents.length>0?todayEvents.length:events.length);
+    setText('activity-success',successes);
+    setText('activity-errors',errors);
+    // Dernière action
+    if(events.length>0){
+      const last=events[0];
+      const dt=new Date(last.ts);
+      const hm=dt.getHours().toString().padStart(2,'0')+':'+dt.getMinutes().toString().padStart(2,'0');
+      setText('activity-last-time',hm);
+    }
+    // 5 derniers événements
+    const container=document.getElementById('activity-events');
+    if(container){
+      const icons={'success':'✅','error':'❌','start':'🚀','progress':'⏳','info':'ℹ️','warning':'⚠️','milestone':'🏆'};
+      const recent=events.slice(0,5);
+      container.innerHTML=recent.map(e=>{
+        const dt=new Date(e.ts);
+        const hm=dt.getHours().toString().padStart(2,'0')+':'+dt.getMinutes().toString().padStart(2,'0');
+        const icon=icons[e.type]||'📋';
+        const color=e.type==='success'?'var(--green)':e.type==='error'?'var(--red)':'var(--muted)';
+        return `<div class="activity-event" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+          <span style="font-size:14px">${icon}</span>
+          <span style="color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:12px;min-width:42px">${hm}</span>
+          <span style="color:${color};font-weight:600;font-size:13px;min-width:120px">${e.agent||'Agent'}</span>
+          <span style="color:var(--text);font-size:13px;opacity:.85">${(e.message||'').substring(0,80)}</span>
+        </div>`;
+      }).join('');
+    }
+  }catch(e){console.log('loadActivityFeed error:',e);}
+}
+
 // ── REVEAL ANIMATIONS ──
 document.body.classList.add('js-ready');
 const revealEls=document.querySelectorAll('.reveal');
@@ -2215,8 +2258,8 @@ if('IntersectionObserver' in window){
 }
 
 // ── INIT ──
-window.addEventListener('DOMContentLoaded',()=>{loadMarketData();loadChallengeData();loadNewsletterPreview();});
-setInterval(()=>{loadMarketData();loadChallengeData();},120000);
+window.addEventListener('DOMContentLoaded',()=>{loadMarketData();loadChallengeData();loadNewsletterPreview();loadActivityFeed();});
+setInterval(()=>{loadMarketData();loadChallengeData();loadActivityFeed();},120000);
 </script>
 </body>
 </html>
