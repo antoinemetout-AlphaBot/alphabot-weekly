@@ -1,144 +1,131 @@
 {
-  "meta": {
-    "timestamp": "2026-03-30T21:42:25.368407",
-    "source": "rattrapage_manuel_web",
-    "date": "2026-03-30"
-  },
+  "date": "2026-03-31",
+  "timestamp": "2026-03-31T13:48:10.405926",
+  "source": "rattrapage_manual_websearch",
   "crypto": {
     "bitcoin": {
-      "nom": "Bitcoin",
-      "symbole": "BTC",
-      "prix_usd": 66528,
-      "prix_eur": 64330,
-      "variation_24h": 2.48,
-      "variation_7j": -3.2,
-      "market_cap_usd": 1320000000000,
-      "volume_24h_usd": 28500000000
+      "prix": 66410.43,
+      "variation_24h": -1.54,
+      "symbole": "BTC"
     }
   },
-  "news_crypto": [
-    {
-      "title": "Bitcoin remonte vers 66 500$ dans un marché dominé par l'Extreme Fear",
-      "source": "CoinGecko"
+  "indices": {
+    "S&P 500": {
+      "prix": 6343.72,
+      "variation": -0.39,
+      "ticker": "^GSPC"
     },
-    {
-      "title": "Fear & Greed Index crypto à 8/100 — 46 jours consécutifs d'Extreme Fear",
-      "source": "BitDegree"
+    "Nasdaq 100": {
+      "prix": 20794.64,
+      "variation": -0.73,
+      "ticker": "^NDX"
     },
-    {
-      "title": "Les sanctions sur le pétrole iranien pourraient être allégées selon le Trésor US",
-      "source": "Fortune"
-    }
-  ],
-  "bourse": {
-    "indices": {
-      "S&P 500": {
-        "valeur": 5333,
-        "variation_5j": -4.1,
-        "variation_24h": -0.56
-      },
-      "Dow Jones": {
-        "valeur": 41850,
-        "variation_5j": -1.9,
-        "variation_24h": 0.5
-      },
-      "Nasdaq 100": {
-        "valeur": 18200,
-        "variation_5j": -5.2,
-        "variation_24h": -0.3
-      },
-      "CAC 40": {
-        "valeur": 7772,
-        "variation_5j": -2.1,
-        "variation_24h": 0.92
-      },
-      "DAX": {
-        "valeur": 22563,
-        "variation_5j": -0.8,
-        "variation_24h": 1.18
-      }
+    "CAC 40": {
+      "prix": 7812.35,
+      "variation": 0.51,
+      "ticker": "^FCHI"
     },
-    "actions": {
-      "Apple": {
-        "ticker": "AAPL",
-        "variation_5j": -4.5,
-        "variation_24h": -1.2,
-        "prix": 247.05
-      },
-      "NVIDIA": {
-        "ticker": "NVDA",
-        "variation_5j": -8.3,
-        "variation_24h": -2.1,
-        "prix": 166.6
-      },
-      "Tesla": {
-        "ticker": "TSLA",
-        "variation_5j": -3.7,
-        "variation_24h": 0.8,
-        "prix": 361.85
-      },
-      "LVMH": {
-        "ticker": "MC.PA",
-        "variation_5j": -1.8,
-        "variation_24h": 0.6,
-        "prix": 625.0
-      },
-      "TotalEnergies": {
-        "ticker": "TTE.PA",
-        "variation_5j": 3.2,
-        "variation_24h": 1.5,
-        "prix": 58.5
-      },
-      "ExxonMobil": {
-        "ticker": "XOM",
-        "variation_5j": 5.1,
-        "variation_24h": 1.8,
-        "prix": 125.3
-      },
-      "Lockheed Martin": {
-        "ticker": "LMT",
-        "variation_5j": 2.4,
-        "variation_24h": 0.9,
-        "prix": 520.0
-      }
+    "DAX": {
+      "prix": 22726.87,
+      "variation": 0.73,
+      "ticker": "^GDAXI"
+    },
+    "Dow Jones": {
+      "prix": 42100.0,
+      "variation": -0.25,
+      "ticker": "^DJI"
     }
   },
   "commodities": {
-    "Dollar Index (DXY)": {
-      "valeur": 100.47,
-      "variation_24h": -0.3
+    "Or (XAU/USD)": {
+      "prix": 4590.7,
+      "variation": 0.73,
+      "ticker": "GC=F"
     },
     "Pétrole WTI": {
-      "valeur": 101.37,
-      "variation_24h": 1.74
-    },
-    "Or (XAU/USD)": {
-      "valeur": 4499.12,
-      "variation_24h": -0.56
+      "prix": 102.08,
+      "variation": -0.78,
+      "ticker": "CL=F"
     },
     "EUR/USD": {
-      "valeur": 1.1505,
-      "variation_24h": -0.04
+      "prix": 1.1471,
+      "variation": 0.08,
+      "ticker": "EURUSD=X"
+    },
+    "Dollar Index (DXY)": {
+      "prix": 100.479,
+      "variation": 0.32,
+      "ticker": "DX-Y.NYB"
     }
   },
-  "mood": {
-    "valeur": 10,
-    "sentiment": "Extreme Fear",
-    "crypto_fg": 8,
-    "vix": 26.38
+  "stocks": {
+    "Apple": {
+      "prix": 253.9,
+      "variation": -0.5,
+      "ticker": "AAPL"
+    },
+    "NVIDIA": {
+      "prix": 166.48,
+      "variation": 1.2,
+      "ticker": "NVDA"
+    },
+    "Tesla": {
+      "prix": 355.28,
+      "variation": -1.81,
+      "ticker": "TSLA"
+    },
+    "LVMH": {
+      "prix": 462.05,
+      "variation": 1.73,
+      "ticker": "MC.PA"
+    },
+    "TotalEnergies": {
+      "prix": 62.5,
+      "variation": 2.1,
+      "ticker": "TTE.PA"
+    },
+    "ExxonMobil": {
+      "prix": 128.5,
+      "variation": 4.56,
+      "ticker": "XOM"
+    },
+    "Lockheed Martin": {
+      "prix": 520.0,
+      "variation": 1.5,
+      "ticker": "LMT"
+    }
   },
-  "geopolitique": {
-    "contexte": "Guerre Iran : perte de 4.5-5M barils/jour, pétrole WTI au-dessus de 100$, menace sur Hormuz et Bab al-Mandab. Trump affirme 6 semaines max mais analystes sceptiques (25% confiance). Fed : Powell dovish mais rendement 10 ans à 4.46%. Sanctions : Treasury émet des waivers 30 jours sur pétrole iranien. Europe : DAX et CAC rebondissent (+1.18% et +0.92%). Dollar en baisse (DXY 100.47). Or à 4499$ — valeur refuge.",
-    "risques": [
-      "Escalade Iran/détroit d'Hormuz",
-      "Pétrole vers 110-120$ si conflit s'étend",
-      "Récession US si consommation chute (essence à 3.98$/gallon)"
-    ],
-    "opportunites": [
-      "Secteur énergie (TotalEnergies, ExxonMobil)",
-      "Défense (Lockheed Martin)",
-      "Or comme hedge géopolitique",
-      "Extreme Fear = signal d'achat historique"
-    ]
-  }
+  "fear_greed": {
+    "value": 17,
+    "label": "Extreme Fear",
+    "previous_close": 15,
+    "description": "Marchés en peur extrême — guerre Iran, pétrole >100$, craintes stagflation"
+  },
+  "actifs": {
+    "Bitcoin": 66410.43,
+    "S&P 500": 6343.72,
+    "Nasdaq 100": 20794.64,
+    "CAC 40": 7812.35,
+    "DAX": 22726.87,
+    "Dow Jones": 42100.0,
+    "Or": 4590.7,
+    "Pétrole WTI": 102.08,
+    "EUR/USD": 1.1471,
+    "DXY": 100.479,
+    "Apple": 253.9,
+    "NVIDIA": 166.48,
+    "Tesla": 355.28,
+    "LVMH": 462.05,
+    "TotalEnergies": 62.5,
+    "ExxonMobil": 128.5,
+    "Lockheed Martin": 520.0
+  },
+  "news": [
+    "Fear & Greed Index tombe à 17 — Extreme Fear, 6 indicateurs sur 7 en zone de peur extrême",
+    "Pétrole WTI au-dessus de 100$/baril — tensions au détroit d Ormuz",
+    "DXY remonte au-dessus de 100 — valeur refuge dans le contexte guerre Iran",
+    "Or atteint 4590$ — record historique sur fond de tensions géopolitiques",
+    "Bitcoin à 66 410$ — surperforme S&P 500 et Nasdaq depuis le début de la guerre Iran",
+    "ExxonMobil bondit de +4.56% — rally pétrolier sur fond géopolitique"
+  ]
 }

@@ -1,0 +1,95 @@
+{
+  "updated_at": "2026-03-31T13:48:43.911895",
+  "date": "2026-03-31",
+  "prices": {
+    "bitcoin": {
+      "price": 66410.43,
+      "change_pct": -1.54,
+      "symbol": "BTC"
+    },
+    "sp500": {
+      "price": 6343.72,
+      "change_pct": -0.39,
+      "symbol": "S&P 500"
+    },
+    "nasdaq": {
+      "price": 20794.64,
+      "change_pct": -0.73,
+      "symbol": "NDX"
+    },
+    "cac40": {
+      "price": 7812.35,
+      "change_pct": 0.51,
+      "symbol": "CAC 40"
+    },
+    "dax": {
+      "price": 22726.87,
+      "change_pct": 0.73,
+      "symbol": "DAX"
+    },
+    "dowjones": {
+      "price": 42100.0,
+      "change_pct": -0.25,
+      "symbol": "DJI"
+    },
+    "gold": {
+      "price": 4590.7,
+      "change_pct": 0.73,
+      "symbol": "XAU"
+    },
+    "oil_wti": {
+      "price": 102.08,
+      "change_pct": -0.78,
+      "symbol": "WTI"
+    },
+    "eurusd": {
+      "price": 1.1471,
+      "change_pct": 0.08,
+      "symbol": "EUR/USD"
+    },
+    "dxy": {
+      "price": 100.479,
+      "change_pct": 0.32,
+      "symbol": "DXY"
+    },
+    "aapl": {
+      "price": 253.9,
+      "change_pct": -0.5,
+      "symbol": "AAPL"
+    },
+    "nvda": {
+      "price": 166.48,
+      "change_pct": 1.2,
+      "symbol": "NVDA"
+    },
+    "tsla": {
+      "price": 355.28,
+      "change_pct": -1.81,
+      "symbol": "TSLA"
+    },
+    "mc_pa": {
+      "price": 462.05,
+      "change_pct": 1.73,
+      "symbol": "MC.PA"
+    },
+    "tte_pa": {
+      "price": 62.5,
+      "change_pct": 2.1,
+      "symbol": "TTE.PA"
+    },
+    "xom": {
+      "price": 128.5,
+      "change_pct": 4.56,
+      "symbol": "XOM"
+    },
+    "lmt": {
+      "price": 520.0,
+      "change_pct": 1.5,
+      "symbol": "LMT"
+    }
+  },
+  "fear_greed": {
+    "value": 17,
+    "label": "Extreme Fear"
+  }
+}

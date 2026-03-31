@@ -1,95 +1,30 @@
 {
-  "date": "2026-03-30",
+  "date": "2026-03-31",
+  "generated_at": "2026-03-31T13:48:35.804286",
   "insights": [
     {
-      "id": "insight_2026_001",
-      "date": "2026-03-30",
-      "categorie": "Défense",
-      "titre": "L'Europe paie sa facture militaire, les armuriers explosent",
-      "contexte": "Après des années à sous-investir dans sa défense, l'Europe a décidé de remettre la main au portefeuille. Les pays membres de l'OTAN s'engagent à porter leurs budgets militaires à 3% du PIB, une hausse historique jamais vue depuis la Guerre Froide.",
-      "impact_marche": "Le secteur Défense européen (Eurostoxx Aerospace & Defense) est en forte hausse. Le CAC 40 profite indirectement via ses champions industriels.",
-      "action_cible": {
-        "ticker": "AIR.PA",
-        "nom": "Airbus SE",
-        "variation_pct": 4.7,
-        "prix_actuel": 198.42,
-        "pourquoi": "Le réarmement européen pousse les gouvernements à commander en masse des avions militaires et systèmes de transport, dont Airbus est le fournisseur numéro 1 sur le continent."
-      },
-      "severite": "HIGH",
-      "emoji_categorie": "🛡️",
-      "angle_alphabot": "AlphaBot Weekly décortique cette semaine les 5 valeurs de défense européennes qui captent le plus de contrats gouvernementaux 2026-2030, et calcule combien de milliards chacune a déjà en carnet de commandes."
+      "titre": "Détroit d'Ormuz : le pétrole franchit 100$/baril",
+      "resume": "Les tensions au détroit d'Ormuz poussent le WTI au-dessus de 102$. ExxonMobil bondit de +4.56%, TotalEnergies +2.1%. Le risque de perturbation des flux pétroliers maintient la prime géopolitique.",
+      "impact": "Haussier pétrole & défense, baissier tech & consommation",
+      "score": 9
     },
     {
-      "id": "insight_2026_002",
-      "date": "2026-03-30",
-      "categorie": "Macro",
-      "titre": "La Fed hésite, le dollar tremble, l'or en profite",
-      "contexte": "La Réserve Fédérale américaine envoie des signaux contradictoires sur les taux d'intérêt : baisser trop vite risque de relancer l'inflation, trop lentement risque d'étouffer l'économie. Cette incertitude crée une nervosité générale sur les marchés mondiaux.",
-      "impact_marche": "Le S&P 500 oscille en dents de scie. Les valeurs refuges comme l'or et les mines aurifères attirent les capitaux qui fuient l'incertitude.",
-      "action_cible": {
-        "ticker": "GLD",
-        "nom": "SPDR Gold Shares ETF",
-        "variation_pct": 3.1,
-        "prix_actuel": 312.55,
-        "pourquoi": "Quand la Fed hésite, les investisseurs du monde entier achètent de l'or comme bouclier contre l'incertitude — cet ETF réplique directement le prix de l'or sans avoir à stocker des lingots chez soi."
-      },
-      "severite": "MEDIUM",
-      "emoji_categorie": "💰",
-      "angle_alphabot": "AlphaBot Weekly analyse cette semaine le calendrier exact des prochaines décisions Fed et simule 3 scénarios de taux pour montrer leur impact chiffré sur votre portefeuille."
+      "titre": "Dollar refuge : le DXY repasse au-dessus de 100",
+      "resume": "Le dollar gagne 3% en mars, porté par la demande de valeur refuge. L'EUR/USD à 1.1471 reflète la fuite vers le billet vert. L'or atteint un record à 4 590$.",
+      "impact": "Haussier dollar & or, pression sur les émergents",
+      "score": 8
     },
     {
-      "id": "insight_2026_003",
-      "date": "2026-03-30",
-      "categorie": "Géopolitique",
-      "titre": "Dollar fort écrase les pays émergents, une opportunité se cache",
-      "contexte": "Un dollar américain puissant, c'est une catastrophe pour les pays émergents (Brésil, Inde, Turquie...) : leurs dettes libellées en dollars coûtent soudain beaucoup plus cher à rembourser. Les capitaux étrangers fuient ces pays pour revenir aux États-Unis.",
-      "impact_marche": "Les indices des marchés émergents (MSCI EM) chutent. Mais cette panique crée des prix d'achat historiquement bas sur des économies fondamentalement solides.",
-      "action_cible": {
-        "ticker": "EEM",
-        "nom": "iShares MSCI Emerging Markets ETF",
-        "variation_pct": -2.8,
-        "prix_actuel": 38.14,
-        "pourquoi": "La pression du dollar fort pousse cet ETF à la baisse à court terme, mais chaque grande crise des émergents a historiquement été suivie d'un rebond violent — les investisseurs patients accumulent à prix cassé."
-      },
-      "severite": "HIGH",
-      "emoji_categorie": "🌍",
-      "angle_alphabot": "AlphaBot Weekly passe au scanner les 10 pays émergents les plus exposés au dollar fort et identifie lequel pourrait rebondir en premier dès que la Fed amorce sa prochaine baisse de taux."
+      "titre": "Fear & Greed à 17 : panique sur Wall Street",
+      "resume": "L'indice CNN Fear & Greed tombe à 17/100 (Extreme Fear). 6 indicateurs sur 7 en zone extrême. Les investisseurs craignent la stagflation (inflation pétrole + ralentissement croissance).",
+      "impact": "Signal contrarian historique — rebonds possibles à court terme",
+      "score": 8
     },
     {
-      "id": "insight_2026_004",
-      "date": "2026-03-30",
-      "categorie": "Crypto",
-      "titre": "Bitcoin joue les montagnes russes sur fond de guerre froide numérique",
-      "contexte": "Les tensions géopolitiques mondiales poussent certains pays à chercher des alternatives au dollar pour leurs échanges commerciaux. Le Bitcoin et les cryptomonnaies deviennent un terrain de jeu géopolitique entre grandes puissances, ce qui amplifie les mouvements de prix dans les deux sens.",
-      "impact_marche": "Bitcoin volatil entre 82 000 $ et 98 000 $. Le secteur crypto dans son ensemble suit avec des écarts journaliers pouvant dépasser 8%.",
-      "action_cible": {
-        "ticker": "MSTR",
-        "nom": "MicroStrategy Incorporated",
-        "variation_pct": 6.2,
-        "prix_actuel": 387.9,
-        "pourquoi": "MicroStrategy détient plus de 200 000 Bitcoins dans son bilan — quand le Bitcoin monte de 10%, cette action amplifie le mouvement comme un levier naturel, sans passer par les plateformes crypto."
-      },
-      "severite": "MEDIUM",
-      "emoji_categorie": "₿",
-      "angle_alphabot": "AlphaBot Weekly révèle cette semaine comment 4 États souverains ont discrètement constitué des réserves en Bitcoin en 2025-2026, et ce que ça signifie pour la prochaine vague haussière."
-    },
-    {
-      "id": "insight_2026_005",
-      "date": "2026-03-30",
-      "categorie": "Énergie",
-      "titre": "Réarmement européen relance la chasse à l'énergie indépendante",
-      "contexte": "Pour financer son réarmement et ne plus dépendre de la Russie, l'Europe accélère en urgence sa transition vers l'énergie nucléaire et les énergies renouvelables. La sécurité énergétique est désormais traitée comme une question de défense nationale.",
-      "impact_marche": "Le secteur des utilities nucléaires et des énergies propres européennes (CAC 40 inclus) reçoit des commandes gouvernementales massives et des subventions records.",
-      "action_cible": {
-        "ticker": "EDF.PA",
-        "nom": "Électricité de France",
-        "variation_pct": 5.4,
-        "prix_actuel": 14.87,
-        "pourquoi": "La France mise sur le nucléaire comme arme stratégique d'indépendance énergétique européenne — EDF est le bras armé de cette politique et décroche des contrats de construction de réacteurs dans 6 pays européens simultanément."
-      },
-      "severite": "CRITICAL",
-      "emoji_categorie": "⚡",
-      "angle_alphabot": "AlphaBot Weekly cartographie cette semaine les 12 nouveaux réacteurs nucléaires commandés en Europe depuis janvier 2026 et calcule le chiffre d'affaires potentiel pour EDF sur les 15 prochaines années."
+      "titre": "Bitcoin résiste mieux que les actions",
+      "resume": "Bitcoin à 66 410$ surperforme le S&P 500 et le Nasdaq depuis le début du conflit iranien. La crypto s'impose comme une alternative aux actifs traditionnels en période de crise.",
+      "impact": "Narratif \"or numérique\" renforcé, afflux ETF possibles",
+      "score": 7
     }
   ]
 }

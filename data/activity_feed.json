@@ -1,298 +1,156 @@
 {
-  "generated_at": "2026-03-30T21:49:43.980570",
-  "total_events": 92,
+  "generated_at": "2026-03-31T13:49:14.104944",
+  "total_events": 99,
   "events": [
     {
-      "ts": "2026-03-30T09:00:06.333315",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Ouverture EU 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:00:06.380871",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (9.0h)...",
+      "ts": "2026-03-31T13:46:56.412804",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-03-30T09:00:06.398835",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Session Trader (9.0h) terminée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T09:15:11.474860",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 9h15",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:15:11.499875",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T09:15:11.523928",
-      "agent": "Orchestrateur",
+      "ts": "2026-03-31T13:46:48.392884",
+      "agent": "Agent Veille",
       "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:30:16.564691",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Agent DA Site 🎨",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:30:16.585668",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Agent DA Site — insights géopolitiques...",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T09:30:17.772225",
-      "agent": "Agent DA Site",
-      "type": "start",
-      "message": "Mission DA complète démarrée",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T09:30:56.790260",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-03-30T09:30:56.806876",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Contenu sauvegardé",
-      "data": {
-        "insights_file": "data\\contenu_da.json",
-        "html_file": "outputs\\section_da_2026-03-30.html"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:32:35.251816",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Mission DA terminée (2 pages améliorées)",
-      "data": {
-        "date": "2026-03-30 09:30",
-        "etapes": {
-          "audit": {
-            "ok": true,
-            "score": 90,
-            "problemes": 1
-          },
-          "corrections": {
-            "ok": true,
-            "pages_corrigees": 1,
-            "details": {
-              "index.html": [
-                "aucune correction nécessaire"
-              ],
-              "investissement.html": [
-                "aucune correction nécessaire"
-              ],
-              "newsletter.html": [
-                "footer injecté"
-              ],
-              "newsletters.html": [
-                "aucune correction nécessaire"
-              ],
-              "espace-pilotage.html": [
-                "aucune correction nécessaire"
-              ]
-            }
-          },
-          "navigation": {
-            "ok": true,
-            "pages_mises_a_jour": 2
-          },
-          "insights": {
-            "ok": true,
-            "count": 5,
-            "injected_in_index": false,
-            "html_path": "outputs\\section_da_2026-03-30.html"
-          },
-          "visuels": {
-            "ok": true,
-            "details": [
-              {
-                "page": "index.html",
-                "status": "improved",
-                "css_rules": 36
-              },
-              {
-                "page": "investissement.html",
-                "status": "improved",
-                "css_rules": 38
-              },
-              {
-                "page": "newsletter.html",
-                "status": "write_verification_failed"
-              }
-            ]
-          }
-        },
-        "success": true,
-        "pages_ameliorees": 2,
-        "insights_count": 5
-      }
-    },
-    {
-      "ts": "2026-03-30T09:32:35.255178",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Insights géopolitiques et améliorations visuelles terminées",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T09:45:10.303086",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 9h45",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T09:45:10.324312",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T09:45:10.344329",
-      "agent": "Orchestrateur",
+      "ts": "2026-03-31T13:46:44.371036",
+      "agent": "Agent Veille",
       "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T10:15:15.428945",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 10h15",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T10:15:15.448341",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T10:15:15.459343",
-      "agent": "Orchestrateur",
+      "ts": "2026-03-31T13:46:42.357947",
+      "agent": "Agent Veille",
       "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T10:30:20.518738",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: Directeur Trader — Matinée EU 📈",
-      "data": {
-        "branch": "trader"
-      }
-    },
-    {
-      "ts": "2026-03-30T10:30:20.524481",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (10.5h)...",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T10:30:20.531995",
+      "ts": "2026-03-31T13:46:42.180330",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:42.163566",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:34.134551",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:30.118480",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:28.102888",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:28.089356",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:28.071589",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:20.051511",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:16.039154",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:14.027397",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:14.010316",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:13.991486",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:05.972196",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:46:01.953528",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T13:45:59.936137",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T12:00:16.641050",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Session Trader (10.5h) terminée",
+      "message": "Session Trader (12.0h) terminée",
       "data": {}
     },
     {
-      "ts": "2026-03-30T11:00:25.614132",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 11h",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T11:00:25.635202",
+      "ts": "2026-03-31T12:00:16.629318",
       "agent": "Orchestrateur",
       "type": "progress",
-      "message": "MAJ prix live...",
+      "message": "Session Directeur Trader (12.0h)...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T11:00:25.645503",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T11:30:00.709386",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 11h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T11:30:00.718139",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T11:30:00.728171",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T12:00:05.799764",
+      "ts": "2026-03-31T12:00:16.613017",
       "agent": "Orchestrateur",
       "type": "start",
       "message": "Tâche: Directeur Trader — Midi EU 📈",
@@ -301,442 +159,139 @@
       }
     },
     {
-      "ts": "2026-03-30T12:00:05.807467",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (12.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T12:00:05.814058",
+      "ts": "2026-03-31T11:30:11.522709",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Session Trader (12.0h) terminée",
+      "message": "Prix live mis à jour",
       "data": {}
     },
     {
-      "ts": "2026-03-30T13:30:26.782559",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 13h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T13:30:26.804324",
+      "ts": "2026-03-31T11:30:07.687892",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "MAJ prix live...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T13:30:26.813062",
+      "ts": "2026-03-31T11:30:07.655059",
       "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 11h30",
       "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
+        "branch": "support"
       }
     },
     {
-      "ts": "2026-03-30T14:00:26.335324",
+      "ts": "2026-03-31T11:00:38.670326",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T11:00:28.729946",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T11:00:28.711480",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Tâche: Directeur Trader — Pré-ouverture US 📈",
+      "message": "Tâche: 📊 Prix Live — 11h",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-31T10:30:14.647820",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (10.5h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T10:30:14.642788",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (10.5h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T10:30:14.625829",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Matinée EU 📈",
       "data": {
         "branch": "trader"
       }
     },
     {
-      "ts": "2026-03-30T14:00:26.354246",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Session Directeur Trader (14.0h)...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T14:00:26.365865",
+      "ts": "2026-03-31T10:15:09.568146",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Session Trader (14.0h) terminée",
+      "message": "Prix live mis à jour",
       "data": {}
     },
     {
-      "ts": "2026-03-30T15:30:29.539795",
-      "agent": "Orchestrateur",
-      "type": "start",
-      "message": "Tâche: 📊 Prix Live — 15h30",
-      "data": {
-        "branch": "support"
-      }
-    },
-    {
-      "ts": "2026-03-30T15:30:29.724803",
+      "ts": "2026-03-31T10:15:02.600856",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "MAJ prix live...",
       "data": {}
     },
     {
-      "ts": "2026-03-30T15:30:29.769915",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
-      "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
-      }
-    },
-    {
-      "ts": "2026-03-30T21:44:19.199573",
+      "ts": "2026-03-31T10:15:02.590626",
       "agent": "Orchestrateur",
       "type": "start",
-      "message": "Tâche: 📊 Prix Live — 21h45",
+      "message": "Tâche: 📊 Prix Live — 10h15",
       "data": {
         "branch": "support"
       }
     },
     {
-      "ts": "2026-03-30T21:44:19.234914",
+      "ts": "2026-03-31T10:12:02.580115",
       "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "MAJ prix live...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:44:19.245118",
-      "agent": "Orchestrateur",
-      "type": "warning",
-      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
+      "type": "start",
+      "message": "Orchestrateur démarré",
       "data": {
-        "error": "Extra data: line 458 column 4 (char 39598)"
+        "mode": "production"
       }
     },
     {
-      "ts": "2026-03-30T21:38:41.197234",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:43.230081",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:47.269273",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.307476",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.325355",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:55.337930",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:38:57.353440",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:01.381340",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.405431",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.447472",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:09.483322",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:11.511598",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:15.546601",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.583500",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.613187",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:23.639229",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:25.669520",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:29.694680",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:37.724001",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:37.757533",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:05.342995",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:07.362742",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:11.399272",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:19.435400",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:19.464735",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:19.495111",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:21.528754",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:25.565035",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:33.603867",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:33.626522",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:33.652861",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:35.679229",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:39.709605",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:47.739038",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:47.764382",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:48.029013",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:50.049012",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:54.080796",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:41:02.119607",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:41:02.162376",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:46:43.128080",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:47:49.873927",
-      "agent": "Agent Rédacteur",
-      "type": "start",
-      "message": "Génération de la newsletter en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:47:49.950176",
-      "agent": "Agent Rédacteur",
+      "ts": "2026-03-30T22:03:40.899896",
+      "agent": "Agent Growth",
       "type": "success",
-      "message": "Newsletter générée : alphabot_newsletter_2026-03-30.html",
+      "message": "Newsletter notification envoyée à 0 abonnés + rapport CEO",
       "data": {
-        "fichier": "alphabot_newsletter_2026-03-30.html",
-        "taille_kb": 58.9
+        "success": 0,
+        "errors": 0
       }
     },
     {
-      "ts": "2026-03-30T21:47:50.004419",
-      "agent": "Agent Rédacteur",
-      "type": "info",
-      "message": "Archive newsletters.html mise à jour",
+      "ts": "2026-03-30T22:02:51.533612",
+      "agent": "Directeur Adjoint",
+      "type": "success",
+      "message": "Rapport CEO généré (rattrapage)",
+      "data": {
+        "fichier": "outputs/rapport_adjoint_2026-03-30.html"
+      }
+    },
+    {
+      "ts": "2026-03-30T21:49:43.980570",
+      "agent": "Agent Investissement",
+      "type": "success",
+      "message": "portfolio_public.json mis à jour",
       "data": {}
     },
     {
       "ts": "2026-03-30T21:49:43.980570",
-      "agent": "Rattrapage Manuel",
-      "type": "milestone",
-      "message": "Rattrapage complet lancé — portfolio.json réparé",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:49:43.980570",
-      "agent": "Agent Veille",
+      "agent": "Agent LinkedIn",
       "type": "success",
-      "message": "Veille marchés récupérée (données web)",
+      "message": "7 posts LinkedIn semaine générés",
       "data": {
-        "source": "web_search"
+        "count": 7
       }
     },
     {
@@ -750,77 +305,574 @@
     },
     {
       "ts": "2026-03-30T21:49:43.980570",
-      "agent": "Agent LinkedIn",
+      "agent": "Agent Veille",
       "type": "success",
-      "message": "7 posts LinkedIn semaine générés",
+      "message": "Veille marchés récupérée (données web)",
       "data": {
-        "count": 7
+        "source": "web_search"
       }
     },
     {
       "ts": "2026-03-30T21:49:43.980570",
-      "agent": "Agent Investissement",
+      "agent": "Rattrapage Manuel",
+      "type": "milestone",
+      "message": "Rattrapage complet lancé — portfolio.json réparé",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:47:50.004419",
+      "agent": "Agent Rédacteur",
+      "type": "info",
+      "message": "Archive newsletters.html mise à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:47:49.950176",
+      "agent": "Agent Rédacteur",
       "type": "success",
-      "message": "portfolio_public.json mis à jour",
+      "message": "Newsletter générée : alphabot_newsletter_2026-03-30.html",
+      "data": {
+        "fichier": "alphabot_newsletter_2026-03-30.html",
+        "taille_kb": 58.9
+      }
+    },
+    {
+      "ts": "2026-03-30T21:47:49.873927",
+      "agent": "Agent Rédacteur",
+      "type": "start",
+      "message": "Génération de la newsletter en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:46:43.128080",
+      "agent": "Agent Rédacteur",
+      "type": "start",
+      "message": "Génération de la newsletter en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:41:02.162376",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:41:02.119607",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:54.080796",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:50.049012",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:48.029013",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:47.764382",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:47.739038",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:39.709605",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:35.679229",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:33.652861",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:33.626522",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:33.603867",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:25.565035",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:21.528754",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:19.495111",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:19.464735",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:19.435400",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:11.399272",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:07.362742",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:40:05.342995",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:37.757533",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:37.724001",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:29.694680",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:25.669520",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:23.639229",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:23.613187",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:23.583500",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:15.546601",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:11.511598",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:09.483322",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:09.447472",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:09.405431",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:39:01.381340",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:57.353440",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:55.337930",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:55.325355",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:55.307476",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:47.269273",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:43.230081",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:38:41.197234",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:44:19.245118",
+      "agent": "Orchestrateur",
+      "type": "warning",
+      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
+      "data": {
+        "error": "Extra data: line 458 column 4 (char 39598)"
+      }
+    },
+    {
+      "ts": "2026-03-30T21:44:19.234914",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T21:44:19.199573",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 21h45",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-30T15:30:29.769915",
+      "agent": "Orchestrateur",
+      "type": "warning",
+      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
+      "data": {
+        "error": "Extra data: line 458 column 4 (char 39598)"
+      }
+    },
+    {
+      "ts": "2026-03-30T15:30:29.724803",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T15:30:29.539795",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 15h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-30T14:00:26.365865",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (14.0h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T14:00:26.354246",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (14.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T14:00:26.335324",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Pré-ouverture US 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
+    {
+      "ts": "2026-03-30T13:30:26.813062",
+      "agent": "Orchestrateur",
+      "type": "warning",
+      "message": "Erreur MAJ prix: Extra data: line 458 column 4 (char 39598)",
+      "data": {
+        "error": "Extra data: line 458 column 4 (char 39598)"
+      }
+    },
+    {
+      "ts": "2026-03-30T13:30:26.804324",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-30T13:30:26.782559",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 13h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-30T12:00:05.814058",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (12.0h) terminée",
       "data": {}
     }
   ],
   "agents": [
     {
-      "agent": "Orchestrateur",
-      "last_ts": "2026-03-30T21:44:19.245118",
-      "last_type": "warning",
-      "total_today": 38,
-      "errors_today": 0,
-      "successes_today": 4
-    },
-    {
-      "agent": "Agent DA Site",
-      "last_ts": "2026-03-30T09:32:35.255178",
-      "last_type": "success",
-      "total_today": 5,
-      "errors_today": 0,
-      "successes_today": 4
-    },
-    {
       "agent": "Agent Veille",
-      "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "success",
-      "total_today": 41,
-      "errors_today": 8,
-      "successes_today": 1
+      "last_event": {
+        "ts": "2026-03-31T13:46:56.412804",
+        "agent": "Agent Veille",
+        "type": "error",
+        "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+        "data": {}
+      },
+      "last_ts": "2026-03-31T13:46:56.412804",
+      "last_type": "error",
+      "last_message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "total_today": 19,
+      "errors_today": 4,
+      "successes_today": 0
     },
     {
-      "agent": "Agent Rédacteur",
-      "last_ts": "2026-03-30T21:49:43.980570",
+      "agent": "Orchestrateur",
+      "last_event": {
+        "ts": "2026-03-31T12:00:16.641050",
+        "agent": "Orchestrateur",
+        "type": "success",
+        "message": "Session Trader (12.0h) terminée",
+        "data": {}
+      },
+      "last_ts": "2026-03-31T12:00:16.641050",
       "last_type": "success",
-      "total_today": 5,
+      "last_message": "Session Trader (12.0h) terminée",
+      "total_today": 16,
       "errors_today": 0,
-      "successes_today": 2
+      "successes_today": 5
     },
     {
-      "agent": "Rattrapage Manuel",
+      "agent": "Agent Growth",
+      "last_event": {
+        "ts": "2026-03-30T22:03:40.899896",
+        "agent": "Agent Growth",
+        "type": "success",
+        "message": "Newsletter notification envoyée à 0 abonnés + rapport CEO",
+        "data": {
+          "success": 0,
+          "errors": 0
+        }
+      },
+      "last_ts": "2026-03-30T22:03:40.899896",
+      "last_type": "success",
+      "last_message": "Newsletter notification envoyée à 0 abonnés + rapport CEO",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Directeur Adjoint",
+      "last_event": {
+        "ts": "2026-03-30T22:02:51.533612",
+        "agent": "Directeur Adjoint",
+        "type": "success",
+        "message": "Rapport CEO généré (rattrapage)",
+        "data": {
+          "fichier": "outputs/rapport_adjoint_2026-03-30.html"
+        }
+      },
+      "last_ts": "2026-03-30T22:02:51.533612",
+      "last_type": "success",
+      "last_message": "Rapport CEO généré (rattrapage)",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
+    },
+    {
+      "agent": "Agent Investissement",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent Investissement",
+        "type": "success",
+        "message": "portfolio_public.json mis à jour",
+        "data": {}
+      },
       "last_ts": "2026-03-30T21:49:43.980570",
-      "last_type": "milestone",
-      "total_today": 1,
+      "last_type": "success",
+      "last_message": "portfolio_public.json mis à jour",
+      "total_today": 0,
       "errors_today": 0,
       "successes_today": 0
     },
     {
       "agent": "Agent LinkedIn",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent LinkedIn",
+        "type": "success",
+        "message": "7 posts LinkedIn semaine générés",
+        "data": {
+          "count": 7
+        }
+      },
       "last_ts": "2026-03-30T21:49:43.980570",
       "last_type": "success",
-      "total_today": 1,
+      "last_message": "7 posts LinkedIn semaine générés",
+      "total_today": 0,
       "errors_today": 0,
-      "successes_today": 1
+      "successes_today": 0
     },
     {
-      "agent": "Agent Investissement",
+      "agent": "Agent Rédacteur",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Agent Rédacteur",
+        "type": "success",
+        "message": "Newsletter 30/03 générée (62.9 KB)",
+        "data": {
+          "fichier": "alphabot_newsletter_2026-03-30.html"
+        }
+      },
       "last_ts": "2026-03-30T21:49:43.980570",
       "last_type": "success",
-      "total_today": 1,
+      "last_message": "Newsletter 30/03 générée (62.9 KB)",
+      "total_today": 0,
       "errors_today": 0,
-      "successes_today": 1
+      "successes_today": 0
+    },
+    {
+      "agent": "Rattrapage Manuel",
+      "last_event": {
+        "ts": "2026-03-30T21:49:43.980570",
+        "agent": "Rattrapage Manuel",
+        "type": "milestone",
+        "message": "Rattrapage complet lancé — portfolio.json réparé",
+        "data": {}
+      },
+      "last_ts": "2026-03-30T21:49:43.980570",
+      "last_type": "milestone",
+      "last_message": "Rattrapage complet lancé — portfolio.json réparé",
+      "total_today": 0,
+      "errors_today": 0,
+      "successes_today": 0
     }
   ]
 }
