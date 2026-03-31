@@ -1,98 +1,181 @@
 {
   "date": "2026-03-31",
-  "timestamp": "2026-03-31T13:48:10.405926",
+  "timestamp": "2026-03-31T13:54:46.124982",
   "source": "rattrapage_manual_websearch",
   "crypto": {
     "bitcoin": {
+      "prix_usd": 66410.43,
       "prix": 66410.43,
       "variation_24h": -1.54,
       "symbole": "BTC"
     }
   },
+  "bourse": {
+    "indices": {
+      "S&P 500": {
+        "valeur": 6343.72,
+        "variation_24h": -0.39,
+        "ticker": "^GSPC"
+      },
+      "Nasdaq 100": {
+        "valeur": 20794.64,
+        "variation_24h": -0.73,
+        "ticker": "^NDX"
+      },
+      "CAC 40": {
+        "valeur": 7812.35,
+        "variation_24h": 0.51,
+        "ticker": "^FCHI"
+      },
+      "DAX": {
+        "valeur": 22726.87,
+        "variation_24h": 0.73,
+        "ticker": "^GDAXI"
+      },
+      "Dow Jones": {
+        "valeur": 42100.0,
+        "variation_24h": -0.25,
+        "ticker": "^DJI"
+      }
+    },
+    "actions": {
+      "Apple": {
+        "valeur": 253.9,
+        "variation_24h": -0.5,
+        "ticker": "AAPL"
+      },
+      "NVIDIA": {
+        "valeur": 166.48,
+        "variation_24h": 1.2,
+        "ticker": "NVDA"
+      },
+      "Tesla": {
+        "valeur": 355.28,
+        "variation_24h": -1.81,
+        "ticker": "TSLA"
+      },
+      "LVMH": {
+        "valeur": 462.05,
+        "variation_24h": 1.73,
+        "ticker": "MC.PA"
+      },
+      "TotalEnergies": {
+        "valeur": 62.5,
+        "variation_24h": 2.1,
+        "ticker": "TTE.PA"
+      },
+      "ExxonMobil": {
+        "valeur": 128.5,
+        "variation_24h": 4.56,
+        "ticker": "XOM"
+      },
+      "Lockheed Martin": {
+        "valeur": 520.0,
+        "variation_24h": 1.5,
+        "ticker": "LMT"
+      }
+    }
+  },
   "indices": {
     "S&P 500": {
       "prix": 6343.72,
+      "valeur": 6343.72,
       "variation": -0.39,
-      "ticker": "^GSPC"
+      "variation_24h": -0.39
     },
     "Nasdaq 100": {
       "prix": 20794.64,
+      "valeur": 20794.64,
       "variation": -0.73,
-      "ticker": "^NDX"
+      "variation_24h": -0.73
     },
     "CAC 40": {
       "prix": 7812.35,
+      "valeur": 7812.35,
       "variation": 0.51,
-      "ticker": "^FCHI"
+      "variation_24h": 0.51
     },
     "DAX": {
       "prix": 22726.87,
+      "valeur": 22726.87,
       "variation": 0.73,
-      "ticker": "^GDAXI"
+      "variation_24h": 0.73
     },
     "Dow Jones": {
       "prix": 42100.0,
+      "valeur": 42100.0,
       "variation": -0.25,
-      "ticker": "^DJI"
+      "variation_24h": -0.25
     }
   },
   "commodities": {
     "Or (XAU/USD)": {
+      "valeur": 4590.7,
       "prix": 4590.7,
-      "variation": 0.73,
-      "ticker": "GC=F"
+      "variation_24h": 0.73,
+      "variation": 0.73
     },
     "Pétrole WTI": {
+      "valeur": 102.08,
       "prix": 102.08,
-      "variation": -0.78,
-      "ticker": "CL=F"
+      "variation_24h": -0.78,
+      "variation": -0.78
     },
     "EUR/USD": {
+      "valeur": 1.1471,
       "prix": 1.1471,
-      "variation": 0.08,
-      "ticker": "EURUSD=X"
+      "variation_24h": 0.08,
+      "variation": 0.08
     },
     "Dollar Index (DXY)": {
+      "valeur": 100.479,
       "prix": 100.479,
-      "variation": 0.32,
-      "ticker": "DX-Y.NYB"
+      "variation_24h": 0.32,
+      "variation": 0.32
     }
   },
   "stocks": {
     "Apple": {
       "prix": 253.9,
+      "valeur": 253.9,
       "variation": -0.5,
-      "ticker": "AAPL"
+      "variation_24h": -0.5
     },
     "NVIDIA": {
       "prix": 166.48,
+      "valeur": 166.48,
       "variation": 1.2,
-      "ticker": "NVDA"
+      "variation_24h": 1.2
     },
     "Tesla": {
       "prix": 355.28,
+      "valeur": 355.28,
       "variation": -1.81,
-      "ticker": "TSLA"
+      "variation_24h": -1.81
     },
     "LVMH": {
       "prix": 462.05,
+      "valeur": 462.05,
       "variation": 1.73,
-      "ticker": "MC.PA"
+      "variation_24h": 1.73
     },
     "TotalEnergies": {
       "prix": 62.5,
+      "valeur": 62.5,
       "variation": 2.1,
-      "ticker": "TTE.PA"
+      "variation_24h": 2.1
     },
     "ExxonMobil": {
       "prix": 128.5,
+      "valeur": 128.5,
       "variation": 4.56,
-      "ticker": "XOM"
+      "variation_24h": 4.56
     },
     "Lockheed Martin": {
       "prix": 520.0,
+      "valeur": 520.0,
       "variation": 1.5,
-      "ticker": "LMT"
+      "variation_24h": 1.5
     }
   },
   "fear_greed": {
@@ -121,11 +204,11 @@
     "Lockheed Martin": 520.0
   },
   "news": [
-    "Fear & Greed Index tombe à 17 — Extreme Fear, 6 indicateurs sur 7 en zone de peur extrême",
-    "Pétrole WTI au-dessus de 100$/baril — tensions au détroit d Ormuz",
-    "DXY remonte au-dessus de 100 — valeur refuge dans le contexte guerre Iran",
-    "Or atteint 4590$ — record historique sur fond de tensions géopolitiques",
-    "Bitcoin à 66 410$ — surperforme S&P 500 et Nasdaq depuis le début de la guerre Iran",
-    "ExxonMobil bondit de +4.56% — rally pétrolier sur fond géopolitique"
+    "Fear & Greed Index tombe à 17 — Extreme Fear",
+    "Pétrole WTI au-dessus de 100$/baril — tensions Ormuz",
+    "DXY remonte au-dessus de 100 — valeur refuge",
+    "Or atteint 4590$ — record historique",
+    "Bitcoin à 66 410$ — surperforme les actions",
+    "ExxonMobil bondit de +4.56%"
   ]
 }
