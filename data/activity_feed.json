@@ -1,7 +1,53 @@
 {
-  "generated_at": "2026-03-31T16:00:23.011746",
+  "generated_at": "2026-03-31T16:30:33.199687",
   "total_events": 100,
   "events": [
+    {
+      "ts": "2026-03-31T16:30:33.173503",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:30:33.148868",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:30:33.140552",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: 📊 Prix Live — 16h30",
+      "data": {
+        "branch": "support"
+      }
+    },
+    {
+      "ts": "2026-03-31T16:29:28.103530",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (16.5h) terminée",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:29:28.080530",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (16.5h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-03-31T16:29:28.057535",
+      "agent": "Orchestrateur",
+      "type": "start",
+      "message": "Tâche: Directeur Trader — Overlap EU/US 📈",
+      "data": {
+        "branch": "trader"
+      }
+    },
     {
       "ts": "2026-03-31T16:00:22.998739",
       "agent": "Orchestrateur",
@@ -722,66 +768,24 @@
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:11.399272",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:07.362742",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:40:05.342995",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:37.757533",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:37.724001",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-03-30T21:39:29.694680",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-03-31T16:00:22.998739",
+        "ts": "2026-03-31T16:30:33.173503",
         "agent": "Orchestrateur",
         "type": "success",
         "message": "Prix live mis à jour",
         "data": {}
       },
-      "last_ts": "2026-03-31T16:00:22.998739",
+      "last_ts": "2026-03-31T16:30:33.173503",
       "last_type": "success",
       "last_message": "Prix live mis à jour",
-      "total_today": 36,
+      "total_today": 42,
       "errors_today": 0,
-      "successes_today": 12
+      "successes_today": 14
     },
     {
       "agent": "Agent Veille",
@@ -996,4 +1000,4 @@
       "successes_today": 0
     }
   ]
-}
+}                                                                                                                                                                                        

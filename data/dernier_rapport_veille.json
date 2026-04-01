@@ -1,168 +1,256 @@
 {
   "meta": {
-    "timestamp": "2026-03-31 14:30",
-    "date": "31/03/2026",
-    "semaine": "Semaine 13 de 2026"
+    "timestamp": "2026-04-01 22:43",
+    "date": "01/04/2026",
+    "semaine": "Semaine 14 de 2026"
   },
   "crypto": {
     "BTC": {
       "nom": "Bitcoin",
-      "prix_usd": 66683,
-      "variation_24h": -1.74,
-      "variation_7j": -6.23,
-      "market_cap_mrd": 1333.4,
-      "volume_24h_mrd": 49.7,
-      "ath_usd": 126080,
-      "ath_pct": -47.1
+      "prix_usd": 68511,
+      "variation_24h": 2.7,
+      "variation_7j": -3.1,
+      "market_cap_mrd": 1360,
+      "volume_24h_mrd": 52.3,
+      "ath_usd": 126210,
+      "ath_pct": -45.7
     }
   },
   "news_crypto": [
     {
-      "titre": "edgeX (EDGE) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/edgex",
-      "date": "2026-03-31"
+      "titre": "Bitcoin repasse au-dessus des 68 000$ grâce aux espoirs de fin de guerre en Iran",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com",
+      "date": "2026-04-01"
     },
     {
-      "titre": "Zcash (ZEC) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/zcash",
-      "date": "2026-03-31"
+      "titre": "Le Fear & Greed crypto tombe à 8/100 — signal contrarian historique",
+      "source": "Blockchain Magazine",
+      "url": "https://blockchainmagazine.net",
+      "date": "2026-04-01"
     },
     {
-      "titre": "Quantum Resistant Ledger (QRL) est en tendance sur CoinGecko",
+      "titre": "edgeX (EDGE) et Zcash (ZEC) en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/quantum-resistant-ledger",
-      "date": "2026-03-31"
+      "url": "https://www.coingecko.com",
+      "date": "2026-04-01"
     },
     {
-      "titre": "Bittensor (TAO) est en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/bittensor",
-      "date": "2026-03-31"
+      "titre": "SpaceX dépose son dossier d'IPO tant attendu",
+      "source": "The Street",
+      "url": "https://www.thestreet.com",
+      "date": "2026-04-01"
+    }
+  ],
+  "indices": {
+    "S&P 500": {
+      "prix": 6575.32,
+      "variation_pct": 0.72,
+      "ticker": "^GSPC"
+    },
+    "Nasdaq 100": {
+      "prix": 21840.95,
+      "variation_pct": 1.16,
+      "ticker": "^NDX"
+    },
+    "Dow Jones": {
+      "prix": 46565.74,
+      "variation_pct": 0.48,
+      "ticker": "^DJI"
+    },
+    "CAC 40": {
+      "prix": 7850,
+      "variation_pct": 1.9,
+      "ticker": "^FCHI"
+    },
+    "DAX": {
+      "prix": 22400,
+      "variation_pct": 2.31,
+      "ticker": "^GDAXI"
+    }
+  },
+  "stocks": {
+    "Apple": {
+      "prix": 255.1,
+      "variation_pct": 0.8,
+      "ticker": "AAPL",
+      "market_cap_mrd": 3850
+    },
+    "NVIDIA": {
+      "prix": 148.5,
+      "variation_pct": 2.1,
+      "ticker": "NVDA",
+      "market_cap_mrd": 3620
+    },
+    "Tesla": {
+      "prix": 275.3,
+      "variation_pct": 1.5,
+      "ticker": "TSLA",
+      "market_cap_mrd": 880
+    },
+    "LVMH": {
+      "prix": 456.15,
+      "variation_pct": -0.8,
+      "ticker": "MC.PA",
+      "market_cap_mrd": 228
+    },
+    "TotalEnergies": {
+      "prix": 52.8,
+      "variation_pct": -3.2,
+      "ticker": "TTE.PA",
+      "market_cap_mrd": 124
+    },
+    "ExxonMobil": {
+      "prix": 108.2,
+      "variation_pct": -4.1,
+      "ticker": "XOM",
+      "market_cap_mrd": 440
+    },
+    "Lockheed Martin": {
+      "prix": 520.5,
+      "variation_pct": 1.2,
+      "ticker": "LMT",
+      "market_cap_mrd": 125
+    }
+  },
+  "matieres_premieres": {
+    "Or (XAU/USD)": {
+      "prix": 5070,
+      "variation_pct": 0.4,
+      "ticker": "GC=F"
+    },
+    "Pétrole WTI": {
+      "prix": 101.81,
+      "variation_pct": -4.2,
+      "ticker": "CL=F"
+    },
+    "Dollar Index (DXY)": {
+      "prix": 98.69,
+      "variation_pct": -0.3,
+      "ticker": "DX-Y.NYB"
+    },
+    "EUR/USD": {
+      "prix": 1.0845,
+      "variation_pct": 0.25,
+      "ticker": "EURUSD=X"
+    }
+  },
+  "fear_greed": {
+    "value": 14,
+    "label": "Extreme Fear",
+    "previous": 12
+  },
+  "fear_greed_crypto": {
+    "value": 8,
+    "label": "Extreme Fear"
+  },
+  "mood": {
+    "valeur": 14,
+    "sentiment": "Extreme Fear",
+    "crypto_score": 8
+  },
+  "news": [
+    {
+      "titre": "Bitcoin repasse au-dessus des 68 000$ grâce aux espoirs de fin de guerre en Iran",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com",
+      "date": "2026-04-01"
     },
     {
-      "titre": "Pudgy Penguins (PENGU) est en tendance sur CoinGecko",
+      "titre": "Le Fear & Greed crypto tombe à 8/100 — signal contrarian historique",
+      "source": "Blockchain Magazine",
+      "url": "https://blockchainmagazine.net",
+      "date": "2026-04-01"
+    },
+    {
+      "titre": "edgeX (EDGE) et Zcash (ZEC) en tendance sur CoinGecko",
       "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com/en/coins/pudgy-penguins",
-      "date": "2026-03-31"
+      "url": "https://www.coingecko.com",
+      "date": "2026-04-01"
+    },
+    {
+      "titre": "SpaceX dépose son dossier d'IPO tant attendu",
+      "source": "The Street",
+      "url": "https://www.thestreet.com",
+      "date": "2026-04-01"
     }
   ],
   "bourse": {
     "indices": {
-      "CAC 40": {
-        "valeur": 7809.18,
-        "variation_24h": 0.47,
-        "variation_7j": -0.48,
-        "ticker": "^FCHI"
-      },
       "S&P 500": {
-        "valeur": 6343.72,
-        "variation_24h": -0.39,
-        "variation_7j": -3.24,
+        "valeur": 6575.32,
+        "variation_24h": 0.72,
+        "variation_7j": 1.8,
         "ticker": "^GSPC"
       },
       "Nasdaq 100": {
-        "valeur": 22953.38,
-        "variation_24h": -0.78,
-        "variation_7j": -4.37,
+        "valeur": 21840.95,
+        "variation_24h": 1.16,
+        "variation_7j": 2.3,
         "ticker": "^NDX"
       },
-      "DAX": {
-        "valeur": 22711.62,
-        "variation_24h": 0.66,
-        "variation_7j": -1.07,
-        "ticker": "^GDAXI"
-      },
       "Dow Jones": {
-        "valeur": 45216.14,
-        "variation_24h": 0.11,
-        "variation_7j": -1.97,
+        "valeur": 46565.74,
+        "variation_24h": 0.48,
+        "variation_7j": 1.2,
         "ticker": "^DJI"
+      },
+      "CAC 40": {
+        "valeur": 7850,
+        "variation_24h": 1.9,
+        "variation_7j": 0.5,
+        "ticker": "^FCHI"
+      },
+      "DAX": {
+        "valeur": 22400,
+        "variation_24h": 2.31,
+        "variation_7j": 1.9,
+        "ticker": "^GDAXI"
       }
     },
     "actions": {
       "Apple": {
-        "prix": 246.63,
-        "variation_24h": -0.87,
+        "prix": 255.1,
+        "variation_24h": 0.8,
         "ticker": "AAPL",
-        "devise": "USD",
-        "market_cap_mrd": 3624.9
+        "devise": "USD"
       },
       "NVIDIA": {
-        "prix": 165.17,
-        "variation_24h": -1.4,
+        "prix": 148.5,
+        "variation_24h": 2.1,
         "ticker": "NVDA",
-        "devise": "USD",
-        "market_cap_mrd": 4014.5
+        "devise": "USD"
       },
       "Tesla": {
-        "prix": 355.28,
-        "variation_24h": -1.81,
+        "prix": 275.3,
+        "variation_24h": 1.5,
         "ticker": "TSLA",
-        "devise": "USD",
-        "market_cap_mrd": 1333.2
+        "devise": "USD"
       },
       "LVMH": {
-        "prix": 459.6,
-        "variation_24h": -0.87,
+        "prix": 456.15,
+        "variation_24h": -0.8,
         "ticker": "MC.PA",
-        "devise": "EUR",
-        "market_cap_mrd": 227.9
+        "devise": "EUR"
       },
       "TotalEnergies": {
-        "prix": 80.8,
-        "variation_24h": 0.79,
+        "prix": 52.8,
+        "variation_24h": -3.2,
         "ticker": "TTE.PA",
-        "devise": "EUR",
-        "market_cap_mrd": 172.6
+        "devise": "EUR"
       },
       "ExxonMobil": {
-        "prix": 171.47,
-        "variation_24h": 0.28,
+        "prix": 108.2,
+        "variation_24h": -4.1,
         "ticker": "XOM",
-        "devise": "USD",
-        "market_cap_mrd": 714.5
+        "devise": "USD"
       },
       "Lockheed Martin": {
-        "prix": 598.57,
-        "variation_24h": -2.8,
+        "prix": 520.5,
+        "variation_24h": 1.2,
         "ticker": "LMT",
-        "devise": "USD",
-        "market_cap_mrd": 137.9
+        "devise": "USD"
       }
     }
-  },
-  "commodities": {
-    "Dollar Index (DXY)": {
-      "valeur": 100.244,
-      "variation_24h": -0.26,
-      "variation_7j": 0.34,
-      "ticker": "DX-Y.NYB"
-    },
-    "Pétrole WTI": {
-      "valeur": 102.98,
-      "variation_24h": 0.1,
-      "variation_7j": 9.0,
-      "ticker": "CL=F"
-    },
-    "Or (XAU/USD)": {
-      "valeur": 4608.1001,
-      "variation_24h": 1.81,
-      "variation_7j": 5.32,
-      "ticker": "GC=F"
-    },
-    "EUR/USD": {
-      "valeur": 1.1507,
-      "variation_24h": 0.13,
-      "variation_7j": -0.92,
-      "ticker": "EURUSD=X"
-    }
-  },
-  "mood": {
-    "valeur": 11,
-    "sentiment": "Extreme Fear",
-    "hier_valeur": 8,
-    "hier_sentiment": "Extreme Fear"
   }
 }
