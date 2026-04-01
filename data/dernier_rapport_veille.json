@@ -1,6 +1,6 @@
 {
   "meta": {
-    "timestamp": "2026-04-01 22:43",
+    "timestamp": "2026-04-01 23:55",
     "date": "01/04/2026",
     "semaine": "Semaine 14 de 2026"
   },
@@ -18,21 +18,15 @@
   },
   "news_crypto": [
     {
-      "titre": "Bitcoin repasse au-dessus des 68 000$ grâce aux espoirs de fin de guerre en Iran",
+      "titre": "Bitcoin repasse au-dessus des 68 000$ — espoirs de fin de guerre Iran",
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com",
       "date": "2026-04-01"
     },
     {
-      "titre": "Le Fear & Greed crypto tombe à 8/100 — signal contrarian historique",
+      "titre": "Fear & Greed crypto à 8/100 — signal contrarian historique",
       "source": "Blockchain Magazine",
       "url": "https://blockchainmagazine.net",
-      "date": "2026-04-01"
-    },
-    {
-      "titre": "edgeX (EDGE) et Zcash (ZEC) en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com",
       "date": "2026-04-01"
     },
     {
@@ -73,72 +67,60 @@
     "Apple": {
       "prix": 255.1,
       "variation_pct": 0.8,
-      "ticker": "AAPL",
-      "market_cap_mrd": 3850
+      "ticker": "AAPL"
     },
     "NVIDIA": {
       "prix": 148.5,
       "variation_pct": 2.1,
-      "ticker": "NVDA",
-      "market_cap_mrd": 3620
+      "ticker": "NVDA"
     },
     "Tesla": {
       "prix": 275.3,
       "variation_pct": 1.5,
-      "ticker": "TSLA",
-      "market_cap_mrd": 880
+      "ticker": "TSLA"
     },
     "LVMH": {
       "prix": 456.15,
       "variation_pct": -0.8,
-      "ticker": "MC.PA",
-      "market_cap_mrd": 228
+      "ticker": "MC.PA"
     },
     "TotalEnergies": {
       "prix": 52.8,
       "variation_pct": -3.2,
-      "ticker": "TTE.PA",
-      "market_cap_mrd": 124
+      "ticker": "TTE.PA"
     },
     "ExxonMobil": {
       "prix": 108.2,
       "variation_pct": -4.1,
-      "ticker": "XOM",
-      "market_cap_mrd": 440
+      "ticker": "XOM"
     },
     "Lockheed Martin": {
       "prix": 520.5,
       "variation_pct": 1.2,
-      "ticker": "LMT",
-      "market_cap_mrd": 125
+      "ticker": "LMT"
     }
   },
   "matieres_premieres": {
     "Or (XAU/USD)": {
       "prix": 5070,
-      "variation_pct": 0.4,
-      "ticker": "GC=F"
+      "variation_pct": 0.4
     },
     "Pétrole WTI": {
       "prix": 101.81,
-      "variation_pct": -4.2,
-      "ticker": "CL=F"
+      "variation_pct": -4.2
     },
     "Dollar Index (DXY)": {
       "prix": 98.69,
-      "variation_pct": -0.3,
-      "ticker": "DX-Y.NYB"
+      "variation_pct": -0.3
     },
     "EUR/USD": {
       "prix": 1.0845,
-      "variation_pct": 0.25,
-      "ticker": "EURUSD=X"
+      "variation_pct": 0.25
     }
   },
   "fear_greed": {
     "value": 14,
-    "label": "Extreme Fear",
-    "previous": 12
+    "label": "Extreme Fear"
   },
   "fear_greed_crypto": {
     "value": 8,
@@ -146,66 +128,34 @@
   },
   "mood": {
     "valeur": 14,
-    "sentiment": "Extreme Fear",
-    "crypto_score": 8
+    "sentiment": "Extreme Fear"
   },
-  "news": [
-    {
-      "titre": "Bitcoin repasse au-dessus des 68 000$ grâce aux espoirs de fin de guerre en Iran",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com",
-      "date": "2026-04-01"
-    },
-    {
-      "titre": "Le Fear & Greed crypto tombe à 8/100 — signal contrarian historique",
-      "source": "Blockchain Magazine",
-      "url": "https://blockchainmagazine.net",
-      "date": "2026-04-01"
-    },
-    {
-      "titre": "edgeX (EDGE) et Zcash (ZEC) en tendance sur CoinGecko",
-      "source": "CoinGecko Trending",
-      "url": "https://www.coingecko.com",
-      "date": "2026-04-01"
-    },
-    {
-      "titre": "SpaceX dépose son dossier d'IPO tant attendu",
-      "source": "The Street",
-      "url": "https://www.thestreet.com",
-      "date": "2026-04-01"
-    }
-  ],
   "bourse": {
     "indices": {
       "S&P 500": {
         "valeur": 6575.32,
         "variation_24h": 0.72,
-        "variation_7j": 1.8,
-        "ticker": "^GSPC"
+        "variation_7j": 1.8
       },
       "Nasdaq 100": {
         "valeur": 21840.95,
         "variation_24h": 1.16,
-        "variation_7j": 2.3,
-        "ticker": "^NDX"
+        "variation_7j": 2.3
       },
       "Dow Jones": {
         "valeur": 46565.74,
         "variation_24h": 0.48,
-        "variation_7j": 1.2,
-        "ticker": "^DJI"
+        "variation_7j": 1.2
       },
       "CAC 40": {
         "valeur": 7850,
         "variation_24h": 1.9,
-        "variation_7j": 0.5,
-        "ticker": "^FCHI"
+        "variation_7j": 0.5
       },
       "DAX": {
         "valeur": 22400,
         "variation_24h": 2.31,
-        "variation_7j": 1.9,
-        "ticker": "^GDAXI"
+        "variation_7j": 1.9
       }
     },
     "actions": {
@@ -252,5 +202,6 @@
         "devise": "USD"
       }
     }
-  }
+  },
+  "news": []
 }

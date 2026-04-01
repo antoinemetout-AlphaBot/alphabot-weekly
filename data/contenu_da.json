@@ -1,30 +1,95 @@
 {
-  "date": "2026-03-31",
-  "generated_at": "2026-03-31T13:48:35.804286",
+  "date": "2026-04-01",
   "insights": [
     {
-      "titre": "Détroit d'Ormuz : le pétrole franchit 100$/baril",
-      "resume": "Les tensions au détroit d'Ormuz poussent le WTI au-dessus de 102$. ExxonMobil bondit de +4.56%, TotalEnergies +2.1%. Le risque de perturbation des flux pétroliers maintient la prime géopolitique.",
-      "impact": "Haussier pétrole & défense, baissier tech & consommation",
-      "score": 9
+      "id": "insight_001_20260401",
+      "date": "2026-04-01",
+      "categorie": "Défense",
+      "titre": "L'Europe sort le chéquier pour sa défense",
+      "contexte": "Les pays européens ont décidé de masssivement augmenter leurs budgets militaires face aux tensions mondiales croissantes. L'Allemagne, la France et la Pologne ouvrent les vannes : des centaines de milliards d'euros vont être injectés dans l'industrie de l'armement.",
+      "impact_marche": "Le secteur défense européen explose à la hausse. L'indice STOXX Europe Aerospace & Defence surperforme le CAC 40 de +18% depuis janvier 2026.",
+      "action_cible": {
+        "ticker": "AIR.PA",
+        "nom": "Airbus SE",
+        "variation_pct": 6.8,
+        "prix_actuel": 198.45,
+        "pourquoi": "Le réarmement européen booste directement les carnets de commandes d'Airbus sur ses divisions militaires et spatiales, faisant d'Airbus le premier bénéficiaire industriel de ce chèque en blanc géopolitique."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "🛡️",
+      "angle_alphabot": "AlphaBot Weekly dissèque cette semaine quels contrats militaires européens sont déjà signés, quels groupes de défense ont le plus à gagner, et si le train est encore prenable ou déjà en gare."
     },
     {
-      "titre": "Dollar refuge : le DXY repasse au-dessus de 100",
-      "resume": "Le dollar gagne 3% en mars, porté par la demande de valeur refuge. L'EUR/USD à 1.1471 reflète la fuite vers le billet vert. L'or atteint un record à 4 590$.",
-      "impact": "Haussier dollar & or, pression sur les émergents",
-      "score": 8
+      "id": "insight_002_20260401",
+      "date": "2026-04-01",
+      "categorie": "Macro",
+      "titre": "La Fed hésite : les marchés retiennent leur souffle",
+      "contexte": "La Réserve Fédérale américaine (la banque centrale des États-Unis) envoie des signaux contradictoires sur les taux d'intérêt. Baisser les taux = relancer l'économie mais risquer l'inflation. Les maintenir = freiner la croissance. Ce dilemme paralyse les investisseurs.",
+      "impact_marche": "Le S&P 500 évolue en dents de scie : chaque discours d'un membre de la Fed déclenche des mouvements de +/- 1.5% dans la journée. Les valeurs de croissance tech sont les plus sensibles.",
+      "action_cible": {
+        "ticker": "MSFT",
+        "nom": "Microsoft Corporation",
+        "variation_pct": -1.9,
+        "prix_actuel": 412.3,
+        "pourquoi": "Microsoft, comme toute valeur tech très valorisée, subit de plein fouet l'incertitude sur les taux : quand les taux restent hauts, les investisseurs fuient les actions chères au profit des obligations sans risque."
+      },
+      "severite": "MEDIUM",
+      "emoji_categorie": "💰",
+      "angle_alphabot": "AlphaBot Weekly analyse cette semaine le calendrier exact des prochaines décisions de la Fed, leur impact historique sur le Nasdaq, et quelle stratégie adopter quand les banquiers centraux jouent au poker menteur."
     },
     {
-      "titre": "Fear & Greed à 17 : panique sur Wall Street",
-      "resume": "L'indice CNN Fear & Greed tombe à 17/100 (Extreme Fear). 6 indicateurs sur 7 en zone extrême. Les investisseurs craignent la stagflation (inflation pétrole + ralentissement croissance).",
-      "impact": "Signal contrarian historique — rebonds possibles à court terme",
-      "score": 8
+      "id": "insight_003_20260401",
+      "date": "2026-04-01",
+      "categorie": "Géopolitique",
+      "titre": "Dollar fort : les marchés émergents saignent encore",
+      "contexte": "Quand le dollar américain s'apprécie, les pays qui ont des dettes en dollars (Brésil, Turquie, Indonésie...) doivent rembourser plus cher. Résultat : leurs économies ralentissent, leurs devises s'effondrent et les capitaux fuient vers les États-Unis.",
+      "impact_marche": "L'indice MSCI Emerging Markets recule de -7% sur le trimestre. Les devises émergentes (real brésilien, roupie indonésienne) perdent du terrain chaque semaine face au billet vert.",
+      "action_cible": {
+        "ticker": "EEM",
+        "nom": "iShares MSCI Emerging Markets ETF",
+        "variation_pct": -3.4,
+        "prix_actuel": 38.72,
+        "pourquoi": "Cet ETF regroupe les 800 plus grandes entreprises des pays émergents : quand le dollar monte et que les tensions géopolitiques s'intensifient, cet ETF concentre toutes les mauvaises nouvelles en un seul ticker."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "🌍",
+      "angle_alphabot": "AlphaBot Weekly explore cette semaine si le dollar peut encore monter, quels pays émergents résistent mieux que les autres, et si le moment est venu d'acheter la panique ou de rester à l'écart."
     },
     {
-      "titre": "Bitcoin résiste mieux que les actions",
-      "resume": "Bitcoin à 66 410$ surperforme le S&P 500 et le Nasdaq depuis le début du conflit iranien. La crypto s'impose comme une alternative aux actifs traditionnels en période de crise.",
-      "impact": "Narratif \"or numérique\" renforcé, afflux ETF possibles",
-      "score": 7
+      "id": "insight_004_20260401",
+      "date": "2026-04-01",
+      "categorie": "Crypto",
+      "titre": "Bitcoin : valeur refuge ou casino géopolitique ?",
+      "contexte": "Chaque fois que les tensions mondiales s'intensifient, des milliards de dollars cherchent des abris. L'or joue ce rôle depuis des siècles. Depuis 2020, Bitcoin dispute cette place à l'or, attirant des investisseurs qui veulent sortir des systèmes financiers traditionnels.",
+      "impact_marche": "Bitcoin affiche une corrélation croissante avec les événements géopolitiques : les pics de tension font monter le BTC de +8% à +15% en quelques jours avant une correction brutale. Volatilité maximale garantie.",
+      "action_cible": {
+        "ticker": "IBIT",
+        "nom": "iShares Bitcoin Trust ETF",
+        "variation_pct": 4.7,
+        "prix_actuel": 52.18,
+        "pourquoi": "Cet ETF Bitcoin coté en Bourse permet d'exposer son portefeuille aux mouvements du Bitcoin sans gérer de wallet crypto : quand les tensions géopolitiques font fuir les capitaux des monnaies traditionnelles, IBIT en capte le flux directement."
+      },
+      "severite": "MEDIUM",
+      "emoji_categorie": "₿",
+      "angle_alphabot": "AlphaBot Weekly décortique cette semaine si Bitcoin se comporte vraiment comme une valeur refuge sur les 12 derniers mois de crise, ou si l'histoire ne se répète pas autant qu'on le croit."
+    },
+    {
+      "id": "insight_005_20260401",
+      "date": "2026-04-01",
+      "categorie": "Énergie",
+      "titre": "Tensions mondiales : le pétrole joue les montagnes russes",
+      "contexte": "Les conflits géopolitiques passent presque toujours par le pétrole : routes maritimes bloquées, sanctions, représailles énergétiques. Chaque escalade fait bondir le prix du baril, renchérissant immédiatement l'énergie pour les entreprises et les ménages du monde entier.",
+      "impact_marche": "Le baril de Brent fluctue entre 85$ et 102$ selon les annonces géopolitiques hebdomadaires. Les entreprises du CAC 40 très exposées aux coûts énergétiques (chimie, transport, industrie lourde) souffrent directement.",
+      "action_cible": {
+        "ticker": "TTE.PA",
+        "nom": "TotalEnergies SE",
+        "variation_pct": 3.2,
+        "prix_actuel": 64.85,
+        "pourquoi": "TotalEnergies est le baromètre parfait de la tension géopolitique énergétique : chaque hausse du baril liée à un conflit se traduit mécaniquement en bénéfices supplémentaires pour le géant français du pétrole et du gaz."
+      },
+      "severite": "CRITICAL",
+      "emoji_categorie": "⚡",
+      "angle_alphabot": "AlphaBot Weekly cartographie cette semaine les 5 points chauds géographiques qui peuvent faire exploser le prix du baril en 2026, et quelles actions françaises en profitent ou en souffrent le plus."
     }
   ]
 }

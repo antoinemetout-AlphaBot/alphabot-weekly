@@ -1,95 +1,44 @@
 {
-  "updated_at": "2026-03-31T13:48:43.911895",
-  "date": "2026-03-31",
+  "updated_at": "2026-04-01T23:55:00",
   "prices": {
-    "bitcoin": {
-      "price": 66410.43,
-      "change_pct": -1.54,
-      "symbol": "BTC"
+    "BTC": {
+      "prix": 68511,
+      "variation": 2.7,
+      "devise": "USD"
     },
-    "sp500": {
-      "price": 6343.72,
-      "change_pct": -0.39,
-      "symbol": "S&P 500"
+    "S&P 500": {
+      "prix": 6575.32,
+      "variation": 0.72
     },
-    "nasdaq": {
-      "price": 20794.64,
-      "change_pct": -0.73,
-      "symbol": "NDX"
+    "Nasdaq": {
+      "prix": 21840.95,
+      "variation": 1.16
     },
-    "cac40": {
-      "price": 7812.35,
-      "change_pct": 0.51,
-      "symbol": "CAC 40"
+    "CAC 40": {
+      "prix": 7850,
+      "variation": 1.9
     },
-    "dax": {
-      "price": 22726.87,
-      "change_pct": 0.73,
-      "symbol": "DAX"
+    "DAX": {
+      "prix": 22400,
+      "variation": 2.31
     },
-    "dowjones": {
-      "price": 42100.0,
-      "change_pct": -0.25,
-      "symbol": "DJI"
+    "Or": {
+      "prix": 5070,
+      "variation": 0.4,
+      "devise": "USD"
     },
-    "gold": {
-      "price": 4590.7,
-      "change_pct": 0.73,
-      "symbol": "XAU"
+    "Pétrole": {
+      "prix": 101.81,
+      "variation": -4.2,
+      "devise": "USD"
     },
-    "oil_wti": {
-      "price": 102.08,
-      "change_pct": -0.78,
-      "symbol": "WTI"
+    "DXY": {
+      "prix": 98.69,
+      "variation": -0.3
     },
-    "eurusd": {
-      "price": 1.1471,
-      "change_pct": 0.08,
-      "symbol": "EUR/USD"
-    },
-    "dxy": {
-      "price": 100.479,
-      "change_pct": 0.32,
-      "symbol": "DXY"
-    },
-    "aapl": {
-      "price": 253.9,
-      "change_pct": -0.5,
-      "symbol": "AAPL"
-    },
-    "nvda": {
-      "price": 166.48,
-      "change_pct": 1.2,
-      "symbol": "NVDA"
-    },
-    "tsla": {
-      "price": 355.28,
-      "change_pct": -1.81,
-      "symbol": "TSLA"
-    },
-    "mc_pa": {
-      "price": 462.05,
-      "change_pct": 1.73,
-      "symbol": "MC.PA"
-    },
-    "tte_pa": {
-      "price": 62.5,
-      "change_pct": 2.1,
-      "symbol": "TTE.PA"
-    },
-    "xom": {
-      "price": 128.5,
-      "change_pct": 4.56,
-      "symbol": "XOM"
-    },
-    "lmt": {
-      "price": 520.0,
-      "change_pct": 1.5,
-      "symbol": "LMT"
+    "EUR/USD": {
+      "prix": 1.0845,
+      "variation": 0.25
     }
-  },
-  "fear_greed": {
-    "value": 17,
-    "label": "Extreme Fear"
   }
 }

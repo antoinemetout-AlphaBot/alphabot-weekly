@@ -1649,6 +1649,171 @@ nav {
   color: #fff;
 }
 </style>
+
+<!-- DA-AMELIORATIONS-2026-04-01 -->
+<style>
+/* ── TYPOGRAPHIE GLOBALE ── */
+body {
+  line-height: 1.72;
+  letter-spacing: .01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  line-height: 1.04;
+  letter-spacing: -2px;
+}
+
+/* ── HERO TAG AMÉLIORÉ ── */
+.hero-tag {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 24px rgba(34,197,94,.12), inset 0 1px 0 rgba(255,255,255,.06);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+.hero-tag:hover {
+  box-shadow: 0 0 36px rgba(34,197,94,.22);
+  transform: translateY(-1px);
+}
+
+/* ── GRADIENT H1 RENFORCÉ ── */
+.h1-gradient {
+  filter: drop-shadow(0 0 48px rgba(245,200,66,.28)) drop-shadow(0 0 16px rgba(34,211,238,.18));
+}
+
+/* ── HERO STATS CARDS ── */
+.hero-stat {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 18px 28px;
+  backdrop-filter: blur(16px);
+  transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s ease, border-color .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.hero-stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-stat:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(34,211,238,.22);
+  box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 24px rgba(34,211,238,.08);
+}
+
+.hero-stat-val {
+  font-size: 32px;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px currentColor;
+}
+
+/* ── FORM AMÉLIORÉ ── */
+.form-group input {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  transition: border-color .3s, box-shadow .3s, background .3s;
+  font-size: 15px;
+}
+.form-group input:focus {
+  border-color: rgba(34,211,238,.55);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.08), 0 8px 32px rgba(0,0,0,.3);
+  background: rgba(255,255,255,.07);
+}
+.form-group input::placeholder { color: rgba(148,163,184,.5); }
+
+/* ── NAV AMÉLIORÉE ── */
+nav {
+  backdrop-filter: blur(24px);
+  background: rgba(4,9,26,.88) !important;
+  border-bottom: 1px solid rgba(34,211,238,.1) !important;
+  box-shadow: 0 1px 0 rgba(34,211,238,.05), 0 8px 40px rgba(0,0,0,.6) !important;
+  transition: background .3s, box-shadow .3s;
+}
+.nav-brand {
+  letter-spacing: -.8px;
+  font-size: 20px;
+  transition: filter .3s;
+}
+.nav-brand:hover { filter: drop-shadow(0 0 12px rgba(34,211,238,.5)); }
+
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #22d3ee) !important;
+  padding: 10px 24px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(34,211,238,.25), inset 0 1px 0 rgba(255,255,255,.15) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: .2px;
+  transition: transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s ease !important;
+}
+.nav-cta:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 14px 36px rgba(34,211,238,.4), inset 0 1px 0 rgba(255,255,255,.2) !important;
+}
+
+/* ── ORB RENFORCÉS ── */
+.orb1 { opacity: .9; }
+.orb2 { opacity: .85; }
+
+/* ── SCROLLBAR PREMIUM ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,.02); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyan), var(--gold));
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(34,211,238,.4);
+}
+
+/* ── ANIMATIONS GLOBALES AMÉLIORÉES ── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── GLASSMORPHISM GLOBAL CARTES ── */
+[class*="card"], [class*="-card"], .glass {
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.07);
+  transition: transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+[class*="card"]:hover, [class*="-card"]:hover {
+  transform: translateY(-5px) scale(1.015);
+  border-color: rgba(34,211,238,.18);
+  box-shadow: 0 24px 60px rgba(0,0,0,.45), 0 0 32px rgba(34,211,238,.07);
+}
+
+/* ── GRADIENT BORDER UTILITAIRE ── */
+.hero-inner::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34,211,238,.06), transparent 50%, rgba(245,200,66,.04));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── LIVE DOT GLOW ── */
+.live-dot {
+  box-shadow: 0 0 8px rgba(34,197,94,.8), 0 0 16px rgba(34,197,94,.4);
+}
+
+/* ── SELECTION COULEUR ── */
+::selection {
+  background: rgba(34,211,238,.25);
+  color: #fff;
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:#22d3ee;color:#04091a;padding:8px 16px;z-index:1000;font-weight:600;font-size:14px;transition:top .2s;border-radius:0 0 8px 0;">Aller au contenu principal</a>
