@@ -1,0 +1,67 @@
+{
+  "date": "2026-04-01 23:56",
+  "etapes": {
+    "audit": {
+      "ok": true,
+      "score": 70,
+      "problemes": 3
+    },
+    "corrections": {
+      "ok": true,
+      "pages_corrigees": 1,
+      "details": {
+        "index.html": [
+          "aucune correction nécessaire"
+        ],
+        "investissement.html": [
+          "aucune correction nécessaire"
+        ],
+        "newsletter.html": [
+          "aucune correction nécessaire"
+        ],
+        "newsletters.html": [
+          "nav injectée",
+          "CSS nav ajouté",
+          "script nav ajouté",
+          "footer injecté",
+          "CSS footer ajouté"
+        ],
+        "espace-pilotage.html": [
+          "aucune correction nécessaire"
+        ]
+      }
+    },
+    "navigation": {
+      "ok": true,
+      "pages_mises_a_jour": 2
+    },
+    "insights": {
+      "ok": true,
+      "count": 5,
+      "injected_in_index": false,
+      "html_path": "outputs/section_da_2026-04-01.html"
+    },
+    "visuels": {
+      "ok": true,
+      "details": [
+        {
+          "page": "index.html",
+          "status": "improved",
+          "css_rules": 33
+        },
+        {
+          "page": "investissement.html",
+          "status": "improved",
+          "css_rules": 42
+        },
+        {
+          "page": "newsletter.html",
+          "status": "write_verification_failed"
+        }
+      ]
+    }
+  },
+  "success": true,
+  "pages_ameliorees": 2,
+  "insights_count": 5
+}

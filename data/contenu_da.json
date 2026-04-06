@@ -1,95 +1,59 @@
 {
-  "date": "2026-04-01",
+  "date": "2026-04-02",
   "insights": [
     {
-      "id": "insight_001_20260401",
-      "date": "2026-04-01",
-      "categorie": "Défense",
-      "titre": "L'Europe sort le chéquier pour sa défense",
-      "contexte": "Les pays européens ont décidé de masssivement augmenter leurs budgets militaires face aux tensions mondiales croissantes. L'Allemagne, la France et la Pologne ouvrent les vannes : des centaines de milliards d'euros vont être injectés dans l'industrie de l'armement.",
-      "impact_marche": "Le secteur défense européen explose à la hausse. L'indice STOXX Europe Aerospace & Defence surperforme le CAC 40 de +18% depuis janvier 2026.",
-      "action_cible": {
-        "ticker": "AIR.PA",
-        "nom": "Airbus SE",
-        "variation_pct": 6.8,
-        "prix_actuel": 198.45,
-        "pourquoi": "Le réarmement européen booste directement les carnets de commandes d'Airbus sur ses divisions militaires et spatiales, faisant d'Airbus le premier bénéficiaire industriel de ce chèque en blanc géopolitique."
-      },
-      "severite": "HIGH",
-      "emoji_categorie": "🛡️",
-      "angle_alphabot": "AlphaBot Weekly dissèque cette semaine quels contrats militaires européens sont déjà signés, quels groupes de défense ont le plus à gagner, et si le train est encore prenable ou déjà en gare."
-    },
-    {
-      "id": "insight_002_20260401",
-      "date": "2026-04-01",
-      "categorie": "Macro",
-      "titre": "La Fed hésite : les marchés retiennent leur souffle",
-      "contexte": "La Réserve Fédérale américaine (la banque centrale des États-Unis) envoie des signaux contradictoires sur les taux d'intérêt. Baisser les taux = relancer l'économie mais risquer l'inflation. Les maintenir = freiner la croissance. Ce dilemme paralyse les investisseurs.",
-      "impact_marche": "Le S&P 500 évolue en dents de scie : chaque discours d'un membre de la Fed déclenche des mouvements de +/- 1.5% dans la journée. Les valeurs de croissance tech sont les plus sensibles.",
-      "action_cible": {
-        "ticker": "MSFT",
-        "nom": "Microsoft Corporation",
-        "variation_pct": -1.9,
-        "prix_actuel": 412.3,
-        "pourquoi": "Microsoft, comme toute valeur tech très valorisée, subit de plein fouet l'incertitude sur les taux : quand les taux restent hauts, les investisseurs fuient les actions chères au profit des obligations sans risque."
-      },
-      "severite": "MEDIUM",
-      "emoji_categorie": "💰",
-      "angle_alphabot": "AlphaBot Weekly analyse cette semaine le calendrier exact des prochaines décisions de la Fed, leur impact historique sur le Nasdaq, et quelle stratégie adopter quand les banquiers centraux jouent au poker menteur."
-    },
-    {
-      "id": "insight_003_20260401",
-      "date": "2026-04-01",
-      "categorie": "Géopolitique",
-      "titre": "Dollar fort : les marchés émergents saignent encore",
-      "contexte": "Quand le dollar américain s'apprécie, les pays qui ont des dettes en dollars (Brésil, Turquie, Indonésie...) doivent rembourser plus cher. Résultat : leurs économies ralentissent, leurs devises s'effondrent et les capitaux fuient vers les États-Unis.",
-      "impact_marche": "L'indice MSCI Emerging Markets recule de -7% sur le trimestre. Les devises émergentes (real brésilien, roupie indonésienne) perdent du terrain chaque semaine face au billet vert.",
-      "action_cible": {
-        "ticker": "EEM",
-        "nom": "iShares MSCI Emerging Markets ETF",
-        "variation_pct": -3.4,
-        "prix_actuel": 38.72,
-        "pourquoi": "Cet ETF regroupe les 800 plus grandes entreprises des pays émergents : quand le dollar monte et que les tensions géopolitiques s'intensifient, cet ETF concentre toutes les mauvaises nouvelles en un seul ticker."
-      },
-      "severite": "HIGH",
-      "emoji_categorie": "🌍",
-      "angle_alphabot": "AlphaBot Weekly explore cette semaine si le dollar peut encore monter, quels pays émergents résistent mieux que les autres, et si le moment est venu d'acheter la panique ou de rester à l'écart."
-    },
-    {
-      "id": "insight_004_20260401",
-      "date": "2026-04-01",
+      "id": "insight_btc_fed_001",
+      "date": "2026-04-02",
       "categorie": "Crypto",
-      "titre": "Bitcoin : valeur refuge ou casino géopolitique ?",
-      "contexte": "Chaque fois que les tensions mondiales s'intensifient, des milliards de dollars cherchent des abris. L'or joue ce rôle depuis des siècles. Depuis 2020, Bitcoin dispute cette place à l'or, attirant des investisseurs qui veulent sortir des systèmes financiers traditionnels.",
-      "impact_marche": "Bitcoin affiche une corrélation croissante avec les événements géopolitiques : les pics de tension font monter le BTC de +8% à +15% en quelques jours avant une correction brutale. Volatilité maximale garantie.",
+      "titre": "Bitcoin et la Fed : pourquoi les taux directeurs font trembler le BTC",
+      "contexte": "La Réserve fédérale américaine maintient les taux d'intérêt élevés pour combattre l'inflation. Les investisseurs déplacent leurs capitaux vers des actifs sans rendement comme Bitcoin.",
+      "impact_marche": "Impact majeur sur les cryptomonnaies. Indices tech (Nasdaq) également affectés par les craintes de taux stables.",
       "action_cible": {
-        "ticker": "IBIT",
-        "nom": "iShares Bitcoin Trust ETF",
-        "variation_pct": 4.7,
-        "prix_actuel": 52.18,
-        "pourquoi": "Cet ETF Bitcoin coté en Bourse permet d'exposer son portefeuille aux mouvements du Bitcoin sans gérer de wallet crypto : quand les tensions géopolitiques font fuir les capitaux des monnaies traditionnelles, IBIT en capte le flux directement."
+        "ticker": "BTC",
+        "nom": "Bitcoin",
+        "variation_pct": 2.3,
+        "prix_actuel": 67450.0,
+        "pourquoi": "Bitcoin agit comme valeur refuge quand la Fed maintient les taux élevés — or numérique d'inflation."
       },
       "severite": "MEDIUM",
       "emoji_categorie": "₿",
-      "angle_alphabot": "AlphaBot Weekly décortique cette semaine si Bitcoin se comporte vraiment comme une valeur refuge sur les 12 derniers mois de crise, ou si l'histoire ne se répète pas autant qu'on le croit."
+      "angle_alphabot": "Chaque hausse de taux Fed = achat Bitcoin. Comment cette relation géopolitique crée des opportunités pour les traders?"
     },
     {
-      "id": "insight_005_20260401",
-      "date": "2026-04-01",
-      "categorie": "Énergie",
-      "titre": "Tensions mondiales : le pétrole joue les montagnes russes",
-      "contexte": "Les conflits géopolitiques passent presque toujours par le pétrole : routes maritimes bloquées, sanctions, représailles énergétiques. Chaque escalade fait bondir le prix du baril, renchérissant immédiatement l'énergie pour les entreprises et les ménages du monde entier.",
-      "impact_marche": "Le baril de Brent fluctue entre 85$ et 102$ selon les annonces géopolitiques hebdomadaires. Les entreprises du CAC 40 très exposées aux coûts énergétiques (chimie, transport, industrie lourde) souffrent directement.",
+      "id": "insight_defense_001",
+      "date": "2026-04-02",
+      "categorie": "Défense",
+      "titre": "Réarmement européen : qui profite de la hausse des budgets défense ?",
+      "contexte": "L'Europe augmente ses budgets militaires suite aux tensions géopolitiques. L'OTAN se réarme. Les contrats d'armements explosent.",
+      "impact_marche": "Secteur de la défense en hausse. Actions de contractors militaires : LMT, RTX, BA en forte demande.",
       "action_cible": {
-        "ticker": "TTE.PA",
-        "nom": "TotalEnergies SE",
-        "variation_pct": 3.2,
-        "prix_actuel": 64.85,
-        "pourquoi": "TotalEnergies est le baromètre parfait de la tension géopolitique énergétique : chaque hausse du baril liée à un conflit se traduit mécaniquement en bénéfices supplémentaires pour le géant français du pétrole et du gaz."
+        "ticker": "LMT",
+        "nom": "Lockheed Martin",
+        "variation_pct": 3.7,
+        "prix_actuel": 456.78,
+        "pourquoi": "Principal fournisseur de systèmes d'armes à l'OTAN. Réarmement européen = croissance organique guaranteed."
+      },
+      "severite": "HIGH",
+      "emoji_categorie": "🛡️",
+      "angle_alphabot": "Géopolitique 101 : tensions = contrats défense = résultats boursiers. Pourquoi les investisseurs ignorent encore ce levier?"
+    },
+    {
+      "id": "insight_or_001",
+      "date": "2026-04-02",
+      "categorie": "Énergie",
+      "titre": "Or au plus haut historique : signal d'alarme ou opportunité ?",
+      "contexte": "L'or dépasse 2 400 USD/oz. Les banques centrales accumulent. C'est un signal classique de craintes géopolitiques et inflation.",
+      "impact_marche": "Indices de risque (VIX) en hausse. USD faiblit. Secteur des matières premières survolte.",
+      "action_cible": {
+        "ticker": "GLD",
+        "nom": "SPDR Gold Shares (ETF)",
+        "variation_pct": 5.2,
+        "prix_actuel": 189.45,
+        "pourquoi": "Meilleur proxy pour jouer l'or sans physique. Quand l'or monte, GLD monte. Diversification simple."
       },
       "severite": "CRITICAL",
       "emoji_categorie": "⚡",
-      "angle_alphabot": "AlphaBot Weekly cartographie cette semaine les 5 points chauds géographiques qui peuvent faire exploser le prix du baril en 2026, et quelles actions françaises en profitent ou en souffrent le plus."
+      "angle_alphabot": "L'or à 2 400 USD = ce que dit le marché des 5 prochaines années. Suis-tu cet indicateur?"
     }
   ]
 }

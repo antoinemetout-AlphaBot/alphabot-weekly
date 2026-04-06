@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-29T20:59:18.070067",
-  "date": "2026-03-29",
-  "health_score": 57,
+  "timestamp": "2026-04-02T21:55:17.062053",
+  "date": "2026-04-02",
+  "health_score": 62,
   "status": "DÉGRADÉ",
   "issues": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "severity": "WARNING",
-      "message": "11 tâche(s) manquante(s) aujourd'hui",
+      "message": "28 tâche(s) manquante(s) aujourd'hui",
       "source": "planning",
       "penalty": -25
     },
@@ -24,28 +24,23 @@
     },
     {
       "severity": "WARNING",
-      "message": "Fichier périmé (48.3h): data/portfolio_public.json",
+      "message": "Fichier périmé (23.1h): data/portfolio_public.json",
       "source": "data/portfolio_public.json",
-      "penalty": -5
-    },
-    {
-      "severity": "WARNING",
-      "message": "Fichier périmé (70.9h): data/newsletters.json",
-      "source": "data/newsletters.json",
       "penalty": -5
     }
   ],
   "auto_fixes": [],
   "logs": {
-    "events_today": 63,
-    "errors_today": 1,
+    "events_today": 109,
+    "errors_today": 15,
     "erreurs_critiques": 1,
     "erreurs_par_agent": {
+      "Agent Veille": 14,
       "Orchestrateur": 1
     },
     "top_errors": [
       {
-        "ts": "2026-03-29T20:55:20.878721",
+        "ts": "2026-04-02T21:53:17.575762",
         "agent": "Orchestrateur",
         "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
         "pattern": "ERREUR"
@@ -53,86 +48,81 @@
     ]
   },
   "taches": {
-    "attendues": 11,
-    "executees": 0,
-    "manquantes": 11,
+    "attendues": 38,
+    "executees": 10,
+    "manquantes": 28,
     "doublons": 1,
     "detail_manquantes": [
       {
-        "id": "dir_newsletter_pipeline",
-        "nom": "Directeur Newsletter 📰",
-        "heure_prevue": "07:30"
+        "id": "trader_09h",
+        "nom": "Directeur Trader — Ouverture EU 📈",
+        "heure_prevue": "09:00"
       },
       {
-        "id": "coo_rapport_matin",
-        "nom": "COO IA — Rapport Matin 🤖",
-        "heure_prevue": "08:00"
+        "id": "trader_10h30",
+        "nom": "Directeur Trader — Matinée EU 📈",
+        "heure_prevue": "10:30"
       },
       {
-        "id": "veille_matin",
-        "nom": "Agent Veille — Matin 🔍",
-        "heure_prevue": "08:30"
-      },
-      {
-        "id": "email_ceo_matin",
-        "nom": "Email CEO 📧",
-        "heure_prevue": "08:50"
-      },
-      {
-        "id": "da_site",
-        "nom": "Agent DA Site 🎨",
-        "heure_prevue": "09:30"
-      },
-      {
-        "id": "directeur_arene_match",
-        "nom": "Directeur Arène — Match Quotidien 🏆",
-        "heure_prevue": "17:00"
-      },
-      {
-        "id": "veille_midi",
-        "nom": "Agent Veille — Midi 🔍",
+        "id": "trader_12h",
+        "nom": "Directeur Trader — Midi EU 📈",
         "heure_prevue": "12:00"
       },
       {
-        "id": "veille_apm",
-        "nom": "Agent Veille — Après-midi 🔍",
-        "heure_prevue": "14:30"
+        "id": "trader_14h",
+        "nom": "Directeur Trader — Pré-ouverture US 📈",
+        "heure_prevue": "14:00"
       },
       {
-        "id": "monitoring_matin",
-        "nom": "🩺 Monitoring — Matin",
-        "heure_prevue": "08:15"
+        "id": "trader_15h45",
+        "nom": "Directeur Trader — Ouverture US ⚡📈",
+        "heure_prevue": "15:45"
       },
       {
-        "id": "monitoring_midi",
-        "nom": "🩺 Monitoring — Midi",
-        "heure_prevue": "13:00"
+        "id": "trader_16h30",
+        "nom": "Directeur Trader — Overlap EU/US 📈",
+        "heure_prevue": "16:30"
+      },
+      {
+        "id": "trader_17h30",
+        "nom": "Directeur Trader — Clôture EU 📈",
+        "heure_prevue": "17:30"
+      },
+      {
+        "id": "trader_19h",
+        "nom": "Directeur Trader — Soirée US 📈",
+        "heure_prevue": "19:00"
+      },
+      {
+        "id": "trader_20h30",
+        "nom": "Directeur Trader — Pré-clôture US 📈",
+        "heure_prevue": "20:30"
+      },
+      {
+        "id": "trader_22h",
+        "nom": "Directeur Trader — Clôture US 🔔📈",
+        "heure_prevue": "22:00"
       }
     ],
     "detail_doublons": [
       {
         "agent": "Agent Monitoring",
         "message": "Diagnostic système en cours...",
-        "interval_seconds": 239,
+        "interval_seconds": 119,
         "count": 4
       }
     ]
   },
   "fichiers": {
-    "ok": 6,
+    "ok": 7,
     "manquants": 0,
     "invalides": 0,
-    "perimes": 2,
+    "perimes": 1,
     "detail_problemes": [
       {
         "fichier": "data/portfolio_public.json",
-        "age_heures": 48.3,
+        "age_heures": 23.1,
         "limite_heures": 2
-      },
-      {
-        "fichier": "data/newsletters.json",
-        "age_heures": 70.9,
-        "limite_heures": 26
       }
     ]
   }

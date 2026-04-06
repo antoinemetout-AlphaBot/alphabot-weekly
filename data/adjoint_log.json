@@ -507,6 +507,46 @@
         }
       ],
       "resume": "AlphaBot Weekly tourne de façon stable avec 8 éditions produites et un pipeline technique solide (24 agents opérationnels). Le projet reste bloqué à 2 abonnés réels et 0€ de revenus — le goulot d'étra"
+    },
+    {
+      "date": "01/04/2026 à 22:47",
+      "duree_sec": 85,
+      "nb_actions": 8,
+      "actions_executees": [
+        {
+          "action": "[SUPERVISION] Relancer Agent Growth 📈 — Dernière activité : il y a 2j (max 1j)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CFO 💰 — Aucun output trouvé (cfo_rapport_*.html)",
+          "status": "error"
+        },
+        {
+          "action": "[SUPERVISION] Relancer Agent CEO Brief 👔 — Dernier output : il y a 10 jour(s) (max 7j)",
+          "status": "error"
+        },
+        {
+          "action": "Lancer le Growth Booster pour générer la stratégie de croissance réelle du jour : posts LinkedIn, actions referral, SEO, score booster mis à jour",
+          "status": "success"
+        },
+        {
+          "action": "Lancer l'agent commercial pour relancer les 10 prospects pipeline, générer des templates d'approche partenariat et mettre à jour le pipeline",
+          "status": "success"
+        },
+        {
+          "action": "Corriger la preview newsletter dans index.html pour qu'elle pointe dynamiquement vers la date du jour au lieu d'une date fixe — résout le problème connu 'Newsletter preview dans index.html pointe vers une date fixe'",
+          "status": "error"
+        },
+        {
+          "action": "Lancer l'agent analytics pour mesurer les KPIs du jour (taux ouverture, clics, abonnés actifs) et produire un rapport actionnable pour orienter la stratégie growth",
+          "status": "error"
+        },
+        {
+          "action": "Pousser tous les fichiers mis à jour (index.html corrigé, newsletters.html archive, outputs du jour) vers GitHub Pages / Netlify via auto_push",
+          "status": "success"
+        }
+      ],
+      "resume": "AlphaBot Weekly est techniquement solide avec 24 agents opérationnels et 10 éditions produites, mais reste bloqué à 2 abonnés et 0€ de revenus. La newsletter du 01/04 est produite, le pipeline tourne."
     }
   ]
 }

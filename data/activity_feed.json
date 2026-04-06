@@ -1,300 +1,56 @@
 {
-  "generated_at": "2026-04-02T00:02:07.775729",
+  "generated_at": "2026-04-02T21:55:18.239503",
   "total_events": 100,
   "events": [
     {
-      "ts": "2026-04-02T00:00:22.424747",
+      "ts": "2026-04-02T21:55:18.053721",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Session Trader (0.0h) terminée",
+      "message": "Session Trader (21.9h) terminée",
       "data": {}
     },
     {
-      "ts": "2026-04-02T00:00:22.215157",
+      "ts": "2026-04-02T21:55:17.922497",
       "agent": "Orchestrateur",
       "type": "progress",
-      "message": "Session Directeur Trader (0.0h)...",
+      "message": "Session Directeur Trader (21.9h)...",
       "data": {}
     },
     {
-      "ts": "2026-04-02T00:00:21.843105",
+      "ts": "2026-04-02T21:55:17.670811",
       "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Prix live mis à jour",
-      "data": {}
+      "type": "warning",
+      "message": "Erreur MAJ prix: No module named 'yfinance'",
+      "data": {
+        "error": "No module named 'yfinance'"
+      }
     },
     {
-      "ts": "2026-04-02T00:00:21.685054",
+      "ts": "2026-04-02T21:55:17.521818",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "MAJ prix live...",
       "data": {}
     },
     {
-      "ts": "2026-04-02T00:00:21.527336",
+      "ts": "2026-04-02T21:55:17.387111",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "COO rapport soir terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:21.314715",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "COO rapport soir + email CEO...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:21.097133",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Monitoring terminé — Score: 100/100 (EXCELLENT) | 0 problème(s), 0 auto-fix(es)",
+      "message": "Monitoring terminé — Score: 62/100 (DÉGRADÉ) | 4 problème(s), 0 auto-fix(es)",
       "data": {
-        "health_score": 100,
-        "status": "EXCELLENT"
-      }
-    },
-    {
-      "ts": "2026-04-02T00:00:20.896218",
-      "agent": "Agent Monitoring",
-      "type": "success",
-      "message": "✅ Diagnostic terminé — Score: 100/100 (EXCELLENT) | Erreurs: 2 | Tâches OK: 0/0 | Fichiers OK: 8/8 | Auto-fixes: 0",
-      "data": {
-        "timestamp": "2026-04-02T00:00:20.550699",
-        "date": "2026-04-02",
-        "health_score": 100,
-        "status": "EXCELLENT",
-        "issues": [],
-        "auto_fixes": [],
-        "logs": {
-          "events_today": 12,
-          "errors_today": 2,
-          "erreurs_critiques": 0,
-          "erreurs_par_agent": {
-            "Agent Veille": 2
-          },
-          "top_errors": []
-        },
-        "taches": {
-          "attendues": 0,
-          "executees": 0,
-          "manquantes": 0,
-          "doublons": 0,
-          "detail_manquantes": [],
-          "detail_doublons": []
-        },
-        "fichiers": {
-          "ok": 8,
-          "manquants": 0,
-          "invalides": 0,
-          "perimes": 0,
-          "detail_problemes": []
-        }
-      }
-    },
-    {
-      "ts": "2026-04-02T00:00:20.551092",
-      "agent": "Agent Monitoring",
-      "type": "start",
-      "message": "Diagnostic système en cours...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:20.339189",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Lancement diagnostic système...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:20.119351",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Match Arène terminé",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:19.951044",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Lancement match Arène quotidien...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:19.754198",
-      "agent": "Agent Veille",
-      "type": "success",
-      "message": "Collecte marchés complète",
-      "data": {
-        "actifs": 0
-      }
-    },
-    {
-      "ts": "2026-04-02T00:00:19.532184",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:19.279894",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:10.983414",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:06.710202",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:04.510531",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:04.222156",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-02T00:00:03.976611",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:55.677155",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:51.491398",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:49.335668",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:49.185186",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:48.948949",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:40.760252",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:36.418608",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:34.271037",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:34.114221",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Utilisation de la valeur par défaut après échecs",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:33.918977",
-      "agent": "Agent Veille",
-      "type": "error",
-      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:25.654863",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:21.390634",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:19.132796",
-      "agent": "Agent Veille",
-      "type": "warning",
-      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:18.960056",
-      "agent": "Orchestrateur",
-      "type": "progress",
-      "message": "Agent Veille — collecte données...",
-      "data": {}
-    },
-    {
-      "ts": "2026-04-01T23:59:18.757089",
-      "agent": "Orchestrateur",
-      "type": "success",
-      "message": "Monitoring terminé — Score: 67/100 (DÉGRADÉ) | 3 problème(s), 0 auto-fix(es)",
-      "data": {
-        "health_score": 67,
+        "health_score": 62,
         "status": "DÉGRADÉ"
       }
     },
     {
-      "ts": "2026-04-01T23:59:18.584210",
+      "ts": "2026-04-02T21:55:17.259575",
       "agent": "Agent Monitoring",
       "type": "warning",
-      "message": "⚠️ Diagnostic terminé — Score: 67/100 (DÉGRADÉ) | Erreurs: 16 | Tâches OK: 7/39 | Fichiers OK: 8/8 | Auto-fixes: 0",
+      "message": "⚠️ Diagnostic terminé — Score: 62/100 (DÉGRADÉ) | Erreurs: 15 | Tâches OK: 10/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
       "data": {
-        "timestamp": "2026-04-01T23:59:18.323886",
-        "date": "2026-04-01",
-        "health_score": 67,
+        "timestamp": "2026-04-02T21:55:17.062053",
+        "date": "2026-04-02",
+        "health_score": 62,
         "status": "DÉGRADÉ",
         "issues": [
           {
@@ -305,7 +61,7 @@
           },
           {
             "severity": "WARNING",
-            "message": "32 tâche(s) manquante(s) aujourd'hui",
+            "message": "28 tâche(s) manquante(s) aujourd'hui",
             "source": "planning",
             "penalty": -25
           },
@@ -314,20 +70,26 @@
             "message": "1 tâche(s) en doublon détectée(s)",
             "source": "planning",
             "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (23.1h): data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -5
           }
         ],
         "auto_fixes": [],
         "logs": {
-          "events_today": 112,
-          "errors_today": 16,
+          "events_today": 109,
+          "errors_today": 15,
           "erreurs_critiques": 1,
           "erreurs_par_agent": {
-            "Agent Veille": 15,
+            "Agent Veille": 14,
             "Orchestrateur": 1
           },
           "top_errors": [
             {
-              "ts": "2026-04-01T23:56:07.193877",
+              "ts": "2026-04-02T21:53:17.575762",
               "agent": "Orchestrateur",
               "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
               "pattern": "ERREUR"
@@ -335,9 +97,9 @@
           ]
         },
         "taches": {
-          "attendues": 39,
-          "executees": 7,
-          "manquantes": 32,
+          "attendues": 38,
+          "executees": 10,
+          "manquantes": 28,
           "doublons": 1,
           "detail_manquantes": [
             {
@@ -395,36 +157,56 @@
             {
               "agent": "Agent Monitoring",
               "message": "Diagnostic système en cours...",
-              "interval_seconds": 256,
-              "count": 2
+              "interval_seconds": 119,
+              "count": 4
             }
           ]
         },
         "fichiers": {
-          "ok": 8,
+          "ok": 7,
           "manquants": 0,
           "invalides": 0,
-          "perimes": 0,
-          "detail_problemes": []
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/portfolio_public.json",
+              "age_heures": 23.1,
+              "limite_heures": 2
+            }
+          ]
         }
       }
     },
     {
-      "ts": "2026-04-01T23:59:18.324448",
+      "ts": "2026-04-02T21:55:17.062287",
       "agent": "Agent Monitoring",
       "type": "start",
       "message": "Diagnostic système en cours...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:18.186406",
+      "ts": "2026-04-02T21:55:16.933414",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Lancement diagnostic système...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:18.007378",
+      "ts": "2026-04-02T21:55:16.796755",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Match Arène terminé",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:55:16.674516",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement match Arène quotidien...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:55:16.546881",
       "agent": "Agent Veille",
       "type": "success",
       "message": "Collecte marchés complète",
@@ -433,175 +215,490 @@
       }
     },
     {
-      "ts": "2026-04-01T23:59:17.785745",
+      "ts": "2026-04-02T21:55:16.421082",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:17.520973",
+      "ts": "2026-04-02T21:55:16.288243",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:09.188198",
+      "ts": "2026-04-02T21:55:08.164290",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:04.905293",
+      "ts": "2026-04-02T21:55:04.031979",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:02.703090",
+      "ts": "2026-04-02T21:55:01.904901",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:02.197768",
+      "ts": "2026-04-02T21:55:01.778414",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:59:01.913360",
+      "ts": "2026-04-02T21:55:01.648561",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:53.651213",
+      "ts": "2026-04-02T21:54:53.525076",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:49.474286",
+      "ts": "2026-04-02T21:54:49.395342",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:47.268365",
+      "ts": "2026-04-02T21:54:47.263068",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:47.063582",
+      "ts": "2026-04-02T21:54:47.132606",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:46.831768",
+      "ts": "2026-04-02T21:54:46.994761",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:38.581559",
+      "ts": "2026-04-02T21:54:38.871241",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:34.341523",
+      "ts": "2026-04-02T21:54:34.728042",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:32.155888",
+      "ts": "2026-04-02T21:54:32.591746",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:31.975040",
+      "ts": "2026-04-02T21:54:32.474975",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:31.672810",
+      "ts": "2026-04-02T21:54:32.332293",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:23.461022",
+      "ts": "2026-04-02T21:54:24.198793",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:19.241148",
+      "ts": "2026-04-02T21:54:20.044556",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:16.986570",
+      "ts": "2026-04-02T21:54:17.923936",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:16.767526",
+      "ts": "2026-04-02T21:54:17.805694",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Agent Veille — collecte données...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:16.519823",
+      "ts": "2026-04-02T21:54:17.675910",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Monitoring terminé — Score: 62/100 (DÉGRADÉ) | 4 problème(s), 0 auto-fix(es)",
+      "data": {
+        "health_score": 62,
+        "status": "DÉGRADÉ"
+      }
+    },
+    {
+      "ts": "2026-04-02T21:54:17.553360",
+      "agent": "Agent Monitoring",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 62/100 (DÉGRADÉ) | Erreurs: 11 | Tâches OK: 7/37 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "data": {
+        "timestamp": "2026-04-02T21:54:17.371180",
+        "date": "2026-04-02",
+        "health_score": 62,
+        "status": "DÉGRADÉ",
+        "issues": [
+          {
+            "severity": "ERROR",
+            "message": "1 erreur(s) critique(s) détectée(s) aujourd'hui",
+            "source": "logs",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "30 tâche(s) manquante(s) aujourd'hui",
+            "source": "planning",
+            "penalty": -25
+          },
+          {
+            "severity": "WARNING",
+            "message": "1 tâche(s) en doublon détectée(s)",
+            "source": "planning",
+            "penalty": -3
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (23.1h): data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -5
+          }
+        ],
+        "auto_fixes": [],
+        "logs": {
+          "events_today": 81,
+          "errors_today": 11,
+          "erreurs_critiques": 1,
+          "erreurs_par_agent": {
+            "Agent Veille": 10,
+            "Orchestrateur": 1
+          },
+          "top_errors": [
+            {
+              "ts": "2026-04-02T21:53:17.575762",
+              "agent": "Orchestrateur",
+              "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+              "pattern": "ERREUR"
+            }
+          ]
+        },
+        "taches": {
+          "attendues": 37,
+          "executees": 7,
+          "manquantes": 30,
+          "doublons": 1,
+          "detail_manquantes": [
+            {
+              "id": "trader_09h",
+              "nom": "Directeur Trader — Ouverture EU 📈",
+              "heure_prevue": "09:00"
+            },
+            {
+              "id": "trader_10h30",
+              "nom": "Directeur Trader — Matinée EU 📈",
+              "heure_prevue": "10:30"
+            },
+            {
+              "id": "trader_12h",
+              "nom": "Directeur Trader — Midi EU 📈",
+              "heure_prevue": "12:00"
+            },
+            {
+              "id": "trader_14h",
+              "nom": "Directeur Trader — Pré-ouverture US 📈",
+              "heure_prevue": "14:00"
+            },
+            {
+              "id": "trader_15h45",
+              "nom": "Directeur Trader — Ouverture US ⚡📈",
+              "heure_prevue": "15:45"
+            },
+            {
+              "id": "trader_16h30",
+              "nom": "Directeur Trader — Overlap EU/US 📈",
+              "heure_prevue": "16:30"
+            },
+            {
+              "id": "trader_17h30",
+              "nom": "Directeur Trader — Clôture EU 📈",
+              "heure_prevue": "17:30"
+            },
+            {
+              "id": "trader_19h",
+              "nom": "Directeur Trader — Soirée US 📈",
+              "heure_prevue": "19:00"
+            },
+            {
+              "id": "trader_20h30",
+              "nom": "Directeur Trader — Pré-clôture US 📈",
+              "heure_prevue": "20:30"
+            },
+            {
+              "id": "directeur_arene_match",
+              "nom": "Directeur Arène — Match Quotidien 🏆",
+              "heure_prevue": "17:00"
+            }
+          ],
+          "detail_doublons": [
+            {
+              "agent": "Agent Monitoring",
+              "message": "Diagnostic système en cours...",
+              "interval_seconds": 119,
+              "count": 3
+            }
+          ]
+        },
+        "fichiers": {
+          "ok": 7,
+          "manquants": 0,
+          "invalides": 0,
+          "perimes": 1,
+          "detail_problemes": [
+            {
+              "fichier": "data/portfolio_public.json",
+              "age_heures": 23.1,
+              "limite_heures": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "ts": "2026-04-02T21:54:17.371473",
+      "agent": "Agent Monitoring",
+      "type": "start",
+      "message": "Diagnostic système en cours...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:17.249243",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Lancement diagnostic système...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:17.116224",
+      "agent": "Agent Veille",
+      "type": "success",
+      "message": "Collecte marchés complète",
+      "data": {
+        "actifs": 0
+      }
+    },
+    {
+      "ts": "2026-04-02T21:54:16.981611",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:16.859146",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:08.701230",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:04.568153",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:02.443866",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:02.309420",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:54:02.173150",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:54.055095",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:49.921084",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:47.794890",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:47.673824",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:47.535868",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:39.410338",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:35.293518",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:33.165223",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:33.056484",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Utilisation de la valeur par défaut après échecs",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:32.925584",
+      "agent": "Agent Veille",
+      "type": "error",
+      "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:24.782663",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:20.640575",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:18.511809",
+      "agent": "Agent Veille",
+      "type": "warning",
+      "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:18.391697",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Agent Veille — collecte données...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T21:53:18.263840",
       "agent": "Agent DA Site",
       "type": "success",
       "message": "Insights géopolitiques et améliorations visuelles terminées",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:58:16.250940",
+      "ts": "2026-04-02T21:53:18.146471",
       "agent": "Agent DA Site",
       "type": "success",
-      "message": "Mission DA terminée (2 pages améliorées)",
+      "message": "Mission DA terminée (0 pages améliorées)",
       "data": {
-        "date": "2026-04-01 23:56",
+        "date": "2026-04-02 21:53",
         "etapes": {
           "audit": {
             "ok": true,
-            "score": 70,
-            "problemes": 3
+            "score": 100,
+            "problemes": 0
           },
           "corrections": {
             "ok": true,
-            "pages_corrigees": 1,
+            "pages_corrigees": 0,
             "details": {
               "index.html": [
                 "aucune correction nécessaire"
@@ -613,11 +710,7 @@
                 "aucune correction nécessaire"
               ],
               "newsletters.html": [
-                "nav injectée",
-                "CSS nav ajouté",
-                "script nav ajouté",
-                "footer injecté",
-                "CSS footer ajouté"
+                "aucune correction nécessaire"
               ],
               "espace-pilotage.html": [
                 "aucune correction nécessaire"
@@ -630,70 +723,59 @@
           },
           "insights": {
             "ok": true,
-            "count": 5,
+            "count": 3,
             "injected_in_index": false,
-            "html_path": "outputs/section_da_2026-04-01.html"
+            "html_path": "outputs/section_da_2026-04-02.html"
           },
           "visuels": {
             "ok": true,
             "details": [
               {
                 "page": "index.html",
-                "status": "improved",
-                "css_rules": 33
+                "status": "no_improvements"
               },
               {
                 "page": "investissement.html",
-                "status": "improved",
-                "css_rules": 42
+                "status": "no_improvements"
               },
               {
                 "page": "newsletter.html",
-                "status": "write_verification_failed"
+                "status": "no_improvements"
               }
             ]
           }
         },
         "success": true,
-        "pages_ameliorees": 2,
-        "insights_count": 5
+        "pages_ameliorees": 0,
+        "insights_count": 3
       }
     },
     {
-      "ts": "2026-04-01T23:56:49.237997",
+      "ts": "2026-04-02T21:53:18.011122",
       "agent": "Agent DA Site",
       "type": "success",
       "message": "Contenu sauvegardé",
       "data": {
         "insights_file": "data/contenu_da.json",
-        "html_file": "outputs/section_da_2026-04-01.html"
+        "html_file": "outputs/section_da_2026-04-02.html"
       }
     },
     {
-      "ts": "2026-04-01T23:56:48.976998",
-      "agent": "Agent DA Site",
-      "type": "success",
-      "message": "Générés 5 insights géopolitiques",
-      "data": {
-        "count": 5
-      }
-    },
-    {
-      "ts": "2026-04-01T23:56:08.509577",
+      "ts": "2026-04-02T21:53:17.829809",
       "agent": "Agent DA Site",
       "type": "start",
       "message": "Mission DA complète démarrée",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:56:07.432682",
+      "ts": "2026-04-02T21:53:17.692131",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Agent DA Site — insights géopolitiques...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:56:07.193877",
+      "ts": "2026-04-02T21:53:17.575762",
       "agent": "Orchestrateur",
       "type": "error",
       "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
@@ -702,14 +784,14 @@
       }
     },
     {
-      "ts": "2026-04-01T23:56:06.939086",
+      "ts": "2026-04-02T21:53:17.414441",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Envoi email quotidien CEO...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:56:06.670422",
+      "ts": "2026-04-02T21:53:17.293423",
       "agent": "Agent Veille",
       "type": "success",
       "message": "Collecte marchés complète",
@@ -718,200 +800,208 @@
       }
     },
     {
-      "ts": "2026-04-01T23:56:06.412326",
+      "ts": "2026-04-02T21:53:17.172469",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:56:06.138982",
+      "ts": "2026-04-02T21:53:17.056096",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:57.849658",
+      "ts": "2026-04-02T21:53:08.912748",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:53.656890",
+      "ts": "2026-04-02T21:53:04.775223",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:51.400120",
+      "ts": "2026-04-02T21:53:02.665022",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:51.004521",
+      "ts": "2026-04-02T21:53:02.555649",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:50.775552",
+      "ts": "2026-04-02T21:53:02.431611",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:42.527305",
+      "ts": "2026-04-02T21:52:54.310079",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:38.349166",
+      "ts": "2026-04-02T21:52:50.191526",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:36.033588",
+      "ts": "2026-04-02T21:52:48.062694",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:35.718595",
+      "ts": "2026-04-02T21:52:47.953095",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:35.384811",
+      "ts": "2026-04-02T21:52:47.819991",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:27.114166",
+      "ts": "2026-04-02T21:52:39.689749",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:22.812623",
+      "ts": "2026-04-02T21:52:35.570489",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:20.567524",
+      "ts": "2026-04-02T21:52:33.445747",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:20.268703",
+      "ts": "2026-04-02T21:52:33.332199",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Utilisation de la valeur par défaut après échecs",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:19.937311",
+      "ts": "2026-04-02T21:52:33.203419",
       "agent": "Agent Veille",
       "type": "error",
       "message": "Échec après 4 tentatives: Missing dependencies for SOCKS support.",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:11.602499",
+      "ts": "2026-04-02T21:52:25.082051",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 3/3 échouée: Missing dependencies for SOCKS support.. Retry dans 8s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:07.316128",
+      "ts": "2026-04-02T21:52:20.960666",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 2/3 échouée: Missing dependencies for SOCKS support.. Retry dans 4s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:05.109369",
+      "ts": "2026-04-02T21:52:18.825593",
       "agent": "Agent Veille",
       "type": "warning",
       "message": "Tentative 1/3 échouée: Missing dependencies for SOCKS support.. Retry dans 2s...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:02.530229",
+      "ts": "2026-04-02T21:52:18.457407",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Agent Veille — collecte données...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:02.335072",
+      "ts": "2026-04-02T21:52:18.318916",
       "agent": "Orchestrateur",
       "type": "success",
-      "message": "Monitoring terminé — Score: 70/100 (STABLE) | 2 problème(s), 0 auto-fix(es)",
+      "message": "Monitoring terminé — Score: 65/100 (DÉGRADÉ) | 3 problème(s), 1 auto-fix(es)",
       "data": {
-        "health_score": 70,
-        "status": "STABLE"
+        "health_score": 65,
+        "status": "DÉGRADÉ"
       }
     },
     {
-      "ts": "2026-04-01T23:55:02.098956",
+      "ts": "2026-04-02T21:52:18.197333",
       "agent": "Agent Monitoring",
-      "type": "success",
-      "message": "✅ Diagnostic terminé — Score: 70/100 (STABLE) | Erreurs: 7 | Tâches OK: 2/39 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "type": "warning",
+      "message": "⚠️ Diagnostic terminé — Score: 65/100 (DÉGRADÉ) | Erreurs: 2 | Tâches OK: 2/37 | Fichiers OK: 6/8 | Auto-fixes: 1",
       "data": {
-        "timestamp": "2026-04-01T23:55:01.774964",
-        "date": "2026-04-01",
-        "health_score": 70,
-        "status": "STABLE",
+        "timestamp": "2026-04-02T21:52:17.973705",
+        "date": "2026-04-02",
+        "health_score": 65,
+        "status": "DÉGRADÉ",
         "issues": [
           {
             "severity": "WARNING",
-            "message": "37 tâche(s) manquante(s) aujourd'hui",
+            "message": "35 tâche(s) manquante(s) aujourd'hui",
             "source": "planning",
             "penalty": -25
           },
           {
             "severity": "WARNING",
-            "message": "Fichier périmé (34.1h): data/contenu_da.json",
-            "source": "data/contenu_da.json",
+            "message": "Fichier périmé (23.1h): data/portfolio_public.json",
+            "source": "data/portfolio_public.json",
+            "penalty": -5
+          },
+          {
+            "severity": "WARNING",
+            "message": "Fichier périmé (21.9h): data/dernier_rapport_veille.json",
+            "source": "data/dernier_rapport_veille.json",
             "penalty": -5
           }
         ],
-        "auto_fixes": [],
+        "auto_fixes": [
+          "activity_feed.json: régénéré (était périmé)"
+        ],
         "logs": {
-          "events_today": 56,
-          "errors_today": 7,
+          "events_today": 26,
+          "errors_today": 2,
           "erreurs_critiques": 0,
           "erreurs_par_agent": {
-            "Agent Veille": 7
+            "Agent Veille": 2
           },
           "top_errors": []
         },
         "taches": {
-          "attendues": 39,
+          "attendues": 37,
           "executees": 2,
-          "manquantes": 37,
+          "manquantes": 35,
           "doublons": 0,
           "detail_manquantes": [
             {
@@ -968,148 +1058,268 @@
           "detail_doublons": []
         },
         "fichiers": {
-          "ok": 7,
+          "ok": 6,
           "manquants": 0,
           "invalides": 0,
-          "perimes": 1,
+          "perimes": 2,
           "detail_problemes": [
             {
-              "fichier": "data/contenu_da.json",
-              "age_heures": 34.1,
-              "limite_heures": 26
+              "fichier": "data/portfolio_public.json",
+              "age_heures": 23.1,
+              "limite_heures": 2
+            },
+            {
+              "fichier": "data/dernier_rapport_veille.json",
+              "age_heures": 21.9,
+              "limite_heures": 6
             }
           ]
         }
       }
     },
     {
-      "ts": "2026-04-01T23:55:01.775179",
+      "ts": "2026-04-02T21:52:17.973909",
       "agent": "Agent Monitoring",
       "type": "start",
       "message": "Diagnostic système en cours...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:01.540360",
+      "ts": "2026-04-02T21:52:17.847805",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Lancement diagnostic système...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:01.310579",
+      "ts": "2026-04-02T21:52:17.736728",
       "agent": "Orchestrateur",
       "type": "success",
       "message": "COO rapport matin terminé",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:01.105765",
+      "ts": "2026-04-02T21:52:17.629952",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "COO rapport matin...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:00.920160",
+      "ts": "2026-04-02T21:52:17.506519",
       "agent": "Orchestrateur",
       "type": "success",
       "message": "Pipeline Newsletter terminé",
       "data": {}
     },
     {
-      "ts": "2026-04-01T23:55:00.693677",
+      "ts": "2026-04-02T21:52:17.364729",
       "agent": "Orchestrateur",
       "type": "progress",
       "message": "Lancement pipeline Newsletter complet...",
       "data": {}
     },
     {
-      "ts": "2026-04-01T22:48:31.453664",
-      "agent": "Directeur Adjoint",
-      "type": "progress",
-      "message": "Génération du rapport CEO...",
+      "ts": "2026-04-02T00:00:22.424747",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Session Trader (0.0h) terminée",
       "data": {}
     },
     {
-      "ts": "2026-04-01T22:48:31.157833",
-      "agent": "Directeur Adjoint",
-      "type": "warning",
-      "message": "Exécution terminée — 3 succès, 5 erreur(s)",
-      "data": {
-        "ok": 3,
-        "errors": 5
-      }
+      "ts": "2026-04-02T00:00:22.215157",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "Session Directeur Trader (0.0h)...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T00:00:21.843105",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "Prix live mis à jour",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T00:00:21.685054",
+      "agent": "Orchestrateur",
+      "type": "progress",
+      "message": "MAJ prix live...",
+      "data": {}
+    },
+    {
+      "ts": "2026-04-02T00:00:21.527336",
+      "agent": "Orchestrateur",
+      "type": "success",
+      "message": "COO rapport soir terminé",
+      "data": {}
     }
   ],
   "agents": [
     {
       "agent": "Orchestrateur",
       "last_event": {
-        "ts": "2026-04-02T00:00:22.424747",
+        "ts": "2026-04-02T21:55:18.053721",
         "agent": "Orchestrateur",
         "type": "success",
-        "message": "Session Trader (0.0h) terminée",
+        "message": "Session Trader (21.9h) terminée",
         "data": {}
       },
-      "last_ts": "2026-04-02T00:00:22.424747",
+      "last_ts": "2026-04-02T21:55:18.053721",
       "last_type": "success",
-      "last_message": "Session Trader (0.0h) terminée",
-      "total_today": 10,
-      "errors_today": 0,
-      "successes_today": 5
+      "last_message": "Session Trader (21.9h) terminée",
+      "total_today": 27,
+      "errors_today": 1,
+      "successes_today": 10
     },
     {
       "agent": "Agent Monitoring",
       "last_event": {
-        "ts": "2026-04-02T00:00:20.896218",
+        "ts": "2026-04-02T21:55:17.259575",
         "agent": "Agent Monitoring",
-        "type": "success",
-        "message": "✅ Diagnostic terminé — Score: 100/100 (EXCELLENT) | Erreurs: 2 | Tâches OK: 0/0 | Fichiers OK: 8/8 | Auto-fixes: 0",
+        "type": "warning",
+        "message": "⚠️ Diagnostic terminé — Score: 62/100 (DÉGRADÉ) | Erreurs: 15 | Tâches OK: 10/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
         "data": {
-          "timestamp": "2026-04-02T00:00:20.550699",
+          "timestamp": "2026-04-02T21:55:17.062053",
           "date": "2026-04-02",
-          "health_score": 100,
-          "status": "EXCELLENT",
-          "issues": [],
+          "health_score": 62,
+          "status": "DÉGRADÉ",
+          "issues": [
+            {
+              "severity": "ERROR",
+              "message": "1 erreur(s) critique(s) détectée(s) aujourd'hui",
+              "source": "logs",
+              "penalty": -5
+            },
+            {
+              "severity": "WARNING",
+              "message": "28 tâche(s) manquante(s) aujourd'hui",
+              "source": "planning",
+              "penalty": -25
+            },
+            {
+              "severity": "WARNING",
+              "message": "1 tâche(s) en doublon détectée(s)",
+              "source": "planning",
+              "penalty": -3
+            },
+            {
+              "severity": "WARNING",
+              "message": "Fichier périmé (23.1h): data/portfolio_public.json",
+              "source": "data/portfolio_public.json",
+              "penalty": -5
+            }
+          ],
           "auto_fixes": [],
           "logs": {
-            "events_today": 12,
-            "errors_today": 2,
-            "erreurs_critiques": 0,
+            "events_today": 109,
+            "errors_today": 15,
+            "erreurs_critiques": 1,
             "erreurs_par_agent": {
-              "Agent Veille": 2
+              "Agent Veille": 14,
+              "Orchestrateur": 1
             },
-            "top_errors": []
+            "top_errors": [
+              {
+                "ts": "2026-04-02T21:53:17.575762",
+                "agent": "Orchestrateur",
+                "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
+                "pattern": "ERREUR"
+              }
+            ]
           },
           "taches": {
-            "attendues": 0,
-            "executees": 0,
-            "manquantes": 0,
-            "doublons": 0,
-            "detail_manquantes": [],
-            "detail_doublons": []
+            "attendues": 38,
+            "executees": 10,
+            "manquantes": 28,
+            "doublons": 1,
+            "detail_manquantes": [
+              {
+                "id": "trader_09h",
+                "nom": "Directeur Trader — Ouverture EU 📈",
+                "heure_prevue": "09:00"
+              },
+              {
+                "id": "trader_10h30",
+                "nom": "Directeur Trader — Matinée EU 📈",
+                "heure_prevue": "10:30"
+              },
+              {
+                "id": "trader_12h",
+                "nom": "Directeur Trader — Midi EU 📈",
+                "heure_prevue": "12:00"
+              },
+              {
+                "id": "trader_14h",
+                "nom": "Directeur Trader — Pré-ouverture US 📈",
+                "heure_prevue": "14:00"
+              },
+              {
+                "id": "trader_15h45",
+                "nom": "Directeur Trader — Ouverture US ⚡📈",
+                "heure_prevue": "15:45"
+              },
+              {
+                "id": "trader_16h30",
+                "nom": "Directeur Trader — Overlap EU/US 📈",
+                "heure_prevue": "16:30"
+              },
+              {
+                "id": "trader_17h30",
+                "nom": "Directeur Trader — Clôture EU 📈",
+                "heure_prevue": "17:30"
+              },
+              {
+                "id": "trader_19h",
+                "nom": "Directeur Trader — Soirée US 📈",
+                "heure_prevue": "19:00"
+              },
+              {
+                "id": "trader_20h30",
+                "nom": "Directeur Trader — Pré-clôture US 📈",
+                "heure_prevue": "20:30"
+              },
+              {
+                "id": "trader_22h",
+                "nom": "Directeur Trader — Clôture US 🔔📈",
+                "heure_prevue": "22:00"
+              }
+            ],
+            "detail_doublons": [
+              {
+                "agent": "Agent Monitoring",
+                "message": "Diagnostic système en cours...",
+                "interval_seconds": 119,
+                "count": 4
+              }
+            ]
           },
           "fichiers": {
-            "ok": 8,
+            "ok": 7,
             "manquants": 0,
             "invalides": 0,
-            "perimes": 0,
-            "detail_problemes": []
+            "perimes": 1,
+            "detail_problemes": [
+              {
+                "fichier": "data/portfolio_public.json",
+                "age_heures": 23.1,
+                "limite_heures": 2
+              }
+            ]
           }
         }
       },
-      "last_ts": "2026-04-02T00:00:20.896218",
-      "last_type": "success",
-      "last_message": "✅ Diagnostic terminé — Score: 100/100 (EXCELLENT) | Erreurs: 2 | Tâches OK: 0/0 | Fichiers OK: 8/8 | Auto-fixes: 0",
-      "total_today": 2,
+      "last_ts": "2026-04-02T21:55:17.259575",
+      "last_type": "warning",
+      "last_message": "⚠️ Diagnostic terminé — Score: 62/100 (DÉGRADÉ) | Erreurs: 15 | Tâches OK: 10/38 | Fichiers OK: 7/8 | Auto-fixes: 0",
+      "total_today": 6,
       "errors_today": 0,
-      "successes_today": 1
+      "successes_today": 0
     },
     {
       "agent": "Agent Veille",
       "last_event": {
-        "ts": "2026-04-02T00:00:19.754198",
+        "ts": "2026-04-02T21:55:16.546881",
         "agent": "Agent Veille",
         "type": "success",
         "message": "Collecte marchés complète",
@@ -1117,44 +1327,28 @@
           "actifs": 0
         }
       },
-      "last_ts": "2026-04-02T00:00:19.754198",
+      "last_ts": "2026-04-02T21:55:16.546881",
       "last_type": "success",
       "last_message": "Collecte marchés complète",
-      "total_today": 8,
-      "errors_today": 2,
-      "successes_today": 1
+      "total_today": 63,
+      "errors_today": 12,
+      "successes_today": 3
     },
     {
       "agent": "Agent DA Site",
       "last_event": {
-        "ts": "2026-04-01T23:58:16.519823",
+        "ts": "2026-04-02T21:53:18.263840",
         "agent": "Agent DA Site",
         "type": "success",
         "message": "Insights géopolitiques et améliorations visuelles terminées",
         "data": {}
       },
-      "last_ts": "2026-04-01T23:58:16.519823",
+      "last_ts": "2026-04-02T21:53:18.263840",
       "last_type": "success",
       "last_message": "Insights géopolitiques et améliorations visuelles terminées",
-      "total_today": 0,
+      "total_today": 4,
       "errors_today": 0,
-      "successes_today": 0
-    },
-    {
-      "agent": "Directeur Adjoint",
-      "last_event": {
-        "ts": "2026-04-01T22:48:31.453664",
-        "agent": "Directeur Adjoint",
-        "type": "progress",
-        "message": "Génération du rapport CEO...",
-        "data": {}
-      },
-      "last_ts": "2026-04-01T22:48:31.453664",
-      "last_type": "progress",
-      "last_message": "Génération du rapport CEO...",
-      "total_today": 0,
-      "errors_today": 0,
-      "successes_today": 0
+      "successes_today": 3
     }
   ]
 }
