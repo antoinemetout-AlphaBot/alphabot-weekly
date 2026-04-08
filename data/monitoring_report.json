@@ -1,58 +1,79 @@
 {
-  "timestamp": "2026-04-02T21:55:17.062053",
-  "date": "2026-04-02",
-  "health_score": 62,
+  "timestamp": "2026-04-08T20:59:17.045623",
+  "date": "2026-04-08",
+  "health_score": 55,
   "status": "DÉGRADÉ",
   "issues": [
     {
-      "severity": "ERROR",
-      "message": "1 erreur(s) critique(s) détectée(s) aujourd'hui",
-      "source": "logs",
-      "penalty": -5
-    },
-    {
       "severity": "WARNING",
-      "message": "28 tâche(s) manquante(s) aujourd'hui",
+      "message": "33 tâche(s) manquante(s) aujourd'hui",
       "source": "planning",
       "penalty": -25
     },
     {
       "severity": "WARNING",
-      "message": "1 tâche(s) en doublon détectée(s)",
-      "source": "planning",
-      "penalty": -3
+      "message": "Fichier périmé (166.2h): data/portfolio_public.json",
+      "source": "data/portfolio_public.json",
+      "penalty": -5
     },
     {
       "severity": "WARNING",
-      "message": "Fichier périmé (23.1h): data/portfolio_public.json",
-      "source": "data/portfolio_public.json",
+      "message": "Fichier périmé (30.5h): data/dernier_rapport_veille.json",
+      "source": "data/dernier_rapport_veille.json",
+      "penalty": -5
+    },
+    {
+      "severity": "WARNING",
+      "message": "Fichier périmé (166.2h): data/newsletters.json",
+      "source": "data/newsletters.json",
+      "penalty": -5
+    },
+    {
+      "severity": "WARNING",
+      "message": "Fichier périmé (143.1h): data/contenu_da.json",
+      "source": "data/contenu_da.json",
       "penalty": -5
     }
   ],
   "auto_fixes": [],
   "logs": {
-    "events_today": 109,
-    "errors_today": 15,
-    "erreurs_critiques": 1,
-    "erreurs_par_agent": {
-      "Agent Veille": 14,
-      "Orchestrateur": 1
-    },
-    "top_errors": [
-      {
-        "ts": "2026-04-02T21:53:17.575762",
-        "agent": "Orchestrateur",
-        "message": "Erreur email CEO: 'AgentGrowth' object has no attribute 'envoyer_email_quotidien_ceo'",
-        "pattern": "ERREUR"
-      }
-    ]
+    "events_today": 9,
+    "errors_today": 0,
+    "erreurs_critiques": 0,
+    "erreurs_par_agent": {},
+    "top_errors": []
   },
   "taches": {
-    "attendues": 38,
-    "executees": 10,
-    "manquantes": 28,
-    "doublons": 1,
+    "attendues": 35,
+    "executees": 2,
+    "manquantes": 33,
+    "doublons": 0,
     "detail_manquantes": [
+      {
+        "id": "dir_newsletter_pipeline",
+        "nom": "Directeur Newsletter 📰",
+        "heure_prevue": "07:30"
+      },
+      {
+        "id": "coo_rapport_matin",
+        "nom": "COO IA — Rapport Matin 🤖",
+        "heure_prevue": "08:00"
+      },
+      {
+        "id": "veille_matin",
+        "nom": "Agent Veille — Matin 🔍",
+        "heure_prevue": "08:30"
+      },
+      {
+        "id": "email_ceo_matin",
+        "nom": "Email CEO 📧",
+        "heure_prevue": "08:50"
+      },
+      {
+        "id": "da_site",
+        "nom": "Agent DA Site 🎨",
+        "heure_prevue": "09:30"
+      },
       {
         "id": "trader_09h",
         "nom": "Directeur Trader — Ouverture EU 📈",
@@ -77,52 +98,35 @@
         "id": "trader_15h45",
         "nom": "Directeur Trader — Ouverture US ⚡📈",
         "heure_prevue": "15:45"
-      },
-      {
-        "id": "trader_16h30",
-        "nom": "Directeur Trader — Overlap EU/US 📈",
-        "heure_prevue": "16:30"
-      },
-      {
-        "id": "trader_17h30",
-        "nom": "Directeur Trader — Clôture EU 📈",
-        "heure_prevue": "17:30"
-      },
-      {
-        "id": "trader_19h",
-        "nom": "Directeur Trader — Soirée US 📈",
-        "heure_prevue": "19:00"
-      },
-      {
-        "id": "trader_20h30",
-        "nom": "Directeur Trader — Pré-clôture US 📈",
-        "heure_prevue": "20:30"
-      },
-      {
-        "id": "trader_22h",
-        "nom": "Directeur Trader — Clôture US 🔔📈",
-        "heure_prevue": "22:00"
       }
     ],
-    "detail_doublons": [
-      {
-        "agent": "Agent Monitoring",
-        "message": "Diagnostic système en cours...",
-        "interval_seconds": 119,
-        "count": 4
-      }
-    ]
+    "detail_doublons": []
   },
   "fichiers": {
-    "ok": 7,
+    "ok": 4,
     "manquants": 0,
     "invalides": 0,
-    "perimes": 1,
+    "perimes": 4,
     "detail_problemes": [
       {
         "fichier": "data/portfolio_public.json",
-        "age_heures": 23.1,
+        "age_heures": 166.2,
         "limite_heures": 2
+      },
+      {
+        "fichier": "data/dernier_rapport_veille.json",
+        "age_heures": 30.5,
+        "limite_heures": 6
+      },
+      {
+        "fichier": "data/newsletters.json",
+        "age_heures": 166.2,
+        "limite_heures": 26
+      },
+      {
+        "fichier": "data/contenu_da.json",
+        "age_heures": 143.1,
+        "limite_heures": 26
       }
     ]
   }
