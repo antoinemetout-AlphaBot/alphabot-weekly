@@ -9,6 +9,7 @@ import json
 import re
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
 
 from . import config
 
@@ -18,10 +19,10 @@ env = Environment(
 )
 
 
-def md(texte: str) -> str:
-    """Markdown minimal → HTML sûr (échappé d'abord)."""
+def md(texte: str) -> Markup:
+    """Markdown minimal → HTML sûr (échappé d'abord, puis marqué safe pour Jinja)."""
     if not texte:
-        return ""
+        return Markup("")
     texte = html_mod.escape(str(texte), quote=False)
     texte = re.sub(r"```[a-z]*", "", texte)  # jamais de backticks dans la sortie
     texte = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", texte)
@@ -34,7 +35,7 @@ def md(texte: str) -> str:
             blocs.append(f"<ul>{items}</ul>")
         else:
             blocs.append(f"<p>{'<br>'.join(l.strip() for l in lignes)}</p>")
-    return "\n".join(blocs)
+    return Markup("\n".join(blocs))
 
 
 env.filters["md"] = md

@@ -72,6 +72,9 @@ def daily():
     memoire["titres_recents"] = (memoire.get("titres_recents", [])
                                  + [contenu["titre_edition"], contenu["concept"]["titre"]])[-30:]
     _sauver_memoire(memoire)
+    (config.DATA / "derniere_analyse.json").write_text(
+        json.dumps({"date": date_iso, "contenu": contenu}, ensure_ascii=False, indent=1),
+        encoding="utf-8")
     _log("analyse", "ok", contenu["titre_edition"])
 
     print("📰 Rendu newsletter…")
