@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page introuvable — AlphaBot Weekly</title>
-<meta name="description" content="L&#39;essentiel des marchés bourse &amp; crypto, chaque jour — par l&#39;IA">
+<title>{% block titre %}{{ nom }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ tagline }}{% endblock %}">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 (function(){try{var t=localStorage.getItem('ab-theme');
 if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
 </script>
-
+{% block head %}{% endblock %}
 </head>
 <body>
 <div class="bg-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="scan"></div>
@@ -29,22 +29,16 @@ if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
   <a class="nav-cta" href="index.html#abonnement">S'abonner gratuitement</a>
 </nav>
 
-
-<div class="hero">
-  <h1>404 — cette page a fait -100%</h1>
-  <p class="sous">Comme un altcoin en bear market, elle a disparu. Mais le reste du site tient la cote.</p>
-  <p style="margin-top:24px"><a class="btn" href="index.html">Retour à l'accueil</a></p>
-</div>
-
+{% block contenu %}{% endblock %}
 
 <footer>
-  <p><strong>AlphaBot Weekly</strong> — L&#39;essentiel des marchés bourse &amp; crypto, chaque jour — par l&#39;IA</p>
+  <p><strong>{{ nom }}</strong> — {{ tagline }}</p>
   <p style="margin-top:8px">Contenu généré par des agents IA. Aucun conseil en investissement —
      les portefeuilles présentés sont des <strong>simulations pédagogiques</strong>.</p>
   <p style="margin-top:8px">
     <a href="mentions.html">Mentions &amp; avertissements</a> ·
     <a href="mailto:antoine.metout@gmail.com?subject=Contact%20AlphaBot">Contact</a> ·
-    © 2026 AlphaBot Weekly
+    © {{ annee }} AlphaBot Weekly
   </p>
 </footer>
 
@@ -58,6 +52,6 @@ function basculerTheme(){
 var lienActif=document.querySelector('nav a[href="'+location.pathname.split('/').pop()+'"]');
 if(lienActif)lienActif.classList.add('actif');
 </script>
-
+{% block scripts %}{% endblock %}
 </body>
 </html>

@@ -1,183 +1,110 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AlphaBot Weekly — Toutes les newsletters</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:#04091a;color:#e2e8f0;font-family:'Inter',sans-serif;min-height:100vh;padding:32px 16px 60px;}
-.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(59,130,246,.025)1px,transparent 1px),
-  linear-gradient(90deg,rgba(59,130,246,.025)1px,transparent 1px);
-  background-size:60px 60px;}
-.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;}
-header{text-align:center;margin-bottom:40px;padding:36px 24px;
-  background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(245,200,66,.06));
-  border:1px solid rgba(59,130,246,.2);border-radius:20px;}
-.logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:900;
-  background:linear-gradient(135deg,#fff,#63b3ed,#f5c842);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  margin-bottom:8px;}
-.sub{color:#64748b;font-size:14px;margin-bottom:16px;}
-.badge{display:inline-block;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);
-  color:#22c55e;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
-.card{display:block;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:20px;text-decoration:none;
-  transition:transform .2s,border-color .2s;}
-.card:hover{transform:translateY(-3px);border-color:rgba(99,179,237,.35);}
-.card-date{font-size:11px;color:#64748b;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-.card-title{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:6px;}
-.card-meta{font-size:12px;color:#475569;margin-bottom:12px;}
-.card-cta{font-size:13px;font-weight:600;color:#63b3ed;}
-.back{display:inline-block;color:#64748b;font-size:13px;text-decoration:none;margin-bottom:28px;}
-.back:hover{color:#93c5fd;}
-.update{text-align:center;color:#334155;font-size:11px;margin-top:32px;}
-</style>
-<style>
-/* ═══ NAV (injecté par Agent DA) ═══ */
-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-    padding:14px 40px;background:rgba(4,9,26,.85);backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-brand{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;color:white;
-           text-decoration:none;display:flex;align-items:center;gap:6px;}
-.nav-brand-sub{font-weight:400;font-size:14px;color:#64748b;}
-.nav-center{display:flex;align-items:center;gap:24px;}
-.nav-center a{color:#94a3b8;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
-.nav-center a:hover,.nav-center a.active{color:white;}
-.nav-cta{background:linear-gradient(135deg,#3b82f6,#22d3ee);color:white!important;
-         padding:8px 18px;border-radius:8px;font-weight:600;font-size:13px;}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:white;margin:5px 0;transition:.3s;}
-@media(max-width:768px){
-  .nav-center{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;
-              background:rgba(4,9,26,.95);backdrop-filter:blur(20px);padding:20px;gap:16px;
-              border-bottom:1px solid rgba(255,255,255,.08);}
-  .nav-center.mobile-open{display:flex;}
-  .nav-hamburger{display:block;}
-}
-</style>
-<style>
-/* ═══ FOOTER (injecté par Agent DA) ═══ */
-footer{margin-top:60px;padding:40px;border-top:1px solid rgba(255,255,255,.06);
-       text-align:center;}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;
-              max-width:900px;margin:0 auto 20px;flex-wrap:wrap;gap:16px;}
-.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
-.footer-links a{color:#64748b;text-decoration:none;font-size:13px;transition:color .2s;}
-.footer-links a:hover{color:#e2e8f0;}
-.footer-copy{font-size:12px;color:#334155;line-height:1.8;}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Archives — AlphaBot Weekly</title>
+<meta name="description" content="L&#39;essentiel des marchés bourse &amp; crypto, chaque jour — par l&#39;IA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/site.css">
+<script>
+(function(){try{var t=localStorage.getItem('ab-theme');
+if(t){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+
 </head>
 <body>
+<div class="bg-grid"></div><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="scan"></div>
+
 <nav>
-  <a href="index.html" class="nav-brand">AlphaBot <span class="nav-brand-sub">Weekly</span></a>
-  <div class="nav-center" id="nav-menu">
-    <a href="index.html">Accueil</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="investissement.html">Robot Trader</a>
-    <a href="arena.html">Arena</a>
-    <a href="dashboard-agents.html">Agents IA</a>
-    <a href="#subscribe" class="nav-cta">S'abonner gratuitement</a>
-  </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a class="brand" href="index.html">Alpha<em>Bot</em> Weekly</a>
+  <a class="lien" href="index.html">Accueil</a>
+  <a class="lien" href="newsletter.html">Newsletter</a>
+  <a class="lien" href="newsletters.html">Archives</a>
+  <a class="lien" href="investissement.html">Portefeuilles&nbsp;IA</a>
+  <a class="lien" href="coulisses.html">Coulisses</a>
+  <button class="theme-btn" onclick="basculerTheme()" title="Mode clair/sombre">◐</button>
+  <a class="nav-cta" href="index.html#abonnement">S'abonner gratuitement</a>
 </nav>
 
-<div class="bg"></div>
+
 <div class="wrap">
-  <a href="index.html" class="back">← Retour à l'accueil</a>
-  <header>
-    <div class="logo">🤖 AlphaBot Weekly</div>
-    <div class="sub">L'essentiel des marchés bourse &amp; crypto — par l'IA</div>
-    <div class="badge">📚 10 édition(s) disponible(s)</div>
-  </header>
-  <div class="grid">
+  <h1 style="margin-bottom:6px">🗂️ Toutes les éditions</h1>
+  <p style="color:var(--muted);margin-bottom:18px">9 édition(s) publiée(s).</p>
+  <div class="grille grille-2">
     
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_SIMULATION_2026-03-25.html" target="_blank" class="card">
-          <div class="card-date">Mercredi 25 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">65.3 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-04-01.html" target="_blank" class="card">
-          <div class="card-date">Mercredi 1 April 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">57.5 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-30.html" target="_blank" class="card">
-          <div class="card-date">Lundi 30 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">62.9 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-26.html" target="_blank" class="card">
-          <div class="card-date">Jeudi 26 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">64.2 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-25.html" target="_blank" class="card">
-          <div class="card-date">Mercredi 25 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">63.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-24.html" target="_blank" class="card">
-          <div class="card-date">Mardi 24 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">64.1 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-23.html" target="_blank" class="card">
-          <div class="card-date">Lundi 23 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">65.7 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-22.html" target="_blank" class="card">
-          <div class="card-date">Dimanche 22 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">59.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-21.html" target="_blank" class="card">
-          <div class="card-date">Samedi 21 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">48.4 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
-        <a href="https://alphabotweeklynetlifyapp.netlify.app/outputs/alphabot_newsletter_2026-03-20.html" target="_blank" class="card">
-          <div class="card-date">Vendredi 20 March 2026</div>
-          <div class="card-title">📊 Édition AlphaBot Weekly</div>
-          <div class="card-meta">49.6 KB · Générée par IA</div>
-          <div class="card-cta">Lire l'édition →</div>
-        </a>
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-04-01.html">
+      <div class="edition-date">Mercredi 1er avril 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-30.html">
+      <div class="edition-date">Lundi 30 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-26.html">
+      <div class="edition-date">Jeudi 26 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-25.html">
+      <div class="edition-date">Mercredi 25 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-24.html">
+      <div class="edition-date">Mardi 24 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-23.html">
+      <div class="edition-date">Lundi 23 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-22.html">
+      <div class="edition-date">Dimanche 22 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-21.html">
+      <div class="edition-date">Samedi 21 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
+    <a class="section edition-card" href="newsletters/alphabot_newsletter_2026-03-20.html">
+      <div class="edition-date">Vendredi 20 mars 2026</div>
+      <div class="edition-titre">AlphaBot Weekly</div>
+    </a>
+    
   </div>
-  <div class="update">Mis à jour automatiquement · 01/04/2026 à 22:45</div>
 </div>
-<script>
-function toggleMenu(){document.getElementById('nav-menu').classList.toggle('mobile-open');}
-</script>
+
+
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">🤖 AlphaBot Weekly</div>
-    <div class="footer-links">
-      <a href="newsletter.html">Newsletter</a>
-      <a href="investissement.html">Robot Trader</a>
-      <a href="arena.html">Arena</a>
-      <a href="dashboard-agents.html">Agents IA</a>
-    </div>
-  </div>
-  <div class="footer-copy">
-    © 2026 AlphaBot Weekly — Newsletter 100% générée par IA · Propulsée par Claude (Anthropic)<br>
-    ⚠️ Contenu informatif uniquement. Ne constitue pas un conseil en investissement.
-  </div>
+  <p><strong>AlphaBot Weekly</strong> — L&#39;essentiel des marchés bourse &amp; crypto, chaque jour — par l&#39;IA</p>
+  <p style="margin-top:8px">Contenu généré par des agents IA. Aucun conseil en investissement —
+     les portefeuilles présentés sont des <strong>simulations pédagogiques</strong>.</p>
+  <p style="margin-top:8px">
+    <a href="mentions.html">Mentions &amp; avertissements</a> ·
+    <a href="mailto:antoine.metout@gmail.com?subject=Contact%20AlphaBot">Contact</a> ·
+    © 2026 AlphaBot Weekly
+  </p>
 </footer>
+
+<script>
+function basculerTheme(){
+  var h=document.documentElement;
+  var t=h.getAttribute('data-theme')==='dark'?'light':'dark';
+  h.setAttribute('data-theme',t);
+  try{localStorage.setItem('ab-theme',t);}catch(e){}
+}
+var lienActif=document.querySelector('nav a[href="'+location.pathname.split('/').pop()+'"]');
+if(lienActif)lienActif.classList.add('actif');
+</script>
+
 </body>
 </html>

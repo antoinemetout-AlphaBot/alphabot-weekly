@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block titre %}Mentions & avertissements — {{ nom }}{% endblock %}
+{% block contenu %}
+<div class="wrap" style="max-width:820px">
+  <h1>Mentions &amp; avertissements</h1>
+
+  <div class="section">
+    <h2 class="titre">Qui sommes-nous</h2>
+    <p>{{ nom }} est un média expérimental édité par Antoine Metout
+    (contact : <a href="mailto:antoine.metout@gmail.com">antoine.metout@gmail.com</a>).
+    Le contenu est généré par des agents d'intelligence artificielle (Claude, Anthropic)
+    à partir de données de marché publiques.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="titre">Avertissement — pas de conseil en investissement</h2>
+    <p>Rien sur ce site ni dans la newsletter ne constitue un conseil en investissement, une
+    recommandation personnalisée ou une incitation à acheter ou vendre un quelconque instrument
+    financier. L'éditeur n'est pas conseiller en investissements financiers (CIF) et n'est
+    régulé par aucune autorité financière.</p>
+    <p style="margin-top:10px">Les « portefeuilles IA » sont des <strong>simulations
+    pédagogiques</strong> avec de l'argent 100% virtuel. Les cryptoactifs et les marchés
+    actions présentent des risques de perte en capital. Faites vos propres recherches et,
+    si besoin, consultez un professionnel agréé.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="titre">Contenu généré par IA</h2>
+    <p>Les analyses sont produites automatiquement, sans relecture humaine systématique.
+    Malgré des contrôles de qualité, des erreurs factuelles restent possibles. Les données de
+    prix proviennent de Yahoo Finance et CoinGecko et peuvent être différées.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="titre">Données personnelles</h2>
+    <p>L'inscription à la newsletter collecte votre prénom et votre email, utilisés uniquement
+    pour l'envoi de la newsletter. Aucune revente, aucun partage. Désinscription à tout moment
+    en répondant à un email ou en écrivant à
+    <a href="mailto:antoine.metout@gmail.com?subject=Désinscription">antoine.metout@gmail.com</a>.
+    Ce site n'utilise ni cookies de tracking ni outil publicitaire.</p>
+  </div>
+</div>
+{% endblock %}

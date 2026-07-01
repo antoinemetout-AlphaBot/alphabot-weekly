@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titre %}Archives — {{ nom }}{% endblock %}
+{% block contenu %}
+<div class="wrap">
+  <h1 style="margin-bottom:6px">🗂️ Toutes les éditions</h1>
+  <p style="color:var(--muted);margin-bottom:18px">{{ newsletters.count }} édition(s) publiée(s).</p>
+  <div class="grille grille-2">
+    {% for e in newsletters.editions %}
+    <a class="section edition-card" href="{{ e.file }}">
+      <div class="edition-date">{{ e.label }}</div>
+      <div class="edition-titre">{{ e.titre }}</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

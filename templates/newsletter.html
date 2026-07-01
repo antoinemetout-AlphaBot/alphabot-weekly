@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block titre %}Newsletter — {{ nom }}{% endblock %}
+{% block contenu %}
+<div class="wrap">
+  <h1 style="margin-bottom:6px">📰 La newsletter</h1>
+  <p style="color:var(--muted);margin-bottom:18px">Nouvelle édition chaque matin à 7h30 —
+  choisissez une édition :</p>
+
+  {% if newsletters.editions %}
+  <select class="champ" id="choix" onchange="charger(this.value)" style="margin-bottom:16px">
+    {% for e in newsletters.editions %}
+    <option value="{{ e.file }}">{{ e.label }} — {{ e.titre }}</option>
+    {% endfor %}
+  </select>
+  <iframe class="lecteur" id="lecteur" src="{{ newsletters.editions[0].file }}"
+          title="Édition de la newsletter"></iframe>
+  {% else %}
+  <div class="section"><p>Première édition en préparation — abonnez-vous pour ne pas la rater !</p>
+  <p style="margin-top:12px"><a class="btn" href="index.html#abonnement">S'abonner gratuitement</a></p></div>
+  {% endif %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script>function charger(f){document.getElementById('lecteur').src=f;}</script>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block titre %}{{ nom }} — bourse & crypto décryptées par l'IA{% endblock %}
+{% block contenu %}
+
+<div class="hero">
+  <span class="badge">100% généré par des agents IA · 100% gratuit</span>
+  <h1>La bourse et la crypto,<br>décryptées chaque jour par l'IA</h1>
+  <p class="sous">Chaque matin à 7h30, nos agents IA analysent les marchés, la macro et la
+  géopolitique, et vous livrent l'essentiel en 5 minutes. Pensé pour les investisseurs
+  débutants — zéro jargon, que des faits chiffrés.</p>
+
+  <form class="form-abo" id="abonnement" onsubmit="sAbonner(event)">
+    <input class="champ" type="text" name="prenom" placeholder="Votre prénom" required>
+    <input class="champ" type="email" name="email" placeholder="Votre email" required>
+    <button class="btn" type="submit">Je m'abonne</button>
+  </form>
+  <p class="form-note" id="abo-msg">Gratuit, sans spam. Désinscription en un email.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="section">
+    <h2 class="titre">📊 Les marchés en direct</h2>
+    <div class="kpi-grid">
+      {% for nom_actif, p in live.prices.items() %}
+      <div class="kpi-card">
+        <div class="kpi-name">{{ nom_actif }}</div>
+        <div class="kpi-value">{{ "{:,.0f}".format(p.prix).replace(",", " ") if p.prix > 100 else p.prix }}</div>
+        <div class="{{ 'up' if p.variation >= 0 else 'down' }}">{{ "%+.2f"|format(p.variation) }}%</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if live.updated_at %}<div class="maj-info mono">MAJ {{ live.updated_at[:16].replace("T", " à ") }} (heure de Paris)</div>{% endif %}
+  </div>
+
+  {% if derniere_edition %}
+  <div class="section">
+    <h2 class="titre">📰 Dernière édition</h2>
+    <p class="edition-date mono">{{ derniere_edition.label }} — édition #{{ newsletters.count }}</p>
+    <p style="font-size:1.25rem;font-weight:600;margin:10px 0">{{ derniere_edition.titre }}</p>
+    <p><a class="btn" href="newsletter.html">Lire l'édition du jour</a></p>
+  </div>
+  {% endif %}
+
+  <div class="grille grille-3">
+    {% for p in profils %}
+    <div class="section profil-card">
+      <h3>{{ p.emoji }} {{ p.nom }}</h3>
+      <p class="profil-desc">{{ p.description }}</p>
+      <div class="profil-perf {{ 'up' if (p.performance_pct or 0) >= 0 else 'down' }}">
+        {{ "%+.2f"|format(p.performance_pct or 0) }}%</div>
+      <p class="profil-desc">10 000 € virtuels au départ · <a href="investissement.html">voir le détail</a></p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="disclaimer"><strong>⚠️ Transparence totale :</strong> les portefeuilles ci-dessus sont des
+  <strong>simulations pédagogiques</strong> gérées par IA avec de l'argent virtuel. Aucun
+  argent réel n'est investi. Rien sur ce site ne constitue un conseil en investissement.</div>
+
+  <div class="section">
+    <h2 class="titre">🤖 Comment ça marche ?</h2>
+    <div class="grille grille-3">
+      <div><h3>1. Collecte</h3><p class="profil-desc">Chaque matin, un agent collecte les prix
+      réels : Bitcoin, indices mondiaux, or, pétrole, devises, actions.</p></div>
+      <div><h3>2. Analyse</h3><p class="profil-desc">Claude (l'IA d'Anthropic) analyse les
+      mouvements, le contexte macro et géopolitique, dans un style clair et chiffré.</p></div>
+      <div><h3>3. Publication</h3><p class="profil-desc">La newsletter part par email et le site
+      se met à jour — sans aucune intervention humaine. <a href="coulisses.html">Voir les coulisses</a>.</p></div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+async function sAbonner(e){
+  e.preventDefault();
+  var f=e.target,msg=document.getElementById('abo-msg');
+  msg.textContent='Inscription en cours…';
+  try{
+    var r=await fetch('{{ formspree }}',{method:'POST',
+      headers:{'Accept':'application/json'},body:new FormData(f)});
+    if(r.ok){msg.textContent='✅ Bienvenue à bord ! Vous recevrez la prochaine édition.';f.reset();}
+    else{throw new Error();}
+  }catch(err){msg.textContent='❌ Petit souci — réessayez ou écrivez-nous directement.';}
+}
+</script>
+{% endblock %}

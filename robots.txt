@@ -1,14 +1,3 @@
 User-agent: *
 Allow: /
-
-Disallow: /data/
-Disallow: /agents/
-Disallow: /utils/
-Disallow: /scripts/
-Disallow: /templates/
-Disallow: /docs/
-Disallow: /.env
-Disallow: /espace-pilotage.html
-Disallow: /dashboard-ceo.html
-
 Sitemap: https://antoinemetout-alphabot.github.io/alphabot-weekly/sitemap.xml

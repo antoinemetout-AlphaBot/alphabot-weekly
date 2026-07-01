@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block titre %}Portefeuilles IA — {{ nom }}{% endblock %}
+{% block contenu %}
+<div class="wrap">
+  <h1 style="margin-bottom:6px">💼 Les portefeuilles IA</h1>
+  <p style="color:var(--muted)">Saison {{ portfolio_saison }} — lancée le {{ portfolio_demarrage }}.
+  Trois robots, trois stratégies, 10 000 € virtuels chacun. Décisions prises chaque lundi par
+  l'IA, valorisation quotidienne aux prix réels du marché.</p>
+
+  <div class="disclaimer"><strong>⚠️ Simulation pédagogique.</strong> Argent 100% virtuel.
+  Ces portefeuilles montrent comment une IA raisonne face aux marchés — ils ne constituent
+  en aucun cas un conseil en investissement. Les performances passées (même simulées)
+  ne préjugent pas des performances futures.</div>
+
+  {% for p in profils %}
+  <div class="section">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:baseline">
+      <h2 style="font-size:1.4rem">{{ p.emoji }} {{ p.nom }}</h2>
+      <div class="profil-perf {{ 'up' if (p.performance_pct or 0) >= 0 else 'down' }}">
+        {{ "%+.2f"|format(p.performance_pct or 0) }}%</div>
+    </div>
+    <p class="profil-desc">{{ p.description }} —
+      valeur actuelle <strong class="mono">{{ "{:,.0f}".format(p.valeur_totale or p.capital_initial).replace(",", " ") }} €</strong>
+      (dont cash {{ "{:,.0f}".format(p.cash).replace(",", " ") }} €)</p>
+
+    {% if p.positions %}
+    <table class="positions">
+      <tr><th>Actif</th><th>Quantité</th><th>Prix d'entrée</th><th>Prix actuel</th><th>P&amp;L</th></tr>
+      {% for pos in p.positions %}
+      {% set pl = ((pos.prix_actuel_eur or pos.prix_entree_eur) / pos.prix_entree_eur - 1) * 100 %}
+      <tr>
+        <td><strong>{{ pos.nom }}</strong> <span style="color:var(--muted)">{{ pos.ticker }}</span></td>
+        <td class="mono">{{ "%.4g"|format(pos.quantite) }}</td>
+        <td class="mono">{{ "%.2f"|format(pos.prix_entree_eur) }} €</td>
+        <td class="mono">{{ "%.2f"|format(pos.prix_actuel_eur or pos.prix_entree_eur) }} €</td>
+        <td class="mono {{ 'up' if pl >= 0 else 'down' }}">{{ "%+.2f"|format(pl) }}%</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p class="profil-desc">100% cash — en attente des prochaines décisions (chaque lundi).</p>
+    {% endif %}
+
+    {% if p.trades %}
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer;color:var(--cyan)">Historique des décisions ({{ p.trades|length }})</summary>
+      <div style="margin-top:8px">
+      {% for t in p.trades[-10:]|reverse %}
+        <div class="evt"><span class="ts">{{ t.date }}</span>
+        <span>{{ '🟢 Achat' if t.action == 'acheter' else '🔴 Vente' }} <strong>{{ t.ticker }}</strong>
+        @ {{ t.prix_eur }} € — <em>{{ t.raison }}</em></span></div>
+      {% endfor %}
+      </div>
+    </details>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <div class="section">
+    <h2 class="titre">Comment les robots décident</h2>
+    <p>Chaque lundi matin, l'IA reçoit l'état des trois portefeuilles et les prix du jour, puis
+    propose ses arbitrages (0 à 3 par profil). Un programme <strong>valide chaque décision</strong> :
+    univers d'actifs fermé, plafonds de concentration par position (20% à 35% selon le profil),
+    vérification du cash disponible. L'IA propose, le code contrôle — jamais l'inverse.
+    Le reste de la semaine, les positions sont simplement revalorisées aux prix réels.</p>
+  </div>
+</div>
+{% endblock %}

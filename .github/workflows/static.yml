@@ -1,15 +1,21 @@
-name: Deploy static content to Pages
+name: 🚀 Déploiement Pages (push manuel)
+# Déploie le site quand Antoine ou Claude pousse directement sur main.
+# (Les commits des workflows automatiques ne déclenchent pas ce workflow — comportement GitHub.)
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
-  group: "pages"
+  group: alphabot-pipeline
   cancel-in-progress: false
+
 jobs:
   deploy:
     environment:
@@ -17,14 +23,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
+          path: "."
+      - id: deployment
         uses: actions/deploy-pages@v4
