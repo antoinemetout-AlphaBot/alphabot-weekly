@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: "30 5 * * *"
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths: [".trigger-daily"]
 
 concurrency:
   group: alphabot-pipeline
@@ -71,6 +74,4 @@ jobs:
               from pipeline import mailer
               mailer.alerte_ceo("Échec du pipeline quotidien",
                   "Le run GitHub Actions a échoué. Voir l'onglet Actions du repo.")
-          except Exception as e:
-              print("Alerte impossible:", e)
-          EOF
+          except Exception as e
