@@ -1,1 +1,34 @@
-{"events": []}
+{
+ "events": [
+  {
+   "ts": "2026-07-01T22:17:04+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-07-01T22:17:41+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 60 753$ : le rebond qui ne convainc personne"
+  },
+  {
+   "ts": "2026-07-01T22:17:41+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #10"
+  },
+  {
+   "ts": "2026-07-01T22:17:42+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-07-01T22:17:44+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  }
+ ]
+}

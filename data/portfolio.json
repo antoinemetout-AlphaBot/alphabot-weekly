@@ -9,8 +9,15 @@
    "capital_initial": 10000.0,
    "cash": 10000.0,
    "positions": [],
-   "historique": [],
-   "trades": []
+   "historique": [
+    {
+     "date": "2026-07-02",
+     "valeur": 10000.0
+    }
+   ],
+   "trades": [],
+   "valeur_totale": 10000.0,
+   "performance_pct": 0.0
   },
   "modere": {
    "nom": "Le Stratège",
@@ -19,8 +26,15 @@
    "capital_initial": 10000.0,
    "cash": 10000.0,
    "positions": [],
-   "historique": [],
-   "trades": []
+   "historique": [
+    {
+     "date": "2026-07-02",
+     "valeur": 10000.0
+    }
+   ],
+   "trades": [],
+   "valeur_totale": 10000.0,
+   "performance_pct": 0.0
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -29,8 +43,15 @@
    "capital_initial": 10000.0,
    "cash": 10000.0,
    "positions": [],
-   "historique": [],
-   "trades": []
+   "historique": [
+    {
+     "date": "2026-07-02",
+     "valeur": 10000.0
+    }
+   ],
+   "trades": [],
+   "valeur_totale": 10000.0,
+   "performance_pct": 0.0
   }
  }
 }
