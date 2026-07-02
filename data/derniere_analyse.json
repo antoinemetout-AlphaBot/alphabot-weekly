@@ -1,0 +1,28 @@
+{
+ "date": "2026-07-02",
+ "contenu": {
+  "titre_edition": "Bitcoin à 60 277$ : la peur au ventre, mais le rebond est là",
+  "essentiel": [
+   "Le Bitcoin reprend **+2,95%** à **60 277$** mais l'indice Fear & Greed reste écrasé à **19/100** — la peur extrême domine malgré le rebond.",
+   "Le pétrole WTI s'effondre à **68,19$**, soit **-8,86%** sur 7 jours — du jamais vu depuis des mois, et TotalEnergies trinque avec **-5,86%** sur la semaine.",
+   "Le Nasdaq 100 lâche **-1,54%** à **29 809 pts** en une journée, plombé par NVIDIA qui recule de **-1,25%** à **197,58$**."
+  ],
+  "macro": {
+   "titre": "Le pétrole perd -8,86% en 7 jours : l'or noir fait grise mine",
+   "texte": "**Dans les faits :** Le WTI s'affiche à **68,19$**, en recul de **-0,57%** sur 24h et de **-8,86%** sur la semaine. Le Dollar Index (DXY) glisse à **100,99** (**-0,39%**), ce qui pousse l'EUR/USD à **1,14$**. L'or tient à **4 083,70$** (**+0,38%**) malgré **-2,35%** sur 7 jours.\n\n**Concrètement :** Un dollar qui faiblit, c'est normalement du carburant pour les matières premières libellées en USD. Mais le pétrole, lui, ignore cette règle en ce moment — signe que c'est la demande mondiale qui inquiète, pas la devise.\n\n**Un peu de recul.** L'OPEP+ a accentué sa production ces dernières semaines, et les craintes de ralentissement économique en Chine pèsent lourd sur les anticipations de consommation. Un baril à 68$ rappelle les niveaux de fin 2023, quand les marchés doutaient déjà de la solidité de la croissance mondiale.\n\n**Bref.** L'or résiste, le pétrole coule, le dollar recule : les marchés macro envoient un signal de prudence que les indices actions n'ont pas encore totalement intégré."
+  },
+  "bourse": {
+   "titre": "Nasdaq -1,54% : la tech tousse, mais l'Europe résiste",
+   "texte": "**Dans les faits :** Le Nasdaq 100 décroche de **-1,54%** à **29 809 pts**, le S&P 500 cède **-0,22%** à **7 483 pts**. En Europe, le CAC 40 progresse de **+0,60%** à **8 387 pts**, le DAX gagne **+0,31%** à **25 118 pts**. Deux continents, deux humeurs.\n\n**Plus encore :** NVIDIA recule à **197,58$** (**-1,25%**), prolongeant une semaine difficile à **-3,45%**. À l'inverse, Lockheed Martin s'envole de **+2,43%** à **521,82$** — les valeurs défense continuent de surperformer dans un contexte géopolitique tendu. LVMH rebondit de **+1,88%** à **490,05$**, portant le CAC. Tesla, lui, enchaîne une semaine solide à **+7,30%** pour s'afficher à **425,30$**.\n\n**Un peu de recul.** La rotation sectorielle est nette : on fuit la tech spéculative, on se réfugie dans la défense et le luxe. Ce schéma rappelle le second semestre 2022, quand les taux hauts avaient reconfiguré les portefeuilles en profondeur.\n\n**Bref.** L'Europe fait figure de refuge relatif aujourd'hui — ce n'est pas souvent qu'on dit ça."
+  },
+  "crypto": {
+   "titre": "Bitcoin +2,95% à 60 277$ : rebond technique sous extrême peur",
+   "texte": "**Dans les faits :** Le Bitcoin gagne **+2,95%** en 24h pour s'afficher à **60 277$**. Sur 7 jours, il reste dans le rouge à **-2,49%**. L'indice Fear & Greed pointe à **19/100** — zone d'extrême peur, comme en novembre 2022 avant le krach FTX.\n\n**Plus encore :** Un rebond de **+2,95%** en pleine extrême peur, c'est souvent ce qu'on appelle un \"dead cat bounce\" (rebond du chat mort) — une reprise technique qui ne signifie pas forcément un retournement de tendance. Le BTC reste sous le seuil psychologique des **65 000$**, niveau qui ferait vraiment parler d'un retour haussier.\n\n**Un peu de recul.** Historiquement, les zones de Fear & Greed sous 20 ont parfois précédé de forts rebonds (mars 2020, juillet 2022). Mais elles ont aussi accompagné des chutes prolongées. L'indicateur seul ne prédit rien — il mesure l'état émotionnel du marché, pas sa direction.\n\n**Bref.** Le Bitcoin respire, mais le marché tremble encore : un rebond dans la peur, c'est fragile comme un château de cartes sous un ventilateur."
+  },
+  "concept": {
+   "titre": "Le Dead Cat Bounce : quand un rebond ne signifie rien",
+   "texte": "Un \"dead cat bounce\" (littéralement : le rebond du chat mort) désigne une remontée temporaire d'un actif en pleine tendance baissière — avant de replonger.\n\nL'image est brutale mais efficace : même un chat mort rebondit s'il tombe d'assez haut.\n\n**Exemple concret :** Le Bitcoin était à **65 000$**, il chute à **58 000$**, remonte à **60 277$** (+**2,95%**), puis repart à la baisse. Ce rebond n'était pas un retournement — juste une respiration technique avant la prochaine vague.\n\nComment distinguer un vrai rebond d'un dead cat bounce ? On regarde les volumes (faibles = suspect), la durée, et si l'actif casse des niveaux de résistance clés. Sans ces confirmations, méfiance."
+  },
+  "commentaire_portefeuille": "Journée en demi-teinte pour les portefeuilles simulés : les lignes tech (NVIDIA) et crypto (BTC) ont pesé, partiellement compensées par Lockheed Martin et LVMH qui ont tiré leur épingle du jeu."
+ }
+}

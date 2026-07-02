@@ -1,20 +1,20 @@
 {
- "ts": "2026-07-01T22:17:41+00:00",
+ "ts": "2026-07-02T08:28:29+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 60753.0,
-   "var_24h": 3.59,
-   "var_7j": -0.21,
-   "market_cap": 1218115078330,
+   "prix": 60301.0,
+   "var_24h": 2.99,
+   "var_7j": -2.45,
+   "market_cap": 1208691546821,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 8403.9902,
-   "var_24h": 0.44,
-   "var_7j": -0.76
+   "prix": 8389.5195,
+   "var_24h": 0.63,
+   "var_7j": -0.38
   },
   "S&P 500": {
    "ticker": "^GSPC",
@@ -24,15 +24,15 @@
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 29809.1328,
+   "prix": 29809.1309,
    "var_24h": -1.54,
    "var_7j": 0.47
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 24995.8105,
-   "var_24h": 1.5,
-   "var_7j": -0.12
+   "prix": 25116.9004,
+   "var_24h": 0.31,
+   "var_7j": 0.52
   },
   "Dow Jones": {
    "ticker": "^DJI",
@@ -44,27 +44,27 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 101.413,
-   "var_24h": 0.22,
-   "var_7j": 0.39
+   "prix": 100.992,
+   "var_24h": -0.39,
+   "var_7j": -0.03
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 68.05,
-   "var_24h": -2.09,
-   "var_7j": -9.05
+   "prix": 68.2,
+   "var_24h": -0.55,
+   "var_7j": -8.85
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4052.8,
-   "var_24h": 0.74,
-   "var_7j": -3.09
+   "prix": 4082.1001,
+   "var_24h": 0.34,
+   "var_7j": -2.39
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1382,
-   "var_24h": -0.35,
-   "var_7j": -1.09
+   "prix": 1.1421,
+   "var_24h": 0.07,
+   "var_7j": -0.33
   }
  },
  "watchlist": {
@@ -88,15 +88,15 @@
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 484.1,
-   "var_24h": -1.67,
-   "var_7j": -4.16
+   "prix": 489.95,
+   "var_24h": 1.86,
+   "var_7j": -1.86
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 68.03,
-   "var_24h": -0.15,
-   "var_7j": -2.08
+   "prix": 66.07,
+   "var_24h": 0.23,
+   "var_7j": -5.88
   },
   "ExxonMobil": {
    "ticker": "XOM",
@@ -113,7 +113,7 @@
  },
  "portefeuille_prix": {},
  "fear_greed": {
-  "valeur": 11,
+  "valeur": 19,
   "label": "Extreme Fear"
  },
  "erreurs": []
