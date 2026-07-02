@@ -65,6 +65,12 @@
    "evenement": "prix_live",
    "statut": "ok",
    "detail": "10 actifs"
+  },
+  {
+   "ts": "2026-07-02T12:28:39+00:00",
+   "evenement": "prix_live",
+   "statut": "ok",
+   "detail": "10 actifs"
   }
  ]
 }
