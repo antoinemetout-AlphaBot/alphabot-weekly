@@ -1,11 +1,11 @@
 {
- "ts": "2026-07-02T18:25:19+00:00",
+ "ts": "2026-07-02T20:02:27+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 61746.0,
-   "var_24h": 2.81,
-   "var_7j": 3.72,
-   "market_cap": 1238267784805,
+   "prix": 61409.0,
+   "var_24h": 2.54,
+   "var_7j": 3.33,
+   "market_cap": 1231746397176,
    "source": "coingecko"
   }
  },
@@ -18,15 +18,15 @@
   },
   "S&P 500": {
    "ticker": "^GSPC",
-   "prix": 7451.3301,
-   "var_24h": -0.43,
-   "var_7j": -0.66
+   "prix": 7482.73,
+   "var_24h": -0.01,
+   "var_7j": -0.24
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 29223.0918,
-   "var_24h": -1.97,
-   "var_7j": -3.89
+   "prix": 29329.2129,
+   "var_24h": -1.61,
+   "var_7j": -3.54
   },
   "DAX": {
    "ticker": "^GDAXI",
@@ -36,55 +36,55 @@
   },
   "Dow Jones": {
    "ticker": "^DJI",
-   "prix": 52589.6797,
-   "var_24h": 0.54,
-   "var_7j": 1.99
+   "prix": 52899.4219,
+   "var_24h": 1.14,
+   "var_7j": 2.59
   }
  },
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 100.866,
-   "var_24h": -0.52,
-   "var_7j": -0.15
+   "prix": 100.902,
+   "var_24h": -0.48,
+   "var_7j": -0.12
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 68.48,
-   "var_24h": -0.15,
-   "var_7j": -8.47
+   "prix": 68.47,
+   "var_24h": -0.16,
+   "var_7j": -8.49
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4132.5,
-   "var_24h": 1.58,
-   "var_7j": -1.18
+   "prix": 4133.7998,
+   "var_24h": 1.61,
+   "var_7j": -1.15
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1435,
-   "var_24h": 0.19,
-   "var_7j": -0.2
+   "prix": 1.1434,
+   "var_24h": 0.18,
+   "var_7j": -0.22
   }
  },
  "watchlist": {
   "Apple": {
    "ticker": "AAPL",
-   "prix": 307.291,
-   "var_24h": 4.39,
-   "var_7j": 3.11
+   "prix": 308.63,
+   "var_24h": 4.84,
+   "var_7j": 3.56
   },
   "NVIDIA": {
    "ticker": "NVDA",
-   "prix": 193.54,
-   "var_24h": -2.04,
-   "var_7j": -8.14
+   "prix": 194.83,
+   "var_24h": -1.39,
+   "var_7j": -7.53
   },
   "Tesla": {
    "ticker": "TSLA",
-   "prix": 393.9,
-   "var_24h": -7.38,
-   "var_7j": -1.65
+   "prix": 393.45,
+   "var_24h": -7.49,
+   "var_7j": -1.76
   },
   "LVMH": {
    "ticker": "MC.PA",
@@ -100,15 +100,15 @@
   },
   "ExxonMobil": {
    "ticker": "XOM",
-   "prix": 137.1,
-   "var_24h": 0.6,
-   "var_7j": -0.52
+   "prix": 136.97,
+   "var_24h": 0.51,
+   "var_7j": -0.61
   },
   "Lockheed Martin": {
    "ticker": "LMT",
-   "prix": 539.965,
-   "var_24h": 3.48,
-   "var_7j": 5.68
+   "prix": 545.77,
+   "var_24h": 4.59,
+   "var_7j": 6.81
   }
  },
  "portefeuille_prix": {},
