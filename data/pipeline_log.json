@@ -95,6 +95,36 @@
    "evenement": "prix_live",
    "statut": "ok",
    "detail": "10 actifs"
+  },
+  {
+   "ts": "2026-07-03T08:32:02+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-07-03T08:32:38+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 61 672$ : le rebond discret sous la peur extrême"
+  },
+  {
+   "ts": "2026-07-03T08:32:38+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #11"
+  },
+  {
+   "ts": "2026-07-03T08:32:39+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-07-03T08:32:41+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
