@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-07-03T19:56:53+02:00",
+ "updated_at": "2026-07-03T21:27:47+02:00",
  "prices": {
   "Bitcoin": {
-   "prix": 62137.0,
-   "variation": 0.85
+   "prix": 62142.0,
+   "variation": 0.98
   },
   "CAC 40": {
    "prix": 8508.0703,
@@ -26,8 +26,8 @@
    "variation": 1.14
   },
   "Dollar Index (DXY)": {
-   "prix": 100.833,
-   "variation": -0.03
+   "prix": 100.857,
+   "variation": -0.0
   },
   "Pétrole WTI": {
    "prix": 68.78,
@@ -38,8 +38,8 @@
    "variation": 1.81
   },
   "EUR/USD": {
-   "prix": 1.1444,
-   "variation": 0.58
+   "prix": 1.1442,
+   "variation": 0.56
   }
  }
 }
