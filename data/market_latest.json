@@ -1,11 +1,11 @@
 {
- "ts": "2026-07-03T16:23:58+00:00",
+ "ts": "2026-07-03T17:56:50+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 61986.0,
-   "var_24h": 0.93,
-   "var_7j": 2.91,
-   "market_cap": 1242683986913,
+   "prix": 62137.0,
+   "var_24h": 0.85,
+   "var_7j": 3.58,
+   "market_cap": 1246005999217,
    "source": "coingecko"
   }
  },
@@ -44,27 +44,27 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 100.851,
-   "var_24h": -0.01,
-   "var_7j": -0.17
+   "prix": 100.833,
+   "var_24h": -0.03,
+   "var_7j": -0.19
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 68.69,
-   "var_24h": 0.0,
-   "var_7j": -8.19
+   "prix": 68.78,
+   "var_24h": 0.13,
+   "var_7j": -8.07
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4176.7002,
-   "var_24h": 1.56,
-   "var_7j": -0.12
+   "prix": 4187.2998,
+   "var_24h": 1.81,
+   "var_7j": 0.13
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1442,
-   "var_24h": 0.56,
-   "var_7j": -0.18
+   "prix": 1.1444,
+   "var_24h": 0.58,
+   "var_7j": -0.16
   }
  },
  "watchlist": {
