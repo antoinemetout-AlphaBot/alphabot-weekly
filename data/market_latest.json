@@ -1,20 +1,20 @@
 {
- "ts": "2026-07-03T12:14:55+00:00",
+ "ts": "2026-07-03T14:41:24+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 62061.0,
-   "var_24h": 1.31,
-   "var_7j": 4.63,
-   "market_cap": 1244587351426,
+   "prix": 61834.0,
+   "var_24h": 0.74,
+   "var_7j": 4.48,
+   "market_cap": 1239878284626,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 8478.8301,
-   "var_24h": 0.05,
-   "var_7j": 0.94
+   "prix": 8501.0703,
+   "var_24h": 0.31,
+   "var_7j": 1.2
   },
   "S&P 500": {
    "ticker": "^GSPC",
@@ -30,9 +30,9 @@
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 25708.8809,
-   "var_24h": 0.5,
-   "var_7j": 2.26
+   "prix": 25753.5605,
+   "var_24h": 0.68,
+   "var_7j": 2.44
   },
   "Dow Jones": {
    "ticker": "^DJI",
@@ -44,27 +44,27 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 100.764,
-   "var_24h": -0.1,
-   "var_7j": -0.25
+   "prix": 100.792,
+   "var_24h": -0.07,
+   "var_7j": -0.23
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 68.28,
-   "var_24h": -0.6,
-   "var_7j": -8.74
+   "prix": 68.77,
+   "var_24h": 0.12,
+   "var_7j": -8.09
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4190.7998,
-   "var_24h": 1.9,
-   "var_7j": 0.21
+   "prix": 4177.8999,
+   "var_24h": 1.59,
+   "var_7j": -0.1
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1455,
-   "var_24h": 0.67,
-   "var_7j": -0.07
+   "prix": 1.1448,
+   "var_24h": 0.62,
+   "var_7j": -0.13
   }
  },
  "watchlist": {
@@ -88,15 +88,15 @@
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 492.8,
-   "var_24h": -1.03,
-   "var_7j": 2.38
+   "prix": 493.55,
+   "var_24h": -0.88,
+   "var_7j": 2.53
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 66.97,
-   "var_24h": 0.13,
-   "var_7j": -4.39
+   "prix": 66.96,
+   "var_24h": 0.12,
+   "var_7j": -4.41
   },
   "ExxonMobil": {
    "ticker": "XOM",
