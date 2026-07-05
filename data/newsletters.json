@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-07-05",
+   "label": "Dimanche 5 juillet 2026",
+   "titre": "Bitcoin à 62 936$ : la peur extrême dure, l'or lui file le train",
+   "file": "newsletters/alphabot_newsletter_2026-07-05.html"
+  },
+  {
    "date": "2026-07-04",
    "label": "Samedi 4 juillet 2026",
    "titre": "Bitcoin à 62 486$ : le rebond timide sous la peur extrême",
@@ -73,5 +79,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 12
+ "count": 13
 }

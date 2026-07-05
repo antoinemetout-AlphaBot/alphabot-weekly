@@ -1,11 +1,11 @@
 {
- "ts": "2026-07-04T10:03:17+00:00",
+ "ts": "2026-07-05T08:24:11+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 62432.0,
-   "var_24h": 1.28,
-   "var_7j": 3.48,
-   "market_cap": 1251880589743,
+   "prix": 62927.0,
+   "var_24h": 0.65,
+   "var_7j": 4.68,
+   "market_cap": 1262007789917,
    "source": "coingecko"
   }
  },
@@ -44,21 +44,21 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 100.857,
-   "var_24h": -0.0,
-   "var_7j": -0.16
+   "prix": 100.86,
+   "var_24h": -0.52,
+   "var_7j": -0.54
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
    "prix": 68.78,
    "var_24h": 0.13,
-   "var_7j": -8.07
+   "var_7j": -6.05
   },
   "Or": {
    "ticker": "GC=F",
    "prix": 4187.2998,
    "var_24h": 1.81,
-   "var_7j": 0.13
+   "var_7j": 1.39
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
@@ -113,7 +113,7 @@
  },
  "portefeuille_prix": {},
  "fear_greed": {
-  "valeur": 22,
+  "valeur": 23,
   "label": "Extreme Fear"
  },
  "erreurs": []
