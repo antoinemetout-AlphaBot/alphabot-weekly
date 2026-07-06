@@ -281,6 +281,12 @@
    "evenement": "linkedin",
    "statut": "ok",
    "detail": ""
+  },
+  {
+   "ts": "2026-07-06T11:27:40+00:00",
+   "evenement": "prix_live",
+   "statut": "ok",
+   "detail": "10 actifs"
   }
  ]
 }
