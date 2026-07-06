@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-07-06",
+   "label": "Lundi 6 juillet 2026",
+   "titre": "Bitcoin à 62 815$ : la semaine en vert, mais personne ne sourit",
+   "file": "newsletters/alphabot_newsletter_2026-07-06.html"
+  },
+  {
    "date": "2026-07-05",
    "label": "Dimanche 5 juillet 2026",
    "titre": "Bitcoin à 62 936$ : la peur extrême dure, l'or lui file le train",
@@ -79,5 +85,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 13
+ "count": 14
 }

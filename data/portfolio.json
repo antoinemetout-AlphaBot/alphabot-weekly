@@ -7,8 +7,17 @@
    "emoji": "🛡️",
    "description": "Préservation du capital : ETF défensifs, grandes capitalisations, horizon long",
    "capital_initial": 10000.0,
-   "cash": 10000.0,
-   "positions": [],
+   "cash": 8500.0,
+   "positions": [
+    {
+     "ticker": "TTE.PA",
+     "nom": "TotalEnergies",
+     "quantite": 22.40478,
+     "prix_entree_eur": 66.95,
+     "prix_actuel_eur": 66.95,
+     "date_entree": "2026-07-06"
+    }
+   ],
    "historique": [
     {
      "date": "2026-07-02",
@@ -25,9 +34,22 @@
     {
      "date": "2026-07-05",
      "valeur": 10000.0
+    },
+    {
+     "date": "2026-07-06",
+     "valeur": 10000.0
     }
    ],
-   "trades": [],
+   "trades": [
+    {
+     "date": "2026-07-06",
+     "profil": "prudent",
+     "action": "acheter",
+     "ticker": "TTE.PA",
+     "prix_eur": 66.95,
+     "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
+    }
+   ],
    "valeur_totale": 10000.0,
    "performance_pct": 0.0
   },
@@ -36,8 +58,33 @@
    "emoji": "⚖️",
    "description": "Équilibre croissance/stabilité : mix actions de qualité et ETF",
    "capital_initial": 10000.0,
-   "cash": 10000.0,
-   "positions": [],
+   "cash": 4500.0,
+   "positions": [
+    {
+     "ticker": "AAPL",
+     "nom": "Apple",
+     "quantite": 7.401651,
+     "prix_entree_eur": 270.21,
+     "prix_actuel_eur": 270.21,
+     "date_entree": "2026-07-06"
+    },
+    {
+     "ticker": "MC.PA",
+     "nom": "LVMH",
+     "quantite": 3.980892,
+     "prix_entree_eur": 502.4,
+     "prix_actuel_eur": 502.4,
+     "date_entree": "2026-07-06"
+    },
+    {
+     "ticker": "XOM",
+     "nom": "ExxonMobil",
+     "quantite": 12.497917,
+     "prix_entree_eur": 120.02,
+     "prix_actuel_eur": 120.02,
+     "date_entree": "2026-07-06"
+    }
+   ],
    "historique": [
     {
      "date": "2026-07-02",
@@ -54,9 +101,38 @@
     {
      "date": "2026-07-05",
      "valeur": 10000.0
+    },
+    {
+     "date": "2026-07-06",
+     "valeur": 10000.0
     }
    ],
-   "trades": [],
+   "trades": [
+    {
+     "date": "2026-07-06",
+     "profil": "modere",
+     "action": "acheter",
+     "ticker": "AAPL",
+     "prix_eur": 270.21,
+     "raison": "Apple affiche une capitalisation de plus de 2 500 milliards USD avec des marges nettes supérieures à 25%, position à 20% du portefeuille."
+    },
+    {
+     "date": "2026-07-06",
+     "profil": "modere",
+     "action": "acheter",
+     "ticker": "MC.PA",
+     "prix_eur": 502.4,
+     "raison": "LVMH domine le luxe mondial avec un chiffre d'affaires de ~86 milliards EUR, exposition européenne à 20% du portefeuille."
+    },
+    {
+     "date": "2026-07-06",
+     "profil": "modere",
+     "action": "acheter",
+     "ticker": "XOM",
+     "prix_eur": 120.02,
+     "raison": "ExxonMobil génère plus de 36 milliards USD de free cash-flow annuel, ancrage défensif à 15% du portefeuille."
+    }
+   ],
    "valeur_totale": 10000.0,
    "performance_pct": 0.0
   },
@@ -65,8 +141,33 @@
    "emoji": "🎯",
    "description": "Croissance maximale : tech, crypto, positions concentrées",
    "capital_initial": 10000.0,
-   "cash": 10000.0,
-   "positions": [],
+   "cash": 2000.0,
+   "positions": [
+    {
+     "ticker": "NVDA",
+     "nom": "NVIDIA",
+     "quantite": 20.519435,
+     "prix_entree_eur": 170.57,
+     "prix_actuel_eur": 170.57,
+     "date_entree": "2026-07-06"
+    },
+    {
+     "ticker": "BTC-USD",
+     "nom": "Bitcoin",
+     "quantite": 0.045459,
+     "prix_entree_eur": 54994.75,
+     "prix_actuel_eur": 54994.75,
+     "date_entree": "2026-07-06"
+    },
+    {
+     "ticker": "TSLA",
+     "nom": "Tesla",
+     "quantite": 5.806021,
+     "prix_entree_eur": 344.47,
+     "prix_actuel_eur": 344.47,
+     "date_entree": "2026-07-06"
+    }
+   ],
    "historique": [
     {
      "date": "2026-07-02",
@@ -83,10 +184,39 @@
     {
      "date": "2026-07-05",
      "valeur": 10000.0
+    },
+    {
+     "date": "2026-07-06",
+     "valeur": 10000.01
     }
    ],
-   "trades": [],
-   "valeur_totale": 10000.0,
+   "trades": [
+    {
+     "date": "2026-07-06",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "NVDA",
+     "prix_eur": 170.57,
+     "raison": "NVDA a vu ses revenus data center progresser de +427% sur un an, position offensive à 35% du portefeuille."
+    },
+    {
+     "date": "2026-07-06",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "BTC-USD",
+     "prix_eur": 54994.75,
+     "raison": "Bitcoin s'établit à ~55 000 EUR avec un halving récent réduisant l'offre de 50%, exposition crypto à 25% du portefeuille."
+    },
+    {
+     "date": "2026-07-06",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "TSLA",
+     "prix_eur": 344.47,
+     "raison": "Tesla conserve plus de 18% de part de marché EV mondial et développe son segment énergie en forte croissance, à 20% du portefeuille."
+    }
+   ],
+   "valeur_totale": 10000.01,
    "performance_pct": 0.0
   }
  }
