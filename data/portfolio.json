@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 68.16,
+     "prix_actuel_eur": 67.93,
      "date_entree": "2026-07-06"
     }
    ],
@@ -41,7 +41,7 @@
     },
     {
      "date": "2026-07-07",
-     "valeur": 10027.11
+     "valeur": 10021.96
     }
    ],
    "trades": [
@@ -54,8 +54,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10027.11,
-   "performance_pct": 0.27
+   "valeur_totale": 10021.96,
+   "performance_pct": 0.22
   },
   "modere": {
    "nom": "Le Stratège",
@@ -69,7 +69,7 @@
      "nom": "Apple",
      "quantite": 7.401651,
      "prix_entree_eur": 270.21,
-     "prix_actuel_eur": 273.42,
+     "prix_actuel_eur": 273.5,
      "date_entree": "2026-07-06"
     },
     {
@@ -77,7 +77,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 501.1,
+     "prix_actuel_eur": 500.2,
      "date_entree": "2026-07-06"
     },
     {
@@ -85,7 +85,7 @@
      "nom": "ExxonMobil",
      "quantite": 12.497917,
      "prix_entree_eur": 120.02,
-     "prix_actuel_eur": 119.32,
+     "prix_actuel_eur": 119.35,
      "date_entree": "2026-07-06"
     }
    ],
@@ -112,7 +112,7 @@
     },
     {
      "date": "2026-07-07",
-     "valeur": 10009.84
+     "valeur": 10007.22
     }
    ],
    "trades": [
@@ -141,8 +141,8 @@
      "raison": "ExxonMobil génère plus de 36 milliards USD de free cash-flow annuel, ancrage défensif à 15% du portefeuille."
     }
    ],
-   "valeur_totale": 10009.84,
-   "performance_pct": 0.1
+   "valeur_totale": 10007.22,
+   "performance_pct": 0.07
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -156,7 +156,7 @@
      "nom": "NVIDIA",
      "quantite": 20.519435,
      "prix_entree_eur": 170.57,
-     "prix_actuel_eur": 171.01,
+     "prix_actuel_eur": 171.05,
      "date_entree": "2026-07-06"
     },
     {
@@ -164,7 +164,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 55101.94,
+     "prix_actuel_eur": 55386.62,
      "date_entree": "2026-07-06"
     },
     {
@@ -172,7 +172,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 367.09,
+     "prix_actuel_eur": 367.19,
      "date_entree": "2026-07-06"
     }
    ],
@@ -199,7 +199,7 @@
     },
     {
      "date": "2026-07-07",
-     "valeur": 10145.24
+     "valeur": 10159.58
     }
    ],
    "trades": [
@@ -228,8 +228,8 @@
      "raison": "Tesla conserve plus de 18% de part de marché EV mondial et développe son segment énergie en forte croissance, à 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10145.24,
-   "performance_pct": 1.45
+   "valeur_totale": 10159.58,
+   "performance_pct": 1.6
   }
  }
 }
