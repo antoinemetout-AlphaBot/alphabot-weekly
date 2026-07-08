@@ -1,20 +1,20 @@
 {
- "ts": "2026-07-07T20:08:10+00:00",
+ "ts": "2026-07-08T07:44:44+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 63724.0,
-   "var_24h": 0.25,
-   "var_7j": 8.54,
-   "market_cap": 1279443112153,
+   "prix": 62734.0,
+   "var_24h": -0.55,
+   "var_7j": 6.95,
+   "market_cap": 1258042847914,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 8436.2402,
-   "var_24h": -0.51,
-   "var_7j": 0.61
+   "prix": 8369.9404,
+   "var_24h": -0.79,
+   "var_7j": -0.73
   },
   "S&P 500": {
    "ticker": "^GSPC",
@@ -24,15 +24,15 @@
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 29173.0176,
+   "prix": 29173.0195,
    "var_24h": -1.77,
    "var_7j": -0.59
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 25465.25,
-   "var_24h": -1.37,
-   "var_7j": 2.93
+   "prix": 25194.6699,
+   "var_24h": -1.06,
+   "var_7j": 0.8
   },
   "Dow Jones": {
    "ticker": "^DJI",
@@ -44,27 +44,27 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 101.053,
-   "var_24h": 0.2,
-   "var_7j": -0.37
+   "prix": 100.967,
+   "var_24h": -0.17,
+   "var_7j": -0.39
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 71.91,
-   "var_24h": 4.9,
-   "var_7j": -0.01
+   "prix": 71.99,
+   "var_24h": 2.2,
+   "var_7j": 3.99
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4128.1001,
-   "var_24h": -0.65,
-   "var_7j": 2.42
+   "prix": 4135.5,
+   "var_24h": -0.24,
+   "var_7j": 1.39
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1419,
-   "var_24h": -0.16,
-   "var_7j": 0.35
+   "prix": 1.1432,
+   "var_24h": -0.08,
+   "var_7j": 0.69
   }
  },
  "watchlist": {
@@ -88,27 +88,27 @@
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 495.8,
-   "var_24h": 0.9,
-   "var_7j": 0.57
+   "prix": 492.35,
+   "var_24h": 0.19,
+   "var_7j": -0.41
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 67.78,
-   "var_24h": 0.94,
-   "var_7j": -1.27
+   "prix": 68.87,
+   "var_24h": 2.56,
+   "var_7j": 0.66
   },
   "ExxonMobil": {
    "ticker": "XOM",
-   "prix": 141.645,
-   "var_24h": 3.81,
-   "var_7j": 1.37
+   "prix": 141.69,
+   "var_24h": 3.85,
+   "var_7j": 1.4
   },
   "Lockheed Martin": {
    "ticker": "LMT",
-   "prix": 535.14,
-   "var_24h": -0.53,
-   "var_7j": 6.25
+   "prix": 535.38,
+   "var_24h": -0.49,
+   "var_7j": 6.3
   }
  },
  "portefeuille_prix": {
@@ -118,14 +118,14 @@
    "var_7j": 5.56
   },
   "BTC-USD": {
-   "prix": 63678.4102,
-   "var_24h": -0.49,
-   "var_7j": 6.96
+   "prix": 62766.1797,
+   "var_24h": -0.84,
+   "var_7j": 4.37
   },
   "MC.PA": {
-   "prix": 495.8,
-   "var_24h": 0.9,
-   "var_7j": 0.57
+   "prix": 492.35,
+   "var_24h": 0.19,
+   "var_7j": -0.41
   },
   "NVDA": {
    "prix": 196.93,
@@ -138,19 +138,19 @@
    "var_7j": 5.58
   },
   "TTE.PA": {
-   "prix": 67.78,
-   "var_24h": 0.94,
-   "var_7j": -1.27
+   "prix": 68.87,
+   "var_24h": 2.56,
+   "var_7j": 0.66
   },
   "XOM": {
-   "prix": 141.645,
-   "var_24h": 3.81,
-   "var_7j": 1.37
+   "prix": 141.69,
+   "var_24h": 3.85,
+   "var_7j": 1.4
   }
  },
  "fear_greed": {
-  "valeur": 27,
-  "label": "Fear"
+  "valeur": 20,
+  "label": "Extreme Fear"
  },
  "erreurs": []
 }
