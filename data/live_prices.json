@@ -1,13 +1,13 @@
 {
- "updated_at": "2026-07-08T13:22:50+02:00",
+ "updated_at": "2026-07-08T15:03:52+02:00",
  "prices": {
   "Bitcoin": {
-   "prix": 62081.0,
-   "variation": -1.69
+   "prix": 61902.0,
+   "variation": -2.37
   },
   "CAC 40": {
-   "prix": 8267.9805,
-   "variation": -1.99
+   "prix": 8297.79,
+   "variation": -1.64
   },
   "S&P 500": {
    "prix": 7503.8501,
@@ -18,28 +18,28 @@
    "variation": -1.77
   },
   "DAX": {
-   "prix": 24941.9492,
-   "variation": -2.05
+   "prix": 25038.7695,
+   "variation": -1.67
   },
   "Dow Jones": {
    "prix": 52925.1484,
    "variation": -0.25
   },
   "Dollar Index (DXY)": {
-   "prix": 101.142,
-   "variation": 0.0
+   "prix": 101.148,
+   "variation": 0.01
   },
   "Pétrole WTI": {
-   "prix": 74.26,
-   "variation": 5.42
+   "prix": 73.27,
+   "variation": 4.02
   },
   "Or": {
-   "prix": 4060.7,
-   "variation": -2.04
+   "prix": 4093.0,
+   "variation": -1.26
   },
   "EUR/USD": {
-   "prix": 1.141,
-   "variation": -0.27
+   "prix": 1.1403,
+   "variation": -0.34
   }
  }
 }
