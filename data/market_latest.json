@@ -1,151 +1,151 @@
 {
- "ts": "2026-07-08T15:41:21+00:00",
+ "ts": "2026-07-08T17:29:29+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 61639.0,
-   "var_24h": -3.32,
-   "var_7j": 3.65,
-   "market_cap": 1236136801246,
+   "prix": 62202.0,
+   "var_24h": -2.94,
+   "var_7j": 3.51,
+   "market_cap": 1247320121822,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 8240.7305,
-   "var_24h": -2.32,
-   "var_7j": -2.26
+   "prix": 8252.6602,
+   "var_24h": -2.18,
+   "var_7j": -2.12
   },
   "S&P 500": {
    "ticker": "^GSPC",
-   "prix": 7437.23,
-   "var_24h": -0.89,
-   "var_7j": 1.07
+   "prix": 7484.1001,
+   "var_24h": -0.26,
+   "var_7j": 1.71
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 28913.4375,
-   "var_24h": -0.89,
-   "var_7j": -1.05
+   "prix": 29216.9863,
+   "var_24h": 0.15,
+   "var_7j": -0.01
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 24869.5898,
-   "var_24h": -2.34,
-   "var_7j": -0.5
+   "prix": 24897.4492,
+   "var_24h": -2.23,
+   "var_7j": -0.39
   },
   "Dow Jones": {
    "ticker": "^DJI",
-   "prix": 52121.6602,
-   "var_24h": -1.52,
-   "var_7j": 0.53
+   "prix": 52374.5508,
+   "var_24h": -1.04,
+   "var_7j": 1.01
   }
  },
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 101.232,
-   "var_24h": 0.09,
-   "var_7j": -0.13
+   "prix": 101.013,
+   "var_24h": -0.13,
+   "var_7j": -0.34
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 75.49,
-   "var_24h": 7.17,
-   "var_7j": 9.04
+   "prix": 74.19,
+   "var_24h": 5.32,
+   "var_7j": 7.16
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4034.3999,
-   "var_24h": -2.68,
-   "var_7j": -1.09
+   "prix": 4075.2,
+   "var_24h": -1.69,
+   "var_7j": -0.09
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1396,
-   "var_24h": -0.4,
-   "var_7j": 0.37
+   "prix": 1.1429,
+   "var_24h": -0.12,
+   "var_7j": 0.65
   }
  },
  "watchlist": {
   "Apple": {
    "ticker": "AAPL",
-   "prix": 309.96,
-   "var_24h": -0.23,
-   "var_7j": 5.76
+   "prix": 314.145,
+   "var_24h": 1.12,
+   "var_7j": 7.19
   },
   "NVIDIA": {
    "ticker": "NVDA",
-   "prix": 197.53,
-   "var_24h": 0.3,
-   "var_7j": -0.74
+   "prix": 202.95,
+   "var_24h": 3.06,
+   "var_7j": 1.98
   },
   "Tesla": {
    "ticker": "TSLA",
-   "prix": 392.5496,
-   "var_24h": -2.57,
-   "var_7j": 4.53
+   "prix": 394.84,
+   "var_24h": -2.0,
+   "var_7j": 5.14
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 483.8,
-   "var_24h": -2.42,
-   "var_7j": -2.14
+   "prix": 484.9,
+   "var_24h": -2.2,
+   "var_7j": -1.92
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 69.32,
-   "var_24h": 2.27,
-   "var_7j": 1.32
+   "prix": 69.35,
+   "var_24h": 2.32,
+   "var_7j": 1.36
   },
   "ExxonMobil": {
    "ticker": "XOM",
-   "prix": 142.6601,
-   "var_24h": 0.68,
-   "var_7j": 4.21
+   "prix": 139.98,
+   "var_24h": -1.21,
+   "var_7j": 2.25
   },
   "Lockheed Martin": {
    "ticker": "LMT",
-   "prix": 529.58,
-   "var_24h": -1.08,
-   "var_7j": 7.72
+   "prix": 529.5,
+   "var_24h": -1.1,
+   "var_7j": 7.7
   }
  },
  "portefeuille_prix": {
   "AAPL": {
-   "prix": 309.96,
-   "var_24h": -0.23,
-   "var_7j": 5.76
+   "prix": 314.165,
+   "var_24h": 1.13,
+   "var_7j": 7.19
   },
   "BTC-USD": {
-   "prix": 61592.0391,
-   "var_24h": -2.69,
-   "var_7j": 2.42
+   "prix": 62243.5781,
+   "var_24h": -1.66,
+   "var_7j": 3.5
   },
   "MC.PA": {
-   "prix": 483.8,
-   "var_24h": -2.42,
-   "var_7j": -2.14
+   "prix": 484.9,
+   "var_24h": -2.2,
+   "var_7j": -1.92
   },
   "NVDA": {
-   "prix": 197.53,
-   "var_24h": 0.3,
-   "var_7j": -0.74
+   "prix": 202.95,
+   "var_24h": 3.06,
+   "var_7j": 1.98
   },
   "TSLA": {
-   "prix": 392.5496,
-   "var_24h": -2.57,
-   "var_7j": 4.53
+   "prix": 394.84,
+   "var_24h": -2.0,
+   "var_7j": 5.14
   },
   "TTE.PA": {
-   "prix": 69.32,
-   "var_24h": 2.27,
-   "var_7j": 1.32
+   "prix": 69.35,
+   "var_24h": 2.32,
+   "var_7j": 1.36
   },
   "XOM": {
-   "prix": 142.6601,
-   "var_24h": 0.68,
-   "var_7j": 4.21
+   "prix": 139.97,
+   "var_24h": -1.21,
+   "var_7j": 2.24
   }
  },
  "fear_greed": {
