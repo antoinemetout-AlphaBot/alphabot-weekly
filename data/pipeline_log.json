@@ -395,6 +395,12 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-07-08T09:25:35+00:00",
+   "evenement": "prix_live",
+   "statut": "ok",
+   "detail": "10 actifs"
   }
  ]
 }
