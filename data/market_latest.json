@@ -1,11 +1,11 @@
 {
- "ts": "2026-09-05T23:31:20+00:00",
+ "ts": "2026-09-06T09:33:17+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 79804.0,
-   "var_24h": 0.07,
-   "var_7j": 2.0,
-   "market_cap": 1602342643417,
+   "prix": 79974.0,
+   "var_24h": 0.35,
+   "var_7j": 2.2,
+   "market_cap": 1605888171050,
    "source": "coingecko"
   }
  },
@@ -46,19 +46,19 @@
    "ticker": "DX-Y.NYB",
    "prix": 99.16,
    "var_24h": 0.16,
-   "var_7j": 0.24
+   "var_7j": -0.01
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
    "prix": 91.48,
    "var_24h": 0.2,
-   "var_7j": 11.07
+   "var_7j": 11.25
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4429.7998,
-   "var_24h": -1.38,
-   "var_7j": -4.49
+   "prix": 4476.6001,
+   "var_24h": -0.34,
+   "var_7j": -2.64
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
@@ -118,9 +118,9 @@
    "var_7j": 3.1
   },
   "BTC-USD": {
-   "prix": 79806.1016,
-   "var_24h": 0.17,
-   "var_7j": -0.56
+   "prix": 79988.0312,
+   "var_24h": 0.21,
+   "var_7j": 2.77
   },
   "MC.PA": {
    "prix": 429.1,
