@@ -539,6 +539,36 @@
    "evenement": "linkedin",
    "statut": "ok",
    "detail": ""
+  },
+  {
+   "ts": "2026-09-08T09:52:17+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-08T09:52:56+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 78 740$ : le pétrole s'enflamme, Tesla décroche"
+  },
+  {
+   "ts": "2026-09-08T09:52:56+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #19"
+  },
+  {
+   "ts": "2026-09-08T09:52:58+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-08T09:53:00+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
