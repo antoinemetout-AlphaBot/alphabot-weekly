@@ -569,6 +569,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-09T09:55:40+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-09T09:56:21+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 79 027$ : les actions trinquent, le pétrole fait la fête"
+  },
+  {
+   "ts": "2026-09-09T09:56:21+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #20"
+  },
+  {
+   "ts": "2026-09-09T09:56:23+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-09T09:56:25+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }

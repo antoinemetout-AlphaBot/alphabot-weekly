@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 77.8,
+     "prix_actuel_eur": 78.69,
      "date_entree": "2026-07-06"
     }
    ],
@@ -58,6 +58,10 @@
     {
      "date": "2026-09-08",
      "valeur": 10243.09
+    },
+    {
+     "date": "2026-09-09",
+     "valeur": 10263.03
     }
    ],
    "trades": [
@@ -70,8 +74,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10243.09,
-   "performance_pct": 2.43
+   "valeur_totale": 10263.03,
+   "performance_pct": 2.63
   },
   "modere": {
    "nom": "Le Stratège",
@@ -85,7 +89,7 @@
      "nom": "Apple",
      "quantite": 7.401651,
      "prix_entree_eur": 270.21,
-     "prix_actuel_eur": 275.43,
+     "prix_actuel_eur": 271.95,
      "date_entree": "2026-07-06"
     },
     {
@@ -93,7 +97,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 426.85,
+     "prix_actuel_eur": 416.65,
      "date_entree": "2026-07-06"
     },
     {
@@ -101,7 +105,7 @@
      "nom": "ExxonMobil",
      "quantite": 12.497917,
      "prix_entree_eur": 120.02,
-     "prix_actuel_eur": 137.27,
+     "prix_actuel_eur": 138.17,
      "date_entree": "2026-07-06"
     },
     {
@@ -109,7 +113,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 452.16,
+     "prix_actuel_eur": 461.09,
      "date_entree": "2026-09-07"
     }
    ],
@@ -153,6 +157,10 @@
     {
      "date": "2026-09-08",
      "valeur": 9955.14
+    },
+    {
+     "date": "2026-09-09",
+     "valeur": 9935.61
     }
    ],
    "trades": [
@@ -189,8 +197,8 @@
      "raison": "Lockheed Martin à 451.74€ profite de la hausse des budgets de défense OTAN (+2% PIB), ajoutant une position défensive cyclique représentant ~17% du portefeuille modéré."
     }
    ],
-   "valeur_totale": 9955.14,
-   "performance_pct": -0.45
+   "valeur_totale": 9935.61,
+   "performance_pct": -0.64
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -204,7 +212,7 @@
      "nom": "NVIDIA",
      "quantite": 26.576675926757865,
      "prix_entree_eur": 176.85,
-     "prix_actuel_eur": 198.3,
+     "prix_actuel_eur": 194.13,
      "date_entree": "2026-07-06"
     },
     {
@@ -212,7 +220,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 67778.23,
+     "prix_actuel_eur": 67848.26,
      "date_entree": "2026-07-06"
     },
     {
@@ -220,7 +228,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 304.79,
+     "prix_actuel_eur": 316.62,
      "date_entree": "2026-07-06"
     }
    ],
@@ -264,6 +272,10 @@
     {
      "date": "2026-09-08",
      "valeur": 10920.9
+    },
+    {
+     "date": "2026-09-09",
+     "valeur": 10881.95
     }
    ],
    "trades": [
@@ -300,8 +312,8 @@
      "raison": "NVDA reste le leader de l'IA avec +200% sur 12 mois, renforcer à 198.11€ porte la position à environ 32% du portefeuille agressif, proche du plafond de 35%."
     }
    ],
-   "valeur_totale": 10920.9,
-   "performance_pct": 9.21
+   "valeur_totale": 10881.95,
+   "performance_pct": 8.82
   }
  }
 }

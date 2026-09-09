@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-09",
+   "label": "Mercredi 9 septembre 2026",
+   "titre": "Bitcoin à 79 027$ : les actions trinquent, le pétrole fait la fête",
+   "file": "newsletters/alphabot_newsletter_2026-09-09.html"
+  },
+  {
    "date": "2026-09-08",
    "label": "Mardi 8 septembre 2026",
    "titre": "Bitcoin à 78 740$ : le pétrole s'enflamme, Tesla décroche",
@@ -115,5 +121,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 19
+ "count": 20
 }
