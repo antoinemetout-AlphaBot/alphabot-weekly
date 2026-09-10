@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-10",
+   "label": "Jeudi 10 septembre 2026",
+   "titre": "Bitcoin à 77 964$ : le pétrole flambe, l'Europe trinque",
+   "file": "newsletters/alphabot_newsletter_2026-09-10.html"
+  },
+  {
    "date": "2026-09-09",
    "label": "Mercredi 9 septembre 2026",
    "titre": "Bitcoin à 79 027$ : les actions trinquent, le pétrole fait la fête",
@@ -121,5 +127,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 20
+ "count": 21
 }
