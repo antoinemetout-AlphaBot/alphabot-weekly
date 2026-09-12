@@ -659,6 +659,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-12T09:28:25+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-12T09:29:04+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 77 357$ : le pétrole franchit les 100$, les bourses rebondissent"
+  },
+  {
+   "ts": "2026-09-12T09:29:04+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #23"
+  },
+  {
+   "ts": "2026-09-12T09:29:07+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-12T09:29:10+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
