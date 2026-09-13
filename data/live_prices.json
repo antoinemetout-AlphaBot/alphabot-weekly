@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-09-12T11:29:07+02:00",
+ "updated_at": "2026-09-13T12:25:38+02:00",
  "prices": {
   "Bitcoin": {
-   "prix": 77357.0,
-   "variation": 0.24
+   "prix": 76731.0,
+   "variation": -0.82
   },
   "CAC 40": {
    "prix": 8179.77,
@@ -34,12 +34,12 @@
    "variation": -2.37
   },
   "Or": {
-   "prix": 4366.2002,
-   "variation": 0.04
+   "prix": 4408.8999,
+   "variation": 1.02
   },
   "EUR/USD": {
-   "prix": 1.1602,
-   "variation": -0.27
+   "prix": 1.1601,
+   "variation": -0.28
   }
  }
 }

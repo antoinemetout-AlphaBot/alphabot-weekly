@@ -74,6 +74,10 @@
     {
      "date": "2026-09-12",
      "valeur": 10264.82
+    },
+    {
+     "date": "2026-09-13",
+     "valeur": 10264.82
     }
    ],
    "trades": [
@@ -101,7 +105,7 @@
      "nom": "Apple",
      "quantite": 7.401651,
      "prix_entree_eur": 270.21,
-     "prix_actuel_eur": 286.39,
+     "prix_actuel_eur": 286.41,
      "date_entree": "2026-07-06"
     },
     {
@@ -117,7 +121,7 @@
      "nom": "ExxonMobil",
      "quantite": 12.497917,
      "prix_entree_eur": 120.02,
-     "prix_actuel_eur": 143.07,
+     "prix_actuel_eur": 143.08,
      "date_entree": "2026-07-06"
     },
     {
@@ -125,7 +129,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 451.81,
+     "prix_actuel_eur": 451.85,
      "date_entree": "2026-09-07"
     }
    ],
@@ -185,6 +189,10 @@
     {
      "date": "2026-09-12",
      "valeur": 10061.38
+    },
+    {
+     "date": "2026-09-13",
+     "valeur": 10061.81
     }
    ],
    "trades": [
@@ -221,8 +229,8 @@
      "raison": "Lockheed Martin à 451.74€ profite de la hausse des budgets de défense OTAN (+2% PIB), ajoutant une position défensive cyclique représentant ~17% du portefeuille modéré."
     }
    ],
-   "valeur_totale": 10061.38,
-   "performance_pct": 0.61
+   "valeur_totale": 10061.81,
+   "performance_pct": 0.62
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -236,7 +244,7 @@
      "nom": "NVIDIA",
      "quantite": 26.576675926757865,
      "prix_entree_eur": 176.85,
-     "prix_actuel_eur": 188.15,
+     "prix_actuel_eur": 188.16,
      "date_entree": "2026-07-06"
     },
     {
@@ -244,7 +252,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 66673.14,
+     "prix_actuel_eur": 66124.86,
      "date_entree": "2026-07-06"
     },
     {
@@ -252,7 +260,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 314.98,
+     "prix_actuel_eur": 315.01,
      "date_entree": "2026-07-06"
     }
    ],
@@ -312,6 +320,10 @@
     {
      "date": "2026-09-12",
      "valeur": 10660.08
+    },
+    {
+     "date": "2026-09-13",
+     "valeur": 10635.59
     }
    ],
    "trades": [
@@ -348,8 +360,8 @@
      "raison": "NVDA reste le leader de l'IA avec +200% sur 12 mois, renforcer à 198.11€ porte la position à environ 32% du portefeuille agressif, proche du plafond de 35%."
     }
    ],
-   "valeur_totale": 10660.08,
-   "performance_pct": 6.6
+   "valeur_totale": 10635.59,
+   "performance_pct": 6.36
   }
  }
 }
