@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 78.77,
+     "prix_actuel_eur": 79.38,
      "date_entree": "2026-07-06"
     }
    ],
@@ -78,6 +78,10 @@
     {
      "date": "2026-09-13",
      "valeur": 10264.82
+    },
+    {
+     "date": "2026-09-14",
+     "valeur": 10278.49
     }
    ],
    "trades": [
@@ -90,22 +94,22 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10264.82,
-   "performance_pct": 2.65
+   "valeur_totale": 10278.49,
+   "performance_pct": 2.78
   },
   "modere": {
    "nom": "Le Stratège",
    "emoji": "⚖️",
    "description": "Équilibre croissance/stabilité : mix actions de qualité et ETF",
    "capital_initial": 10000.0,
-   "cash": 2700.0,
+   "cash": 4497.2,
    "positions": [
     {
      "ticker": "AAPL",
      "nom": "Apple",
      "quantite": 7.401651,
      "prix_entree_eur": 270.21,
-     "prix_actuel_eur": 286.41,
+     "prix_actuel_eur": 287.85,
      "date_entree": "2026-07-06"
     },
     {
@@ -113,15 +117,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 415.3,
-     "date_entree": "2026-07-06"
-    },
-    {
-     "ticker": "XOM",
-     "nom": "ExxonMobil",
-     "quantite": 12.497917,
-     "prix_entree_eur": 120.02,
-     "prix_actuel_eur": 143.08,
+     "prix_actuel_eur": 414.85,
      "date_entree": "2026-07-06"
     },
     {
@@ -129,7 +125,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 451.85,
+     "prix_actuel_eur": 454.12,
      "date_entree": "2026-09-07"
     }
    ],
@@ -193,6 +189,10 @@
     {
      "date": "2026-09-13",
      "valeur": 10061.81
+    },
+    {
+     "date": "2026-09-14",
+     "valeur": 10088.72
     }
    ],
    "trades": [
@@ -227,24 +227,32 @@
      "ticker": "LMT",
      "prix_eur": 451.74,
      "raison": "Lockheed Martin à 451.74€ profite de la hausse des budgets de défense OTAN (+2% PIB), ajoutant une position défensive cyclique représentant ~17% du portefeuille modéré."
+    },
+    {
+     "date": "2026-09-14",
+     "profil": "modere",
+     "action": "vendre",
+     "ticker": "XOM",
+     "prix_eur": 143.8,
+     "raison": "XOM représente ~18% du portefeuille modéré et le secteur énergie montre des signaux de faiblesse avec le pétrole sous 80$."
     }
    ],
-   "valeur_totale": 10061.81,
-   "performance_pct": 0.62
+   "valeur_totale": 10088.72,
+   "performance_pct": 0.89
   },
   "agressif": {
    "nom": "Le Chasseur",
    "emoji": "🎯",
    "description": "Croissance maximale : tech, crypto, positions concentrées",
    "capital_initial": 10000.0,
-   "cash": 800.0,
+   "cash": 200.0,
    "positions": [
     {
      "ticker": "NVDA",
      "nom": "NVIDIA",
-     "quantite": 26.576675926757865,
-     "prix_entree_eur": 176.85,
-     "prix_actuel_eur": 188.16,
+     "quantite": 29.749432523447624,
+     "prix_entree_eur": 178.16,
+     "prix_actuel_eur": 189.11,
      "date_entree": "2026-07-06"
     },
     {
@@ -252,7 +260,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 66124.86,
+     "prix_actuel_eur": 67539.6,
      "date_entree": "2026-07-06"
     },
     {
@@ -260,7 +268,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 315.01,
+     "prix_actuel_eur": 316.59,
      "date_entree": "2026-07-06"
     }
    ],
@@ -324,6 +332,10 @@
     {
      "date": "2026-09-13",
      "valeur": 10635.59
+    },
+    {
+     "date": "2026-09-14",
+     "valeur": 10734.33
     }
    ],
    "trades": [
@@ -358,10 +370,18 @@
      "ticker": "NVDA",
      "prix_eur": 198.11,
      "raison": "NVDA reste le leader de l'IA avec +200% sur 12 mois, renforcer à 198.11€ porte la position à environ 32% du portefeuille agressif, proche du plafond de 35%."
+    },
+    {
+     "date": "2026-09-14",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "NVDA",
+     "prix_eur": 189.11,
+     "raison": "Renforcement NVDA dont les revenus data center ont bondi de +427% sur un an, dans la limite des 35% max par position."
     }
    ],
-   "valeur_totale": 10635.59,
-   "performance_pct": 6.36
+   "valeur_totale": 10734.33,
+   "performance_pct": 7.34
   }
  }
 }

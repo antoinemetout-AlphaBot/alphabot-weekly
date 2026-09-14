@@ -719,6 +719,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-14T10:49:05+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-14T10:49:15+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "2 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-09-14T10:50:30+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 77 947$ : le pétrole à 102$, Wall Street résiste"
+  },
+  {
+   "ts": "2026-09-14T10:50:30+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #25"
+  },
+  {
+   "ts": "2026-09-14T10:50:35+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-14T10:50:38+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-14T10:50:59+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }

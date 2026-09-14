@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-14",
+   "label": "Lundi 14 septembre 2026",
+   "titre": "Bitcoin à 77 947$ : le pétrole à 102$, Wall Street résiste",
+   "file": "newsletters/alphabot_newsletter_2026-09-14.html"
+  },
+  {
    "date": "2026-09-13",
    "label": "Dimanche 13 septembre 2026",
    "titre": "Bitcoin à 76 735$ : le pétrole franchit les 100$, les bourses soufflent",
@@ -145,5 +151,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 24
+ "count": 25
 }
