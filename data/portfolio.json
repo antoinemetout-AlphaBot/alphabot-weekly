@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 79.38,
+     "prix_actuel_eur": 79.34,
      "date_entree": "2026-07-06"
     }
    ],
@@ -82,6 +82,10 @@
     {
      "date": "2026-09-14",
      "valeur": 10278.49
+    },
+    {
+     "date": "2026-09-15",
+     "valeur": 10277.6
     }
    ],
    "trades": [
@@ -94,7 +98,7 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10278.49,
+   "valeur_totale": 10277.6,
    "performance_pct": 2.78
   },
   "modere": {
@@ -109,7 +113,7 @@
      "nom": "Apple",
      "quantite": 7.401651,
      "prix_entree_eur": 270.21,
-     "prix_actuel_eur": 287.85,
+     "prix_actuel_eur": 288.61,
      "date_entree": "2026-07-06"
     },
     {
@@ -117,7 +121,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 414.85,
+     "prix_actuel_eur": 409.25,
      "date_entree": "2026-07-06"
     },
     {
@@ -125,7 +129,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 454.12,
+     "prix_actuel_eur": 458.7,
      "date_entree": "2026-09-07"
     }
    ],
@@ -193,6 +197,10 @@
     {
      "date": "2026-09-14",
      "valeur": 10088.72
+    },
+    {
+     "date": "2026-09-15",
+     "valeur": 10090.3
     }
    ],
    "trades": [
@@ -237,8 +245,8 @@
      "raison": "XOM représente ~18% du portefeuille modéré et le secteur énergie montre des signaux de faiblesse avec le pétrole sous 80$."
     }
    ],
-   "valeur_totale": 10088.72,
-   "performance_pct": 0.89
+   "valeur_totale": 10090.3,
+   "performance_pct": 0.9
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -252,7 +260,7 @@
      "nom": "NVIDIA",
      "quantite": 29.749432523447624,
      "prix_entree_eur": 178.16,
-     "prix_actuel_eur": 189.11,
+     "prix_actuel_eur": 182.79,
      "date_entree": "2026-07-06"
     },
     {
@@ -260,7 +268,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 67539.6,
+     "prix_actuel_eur": 66717.79,
      "date_entree": "2026-07-06"
     },
     {
@@ -268,7 +276,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 316.59,
+     "prix_actuel_eur": 311.04,
      "date_entree": "2026-07-06"
     }
    ],
@@ -336,6 +344,10 @@
     {
      "date": "2026-09-14",
      "valeur": 10734.33
+    },
+    {
+     "date": "2026-09-15",
+     "valeur": 10476.73
     }
    ],
    "trades": [
@@ -380,8 +392,8 @@
      "raison": "Renforcement NVDA dont les revenus data center ont bondi de +427% sur un an, dans la limite des 35% max par position."
     }
    ],
-   "valeur_totale": 10734.33,
-   "performance_pct": 7.34
+   "valeur_totale": 10476.73,
+   "performance_pct": 4.77
   }
  }
 }
