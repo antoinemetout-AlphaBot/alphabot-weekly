@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-16",
+   "label": "Mercredi 16 septembre 2026",
+   "titre": "Bitcoin à 75 955$ : le pétrole à 104$, l'or brille seul",
+   "file": "newsletters/alphabot_newsletter_2026-09-16.html"
+  },
+  {
    "date": "2026-09-15",
    "label": "Mardi 15 septembre 2026",
    "titre": "Bitcoin à 76 982$ : le pétrole à 103$, les bourses en mode pause",
@@ -157,5 +163,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 26
+ "count": 27
 }
