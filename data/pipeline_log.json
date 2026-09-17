@@ -821,6 +821,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-17T10:09:32+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-17T10:10:11+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 76 321$ : le pétrole tient les 101$, Wall Street fatigue"
+  },
+  {
+   "ts": "2026-09-17T10:10:11+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #28"
+  },
+  {
+   "ts": "2026-09-17T10:10:13+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-17T10:10:15+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
