@@ -1,64 +1,64 @@
 {
- "ts": "2026-09-18T09:55:48+00:00",
+ "ts": "2026-09-19T09:38:03+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 78066.0,
-   "var_24h": 2.09,
-   "var_7j": 1.2,
-   "market_cap": 1568357212903,
+   "prix": 81250.0,
+   "var_24h": 4.19,
+   "var_7j": 5.2,
+   "market_cap": 1632872673957,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 8135.0898,
-   "var_24h": -0.63,
-   "var_7j": -2.06
+   "prix": 8065.02,
+   "var_24h": -1.49,
+   "var_7j": -2.9
   },
   "S&P 500": {
    "ticker": "^GSPC",
-   "prix": 7637.7598,
-   "var_24h": 1.14,
-   "var_7j": -1.42
+   "prix": 7650.5,
+   "var_24h": 0.17,
+   "var_7j": -0.88
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 29446.9805,
-   "var_24h": 1.73,
-   "var_7j": -0.12
+   "prix": 29644.1699,
+   "var_24h": 0.67,
+   "var_7j": 0.34
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 25570.9297,
-   "var_24h": -0.57,
-   "var_7j": -1.67
+   "prix": 25304.0605,
+   "var_24h": -1.6,
+   "var_7j": -2.7
   },
   "Dow Jones": {
    "ticker": "^DJI",
-   "prix": 51778.0391,
-   "var_24h": 0.61,
-   "var_7j": -3.55
+   "prix": 51682.6406,
+   "var_24h": -0.18,
+   "var_7j": -3.24
   }
  },
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 100.354,
-   "var_24h": 0.13,
-   "var_7j": 1.53
+   "prix": 100.22,
+   "var_24h": 0.0,
+   "var_7j": 1.4
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 96.5,
-   "var_24h": -5.31,
-   "var_7j": 3.73
+   "prix": 100.3,
+   "var_24h": -1.58,
+   "var_7j": 7.81
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4414.5,
-   "var_24h": 0.34,
-   "var_7j": -0.55
+   "prix": 4424.8999,
+   "var_24h": 0.57,
+   "var_7j": -0.32
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
@@ -70,86 +70,86 @@
  "watchlist": {
   "Apple": {
    "ticker": "AAPL",
-   "prix": 337.0,
-   "var_24h": 1.38,
-   "var_7j": 2.68
+   "prix": 336.13,
+   "var_24h": -0.26,
+   "var_7j": 5.05
   },
   "NVIDIA": {
    "ticker": "NVDA",
-   "prix": 219.34,
-   "var_24h": 2.54,
-   "var_7j": -3.88
+   "prix": 222.27,
+   "var_24h": 1.34,
+   "var_7j": -3.4
   },
   "Tesla": {
    "ticker": "TSLA",
-   "prix": 366.2,
-   "var_24h": 2.27,
-   "var_7j": -2.7
+   "prix": 364.27,
+   "var_24h": -0.53,
+   "var_7j": 2.88
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 406.6,
-   "var_24h": -1.06,
-   "var_7j": -5.71
+   "prix": 402.8,
+   "var_24h": -1.98,
+   "var_7j": -6.59
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 78.94,
-   "var_24h": -1.36,
-   "var_7j": 1.53
+   "prix": 80.03,
+   "var_24h": -0.57,
+   "var_7j": 3.53
   },
   "ExxonMobil": {
    "ticker": "XOM",
-   "prix": 163.27,
-   "var_24h": -0.03,
-   "var_7j": 0.65
+   "prix": 163.54,
+   "var_24h": 0.17,
+   "var_7j": 2.55
   },
   "Lockheed Martin": {
    "ticker": "LMT",
-   "prix": 538.09,
-   "var_24h": 0.16,
-   "var_7j": 0.96
+   "prix": 533.38,
+   "var_24h": -0.88,
+   "var_7j": 1.54
   }
  },
  "portefeuille_prix": {
   "AAPL": {
-   "prix": 337.0,
-   "var_24h": 1.38,
-   "var_7j": 2.68
+   "prix": 336.13,
+   "var_24h": -0.26,
+   "var_7j": 5.05
   },
   "BTC-USD": {
-   "prix": 78114.9922,
-   "var_24h": 2.24,
-   "var_7j": -0.18
+   "prix": 81284.6328,
+   "var_24h": 0.47,
+   "var_7j": 6.16
   },
   "LMT": {
-   "prix": 538.09,
-   "var_24h": 0.16,
-   "var_7j": 0.96
+   "prix": 533.38,
+   "var_24h": -0.88,
+   "var_7j": 1.54
   },
   "MC.PA": {
-   "prix": 406.65,
-   "var_24h": -1.05,
-   "var_7j": -5.69
+   "prix": 402.8,
+   "var_24h": -1.98,
+   "var_7j": -6.59
   },
   "NVDA": {
-   "prix": 219.34,
-   "var_24h": 2.54,
-   "var_7j": -3.88
+   "prix": 222.27,
+   "var_24h": 1.34,
+   "var_7j": -3.4
   },
   "TSLA": {
-   "prix": 366.2,
-   "var_24h": 2.27,
-   "var_7j": -2.7
+   "prix": 364.27,
+   "var_24h": -0.53,
+   "var_7j": 2.88
   },
   "TTE.PA": {
-   "prix": 78.94,
-   "var_24h": -1.36,
-   "var_7j": 1.53
+   "prix": 79.32,
+   "var_24h": -0.89,
+   "var_7j": 2.61
   }
  },
  "fear_greed": {
-  "valeur": 56,
+  "valeur": 71,
   "label": "Greed"
  },
  "erreurs": []
