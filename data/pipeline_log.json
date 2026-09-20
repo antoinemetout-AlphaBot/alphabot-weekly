@@ -911,6 +911,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-20T09:53:53+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-20T09:54:31+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 80 464$ : le pétrole s'effondre de 5,7%, l'Europe trinque"
+  },
+  {
+   "ts": "2026-09-20T09:54:31+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #31"
+  },
+  {
+   "ts": "2026-09-20T09:54:33+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-20T09:54:36+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
