@@ -941,6 +941,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-21T10:52:45+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-21T10:52:54+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "3 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-09-21T10:53:30+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 84 199$ : le pétrole s'écrase de 7%, l'Europe résiste"
+  },
+  {
+   "ts": "2026-09-21T10:53:30+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #32"
+  },
+  {
+   "ts": "2026-09-21T10:53:32+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-21T10:53:36+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-21T10:53:55+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }

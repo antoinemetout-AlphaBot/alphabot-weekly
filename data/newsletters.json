@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-21",
+   "label": "Lundi 21 septembre 2026",
+   "titre": "Bitcoin à 84 199$ : le pétrole s'écrase de 7%, l'Europe résiste",
+   "file": "newsletters/alphabot_newsletter_2026-09-21.html"
+  },
+  {
    "date": "2026-09-20",
    "label": "Dimanche 20 septembre 2026",
    "titre": "Bitcoin à 80 464$ : le pétrole s'effondre de 5,7%, l'Europe trinque",
@@ -187,5 +193,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 31
+ "count": 32
 }
