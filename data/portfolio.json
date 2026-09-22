@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 79.01,
+     "prix_actuel_eur": 77.75,
      "date_entree": "2026-07-06"
     }
    ],
@@ -110,6 +110,10 @@
     {
      "date": "2026-09-21",
      "valeur": 10270.2
+    },
+    {
+     "date": "2026-09-22",
+     "valeur": 10241.97
     }
    ],
    "trades": [
@@ -122,8 +126,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10270.2,
-   "performance_pct": 2.7
+   "valeur_totale": 10241.97,
+   "performance_pct": 2.42
   },
   "modere": {
    "nom": "Le Stratège",
@@ -137,7 +141,7 @@
      "nom": "Apple",
      "quantite": 11.501832091331533,
      "prix_entree_eur": 278.22,
-     "prix_actuel_eur": 292.67,
+     "prix_actuel_eur": 295.48,
      "date_entree": "2026-07-06"
     },
     {
@@ -145,7 +149,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 407.7,
+     "prix_actuel_eur": 406.75,
      "date_entree": "2026-07-06"
     },
     {
@@ -153,7 +157,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 464.41,
+     "prix_actuel_eur": 466.7,
      "date_entree": "2026-09-07"
     },
     {
@@ -161,7 +165,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 142.39,
+     "prix_actuel_eur": 137.99,
      "date_entree": "2026-09-21"
     }
    ],
@@ -257,6 +261,10 @@
     {
      "date": "2026-09-21",
      "valeur": 10136.94
+    },
+    {
+     "date": "2026-09-22",
+     "valeur": 10128.25
     }
    ],
    "trades": [
@@ -317,8 +325,8 @@
      "raison": "XOM à 142.39€ diversifie le portefeuille modéré vers le secteur énergie, représentant environ 14% de la valeur totale, dans la limite des 25% autorisés."
     }
    ],
-   "valeur_totale": 10136.94,
-   "performance_pct": 1.37
+   "valeur_totale": 10128.25,
+   "performance_pct": 1.28
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -332,7 +340,7 @@
      "nom": "NVIDIA",
      "quantite": 30.78286403277434,
      "prix_entree_eur": 178.68,
-     "prix_actuel_eur": 193.53,
+     "prix_actuel_eur": 198.2,
      "date_entree": "2026-07-06"
     },
     {
@@ -340,7 +348,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 73265.14,
+     "prix_actuel_eur": 75071.59,
      "date_entree": "2026-07-06"
     },
     {
@@ -348,7 +356,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 317.17,
+     "prix_actuel_eur": 327.14,
      "date_entree": "2026-07-06"
     }
    ],
@@ -444,6 +452,10 @@
     {
      "date": "2026-09-21",
      "valeur": 11129.46
+    },
+    {
+     "date": "2026-09-22",
+     "valeur": 11413.22
     }
    ],
    "trades": [
@@ -496,8 +508,8 @@
      "raison": "NVDA conserve un momentum haussier fort en IA et le cash résiduel de 200€ est entièrement déployé pour maximiser l'exposition dans la limite des 35% par position."
     }
    ],
-   "valeur_totale": 11129.46,
-   "performance_pct": 11.29
+   "valeur_totale": 11413.22,
+   "performance_pct": 14.13
   }
  }
 }
