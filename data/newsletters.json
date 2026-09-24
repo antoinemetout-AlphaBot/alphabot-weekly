@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-24",
+   "label": "Jeudi 24 septembre 2026",
+   "titre": "Bitcoin à 83 277$ : le dollar reprend du poil de la bête, les indices soufflent",
+   "file": "newsletters/alphabot_newsletter_2026-09-24.html"
+  },
+  {
    "date": "2026-09-23",
    "label": "Mercredi 23 septembre 2026",
    "titre": "Bitcoin à 85 837$ : la tech explose, le pétrole coule à pic",
@@ -205,5 +211,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 34
+ "count": 35
 }
