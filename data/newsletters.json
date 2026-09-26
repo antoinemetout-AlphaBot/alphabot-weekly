@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-26",
+   "label": "Samedi 26 septembre 2026",
+   "titre": "Bitcoin à 83 990$ : le pétrole plonge, l'or s'envole à 4 321$",
+   "file": "newsletters/alphabot_newsletter_2026-09-26.html"
+  },
+  {
    "date": "2026-09-25",
    "label": "Vendredi 25 septembre 2026",
    "titre": "Bitcoin à 84 461$ : l'or bat des records, le pétrole continue sa descente aux enfers",
@@ -217,5 +223,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 36
+ "count": 37
 }

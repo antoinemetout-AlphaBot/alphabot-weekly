@@ -1103,6 +1103,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-09-26T09:58:38+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-09-26T09:59:17+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 83 990$ : le pétrole plonge, l'or s'envole à 4 321$"
+  },
+  {
+   "ts": "2026-09-26T09:59:17+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #37"
+  },
+  {
+   "ts": "2026-09-26T09:59:19+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-09-26T09:59:23+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
