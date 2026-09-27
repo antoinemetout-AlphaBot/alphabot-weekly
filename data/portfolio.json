@@ -130,6 +130,10 @@
     {
      "date": "2026-09-26",
      "valeur": 10292.16
+    },
+    {
+     "date": "2026-09-27",
+     "valeur": 10292.16
     }
    ],
    "trades": [
@@ -157,7 +161,7 @@
      "nom": "Apple",
      "quantite": 11.501832091331533,
      "prix_entree_eur": 278.22,
-     "prix_actuel_eur": 299.18,
+     "prix_actuel_eur": 299.16,
      "date_entree": "2026-07-06"
     },
     {
@@ -173,7 +177,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 455.75,
+     "prix_actuel_eur": 455.71,
      "date_entree": "2026-09-07"
     },
     {
@@ -181,7 +185,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 140.87,
+     "prix_actuel_eur": 140.86,
      "date_entree": "2026-09-21"
     }
    ],
@@ -297,6 +301,10 @@
     {
      "date": "2026-09-26",
      "valeur": 10118.1
+    },
+    {
+     "date": "2026-09-27",
+     "valeur": 10117.61
     }
    ],
    "trades": [
@@ -357,7 +365,7 @@
      "raison": "XOM à 142.39€ diversifie le portefeuille modéré vers le secteur énergie, représentant environ 14% de la valeur totale, dans la limite des 25% autorisés."
     }
    ],
-   "valeur_totale": 10118.1,
+   "valeur_totale": 10117.61,
    "performance_pct": 1.18
   },
   "agressif": {
@@ -372,7 +380,7 @@
      "nom": "NVIDIA",
      "quantite": 30.78286403277434,
      "prix_entree_eur": 178.68,
-     "prix_actuel_eur": 197.43,
+     "prix_actuel_eur": 197.41,
      "date_entree": "2026-07-06"
     },
     {
@@ -380,7 +388,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 73662.23,
+     "prix_actuel_eur": 74466.27,
      "date_entree": "2026-07-06"
     },
     {
@@ -388,7 +396,7 @@
      "nom": "Tesla",
      "quantite": 5.806021,
      "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 326.41,
+     "prix_actuel_eur": 326.38,
      "date_entree": "2026-07-06"
     }
    ],
@@ -504,6 +512,10 @@
     {
      "date": "2026-09-26",
      "valeur": 11321.22
+    },
+    {
+     "date": "2026-09-27",
+     "valeur": 11356.98
     }
    ],
    "trades": [
@@ -556,8 +568,8 @@
      "raison": "NVDA conserve un momentum haussier fort en IA et le cash résiduel de 200€ est entièrement déployé pour maximiser l'exposition dans la limite des 35% par position."
     }
    ],
-   "valeur_totale": 11321.22,
-   "performance_pct": 13.21
+   "valeur_totale": 11356.98,
+   "performance_pct": 13.57
   }
  }
 }
