@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-09-28",
+   "label": "Lundi 28 septembre 2026",
+   "titre": "Bitcoin à 83 026$ : le pétrole bondit, l'or dégringole de 3,24%",
+   "file": "newsletters/alphabot_newsletter_2026-09-28.html"
+  },
+  {
    "date": "2026-09-27",
    "label": "Dimanche 27 septembre 2026",
    "titre": "Bitcoin à 84 908$ : la tech cartonne, le pétrole trinque encore",
@@ -229,5 +235,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 38
+ "count": 39
 }

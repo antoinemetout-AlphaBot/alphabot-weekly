@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 79.99,
+     "prix_actuel_eur": 81.08,
      "date_entree": "2026-07-06"
     }
    ],
@@ -134,6 +134,10 @@
     {
      "date": "2026-09-27",
      "valeur": 10292.16
+    },
+    {
+     "date": "2026-09-28",
+     "valeur": 10316.58
     }
    ],
    "trades": [
@@ -146,8 +150,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10292.16,
-   "performance_pct": 2.92
+   "valeur_totale": 10316.58,
+   "performance_pct": 3.17
   },
   "modere": {
    "nom": "Le Stratège",
@@ -161,7 +165,7 @@
      "nom": "Apple",
      "quantite": 11.501832091331533,
      "prix_entree_eur": 278.22,
-     "prix_actuel_eur": 299.16,
+     "prix_actuel_eur": 299.79,
      "date_entree": "2026-07-06"
     },
     {
@@ -169,7 +173,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 396.85,
+     "prix_actuel_eur": 397.5,
      "date_entree": "2026-07-06"
     },
     {
@@ -177,7 +181,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 455.71,
+     "prix_actuel_eur": 456.68,
      "date_entree": "2026-09-07"
     },
     {
@@ -185,7 +189,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 140.86,
+     "prix_actuel_eur": 141.15,
      "date_entree": "2026-09-21"
     }
    ],
@@ -305,6 +309,10 @@
     {
      "date": "2026-09-27",
      "valeur": 10117.61
+    },
+    {
+     "date": "2026-09-28",
+     "valeur": 10134.36
     }
    ],
    "trades": [
@@ -365,8 +373,8 @@
      "raison": "XOM à 142.39€ diversifie le portefeuille modéré vers le secteur énergie, représentant environ 14% de la valeur totale, dans la limite des 25% autorisés."
     }
    ],
-   "valeur_totale": 10117.61,
-   "performance_pct": 1.18
+   "valeur_totale": 10134.36,
+   "performance_pct": 1.34
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -378,9 +386,9 @@
     {
      "ticker": "NVDA",
      "nom": "NVIDIA",
-     "quantite": 30.78286403277434,
-     "prix_entree_eur": 178.68,
-     "prix_actuel_eur": 197.41,
+     "quantite": 40.38191372190137,
+     "prix_entree_eur": 183.23,
+     "prix_actuel_eur": 197.83,
      "date_entree": "2026-07-06"
     },
     {
@@ -388,15 +396,7 @@
      "nom": "Bitcoin",
      "quantite": 0.045459,
      "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 74466.27,
-     "date_entree": "2026-07-06"
-    },
-    {
-     "ticker": "TSLA",
-     "nom": "Tesla",
-     "quantite": 5.806021,
-     "prix_entree_eur": 344.47,
-     "prix_actuel_eur": 326.38,
+     "prix_actuel_eur": 72926.96,
      "date_entree": "2026-07-06"
     }
    ],
@@ -516,6 +516,10 @@
     {
      "date": "2026-09-27",
      "valeur": 11356.98
+    },
+    {
+     "date": "2026-09-28",
+     "valeur": 11303.94
     }
    ],
    "trades": [
@@ -566,10 +570,26 @@
      "ticker": "NVDA",
      "prix_eur": 193.53,
      "raison": "NVDA conserve un momentum haussier fort en IA et le cash résiduel de 200€ est entièrement déployé pour maximiser l'exposition dans la limite des 35% par position."
+    },
+    {
+     "date": "2026-09-28",
+     "profil": "agressif",
+     "action": "vendre",
+     "ticker": "TSLA",
+     "prix_eur": 327.07,
+     "raison": "Vente totale de TSLA (5.806 parts ≈ 1899€) après une volatilité élevée, pour réallouer vers NVDA qui affiche une dynamique IA plus solide."
+    },
+    {
+     "date": "2026-09-28",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "NVDA",
+     "prix_eur": 197.83,
+     "raison": "Renforcement de NVDA avec ~1899€ issus de la vente TSLA, capitalisant sur la demande soutenue en puces IA qui a propulsé le titre de +197% sur 12 mois."
     }
    ],
-   "valeur_totale": 11356.98,
-   "performance_pct": 13.57
+   "valeur_totale": 11303.94,
+   "performance_pct": 13.04
   }
  }
 }
