@@ -1265,6 +1265,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-01T11:42:43+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-01T11:43:21+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 83 918$ : le pétrole flambe, LVMH tangue à -1,68%"
+  },
+  {
+   "ts": "2026-10-01T11:43:22+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #42"
+  },
+  {
+   "ts": "2026-10-01T11:43:24+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-01T11:43:27+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
