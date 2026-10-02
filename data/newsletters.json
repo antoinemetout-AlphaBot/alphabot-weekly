@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-02",
+   "label": "Vendredi 2 octobre 2026",
+   "titre": "Bitcoin à 86 456$ : le pétrole s'effondre, l'euro trinque à 1,12",
+   "file": "newsletters/alphabot_newsletter_2026-10-02.html"
+  },
+  {
    "date": "2026-10-01",
    "label": "Jeudi 1er octobre 2026",
    "titre": "Bitcoin à 83 918$ : le pétrole flambe, LVMH tangue à -1,68%",
@@ -253,5 +259,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 42
+ "count": 43
 }
