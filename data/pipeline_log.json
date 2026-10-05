@@ -1385,6 +1385,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-05T12:25:09+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-05T12:25:20+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "3 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-10-05T12:25:57+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 86 094$ : Tesla s'envole de +4,65%, le CAC 40 tangue"
+  },
+  {
+   "ts": "2026-10-05T12:25:57+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #46"
+  },
+  {
+   "ts": "2026-10-05T12:25:59+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-05T12:26:01+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-05T12:26:22+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }

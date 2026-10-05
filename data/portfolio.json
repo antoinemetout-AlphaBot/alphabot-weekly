@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 74.46,
+     "prix_actuel_eur": 75.38,
      "date_entree": "2026-07-06"
     }
    ],
@@ -162,6 +162,10 @@
     {
      "date": "2026-10-04",
      "valeur": 10168.26
+    },
+    {
+     "date": "2026-10-05",
+     "valeur": 10188.87
     }
    ],
    "trades": [
@@ -174,22 +178,22 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10168.26,
-   "performance_pct": 1.68
+   "valeur_totale": 10188.87,
+   "performance_pct": 1.89
   },
   "modere": {
    "nom": "Le Stratège",
    "emoji": "⚖️",
    "description": "Équilibre croissance/stabilité : mix actions de qualité et ETF",
    "capital_initial": 10000.0,
-   "cash": 1797.2,
+   "cash": 897.2,
    "positions": [
     {
      "ticker": "AAPL",
      "nom": "Apple",
-     "quantite": 11.501832091331533,
-     "prix_entree_eur": 278.22,
-     "prix_actuel_eur": 296.43,
+     "quantite": 14.524197596066573,
+     "prix_entree_eur": 282.29,
+     "prix_actuel_eur": 297.78,
      "date_entree": "2026-07-06"
     },
     {
@@ -197,7 +201,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 378.55,
+     "prix_actuel_eur": 381.1,
      "date_entree": "2026-07-06"
     },
     {
@@ -205,7 +209,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 448.97,
+     "prix_actuel_eur": 451.02,
      "date_entree": "2026-09-07"
     },
     {
@@ -213,7 +217,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 145.7,
+     "prix_actuel_eur": 146.36,
      "date_entree": "2026-09-21"
     }
    ],
@@ -361,6 +365,10 @@
     {
      "date": "2026-10-04",
      "valeur": 10037.49
+    },
+    {
+     "date": "2026-10-05",
+     "valeur": 10078.29
     }
    ],
    "trades": [
@@ -419,33 +427,41 @@
      "ticker": "XOM",
      "prix_eur": 142.39,
      "raison": "XOM à 142.39€ diversifie le portefeuille modéré vers le secteur énergie, représentant environ 14% de la valeur totale, dans la limite des 25% autorisés."
+    },
+    {
+     "date": "2026-10-05",
+     "profil": "modere",
+     "action": "acheter",
+     "ticker": "AAPL",
+     "prix_eur": 297.78,
+     "raison": "AAPL reste solide à 297.78€ et l'ajout de ~3 actions porte la position à environ 15% du portefeuille, dans la limite des 25% autorisés pour le profil modéré."
     }
    ],
-   "valeur_totale": 10037.49,
-   "performance_pct": 0.37
+   "valeur_totale": 10078.29,
+   "performance_pct": 0.78
   },
   "agressif": {
    "nom": "Le Chasseur",
    "emoji": "🎯",
    "description": "Croissance maximale : tech, crypto, positions concentrées",
    "capital_initial": 10000.0,
-   "cash": 0.0,
+   "cash": 989.96,
    "positions": [
     {
      "ticker": "NVDA",
      "nom": "NVIDIA",
      "quantite": 40.38191372190137,
      "prix_entree_eur": 183.23,
-     "prix_actuel_eur": 207.83,
+     "prix_actuel_eur": 208.77,
      "date_entree": "2026-07-06"
     },
     {
-     "ticker": "BTC-USD",
-     "nom": "Bitcoin",
-     "quantite": 0.045459,
-     "prix_entree_eur": 54994.75,
-     "prix_actuel_eur": 75740.4,
-     "date_entree": "2026-07-06"
+     "ticker": "TSLA",
+     "nom": "Tesla",
+     "quantite": 7.559493,
+     "prix_entree_eur": 330.71,
+     "prix_actuel_eur": 330.71,
+     "date_entree": "2026-10-05"
     }
    ],
    "historique": [
@@ -592,6 +608,10 @@
     {
      "date": "2026-10-04",
      "valeur": 11835.66
+    },
+    {
+     "date": "2026-10-05",
+     "valeur": 11920.49
     }
    ],
    "trades": [
@@ -658,10 +678,26 @@
      "ticker": "NVDA",
      "prix_eur": 197.83,
      "raison": "Renforcement de NVDA avec ~1899€ issus de la vente TSLA, capitalisant sur la demande soutenue en puces IA qui a propulsé le titre de +197% sur 12 mois."
+    },
+    {
+     "date": "2026-10-05",
+     "profil": "agressif",
+     "action": "vendre",
+     "ticker": "BTC-USD",
+     "prix_eur": 76771.67,
+     "raison": "BTC-USD représente environ 29% du portefeuille agressif à 76771€, et une prise de profit partielle permet de réallouer vers TSLA qui affiche un momentum technique à 330.71€."
+    },
+    {
+     "date": "2026-10-05",
+     "profil": "agressif",
+     "action": "acheter",
+     "ticker": "TSLA",
+     "prix_eur": 330.71,
+     "raison": "TSLA à 330.71€ offre un potentiel de croissance élevé cohérent avec le profil chasseur, et 2500€ représentent environ 21% du portefeuille, sous le seuil des 35% autorisés."
     }
    ],
-   "valeur_totale": 11835.66,
-   "performance_pct": 18.36
+   "valeur_totale": 11920.49,
+   "performance_pct": 19.2
   }
  }
 }

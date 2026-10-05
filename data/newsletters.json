@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-05",
+   "label": "Lundi 5 octobre 2026",
+   "titre": "Bitcoin à 86 094$ : Tesla s'envole de +4,65%, le CAC 40 tangue",
+   "file": "newsletters/alphabot_newsletter_2026-10-05.html"
+  },
+  {
    "date": "2026-10-04",
    "label": "Dimanche 4 octobre 2026",
    "titre": "Bitcoin à 85 242$ : Tesla s'envole, l'or décroche de -3,61%",
@@ -271,5 +277,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 45
+ "count": 46
 }
