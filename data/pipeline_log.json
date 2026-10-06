@@ -1427,6 +1427,36 @@
    "evenement": "linkedin",
    "statut": "ok",
    "detail": ""
+  },
+  {
+   "ts": "2026-10-06T12:07:10+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-06T12:07:46+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 86 269$ : l'or franchit 4 200$, le pétrole s'effondre encore"
+  },
+  {
+   "ts": "2026-10-06T12:07:46+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #47"
+  },
+  {
+   "ts": "2026-10-06T12:07:48+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-06T12:07:52+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }

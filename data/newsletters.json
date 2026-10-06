@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-06",
+   "label": "Mardi 6 octobre 2026",
+   "titre": "Bitcoin à 86 269$ : l'or franchit 4 200$, le pétrole s'effondre encore",
+   "file": "newsletters/alphabot_newsletter_2026-10-06.html"
+  },
+  {
    "date": "2026-10-05",
    "label": "Lundi 5 octobre 2026",
    "titre": "Bitcoin à 86 094$ : Tesla s'envole de +4,65%, le CAC 40 tangue",
@@ -277,5 +283,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 46
+ "count": 47
 }
