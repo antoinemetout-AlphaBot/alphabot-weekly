@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-08",
+   "label": "Jeudi 8 octobre 2026",
+   "titre": "Bitcoin à 82 327$ : le pétrole explose de +4,5%, l'Europe trinque",
+   "file": "newsletters/alphabot_newsletter_2026-10-08.html"
+  },
+  {
    "date": "2026-10-07",
    "label": "Mercredi 7 octobre 2026",
    "titre": "Bitcoin à 83 585$ : l'Europe décroche, Wall Street tient le cap",
@@ -289,5 +295,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 48
+ "count": 49
 }

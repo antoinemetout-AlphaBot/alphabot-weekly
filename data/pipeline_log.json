@@ -1487,6 +1487,36 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-08T12:07:58+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-08T12:08:37+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 82 327$ : le pétrole explose de +4,5%, l'Europe trinque"
+  },
+  {
+   "ts": "2026-10-08T12:08:37+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #49"
+  },
+  {
+   "ts": "2026-10-08T12:08:39+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-08T12:08:42+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
