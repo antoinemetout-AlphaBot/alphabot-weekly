@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 77.55,
+     "prix_actuel_eur": 78.53,
      "date_entree": "2026-07-06"
     }
    ],
@@ -182,6 +182,10 @@
     {
      "date": "2026-10-09",
      "valeur": 10237.49
+    },
+    {
+     "date": "2026-10-10",
+     "valeur": 10259.45
     }
    ],
    "trades": [
@@ -194,8 +198,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10237.49,
-   "performance_pct": 2.37
+   "valeur_totale": 10259.45,
+   "performance_pct": 2.59
   },
   "modere": {
    "nom": "Le Stratège",
@@ -209,7 +213,7 @@
      "nom": "Apple",
      "quantite": 14.524197596066573,
      "prix_entree_eur": 282.29,
-     "prix_actuel_eur": 303.62,
+     "prix_actuel_eur": 300.41,
      "date_entree": "2026-07-06"
     },
     {
@@ -217,7 +221,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 383.95,
+     "prix_actuel_eur": 380.0,
      "date_entree": "2026-07-06"
     },
     {
@@ -225,7 +229,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 452.99,
+     "prix_actuel_eur": 454.75,
      "date_entree": "2026-09-07"
     },
     {
@@ -233,7 +237,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 150.29,
+     "prix_actuel_eur": 150.76,
      "date_entree": "2026-09-21"
     }
    ],
@@ -401,6 +405,10 @@
     {
      "date": "2026-10-09",
      "valeur": 10223.7
+    },
+    {
+     "date": "2026-10-10",
+     "valeur": 10173.32
     }
    ],
    "trades": [
@@ -469,8 +477,8 @@
      "raison": "AAPL reste solide à 297.78€ et l'ajout de ~3 actions porte la position à environ 15% du portefeuille, dans la limite des 25% autorisés pour le profil modéré."
     }
    ],
-   "valeur_totale": 10223.7,
-   "performance_pct": 2.24
+   "valeur_totale": 10173.32,
+   "performance_pct": 1.73
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -484,7 +492,7 @@
      "nom": "NVIDIA",
      "quantite": 40.38191372190137,
      "prix_entree_eur": 183.23,
-     "prix_actuel_eur": 205.57,
+     "prix_actuel_eur": 204.6,
      "date_entree": "2026-07-06"
     },
     {
@@ -492,7 +500,7 @@
      "nom": "Tesla",
      "quantite": 7.559493,
      "prix_entree_eur": 330.71,
-     "prix_actuel_eur": 334.46,
+     "prix_actuel_eur": 341.51,
      "date_entree": "2026-10-05"
     }
    ],
@@ -660,6 +668,10 @@
     {
      "date": "2026-10-09",
      "valeur": 11819.62
+    },
+    {
+     "date": "2026-10-10",
+     "valeur": 11833.74
     }
    ],
    "trades": [
@@ -744,8 +756,8 @@
      "raison": "TSLA à 330.71€ offre un potentiel de croissance élevé cohérent avec le profil chasseur, et 2500€ représentent environ 21% du portefeuille, sous le seuil des 35% autorisés."
     }
    ],
-   "valeur_totale": 11819.62,
-   "performance_pct": 18.2
+   "valeur_totale": 11833.74,
+   "performance_pct": 18.34
   }
  }
 }
