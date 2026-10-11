@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-11",
+   "label": "Dimanche 11 octobre 2026",
+   "titre": "Bitcoin à 82 979$ : l'or flirte avec 4 216$, Tesla fait le show",
+   "file": "newsletters/alphabot_newsletter_2026-10-11.html"
+  },
+  {
    "date": "2026-10-10",
    "label": "Samedi 10 octobre 2026",
    "titre": "Bitcoin à 82 741$ : l'or s'emballe, Tesla repart en trombe",
@@ -307,5 +313,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 51
+ "count": 52
 }

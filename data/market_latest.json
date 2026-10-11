@@ -1,11 +1,11 @@
 {
- "ts": "2026-10-10T11:16:38+00:00",
+ "ts": "2026-10-11T11:30:01+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 82736.0,
-   "var_24h": 0.38,
-   "var_7j": -2.12,
-   "market_cap": 1662757843664,
+   "prix": 82971.0,
+   "var_24h": 0.29,
+   "var_7j": -2.7,
+   "market_cap": 1667464922560,
    "source": "coingecko"
   }
  },
@@ -46,19 +46,19 @@
    "ticker": "DX-Y.NYB",
    "prix": 102.21,
    "var_24h": 0.07,
-   "var_7j": 0.83
+   "var_7j": 0.75
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
    "prix": 91.85,
    "var_24h": 0.39,
-   "var_7j": 2.76
+   "var_7j": 1.58
   },
   "Or": {
    "ticker": "GC=F",
    "prix": 4216.2998,
    "var_24h": 1.43,
-   "var_7j": 0.88
+   "var_7j": 0.71
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
@@ -149,7 +149,7 @@
   }
  },
  "fear_greed": {
-  "valeur": 64,
+  "valeur": 61,
   "label": "Greed"
  },
  "erreurs": []
