@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-12",
+   "label": "Lundi 12 octobre 2026",
+   "titre": "Bitcoin à 82 579$ : Tesla s'envole, le pétrole grimpe encore",
+   "file": "newsletters/alphabot_newsletter_2026-10-12.html"
+  },
+  {
    "date": "2026-10-11",
    "label": "Dimanche 11 octobre 2026",
    "titre": "Bitcoin à 82 979$ : l'or flirte avec 4 216$, Tesla fait le show",
@@ -313,5 +319,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 52
+ "count": 53
 }
