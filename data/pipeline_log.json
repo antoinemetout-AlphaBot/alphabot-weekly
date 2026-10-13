@@ -1649,6 +1649,36 @@
    "evenement": "linkedin",
    "statut": "ok",
    "detail": ""
+  },
+  {
+   "ts": "2026-10-13T12:49:01+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-13T12:49:42+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 83 169$ : l'or frôle 4 209$, les pétrolières font le plein"
+  },
+  {
+   "ts": "2026-10-13T12:49:42+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #54"
+  },
+  {
+   "ts": "2026-10-13T12:49:44+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-13T12:49:48+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
