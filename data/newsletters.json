@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-14",
+   "label": "Mercredi 14 octobre 2026",
+   "titre": "Bitcoin à 83 327$ : le pétrole s'emballe, TotalEnergies fait le plein",
+   "file": "newsletters/alphabot_newsletter_2026-10-14.html"
+  },
+  {
    "date": "2026-10-13",
    "label": "Mardi 13 octobre 2026",
    "titre": "Bitcoin à 83 169$ : l'or frôle 4 209$, les pétrolières font le plein",
@@ -325,5 +331,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 54
+ "count": 55
 }
