@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-16",
+   "label": "Vendredi 16 octobre 2026",
+   "titre": "Bitcoin à 82 026$ : l'or flirte avec 4 203$, Lockheed s'envole",
+   "file": "newsletters/alphabot_newsletter_2026-10-16.html"
+  },
+  {
    "date": "2026-10-15",
    "label": "Jeudi 15 octobre 2026",
    "titre": "Bitcoin à 81 142$ : NVIDIA dévisse, l'or et les pétrolières font la fête",
@@ -337,5 +343,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 56
+ "count": 57
 }

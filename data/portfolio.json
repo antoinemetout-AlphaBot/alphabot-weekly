@@ -14,7 +14,7 @@
      "nom": "TotalEnergies",
      "quantite": 22.40478,
      "prix_entree_eur": 66.95,
-     "prix_actuel_eur": 80.97,
+     "prix_actuel_eur": 79.56,
      "date_entree": "2026-07-06"
     }
    ],
@@ -206,6 +206,10 @@
     {
      "date": "2026-10-15",
      "valeur": 10314.12
+    },
+    {
+     "date": "2026-10-16",
+     "valeur": 10282.52
     }
    ],
    "trades": [
@@ -218,8 +222,8 @@
      "raison": "TTE.PA offre un rendement dividende estimé à ~5%, adapté au profil défensif à moins de 20% du portefeuille."
     }
    ],
-   "valeur_totale": 10314.12,
-   "performance_pct": 3.14
+   "valeur_totale": 10282.52,
+   "performance_pct": 2.83
   },
   "modere": {
    "nom": "Le Stratège",
@@ -233,7 +237,7 @@
      "nom": "Apple",
      "quantite": 14.524197596066573,
      "prix_entree_eur": 282.29,
-     "prix_actuel_eur": 305.67,
+     "prix_actuel_eur": 303.84,
      "date_entree": "2026-07-06"
     },
     {
@@ -241,7 +245,7 @@
      "nom": "LVMH",
      "quantite": 3.980892,
      "prix_entree_eur": 502.4,
-     "prix_actuel_eur": 395.95,
+     "prix_actuel_eur": 395.4,
      "date_entree": "2026-07-06"
     },
     {
@@ -249,7 +253,7 @@
      "nom": "Lockheed Martin",
      "quantite": 3.984593,
      "prix_entree_eur": 451.74,
-     "prix_actuel_eur": 465.45,
+     "prix_actuel_eur": 473.21,
      "date_entree": "2026-09-07"
     },
     {
@@ -257,7 +261,7 @@
      "nom": "ExxonMobil",
      "quantite": 10.534448,
      "prix_entree_eur": 142.39,
-     "prix_actuel_eur": 157.76,
+     "prix_actuel_eur": 155.19,
      "date_entree": "2026-09-21"
     }
    ],
@@ -449,6 +453,10 @@
     {
      "date": "2026-10-15",
      "valeur": 10429.59
+    },
+    {
+     "date": "2026-10-16",
+     "valeur": 10404.67
     }
    ],
    "trades": [
@@ -517,8 +525,8 @@
      "raison": "AAPL reste solide à 297.78€ et l'ajout de ~3 actions porte la position à environ 15% du portefeuille, dans la limite des 25% autorisés pour le profil modéré."
     }
    ],
-   "valeur_totale": 10429.59,
-   "performance_pct": 4.3
+   "valeur_totale": 10404.67,
+   "performance_pct": 4.05
   },
   "agressif": {
    "nom": "Le Chasseur",
@@ -532,7 +540,7 @@
      "nom": "NVIDIA",
      "quantite": 40.38191372190137,
      "prix_entree_eur": 183.23,
-     "prix_actuel_eur": 197.24,
+     "prix_actuel_eur": 192.99,
      "date_entree": "2026-07-06"
     },
     {
@@ -540,7 +548,7 @@
      "nom": "Tesla",
      "quantite": 7.559493,
      "prix_entree_eur": 330.71,
-     "prix_actuel_eur": 327.24,
+     "prix_actuel_eur": 322.0,
      "date_entree": "2026-10-05"
     },
     {
@@ -548,7 +556,7 @@
      "nom": "Bitcoin",
      "quantite": 0.012184,
      "prix_entree_eur": 73869.76,
-     "prix_actuel_eur": 72236.67,
+     "prix_actuel_eur": 72815.19,
      "date_entree": "2026-10-12"
     }
    ],
@@ -740,6 +748,10 @@
     {
      "date": "2026-10-15",
      "valeur": 11408.79
+    },
+    {
+     "date": "2026-10-16",
+     "valeur": 11204.6
     }
    ],
    "trades": [
@@ -832,8 +844,8 @@
      "raison": "BTC-USD à 73 869€ montre une dynamique haussière forte et représenterait moins de 8% du portefeuille agressif, dans la limite des 35% autorisés."
     }
    ],
-   "valeur_totale": 11408.79,
-   "performance_pct": 14.09
+   "valeur_totale": 11204.6,
+   "performance_pct": 12.05
   }
  }
 }
