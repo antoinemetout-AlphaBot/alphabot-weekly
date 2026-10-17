@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-17",
+   "label": "Samedi 17 octobre 2026",
+   "titre": "Bitcoin à 81 568$ : le pétrole flambe, le Nasdaq décroche",
+   "file": "newsletters/alphabot_newsletter_2026-10-17.html"
+  },
+  {
    "date": "2026-10-16",
    "label": "Vendredi 16 octobre 2026",
    "titre": "Bitcoin à 82 026$ : l'or flirte avec 4 203$, Lockheed s'envole",
@@ -343,5 +349,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 57
+ "count": 58
 }
