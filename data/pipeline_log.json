@@ -1,48 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-07-02T08:27:54+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
-   "ts": "2026-07-02T08:28:29+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 60 277$ : la peur au ventre, mais le rebond est là"
-  },
-  {
-   "ts": "2026-07-02T08:28:29+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #10"
-  },
-  {
-   "ts": "2026-07-02T08:28:31+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-07-02T08:28:35+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-07-02T10:10:36+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
-   "ts": "2026-07-02T12:28:39+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
    "ts": "2026-07-02T14:42:08+00:00",
    "evenement": "prix_live",
    "statut": "ok",
@@ -1799,6 +1757,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-19T10:59:26+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-19T10:59:33+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "0 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-10-19T11:00:12+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 82 369$ : le Nasdaq décroche, l'armement cartonne"
+  },
+  {
+   "ts": "2026-10-19T11:00:12+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #60"
+  },
+  {
+   "ts": "2026-10-19T11:00:14+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-19T11:00:19+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-19T11:00:40+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }
