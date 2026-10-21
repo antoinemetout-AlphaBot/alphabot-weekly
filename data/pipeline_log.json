@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-07-03T08:32:38+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 61 672$ : le rebond discret sous la peur extrême"
-  },
-  {
-   "ts": "2026-07-03T08:32:38+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #11"
-  },
-  {
-   "ts": "2026-07-03T08:32:39+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-07-03T08:32:41+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-07-03T09:58:42+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
    "ts": "2026-07-03T12:14:59+00:00",
    "evenement": "prix_live",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-10-20T10:13:32+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-21T10:21:31+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-21T10:22:10+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 83 200$ : le pétrole frôle les 100$, le Nasdaq résiste"
+  },
+  {
+   "ts": "2026-10-21T10:22:10+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #62"
+  },
+  {
+   "ts": "2026-10-21T10:22:12+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-21T10:22:15+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
