@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-25",
+   "label": "Dimanche 25 octobre 2026",
+   "titre": "Bitcoin à 80 234$ : le pétrole s'emballe, Lockheed décolle encore",
+   "file": "newsletters/alphabot_newsletter_2026-10-25.html"
+  },
+  {
    "date": "2026-10-24",
    "label": "Samedi 24 octobre 2026",
    "titre": "Bitcoin à 80 483$ : le pétrole flambe, les marchés soufflent",
@@ -391,5 +397,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 65
+ "count": 66
 }

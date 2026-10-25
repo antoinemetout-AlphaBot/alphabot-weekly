@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-24T11:40:09+02:00",
+ "updated_at": "2026-10-25T10:57:32+01:00",
  "prices": {
   "Bitcoin": {
-   "prix": 80453.0,
-   "variation": -1.26
+   "prix": 80234.0,
+   "variation": -0.36
   },
   "CAC 40": {
    "prix": 7782.8198,

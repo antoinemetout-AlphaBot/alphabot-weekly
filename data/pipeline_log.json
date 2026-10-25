@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-07-05T08:24:13+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-07-05T08:24:14+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-07-05T10:06:05+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
-   "ts": "2026-07-06T09:15:16+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
-   "ts": "2026-07-06T09:15:29+00:00",
-   "evenement": "trades",
-   "statut": "ok",
-   "detail": "7 trade(s) exécuté(s)"
-  },
-  {
    "ts": "2026-07-06T09:16:04+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-10-24T09:40:12+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-25T09:56:52+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-25T09:57:29+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 80 234$ : le pétrole s'emballe, Lockheed décolle encore"
+  },
+  {
+   "ts": "2026-10-25T09:57:29+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #66"
+  },
+  {
+   "ts": "2026-10-25T09:57:32+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-25T09:57:35+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
