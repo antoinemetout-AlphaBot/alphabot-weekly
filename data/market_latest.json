@@ -1,20 +1,20 @@
 {
- "ts": "2026-10-25T09:57:29+00:00",
+ "ts": "2026-10-26T11:20:22+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 80234.0,
-   "var_24h": -0.36,
-   "var_7j": -1.57,
-   "market_cap": 1612920431001,
+   "prix": 80188.0,
+   "var_24h": -0.2,
+   "var_7j": -2.92,
+   "market_cap": 1612049660276,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 7782.8198,
-   "var_24h": -0.36,
-   "var_7j": -0.64
+   "prix": 7836.6299,
+   "var_24h": 0.69,
+   "var_7j": 0.11
   },
   "S&P 500": {
    "ticker": "^GSPC",
@@ -30,9 +30,9 @@
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 25181.6504,
-   "var_24h": -0.75,
-   "var_7j": -0.38
+   "prix": 25387.2207,
+   "var_24h": 0.82,
+   "var_7j": 0.5
   },
   "Dow Jones": {
    "ticker": "^DJI",
@@ -44,27 +44,27 @@
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 101.81,
-   "var_24h": 0.2,
-   "var_7j": -0.72
+   "prix": 101.87,
+   "var_24h": 0.06,
+   "var_7j": -0.13
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 103.27,
-   "var_24h": 3.82,
-   "var_7j": 8.6
+   "prix": 101.16,
+   "var_24h": -2.04,
+   "var_7j": 3.26
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 4007.8999,
-   "var_24h": -1.29,
-   "var_7j": -2.43
+   "prix": 4025.8999,
+   "var_24h": 0.45,
+   "var_7j": -3.46
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.1204,
-   "var_24h": -0.27,
-   "var_7j": -0.0
+   "prix": 1.1199,
+   "var_24h": -0.2,
+   "var_7j": 0.35
   }
  },
  "watchlist": {
@@ -88,15 +88,15 @@
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 383.0,
-   "var_24h": -1.24,
-   "var_7j": -0.39
+   "prix": 387.45,
+   "var_24h": 1.16,
+   "var_7j": 0.89
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 83.45,
-   "var_24h": 4.34,
-   "var_7j": 5.66
+   "prix": 82.72,
+   "var_24h": -0.87,
+   "var_7j": 3.54
   },
   "ExxonMobil": {
    "ticker": "XOM",
@@ -118,9 +118,9 @@
    "var_7j": 1.98
   },
   "BTC-USD": {
-   "prix": 80227.6719,
-   "var_24h": -0.7,
-   "var_7j": -1.56
+   "prix": 80157.3906,
+   "var_24h": 0.17,
+   "var_7j": -1.5
   },
   "LMT": {
    "prix": 604.18,
@@ -128,9 +128,9 @@
    "var_7j": 18.03
   },
   "MC.PA": {
-   "prix": 383.0,
-   "var_24h": -1.24,
-   "var_7j": -0.39
+   "prix": 387.4,
+   "var_24h": 1.15,
+   "var_7j": 0.87
   },
   "NVDA": {
    "prix": 210.96,
@@ -143,9 +143,9 @@
    "var_7j": -1.54
   },
   "TTE.PA": {
-   "prix": 83.45,
-   "var_24h": 4.34,
-   "var_7j": 5.66
+   "prix": 82.72,
+   "var_24h": -0.87,
+   "var_7j": 3.54
   },
   "XOM": {
    "prix": 183.21,
@@ -154,7 +154,7 @@
   }
  },
  "fear_greed": {
-  "valeur": 54,
+  "valeur": 50,
   "label": "Neutral"
  },
  "erreurs": []

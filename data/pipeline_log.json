@@ -1,48 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-07-06T09:16:04+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 62 815$ : la semaine en vert, mais personne ne sourit"
-  },
-  {
-   "ts": "2026-07-06T09:16:04+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #14"
-  },
-  {
-   "ts": "2026-07-06T09:16:06+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-07-06T09:16:09+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-07-06T09:16:29+00:00",
-   "evenement": "linkedin",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-07-06T11:27:40+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
-   "ts": "2026-07-06T14:43:21+00:00",
-   "evenement": "prix_live",
-   "statut": "ok",
-   "detail": "10 actifs"
-  },
-  {
    "ts": "2026-07-06T17:43:10+00:00",
    "evenement": "prix_live",
    "statut": "ok",
@@ -1799,6 +1757,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-26T11:19:36+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-10-26T11:19:43+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "0 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-10-26T11:20:22+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 80 188$ : le pétrole franchit 101$, Lockheed s'envole encore"
+  },
+  {
+   "ts": "2026-10-26T11:20:22+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #67"
+  },
+  {
+   "ts": "2026-10-26T11:20:26+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-10-26T11:20:29+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-10-26T11:20:50+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }
