@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-27",
+   "label": "Mardi 27 octobre 2026",
+   "titre": "Bitcoin à 79 703$ : Tesla s'envole, Lockheed écrase tout",
+   "file": "newsletters/alphabot_newsletter_2026-10-27.html"
+  },
+  {
    "date": "2026-10-26",
    "label": "Lundi 26 octobre 2026",
    "titre": "Bitcoin à 80 188$ : le pétrole franchit 101$, Lockheed s'envole encore",
@@ -403,5 +409,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 67
+ "count": 68
 }
