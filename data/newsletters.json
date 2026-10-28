@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-28",
+   "label": "Mercredi 28 octobre 2026",
+   "titre": "Bitcoin à 81 299$ : Tesla s'offre +4%, le pétrole repasse les 101$",
+   "file": "newsletters/alphabot_newsletter_2026-10-28.html"
+  },
+  {
    "date": "2026-10-27",
    "label": "Mardi 27 octobre 2026",
    "titre": "Bitcoin à 79 703$ : Tesla s'envole, Lockheed écrase tout",
@@ -409,5 +415,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 68
+ "count": 69
 }
