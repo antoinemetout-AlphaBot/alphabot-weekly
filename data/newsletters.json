@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-10-30",
+   "label": "Vendredi 30 octobre 2026",
+   "titre": "Bitcoin chute à 77 686$ : la peur s'installe, le pétrole flambe à 104$",
+   "file": "newsletters/alphabot_newsletter_2026-10-30.html"
+  },
+  {
    "date": "2026-10-29",
    "label": "Jeudi 29 octobre 2026",
    "titre": "Bitcoin à 80 088$ : l'or recule, le CAC s'offre un rebond à 7 969",
@@ -421,5 +427,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 70
+ "count": 71
 }
