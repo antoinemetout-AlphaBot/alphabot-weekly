@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-01",
+   "label": "Dimanche 1er novembre 2026",
+   "titre": "Bitcoin tient les 77 800$ : le Nasdaq s'effondre, le pétrole flambe à 104$",
+   "file": "newsletters/alphabot_newsletter_2026-11-01.html"
+  },
+  {
    "date": "2026-10-31",
    "label": "Samedi 31 octobre 2026",
    "titre": "Bitcoin à 77 327$ : le Nasdaq plonge de -3,46%, l'or décroche",
@@ -433,5 +439,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 72
+ "count": 73
 }
