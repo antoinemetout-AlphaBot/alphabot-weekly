@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-07T10:32:55+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #18"
-  },
-  {
-   "ts": "2026-09-07T10:32:58+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-07T10:33:01+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-07T10:33:22+00:00",
-   "evenement": "linkedin",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-08T09:52:17+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-08T09:52:56+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1799,6 +1769,36 @@
    "evenement": "linkedin",
    "statut": "ok",
    "detail": ""
+  },
+  {
+   "ts": "2026-11-03T12:54:28+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-03T12:55:04+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 77 352$ : le Nasdaq plonge encore, Lockheed s'envole de +17%"
+  },
+  {
+   "ts": "2026-11-03T12:55:04+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #75"
+  },
+  {
+   "ts": "2026-11-03T12:55:07+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-03T12:55:10+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
   }
  ]
 }
