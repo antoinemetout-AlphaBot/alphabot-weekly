@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-08T09:52:56+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 78 740$ : le pétrole s'enflamme, Tesla décroche"
-  },
-  {
-   "ts": "2026-09-08T09:52:56+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #19"
-  },
-  {
-   "ts": "2026-09-08T09:52:58+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-08T09:53:00+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-09T09:55:40+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-09T09:56:21+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-11-03T12:55:10+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-04T13:07:56+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-04T13:08:33+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 78 302$ : l'or explose à 4 053$, l'Europe résiste"
+  },
+  {
+   "ts": "2026-11-04T13:08:33+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #76"
+  },
+  {
+   "ts": "2026-11-04T13:08:36+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-04T13:08:42+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"

@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-04",
+   "label": "Mercredi 4 novembre 2026",
+   "titre": "Bitcoin à 78 302$ : l'or explose à 4 053$, l'Europe résiste",
+   "file": "newsletters/alphabot_newsletter_2026-11-04.html"
+  },
+  {
    "date": "2026-11-03",
    "label": "Mardi 3 novembre 2026",
    "titre": "Bitcoin à 77 352$ : le Nasdaq plonge encore, Lockheed s'envole de +17%",
@@ -451,5 +457,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 75
+ "count": 76
 }
