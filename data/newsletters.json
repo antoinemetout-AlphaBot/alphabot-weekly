@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-05",
+   "label": "Jeudi 5 novembre 2026",
+   "titre": "Bitcoin à 79 594$ : le Dow Jones s'envole de +3%, Lockheed s'effondre",
+   "file": "newsletters/alphabot_newsletter_2026-11-05.html"
+  },
+  {
    "date": "2026-11-04",
    "label": "Mercredi 4 novembre 2026",
    "titre": "Bitcoin à 78 302$ : l'or explose à 4 053$, l'Europe résiste",
@@ -457,5 +463,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 76
+ "count": 77
 }
