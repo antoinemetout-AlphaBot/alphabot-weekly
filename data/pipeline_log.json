@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-10T09:54:17+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 77 964$ : le pétrole flambe, l'Europe trinque"
-  },
-  {
-   "ts": "2026-09-10T09:54:17+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #21"
-  },
-  {
-   "ts": "2026-09-10T09:54:19+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-10T09:54:21+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-11T09:51:55+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-11T09:52:36+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-11-05T13:22:00+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-06T13:04:26+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-06T13:05:05+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin lâche les 76 000$ : le Nasdaq s'écrase de -6,36%, Tesla en chute libre"
+  },
+  {
+   "ts": "2026-11-06T13:05:05+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #78"
+  },
+  {
+   "ts": "2026-11-06T13:05:08+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-06T13:05:12+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"

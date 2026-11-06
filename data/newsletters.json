@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-06",
+   "label": "Vendredi 6 novembre 2026",
+   "titre": "Bitcoin lâche les 76 000$ : le Nasdaq s'écrase de -6,36%, Tesla en chute libre",
+   "file": "newsletters/alphabot_newsletter_2026-11-06.html"
+  },
+  {
    "date": "2026-11-05",
    "label": "Jeudi 5 novembre 2026",
    "titre": "Bitcoin à 79 594$ : le Dow Jones s'envole de +3%, Lockheed s'effondre",
@@ -463,5 +469,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 77
+ "count": 78
 }
