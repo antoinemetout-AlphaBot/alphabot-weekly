@@ -1,11 +1,11 @@
 {
- "ts": "2026-11-07T11:50:29+00:00",
+ "ts": "2026-11-08T12:02:41+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 75951.0,
-   "var_24h": -0.16,
-   "var_7j": -1.89,
-   "market_cap": 1527287873634,
+   "prix": 75898.0,
+   "var_24h": -0.04,
+   "var_7j": -2.69,
+   "market_cap": 1526260268949,
    "source": "coingecko"
   }
  },
@@ -46,19 +46,19 @@
    "ticker": "DX-Y.NYB",
    "prix": 102.3,
    "var_24h": 0.74,
-   "var_7j": -0.02
+   "var_7j": 0.11
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
    "prix": 90.83,
    "var_24h": 0.34,
-   "var_7j": -9.08
+   "var_7j": -11.63
   },
   "Or": {
    "ticker": "GC=F",
    "prix": 4074.8999,
    "var_24h": -0.94,
-   "var_7j": 0.01
+   "var_7j": 0.58
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
@@ -118,9 +118,9 @@
    "var_7j": -0.45
   },
   "BTC-USD": {
-   "prix": 75916.6562,
-   "var_24h": 0.22,
-   "var_7j": -2.39
+   "prix": 75867.2266,
+   "var_24h": 0.16,
+   "var_7j": -1.72
   },
   "LMT": {
    "prix": 567.08,
@@ -154,8 +154,8 @@
   }
  },
  "fear_greed": {
-  "valeur": 25,
-  "label": "Extreme Fear"
+  "valeur": 28,
+  "label": "Fear"
  },
  "erreurs": []
 }
