@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-09",
+   "label": "Lundi 9 novembre 2026",
+   "titre": "Bitcoin sous 75 000$ : le pétrole s'effondre de -15%, l'or tient bon",
+   "file": "newsletters/alphabot_newsletter_2026-11-09.html"
+  },
+  {
    "date": "2026-11-08",
    "label": "Dimanche 8 novembre 2026",
    "titre": "Bitcoin à 75 888$ : Tesla bondit de +4,23%, le pétrole s'effondre",
@@ -481,5 +487,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 80
+ "count": 81
 }

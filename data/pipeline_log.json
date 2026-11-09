@@ -1,48 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-13T10:25:36+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 76 735$ : le pétrole franchit les 100$, les bourses soufflent"
-  },
-  {
-   "ts": "2026-09-13T10:25:36+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #24"
-  },
-  {
-   "ts": "2026-09-13T10:25:38+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-13T10:25:39+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-14T10:49:05+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
-   "ts": "2026-09-14T10:49:15+00:00",
-   "evenement": "trades",
-   "statut": "ok",
-   "detail": "2 trade(s) exécuté(s)"
-  },
-  {
-   "ts": "2026-09-14T10:50:30+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 77 947$ : le pétrole à 102$, Wall Street résiste"
-  },
-  {
    "ts": "2026-09-14T10:50:30+00:00",
    "evenement": "newsletter",
    "statut": "ok",
@@ -1799,6 +1757,48 @@
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-09T14:06:16+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-09T14:06:24+00:00",
+   "evenement": "trades",
+   "statut": "ok",
+   "detail": "0 trade(s) exécuté(s)"
+  },
+  {
+   "ts": "2026-11-09T14:07:02+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin sous 75 000$ : le pétrole s'effondre de -15%, l'or tient bon"
+  },
+  {
+   "ts": "2026-11-09T14:07:02+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #81"
+  },
+  {
+   "ts": "2026-11-09T14:07:05+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-09T14:07:09+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-09T14:07:30+00:00",
+   "evenement": "linkedin",
+   "statut": "ok",
+   "detail": ""
   }
  ]
 }
