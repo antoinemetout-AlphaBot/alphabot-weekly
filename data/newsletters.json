@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-10",
+   "label": "Mardi 10 novembre 2026",
+   "titre": "Bitcoin sous 74 000$ : le Nasdaq explose de +3,40%, Tesla s'envole",
+   "file": "newsletters/alphabot_newsletter_2026-11-10.html"
+  },
+  {
    "date": "2026-11-09",
    "label": "Lundi 9 novembre 2026",
    "titre": "Bitcoin sous 75 000$ : le pétrole s'effondre de -15%, l'or tient bon",
@@ -487,5 +493,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 81
+ "count": 82
 }
