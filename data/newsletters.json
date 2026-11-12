@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-12",
+   "label": "Jeudi 12 novembre 2026",
+   "titre": "Bitcoin à 72 495$ : le Nasdaq reprend +2,28%, l'or décroche",
+   "file": "newsletters/alphabot_newsletter_2026-11-12.html"
+  },
+  {
    "date": "2026-11-11",
    "label": "Mercredi 11 novembre 2026",
    "titre": "Bitcoin à 73 986$ : NVIDIA s'effondre de -21,59% en une semaine",
@@ -499,5 +505,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 83
+ "count": 84
 }

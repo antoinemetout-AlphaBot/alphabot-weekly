@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-16T10:07:04+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 75 955$ : le pétrole à 104$, l'or brille seul"
-  },
-  {
-   "ts": "2026-09-16T10:07:04+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #27"
-  },
-  {
-   "ts": "2026-09-16T10:07:07+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-16T10:07:09+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-17T10:09:32+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-17T10:10:11+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-11-11T12:51:50+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-12T13:53:00+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-12T13:53:37+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 72 495$ : le Nasdaq reprend +2,28%, l'or décroche"
+  },
+  {
+   "ts": "2026-11-12T13:53:37+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #84"
+  },
+  {
+   "ts": "2026-11-12T13:53:40+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-12T13:53:45+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
