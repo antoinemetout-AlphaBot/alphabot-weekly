@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-13",
+   "label": "Vendredi 13 novembre 2026",
+   "titre": "Bitcoin à 69 172$ : NVIDIA dévisse de -18,79%, la peur s'installe",
+   "file": "newsletters/alphabot_newsletter_2026-11-13.html"
+  },
+  {
    "date": "2026-11-12",
    "label": "Jeudi 12 novembre 2026",
    "titre": "Bitcoin à 72 495$ : le Nasdaq reprend +2,28%, l'or décroche",
@@ -505,5 +511,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 84
+ "count": 85
 }
