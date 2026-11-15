@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-15",
+   "label": "Dimanche 15 novembre 2026",
+   "titre": "Bitcoin à 65 401$ : la peur extrême frappe à 10/100",
+   "file": "newsletters/alphabot_newsletter_2026-11-15.html"
+  },
+  {
    "date": "2026-11-14",
    "label": "Samedi 14 novembre 2026",
    "titre": "Bitcoin à 67 071$ : la peur extrême s'installe, NVIDIA saigne -19%",
@@ -517,5 +523,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 86
+ "count": 87
 }
