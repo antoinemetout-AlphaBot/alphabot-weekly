@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-22T10:08:19+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 86 162$ : le pétrole s'écrase encore, la tech s'envole"
-  },
-  {
-   "ts": "2026-09-22T10:08:19+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #33"
-  },
-  {
-   "ts": "2026-09-22T10:08:21+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-22T10:08:23+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-23T10:09:00+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-23T10:09:39+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-11-17T14:43:43+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-18T14:21:52+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-18T14:22:33+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 63 931$ : la peur extrême à 11/100, Wall Street trinque"
+  },
+  {
+   "ts": "2026-11-18T14:22:33+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #90"
+  },
+  {
+   "ts": "2026-11-18T14:22:35+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-18T14:22:48+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
