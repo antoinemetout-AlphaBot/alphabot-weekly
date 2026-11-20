@@ -1,36 +1,6 @@
 {
  "events": [
   {
-   "ts": "2026-09-24T10:15:25+00:00",
-   "evenement": "analyse",
-   "statut": "ok",
-   "detail": "Bitcoin à 83 277$ : le dollar reprend du poil de la bête, les indices soufflent"
-  },
-  {
-   "ts": "2026-09-24T10:15:25+00:00",
-   "evenement": "newsletter",
-   "statut": "ok",
-   "detail": "édition #35"
-  },
-  {
-   "ts": "2026-09-24T10:15:26+00:00",
-   "evenement": "site",
-   "statut": "ok",
-   "detail": ""
-  },
-  {
-   "ts": "2026-09-24T10:15:29+00:00",
-   "evenement": "emails",
-   "statut": "ok",
-   "detail": "2 envoyé(s)"
-  },
-  {
-   "ts": "2026-09-25T10:19:19+00:00",
-   "evenement": "collecte",
-   "statut": "ok",
-   "detail": "5 indices, erreurs: []"
-  },
-  {
    "ts": "2026-09-25T10:19:57+00:00",
    "evenement": "analyse",
    "statut": "ok",
@@ -1796,6 +1766,36 @@
   },
   {
    "ts": "2026-11-19T14:34:22+00:00",
+   "evenement": "emails",
+   "statut": "ok",
+   "detail": "2 envoyé(s)"
+  },
+  {
+   "ts": "2026-11-20T14:12:00+00:00",
+   "evenement": "collecte",
+   "statut": "ok",
+   "detail": "5 indices, erreurs: []"
+  },
+  {
+   "ts": "2026-11-20T14:12:39+00:00",
+   "evenement": "analyse",
+   "statut": "ok",
+   "detail": "Bitcoin à 61 865$ : rouge partout, l'or aussi s'effondre"
+  },
+  {
+   "ts": "2026-11-20T14:12:39+00:00",
+   "evenement": "newsletter",
+   "statut": "ok",
+   "detail": "édition #92"
+  },
+  {
+   "ts": "2026-11-20T14:12:42+00:00",
+   "evenement": "site",
+   "statut": "ok",
+   "detail": ""
+  },
+  {
+   "ts": "2026-11-20T14:12:44+00:00",
    "evenement": "emails",
    "statut": "ok",
    "detail": "2 envoyé(s)"
