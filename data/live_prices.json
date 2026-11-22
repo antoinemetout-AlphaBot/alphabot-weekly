@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-11-21T14:37:25+01:00",
+ "updated_at": "2026-11-22T14:29:33+01:00",
  "prices": {
   "Bitcoin": {
-   "prix": 59777.0,
-   "variation": -2.55
+   "prix": 60679.0,
+   "variation": 1.94
   },
   "CAC 40": {
    "prix": 7927.75,
@@ -30,8 +30,8 @@
    "variation": -0.09
   },
   "Pétrole WTI": {
-   "prix": 83.98,
-   "variation": 0.93
+   "prix": 83.41,
+   "variation": 0.24
   },
   "Or": {
    "prix": 3515.3999,
