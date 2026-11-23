@@ -1,156 +1,156 @@
 {
- "ts": "2026-11-22T13:29:31+00:00",
+ "ts": "2026-11-23T16:15:35+00:00",
  "crypto": {
   "Bitcoin": {
-   "prix": 60679.0,
-   "var_24h": 1.94,
-   "var_7j": -6.98,
-   "market_cap": 1220436942624,
+   "prix": 62795.0,
+   "var_24h": 2.98,
+   "var_7j": -3.62,
+   "market_cap": 1263235095004,
    "source": "coingecko"
   }
  },
  "indices": {
   "CAC 40": {
    "ticker": "^FCHI",
-   "prix": 7927.75,
-   "var_24h": -1.89,
-   "var_7j": -3.71
+   "prix": 8052.5498,
+   "var_24h": 1.57,
+   "var_7j": -2.73
   },
   "S&P 500": {
    "ticker": "^GSPC",
-   "prix": 6910.3901,
-   "var_24h": -3.7,
-   "var_7j": -8.47
+   "prix": 7253.8198,
+   "var_24h": 4.97,
+   "var_7j": -3.55
   },
   "Nasdaq 100": {
    "ticker": "^NDX",
-   "prix": 25028.9805,
-   "var_24h": -5.61,
-   "var_7j": -10.31
+   "prix": 26775.7539,
+   "var_24h": 6.98,
+   "var_7j": -3.48
   },
   "DAX": {
    "ticker": "^GDAXI",
-   "prix": 24802.7793,
-   "var_24h": -2.6,
-   "var_7j": -5.58
+   "prix": 25375.1309,
+   "var_24h": 2.31,
+   "var_7j": -3.69
   },
   "Dow Jones": {
    "ticker": "^DJI",
-   "prix": 48147.3281,
-   "var_24h": -1.93,
-   "var_7j": -8.1
+   "prix": 49666.5312,
+   "var_24h": 3.16,
+   "var_7j": -4.91
   }
  },
  "commodities": {
   "Dollar Index (DXY)": {
    "ticker": "DX-Y.NYB",
-   "prix": 103.81,
-   "var_24h": -0.09,
-   "var_7j": 0.87
+   "prix": 104.425,
+   "var_24h": 0.59,
+   "var_7j": 1.22
   },
   "Pétrole WTI": {
    "ticker": "CL=F",
-   "prix": 83.41,
-   "var_24h": 0.24,
-   "var_7j": -3.61
+   "prix": 80.01,
+   "var_24h": -4.73,
+   "var_7j": -9.84
   },
   "Or": {
    "ticker": "GC=F",
-   "prix": 3515.3999,
-   "var_24h": -4.62,
-   "var_7j": -12.13
+   "prix": 3667.8999,
+   "var_24h": 4.34,
+   "var_7j": -5.6
   },
   "EUR/USD": {
    "ticker": "EURUSD=X",
-   "prix": 1.097,
-   "var_24h": -0.02,
-   "var_7j": -1.59
+   "prix": 1.0898,
+   "var_24h": -0.65,
+   "var_7j": -2.89
   }
  },
  "watchlist": {
   "Apple": {
    "ticker": "AAPL",
-   "prix": 342.56,
-   "var_24h": -1.9,
-   "var_7j": -2.24
+   "prix": 348.61,
+   "var_24h": 1.77,
+   "var_7j": 0.1
   },
   "NVIDIA": {
    "ticker": "NVDA",
-   "prix": 125.53,
-   "var_24h": -14.01,
-   "var_7j": -29.74
+   "prix": 166.89,
+   "var_24h": 32.95,
+   "var_7j": -1.18
   },
   "Tesla": {
    "ticker": "TSLA",
-   "prix": 345.82,
-   "var_24h": -7.64,
-   "var_7j": -8.53
+   "prix": 391.0,
+   "var_24h": 13.06,
+   "var_7j": 2.95
   },
   "LVMH": {
    "ticker": "MC.PA",
-   "prix": 381.95,
-   "var_24h": -2.54,
-   "var_7j": -5.09
+   "prix": 389.9,
+   "var_24h": 2.08,
+   "var_7j": -2.77
   },
   "TotalEnergies": {
    "ticker": "TTE.PA",
-   "prix": 78.19,
-   "var_24h": -1.23,
-   "var_7j": -0.71
+   "prix": 77.44,
+   "var_24h": -0.96,
+   "var_7j": -0.97
   },
   "ExxonMobil": {
    "ticker": "XOM",
-   "prix": 159.99,
-   "var_24h": 0.67,
-   "var_7j": -2.26
+   "prix": 158.115,
+   "var_24h": -1.17,
+   "var_7j": -3.26
   },
   "Lockheed Martin": {
    "ticker": "LMT",
-   "prix": 565.5,
-   "var_24h": -1.11,
-   "var_7j": -3.86
+   "prix": 569.59,
+   "var_24h": 0.72,
+   "var_7j": -5.56
   }
  },
  "portefeuille_prix": {
   "AAPL": {
-   "prix": 342.56,
-   "var_24h": -1.9,
-   "var_7j": -2.24
+   "prix": 348.575,
+   "var_24h": 1.76,
+   "var_7j": 0.09
   },
   "BTC-USD": {
-   "prix": 60604.3906,
-   "var_24h": 0.85,
-   "var_7j": -11.2
+   "prix": 62676.6211,
+   "var_24h": 2.48,
+   "var_7j": -2.26
   },
   "LMT": {
-   "prix": 565.5,
-   "var_24h": -1.11,
-   "var_7j": -3.86
+   "prix": 569.59,
+   "var_24h": 0.72,
+   "var_7j": -5.56
   },
   "MC.PA": {
-   "prix": 381.95,
-   "var_24h": -2.54,
-   "var_7j": -5.09
+   "prix": 389.9,
+   "var_24h": 2.08,
+   "var_7j": -2.77
   },
   "NVDA": {
-   "prix": 125.53,
-   "var_24h": -14.01,
-   "var_7j": -29.74
+   "prix": 166.885,
+   "var_24h": 32.94,
+   "var_7j": -1.19
   },
   "TSLA": {
-   "prix": 345.82,
-   "var_24h": -7.64,
-   "var_7j": -8.53
+   "prix": 390.97,
+   "var_24h": 13.06,
+   "var_7j": 2.95
   },
   "TTE.PA": {
-   "prix": 78.19,
-   "var_24h": -1.23,
-   "var_7j": -0.71
+   "prix": 77.44,
+   "var_24h": -0.96,
+   "var_7j": -0.97
   },
   "XOM": {
-   "prix": 159.99,
-   "var_24h": 0.67,
-   "var_7j": -2.26
+   "prix": 158.115,
+   "var_24h": -1.17,
+   "var_7j": -3.26
   }
  },
  "fear_greed": {
