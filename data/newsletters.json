@@ -1,6 +1,12 @@
 {
  "editions": [
   {
+   "date": "2026-11-24",
+   "label": "Mardi 24 novembre 2026",
+   "titre": "Bitcoin à 59 699$ : le rouge sang éclabousse tout, or compris",
+   "file": "newsletters/alphabot_newsletter_2026-11-24.html"
+  },
+  {
    "date": "2026-11-23",
    "label": "Lundi 23 novembre 2026",
    "titre": "Bitcoin à 62 711$ : NVIDIA explose de +33%, le Nasdaq reprend son souffle",
@@ -571,5 +577,5 @@
    "file": "newsletters/alphabot_newsletter_2026-03-20.html"
   }
  ],
- "count": 95
+ "count": 96
 }
